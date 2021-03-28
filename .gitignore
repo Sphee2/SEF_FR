@@ -74,7 +74,6 @@ Plugins/*/Intermediate/*
 DerivedDataCache/*
 
 #Swat 4 folders
-*.exe
 *.ogg
 *.ukx
 *.uax
@@ -88,3 +87,4 @@ Content/HavokData/*
 Content/Textures/*
 System/*.txt
 System/*.log
+*.pak
