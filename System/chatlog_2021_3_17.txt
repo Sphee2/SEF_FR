@@ -1,0 +1,6 @@
+[17/03/2021 22:03:11] OfficerMonki () connected to the game server.
+[17/03/2021 22:03:38] The round has started.
+[17/03/2021 22:05:32] OfficerMonki () arrested a Suspect
+[17/03/2021 22:06:36] OfficerMonki () incapacitated a Suspect with M4A1 CQB Carbine with Eotech
+[17/03/2021 22:07:13] The mission has ended.
+[17/03/2021 22:07:13] OfficerMonki () disconnected from game server.
