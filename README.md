@@ -1,7 +1,5 @@
 # SWAT ELITE FORCE: FIRST RESPONDERS #
 
-
-
 SEF First Responders is coming along with the idea of a realistic and cinematic gameplay modification of Swat Elite Force. 
 SEF 7.0 by Eezstreet is the base mod in which my mod starts , the only possible way to play Swat 4 nowadays. 
 My idea is to expand the concept and explore boundaries of the visual assets and tactical gameplay.
