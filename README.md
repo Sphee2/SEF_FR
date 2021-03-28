@@ -1,6 +1,6 @@
-==============
+
 SWAT ELITE FORCE: FIRST RESPONDERS 
-==============
+
 
 
 SEF First Responders is coming along with the idea of a realistic and cinematic gameplay modification of Swat Elite Force. 
