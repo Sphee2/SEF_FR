@@ -1,5 +1,4 @@
-
-SWAT ELITE FORCE: FIRST RESPONDERS 
+# SWAT ELITE FORCE: FIRST RESPONDERS #
 
 
 
@@ -11,9 +10,7 @@ New 3d models for weapons , equipment and environment combined with realistic so
 Make sure to sure to join "SEF: First Responders" server on Discord for feedbacks, bug reports and coop game making!
 https://discord.gg/Vu4r7sv7uF
 
-==============
-FEATURE LIST: 
-==============
+# FEATURE LIST: #
 
 #### V0.61 ####
 
