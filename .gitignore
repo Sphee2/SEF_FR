@@ -88,3 +88,5 @@ Content/Textures/*
 System/*.txt
 System/*.log
 *.pak
+*.tga
+*.xcf
