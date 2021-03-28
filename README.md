@@ -86,24 +86,19 @@ other slot free for other tac aids equipment.
 - GUI update for all new weapons and equipment
 
 
-==============
-GNU LICENSE
-==============
+# GNU LICENSE #
+
 Modified source code from SEF 7 has been provided within the downloaded pack in the file Source.rar .
 All the other files are free to be seen with SwatED and text editors.
 
-==============
-KNOWN BUGS:
-==============
+# KNOWN BUGS: # 
 
 Known bugs:
 - toolkit/pistol bug   ( possible fix added in v0.6 ) - made toolkit unequip manual after use
 - shared flashbang stay in hands after unequip - SEF bug 
-- CS gas effect random crash in MP - SEF bug
 
-=======
-THANKS
-=======
+
+# THANKS # 
 
 Eezstreet and all the gang that had contributed the SEF mod , the best of the best! 
 Vetinari and nedd for the HUD reticle mod which has been "big bang moment" primary idea for starting this mod.
