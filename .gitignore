@@ -72,3 +72,19 @@ Plugins/*/Intermediate/*
 
 # Cache files for the editor to use
 DerivedDataCache/*
+
+#Swat 4 folders
+*.exe
+*.ogg
+*.ukx
+*.uax
+*.usx
+*.utx
+Content/Animations/*
+Content/StaticMeshes/*
+Content/Sounds/*
+Content/Maps/*
+Content/HavokData/*
+Content/Textures/*
+System/*.txt
+System/*.log
