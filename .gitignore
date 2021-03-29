@@ -90,3 +90,4 @@ System/*.log
 *.pak
 *.tga
 *.xcf
+*.u

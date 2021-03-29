@@ -1,4 +1,4 @@
-Log: Log file open, 03/28/21 21:33:41
+Log: Log file open, 03/29/21 22:18:23
 Init: ----------------------------------------
 Init: SWAT VERSION NUMBER: 0.61
 Init: ----------------------------------------
@@ -21,7 +21,7 @@ Init: User: admin
 Init: CPU Page size=4096, Processors=4
 Init: CPU Detected: PentiumPro-class processor (GenuineIntel)
 Init: CPU Features: CMov FPU RDTSC PAE MMX SSE
-Init: CPU Speed=3512.102335 MHz
+Init: CPU Speed=3512.502430 MHz
 Init: Memory total: Phys=2097151K Pagef=4194303K Virt=2097024K
 Init: Working set: 32000 / 159000
 Init: Physical Memory: 2047 MByte
@@ -47,9 +47,9 @@ Log: Bound to GUI.dll
 Log: Bound to SwatAICommon.dll
 Log: Bound to Editor.dll
 Log: Bound to ScriptCompiler.dll
-Log: Bound to SwatEquipment.dll
-Log: Bound to IGSoundEffectsSubsystem.dll
 Log: Bound to IGEffectsSystem.dll
+Log: Bound to IGSoundEffectsSubsystem.dll
+Log: Bound to SwatEquipment.dll
 Log: Bound to IpDrv.dll
 Log: (Havok): Initializing base system.
 Log: Bound to IGVisualEffectsSubsystem.dll
@@ -101,29 +101,29 @@ Init: D3D Device: dwSubSysId=611391962
 Init: D3D Device: dwRevision=161
 Init: D3D Detected: NVidia video card
 Init: D3D Device: using cubemaps [with mipmaps]
-Log: Adding MD5 Entry for CE27402C47222291699289B03F8C314B [6f1e06074ee5354025d58cf725820ebf]
-Log: Updating Revision level for 7EFB344042DA6E86632822BDD9DDEEBE to 0
-Log: Updating Revision level for 1758DBAA4E810715D1DD90A03E37789D to 0
-Log: Adding MD5 Entry for E967A409457B3A30217D44AE83648CB5 [3920af0bfc274ec0e677188af18e6d58]
-Log: Adding MD5 Entry for 36EA49C8429DEE1F894D3E8B8F9E2D52 [3920af0bfc274ec0e677188af18e6d58149439753632abb782bd11148ad66fdd]
-Log: Updating Revision level for B13AC3EB4C5432755CBD6B8A77DF97FB to 0
-Log: Updating Revision level for 7C64375646AB56ACCE0B3BBD5085AAD6 to 0
-Log: Adding MD5 Entry for C6BFA255474D3A014F1F8AAE8D5380DB [14621b86b655cc189497d60f5c307412]
+Log: Adding MD5 Entry for 4CA6D5BD4D59D87681E15684002F329D [fe7555b647ba0061cc11b83900ec8a77]
+Log: Adding MD5 Entry for 85E2775C4C9FDC6EA5AAF6A3E1FEA365 [fe83951a321e7c4e31fc64d2c03b9e04]
+Log: Adding MD5 Entry for 1F694619413D95DC0952BD8B3660C2A8 [9035104f40adb8d7cad0aab2276e6d30]
+Log: Adding MD5 Entry for E1371BA140E5C163C3B5CBA179C4D89C [d65e43f0057142c5ff67427c20a2cd67]
+Log: Adding MD5 Entry for E216D655468ACC3ED12B4FB6DBB33159 [d65e43f0057142c5ff67427c20a2cd67583692bc27a67f80a5c9b447fb91e407]
+Log: Adding MD5 Entry for 812ACFB6497EC3091AE6CF9D2C2DDACD [f4615fdc0b97df8aaf67f6971098ec5b]
+Log: Adding MD5 Entry for 685C917A4DB226C4AB7F48B59ED05BB2 [cc62d7b03b1d2216aaacb716ad516402]
+Log: Adding MD5 Entry for DC116FCA4FE4DE0CF10D6B942E0B46B5 [c744dc26af6cafd80fa924a086c234c1]
 Log: Updating Revision level for E5474505400551FB08F11B96A747D1FA to 0
-Log: Updating Revision level for BEB586CF47D4780588CE5E948F20CC53 to 0
-Log: Updating Revision level for 67ABFE764C3B7F6BFA1A04B2BE5CA332 to 0
-Log: Updating Revision level for 23673C124857966A4929AA86AFDAB51E to 0
-Log: Updating Revision level for 43C6879C4C17540A7C6C0BB277E44799 to 0
-Log: Updating Revision level for BB59FDF74D6D60B892E19BAD353B4F88 to 0
-Log: Updating MD5 for E480F25842843B8EA77BB89D465740BF [374e3762d0c2aa2979789ffe8c9d9c3031214d78ff9a122c20c4d66b6c6cd709]
-Log: Updating Revision level for 8F7F303F47AD3D38A16402B54AFE146F to 0
-Log: Updating Revision level for 1A1CFF054FB00FA3CAA1E6A7015542A5 to 0
-Log: Updating Revision level for E66E82604461C472E34001886DBB5ABB to 0
-Log: Updating Revision level for 3AB66B064FDEE64C52F1AE843B5CD4FC to 0
-Log: Updating Revision level for 067BF3114A0BF5DD1EBB60A3D3733396 to 0
-Log: Updating Revision level for 4A36E00A431EBA7BED1399955A4B08CF to 0
-Log: Adding MD5 Entry for D63CDB1D43635FCBDCBC93B342E211DB [d27f137f7f24822409c75ae7e82f45f76a9716ae6ff79961a05fd9754cf5f5d3]
-Log: Updating MD5 for 1CBB6ADF494193B35114CB8943A9E1EF [d27f137f7f24822409c75ae7e82f45f76a9716ae6ff79961a05fd9754cf5f5d35209e47c49f4b21b791531e12fa2ea4a]
+Log: Adding MD5 Entry for 7829489C49E2900B22594095F0906DDE [97cc625164d26c0df57439144a2b57b8]
+Log: Adding MD5 Entry for CFEDE9E14CFA105DA94092B366DAC186 [c0833305c2c9c7acf084c4334cb20771]
+Log: Adding MD5 Entry for D9C81AB647775B47F53F328E0182CE1F [288a916abbb9692f2e45470b1eb90809]
+Log: Adding MD5 Entry for BFA3EFAD418FC9E652776ABD49C2F76D [bf196b71821da961970f508aabcf66e8]
+Log: Adding MD5 Entry for F732CA9646F94150A360BFA2B74236A0 [61bcaa9816884ef5c517d8816c55081d]
+Log: Adding MD5 Entry for 9B9AC1FB43976F64E01676940485C42A [61bcaa9816884ef5c517d8816c55081d5b087750caff932567ca9917178d454e]
+Log: Adding MD5 Entry for 39270C7E4CAE7A28AB896385AB844B94 [76673b2dcaea792c56aebe6b1053ae50]
+Log: Adding MD5 Entry for 681B3BDC47993E8BBD73EDA6F6780E63 [3385cbaaf4cc2cd2080ef981f31d2463]
+Log: Adding MD5 Entry for 118FD08A47207D7D92E325B1F6C278BC [360abe81b81ba33ee29068b95e0afd54]
+Log: Adding MD5 Entry for 35E3A81A4C69FDBA72AFBABB19A7A94A [19d29666c05129080edd45a674813fa4]
+Log: Adding MD5 Entry for C0202C5E44004474A42CFAA72BC0F44B [f5203411b7be495a30e428d50a4f691e]
+Log: Adding MD5 Entry for B0A5144841F0DC3A8146648BA8A096C6 [a2c2acb849ace9fbf253fc445ba3fe93]
+Log: Adding MD5 Entry for 8FEA56794B63C7722ED335A1F229EF9F [a2c2acb849ace9fbf253fc445ba3fe937d886d4d8832c7f48d8d132f5d4e3243]
+Log: Updating MD5 for 1CBB6ADF494193B35114CB8943A9E1EF [a2c2acb849ace9fbf253fc445ba3fe937d886d4d8832c7f48d8d132f5d4e32435209e47c49f4b21b791531e12fa2ea4a]
 Log: LocalizedSoundPathRoot for language 'int' is 'int\Sounds\'
 Log: ALAudio: Using DirectSound to record audio.
 Init: ALAudio: subsystem initialized.
@@ -142,11 +142,11 @@ Log: Game class is 'GameInfo'
 Log: Level is Level Entry.myLevel
 Log: *** WARNING - PATHS MAY NOT BE VALID ***
 Log: Bringing Level Entry.myLevel up for play (0)...
-Log: ---------- IsTheEntryLevel = 1, GameEngine=0xC5FF000, GameEngine->GEntry=0x0, GameEngine->GEntry->GetLevelInfo()=0x0, current LevelInfo=0x8177700
+Log: ---------- IsTheEntryLevel = 1, GameEngine=0xC71E100, GameEngine->GEntry=0x0, GameEngine->GEntry->GetLevelInfo()=0x0, current LevelInfo=0xAAD5B00
 VoiceChat: GameInfo0 VoiceReplicationInfo created: None
 DevMassive: ADCLIENT: Level has empty ZoneName.
 DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
-Log: Loadmap executed in 0.04 seconds. (0.01 Verify) (0.02 Load) (0.00 Actor Init)
+Log: Loadmap executed in 0.03 seconds. (0.01 Verify) (0.02 Load) (0.00 Actor Init)
 Log: UGameEngine::Init() ... CommandLine = 
 Log: Browse: Entry.s4m?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
 Log: LoadMap: Entry.s4m?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
@@ -252,8 +252,8 @@ Log: WM_KILLFOCUS was called
 Log: WM_SETFOCUS was called
 Log: Opened viewport
 Log: Enter SetRes: 2560x1080 Fullscreen 1
-Log: Flushing viewport 0x9F70000
-Log: Finished flushing viewport 0x9F70000 in 0.001 seconds
+Log: Flushing viewport 0x148FEB00
+Log: Finished flushing viewport 0x148FEB00 in 0.001 seconds
 Init: Best-match display mode: 2560x1080x32@60
 Log: Using back-buffer format 22(32-bit)
 Log: Using depth-buffer format 75(32-bit)
@@ -265,8 +265,8 @@ Log: Creating IME context.
 Log: Initializing COM and the Speech API.
 Log: Failed to load our grammar into the speech recognition context.
 Log: Failed to initialize the Speech API
-Init: Game engine initialized in 6.12 seconds
-Log: Startup time: 9.543000 seconds
+Init: Game engine initialized in 5.944 seconds
+Log: Startup time: 10.317000 seconds
 Log: URL: Adding default option Name=OfficerMonki
 Log: URL: Adding default option Class=SwatGame.SwatPlayer
 Log: URL: Adding default option team=255
@@ -277,39 +277,40 @@ Log: ****************************************************
 Log:  Beginning level load: 'swat_splashscene'
 Log: ****************************************************
 Log: ****************************************************
-Log:  Finished level load in 0.231 seconds
+Log:  Finished level load in 0.235 seconds
 Log: ****************************************************
 Log: Collecting garbage
 Log: Purging garbage
-Log: 11009.0ms Unloading: Package SwatSimpleEquipment
-Log: Garbage: objects: 50215->49953; refs: 723457
+Log: 11563.0ms Unloading: Package SwatObjectives
+Log: 11564.0ms Unloading: Package SwatSimpleEquipment
+Log: Garbage: objects: 50357->50011; refs: 710209
 Log: Building Collision Octree...
 Log: Finished Building Collision Octree
 Log: Game class is 'GameInfo'
 Log: Level is Level swat_splashscene.myLevel
 Log: Bringing Level swat_splashscene.myLevel up for play (0)...
-Log: ---------- IsTheEntryLevel = 0, GameEngine=0xC5FF000, GameEngine->GEntry=0x1493DC00, GameEngine->GEntry->GetLevelInfo()=0x8177700, current LevelInfo=0x3AFFAF00
+Log: ---------- IsTheEntryLevel = 0, GameEngine=0xC71E100, GameEngine->GEntry=0x14B38C00, GameEngine->GEntry->GetLevelInfo()=0xAAD5B00, current LevelInfo=0x3B15A800
 VoiceChat: GameInfo1 VoiceReplicationInfo created: None
 Log: Spawning new actor for Viewport WindowsViewport0
 Log: SwatEntryPlayerController1 got player WindowsViewport0
 Log: Creating IME context.
-Log: Flushing viewport 0x9F70000
-Log: Finished flushing viewport 0x9F70000 in 0.001 seconds
+Log: Flushing viewport 0x148FEB00
+Log: Finished flushing viewport 0x148FEB00 in 0.001 seconds
 DevMassive: ADCLIENT: Level has empty ZoneName.
 DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
-Log: Loadmap executed in 1.48 seconds. (0.47 Verify) (0.23 Load) (0.08 Actor Init)
+Log: Loadmap executed in 1.33 seconds. (0.33 Verify) (0.23 Load) (0.08 Actor Init)
 Log: Precaching: swat_splashscene.LevelInfo0
-Log: Finished Static Mesh Batch build in 0.001 seconds
+Log: Finished Static Mesh Batch build in 0.000 seconds
 Log: Static mesh batches: 3380000 vertex bytes, 185430 index bytes
 Log: Allocating 16384 byte dynamic index buffer.
 Log: Allocating 65536 byte dynamic vertex buffer.
-Log: Finished precaching geometry in 0.220 seconds
-Log: Finished precaching textures in 0.299 seconds
+Log: Finished precaching geometry in 0.240 seconds
+Log: Finished precaching textures in 0.298 seconds
 Init: EffectsSystem Configuration: ..\system\VisualEffectsConfig.u is up-to-date.
 Log: [EFFECTS SYSTEM] The VisualEffectsSubsystem's configuration package is up-to-date.
 Log: Collecting garbage
 Log: Purging garbage
-Log: Garbage: objects: 52031->51663; refs: 745865
+Log: Garbage: objects: 52089->51721; refs: 732617
 Log: VisualEffectsSubsystem created.
 Init: EffectsSystem Configuration: ..\system\SoundEffectsConfig.u is up-to-date.
 Log: [EFFECTS SYSTEM] The SoundEffectsSubsystem's configuration package is up-to-date.
@@ -318,128 +319,90 @@ Log: Assertion failed: !duplicate_event_response [File:.\IGEffectsSystem.cpp] [L
 Log: There are no Streams specified for StreamSoundEffectSpecification: 
 Log: Collecting garbage
 Log: Purging garbage
-Log: Garbage: objects: 83695->69713; refs: 839140
+Log: Garbage: objects: 83753->69771; refs: 825892
 Log: SoundEffectsSubsystem created.
 Log: Creating IME context.
 Log: Precaching: swat_splashscene.LevelInfo0
-Log: Finished precaching geometry in 0.010 seconds
+Log: Finished precaching geometry in 0.012 seconds
 Log: Finished precaching textures in 0.008 seconds
-Warning: Failed to load 'Bope_beret': Can't find file for package 'Bope_beret'
-Warning: Failed to load 'Class Bope_beret.Bope_beret': Can't find file for package 'Bope_beret'
-Warning: Failed to load 'Bope_beret': Can't find file for package 'Bope_beret'
-Warning: Failed to load 'Class Bope_beret.Bope_beret': Can't find file for package 'Bope_beret'
-Log: Allocating 89568 byte dynamic vertex buffer.
-Log: Allocating 111024 byte dynamic vertex buffer.
-Log: Allocating 117072 byte dynamic vertex buffer.
 Log: URL: Adding default option Name=OfficerMonki
 Log: URL: Adding default option Class=SwatGame.SwatPlayer
 Log: URL: Adding default option team=255
-Log: Browse: SP-CaveComplex?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
-Log: LoadMap: SP-CaveComplex?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
-Log: [dkaplan]: URL.Map = SP-CaveComplex
+Log: Browse: SP-Training?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
+Log: LoadMap: SP-Training?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
+Warning: Failed to load 'pier_tex': Can't find file for package 'pier_tex'
+Warning: Failed to load 'pier_tex': Can't find file for package 'pier_tex'
+Warning: Missing Texture Texture pier_tex.shiphull
+Log: [dkaplan]: URL.Map = SP-Training
 Log: Static mesh batches: 0 vertex bytes, 0 index bytes
 Log: ****************************************************
-Log:  Beginning level load: 'SP-CaveComplex'
+Log:  Beginning level load: 'SP-Training'
 Log: ****************************************************
 Log: (Havok): Physical world for ULevel being created.
 Log: (Havok): Using medium solver
 Log: (Havok): Found 3 ragdoll files matching search path '..\HavokData\*.hke'
 Log: (Havok):   Precached ragdoll for file 'HotelSuitBag_rd.hke' in 0 ms.
-Log: (Havok):   Precached ragdoll for file 'PaperTarget_rd.hke' in 0 ms.
-Log: (Havok):   Precached ragdoll for file 'SWATofficer_rd.hke' in 20 ms.
+Log: (Havok):   Precached ragdoll for file 'PaperTarget_rd.hke' in 1 ms.
+Log: (Havok):   Precached ragdoll for file 'SWATofficer_rd.hke' in 19 ms.
 Log: (Havok): Finished precaching ragdolls
 Log: ****************************************************
-Log:  Finished level load in 1.721 seconds
+Log:  Finished level load in 0.692 seconds
 Log: ****************************************************
 Log: Collecting garbage
 Log: Purging garbage
-Log: 115521.0ms Unloading: Package bp_gui_tex
-Log: 115522.0ms Unloading: Package swat_splashscene
-Log: 115522.0ms Unloading: Package Outdoors_sm
-Log: 115522.0ms Unloading: Package GUIanimations
-Log: 115522.0ms Unloading: Package SwatEffects
-Log: 115522.0ms Unloading: Package Cars_sm
-Log: 115522.0ms Unloading: Package VisualEffectsConfig
-Log: 115522.0ms Unloading: Package SWATeffects2
-Log: 115522.0ms Unloading: Package SWsef_weapons
-Log: 115522.0ms Unloading: Package SW_meta
-Log: 115522.0ms Unloading: Package SWSAS_weapons
-Log: 115522.0ms Unloading: Package SW_bounce
-Log: 115522.0ms Unloading: Package SW_hits
-Log: 115522.0ms Unloading: Package SWEXP_weapons
-Log: 115522.0ms Unloading: Package SWEXP_ambience
-Log: 115522.0ms Unloading: Package SW_objects
-Log: 115523.0ms Unloading: Package SW_vo
-Log: 115523.0ms Unloading: Package SW_ambients
-Log: 115523.0ms Unloading: Package SW_weapons
-Log: 115523.0ms Unloading: Package SW_bullets
-Log: 115523.0ms Unloading: Package SW_feet
-Log: 115523.0ms Unloading: Package SoundEffectsConfig
-Log: 115525.0ms Unloading: Package SwatSimpleEquipment
-Log: 115525.0ms Unloading: Package sniperandmirrortest
-Log: 115525.0ms Unloading: Package MP-Training
-Log: 115525.0ms Unloading: Package MP-Tenement
-Log: 115525.0ms Unloading: Package MP-RedLibrary
-Log: 115525.0ms Unloading: Package MP-PowerPlant
-Log: 115525.0ms Unloading: Package MP-MeatBarn
-Log: 115525.0ms Unloading: Package MP-JewelryHeist
-Log: 115525.0ms Unloading: Package MP-Hotel
-Log: 115525.0ms Unloading: Package MP-Hospital
-Log: 115525.0ms Unloading: Package MP-Foodwall
-Log: 115525.0ms Unloading: Package MP-FairfaxResidence
-Log: 115525.0ms Unloading: Package MP-DNA
-Log: 115525.0ms Unloading: Package MP-Courthouse
-Log: 115525.0ms Unloading: Package MP-ConvenienceStore
-Log: 115525.0ms Unloading: Package MP-Casino
-Log: 115525.0ms Unloading: Package MP-AutoGarage
-Log: 115525.0ms Unloading: Package MP-ArmsDeal
-Log: 115525.0ms Unloading: Package MP-ABomb
-Log: 115525.0ms Unloading: Package ClearTest
-Log: 115525.0ms Unloading: Package MP-Warehouse
-Log: 115525.0ms Unloading: Package MP-Subway
-Log: 115525.0ms Unloading: Package MP-Office
-Log: 115525.0ms Unloading: Package MP-HalfwayHouse
-Log: 115525.0ms Unloading: Package MP-DrugLab
-Log: 115525.0ms Unloading: Package MP-Backstage
-Log: 115525.0ms Unloading: Package MP-Arcade
-Log: 115525.0ms Unloading: Package CoopQMMLobby
-Log: 115526.0ms Unloading: Package SP-Training
-Log: 115526.0ms Unloading: Package SwatObjectives
-Log: Garbage: objects: 86885->65244; refs: 1806941
-Log: (Havok): Calling HavokInitActor on all 3084 Actors in the level
-Log: (Havok) Initialised level mopp in 0.82 seconds
+Log: 16636.0ms Unloading: Package swat_splashscene
+Log: 16637.0ms Unloading: Package GUIanimations
+Log: 16637.0ms Unloading: Package VisualEffectsConfig
+Log: 16637.0ms Unloading: Package SWATeffects2
+Log: 16637.0ms Unloading: Package SWsef_weapons
+Log: 16637.0ms Unloading: Package SW_meta
+Log: 16637.0ms Unloading: Package SWSAS_weapons
+Log: 16637.0ms Unloading: Package SW_bounce
+Log: 16637.0ms Unloading: Package SW_hits
+Log: 16637.0ms Unloading: Package SWEXP_weapons
+Log: 16637.0ms Unloading: Package SWEXP_ambience
+Log: 16637.0ms Unloading: Package SW_objects
+Log: 16637.0ms Unloading: Package SW_vo
+Log: 16637.0ms Unloading: Package SW_ambients
+Log: 16637.0ms Unloading: Package SW_weapons
+Log: 16637.0ms Unloading: Package SW_bullets
+Log: 16637.0ms Unloading: Package SW_feet
+Log: 16637.0ms Unloading: Package SoundEffectsConfig
+Log: 16640.0ms Unloading: Package SwatObjectives
+Log: Garbage: objects: 82094->61090; refs: 1048260
+Log: (Havok): Calling HavokInitActor on all 2235 Actors in the level
+Log: (Havok) Initialised level mopp in 0.03 seconds
 Log: Building Collision Octree...
 Log: Finished Building Collision Octree
 Log: Game class is 'SwatGameInfo'
-Log: Level is Level SP-CaveComplex.myLevel
+Log: Level is Level SP-Training.myLevel
 Log: *** WARNING - PATHS MAY NOT BE VALID ***
-Log: Bringing Level SP-CaveComplex.myLevel up for play (0)...
-Log: ---------- IsTheEntryLevel = 0, GameEngine=0xC5FF000, GameEngine->GEntry=0x1493DC00, GameEngine->GEntry->GetLevelInfo()=0x8177700, current LevelInfo=0x4F976900
+Log: Bringing Level SP-Training.myLevel up for play (0)...
+Log: ---------- IsTheEntryLevel = 0, GameEngine=0xC71E100, GameEngine->GEntry=0x14B38C00, GameEngine->GEntry->GetLevelInfo()=0xAAD5B00, current LevelInfo=0x4795EE00
 Init: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
 Init: WinSock: I am PC-CASA (26.85.202.120)
 Log: Resolving ...
 Log: Spawning new actor for Viewport WindowsViewport0
 Log: SwatGamePlayerController0 got player WindowsViewport0
 Log: Creating IME context.
-Log: Flushing viewport 0x9F70000
-Log: Finished flushing viewport 0x9F70000 in 0.012 seconds
+Log: Flushing viewport 0x148FEB00
+Log: Finished flushing viewport 0x148FEB00 in 0.011 seconds
 DevMassive: ADCLIENT: Level has empty ZoneName.
 DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
-Log: Loadmap executed in 3.93 seconds. (0.01 Verify) (1.72 Load) (1.75 Actor Init)
+Log: Loadmap executed in 1.95 seconds. (0.21 Verify) (0.69 Load) (0.64 Actor Init)
 Log: Resolved  (26.85.202.120)
-Log: Precaching: SP-CaveComplex.LevelInfo0
+Log: Precaching: SP-Training.LevelInfo0
 Log: Finished Static Mesh Batch build in 0.001 seconds
-Log: Static mesh batches: 20799304 vertex bytes, 1685202 index bytes
+Log: Static mesh batches: 25361932 vertex bytes, 2155428 index bytes
 Log: Allocating 16384 byte dynamic index buffer.
 Log: Allocating 65536 byte dynamic vertex buffer.
-Log: Allocating 87668 byte dynamic vertex buffer.
-Log: Finished precaching geometry in 0.315 seconds
-Log: Finished precaching textures in 0.782 seconds
+Log: Finished precaching geometry in 0.380 seconds
+Log: Finished precaching textures in 0.483 seconds
 Init: EffectsSystem Configuration: ..\system\VisualEffectsConfig.u is up-to-date.
 Log: [EFFECTS SYSTEM] The VisualEffectsSubsystem's configuration package is up-to-date.
 Log: Collecting garbage
 Log: Purging garbage
-Log: Garbage: objects: 79210->78972; refs: 1178589
+Log: Garbage: objects: 66034->65767; refs: 926945
 Log: VisualEffectsSubsystem created.
 Init: EffectsSystem Configuration: ..\system\SoundEffectsConfig.u is up-to-date.
 Log: [EFFECTS SYSTEM] The SoundEffectsSubsystem's configuration package is up-to-date.
@@ -448,286 +411,41 @@ Log: Assertion failed: !duplicate_event_response [File:.\IGEffectsSystem.cpp] [L
 Log: There are no Streams specified for StreamSoundEffectSpecification: 
 Log: Collecting garbage
 Log: Purging garbage
-Log: Garbage: objects: 111880->97713; refs: 1275610
+Log: Garbage: objects: 98881->84463; refs: 1023785
 Log: SoundEffectsSubsystem created.
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-CaveComplex.IdleAimAroundAction44
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-CaveComplex.IdleAimAroundAction45
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-CaveComplex.IdleAimAroundAction46
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-CaveComplex.IdleAimAroundAction47
-Log: Precaching: SP-CaveComplex.LevelInfo0
-Log: Finished precaching geometry in 0.018 seconds
-Log: Finished precaching textures in 0.015 seconds
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction44
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction45
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction46
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction47
-Log: ***WARNING: Unable to play stream E:\GOG Games\SWAT 4\Content\Sounds\MaleSuspect2\ms2_AnnouncedInvestigate_2.ogg, 8 streams already in use
-Log: ***WARNING: Unable to play stream MaleSuspect2/ms2_AnnouncedInvestigate_2.ogg, 8 streams already in use
-Log: ***WARNING: Unable to play stream E:\GOG Games\SWAT 4\Content\Sounds\MaleSuspect4\ms4_AnnouncedInvestigate_2.ogg, 8 streams already in use
-Log: ***WARNING: Unable to play stream MaleSuspect4/ms4_AnnouncedInvestigate_2.ogg, 8 streams already in use
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor LeftClearPoint24) is PathNode27
-Log: IterEnemy: SwatEnemy3 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor LeftClearPoint24) is PathNode27
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor LeftClearPoint24) is PathNode27
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor LeftClearPoint24) is PathNode27
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor LeftClearPoint24) is PathNode27
-Log: ***WARNING: Unable to play stream E:\GOG Games\SWAT 4\Content\Sounds\OfficerRedOne\r1_ReportedSuspectSpotted_4.ogg, 8 streams already in use
-Log: ***WARNING: Unable to play stream OfficerRedOne/r1_ReportedSuspectSpotted_4.ogg, 8 streams already in use
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor LeftClearPoint24) is PathNode27
-Log: IterEnemy: SwatEnemy3 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy3 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor LeftClearPoint24) is PathNode27
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor LeftClearPoint24) is PathNode27
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor LeftClearPoint24) is PathNode27
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor LeftClearPoint24) is PathNode27
-Log: ***WARNING: Unable to play stream E:\GOG Games\SWAT 4\Content\Sounds\MaleSuspect4\ms4_AnnouncedInvestigate_1.ogg, 8 streams already in use
-Log: ***WARNING: Unable to play stream MaleSuspect4/ms4_AnnouncedInvestigate_1.ogg, 8 streams already in use
-Log: ***WARNING: Unable to play stream E:\GOG Games\SWAT 4\Content\Sounds\OfficerRedOne\r1_AnnouncedLostTarget_1.ogg, 8 streams already in use
-Log: ***WARNING: Unable to play stream OfficerRedOne/r1_AnnouncedLostTarget_1.ogg, 8 streams already in use
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction48
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction49
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction50
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction51
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction52
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction53
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction54
-Log: IterEnemy: SwatEnemy3 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode114) is LeftClearPoint30
-Log: IterEnemy: SwatEnemy3 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode114) is LeftClearPoint30
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode114) is LeftClearPoint30
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode114) is LeftClearPoint30
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction55
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction56
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction57
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction58
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction59
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction60
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction61
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction62
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction63
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction64
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction65
-Log: IterEnemy: SwatEnemy3 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor SingleDoor7) is PathNode33
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode52) is LeftClearPoint35
-Log: IterEnemy: SwatEnemy3 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode52) is PathNode33
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode52) is LeftClearPoint35
-Log: IterEnemy: SwatEnemy3 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode52) is PathNode33
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode52) is LeftClearPoint35
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction66
-Log: IterEnemy: SwatEnemy3 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is LeftClearPoint125
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is LeftClearPoint125
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is LeftClearPoint125
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is LeftClearPoint125
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction67
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction68
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is LeftClearPoint125
-Log: IterEnemy: SwatEnemy3 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is LeftClearPoint125
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is LeftClearPoint125
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is LeftClearPoint125
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is LeftClearPoint125
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction69
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is RightClearPoint34
-Log: IterEnemy: SwatEnemy3 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is RightClearPoint34
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is RightClearPoint34
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is RightClearPoint34
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode51) is RightClearPoint34
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction70
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction71
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction72
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction73
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction74
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode50) is PathNode29
-Log: IterEnemy: SwatEnemy3 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode50) is PathNode29
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode50) is PathNode29
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode50) is LeftClearPoint35
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode50) is LeftClearPoint35
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction75
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction76
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction77
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction78
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor PathNode40) is PathNode36
-Log: IterEnemy: SwatEnemy3 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is PathNode108
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is PathNode108
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is LeftStackupPoint33
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is LeftClearPoint34
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction79
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction80
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction81
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction82
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor PathNode40) is PathNode36
-Log: IterEnemy: SwatEnemy3 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is PathNode108
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is PathNode108
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is PathNode37
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is PathNode37
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction83
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction84
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction85
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction86
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction87
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction88
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is LeftClearPoint126
-Log: IterEnemy: SwatEnemy3 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is LeftClearPoint126
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is LeftClearPoint126
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is LeftClearPoint126
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode49) is LeftClearPoint34
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction89
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction90
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction91
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction92
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode65) is PathNode108
-Log: IterEnemy: SwatEnemy3 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode65) is PathNode108
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode65) is PathNode108
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode65) is PathNode37
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy3 (at anchor PathNode65) is LeftStackupPoint32
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction93
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction94
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction95
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction96
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction97
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction98
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction99
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction100
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor PathNode39) is PathNode37
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor PathNode71) is RightClearPoint34
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor PathNode71) is RightClearPoint34
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor PathNode71) is LeftStackupPoint32
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction101
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction102
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction103
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction104
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor PathNode71) is PathNode36
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor PathNode71) is PathNode37
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction105
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction106
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor PathNode71) is PathNode36
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor PathNode71) is PathNode36
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor PathNode71) is PathNode37
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction107
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction108
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction109
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction110
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction111
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy0 IsAThreat 0 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy0 IsAThreat 1 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor LeftClearPoint14) is LeftStackupPoint32
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor LeftClearPoint14) is PathNode36
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor LeftClearPoint14) is LeftStackupPoint33
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor LeftClearPoint14) is PathNode37
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor LeftClearPoint14) is LeftStackupPoint32
-Log: IterEnemy: SwatEnemy0 IsAThreat 1 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor LeftClearPoint14) is LeftStackupPoint32
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor LeftClearPoint14) is PathNode36
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor LeftClearPoint14) is LeftStackupPoint33
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy0 (at anchor LeftClearPoint14) is PathNode37
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction112
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction113
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction114
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction115
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction116
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction117
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction118
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction119
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction120
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction121
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction122
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction123
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction124
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction125
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction126
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction127
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction128
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction129
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor FleePoint1) is PathNode139
-Log: IterEnemy: SwatEnemy18 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor FleePoint1) is PathNode139
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor FleePoint1) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor FleePoint1) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor FleePoint1) is RightClearPoint116
-Log: IterEnemy: SwatEnemy18 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor FleePoint1) is PathNode139
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor FleePoint1) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor FleePoint1) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor FleePoint1) is RightClearPoint116
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction130
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction131
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor LeftClearPoint120) is PathNode139
-Log: IterEnemy: SwatEnemy18 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor LeftClearPoint120) is PathNode139
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor LeftClearPoint120) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor LeftClearPoint120) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor LeftClearPoint120) is RightClearPoint116
-Log: IterEnemy: SwatEnemy18 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor LeftClearPoint120) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor LeftClearPoint120) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy18 (at anchor LeftClearPoint120) is RightClearPoint116
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction132
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: IterEnemy: SwatEnemy11 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: IterEnemy: SwatEnemy11 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: IterEnemy: SwatEnemy11 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: IterEnemy: SwatEnemy11 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy11 (at anchor PathNode204) is RightClearPoint116
-Log: IterEnemy: SwatEnemy11 IsAThreat 0 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-CaveComplex.IdleAimAroundAction48
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-CaveComplex.IdleAimAroundAction49
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction133
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction134
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction135
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction136
-Log: Allocating 102676 byte dynamic vertex buffer.
-Log: IterEnemy: SwatEnemy11 IsAThreat 0 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy11 IsAThreat 0 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy7 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 1 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy15 (at anchor PathNode275) is PathNode272
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy15 (at anchor PathNode275) is PathNode272
-Log: IterEnemy: SwatEnemy11 IsAThreat 0 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy7 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 1 isArrested: 0
-Log: IterEnemy: SwatEnemy15 IsAThreat 1 IsIgnoringComplianceOrders: 0 isCompliant: 0 isArrested: 0
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy15 (at anchor PathNode275) is PathNode272
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy15 (at anchor PathNode275) is PathNode272
-Log: FindEngagingPointForOfficerInRoom - ClosestPoint to engage SwatEnemy15 (at anchor PathNode275) is PathNode272
-Log: Allocating 107352 byte dynamic vertex buffer.
-Log: IterEnemy: SwatEnemy11 IsAThreat 0 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy7 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 1 isArrested: 0
-Log: IterEnemy: SwatEnemy11 IsAThreat 0 IsIgnoringComplianceOrders: 1 isCompliant: 0 isArrested: 0
-Log: IterEnemy: SwatEnemy7 IsAThreat 0 IsIgnoringComplianceOrders: 0 isCompliant: 1 isArrested: 0
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction137
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-CaveComplex.AimAroundAction138
+Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-Training.IdleAimAroundAction7
+Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-Training.IdleAimAroundAction8
+Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-Training.IdleAimAroundAction9
+Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-Training.IdleAimAroundAction10
+Log: Precaching: SP-Training.LevelInfo0
+Log: Finished precaching geometry in 0.012 seconds
+Log: Finished precaching textures in 0.012 seconds
+Localization: No localization: Engine.KeyNames.W (int)
+Localization: No localization: Engine.KeyNames.S (int)
+Localization: No localization: Engine.KeyNames.A (int)
+Localization: No localization: Engine.KeyNames.D (int)
+Localization: No localization: Engine.KeyNames.Period (int)
+Localization: No localization: Engine.KeyNames.C (int)
+Localization: No localization: Engine.KeyNames.Q (int)
+Localization: No localization: Engine.KeyNames.E (int)
+Localization: No localization: Engine.KeyNames.F (int)
+Localization: No localization: Engine.KeyNames.F (int)
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
+Log: AttachToBone: no bone or socket named [Flash] found in actor [ColtM1911_FirstPerson0]'s skeleton on mesh [1st_1911].
 Log: Closing by request
 Log: appRequestExit(0)
 Exit: Preparing to exit.
@@ -746,373 +464,354 @@ Log: Unbound to GUI.dll
 Log: Unbound to SwatAICommon.dll
 Log: Unbound to Editor.dll
 Log: Unbound to ScriptCompiler.dll
-Log: 395550.0ms Unloading: Package SwatGame
-Log: 395550.0ms Unloading: Package Engine
-Log: 395551.0ms Unloading: Package Core
-Log: 395551.0ms Unloading: Package Engine_res
-Log: 395551.0ms Unloading: Package SwatEquipmentModels2
-Log: 395551.0ms Unloading: Package SwatGear_sm
-Log: 395551.0ms Unloading: Package SwatGearTex
-Log: 395551.0ms Unloading: Package SWAT1stPersonTex
-Log: 395551.0ms Unloading: Package MP5A4_NEW
-Log: 395551.0ms Unloading: Package SwatFXtex
-Log: 395551.0ms Unloading: Package G36Knew
-Log: 395551.0ms Unloading: Package bm4
-Log: 395551.0ms Unloading: Package BenelliNovanew
-Log: 395551.0ms Unloading: Package M870Breach
-Log: 395551.0ms Unloading: Package mich_helmet
-Log: 395551.0ms Unloading: Package Kimber
-Log: 395551.0ms Unloading: Package UMPnew
-Log: 395551.0ms Unloading: Package MaleGang1Tex
-Log: 395551.0ms Unloading: Package M4A1_SFM500
-Log: 395551.0ms Unloading: Package surefireM900
-Log: 395551.0ms Unloading: Package FR_grenades
-Log: 395551.0ms Unloading: Package Glock
-Log: 395551.0ms Unloading: Package 92fs
-Log: 395551.0ms Unloading: Package motorola
-Log: 395551.0ms Unloading: Package safariland
-Log: 395551.0ms Unloading: Package gear_sas
-Log: 395551.0ms Unloading: Package GearTex_sas
-Log: 395551.0ms Unloading: Package 1stPersonTex_sas
-Log: 395551.0ms Unloading: Package FP_M16A1_tex
-Log: Unbound to SwatEquipment.dll
-Log: 395551.0ms Unloading: Package SwatEquipment
-Log: 395552.0ms Unloading: Package GUI
-Log: 395552.0ms Unloading: Package gui_tex
-Log: Unbound to IGSoundEffectsSubsystem.dll
+Log: 147014.0ms Unloading: Package SwatGame
+Log: 147015.0ms Unloading: Package Engine
+Log: 147015.0ms Unloading: Package Core
+Log: 147015.0ms Unloading: Package Engine_res
+Log: 147015.0ms Unloading: Package SWAT4editorTex
+Log: 147015.0ms Unloading: Package SwatGear_sm
+Log: 147015.0ms Unloading: Package SwatGearTex
+Log: 147015.0ms Unloading: Package SWAT1stPersonTex
+Log: 147015.0ms Unloading: Package MP5A4_NEW
+Log: 147015.0ms Unloading: Package SwatFXtex
+Log: 147015.0ms Unloading: Package G36Knew
+Log: 147015.0ms Unloading: Package bm4
+Log: 147015.0ms Unloading: Package BenelliNovanew
+Log: 147015.0ms Unloading: Package M870Breach
+Log: 147015.0ms Unloading: Package mich_helmet
+Log: 147015.0ms Unloading: Package Kimber
+Log: 147015.0ms Unloading: Package UMPnew
+Log: 147015.0ms Unloading: Package MaleGang1Tex
+Log: 147015.0ms Unloading: Package M4A1_SFM500
+Log: 147015.0ms Unloading: Package surefireM900
+Log: 147015.0ms Unloading: Package FR_grenades
+Log: 147015.0ms Unloading: Package Glock
+Log: 147015.0ms Unloading: Package 92fs
+Log: 147015.0ms Unloading: Package motorola
+Log: 147015.0ms Unloading: Package safariland
+Log: 147015.0ms Unloading: Package HUD
+Log: 147015.0ms Unloading: Package EditorSprites
+Log: 147015.0ms Unloading: Package FP_Hand2
 Log: Unbound to IGEffectsSystem.dll
-Log: 395552.0ms Unloading: Package IGSoundEffectsSubsystem
-Log: 395552.0ms Unloading: Package IGEffectsSystem
-Log: 395552.0ms Unloading: Package IGEffectsSystem_EditorTextures
-Log: 395552.0ms Unloading: Package gear_sef
-Log: 395552.0ms Unloading: Package SwatArmory_Tex
-Log: 395552.0ms Unloading: Package GearTex_sef
-Log: 395552.0ms Unloading: Package SwatGear2Tex
-Log: 395552.0ms Unloading: Package bp_3P_tex
-Log: 395552.0ms Unloading: Package AimpointM2
-Log: 395552.0ms Unloading: Package gear_suspects
-Log: 395552.0ms Unloading: Package RWOSupport
-Log: 395552.0ms Unloading: Package SwatAICommon
-Log: 395552.0ms Unloading: Package Tyrion
-Log: 395552.0ms Unloading: Package AICommon
-Log: 395552.0ms Unloading: Package SwatAIAwareness
-Log: 395552.0ms Unloading: Package SWAT4editorTex
-Log: 395552.0ms Unloading: Package Gameplay
-Log: 395552.0ms Unloading: Package Scripting
-Log: 395552.0ms Unloading: Package EditorSprites
-Log: 395552.0ms Unloading: Package scripted_tex
-Log: 395552.0ms Unloading: Package gui_FR
-Log: 395552.0ms Unloading: Package gui_tex2
-Log: 395553.0ms Unloading: Package gui_sas
-Log: 395553.0ms Unloading: Package SwatGear2_sm
-Log: 395553.0ms Unloading: Package druglab
-Log: 395553.0ms Unloading: Package Silence_Tex
-Log: 395553.0ms Unloading: Package office_Tex
-Log: 395553.0ms Unloading: Package MetalShaders
-Log: 395553.0ms Unloading: Package Repo_Tex
-Log: 395553.0ms Unloading: Package SwatFX2tex
-Log: 395553.0ms Unloading: Package SW_FR
-Log: 395553.0ms Unloading: Package TaserWire
-Log: 395553.0ms Unloading: Package swatmeshfx2_sm
-Log: 395553.0ms Unloading: Package Hotel_sm
-Log: 395553.0ms Unloading: Package Hotel
-Log: 395553.0ms Unloading: Package Arms_Tex
-Log: 395553.0ms Unloading: Package DNA_tex
-Log: 395553.0ms Unloading: Package VIP_Tex
-Log: 395553.0ms Unloading: Package HotelFXtex
-Log: 395553.0ms Unloading: Package barbershop_tex
-Log: 395553.0ms Unloading: Package HUD
-Log: 395553.0ms Unloading: Package FP_mp5SMGsilenced
-Log: 395553.0ms Unloading: Package Eotech552
-Log: 395553.0ms Unloading: Package FP_SCARH07
-Log: 395553.0ms Unloading: Package TP_UMPsmg_new
-Log: 395553.0ms Unloading: Package TP_G36Knew
-Log: 395553.0ms Unloading: Package FP_mp5SMG
-Log: 395553.0ms Unloading: Package FP_9mmPistol
-Log: 395553.0ms Unloading: Package SurefireP101
-Log: 395553.0ms Unloading: Package SwatArmory_sm
-Log: 395553.0ms Unloading: Package FP_NovaPumpShotgun
-Log: 395553.0ms Unloading: Package FP_G36ks
-Log: 395553.0ms Unloading: Package FP_G36k
-Log: 395553.0ms Unloading: Package M4A1_SFM500Aim
-Log: 395553.0ms Unloading: Package FP_coltHG
-Log: 395553.0ms Unloading: Package Colt1911FL_ThirdPerson
-Log: 395553.0ms Unloading: Package FP_m4super90sg
-Log: 395553.0ms Unloading: Package FP_AK47
-Log: 395553.0ms Unloading: Package TP_BM4
-Log: 395553.0ms Unloading: Package FP_csGasGrenade
-Log: 395553.0ms Unloading: Package FP_C2detonator
-Log: 395553.0ms Unloading: Package m4a1_cqb_ThirdPerson
-Log: 395553.0ms Unloading: Package M4A1_SFM500_static
-Log: 395553.0ms Unloading: Package NovaPump_ThirdPerson
-Log: 395553.0ms Unloading: Package FP_MP5Ktactical
-Log: 395553.0ms Unloading: Package TP_sg552Aim
-Log: 395553.0ms Unloading: Package TP_rem870
-Log: 395553.0ms Unloading: Package FP_UMPsmg
-Log: 395553.0ms Unloading: Package FP_UMPsmgsd
-Log: 395553.0ms Unloading: Package fp_fnp90
-Log: 395553.0ms Unloading: Package p90sight
-Log: 395553.0ms Unloading: Package SWAT1stPersonTex2
-Log: 395553.0ms Unloading: Package FP_sg552
-Log: 395553.0ms Unloading: Package FP_mp5k
-Log: 395553.0ms Unloading: Package NineMMpistol_ThirdPerson
-Log: 395553.0ms Unloading: Package FP_taser
-Log: 395553.0ms Unloading: Package FP_flashbangGrenade
-Log: 395553.0ms Unloading: Package FP_p226
-Log: 395553.0ms Unloading: Package TP_p226
-Log: 395553.0ms Unloading: Package FP_hk33
-Log: 395553.0ms Unloading: Package FP_browHP
-Log: 395554.0ms Unloading: Package TP_browHP
-Log: 395554.0ms Unloading: Package FP_stingGrenade
-Log: 395554.0ms Unloading: Package FP_mp5ksd
-Log: 395554.0ms Unloading: Package FP_Revolver
-Log: 395554.0ms Unloading: Package FP_hk33s
-Log: 395554.0ms Unloading: Package FP_p226sd
-Log: 395554.0ms Unloading: Package TP_p226sd
-Log: 395554.0ms Unloading: Package FP_sg552sd
-Log: 395554.0ms Unloading: Package FP_browHPsd
-Log: 395554.0ms Unloading: Package TP_browHPsd
-Log: 395554.0ms Unloading: Package FP_llrem870
-Log: 395554.0ms Unloading: Package FP_DoorWedge
-Log: 395554.0ms Unloading: Package FP_BreachingSG
-Log: 395554.0ms Unloading: Package BreachingSG_ThirdPerson
-Log: 395554.0ms Unloading: Package FP_arwen37
-Log: 395554.0ms Unloading: Package fp_Stinger
-Log: 395554.0ms Unloading: Package taserX2
-Log: 395554.0ms Unloading: Package taserX2_static
-Log: 395554.0ms Unloading: Package FP_HK69
-Log: 395554.0ms Unloading: Package FP_Pepperspray
-Log: 395554.0ms Unloading: Package FP_AR_15SD
-Log: 395554.0ms Unloading: Package ColtAcc
-Log: 395554.0ms Unloading: Package TP_coltAcc
-Log: 395554.0ms Unloading: Package FP_paintball
-Log: 395554.0ms Unloading: Package FP_C2charge
-Log: 395554.0ms Unloading: Package Coronas
-Log: 395554.0ms Unloading: Package FP_rem870
-Log: 395554.0ms Unloading: Package FP_M4A1_SFM500
-Log: 395554.0ms Unloading: Package FP_M16A1
-Log: 395554.0ms Unloading: Package FP_M16A1sd
-Log: 395554.0ms Unloading: Package FP_92fs
-Log: 395554.0ms Unloading: Package TP_92fs
-Log: 395554.0ms Unloading: Package FP_M4A1_CQB_Holo
-Log: 395554.0ms Unloading: Package FP_NineBangGrenade
-Log: 395554.0ms Unloading: Package FP_M4A1_SFM500_sil
-Log: 395554.0ms Unloading: Package FP_Handcuffs
-Log: 395554.0ms Unloading: Package FP_uzi
-Log: 395554.0ms Unloading: Package FP_toolkit
-Log: 395554.0ms Unloading: Package FP_SAW
-Log: 395554.0ms Unloading: Package 3rd_SAW
-Log: 395554.0ms Unloading: Package FP_glowstick
-Log: 395554.0ms Unloading: Package FP_Optiwand
-Log: 395554.0ms Unloading: Package Optiwand_ThirdPerson
-Log: 395554.0ms Unloading: Package FP_m1super90
-Log: 395554.0ms Unloading: Package FP_DesertEagleNew
-Log: 395554.0ms Unloading: Package FP_M4A1_SFM500_Aim
-Log: 395554.0ms Unloading: Package FP_M4A1_SFM500_silAim
-Log: 395554.0ms Unloading: Package FP_AKS74U
-Log: 395554.0ms Unloading: Package fp_tec9
-Log: 395554.0ms Unloading: Package FP_sg552Aim
-Log: 395554.0ms Unloading: Package FP_sg552Aimsd
-Log: 395554.0ms Unloading: Package FP_M4A1_CQB_silHolo
-Log: 395554.0ms Unloading: Package FP_mp5sd
-Log: 395554.0ms Unloading: Package FP_Hand2
-Log: 395554.0ms Unloading: Package SWAThands
-Log: 395554.0ms Unloading: Package Editor_res
-Log: 395554.0ms Unloading: Package Voting
-Log: 395554.0ms Unloading: Package SwatProcedures
+Log: 147015.0ms Unloading: Package IGEffectsSystem
+Log: 147015.0ms Unloading: Package SWAThands
+Log: 147015.0ms Unloading: Package Editor_res
+Log: 147015.0ms Unloading: Package Hotel_sm
+Log: 147015.0ms Unloading: Package Hotel
+Log: 147015.0ms Unloading: Package MetalShaders
+Log: 147015.0ms Unloading: Package Repo_Tex
+Log: 147015.0ms Unloading: Package Arms_Tex
+Log: 147015.0ms Unloading: Package Silence_Tex
+Log: 147015.0ms Unloading: Package office_Tex
+Log: 147015.0ms Unloading: Package DNA_tex
+Log: 147015.0ms Unloading: Package VIP_Tex
+Log: 147015.0ms Unloading: Package HotelFXtex
+Log: 147016.0ms Unloading: Package barbershop_tex
+Log: 147016.0ms Unloading: Package GUI
+Log: 147016.0ms Unloading: Package gui_tex
+Log: 147016.0ms Unloading: Package SwatAICommon
+Log: 147016.0ms Unloading: Package Tyrion
+Log: 147016.0ms Unloading: Package AICommon
+Log: 147016.0ms Unloading: Package SwatAIAwareness
+Log: 147016.0ms Unloading: Package Scripting
+Log: Unbound to IGSoundEffectsSubsystem.dll
+Log: 147016.0ms Unloading: Package IGSoundEffectsSubsystem
+Log: 147016.0ms Unloading: Package IGEffectsSystem_EditorTextures
+Log: 147016.0ms Unloading: Package Voting
+Log: 147016.0ms Unloading: Package RWOSupport
+Log: 147016.0ms Unloading: Package Gameplay
+Log: Unbound to SwatEquipment.dll
+Log: 147016.0ms Unloading: Package SwatEquipment
+Log: 147016.0ms Unloading: Package SwatEquipmentModels2
+Log: 147016.0ms Unloading: Package gear_sas
+Log: 147016.0ms Unloading: Package GearTex_sas
+Log: 147016.0ms Unloading: Package 1stPersonTex_sas
+Log: 147016.0ms Unloading: Package FP_M16A1_tex
+Log: 147016.0ms Unloading: Package gear_sef
+Log: 147016.0ms Unloading: Package SwatArmory_Tex
+Log: 147016.0ms Unloading: Package GearTex_sef
+Log: 147016.0ms Unloading: Package SwatGear2Tex
+Log: 147016.0ms Unloading: Package bp_3P_tex
+Log: 147016.0ms Unloading: Package AimpointM2
+Log: 147016.0ms Unloading: Package gear_suspects
+Log: 147016.0ms Unloading: Package SwatGear2_sm
+Log: 147016.0ms Unloading: Package druglab
+Log: 147016.0ms Unloading: Package SwatFX2tex
+Log: 147017.0ms Unloading: Package FP_mp5SMGsilenced
+Log: 147017.0ms Unloading: Package Eotech552
+Log: 147017.0ms Unloading: Package FP_SCARH07
+Log: 147017.0ms Unloading: Package TP_UMPsmg_new
+Log: 147017.0ms Unloading: Package TP_G36Knew
+Log: 147017.0ms Unloading: Package FP_mp5SMG
+Log: 147017.0ms Unloading: Package FP_9mmPistol
+Log: 147017.0ms Unloading: Package SurefireP101
+Log: 147017.0ms Unloading: Package SwatArmory_sm
+Log: 147017.0ms Unloading: Package FP_NovaPumpShotgun
+Log: 147017.0ms Unloading: Package FP_G36ks
+Log: 147017.0ms Unloading: Package FP_G36k
+Log: 147017.0ms Unloading: Package M4A1_SFM500Aim
+Log: 147017.0ms Unloading: Package FP_coltHG
+Log: 147017.0ms Unloading: Package Colt1911FL_ThirdPerson
+Log: 147017.0ms Unloading: Package FP_m4super90sg
+Log: 147017.0ms Unloading: Package FP_AK47
+Log: 147017.0ms Unloading: Package TP_BM4
+Log: 147017.0ms Unloading: Package FP_csGasGrenade
+Log: 147017.0ms Unloading: Package FP_C2detonator
+Log: 147017.0ms Unloading: Package m4a1_cqb_ThirdPerson
+Log: 147017.0ms Unloading: Package M4A1_SFM500_static
+Log: 147017.0ms Unloading: Package NovaPump_ThirdPerson
+Log: 147017.0ms Unloading: Package FP_MP5Ktactical
+Log: 147017.0ms Unloading: Package TP_sg552Aim
+Log: 147017.0ms Unloading: Package TP_rem870
+Log: 147017.0ms Unloading: Package FP_UMPsmg
+Log: 147017.0ms Unloading: Package FP_UMPsmgsd
+Log: 147017.0ms Unloading: Package fp_fnp90
+Log: 147017.0ms Unloading: Package p90sight
+Log: 147017.0ms Unloading: Package SWAT1stPersonTex2
+Log: 147017.0ms Unloading: Package FP_sg552
+Log: 147017.0ms Unloading: Package FP_mp5k
+Log: 147017.0ms Unloading: Package NineMMpistol_ThirdPerson
+Log: 147017.0ms Unloading: Package FP_taser
+Log: 147017.0ms Unloading: Package FP_flashbangGrenade
+Log: 147017.0ms Unloading: Package FP_p226
+Log: 147017.0ms Unloading: Package TP_p226
+Log: 147017.0ms Unloading: Package FP_hk33
+Log: 147017.0ms Unloading: Package FP_browHP
+Log: 147017.0ms Unloading: Package TP_browHP
+Log: 147017.0ms Unloading: Package FP_stingGrenade
+Log: 147017.0ms Unloading: Package FP_mp5ksd
+Log: 147017.0ms Unloading: Package FP_Revolver
+Log: 147017.0ms Unloading: Package FP_hk33s
+Log: 147017.0ms Unloading: Package FP_p226sd
+Log: 147017.0ms Unloading: Package TP_p226sd
+Log: 147017.0ms Unloading: Package FP_sg552sd
+Log: 147017.0ms Unloading: Package FP_browHPsd
+Log: 147017.0ms Unloading: Package TP_browHPsd
+Log: 147017.0ms Unloading: Package FP_llrem870
+Log: 147017.0ms Unloading: Package FP_DoorWedge
+Log: 147017.0ms Unloading: Package FP_BreachingSG
+Log: 147017.0ms Unloading: Package BreachingSG_ThirdPerson
+Log: 147017.0ms Unloading: Package FP_arwen37
+Log: 147017.0ms Unloading: Package fp_Stinger
+Log: 147017.0ms Unloading: Package taserX2
+Log: 147017.0ms Unloading: Package taserX2_static
+Log: 147017.0ms Unloading: Package FP_HK69
+Log: 147017.0ms Unloading: Package FP_Pepperspray
+Log: 147017.0ms Unloading: Package FP_AR_15SD
+Log: 147017.0ms Unloading: Package ColtAcc
+Log: 147017.0ms Unloading: Package TP_coltAcc
+Log: 147017.0ms Unloading: Package FP_paintball
+Log: 147017.0ms Unloading: Package FP_C2charge
+Log: 147017.0ms Unloading: Package Coronas
+Log: 147017.0ms Unloading: Package FP_rem870
+Log: 147017.0ms Unloading: Package FP_M4A1_SFM500
+Log: 147017.0ms Unloading: Package FP_M16A1
+Log: 147017.0ms Unloading: Package FP_M16A1sd
+Log: 147017.0ms Unloading: Package FP_92fs
+Log: 147017.0ms Unloading: Package TP_92fs
+Log: 147017.0ms Unloading: Package FP_M4A1_CQB_Holo
+Log: 147017.0ms Unloading: Package FP_NineBangGrenade
+Log: 147017.0ms Unloading: Package FP_M4A1_SFM500_sil
+Log: 147017.0ms Unloading: Package FP_Handcuffs
+Log: 147017.0ms Unloading: Package FP_uzi
+Log: 147017.0ms Unloading: Package FP_toolkit
+Log: 147017.0ms Unloading: Package FP_SAW
+Log: 147017.0ms Unloading: Package 3rd_SAW
+Log: 147017.0ms Unloading: Package FP_glowstick
+Log: 147017.0ms Unloading: Package FP_Optiwand
+Log: 147017.0ms Unloading: Package scripted_tex
+Log: 147017.0ms Unloading: Package Optiwand_ThirdPerson
+Log: 147017.0ms Unloading: Package FP_m1super90
+Log: 147017.0ms Unloading: Package FP_DesertEagleNew
+Log: 147017.0ms Unloading: Package FP_M4A1_SFM500_Aim
+Log: 147017.0ms Unloading: Package FP_M4A1_SFM500_silAim
+Log: 147017.0ms Unloading: Package FP_AKS74U
+Log: 147017.0ms Unloading: Package fp_tec9
+Log: 147017.0ms Unloading: Package FP_sg552Aim
+Log: 147017.0ms Unloading: Package FP_sg552Aimsd
+Log: 147018.0ms Unloading: Package FP_M4A1_CQB_silHolo
+Log: 147018.0ms Unloading: Package FP_mp5sd
+Log: 147018.0ms Unloading: Package gui_FR
+Log: 147018.0ms Unloading: Package gui_sas
+Log: 147018.0ms Unloading: Package gui_tex3
+Log: 147018.0ms Unloading: Package gui_tex2
+Log: 147018.0ms Unloading: Package SwatEquipmentModels3
+Log: 147018.0ms Unloading: Package SwatEquipmentModels
+Log: 147018.0ms Unloading: Package FP_M4A1mg
+Log: 147018.0ms Unloading: Package FP_FragGrenade
+Log: 147018.0ms Unloading: Package coltsmg_static
+Log: 147018.0ms Unloading: Package ColtSMG
+Log: 147018.0ms Unloading: Package FP_coltsmg
+Log: 147018.0ms Unloading: Package FP_coltsmgsil
+Log: 147018.0ms Unloading: Package SW_FR
+Log: 147018.0ms Unloading: Package TaserWire
+Log: 147018.0ms Unloading: Package swatmeshfx2_sm
+Log: 147018.0ms Unloading: Package SwatProgrammerSampleClasses
+Log: 147018.0ms Unloading: Package DeadPeople_sm
+Log: 147018.0ms Unloading: Package FemaleNurseTex
+Log: 147018.0ms Unloading: Package MaleDoctorTex
+Log: 147018.0ms Unloading: Package SWATbadguyTex
+Log: 147018.0ms Unloading: Package SWATofficerTex
+Log: 147018.0ms Unloading: Package MaleCasual2Tex
+Log: 147018.0ms Unloading: Package Paradise_sm
+Log: 147018.0ms Unloading: Package Paradise_Tex
+Log: 147018.0ms Unloading: Package Tenement_Tex
+Log: 147018.0ms Unloading: Package train
+Log: 147018.0ms Unloading: Package Bar_Tex
+Log: 147018.0ms Unloading: Package Doors_sm
+Log: 147018.0ms Unloading: Package doors_Tex
+Log: 147018.0ms Unloading: Package bullseye_Tex
+Log: 147018.0ms Unloading: Package Hosp
+Log: 147018.0ms Unloading: Package RedLibrary_Tex
+Log: 147018.0ms Unloading: Package Jewel_Tex
+Log: 147018.0ms Unloading: Package doors_knobs
+Log: 147018.0ms Unloading: Package Power_Tex
+Log: 147018.0ms Unloading: Package SWATmeshFX_sm
+Log: 147018.0ms Unloading: Package Con_Tex
+Log: 147018.0ms Unloading: Package SwatDesignerClasses
+Log: 147018.0ms Unloading: Package Bar_sm
+Log: 147018.0ms Unloading: Package Junk_Tex
+Log: 147018.0ms Unloading: Package Outdoors_Tex
+Log: 147018.0ms Unloading: Package Con_sm
+Log: 147018.0ms Unloading: Package mac_Tex
+Log: 147018.0ms Unloading: Package Tenement_sm
+Log: 147018.0ms Unloading: Package Silence_sm
+Log: 147018.0ms Unloading: Package off_sm
+Log: 147018.0ms Unloading: Package Repo_sm
+Log: 147018.0ms Unloading: Package LocalizedTextures
+Log: 147018.0ms Unloading: Package Barbershop_sm
+Log: 147018.0ms Unloading: Package Furniture_Tex
+Log: 147018.0ms Unloading: Package dna_sm
+Log: 147018.0ms Unloading: Package amc_Tex
+Log: 147018.0ms Unloading: Package VIP_sm
+Log: 147018.0ms Unloading: Package Cars
+Log: 147018.0ms Unloading: Package Hosp_sm
+Log: 147018.0ms Unloading: Package mac_sm
+Log: 147018.0ms Unloading: Package Power_sm
+Log: 147018.0ms Unloading: Package Jewel_sm
+Log: 147018.0ms Unloading: Package arms_sm
+Log: 147018.0ms Unloading: Package Redlibrary_sm
+Log: 147018.0ms Unloading: Package train_sm
+Log: 147018.0ms Unloading: Package Utility_Tex
+Log: 147018.0ms Unloading: Package Druglab_sm
+Log: 147018.0ms Unloading: Package utility_sm
+Log: 147018.0ms Unloading: Package bullseye_sm
+Log: 147018.0ms Unloading: Package Junk_sm
+Log: 147018.0ms Unloading: Package Cars_sm
+Log: 147018.0ms Unloading: Package MaleJanitorTextureSet
+Log: 147018.0ms Unloading: Package SWATMaleAnimation
+Log: 147018.0ms Unloading: Package LeoMelTextureSet
+Log: 147018.0ms Unloading: Package MaleSuitTex
+Log: 147018.0ms Unloading: Package MaleCasual3Tex
+Log: 147018.0ms Unloading: Package CultLeaderTextureSet
+Log: 147018.0ms Unloading: Package MaleBarberTex
+Log: 147018.0ms Unloading: Package SWATheavyTex
+Log: 147018.0ms Unloading: Package MaleChubbyTex
+Log: 147018.0ms Unloading: Package MaleCasual4Tex
+Log: 147018.0ms Unloading: Package SWATinstructorTex
+Log: 147018.0ms Unloading: Package MaleCasual1Tex
+Log: 147018.0ms Unloading: Package MaleCasualArmorTex
+Log: 147018.0ms Unloading: Package wall_sm
+Log: 147018.0ms Unloading: Package wall_Tex
+Log: 147018.0ms Unloading: Package MPbomb
+Log: 147018.0ms Unloading: Package TrainingAnimatedMeshes
+Log: 147018.0ms Unloading: Package SwatProcedures
 Log: Unbound to IpDrv.dll
-Log: 395554.0ms Unloading: Package IpDrv
-Log: 395554.0ms Unloading: Package mp_OfficerTex
-Log: 395554.0ms Unloading: Package SWATMaleAnimation2
-Log: 395555.0ms Unloading: Package SWATofficerTex
-Log: 395555.0ms Unloading: Package maleMafiaTex
-Log: 395555.0ms Unloading: Package maleHomelessTex
-Log: 395555.0ms Unloading: Package MaleCasual3Tex
-Log: 395555.0ms Unloading: Package LeoMelTextureSet
-Log: 395555.0ms Unloading: Package MaleSuitTex
-Log: 395555.0ms Unloading: Package MaleJanitorTextureSet
-Log: 395555.0ms Unloading: Package MaleChubbyTex
-Log: 395555.0ms Unloading: Package MaleBarberTex
-Log: 395555.0ms Unloading: Package CASMtex
-Log: 395555.0ms Unloading: Package MaleCasual2Tex
-Log: 395555.0ms Unloading: Package SWATheavyTex
-Log: 395555.0ms Unloading: Package SWATinstructorTex
-Log: 395555.0ms Unloading: Package MaleCasual4Tex
-Log: 395555.0ms Unloading: Package MaleCasual1Tex
-Log: 395555.0ms Unloading: Package SWATnoArmourTex
-Log: 395555.0ms Unloading: Package MaleCasualArmorTex
-Log: 395555.0ms Unloading: Package Doors_sm
-Log: 395555.0ms Unloading: Package doors_Tex
-Log: 395555.0ms Unloading: Package bullseye_Tex
-Log: 395555.0ms Unloading: Package Paradise_Tex
-Log: 395555.0ms Unloading: Package Tenement_Tex
-Log: 395555.0ms Unloading: Package train
-Log: 395555.0ms Unloading: Package Bar_Tex
-Log: 395555.0ms Unloading: Package Hosp
-Log: 395555.0ms Unloading: Package RedLibrary_Tex
-Log: 395555.0ms Unloading: Package Jewel_Tex
-Log: 395555.0ms Unloading: Package doors_knobs
-Log: 395555.0ms Unloading: Package Power_Tex
-Log: 395555.0ms Unloading: Package CameraEffectsTex
-Log: 395555.0ms Unloading: Package SwatProtectiveEquipment
-Log: 395555.0ms Unloading: Package SWATMaleAnimation
-Log: 395555.0ms Unloading: Package CultLeaderTextureSet
-Log: 395555.0ms Unloading: Package MaleDoctorTex
-Log: 395555.0ms Unloading: Package ProgrammerTestObjectsTex
-Log: 395555.0ms Unloading: Package Suspect1_officerTex
-Log: 395555.0ms Unloading: Package arms_sm
-Log: 395555.0ms Unloading: Package Outdoors_Tex
-Log: 395555.0ms Unloading: Package SWATbadguyTex
-Log: 395555.0ms Unloading: Package UWindow_res
-Log: 395555.0ms Unloading: Package CoopArrow
-Log: 395555.0ms Unloading: Package SWATDoubleDoorAnimations
-Log: 395555.0ms Unloading: Package SWATDoorAnimation
-Log: 395555.0ms Unloading: Package SwatProtectiveEquipment2
+Log: 147018.0ms Unloading: Package IpDrv
+Log: 147018.0ms Unloading: Package mp_OfficerTex
+Log: 147018.0ms Unloading: Package SWATMaleAnimation2
+Log: 147019.0ms Unloading: Package maleMafiaTex
+Log: 147019.0ms Unloading: Package maleHomelessTex
+Log: 147019.0ms Unloading: Package CASMtex
+Log: 147019.0ms Unloading: Package SWATnoArmourTex
+Log: 147019.0ms Unloading: Package CameraEffectsTex
+Log: 147019.0ms Unloading: Package SwatProtectiveEquipment
+Log: 147019.0ms Unloading: Package ProgrammerTestObjectsTex
+Log: 147019.0ms Unloading: Package Suspect1_officerTex
+Log: 147019.0ms Unloading: Package UWindow_res
+Log: 147019.0ms Unloading: Package CoopArrow
+Log: 147019.0ms Unloading: Package SWATDoubleDoorAnimations
+Log: 147019.0ms Unloading: Package SWATDoorAnimation
+Log: 147019.0ms Unloading: Package SwatProtectiveEquipment2
 Exit: Game engine shut down
 Log: Unbound to IGVisualEffectsSubsystem.dll
-Log: 395559.0ms Unloading: Package IGVisualEffectsSubsystem
-Log: 395560.0ms Unloading: Package SwatProgrammerSampleClasses
-Log: 395560.0ms Unloading: Package SwatEquipmentModels3
-Log: 395560.0ms Unloading: Package SwatEquipmentModels
-Log: 395560.0ms Unloading: Package FP_M4A1mg
-Log: 395560.0ms Unloading: Package FP_FragGrenade
-Log: 395560.0ms Unloading: Package gui_tex3
-Log: 395560.0ms Unloading: Package SwatDesignerClasses
-Log: 395560.0ms Unloading: Package coltsmg_static
-Log: 395560.0ms Unloading: Package ColtSMG
-Log: 395560.0ms Unloading: Package FP_coltsmg
-Log: 395560.0ms Unloading: Package SWATmeshFX_sm
-Log: 395560.0ms Unloading: Package Con_Tex
-Log: 395560.0ms Unloading: Package Editor
+Log: 147020.0ms Unloading: Package IGVisualEffectsSubsystem
+Log: 147021.0ms Unloading: Package Editor
 Log: Unbound to WinDrv.dll
-Log: Flushing viewport 0x9F70000
-Log: Finished flushing viewport 0x9F70000 in 0.025 seconds
+Log: Flushing viewport 0x148FEB00
+Log: Finished flushing viewport 0x148FEB00 in 0.016 seconds
 Log: Flushing viewport 0x0
-Log: Finished flushing viewport 0x0 in 0.004 seconds
+Log: Finished flushing viewport 0x0 in 0.005 seconds
 Exit: Windows client shut down
 Log: Unbound to D3DDrv.dll
-Log: 395701.0ms Unloading: Package Packages
+Log: 147115.0ms Unloading: Package Packages
 Exit: OpenAL Audio subsystem shut down.
-Log: 395833.0ms Unloading: Package GIGN
-Log: 395833.0ms Unloading: Package GIGN_OfficerTex
-Log: 395833.0ms Unloading: Package suspect1
-Log: 395833.0ms Unloading: Package suspect2
-Log: 395833.0ms Unloading: Package Suspect2_officerTex
-Log: 395833.0ms Unloading: Package Taiwan
-Log: 395833.0ms Unloading: Package Taiwan_OfficerTex
+Log: 147229.0ms Unloading: Package GIGN
+Log: 147229.0ms Unloading: Package GIGN_OfficerTex
+Log: 147229.0ms Unloading: Package suspect1
+Log: 147229.0ms Unloading: Package suspect2
+Log: 147229.0ms Unloading: Package Suspect2_officerTex
+Log: 147229.0ms Unloading: Package Taiwan
+Log: 147229.0ms Unloading: Package Taiwan_OfficerTex
 DevMassive: ADCLIENT: MMT_DeInitialize
-Log: 395833.0ms Unloading: Package Entry
+Log: 147229.0ms Unloading: Package Entry
 Log: Unbound to SwatGui.dll
-Log: 395833.0ms Unloading: Package SwatGui
-Log: 395834.0ms Unloading: Package FP_coltsmgsil
-Log: 395834.0ms Unloading: Package SwatAmmo
-Log: 395834.0ms Unloading: Package SwatAmmo2
-Log: 395835.0ms Unloading: Package SwatProjectile
-Log: 395835.0ms Unloading: Package SWATcivilianGear_sm
-Log: 395835.0ms Unloading: Package FemaleNurseTex
-Log: 395835.0ms Unloading: Package FemaleCasual2Tex
-Log: 395835.0ms Unloading: Package FemaleOfficeTex
-Log: 395835.0ms Unloading: Package FemaleHeavyTex
-Log: 395835.0ms Unloading: Package TrainingAnimatedMeshes
-Log: 395835.0ms Unloading: Package PerimeterAnimatedMeshes
-Log: 395835.0ms Unloading: Package Cars
-Log: 395835.0ms Unloading: Package Silence_sm
-Log: 395835.0ms Unloading: Package Repo_sm
-Log: 395835.0ms Unloading: Package mac_Tex
-Log: 395835.0ms Unloading: Package LocalizedTextures
-Log: 395835.0ms Unloading: Package Bar_sm
-Log: 395835.0ms Unloading: Package Junk_Tex
-Log: 395835.0ms Unloading: Package Tenement_sm
-Log: 395835.0ms Unloading: Package AnimatedDecorMeshes
-Log: 395835.0ms Unloading: Package HotelAnimatedMeshes
-Log: 395835.0ms Unloading: Package TreeLeaves
-Log: 395835.0ms Unloading: Package JewelryAnimatedMeshes
-Log: 395835.0ms Unloading: Package SilenceShrub
-Log: 395835.0ms Unloading: Package VIPanimatedMeshes
-Log: 395835.0ms Unloading: Package REPOhelicopter
-Log: 395835.0ms Unloading: Package ArmsShrub
-Log: 395835.0ms Unloading: Package RedLibraryAnimatedMeshes
-Log: 395835.0ms Unloading: Package BarPullBarber
-Log: 395835.0ms Unloading: Package AbombStageLights
-Log: 395835.0ms Unloading: Package SwatFonts
-Log: 395837.0ms Unloading: Package SWATeffects2
-Log: 395837.0ms Unloading: Package SwatEffects
-Log: 395837.0ms Unloading: Package VisualEffectsConfig
-Log: 395837.0ms Unloading: Package SWsef_weapons
-Log: 395837.0ms Unloading: Package SW_meta
-Log: 395837.0ms Unloading: Package SWSAS_weapons
-Log: 395837.0ms Unloading: Package SW_bounce
-Log: 395837.0ms Unloading: Package SW_hits
-Log: 395837.0ms Unloading: Package SWEXP_weapons
-Log: 395837.0ms Unloading: Package SWEXP_ambience
-Log: 395837.0ms Unloading: Package SW_objects
-Log: 395837.0ms Unloading: Package SW_vo
-Log: 395838.0ms Unloading: Package SW_ambients
-Log: 395838.0ms Unloading: Package SW_weapons
-Log: 395838.0ms Unloading: Package SW_bullets
-Log: 395838.0ms Unloading: Package SwatCameraEffects2
-Log: 395838.0ms Unloading: Package SwatCameraEffects
-Log: 395839.0ms Unloading: Package Utility_Tex
-Log: 395844.0ms Unloading: Package Power_sm
-Log: 395845.0ms Unloading: Package Con_sm
-Log: 395845.0ms Unloading: Package Redlibrary_sm
-Log: 395845.0ms Unloading: Package mac_sm
-Log: 395845.0ms Unloading: Package Paradise_sm
-Log: 395845.0ms Unloading: Package Furniture_Tex
-Log: 395845.0ms Unloading: Package Barbershop_sm
-Log: 395846.0ms Unloading: Package off_sm
-Log: 395846.0ms Unloading: Package mass_textures
-Log: 395846.0ms Unloading: Package mass_objects
-Log: 395846.0ms Unloading: Package mass_classes
-Log: 395846.0ms Unloading: Package Jewel_sm
-Log: 395846.0ms Unloading: Package bullseye_sm
-Log: 395847.0ms Unloading: Package SwatSimpleEquipment
-Log: 395847.0ms Unloading: Package amc_Tex
-Log: 395847.0ms Unloading: Package dna_sm
+Log: 147229.0ms Unloading: Package SwatGui
+Log: 147229.0ms Unloading: Package bp_gui_tex
+Log: 147230.0ms Unloading: Package SwatAmmo
+Log: 147230.0ms Unloading: Package SwatAmmo2
+Log: 147230.0ms Unloading: Package SwatProjectile
+Log: 147230.0ms Unloading: Package SWATcivilianGear_sm
+Log: 147230.0ms Unloading: Package FemaleCasual2Tex
+Log: 147230.0ms Unloading: Package FemaleOfficeTex
+Log: 147230.0ms Unloading: Package FemaleHeavyTex
+Log: 147230.0ms Unloading: Package Outdoors_sm
+Log: 147230.0ms Unloading: Package PerimeterAnimatedMeshes
+Log: 147230.0ms Unloading: Package SwatEffects
+Log: 147230.0ms Unloading: Package AnimatedDecorMeshes
+Log: 147230.0ms Unloading: Package HotelAnimatedMeshes
+Log: 147230.0ms Unloading: Package TreeLeaves
+Log: 147230.0ms Unloading: Package JewelryAnimatedMeshes
+Log: 147230.0ms Unloading: Package SilenceShrub
+Log: 147230.0ms Unloading: Package VIPanimatedMeshes
+Log: 147230.0ms Unloading: Package REPOhelicopter
+Log: 147230.0ms Unloading: Package ArmsShrub
+Log: 147230.0ms Unloading: Package RedLibraryAnimatedMeshes
+Log: 147230.0ms Unloading: Package BarPullBarber
+Log: 147230.0ms Unloading: Package AbombStageLights
+Log: 147230.0ms Unloading: Package SwatFonts
+Log: 147233.0ms Unloading: Package SWATeffects2
+Log: 147233.0ms Unloading: Package VisualEffectsConfig
+Log: 147233.0ms Unloading: Package SWsef_weapons
+Log: 147233.0ms Unloading: Package SW_meta
+Log: 147233.0ms Unloading: Package SWSAS_weapons
+Log: 147233.0ms Unloading: Package SW_bounce
+Log: 147233.0ms Unloading: Package SW_hits
+Log: 147233.0ms Unloading: Package SWEXP_weapons
+Log: 147233.0ms Unloading: Package SWEXP_ambience
+Log: 147233.0ms Unloading: Package SW_objects
+Log: 147234.0ms Unloading: Package SW_vo
+Log: 147234.0ms Unloading: Package SW_ambients
+Log: 147234.0ms Unloading: Package SW_weapons
+Log: 147234.0ms Unloading: Package SW_bullets
+Log: 147234.0ms Unloading: Package SW_feet
+Log: 147234.0ms Unloading: Package SwatCameraEffects2
+Log: 147234.0ms Unloading: Package SwatCameraEffects
+Log: 147236.0ms Unloading: Package SwatSimpleEquipment
+Log: 147236.0ms Unloading: Package SwatObjectives
 Log: (Havok): Destroying static world for level.
-Log: 395851.0ms Unloading: Package SP-RedLibrary
-Log: 395851.0ms Unloading: Package SP-AutoGarage
-Log: 395851.0ms Unloading: Package SP-Arcade
-Log: 395851.0ms Unloading: Package SP-Warehouse
-Log: 395851.0ms Unloading: Package SP-Tenement
-Log: 395851.0ms Unloading: Package SP-Subway
-Log: 395851.0ms Unloading: Package SP-Office
-Log: 395852.0ms Unloading: Package SP-MeatBarn
-Log: 395852.0ms Unloading: Package SP-JewelryHeist
-Log: 395852.0ms Unloading: Package SP-Hotel
-Log: 395852.0ms Unloading: Package SP-Hospital
-Log: 395852.0ms Unloading: Package SP-HalfwayHouse
-Log: 395852.0ms Unloading: Package SP-FoodWall
-Log: 395852.0ms Unloading: Package SP-FairfaxResidence
-Log: 395852.0ms Unloading: Package SP-DrugLab
-Log: 395852.0ms Unloading: Package SP-DNA
-Log: 395853.0ms Unloading: Package SP-DemoRoomsAv3
-Log: 395853.0ms Unloading: Package SP-Courthouse
-Log: 395853.0ms Unloading: Package SP-ConvenienceStore
-Log: 395853.0ms Unloading: Package SP-CaveComplex
-Log: 395853.0ms Unloading: Package SP-Casino
-Log: 395853.0ms Unloading: Package SP-Backstage
-Log: 395854.0ms Unloading: Package SW_feet
-Log: 395854.0ms Unloading: Package SwatObjectives
-Log: 395854.0ms Unloading: Package SP-ArmsDeal
-Log: 395854.0ms Unloading: Package SP-ABomb
-Log: 395854.0ms Unloading: Package SoundEffectsConfig
-Log: 395854.0ms Unloading: Package train_sm
-Log: 395854.0ms Unloading: Package Junk_sm
-Log: 395855.0ms Unloading: Package wall_sm
-Log: 395855.0ms Unloading: Package wall_Tex
-Log: 395855.0ms Unloading: Package Hosp_sm
-Log: 395855.0ms Unloading: Package bath_sm
-Log: 395855.0ms Unloading: Package bath_Tex
+Log: 147238.0ms Unloading: Package pier_sm
+Log: 147238.0ms Unloading: Package SP-Training
+Log: 147238.0ms Unloading: Package SoundEffectsConfig
 Log: (Havok): Notifiing dependant DLLs of Havok shutdown..
 Log: (Havok): Shutting down base system.
-Log: Garbage: objects: 102075->0; refs: 1275610
+Log: Garbage: objects: 85060->0; refs: 1023785
 Exit: Object subsystem successfully closed.
 Exit: Exiting.
 Log: Waiting for file streaming thread to finish...
 Uninitialized: Name subsystem shut down
 Uninitialized: Memory Allocation Status
-Uninitialized: Curr Memory  0.949M /  18.887M
-Uninitialized: Peak Memory  934.961M /  940.316M
-Uninitialized: Allocs        4792 Current /  40207945 Total
-Uninitialized: Log file closed, 03/28/21 21:40:21
+Uninitialized: Curr Memory  0.588M /  12.145M
+Uninitialized: Peak Memory  831.706M /  837.320M
+Uninitialized: Allocs        2188 Current /  17147302 Total
+Uninitialized: Log file closed, 03/29/21 22:20:53

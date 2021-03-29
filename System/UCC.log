@@ -1,4 +1,4 @@
-Log: Log file open, 03/28/21 17:29:30
+Log: Log file open, 03/29/21 22:18:09
 Init: ----------------------------------------
 Init: SWAT VERSION NUMBER: 0.61
 Init: ----------------------------------------
@@ -15,7 +15,7 @@ Init: User: admin
 Init: CPU Page size=4096, Processors=4
 Init: CPU Detected: PentiumPro-class processor (GenuineIntel)
 Init: CPU Features: CMov FPU RDTSC PAE MMX SSE
-Init: CPU Speed=3511.693315 MHz
+Init: CPU Speed=3512.119415 MHz
 Init: Memory total: Phys=2097151K Pagef=4194303K Virt=2097024K
 Init: Working set: 32000 / 159000
 Log: Bound to ScriptCompiler.dll
@@ -131,25 +131,7 @@ Warning: Missing Class Class Engine.Polys
 Warning: Missing Class Class Engine.HkMeshProxy
 Warning: Missing Class Class Engine.Polys
 Warning: Missing Class Class Engine.HkMeshProxy
-Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\Engine\Classes\Equipment\Bases\SwatWeapon.uc)
-Log: Class: SwatWeapon extends FiredWeapon
-Log: Imported: Class Engine.SwatWeapon
-Log: Parsing SwatWeapon
-Log: Compiling Hands
-Log: Compiling SwatWeapon
-Warning: E:\GOG Games\SWAT 4\SEF_FR\Source\Unreal\Engine\Classes\Equipment\Bases\SwatWeapon.uc(980) : warning : 'ActualVelocity' : unreferenced local variable
-Warning: E:\GOG Games\SWAT 4\SEF_FR\Source\Unreal\Engine\Classes\Equipment\Bases\SwatWeapon.uc(981) : warning : 'VelocityRatio' : unreferenced local variable
-Log: Importing Defaults for Hands
-Log: Importing Defaults for SwatWeapon
-Error: Engine.SwatWeapon: Unknown property in defaults:   RateOfFireString="Not Applicable"
-Log: Success: Compiled 2722 line(s), 231 statement(s).
-
-Log: Saving Engine...
-Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Unreal\Engine\Inc\EngineClasses.h
-Warning: Failed to load '..\SystemConform\Engine.u': Can't find file '..\SystemConform\Engine.u'
-Log: 0.0ms Unloading: Package Engine
-Log: Save=199.551420
-Log: Moving 'Save.tmp' to 'Engine.u'
+Log: Success: Everything is up to date
 Heading: --------------------IGEffectsSystem - Release--------------------
 Log: Success: Everything is up to date
 Heading: --------------------IGVisualEffectsSubsystem - Release--------------------
@@ -177,22 +159,7 @@ Log: Success: Everything is up to date
 Heading: --------------------SwatAIAwareness - Release--------------------
 Log: Success: Everything is up to date
 Heading: --------------------SwatAICommon - Release--------------------
-Log: Compiling BaseIdleAction
-Log: Compiling IdleDefinition
-Log: Compiling LaunchGrenadeAction
-Log: Compiling OrderComplianceAction
-Log: Importing Defaults for BaseIdleAction
-Log: Importing Defaults for IdleDefinition
-Log: Importing Defaults for LaunchGrenadeAction
-Log: Importing Defaults for OrderComplianceAction
-Log: Success: Compiled 387 line(s), 0 statement(s).
-
-Log: Saving SwatAICommon...
-Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatAICommon\Inc\SwatAICommonClasses.h
-Warning: Failed to load '..\SystemConform\SwatAICommon.u': Can't find file '..\SystemConform\SwatAICommon.u'
-Log: 1382.0ms Unloading: Package SwatAICommon
-Log: Save=205.837045
-Log: Moving 'Save.tmp' to 'SwatAICommon.u'
+Log: Success: Everything is up to date
 Heading: --------------------Gameplay - Release--------------------
 Log: Success: Everything is up to date
 Heading: --------------------RWOSupport - Release--------------------
@@ -201,10 +168,10 @@ Heading: --------------------SwatGame - Release--------------------
 Warning: Failed to load 'Class SwatProtectiveEquipment.MediumBodyArmor': Failed to find object 'Class SwatProtectiveEquipment.MediumBodyArmor'
 Warning: Failed to load 'Class SwatProtectiveEquipment.EnhancedBodyArmor': Failed to find object 'Class SwatProtectiveEquipment.EnhancedBodyArmor'
 Warning: Failed to load 'Class SwatProtectiveEquipment.helmetGasMask': Failed to find object 'Class SwatProtectiveEquipment.helmetGasMask'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1sd_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.mp5k_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.mp5k_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.mp5k_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.mp5k_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4A1sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1sd_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4A1sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1sd_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.sg552_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.sg552_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.sg552_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.sg552_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.UMP45sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45sd_FirstPerson'
@@ -249,21 +216,19 @@ Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolo_FirstPerson': Fail
 Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolo_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.rem870_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.rem870_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.rem870_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.rem870_ThirdPerson'
-Log: Compiling DynamicLoadOutSpec
-Log: Compiling LoadOut
-Log: Compiling SwatPawn
-Log: Compiling SwatGamePlayerController
-Log: Importing Defaults for DynamicLoadOutSpec
-Log: Importing Defaults for LoadOut
-Log: Importing Defaults for SwatPawn
-Log: Importing Defaults for SwatGamePlayerController
-Log: Success: Compiled 5685 line(s), 0 statement(s).
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\SwatGame\Classes\Doors\SingleDoor.uc)
+Log: Class: SingleDoor extends SwatDoor
+Log: Updated native class 'Class SwatGame.SingleDoor'
+Log: Parsing SingleDoor
+Log: Compiling SingleDoor
+Log: Importing Defaults for SingleDoor
+Log: Success: Compiled 358 line(s), 31 statement(s).
 
 Log: Saving SwatGame...
 Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatGame\Inc\SwatGameClasses.h
 Warning: Failed to load '..\SystemConform\SwatGame.u': Can't find file '..\SystemConform\SwatGame.u'
-Log: 3526.0ms Unloading: Package SwatGame
-Log: Save=336.641432
+Log: 0.0ms Unloading: Package SwatGame
+Log: Save=326.433427
 Log: Moving 'Save.tmp' to 'SwatGame.u'
 Heading: --------------------SwatEquipment - Release--------------------
 Warning: Failed to load 'Class SwatEquipmentModels2.NinebangGrenade_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.NinebangGrenade_FirstPerson'
@@ -314,578 +279,233 @@ Warning: Failed to load 'Class SwatEquipmentModels2.G36kHolosd_ThirdPerson': Fai
 Warning: Failed to load 'Class SwatProtectiveEquipment.MediumBodyArmor': Failed to find object 'Class SwatProtectiveEquipment.MediumBodyArmor'
 Warning: Failed to load 'Class SwatProtectiveEquipment.EnhancedBodyArmor': Failed to find object 'Class SwatProtectiveEquipment.EnhancedBodyArmor'
 Warning: Failed to load 'Class SwatProtectiveEquipment.helmetGasMask': Failed to find object 'Class SwatProtectiveEquipment.helmetGasMask'
-Log: Parsing ClipBasedWeapon
-Log: Parsing MachineGun
-Log: Parsing AK47MG
-Log: Parsing AK47tMG
-Log: Parsing AK74MG
-Log: Parsing AK74suMG
-Log: Parsing AK74sutMG
-Log: Parsing RoundBasedWeapon
-Log: Parsing GrenadeLauncherBase
-Log: Parsing Arwen37GL
-Log: Parsing SAWMG
-Log: Parsing BadGuySAWMG
-Log: Parsing Handgun
-Log: Parsing ColtM1911HG
-Log: Parsing BadguyColtM1911HG
-Log: Parsing G36kMG
-Log: Parsing BadguyG36kMG
-Log: Parsing M4A1MG
-Log: Parsing BadguyM4A1MG
-Log: Parsing Shotgun
-Log: Parsing M4Super90SG
-Log: Parsing BadguyM4Super90SG
-Log: Parsing SubMachineGun
-Log: Parsing MP5SMG
-Log: Parsing BadguyMP5SMG
-Log: Parsing SilencedMP5SMG
-Log: Parsing BadguySilencedMP5SMG
-Log: Parsing UMP45SMG
-Log: Parsing BadguyUMP45SMG
-Log: Parsing BeanbagShotgunBase
-Log: Parsing Beretta92fs
-Log: Parsing BerettaM9HG
-Log: Parsing BerettaM9HG_LowAmmo
-Log: Parsing BreachingShotgun
-Log: Parsing BreachingSG
-Log: Parsing BrowningHPHG
-Log: Parsing CSBallLauncher
-Log: Parsing ColtAccurizedRifle
-Log: Parsing ColtSMG
-Log: Parsing DesertEagleHG
-Log: Parsing FNFALMG
-Log: Parsing FNP90SMG
-Log: Parsing G36kHoloMG
-Log: Parsing G36kHolosdMG
-Log: Parsing G36ksdMG
-Log: Parsing Glock9mmHG
-Log: Parsing Glock18HG
-Log: Parsing Glock19HG
-Log: Parsing HK33MG
-Log: Parsing HK33sMG
-Log: Parsing HK53SMG
-Log: Parsing HK69GrenadeLauncher
-Log: Parsing IngramHG
-Log: Parsing LessLethalM870SG
-Log: Parsing LessLethalSG
-Log: Parsing M16A1MG
-Log: Parsing M1Super90SG
-Log: Parsing M4A1AMG
-Log: Parsing M4A1sdMG
-Log: Parsing M4A1AsdMG
-Log: Parsing M4CQBHoloMG
-Log: Parsing M4CQBHolosdMG
-Log: Parsing M4MG
-Log: Parsing M4Super90SGHolo
-Log: Parsing MP5HoloSMG
-Log: Parsing MP5KSMG
-Log: Parsing MP5KtSMG
-Log: Parsing MP5SSDSMG
-Log: Parsing NoWeapon
-Log: Parsing NovaPumpSG
-Log: Parsing P226HG
-Log: Parsing PepperSpray
-Log: Parsing Pump1SG
-Log: Parsing Pump2RifleGripSG
-Log: Parsing PythonRevolverHG
-Log: Parsing Remington870SG
-Log: Parsing SCARHMG
-Log: Parsing SCARHAMG
-Log: Parsing SCARHAsdMG
-Log: Parsing SCARHsdMG
-Log: Parsing SG552AimMG
-Log: Parsing SG552MG
-Log: Parsing SR25MG
-Log: Parsing SawedOffSG
-Log: Parsing ScorpionHG
-Log: Parsing SierraTeamWeapon
-Log: Parsing SilencedBrowningHPHG
-Log: Parsing SilencedColtSMG
-Log: Parsing SilencedFNP90SMG
-Log: Parsing SilencedM16A1MG
-Log: Parsing SilencedMP5HoloSMG
-Log: Parsing SilencedMP5KSMG
-Log: Parsing SilencedMP5KtSMG
-Log: Parsing SilencedP226HG
-Log: Parsing SilencedSG552AimMG
-Log: Parsing SilencedSG552MG
-Log: Parsing SniperRifle
-Log: Parsing Taser
-Log: Parsing Stingray
-Log: Parsing TEC9HG
-Log: Parsing UMP45HoloSMG
-Log: Parsing UMP45sdSMG
-Log: Parsing UMP45HolosdSMG
-Log: Parsing USP40HG
-Log: Parsing UZISMG
-Log: Parsing UZItSMG
-Log: Parsing VIPColtM1911HG
-Log: Parsing XDMHG
-Log: Compiling ClipBasedWeapon
-Log: Compiling MachineGun
-Log: Compiling AK47MG
-Log: Compiling AK47tMG
-Log: Compiling AK74MG
-Log: Compiling AK74suMG
-Log: Compiling AK74sutMG
-Log: Compiling RoundBasedWeapon
-Log: Compiling GrenadeLauncherBase
-Log: Compiling Arwen37GL
-Log: Compiling SAWMG
-Log: Compiling BadGuySAWMG
-Log: Compiling Handgun
-Log: Compiling ColtM1911HG
-Log: Compiling BadguyColtM1911HG
-Log: Compiling G36kMG
-Log: Compiling BadguyG36kMG
-Log: Compiling M4A1MG
-Log: Compiling BadguyM4A1MG
-Log: Compiling Shotgun
-Log: Compiling M4Super90SG
-Log: Compiling BadguyM4Super90SG
-Log: Compiling SubMachineGun
-Log: Compiling MP5SMG
-Log: Compiling BadguyMP5SMG
-Log: Compiling SilencedMP5SMG
-Log: Compiling BadguySilencedMP5SMG
-Log: Compiling UMP45SMG
-Log: Compiling BadguyUMP45SMG
-Log: Compiling BeanbagShotgunBase
-Log: Compiling Beretta92fs
-Log: Compiling BerettaM9HG
-Log: Compiling BerettaM9HG_LowAmmo
-Log: Compiling BreachingShotgun
-Log: Compiling BreachingSG
-Log: Compiling BrowningHPHG
-Log: Compiling CSBallLauncher
-Log: Compiling ColtAccurizedRifle
-Log: Compiling ColtSMG
-Log: Compiling DesertEagleHG
-Log: Compiling FNFALMG
-Log: Compiling FNP90SMG
-Log: Compiling RoundBasedAmmo
-Log: Compiling G36kHoloMG
-Log: Compiling G36kHolosdMG
-Log: Compiling G36ksdMG
-Log: Compiling Glock9mmHG
-Log: Compiling Glock18HG
-Log: Compiling Glock19HG
-Log: Compiling HK33MG
-Log: Compiling HK33sMG
-Log: Compiling HK53SMG
-Log: Compiling HK69GrenadeLauncher
-Log: Compiling IngramHG
-Log: Compiling LessLethalM870SG
-Log: Compiling LessLethalSG
-Log: Compiling M16A1MG
-Log: Compiling M1Super90SG
-Log: Compiling M4A1AMG
-Log: Compiling M4A1sdMG
-Log: Compiling M4A1AsdMG
-Log: Compiling M4CQBHoloMG
-Log: Compiling M4CQBHolosdMG
-Log: Compiling M4MG
-Log: Compiling M4Super90SGHolo
-Log: Compiling MP5HoloSMG
-Log: Compiling MP5KSMG
-Log: Compiling MP5KtSMG
-Log: Compiling MP5SSDSMG
-Log: Compiling NoWeapon
-Log: Compiling NovaPumpSG
-Log: Compiling P226HG
-Log: Compiling PepperSpray
-Log: Compiling Pump1SG
-Log: Compiling Pump2RifleGripSG
-Log: Compiling PythonRevolverHG
-Log: Compiling Remington870SG
-Log: Compiling SCARHMG
-Log: Compiling SCARHAMG
-Log: Compiling SCARHAsdMG
-Log: Compiling SCARHsdMG
-Log: Compiling SG552AimMG
-Log: Compiling SG552MG
-Log: Compiling SR25MG
-Log: Compiling SawedOffSG
-Log: Compiling ScorpionHG
-Log: Compiling SierraTeamWeapon
-Log: Compiling SilencedBrowningHPHG
-Log: Compiling SilencedColtSMG
-Log: Compiling SilencedFNP90SMG
-Log: Compiling SilencedM16A1MG
-Log: Compiling SilencedMP5HoloSMG
-Log: Compiling SilencedMP5KSMG
-Log: Compiling SilencedMP5KtSMG
-Log: Compiling SilencedP226HG
-Log: Compiling SilencedSG552AimMG
-Log: Compiling SilencedSG552MG
-Log: Compiling SniperRifle
-Log: Compiling Taser
-Log: Compiling Stingray
-Log: Compiling TEC9HG
-Log: Compiling UMP45HoloSMG
-Log: Compiling UMP45sdSMG
-Log: Compiling UMP45HolosdSMG
-Log: Compiling USP40HG
-Log: Compiling UZISMG
-Log: Compiling UZItSMG
-Log: Compiling VIPColtM1911HG
-Log: Compiling XDMHG
-Log: Importing Defaults for ClipBasedWeapon
-Log: Importing Defaults for MachineGun
-Log: Importing Defaults for AK47MG
-Log: Importing Defaults for AK47tMG
-Log: Importing Defaults for AK74MG
-Log: Importing Defaults for AK74suMG
-Log: Importing Defaults for AK74sutMG
-Log: Importing Defaults for RoundBasedWeapon
-Log: Importing Defaults for GrenadeLauncherBase
-Log: Importing Defaults for Arwen37GL
-Log: Importing Defaults for SAWMG
-Log: Importing Defaults for BadGuySAWMG
-Log: Importing Defaults for Handgun
-Log: Importing Defaults for ColtM1911HG
-Log: Importing Defaults for BadguyColtM1911HG
-Log: Importing Defaults for G36kMG
-Log: Importing Defaults for BadguyG36kMG
-Log: Importing Defaults for M4A1MG
-Log: Importing Defaults for BadguyM4A1MG
-Log: Importing Defaults for Shotgun
-Log: Importing Defaults for M4Super90SG
-Log: Importing Defaults for BadguyM4Super90SG
-Log: Importing Defaults for SubMachineGun
-Log: Importing Defaults for MP5SMG
-Log: Importing Defaults for BadguyMP5SMG
-Log: Importing Defaults for SilencedMP5SMG
-Log: Importing Defaults for BadguySilencedMP5SMG
-Log: Importing Defaults for UMP45SMG
-Log: Importing Defaults for BadguyUMP45SMG
-Log: Importing Defaults for BeanbagShotgunBase
-Error: SwatEquipment.BeanbagShotgunBase: Unknown property in defaults: 	WoodBreachingChance = 0;
-Error: SwatEquipment.BeanbagShotgunBase: Unknown property in defaults: 	MetalBreachingChance = 0;
-Log: Importing Defaults for Beretta92fs
-Log: Importing Defaults for BerettaM9HG
-Log: Importing Defaults for BerettaM9HG_LowAmmo
-Log: Importing Defaults for BreachingShotgun
-Log: Importing Defaults for BreachingSG
-Log: Importing Defaults for BrowningHPHG
-Log: Importing Defaults for CSBallLauncher
-Log: Importing Defaults for ColtAccurizedRifle
-Log: Importing Defaults for ColtSMG
-Log: Importing Defaults for DesertEagleHG
-Log: Importing Defaults for FNFALMG
-Log: Importing Defaults for FNP90SMG
-Log: Importing Defaults for RoundBasedAmmo
-Log: Importing Defaults for G36kHoloMG
-Log: Importing Defaults for G36kHolosdMG
-Log: Importing Defaults for G36ksdMG
-Log: Importing Defaults for Glock9mmHG
-Log: Importing Defaults for Glock18HG
-Log: Importing Defaults for Glock19HG
-Log: Importing Defaults for HK33MG
-Log: Importing Defaults for HK33sMG
-Log: Importing Defaults for HK53SMG
-Log: Importing Defaults for HK69GrenadeLauncher
-Log: Importing Defaults for IngramHG
-Log: Importing Defaults for LessLethalM870SG
-Log: Importing Defaults for LessLethalSG
-Log: Importing Defaults for M16A1MG
-Log: Importing Defaults for M1Super90SG
-Log: Importing Defaults for M4A1AMG
-Log: Importing Defaults for M4A1sdMG
-Log: Importing Defaults for M4A1AsdMG
-Log: Importing Defaults for M4CQBHoloMG
-Log: Importing Defaults for M4CQBHolosdMG
-Log: Importing Defaults for M4MG
-Log: Importing Defaults for M4Super90SGHolo
-Log: Importing Defaults for MP5HoloSMG
-Log: Importing Defaults for MP5KSMG
-Log: Importing Defaults for MP5KtSMG
-Log: Importing Defaults for MP5SSDSMG
-Log: Importing Defaults for NoWeapon
-Log: Importing Defaults for NovaPumpSG
-Log: Importing Defaults for P226HG
-Log: Importing Defaults for PepperSpray
-Log: Importing Defaults for Pump1SG
-Log: Importing Defaults for Pump2RifleGripSG
-Log: Importing Defaults for PythonRevolverHG
-Log: Importing Defaults for Remington870SG
-Log: Importing Defaults for SCARHMG
-Log: Importing Defaults for SCARHAMG
-Log: Importing Defaults for SCARHAsdMG
-Log: Importing Defaults for SCARHsdMG
-Log: Importing Defaults for SG552AimMG
-Log: Importing Defaults for SG552MG
-Log: Importing Defaults for SR25MG
-Log: Importing Defaults for SawedOffSG
-Log: Importing Defaults for ScorpionHG
-Log: Importing Defaults for SierraTeamWeapon
-Log: Importing Defaults for SilencedBrowningHPHG
-Log: Importing Defaults for SilencedColtSMG
-Log: Importing Defaults for SilencedFNP90SMG
-Log: Importing Defaults for SilencedM16A1MG
-Log: Importing Defaults for SilencedMP5HoloSMG
-Log: Importing Defaults for SilencedMP5KSMG
-Log: Importing Defaults for SilencedMP5KtSMG
-Log: Importing Defaults for SilencedP226HG
-Log: Importing Defaults for SilencedSG552AimMG
-Log: Importing Defaults for SilencedSG552MG
-Log: Importing Defaults for SniperRifle
-Log: Importing Defaults for Taser
-Log: Importing Defaults for Stingray
-Log: Importing Defaults for TEC9HG
-Log: Importing Defaults for UMP45HoloSMG
-Log: Importing Defaults for UMP45sdSMG
-Log: Importing Defaults for UMP45HolosdSMG
-Log: Importing Defaults for USP40HG
-Log: Importing Defaults for UZISMG
-Log: Importing Defaults for UZItSMG
-Log: Importing Defaults for VIPColtM1911HG
-Log: Importing Defaults for XDMHG
-Log: Success: Compiled 3281 line(s), 318 statement(s).
-
-Log: Saving SwatEquipment...
-Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatEquipment\Inc\SwatEquipmentClasses.h
-Warning: Failed to load '..\SystemConform\SwatEquipment.u': Can't find file '..\SystemConform\SwatEquipment.u'
-Log: 4859.0ms Unloading: Package SwatEquipment
-Log: Save=44.182011
-Log: Moving 'Save.tmp' to 'SwatEquipment.u'
+Log: Success: Everything is up to date
 Heading: --------------------SwatObjectives - Release--------------------
 Log: Success: Everything is up to date
 Heading: --------------------SwatProcedures - Release--------------------
 Log: Success: Everything is up to date
 Heading: --------------------SwatGui - Release--------------------
-Log: Compiling SwatLoadoutPanel
-Log: Compiling SwatWeaponCabinetPanel
-Log: Importing Defaults for SwatLoadoutPanel
-Log: Importing Defaults for SwatWeaponCabinetPanel
-Log: Success: Compiled 848 line(s), 0 statement(s).
-
-Log: Saving SwatGui...
-Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatGui\Inc\SwatGuiClasses.h
-Warning: Failed to load '..\SystemConform\SwatGui.u': Can't find file '..\SystemConform\SwatGui.u'
-Log: 5292.0ms Unloading: Package SwatGui
-Log: Save=136.523568
-Log: Moving 'Save.tmp' to 'SwatGui.u'
+Log: Success: Everything is up to date
 Log: 
 
 Log: 
 
-Log: Success - 0 error(s), 2 warning(s)
+Log: Success - 0 error(s), 0 warning(s)
 Exit: Preparing to exit.
 Log: Purging garbage
 Log: Unbound to Core.dll
 Log: Unbound to ScriptCompiler.dll
-Log: 5433.0ms Unloading: Package Core
-Log: 5433.0ms Unloading: Package Engine
-Log: 5434.0ms Unloading: Package Engine_res
-Log: 5434.0ms Unloading: Package SWAT4editorTex
-Log: 5434.0ms Unloading: Package SwatGear_sm
-Log: 5434.0ms Unloading: Package SwatGearTex
-Log: 5434.0ms Unloading: Package SWAT1stPersonTex
-Log: 5434.0ms Unloading: Package MP5A4_NEW
-Log: 5434.0ms Unloading: Package SwatFXtex
-Log: 5434.0ms Unloading: Package G36Knew
-Log: 5434.0ms Unloading: Package bm4
-Log: 5434.0ms Unloading: Package BenelliNovanew
-Log: 5434.0ms Unloading: Package M870Breach
-Log: 5434.0ms Unloading: Package mich_helmet
-Log: 5434.0ms Unloading: Package Kimber
-Log: 5434.0ms Unloading: Package UMPnew
-Log: 5434.0ms Unloading: Package MaleGang1Tex
-Log: 5434.0ms Unloading: Package M4A1_SFM500
-Log: 5434.0ms Unloading: Package surefireM900
-Log: 5434.0ms Unloading: Package FR_grenades
-Log: 5434.0ms Unloading: Package Glock
-Log: 5434.0ms Unloading: Package 92fs
-Log: 5434.0ms Unloading: Package motorola
-Log: 5434.0ms Unloading: Package safariland
-Log: 5434.0ms Unloading: Package HUD
-Log: 5434.0ms Unloading: Package EditorSprites
-Log: 5434.0ms Unloading: Package FP_Hand2
-Log: 5434.0ms Unloading: Package IGEffectsSystem
-Log: 5434.0ms Unloading: Package SWAThands
-Log: 5434.0ms Unloading: Package Editor_res
-Log: 5434.0ms Unloading: Package Hotel_sm
-Log: 5434.0ms Unloading: Package Hotel
-Log: 5434.0ms Unloading: Package MetalShaders
-Log: 5434.0ms Unloading: Package Repo_Tex
-Log: 5434.0ms Unloading: Package Arms_Tex
-Log: 5434.0ms Unloading: Package Silence_Tex
-Log: 5434.0ms Unloading: Package office_Tex
-Log: 5434.0ms Unloading: Package DNA_tex
-Log: 5434.0ms Unloading: Package VIP_Tex
-Log: 5434.0ms Unloading: Package HotelFXtex
-Log: 5434.0ms Unloading: Package barbershop_tex
-Log: 5435.0ms Unloading: Package SwatEquipmentModels2
-Log: 5435.0ms Unloading: Package Tyrion
-Log: 5435.0ms Unloading: Package AICommon
-Log: 5435.0ms Unloading: Package SwatAIAwareness
-Log: 5435.0ms Unloading: Package GUI
-Log: 5436.0ms Unloading: Package gui_tex
-Log: 5436.0ms Unloading: Package Scripting
-Log: 5436.0ms Unloading: Package IGSoundEffectsSubsystem
-Log: 5436.0ms Unloading: Package IGEffectsSystem_EditorTextures
-Log: 5436.0ms Unloading: Package Voting
-Log: 5436.0ms Unloading: Package RWOSupport
-Log: 5436.0ms Unloading: Package Gameplay
-Log: 5436.0ms Unloading: Package gui_FR
-Log: 5436.0ms Unloading: Package gui_sas
-Log: 5436.0ms Unloading: Package gui_tex3
-Log: 5436.0ms Unloading: Package gui_tex2
-Log: 5436.0ms Unloading: Package gear_sef
-Log: 5436.0ms Unloading: Package SwatArmory_Tex
-Log: 5436.0ms Unloading: Package GearTex_sef
-Log: 5436.0ms Unloading: Package GearTex_sas
-Log: 5436.0ms Unloading: Package SwatGear2Tex
-Log: 5436.0ms Unloading: Package bp_3P_tex
-Log: 5436.0ms Unloading: Package AimpointM2
-Log: 5436.0ms Unloading: Package gear_suspects
-Log: 5436.0ms Unloading: Package SwatEquipmentModels3
-Log: 5436.0ms Unloading: Package SwatEquipmentModels
-Log: 5436.0ms Unloading: Package NovaPump_ThirdPerson
-Log: 5436.0ms Unloading: Package FP_C2detonator
-Log: 5436.0ms Unloading: Package FP_csGasGrenade
-Log: 5436.0ms Unloading: Package Colt1911FL_ThirdPerson
-Log: 5436.0ms Unloading: Package FP_coltHG
-Log: 5436.0ms Unloading: Package FP_NovaPumpShotgun
-Log: 5436.0ms Unloading: Package FP_UMPsmg
-Log: 5436.0ms Unloading: Package Eotech552
-Log: 5436.0ms Unloading: Package FP_G36k
-Log: 5436.0ms Unloading: Package FP_9mmPistol
-Log: 5436.0ms Unloading: Package 1stPersonTex_sas
-Log: 5436.0ms Unloading: Package SurefireP101
-Log: 5436.0ms Unloading: Package NineMMpistol_ThirdPerson
-Log: 5436.0ms Unloading: Package FP_M4A1mg
-Log: 5436.0ms Unloading: Package FP_m4super90sg
-Log: 5436.0ms Unloading: Package FP_mp5SMG
-Log: 5436.0ms Unloading: Package FP_uzi
-Log: 5436.0ms Unloading: Package FP_flashbangGrenade
-Log: 5436.0ms Unloading: Package FP_stingGrenade
-Log: 5436.0ms Unloading: Package FP_mp5SMGsilenced
-Log: 5436.0ms Unloading: Package Optiwand_ThirdPerson
-Log: 5436.0ms Unloading: Package FP_Optiwand
-Log: 5436.0ms Unloading: Package scripted_tex
-Log: 5436.0ms Unloading: Package FP_Pepperspray
-Log: 5436.0ms Unloading: Package FP_BreachingSG
-Log: 5436.0ms Unloading: Package BreachingSG_ThirdPerson
-Log: 5436.0ms Unloading: Package FP_AK47
-Log: 5436.0ms Unloading: Package FP_DoorWedge
-Log: 5436.0ms Unloading: Package FP_toolkit
-Log: 5436.0ms Unloading: Package Coronas
-Log: 5436.0ms Unloading: Package FP_C2charge
-Log: 5436.0ms Unloading: Package FP_Handcuffs
-Log: 5436.0ms Unloading: Package FP_paintball
-Log: 5436.0ms Unloading: Package FP_taser
-Log: 5436.0ms Unloading: Package FP_Revolver
-Log: 5436.0ms Unloading: Package FP_FragGrenade
-Log: 5437.0ms Unloading: Package coltsmg_static
-Log: 5437.0ms Unloading: Package ColtSMG
-Log: 5437.0ms Unloading: Package FP_coltsmg
-Log: 5437.0ms Unloading: Package FP_coltsmgsil
-Log: 5437.0ms Unloading: Package SwatGear2_sm
-Log: 5437.0ms Unloading: Package druglab
-Log: 5437.0ms Unloading: Package SwatFX2tex
-Log: 5437.0ms Unloading: Package SW_FR
-Log: 5437.0ms Unloading: Package TaserWire
-Log: 5437.0ms Unloading: Package swatmeshfx2_sm
-Log: 5437.0ms Unloading: Package SwatProgrammerSampleClasses
-Log: 5437.0ms Unloading: Package DeadPeople_sm
-Log: 5437.0ms Unloading: Package FemaleNurseTex
-Log: 5437.0ms Unloading: Package MaleDoctorTex
-Log: 5437.0ms Unloading: Package SWATbadguyTex
-Log: 5437.0ms Unloading: Package SWATofficerTex
-Log: 5437.0ms Unloading: Package MaleCasual2Tex
-Log: 5437.0ms Unloading: Package Paradise_sm
-Log: 5437.0ms Unloading: Package Paradise_Tex
-Log: 5437.0ms Unloading: Package Tenement_Tex
-Log: 5437.0ms Unloading: Package train
-Log: 5437.0ms Unloading: Package Bar_Tex
-Log: 5437.0ms Unloading: Package Doors_sm
-Log: 5437.0ms Unloading: Package doors_Tex
-Log: 5437.0ms Unloading: Package bullseye_Tex
-Log: 5437.0ms Unloading: Package Hosp
-Log: 5437.0ms Unloading: Package RedLibrary_Tex
-Log: 5437.0ms Unloading: Package Jewel_Tex
-Log: 5437.0ms Unloading: Package doors_knobs
-Log: 5437.0ms Unloading: Package Power_Tex
-Log: 5437.0ms Unloading: Package SWATmeshFX_sm
-Log: 5437.0ms Unloading: Package Con_Tex
-Log: 5437.0ms Unloading: Package SwatDesignerClasses
-Log: 5437.0ms Unloading: Package Bar_sm
-Log: 5437.0ms Unloading: Package Junk_Tex
-Log: 5437.0ms Unloading: Package Outdoors_Tex
-Log: 5437.0ms Unloading: Package Con_sm
-Log: 5437.0ms Unloading: Package mac_Tex
-Log: 5437.0ms Unloading: Package Tenement_sm
-Log: 5437.0ms Unloading: Package Silence_sm
-Log: 5437.0ms Unloading: Package off_sm
-Log: 5437.0ms Unloading: Package Repo_sm
-Log: 5437.0ms Unloading: Package LocalizedTextures
-Log: 5437.0ms Unloading: Package Barbershop_sm
-Log: 5437.0ms Unloading: Package Furniture_Tex
-Log: 5437.0ms Unloading: Package dna_sm
-Log: 5437.0ms Unloading: Package amc_Tex
-Log: 5437.0ms Unloading: Package VIP_sm
-Log: 5437.0ms Unloading: Package Cars
-Log: 5437.0ms Unloading: Package mac_sm
-Log: 5437.0ms Unloading: Package Hosp_sm
-Log: 5437.0ms Unloading: Package Power_sm
-Log: 5437.0ms Unloading: Package Jewel_sm
-Log: 5437.0ms Unloading: Package arms_sm
-Log: 5437.0ms Unloading: Package Redlibrary_sm
-Log: 5437.0ms Unloading: Package Utility_Tex
-Log: 5437.0ms Unloading: Package train_sm
-Log: 5437.0ms Unloading: Package utility_sm
-Log: 5437.0ms Unloading: Package bullseye_sm
-Log: 5437.0ms Unloading: Package Junk_sm
-Log: 5437.0ms Unloading: Package Cars_sm
-Log: 5437.0ms Unloading: Package MaleJanitorTextureSet
-Log: 5438.0ms Unloading: Package wall_sm
-Log: 5438.0ms Unloading: Package wall_Tex
-Log: 5438.0ms Unloading: Package TrainingAnimatedMeshes
-Log: 5438.0ms Unloading: Package MPbomb
-Log: 5438.0ms Unloading: Package SWATMaleAnimation
-Log: 5438.0ms Unloading: Package LeoMelTextureSet
-Log: 5438.0ms Unloading: Package MaleSuitTex
-Log: 5438.0ms Unloading: Package MaleCasual3Tex
-Log: 5438.0ms Unloading: Package CultLeaderTextureSet
-Log: 5438.0ms Unloading: Package MaleBarberTex
-Log: 5438.0ms Unloading: Package SWATheavyTex
-Log: 5438.0ms Unloading: Package MaleChubbyTex
-Log: 5438.0ms Unloading: Package MaleCasual4Tex
-Log: 5438.0ms Unloading: Package SWATinstructorTex
-Log: 5438.0ms Unloading: Package MaleCasual1Tex
-Log: 5438.0ms Unloading: Package MaleCasualArmorTex
-Log: 5438.0ms Unloading: Package SwatProcedures
-Log: 5438.0ms Unloading: Package IpDrv
-Log: 5438.0ms Unloading: Package mp_OfficerTex
-Log: 5438.0ms Unloading: Package SWATMaleAnimation2
-Log: 5438.0ms Unloading: Package maleMafiaTex
-Log: 5438.0ms Unloading: Package maleHomelessTex
-Log: 5438.0ms Unloading: Package CASMtex
-Log: 5438.0ms Unloading: Package SWATnoArmourTex
-Log: 5438.0ms Unloading: Package CameraEffectsTex
-Log: 5438.0ms Unloading: Package SwatProtectiveEquipment
-Log: 5438.0ms Unloading: Package Suspect1_officerTex
-Log: 5438.0ms Unloading: Package ProgrammerTestObjectsTex
-Log: 5438.0ms Unloading: Package UWindow_res
-Log: 5438.0ms Unloading: Package CoopArrow
-Log: 5438.0ms Unloading: Package SWATDoubleDoorAnimations
-Log: 5438.0ms Unloading: Package SWATDoorAnimation
-Log: 5438.0ms Unloading: Package SwatProtectiveEquipment2
-Log: 5438.0ms Unloading: Package IGVisualEffectsSubsystem
-Log: 5438.0ms Unloading: Package Editor
-Log: 5438.0ms Unloading: Package UWindow
-Log: 5439.0ms Unloading: Package SwatEd
-Log: 5440.0ms Unloading: Package SwatAICommon
-Log: 5442.0ms Unloading: Package SwatGame
-Log: 5442.0ms Unloading: Package SwatObjectives
-Log: 5442.0ms Unloading: Package SwatEquipment
-Log: Garbage: objects: 55544->0; refs: 0
+Log: 1217.0ms Unloading: Package Core
+Log: 1217.0ms Unloading: Package Engine
+Log: 1217.0ms Unloading: Package Engine_res
+Log: 1217.0ms Unloading: Package SWAT4editorTex
+Log: 1217.0ms Unloading: Package SwatGear_sm
+Log: 1217.0ms Unloading: Package SwatGearTex
+Log: 1217.0ms Unloading: Package SWAT1stPersonTex
+Log: 1217.0ms Unloading: Package MP5A4_NEW
+Log: 1217.0ms Unloading: Package SwatFXtex
+Log: 1217.0ms Unloading: Package G36Knew
+Log: 1217.0ms Unloading: Package bm4
+Log: 1218.0ms Unloading: Package BenelliNovanew
+Log: 1218.0ms Unloading: Package M870Breach
+Log: 1218.0ms Unloading: Package mich_helmet
+Log: 1218.0ms Unloading: Package Kimber
+Log: 1218.0ms Unloading: Package UMPnew
+Log: 1218.0ms Unloading: Package MaleGang1Tex
+Log: 1218.0ms Unloading: Package M4A1_SFM500
+Log: 1218.0ms Unloading: Package surefireM900
+Log: 1218.0ms Unloading: Package FR_grenades
+Log: 1218.0ms Unloading: Package Glock
+Log: 1218.0ms Unloading: Package 92fs
+Log: 1218.0ms Unloading: Package motorola
+Log: 1218.0ms Unloading: Package safariland
+Log: 1218.0ms Unloading: Package HUD
+Log: 1218.0ms Unloading: Package EditorSprites
+Log: 1218.0ms Unloading: Package FP_Hand2
+Log: 1218.0ms Unloading: Package IGEffectsSystem
+Log: 1218.0ms Unloading: Package SWAThands
+Log: 1218.0ms Unloading: Package Editor_res
+Log: 1218.0ms Unloading: Package Hotel_sm
+Log: 1218.0ms Unloading: Package Hotel
+Log: 1218.0ms Unloading: Package MetalShaders
+Log: 1218.0ms Unloading: Package Repo_Tex
+Log: 1218.0ms Unloading: Package Arms_Tex
+Log: 1218.0ms Unloading: Package Silence_Tex
+Log: 1218.0ms Unloading: Package office_Tex
+Log: 1218.0ms Unloading: Package DNA_tex
+Log: 1218.0ms Unloading: Package VIP_Tex
+Log: 1218.0ms Unloading: Package HotelFXtex
+Log: 1218.0ms Unloading: Package barbershop_tex
+Log: 1219.0ms Unloading: Package SwatEquipmentModels2
+Log: 1219.0ms Unloading: Package GUI
+Log: 1219.0ms Unloading: Package gui_tex
+Log: 1219.0ms Unloading: Package SwatAICommon
+Log: 1219.0ms Unloading: Package Tyrion
+Log: 1219.0ms Unloading: Package AICommon
+Log: 1219.0ms Unloading: Package SwatAIAwareness
+Log: 1219.0ms Unloading: Package Scripting
+Log: 1219.0ms Unloading: Package IGSoundEffectsSubsystem
+Log: 1219.0ms Unloading: Package IGEffectsSystem_EditorTextures
+Log: 1219.0ms Unloading: Package Voting
+Log: 1219.0ms Unloading: Package RWOSupport
+Log: 1219.0ms Unloading: Package Gameplay
+Log: 1219.0ms Unloading: Package SwatEquipment
+Log: 1220.0ms Unloading: Package gui_FR
+Log: 1220.0ms Unloading: Package gui_sas
+Log: 1220.0ms Unloading: Package gui_tex3
+Log: 1220.0ms Unloading: Package gui_tex2
+Log: 1220.0ms Unloading: Package gear_sef
+Log: 1220.0ms Unloading: Package SwatArmory_Tex
+Log: 1220.0ms Unloading: Package GearTex_sef
+Log: 1220.0ms Unloading: Package GearTex_sas
+Log: 1220.0ms Unloading: Package SwatGear2Tex
+Log: 1220.0ms Unloading: Package bp_3P_tex
+Log: 1220.0ms Unloading: Package AimpointM2
+Log: 1220.0ms Unloading: Package gear_suspects
+Log: 1220.0ms Unloading: Package SwatEquipmentModels3
+Log: 1220.0ms Unloading: Package SwatEquipmentModels
+Log: 1220.0ms Unloading: Package NovaPump_ThirdPerson
+Log: 1220.0ms Unloading: Package FP_C2detonator
+Log: 1220.0ms Unloading: Package FP_csGasGrenade
+Log: 1220.0ms Unloading: Package Colt1911FL_ThirdPerson
+Log: 1220.0ms Unloading: Package FP_coltHG
+Log: 1220.0ms Unloading: Package FP_NovaPumpShotgun
+Log: 1220.0ms Unloading: Package FP_UMPsmg
+Log: 1220.0ms Unloading: Package Eotech552
+Log: 1220.0ms Unloading: Package FP_G36k
+Log: 1220.0ms Unloading: Package FP_9mmPistol
+Log: 1220.0ms Unloading: Package 1stPersonTex_sas
+Log: 1220.0ms Unloading: Package SurefireP101
+Log: 1220.0ms Unloading: Package NineMMpistol_ThirdPerson
+Log: 1220.0ms Unloading: Package FP_M4A1mg
+Log: 1220.0ms Unloading: Package FP_m4super90sg
+Log: 1220.0ms Unloading: Package FP_mp5SMG
+Log: 1220.0ms Unloading: Package FP_uzi
+Log: 1220.0ms Unloading: Package FP_flashbangGrenade
+Log: 1220.0ms Unloading: Package FP_stingGrenade
+Log: 1220.0ms Unloading: Package FP_mp5SMGsilenced
+Log: 1220.0ms Unloading: Package Optiwand_ThirdPerson
+Log: 1220.0ms Unloading: Package FP_Optiwand
+Log: 1220.0ms Unloading: Package scripted_tex
+Log: 1220.0ms Unloading: Package FP_Pepperspray
+Log: 1220.0ms Unloading: Package FP_BreachingSG
+Log: 1220.0ms Unloading: Package BreachingSG_ThirdPerson
+Log: 1220.0ms Unloading: Package FP_AK47
+Log: 1220.0ms Unloading: Package FP_DoorWedge
+Log: 1220.0ms Unloading: Package FP_toolkit
+Log: 1220.0ms Unloading: Package Coronas
+Log: 1220.0ms Unloading: Package FP_C2charge
+Log: 1220.0ms Unloading: Package FP_Handcuffs
+Log: 1220.0ms Unloading: Package FP_paintball
+Log: 1220.0ms Unloading: Package FP_taser
+Log: 1220.0ms Unloading: Package FP_Revolver
+Log: 1220.0ms Unloading: Package FP_FragGrenade
+Log: 1220.0ms Unloading: Package coltsmg_static
+Log: 1220.0ms Unloading: Package ColtSMG
+Log: 1220.0ms Unloading: Package FP_coltsmg
+Log: 1220.0ms Unloading: Package FP_coltsmgsil
+Log: 1220.0ms Unloading: Package SwatGear2_sm
+Log: 1220.0ms Unloading: Package druglab
+Log: 1220.0ms Unloading: Package SwatFX2tex
+Log: 1220.0ms Unloading: Package SW_FR
+Log: 1220.0ms Unloading: Package TaserWire
+Log: 1220.0ms Unloading: Package swatmeshfx2_sm
+Log: 1220.0ms Unloading: Package SwatProgrammerSampleClasses
+Log: 1220.0ms Unloading: Package DeadPeople_sm
+Log: 1220.0ms Unloading: Package FemaleNurseTex
+Log: 1220.0ms Unloading: Package MaleDoctorTex
+Log: 1220.0ms Unloading: Package SWATbadguyTex
+Log: 1220.0ms Unloading: Package SWATofficerTex
+Log: 1220.0ms Unloading: Package MaleCasual2Tex
+Log: 1220.0ms Unloading: Package Paradise_sm
+Log: 1220.0ms Unloading: Package Paradise_Tex
+Log: 1220.0ms Unloading: Package Tenement_Tex
+Log: 1220.0ms Unloading: Package train
+Log: 1220.0ms Unloading: Package Bar_Tex
+Log: 1220.0ms Unloading: Package Doors_sm
+Log: 1220.0ms Unloading: Package doors_Tex
+Log: 1220.0ms Unloading: Package bullseye_Tex
+Log: 1220.0ms Unloading: Package Hosp
+Log: 1220.0ms Unloading: Package RedLibrary_Tex
+Log: 1220.0ms Unloading: Package Jewel_Tex
+Log: 1220.0ms Unloading: Package doors_knobs
+Log: 1220.0ms Unloading: Package Power_Tex
+Log: 1220.0ms Unloading: Package SWATmeshFX_sm
+Log: 1220.0ms Unloading: Package Con_Tex
+Log: 1220.0ms Unloading: Package SwatDesignerClasses
+Log: 1220.0ms Unloading: Package Bar_sm
+Log: 1220.0ms Unloading: Package Junk_Tex
+Log: 1220.0ms Unloading: Package Outdoors_Tex
+Log: 1220.0ms Unloading: Package Con_sm
+Log: 1220.0ms Unloading: Package mac_Tex
+Log: 1220.0ms Unloading: Package Tenement_sm
+Log: 1220.0ms Unloading: Package Silence_sm
+Log: 1220.0ms Unloading: Package off_sm
+Log: 1220.0ms Unloading: Package Repo_sm
+Log: 1220.0ms Unloading: Package LocalizedTextures
+Log: 1220.0ms Unloading: Package Barbershop_sm
+Log: 1220.0ms Unloading: Package Furniture_Tex
+Log: 1220.0ms Unloading: Package dna_sm
+Log: 1220.0ms Unloading: Package amc_Tex
+Log: 1220.0ms Unloading: Package VIP_sm
+Log: 1220.0ms Unloading: Package Cars
+Log: 1220.0ms Unloading: Package mac_sm
+Log: 1220.0ms Unloading: Package Hosp_sm
+Log: 1220.0ms Unloading: Package Power_sm
+Log: 1220.0ms Unloading: Package Jewel_sm
+Log: 1220.0ms Unloading: Package arms_sm
+Log: 1220.0ms Unloading: Package Redlibrary_sm
+Log: 1220.0ms Unloading: Package Utility_Tex
+Log: 1220.0ms Unloading: Package train_sm
+Log: 1220.0ms Unloading: Package utility_sm
+Log: 1220.0ms Unloading: Package bullseye_sm
+Log: 1220.0ms Unloading: Package Junk_sm
+Log: 1220.0ms Unloading: Package Cars_sm
+Log: 1220.0ms Unloading: Package MaleJanitorTextureSet
+Log: 1220.0ms Unloading: Package wall_sm
+Log: 1221.0ms Unloading: Package wall_Tex
+Log: 1221.0ms Unloading: Package TrainingAnimatedMeshes
+Log: 1221.0ms Unloading: Package MPbomb
+Log: 1221.0ms Unloading: Package SWATMaleAnimation
+Log: 1221.0ms Unloading: Package LeoMelTextureSet
+Log: 1221.0ms Unloading: Package MaleSuitTex
+Log: 1221.0ms Unloading: Package MaleCasual3Tex
+Log: 1221.0ms Unloading: Package CultLeaderTextureSet
+Log: 1221.0ms Unloading: Package MaleBarberTex
+Log: 1221.0ms Unloading: Package SWATheavyTex
+Log: 1221.0ms Unloading: Package MaleChubbyTex
+Log: 1221.0ms Unloading: Package MaleCasual4Tex
+Log: 1221.0ms Unloading: Package SWATinstructorTex
+Log: 1221.0ms Unloading: Package MaleCasual1Tex
+Log: 1221.0ms Unloading: Package MaleCasualArmorTex
+Log: 1221.0ms Unloading: Package SwatProcedures
+Log: 1221.0ms Unloading: Package IpDrv
+Log: 1221.0ms Unloading: Package mp_OfficerTex
+Log: 1221.0ms Unloading: Package SWATMaleAnimation2
+Log: 1221.0ms Unloading: Package maleMafiaTex
+Log: 1221.0ms Unloading: Package maleHomelessTex
+Log: 1221.0ms Unloading: Package CASMtex
+Log: 1221.0ms Unloading: Package SWATnoArmourTex
+Log: 1221.0ms Unloading: Package CameraEffectsTex
+Log: 1221.0ms Unloading: Package SwatProtectiveEquipment
+Log: 1221.0ms Unloading: Package Suspect1_officerTex
+Log: 1221.0ms Unloading: Package ProgrammerTestObjectsTex
+Log: 1221.0ms Unloading: Package UWindow_res
+Log: 1221.0ms Unloading: Package CoopArrow
+Log: 1221.0ms Unloading: Package SWATDoubleDoorAnimations
+Log: 1221.0ms Unloading: Package SWATDoorAnimation
+Log: 1221.0ms Unloading: Package SwatProtectiveEquipment2
+Log: 1221.0ms Unloading: Package IGVisualEffectsSubsystem
+Log: 1221.0ms Unloading: Package Editor
+Log: 1221.0ms Unloading: Package UWindow
+Log: 1222.0ms Unloading: Package SwatEd
+Log: 1224.0ms Unloading: Package SwatGame
+Log: 1224.0ms Unloading: Package SwatObjectives
+Log: 1225.0ms Unloading: Package SwatGui
+Log: Garbage: objects: 55542->0; refs: 0
 Exit: Object subsystem successfully closed.
 Exit: Exiting.
 Log: Waiting for file streaming thread to finish...
 Uninitialized: Name subsystem shut down
 Uninitialized: Allocation checking disabled
-Uninitialized: Log file closed, 03/28/21 17:29:40
+Uninitialized: Log file closed, 03/29/21 22:18:15
