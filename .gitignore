@@ -93,3 +93,11 @@ System/Swat4X.ini
 *.xcf
 *.u
 System/Swat4X.ini
+System/User.ini
+System/swat4x.log
+System/UCC.log
+System/IGSoundEffectsSubsystem.u
+*.h
+*.bak
+Source/Game/SwatAIAwareness/Inc/SwatAIAwarenessClasses.h
+*.bak

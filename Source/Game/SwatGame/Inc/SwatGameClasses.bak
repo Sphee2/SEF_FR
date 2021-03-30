@@ -570,18 +570,6 @@ struct ASwatAICharacter_eventReplicatedSkinsOnChanged_Parms
 struct ASwatAICharacter_eventReplicatedMeshInfoOnChanged_Parms
 {
 };
-// Constant HighSkillMaxTimeBeforeShooting is declared in "..\SwatGame\Classes\AI\SwatEnemy.uc"
-#define UCONST_HighSkillMaxTimeBeforeShooting 0.8
-// Constant HighSkillMinTimeBeforeShooting is declared in "..\SwatGame\Classes\AI\SwatEnemy.uc"
-#define UCONST_HighSkillMinTimeBeforeShooting 0.4
-// Constant MediumSkillMaxTimeBeforeShooting is declared in "..\SwatGame\Classes\AI\SwatEnemy.uc"
-#define UCONST_MediumSkillMaxTimeBeforeShooting 1.0
-// Constant MediumSkillMinTimeBeforeShooting is declared in "..\SwatGame\Classes\AI\SwatEnemy.uc"
-#define UCONST_MediumSkillMinTimeBeforeShooting 0.7
-// Constant LowSkillMaxTimeBeforeShooting is declared in "..\SwatGame\Classes\AI\SwatEnemy.uc"
-#define UCONST_LowSkillMaxTimeBeforeShooting 1.3
-// Constant LowSkillMinTimeBeforeShooting is declared in "..\SwatGame\Classes\AI\SwatEnemy.uc"
-#define UCONST_LowSkillMinTimeBeforeShooting 0.8
 // Constant maxWeaponDistance is declared in "..\SwatGame\Classes\AI\SwatEnemy.uc"
 #define UCONST_maxWeaponDistance 200.0f
 
@@ -2263,20 +2251,20 @@ public:
     FLOAT LowSkillAdditionalBaseAimError;
     FLOAT MediumSkillAdditionalBaseAimError;
     FLOAT HighSkillAdditionalBaseAimError;
-    FLOAT LowSkillMinTimeToFireFullAuto;
-    FLOAT LowSkillMaxTimeToFireFullAuto;
-    FLOAT MediumSkillMinTimeToFireFullAuto;
-    FLOAT MediumSkillMaxTimeToFireFullAuto;
-    FLOAT HighSkillMinTimeToFireFullAuto;
-    FLOAT HighSkillMaxTimeToFireFullAuto;
-    FLOAT MinDistanceToAffectMoraleOfOtherEnemiesUponDeath;
-    TArrayNoInit<FName> ThrowWeaponDownAnimationsHG;
-    TArrayNoInit<FName> ThrowWeaponDownAnimationsMG;
-    TArrayNoInit<FName> ThrowWeaponDownAnimationsSMG;
-    TArrayNoInit<FName> ThrowWeaponDownAnimationsSG;
-    FLOAT LowSkillFullBodyHitChance;
-    FLOAT MediumSkillFullBodyHitChance;
-    FLOAT HighSkillFullBodyHitChance;
+    FLOAT Unused1;
+    FLOAT Unused2;
+    FLOAT Unused3;
+    FLOAT Unused4;
+    FLOAT Unused5;
+    FLOAT Unused6;
+    class ATimer* ThreatTimer;
+    TArrayNoInit<FName> Unused8;
+    TArrayNoInit<FName> Unused9;
+    TArrayNoInit<FName> unused10;
+    TArrayNoInit<FName> unused11;
+    FLOAT unused12;
+    FLOAT unused13;
+    FLOAT unused14;
     BITFIELD bEnteredFleeSafeguard:1;
     class AFiredWeapon* PrimaryWeapon;
     class AFiredWeapon* BackupWeapon;

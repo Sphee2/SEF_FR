@@ -36,7 +36,7 @@ struct IIAwarenessOuter_GetKnownLocationOfPawn_Parms
 // "event"	function whose parameters correspond to	"struct IIAwarenessOuter_eventIsOtherActorAThreat_Parms"	is declared	in "..\SwatAIAwareness\Classes\IAwarenessOuter.uc"
 struct IIAwarenessOuter_IsOtherActorAThreat_Parms
 {
-	  class AActor* otherActor;
+	  class AActor* OtherActor;
 	  BITFIELD ReturnValue;
 };
 // "event"	function whose parameters correspond to	"struct IIAwarenessOuter_eventUnregisterHearingNotification_Parms"	is declared	in "..\SwatAIAwareness\Classes\IAwarenessOuter.uc"
@@ -73,11 +73,11 @@ public:
 		   Location=Parms.Location;
 		   return Parms.ReturnValue;
 	  }
-	  BITFIELD IsOtherActorAThreat(class AActor* otherActor)
+	  BITFIELD IsOtherActorAThreat(class AActor* OtherActor)
 	  {
         IIAwarenessOuter_IsOtherActorAThreat_Parms Parms;
 		   Parms.ReturnValue=0;
-		   Parms.otherActor=otherActor;
+		   Parms.OtherActor=OtherActor;
         ProcessFunction(FindFunctionChecked(SWATAIAWARENESS_IsOtherActorAThreat),&Parms);
 		   return Parms.ReturnValue;
 	  }
