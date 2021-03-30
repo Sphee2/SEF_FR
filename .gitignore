@@ -87,7 +87,9 @@ Content/HavokData/*
 Content/Textures/*
 System/*.txt
 System/*.log
+System/Swat4X.ini
 *.pak
 *.tga
 *.xcf
 *.u
+System/Swat4X.ini

@@ -1,4 +1,4 @@
-Log: Log file open, 03/29/21 22:18:09
+Log: Log file open, 03/30/21 18:49:49
 Init: ----------------------------------------
 Init: SWAT VERSION NUMBER: 0.61
 Init: ----------------------------------------
@@ -15,497 +15,58 @@ Init: User: admin
 Init: CPU Page size=4096, Processors=4
 Init: CPU Detected: PentiumPro-class processor (GenuineIntel)
 Init: CPU Features: CMov FPU RDTSC PAE MMX SSE
-Init: CPU Speed=3512.119415 MHz
+Init: CPU Speed=3512.111480 MHz
 Init: Memory total: Phys=2097151K Pagef=4194303K Virt=2097024K
 Init: Working set: 32000 / 159000
 Log: Bound to ScriptCompiler.dll
 Log: Executing Class ScriptCompiler.MakeCommandlet
 Heading: --------------------Core - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------Engine - Release--------------------
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.HkMeshProxy
-Log: Success: Everything is up to date
-Heading: --------------------IGEffectsSystem - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------IGVisualEffectsSubsystem - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------IGSoundEffectsSubsystem - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------Voting - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------Editor - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------UWindow - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------GUI - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------SwatEd - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------IpDrv - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------Scripting - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------AICommon - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------Tyrion - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------SwatAIAwareness - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------SwatAICommon - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------Gameplay - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------RWOSupport - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------SwatGame - Release--------------------
-Warning: Failed to load 'Class SwatProtectiveEquipment.MediumBodyArmor': Failed to find object 'Class SwatProtectiveEquipment.MediumBodyArmor'
-Warning: Failed to load 'Class SwatProtectiveEquipment.EnhancedBodyArmor': Failed to find object 'Class SwatProtectiveEquipment.EnhancedBodyArmor'
-Warning: Failed to load 'Class SwatProtectiveEquipment.helmetGasMask': Failed to find object 'Class SwatProtectiveEquipment.helmetGasMask'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5k_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.mp5k_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5k_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.mp5k_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1sd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.sg552_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.sg552_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.sg552_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.sg552_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UMP45sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UMP45sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45sd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.BrowHP_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHP_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.BrowHP_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHP_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M16A1_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M16A1_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M16A1_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M16A1_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.hk33_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.hk33_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.hk33_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.hk33_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.p226_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.p226_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.p226_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.p226_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5ksd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.mp5ksd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5ksd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.mp5ksd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.hk33s_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.hk33s_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.hk33s_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.hk33s_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.p226sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.p226sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.p226sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.p226sd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.sg552sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.sg552sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.sg552sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.sg552sd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Glock19_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Glock19_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Glock18_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Glock18_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UMP45Holo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45Holo_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UMP45Holo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45Holo_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.P90sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.P90sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.P90sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.P90sd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M16A1sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M16A1sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M16A1sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M16A1sd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.BrowHPsd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHPsd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.BrowHPsd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHPsd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.llrem870_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.llrem870_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.llrem870_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.llrem870_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.FAL_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.FAL_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.FAL_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.FAL_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Beretta92fs_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Beretta92fs_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Beretta92fs_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Beretta92fs_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolosd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolosd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolosd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolosd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Arwen37_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Arwen37_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Arwen37_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Arwen37_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolo_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolo_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.rem870_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.rem870_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.rem870_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.rem870_ThirdPerson'
-Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\SwatGame\Classes\Doors\SingleDoor.uc)
-Log: Class: SingleDoor extends SwatDoor
-Log: Updated native class 'Class SwatGame.SingleDoor'
-Log: Parsing SingleDoor
-Log: Compiling SingleDoor
-Log: Importing Defaults for SingleDoor
-Log: Success: Compiled 358 line(s), 31 statement(s).
-
-Log: Saving SwatGame...
-Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatGame\Inc\SwatGameClasses.h
-Warning: Failed to load '..\SystemConform\SwatGame.u': Can't find file '..\SystemConform\SwatGame.u'
-Log: 0.0ms Unloading: Package SwatGame
-Log: Save=326.433427
-Log: Moving 'Save.tmp' to 'SwatGame.u'
-Heading: --------------------SwatEquipment - Release--------------------
-Warning: Failed to load 'Class SwatEquipmentModels2.NinebangGrenade_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.NinebangGrenade_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.NinebangGrenade_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.NinebangGrenade_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.SCARH_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.SCARH_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.SCARH_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.SCARH_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.SCARHA_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.SCARHA_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.SCARHA_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.SCARHA_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5kt_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.mp5kt_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5kt_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.mp5kt_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.G36KHolo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.G36KHolo_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.G36KHolo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.G36KHolo_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M1Super90sg_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M1Super90sg_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M1Super90sg_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M1Super90sg_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1A_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1A_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1A_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1A_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.G36Ksd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.G36Ksd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.G36ksd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.G36ksd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Glock19_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Glock19_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Glock19_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Glock19_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1ASD_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1ASD_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1ASD_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1ASD_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.AK74su_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.AK74su_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.AK47t_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.AK47t_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.XDM_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.XDM_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.XDM_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.XDM_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.SCARHAsd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.SCARHAsd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.SCARHAsd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.SCARHAsd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.SCARHsd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.SCARHsd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.SCARHsd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.SCARHsd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5ktsd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.mp5ktsd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5ktsd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.mp5ktsd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UZIt_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.UZIt_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4Super90Holo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4Super90Holo_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4Super90Holo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4Super90Holo_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.sg552Aim_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.sg552Aim_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.sg552Aim_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.sg552Aim_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.sg552Aimsd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.sg552Aimsd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.sg552Aimsd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.sg552Aimsd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UMP45Holosd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45Holosd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UMP45Holosd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45Holosd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.MP5Holo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.MP5Holo_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.MP5Holo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.MP5Holo_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.SilencedMP5Holo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.SilencedMP5Holo_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.SilencedMP5Holo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.SilencedMP5Holo_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.G36KHolosd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.G36KHolosd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.G36kHolosd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.G36kHolosd_ThirdPerson'
-Warning: Failed to load 'Class SwatProtectiveEquipment.MediumBodyArmor': Failed to find object 'Class SwatProtectiveEquipment.MediumBodyArmor'
-Warning: Failed to load 'Class SwatProtectiveEquipment.EnhancedBodyArmor': Failed to find object 'Class SwatProtectiveEquipment.EnhancedBodyArmor'
-Warning: Failed to load 'Class SwatProtectiveEquipment.helmetGasMask': Failed to find object 'Class SwatProtectiveEquipment.helmetGasMask'
-Log: Success: Everything is up to date
-Heading: --------------------SwatObjectives - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------SwatProcedures - Release--------------------
-Log: Success: Everything is up to date
-Heading: --------------------SwatGui - Release--------------------
-Log: Success: Everything is up to date
+Warning: Failed to load 'Core.u': Can't find file 'Core.u'
+Warning: Failed loading package: Can't find file 'Core.u'
+Log: Analyzing...
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\Core\Classes\Subsystem.uc)
+Log: Class: Subsystem extends Object
+Log: Updated native class 'Class Core.Subsystem'
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\Core\Classes\Object.uc)
+Log: Class: Object extends Vector
+Log: Updated native class 'Class Core.Object'
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\Core\Classes\RefCount.uc)
+Log: Class: RefCount extends Object
+Log: Updated native class 'Class Core.RefCount'
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\Core\Classes\Commandlet.uc)
+Log: Class: Commandlet extends Object
+Log: Updated native class 'Class Core.Commandlet'
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\Core\Classes\DeleteableObject.uc)
+Log: Class: DeleteableObject extends Object
+Log: Updated native class 'Class Core.DeleteableObject'
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\Core\Classes\HelloWorldCommandlet.uc)
+Log: Class: HelloWorldCommandlet extends Commandlet
+Log: Imported: Class Core.HelloWorldCommandlet
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\Core\Classes\Locale.uc)
+Log: Class: Locale extends Object
+Log: Imported: Class Core.Locale
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\Core\Classes\SimpleCommandlet.uc)
+Log: Class: SimpleCommandlet extends Commandlet
+Log: Imported: Class Core.SimpleCommandlet
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\Core\Classes\Time.uc)
+Log: Class: Time extends Object
+Log: Imported: Class Core.Time
+Log: Parsing Object
+Error: E:\GOG Games\SWAT 4\SEF_FR\Source\Unreal\Core\Classes\Object.uc(622) : error: Unexpected 'until'
+Log: Saving Core...
 Log: 
 
 Log: 
 
-Log: Success - 0 error(s), 0 warning(s)
+Log: Failure - 1 error(s), 0 warning(s)
 Exit: Preparing to exit.
 Log: Purging garbage
 Log: Unbound to Core.dll
 Log: Unbound to ScriptCompiler.dll
-Log: 1217.0ms Unloading: Package Core
-Log: 1217.0ms Unloading: Package Engine
-Log: 1217.0ms Unloading: Package Engine_res
-Log: 1217.0ms Unloading: Package SWAT4editorTex
-Log: 1217.0ms Unloading: Package SwatGear_sm
-Log: 1217.0ms Unloading: Package SwatGearTex
-Log: 1217.0ms Unloading: Package SWAT1stPersonTex
-Log: 1217.0ms Unloading: Package MP5A4_NEW
-Log: 1217.0ms Unloading: Package SwatFXtex
-Log: 1217.0ms Unloading: Package G36Knew
-Log: 1217.0ms Unloading: Package bm4
-Log: 1218.0ms Unloading: Package BenelliNovanew
-Log: 1218.0ms Unloading: Package M870Breach
-Log: 1218.0ms Unloading: Package mich_helmet
-Log: 1218.0ms Unloading: Package Kimber
-Log: 1218.0ms Unloading: Package UMPnew
-Log: 1218.0ms Unloading: Package MaleGang1Tex
-Log: 1218.0ms Unloading: Package M4A1_SFM500
-Log: 1218.0ms Unloading: Package surefireM900
-Log: 1218.0ms Unloading: Package FR_grenades
-Log: 1218.0ms Unloading: Package Glock
-Log: 1218.0ms Unloading: Package 92fs
-Log: 1218.0ms Unloading: Package motorola
-Log: 1218.0ms Unloading: Package safariland
-Log: 1218.0ms Unloading: Package HUD
-Log: 1218.0ms Unloading: Package EditorSprites
-Log: 1218.0ms Unloading: Package FP_Hand2
-Log: 1218.0ms Unloading: Package IGEffectsSystem
-Log: 1218.0ms Unloading: Package SWAThands
-Log: 1218.0ms Unloading: Package Editor_res
-Log: 1218.0ms Unloading: Package Hotel_sm
-Log: 1218.0ms Unloading: Package Hotel
-Log: 1218.0ms Unloading: Package MetalShaders
-Log: 1218.0ms Unloading: Package Repo_Tex
-Log: 1218.0ms Unloading: Package Arms_Tex
-Log: 1218.0ms Unloading: Package Silence_Tex
-Log: 1218.0ms Unloading: Package office_Tex
-Log: 1218.0ms Unloading: Package DNA_tex
-Log: 1218.0ms Unloading: Package VIP_Tex
-Log: 1218.0ms Unloading: Package HotelFXtex
-Log: 1218.0ms Unloading: Package barbershop_tex
-Log: 1219.0ms Unloading: Package SwatEquipmentModels2
-Log: 1219.0ms Unloading: Package GUI
-Log: 1219.0ms Unloading: Package gui_tex
-Log: 1219.0ms Unloading: Package SwatAICommon
-Log: 1219.0ms Unloading: Package Tyrion
-Log: 1219.0ms Unloading: Package AICommon
-Log: 1219.0ms Unloading: Package SwatAIAwareness
-Log: 1219.0ms Unloading: Package Scripting
-Log: 1219.0ms Unloading: Package IGSoundEffectsSubsystem
-Log: 1219.0ms Unloading: Package IGEffectsSystem_EditorTextures
-Log: 1219.0ms Unloading: Package Voting
-Log: 1219.0ms Unloading: Package RWOSupport
-Log: 1219.0ms Unloading: Package Gameplay
-Log: 1219.0ms Unloading: Package SwatEquipment
-Log: 1220.0ms Unloading: Package gui_FR
-Log: 1220.0ms Unloading: Package gui_sas
-Log: 1220.0ms Unloading: Package gui_tex3
-Log: 1220.0ms Unloading: Package gui_tex2
-Log: 1220.0ms Unloading: Package gear_sef
-Log: 1220.0ms Unloading: Package SwatArmory_Tex
-Log: 1220.0ms Unloading: Package GearTex_sef
-Log: 1220.0ms Unloading: Package GearTex_sas
-Log: 1220.0ms Unloading: Package SwatGear2Tex
-Log: 1220.0ms Unloading: Package bp_3P_tex
-Log: 1220.0ms Unloading: Package AimpointM2
-Log: 1220.0ms Unloading: Package gear_suspects
-Log: 1220.0ms Unloading: Package SwatEquipmentModels3
-Log: 1220.0ms Unloading: Package SwatEquipmentModels
-Log: 1220.0ms Unloading: Package NovaPump_ThirdPerson
-Log: 1220.0ms Unloading: Package FP_C2detonator
-Log: 1220.0ms Unloading: Package FP_csGasGrenade
-Log: 1220.0ms Unloading: Package Colt1911FL_ThirdPerson
-Log: 1220.0ms Unloading: Package FP_coltHG
-Log: 1220.0ms Unloading: Package FP_NovaPumpShotgun
-Log: 1220.0ms Unloading: Package FP_UMPsmg
-Log: 1220.0ms Unloading: Package Eotech552
-Log: 1220.0ms Unloading: Package FP_G36k
-Log: 1220.0ms Unloading: Package FP_9mmPistol
-Log: 1220.0ms Unloading: Package 1stPersonTex_sas
-Log: 1220.0ms Unloading: Package SurefireP101
-Log: 1220.0ms Unloading: Package NineMMpistol_ThirdPerson
-Log: 1220.0ms Unloading: Package FP_M4A1mg
-Log: 1220.0ms Unloading: Package FP_m4super90sg
-Log: 1220.0ms Unloading: Package FP_mp5SMG
-Log: 1220.0ms Unloading: Package FP_uzi
-Log: 1220.0ms Unloading: Package FP_flashbangGrenade
-Log: 1220.0ms Unloading: Package FP_stingGrenade
-Log: 1220.0ms Unloading: Package FP_mp5SMGsilenced
-Log: 1220.0ms Unloading: Package Optiwand_ThirdPerson
-Log: 1220.0ms Unloading: Package FP_Optiwand
-Log: 1220.0ms Unloading: Package scripted_tex
-Log: 1220.0ms Unloading: Package FP_Pepperspray
-Log: 1220.0ms Unloading: Package FP_BreachingSG
-Log: 1220.0ms Unloading: Package BreachingSG_ThirdPerson
-Log: 1220.0ms Unloading: Package FP_AK47
-Log: 1220.0ms Unloading: Package FP_DoorWedge
-Log: 1220.0ms Unloading: Package FP_toolkit
-Log: 1220.0ms Unloading: Package Coronas
-Log: 1220.0ms Unloading: Package FP_C2charge
-Log: 1220.0ms Unloading: Package FP_Handcuffs
-Log: 1220.0ms Unloading: Package FP_paintball
-Log: 1220.0ms Unloading: Package FP_taser
-Log: 1220.0ms Unloading: Package FP_Revolver
-Log: 1220.0ms Unloading: Package FP_FragGrenade
-Log: 1220.0ms Unloading: Package coltsmg_static
-Log: 1220.0ms Unloading: Package ColtSMG
-Log: 1220.0ms Unloading: Package FP_coltsmg
-Log: 1220.0ms Unloading: Package FP_coltsmgsil
-Log: 1220.0ms Unloading: Package SwatGear2_sm
-Log: 1220.0ms Unloading: Package druglab
-Log: 1220.0ms Unloading: Package SwatFX2tex
-Log: 1220.0ms Unloading: Package SW_FR
-Log: 1220.0ms Unloading: Package TaserWire
-Log: 1220.0ms Unloading: Package swatmeshfx2_sm
-Log: 1220.0ms Unloading: Package SwatProgrammerSampleClasses
-Log: 1220.0ms Unloading: Package DeadPeople_sm
-Log: 1220.0ms Unloading: Package FemaleNurseTex
-Log: 1220.0ms Unloading: Package MaleDoctorTex
-Log: 1220.0ms Unloading: Package SWATbadguyTex
-Log: 1220.0ms Unloading: Package SWATofficerTex
-Log: 1220.0ms Unloading: Package MaleCasual2Tex
-Log: 1220.0ms Unloading: Package Paradise_sm
-Log: 1220.0ms Unloading: Package Paradise_Tex
-Log: 1220.0ms Unloading: Package Tenement_Tex
-Log: 1220.0ms Unloading: Package train
-Log: 1220.0ms Unloading: Package Bar_Tex
-Log: 1220.0ms Unloading: Package Doors_sm
-Log: 1220.0ms Unloading: Package doors_Tex
-Log: 1220.0ms Unloading: Package bullseye_Tex
-Log: 1220.0ms Unloading: Package Hosp
-Log: 1220.0ms Unloading: Package RedLibrary_Tex
-Log: 1220.0ms Unloading: Package Jewel_Tex
-Log: 1220.0ms Unloading: Package doors_knobs
-Log: 1220.0ms Unloading: Package Power_Tex
-Log: 1220.0ms Unloading: Package SWATmeshFX_sm
-Log: 1220.0ms Unloading: Package Con_Tex
-Log: 1220.0ms Unloading: Package SwatDesignerClasses
-Log: 1220.0ms Unloading: Package Bar_sm
-Log: 1220.0ms Unloading: Package Junk_Tex
-Log: 1220.0ms Unloading: Package Outdoors_Tex
-Log: 1220.0ms Unloading: Package Con_sm
-Log: 1220.0ms Unloading: Package mac_Tex
-Log: 1220.0ms Unloading: Package Tenement_sm
-Log: 1220.0ms Unloading: Package Silence_sm
-Log: 1220.0ms Unloading: Package off_sm
-Log: 1220.0ms Unloading: Package Repo_sm
-Log: 1220.0ms Unloading: Package LocalizedTextures
-Log: 1220.0ms Unloading: Package Barbershop_sm
-Log: 1220.0ms Unloading: Package Furniture_Tex
-Log: 1220.0ms Unloading: Package dna_sm
-Log: 1220.0ms Unloading: Package amc_Tex
-Log: 1220.0ms Unloading: Package VIP_sm
-Log: 1220.0ms Unloading: Package Cars
-Log: 1220.0ms Unloading: Package mac_sm
-Log: 1220.0ms Unloading: Package Hosp_sm
-Log: 1220.0ms Unloading: Package Power_sm
-Log: 1220.0ms Unloading: Package Jewel_sm
-Log: 1220.0ms Unloading: Package arms_sm
-Log: 1220.0ms Unloading: Package Redlibrary_sm
-Log: 1220.0ms Unloading: Package Utility_Tex
-Log: 1220.0ms Unloading: Package train_sm
-Log: 1220.0ms Unloading: Package utility_sm
-Log: 1220.0ms Unloading: Package bullseye_sm
-Log: 1220.0ms Unloading: Package Junk_sm
-Log: 1220.0ms Unloading: Package Cars_sm
-Log: 1220.0ms Unloading: Package MaleJanitorTextureSet
-Log: 1220.0ms Unloading: Package wall_sm
-Log: 1221.0ms Unloading: Package wall_Tex
-Log: 1221.0ms Unloading: Package TrainingAnimatedMeshes
-Log: 1221.0ms Unloading: Package MPbomb
-Log: 1221.0ms Unloading: Package SWATMaleAnimation
-Log: 1221.0ms Unloading: Package LeoMelTextureSet
-Log: 1221.0ms Unloading: Package MaleSuitTex
-Log: 1221.0ms Unloading: Package MaleCasual3Tex
-Log: 1221.0ms Unloading: Package CultLeaderTextureSet
-Log: 1221.0ms Unloading: Package MaleBarberTex
-Log: 1221.0ms Unloading: Package SWATheavyTex
-Log: 1221.0ms Unloading: Package MaleChubbyTex
-Log: 1221.0ms Unloading: Package MaleCasual4Tex
-Log: 1221.0ms Unloading: Package SWATinstructorTex
-Log: 1221.0ms Unloading: Package MaleCasual1Tex
-Log: 1221.0ms Unloading: Package MaleCasualArmorTex
-Log: 1221.0ms Unloading: Package SwatProcedures
-Log: 1221.0ms Unloading: Package IpDrv
-Log: 1221.0ms Unloading: Package mp_OfficerTex
-Log: 1221.0ms Unloading: Package SWATMaleAnimation2
-Log: 1221.0ms Unloading: Package maleMafiaTex
-Log: 1221.0ms Unloading: Package maleHomelessTex
-Log: 1221.0ms Unloading: Package CASMtex
-Log: 1221.0ms Unloading: Package SWATnoArmourTex
-Log: 1221.0ms Unloading: Package CameraEffectsTex
-Log: 1221.0ms Unloading: Package SwatProtectiveEquipment
-Log: 1221.0ms Unloading: Package Suspect1_officerTex
-Log: 1221.0ms Unloading: Package ProgrammerTestObjectsTex
-Log: 1221.0ms Unloading: Package UWindow_res
-Log: 1221.0ms Unloading: Package CoopArrow
-Log: 1221.0ms Unloading: Package SWATDoubleDoorAnimations
-Log: 1221.0ms Unloading: Package SWATDoorAnimation
-Log: 1221.0ms Unloading: Package SwatProtectiveEquipment2
-Log: 1221.0ms Unloading: Package IGVisualEffectsSubsystem
-Log: 1221.0ms Unloading: Package Editor
-Log: 1221.0ms Unloading: Package UWindow
-Log: 1222.0ms Unloading: Package SwatEd
-Log: 1224.0ms Unloading: Package SwatGame
-Log: 1224.0ms Unloading: Package SwatObjectives
-Log: 1225.0ms Unloading: Package SwatGui
-Log: Garbage: objects: 55542->0; refs: 0
+Log: Garbage: objects: 837->0; refs: 0
 Exit: Object subsystem successfully closed.
 Exit: Exiting.
 Log: Waiting for file streaming thread to finish...
 Uninitialized: Name subsystem shut down
 Uninitialized: Allocation checking disabled
-Uninitialized: Log file closed, 03/29/21 22:18:15
+Uninitialized: Log file closed, 03/30/21 18:49:50

@@ -616,6 +616,7 @@ static function string StripHTMLColors(string In)
 				i = -1;
 			}
 			else
+			{
 				In = Mid(In, j + 1);
 			}
 		}
