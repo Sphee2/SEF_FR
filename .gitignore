@@ -101,3 +101,4 @@ System/IGSoundEffectsSubsystem.u
 *.bak
 Source/Game/SwatAIAwareness/Inc/SwatAIAwarenessClasses.h
 *.bak
+System/swat4x.log
