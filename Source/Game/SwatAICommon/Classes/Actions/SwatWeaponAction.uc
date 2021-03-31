@@ -216,9 +216,12 @@ final latent function LatentAimAtActor(Actor Target, optional float MaxWaitTime)
 
 final function AimAtActor(Actor Target)
 {
-	if (ISwatAI(m_Pawn).AnimCanAimAtDesiredActor(Target))
-    {
-		ISwatAI(m_pawn).AimAtActor(Target);
+	if (Target != None) // possible bug fixing
+	{
+		if (ISwatAI(m_Pawn).AnimCanAimAtDesiredActor(Target))
+        	{
+			ISwatAI(m_pawn).AimAtActor(Target);
+		}
 	}
 }
 
