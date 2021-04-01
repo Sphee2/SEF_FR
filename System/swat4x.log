@@ -1,4 +1,4 @@
-Log: Log file open, 03/30/21 22:19:39
+Log: Log file open, 04/01/21 18:18:26
 Init: ----------------------------------------
 Init: SWAT VERSION NUMBER: 0.61
 Init: ----------------------------------------
@@ -21,7 +21,7 @@ Init: User: admin
 Init: CPU Page size=4096, Processors=4
 Init: CPU Detected: PentiumPro-class processor (GenuineIntel)
 Init: CPU Features: CMov FPU RDTSC PAE MMX SSE
-Init: CPU Speed=3512.162070 MHz
+Init: CPU Speed=3512.133790 MHz
 Init: Memory total: Phys=2097151K Pagef=4194303K Virt=2097024K
 Init: Working set: 32000 / 159000
 Init: Physical Memory: 2047 MByte
@@ -134,7 +134,7 @@ Log: ****************************************************
 Log:  Beginning level load: 'Entry'
 Log: ****************************************************
 Log: ****************************************************
-Log:  Finished level load in 0.022 seconds
+Log:  Finished level load in 0.021 seconds
 Log: ****************************************************
 Log: Building Collision Octree...
 Log: Finished Building Collision Octree
@@ -142,11 +142,11 @@ Log: Game class is 'GameInfo'
 Log: Level is Level Entry.myLevel
 Log: *** WARNING - PATHS MAY NOT BE VALID ***
 Log: Bringing Level Entry.myLevel up for play (0)...
-Log: ---------- IsTheEntryLevel = 1, GameEngine=0xBD2F000, GameEngine->GEntry=0x0, GameEngine->GEntry->GetLevelInfo()=0x0, current LevelInfo=0x8A38500
+Log: ---------- IsTheEntryLevel = 1, GameEngine=0xCC3F000, GameEngine->GEntry=0x0, GameEngine->GEntry->GetLevelInfo()=0x0, current LevelInfo=0xA538500
 VoiceChat: GameInfo0 VoiceReplicationInfo created: None
 DevMassive: ADCLIENT: Level has empty ZoneName.
 DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
-Log: Loadmap executed in 0.05 seconds. (0.02 Verify) (0.02 Load) (0.00 Actor Init)
+Log: Loadmap executed in 0.07 seconds. (0.03 Verify) (0.02 Load) (0.02 Actor Init)
 Log: UGameEngine::Init() ... CommandLine = 
 Log: Browse: Entry.s4m?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
 Log: LoadMap: Entry.s4m?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
@@ -159,7 +159,7 @@ Log:  Finished level load in 0.001 seconds
 Log: ****************************************************
 DevMassive: ADCLIENT: Level has empty ZoneName.
 DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
-Log: Loadmap executed in 0.01 seconds. (0.00 Verify) (0.00 Load) (0.00 Actor Init)
+Log: Loadmap executed in 0.00 seconds. (0.00 Verify) (0.00 Load) (0.00 Actor Init)
 Warning: Failed to load 'Class None.ini:Engine.Engine.DefaultPlayerMenu': Can't find 'ini:Engine.Engine.DefaultPlayerMenu' in configuration file
 IMaster: Could not load interaction [ini:Engine.Engine.DefaultPlayerMenu]
 Log: Applying TEXTURE Detail Setting [3]
@@ -252,8 +252,8 @@ Log: WM_KILLFOCUS was called
 Log: WM_SETFOCUS was called
 Log: Opened viewport
 Log: Enter SetRes: 2560x1080 Fullscreen 1
-Log: Flushing viewport 0xB530780
-Log: Finished flushing viewport 0xB530780 in 0.001 seconds
+Log: Flushing viewport 0xF240780
+Log: Finished flushing viewport 0xF240780 in 0.001 seconds
 Init: Best-match display mode: 2560x1080x32@60
 Log: Using back-buffer format 22(32-bit)
 Log: Using depth-buffer format 75(32-bit)
@@ -265,8 +265,8 @@ Log: Creating IME context.
 Log: Initializing COM and the Speech API.
 Log: Failed to load our grammar into the speech recognition context.
 Log: Failed to initialize the Speech API
-Init: Game engine initialized in 16.34 seconds
-Log: Startup time: 17.937000 seconds
+Init: Game engine initialized in 16.315 seconds
+Log: Startup time: 17.850000 seconds
 Log: URL: Adding default option Name=OfficerMonki
 Log: URL: Adding default option Class=SwatGame.SwatPlayer
 Log: URL: Adding default option team=255
@@ -277,49 +277,49 @@ Log: ****************************************************
 Log:  Beginning level load: 'swat_splashscene'
 Log: ****************************************************
 Log: ****************************************************
-Log:  Finished level load in 1.264 seconds
+Log:  Finished level load in 1.27 seconds
 Log: ****************************************************
 Log: Collecting garbage
 Log: Purging garbage
-Log: 20702.0ms Unloading: Package SwatObjectives
-Log: 20702.0ms Unloading: Package SwatSimpleEquipment
+Log: 20655.0ms Unloading: Package SwatObjectives
+Log: 20655.0ms Unloading: Package SwatSimpleEquipment
 Log: Garbage: objects: 50313->49967; refs: 572641
 Log: Building Collision Octree...
 Log: Finished Building Collision Octree
 Log: Game class is 'GameInfo'
 Log: Level is Level swat_splashscene.myLevel
 Log: Bringing Level swat_splashscene.myLevel up for play (0)...
-Log: ---------- IsTheEntryLevel = 0, GameEngine=0xBD2F000, GameEngine->GEntry=0xB631400, GameEngine->GEntry->GetLevelInfo()=0x8A38500, current LevelInfo=0x38B8BD00
+Log: ---------- IsTheEntryLevel = 0, GameEngine=0xCC3F000, GameEngine->GEntry=0xF341400, GameEngine->GEntry->GetLevelInfo()=0xA538500, current LevelInfo=0x3A34BD00
 VoiceChat: GameInfo1 VoiceReplicationInfo created: None
 Log: Spawning new actor for Viewport WindowsViewport0
 Log: SwatEntryPlayerController1 got player WindowsViewport0
 Log: Creating IME context.
-Log: Flushing viewport 0xB530780
-Log: Finished flushing viewport 0xB530780 in 0.001 seconds
+Log: Flushing viewport 0xF240780
+Log: Finished flushing viewport 0xF240780 in 0.001 seconds
 DevMassive: ADCLIENT: Level has empty ZoneName.
 DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
-Log: Loadmap executed in 2.88 seconds. (0.69 Verify) (1.26 Load) (0.19 Actor Init)
+Log: Loadmap executed in 2.93 seconds. (0.69 Verify) (1.27 Load) (0.22 Actor Init)
 Log: Precaching: swat_splashscene.LevelInfo0
-Log: Finished Static Mesh Batch build in 0.000 seconds
+Log: Finished Static Mesh Batch build in 0.001 seconds
 Log: Static mesh batches: 3380000 vertex bytes, 185430 index bytes
 Log: Allocating 16384 byte dynamic index buffer.
 Log: Allocating 65536 byte dynamic vertex buffer.
-Log: Finished precaching geometry in 0.278 seconds
-Log: Finished precaching textures in 1.507 seconds
+Log: Finished precaching geometry in 0.320 seconds
+Log: Finished precaching textures in 1.582 seconds
 Init: EffectsSystem Configuration: ..\system\VisualEffectsConfig.u is up-to-date.
 Log: [EFFECTS SYSTEM] The VisualEffectsSubsystem's configuration package is up-to-date.
 Log: Collecting garbage
 Log: Purging garbage
 Log: Garbage: objects: 52045->51677; refs: 595049
 Log: VisualEffectsSubsystem created.
-Init: EffectsSystem Configuration: ..\system\SoundEffectsConfig.u is out of date or missing.  Building it from SoundEffects.ini.
-Log: [EFFECTS SYSTEM] The SoundEffectsSubsystem is packaging its effects configuration.
+Init: EffectsSystem Configuration: ..\system\SoundEffectsConfig.u is up-to-date.
+Log: [EFFECTS SYSTEM] The SoundEffectsSubsystem's configuration package is up-to-date.
 Log: WARNING: AEffectsSubsystem::execAddEventResponse() Found that the EventResponse named SwatPlayerReportedDeployingC2 is duplicated in the SoundEffectsSubsystem.
 Log: Assertion failed: !duplicate_event_response [File:.\IGEffectsSystem.cpp] [Line: 188]
 Log: There are no Streams specified for StreamSoundEffectSpecification: 
-Warning: ImportText failed in: (SpecificationType=HKsd_1p_Fired,SpecificationClass=Class'IGSoundEffectsSubsystem.NormalSoundEffectSpe
-Log: Save=285.585923
-Log: Moving '..\system\Save.tmp' to '..\system\SoundEffectsConfig.u'
+Log: Collecting garbage
+Log: Purging garbage
+Log: Garbage: objects: 83719->69735; refs: 688373
 Log: SoundEffectsSubsystem created.
 Log: Creating IME context.
 Log: Precaching: swat_splashscene.LevelInfo0
@@ -341,36 +341,37 @@ Log: ****************************************************
 Log: (Havok): Physical world for ULevel being created.
 Log: (Havok): Using medium solver
 Log: (Havok): Found 3 ragdoll files matching search path '..\HavokData\*.hke'
-Log: (Havok):   Precached ragdoll for file 'HotelSuitBag_rd.hke' in 19 ms.
-Log: (Havok):   Precached ragdoll for file 'PaperTarget_rd.hke' in 5 ms.
-Log: (Havok):   Precached ragdoll for file 'SWATofficer_rd.hke' in 31 ms.
+Log: (Havok):   Precached ragdoll for file 'HotelSuitBag_rd.hke' in 40 ms.
+Log: (Havok):   Precached ragdoll for file 'PaperTarget_rd.hke' in 16 ms.
+Log: (Havok):   Precached ragdoll for file 'SWATofficer_rd.hke' in 41 ms.
 Log: (Havok): Finished precaching ragdolls
 Log: ****************************************************
-Log:  Finished level load in 2.349 seconds
+Log:  Finished level load in 2.386 seconds
 Log: ****************************************************
 Log: Collecting garbage
 Log: Purging garbage
-Log: 38505.0ms Unloading: Package swat_splashscene
-Log: 38505.0ms Unloading: Package GUIanimations
-Log: 38505.0ms Unloading: Package Tenement_sm
-Log: 38505.0ms Unloading: Package Cars_sm
-Log: 38506.0ms Unloading: Package VisualEffectsConfig
-Log: 38506.0ms Unloading: Package SWATeffects2
-Log: 38507.0ms Unloading: Package SW_meta
-Log: 38507.0ms Unloading: Package SW_vo
-Log: 38509.0ms Unloading: Package SW_ambients
-Log: 38509.0ms Unloading: Package SW_objects
-Log: 38509.0ms Unloading: Package SW_bounce
-Log: 38509.0ms Unloading: Package SW_weapons
-Log: 38509.0ms Unloading: Package SWsef_weapons
-Log: 38509.0ms Unloading: Package SW_hits
-Log: 38509.0ms Unloading: Package SW_bullets
-Log: 38509.0ms Unloading: Package SWSAS_weapons
-Log: 38509.0ms Unloading: Package SW_feet
-Log: 38510.0ms Unloading: Package SWEXP_weapons
-Log: 38510.0ms Unloading: Package SWEXP_ambience
-Log: 38510.0ms Unloading: Package SwatObjectives
-Log: Garbage: objects: 93818->61064; refs: 911500
+Log: 32056.0ms Unloading: Package swat_splashscene
+Log: 32056.0ms Unloading: Package GUIanimations
+Log: 32056.0ms Unloading: Package Tenement_sm
+Log: 32056.0ms Unloading: Package Cars_sm
+Log: 32057.0ms Unloading: Package VisualEffectsConfig
+Log: 32057.0ms Unloading: Package SWATeffects2
+Log: 32057.0ms Unloading: Package SWsef_weapons
+Log: 32057.0ms Unloading: Package SW_meta
+Log: 32057.0ms Unloading: Package SWSAS_weapons
+Log: 32057.0ms Unloading: Package SW_bounce
+Log: 32057.0ms Unloading: Package SW_hits
+Log: 32057.0ms Unloading: Package SWEXP_weapons
+Log: 32057.0ms Unloading: Package SWEXP_ambience
+Log: 32057.0ms Unloading: Package SW_objects
+Log: 32057.0ms Unloading: Package SW_vo
+Log: 32057.0ms Unloading: Package SW_ambients
+Log: 32057.0ms Unloading: Package SW_weapons
+Log: 32057.0ms Unloading: Package SW_bullets
+Log: 32057.0ms Unloading: Package SW_feet
+Log: 32057.0ms Unloading: Package SoundEffectsConfig
+Log: 32059.0ms Unloading: Package SwatObjectives
+Log: Garbage: objects: 82080->61064; refs: 911500
 Log: (Havok): Calling HavokInitActor on all 2235 Actors in the level
 Log: (Havok) Initialised level mopp in 0.04 seconds
 Log: Building Collision Octree...
@@ -379,26 +380,26 @@ Log: Game class is 'SwatGameInfo'
 Log: Level is Level SP-Training.myLevel
 Log: *** WARNING - PATHS MAY NOT BE VALID ***
 Log: Bringing Level SP-Training.myLevel up for play (0)...
-Log: ---------- IsTheEntryLevel = 0, GameEngine=0xBD2F000, GameEngine->GEntry=0xB631400, GameEngine->GEntry->GetLevelInfo()=0x8A38500, current LevelInfo=0x451C0E00
+Log: ---------- IsTheEntryLevel = 0, GameEngine=0xCC3F000, GameEngine->GEntry=0xF341400, GameEngine->GEntry->GetLevelInfo()=0xA538500, current LevelInfo=0x46970E00
 Init: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
 Init: WinSock: I am PC-CASA (26.85.202.120)
 Log: Resolving ...
 Log: Spawning new actor for Viewport WindowsViewport0
 Log: SwatGamePlayerController0 got player WindowsViewport0
 Log: Creating IME context.
-Log: Flushing viewport 0xB530780
-Log: Finished flushing viewport 0xB530780 in 0.009 seconds
+Log: Flushing viewport 0xF240780
+Log: Finished flushing viewport 0xF240780 in 0.008 seconds
 DevMassive: ADCLIENT: Level has empty ZoneName.
 DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
-Log: Loadmap executed in 3.93 seconds. (0.44 Verify) (2.35 Load) (0.75 Actor Init)
+Log: Loadmap executed in 4.02 seconds. (0.44 Verify) (2.39 Load) (0.80 Actor Init)
 Log: Resolved  (26.85.202.120)
 Log: Precaching: SP-Training.LevelInfo0
 Log: Finished Static Mesh Batch build in 0.001 seconds
 Log: Static mesh batches: 25361932 vertex bytes, 2155428 index bytes
 Log: Allocating 16384 byte dynamic index buffer.
 Log: Allocating 65536 byte dynamic vertex buffer.
-Log: Finished precaching geometry in 0.377 seconds
-Log: Finished precaching textures in 1.479 seconds
+Log: Finished precaching geometry in 0.359 seconds
+Log: Finished precaching textures in 1.507 seconds
 Init: EffectsSystem Configuration: ..\system\VisualEffectsConfig.u is up-to-date.
 Log: [EFFECTS SYSTEM] The VisualEffectsSubsystem's configuration package is up-to-date.
 Log: Collecting garbage
@@ -420,7 +421,7 @@ Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAround
 Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-Training.IdleAimAroundAction10
 Log: Precaching: SP-Training.LevelInfo0
 Log: Finished precaching geometry in 0.014 seconds
-Log: Finished precaching textures in 0.022 seconds
+Log: Finished precaching textures in 0.025 seconds
 Localization: No localization: Engine.KeyNames.W (int)
 Localization: No localization: Engine.KeyNames.S (int)
 Localization: No localization: Engine.KeyNames.A (int)
@@ -429,10 +430,151 @@ Localization: No localization: Engine.KeyNames.Period (int)
 Localization: No localization: Engine.KeyNames.C (int)
 Localization: No localization: Engine.KeyNames.Q (int)
 Localization: No localization: Engine.KeyNames.E (int)
+Log: Allocating 68544 byte dynamic vertex buffer.
+Log: Allocating 77040 byte dynamic vertex buffer.
 Localization: No localization: Engine.KeyNames.F (int)
 Localization: No localization: Engine.KeyNames.F (int)
 Localization: No localization: Engine.KeyNames.R (int)
 Localization: No localization: Engine.KeyNames.Z (int)
+Localization: No localization: Engine.KeyNames.X (int)
+Log: WM_KILLFOCUS was called
+Log: Pausing game due to lost focus
+Log: Viewport WindowsViewport0: WM_DisplayChange, XRes: 2560, YRes: 1080
+Log: WM_SETFOCUS was called
+Log: Creating IME context.
+Log: Enter SetRes: 2560x1080 Fullscreen 1
+Log: Flushing viewport 0xF240780
+Log: Finished flushing viewport 0xF240780 in 0.012 seconds
+Init: Best-match display mode: 2560x1080x32@60
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating device
+Log: xD3D9Helper::Init (QuadEmulation)
+Init: D3D Driver: CreateDevice: will use hardware transform and lighting.
+Init: D3D Driver: CreateDevice: will use hardware vertex processing
+Log: Finished restoring fullscreen after D3DERR_DEVICENOTRESET.
+Log: Allocating 16384 byte dynamic index buffer.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Precaching: SP-Training.LevelInfo0
+Log: Finished precaching geometry in 0.211 seconds
+Log: Finished precaching textures in 0.282 seconds
+Log: Precaching: finished precaching after change back to fullscreen; registering for extra flush.
+Log: WM_KILLFOCUS was called
+Log: Pausing game due to lost focus
+Log: WM_SETFOCUS was called
+Log: Creating IME context.
+Log: Enter SetRes: 2560x1080 Fullscreen 1
+Log: Flushing viewport 0xF240780
+Log: Finished flushing viewport 0xF240780 in 0.011 seconds
+Init: Best-match display mode: 2560x1080x32@60
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating device
+Log: xD3D9Helper::Init (QuadEmulation)
+Init: D3D Driver: CreateDevice: will use hardware transform and lighting.
+Init: D3D Driver: CreateDevice: will use hardware vertex processing
+Log: Finished restoring fullscreen after D3DERR_DEVICENOTRESET.
+Log: Allocating 16384 byte dynamic index buffer.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Precaching: SP-Training.LevelInfo0
+Log: Finished precaching geometry in 0.205 seconds
+Log: Finished precaching textures in 0.275 seconds
+Log: Precaching: finished precaching after change back to fullscreen; registering for extra flush.
+Log: Allocating 77040 byte dynamic vertex buffer.
+Log: WM_KILLFOCUS was called
+Log: Pausing game due to lost focus
+Log: WM_SETFOCUS was called
+Log: Creating IME context.
+Log: Enter SetRes: 2560x1080 Fullscreen 1
+Log: Flushing viewport 0xF240780
+Log: Finished flushing viewport 0xF240780 in 0.011 seconds
+Init: Best-match display mode: 2560x1080x32@60
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating device
+Log: xD3D9Helper::Init (QuadEmulation)
+Init: D3D Driver: CreateDevice: will use hardware transform and lighting.
+Init: D3D Driver: CreateDevice: will use hardware vertex processing
+Log: Finished restoring fullscreen after D3DERR_DEVICENOTRESET.
+Log: Allocating 16384 byte dynamic index buffer.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Precaching: SP-Training.LevelInfo0
+Log: Finished precaching geometry in 0.214 seconds
+Log: Finished precaching textures in 0.285 seconds
+Log: Precaching: finished precaching after change back to fullscreen; registering for extra flush.
+Log: WM_KILLFOCUS was called
+Log: Pausing game due to lost focus
+Log: WM_SETFOCUS was called
+Log: Creating IME context.
+Log: Enter SetRes: 2560x1080 Fullscreen 1
+Log: Flushing viewport 0xF240780
+Log: Finished flushing viewport 0xF240780 in 0.012 seconds
+Init: Best-match display mode: 2560x1080x32@60
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating device
+Log: xD3D9Helper::Init (QuadEmulation)
+Init: D3D Driver: CreateDevice: will use hardware transform and lighting.
+Init: D3D Driver: CreateDevice: will use hardware vertex processing
+Log: Finished restoring fullscreen after D3DERR_DEVICENOTRESET.
+Log: Allocating 16384 byte dynamic index buffer.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Precaching: SP-Training.LevelInfo0
+Log: Finished precaching geometry in 0.216 seconds
+Log: Finished precaching textures in 0.287 seconds
+Log: Precaching: finished precaching after change back to fullscreen; registering for extra flush.
+Log: Allocating 77040 byte dynamic vertex buffer.
+Log: WM_KILLFOCUS was called
+Log: Pausing game due to lost focus
+Log: WM_SETFOCUS was called
+Log: Creating IME context.
+Log: Enter SetRes: 2560x1080 Fullscreen 1
+Log: Flushing viewport 0xF240780
+Log: Finished flushing viewport 0xF240780 in 0.012 seconds
+Init: Best-match display mode: 2560x1080x32@60
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating device
+Log: xD3D9Helper::Init (QuadEmulation)
+Init: D3D Driver: CreateDevice: will use hardware transform and lighting.
+Init: D3D Driver: CreateDevice: will use hardware vertex processing
+Log: Finished restoring fullscreen after D3DERR_DEVICENOTRESET.
+Log: Allocating 16384 byte dynamic index buffer.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Precaching: SP-Training.LevelInfo0
+Log: Finished precaching geometry in 0.208 seconds
+Log: Finished precaching textures in 0.278 seconds
+Log: Precaching: finished precaching after change back to fullscreen; registering for extra flush.
+Log: Allocating 69840 byte dynamic vertex buffer.
+Log: Allocating 70128 byte dynamic vertex buffer.
+Log: Allocating 75744 byte dynamic vertex buffer.
+Log: Allocating 75888 byte dynamic vertex buffer.
+Log: Allocating 76176 byte dynamic vertex buffer.
+Log: Allocating 81936 byte dynamic vertex buffer.
+Log: Allocating 82224 byte dynamic vertex buffer.
+Log: Allocating 87984 byte dynamic vertex buffer.
+Log: Allocating 88272 byte dynamic vertex buffer.
+Log: WM_KILLFOCUS was called
+Log: Pausing game due to lost focus
+Log: WM_SETFOCUS was called
+Log: Creating IME context.
+Log: Enter SetRes: 2560x1080 Fullscreen 1
+Log: Flushing viewport 0xF240780
+Log: Finished flushing viewport 0xF240780 in 0.011 seconds
+Init: Best-match display mode: 2560x1080x32@60
+Log: Using back-buffer format 22(32-bit)
+Log: Using depth-buffer format 75(32-bit)
+Log: Creating device
+Log: xD3D9Helper::Init (QuadEmulation)
+Init: D3D Driver: CreateDevice: will use hardware transform and lighting.
+Init: D3D Driver: CreateDevice: will use hardware vertex processing
+Log: Finished restoring fullscreen after D3DERR_DEVICENOTRESET.
+Log: Allocating 16384 byte dynamic index buffer.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Precaching: SP-Training.LevelInfo0
+Log: Finished precaching geometry in 0.218 seconds
+Log: Finished precaching textures in 0.284 seconds
+Log: Precaching: finished precaching after change back to fullscreen; registering for extra flush.
 Log: Closing by request
 Log: appRequestExit(0)
 Exit: Preparing to exit.
@@ -451,339 +593,339 @@ Log: Unbound to GUI.dll
 Log: Unbound to SwatAICommon.dll
 Log: Unbound to Editor.dll
 Log: Unbound to ScriptCompiler.dll
-Log: 83718.0ms Unloading: Package SwatGame
-Log: 83718.0ms Unloading: Package Core
-Log: 83718.0ms Unloading: Package Engine
-Log: 83719.0ms Unloading: Package Engine_res
-Log: 83719.0ms Unloading: Package SWAT4editorTex
-Log: 83719.0ms Unloading: Package SwatGear_sm
-Log: 83719.0ms Unloading: Package SwatGearTex
-Log: 83719.0ms Unloading: Package SWAT1stPersonTex
-Log: 83719.0ms Unloading: Package MP5A4_NEW
-Log: 83719.0ms Unloading: Package SwatFXtex
-Log: 83719.0ms Unloading: Package G36Knew
-Log: 83719.0ms Unloading: Package bm4
-Log: 83719.0ms Unloading: Package BenelliNovanew
-Log: 83719.0ms Unloading: Package M870Breach
-Log: 83719.0ms Unloading: Package mich_helmet
-Log: 83719.0ms Unloading: Package Kimber
-Log: 83719.0ms Unloading: Package UMPnew
-Log: 83719.0ms Unloading: Package MaleGang1Tex
-Log: 83719.0ms Unloading: Package M4A1_SFM500
-Log: 83719.0ms Unloading: Package surefireM900
-Log: 83719.0ms Unloading: Package FR_grenades
-Log: 83719.0ms Unloading: Package Glock
-Log: 83719.0ms Unloading: Package 92fs
-Log: 83719.0ms Unloading: Package motorola
-Log: 83719.0ms Unloading: Package safariland
-Log: 83719.0ms Unloading: Package HUD
-Log: 83719.0ms Unloading: Package EditorSprites
-Log: 83719.0ms Unloading: Package FP_Hand2
+Log: 422305.0ms Unloading: Package SwatGame
+Log: 422305.0ms Unloading: Package Core
+Log: 422305.0ms Unloading: Package Engine
+Log: 422306.0ms Unloading: Package Engine_res
+Log: 422306.0ms Unloading: Package SWAT4editorTex
+Log: 422306.0ms Unloading: Package SwatGear_sm
+Log: 422306.0ms Unloading: Package SwatGearTex
+Log: 422306.0ms Unloading: Package SWAT1stPersonTex
+Log: 422306.0ms Unloading: Package MP5A4_NEW
+Log: 422306.0ms Unloading: Package SwatFXtex
+Log: 422306.0ms Unloading: Package G36Knew
+Log: 422306.0ms Unloading: Package bm4
+Log: 422306.0ms Unloading: Package BenelliNovanew
+Log: 422306.0ms Unloading: Package M870Breach
+Log: 422306.0ms Unloading: Package mich_helmet
+Log: 422306.0ms Unloading: Package Kimber
+Log: 422306.0ms Unloading: Package UMPnew
+Log: 422306.0ms Unloading: Package MaleGang1Tex
+Log: 422306.0ms Unloading: Package M4A1_SFM500
+Log: 422306.0ms Unloading: Package surefireM900
+Log: 422306.0ms Unloading: Package FR_grenades
+Log: 422306.0ms Unloading: Package Glock
+Log: 422306.0ms Unloading: Package 92fs
+Log: 422306.0ms Unloading: Package motorola
+Log: 422306.0ms Unloading: Package safariland
+Log: 422306.0ms Unloading: Package HUD
+Log: 422306.0ms Unloading: Package EditorSprites
+Log: 422306.0ms Unloading: Package FP_Hand2
 Log: Unbound to IGEffectsSystem.dll
-Log: 83719.0ms Unloading: Package IGEffectsSystem
-Log: 83719.0ms Unloading: Package SWAThands
-Log: 83719.0ms Unloading: Package Editor_res
-Log: 83719.0ms Unloading: Package Hotel_sm
-Log: 83719.0ms Unloading: Package Hotel
-Log: 83719.0ms Unloading: Package MetalShaders
-Log: 83719.0ms Unloading: Package Repo_Tex
-Log: 83719.0ms Unloading: Package Arms_Tex
-Log: 83719.0ms Unloading: Package Silence_Tex
-Log: 83719.0ms Unloading: Package office_Tex
-Log: 83719.0ms Unloading: Package DNA_tex
-Log: 83719.0ms Unloading: Package VIP_Tex
-Log: 83719.0ms Unloading: Package HotelFXtex
-Log: 83719.0ms Unloading: Package barbershop_tex
-Log: 83719.0ms Unloading: Package SwatAICommon
-Log: 83720.0ms Unloading: Package Tyrion
-Log: 83720.0ms Unloading: Package AICommon
-Log: 83720.0ms Unloading: Package SwatAIAwareness
-Log: 83720.0ms Unloading: Package GUI
-Log: 83720.0ms Unloading: Package gui_tex
-Log: 83720.0ms Unloading: Package Scripting
-Log: 83720.0ms Unloading: Package Voting
+Log: 422306.0ms Unloading: Package IGEffectsSystem
+Log: 422306.0ms Unloading: Package SWAThands
+Log: 422306.0ms Unloading: Package Editor_res
+Log: 422306.0ms Unloading: Package Hotel_sm
+Log: 422306.0ms Unloading: Package Hotel
+Log: 422306.0ms Unloading: Package MetalShaders
+Log: 422306.0ms Unloading: Package Repo_Tex
+Log: 422306.0ms Unloading: Package Arms_Tex
+Log: 422306.0ms Unloading: Package Silence_Tex
+Log: 422306.0ms Unloading: Package office_Tex
+Log: 422306.0ms Unloading: Package DNA_tex
+Log: 422306.0ms Unloading: Package VIP_Tex
+Log: 422306.0ms Unloading: Package HotelFXtex
+Log: 422306.0ms Unloading: Package barbershop_tex
+Log: 422306.0ms Unloading: Package SwatAICommon
+Log: 422307.0ms Unloading: Package Tyrion
+Log: 422307.0ms Unloading: Package AICommon
+Log: 422307.0ms Unloading: Package SwatAIAwareness
+Log: 422307.0ms Unloading: Package GUI
+Log: 422307.0ms Unloading: Package gui_tex
+Log: 422307.0ms Unloading: Package Scripting
+Log: 422307.0ms Unloading: Package Voting
 Log: Unbound to IGSoundEffectsSubsystem.dll
-Log: 83720.0ms Unloading: Package IGSoundEffectsSubsystem
-Log: 83720.0ms Unloading: Package IGEffectsSystem_EditorTextures
-Log: 83720.0ms Unloading: Package RWOSupport
-Log: 83720.0ms Unloading: Package Gameplay
+Log: 422307.0ms Unloading: Package IGSoundEffectsSubsystem
+Log: 422307.0ms Unloading: Package IGEffectsSystem_EditorTextures
+Log: 422307.0ms Unloading: Package RWOSupport
+Log: 422307.0ms Unloading: Package Gameplay
 Log: Unbound to IpDrv.dll
-Log: 83720.0ms Unloading: Package IpDrv
-Log: 83720.0ms Unloading: Package mp_OfficerTex
-Log: 83720.0ms Unloading: Package Doors_sm
-Log: 83720.0ms Unloading: Package doors_Tex
-Log: 83720.0ms Unloading: Package bullseye_Tex
-Log: 83720.0ms Unloading: Package Paradise_Tex
-Log: 83720.0ms Unloading: Package Tenement_Tex
-Log: 83720.0ms Unloading: Package train
-Log: 83720.0ms Unloading: Package Bar_Tex
-Log: 83720.0ms Unloading: Package Hosp
-Log: 83720.0ms Unloading: Package RedLibrary_Tex
-Log: 83720.0ms Unloading: Package Jewel_Tex
-Log: 83720.0ms Unloading: Package doors_knobs
-Log: 83720.0ms Unloading: Package Power_Tex
-Log: 83720.0ms Unloading: Package SWATMaleAnimation2
-Log: 83720.0ms Unloading: Package SWATofficerTex
-Log: 83720.0ms Unloading: Package maleMafiaTex
-Log: 83720.0ms Unloading: Package maleHomelessTex
-Log: 83720.0ms Unloading: Package MaleCasual3Tex
-Log: 83720.0ms Unloading: Package LeoMelTextureSet
-Log: 83720.0ms Unloading: Package MaleSuitTex
-Log: 83720.0ms Unloading: Package MaleJanitorTextureSet
-Log: 83720.0ms Unloading: Package MaleChubbyTex
-Log: 83720.0ms Unloading: Package MaleBarberTex
-Log: 83720.0ms Unloading: Package CASMtex
-Log: 83720.0ms Unloading: Package MaleCasual2Tex
-Log: 83720.0ms Unloading: Package SWATheavyTex
-Log: 83720.0ms Unloading: Package SWATinstructorTex
-Log: 83720.0ms Unloading: Package MaleCasual4Tex
-Log: 83720.0ms Unloading: Package MaleCasual1Tex
-Log: 83720.0ms Unloading: Package SWATnoArmourTex
-Log: 83720.0ms Unloading: Package MaleCasualArmorTex
-Log: 83720.0ms Unloading: Package CameraEffectsTex
-Log: 83720.0ms Unloading: Package ProgrammerTestObjectsTex
-Log: 83720.0ms Unloading: Package arms_sm
-Log: 83720.0ms Unloading: Package Outdoors_Tex
-Log: 83720.0ms Unloading: Package UWindow_res
-Log: 83720.0ms Unloading: Package CoopArrow
-Log: 83721.0ms Unloading: Package gui_tex2
-Log: 83721.0ms Unloading: Package gui_sas
-Log: 83721.0ms Unloading: Package SWATDoubleDoorAnimations
-Log: 83721.0ms Unloading: Package SWATDoorAnimation
-Log: 83721.0ms Unloading: Package SwatGear2_sm
-Log: 83721.0ms Unloading: Package SwatGear2Tex
-Log: 83721.0ms Unloading: Package druglab
-Log: 83721.0ms Unloading: Package SwatFX2tex
-Log: 83721.0ms Unloading: Package SwatEquipmentModels2
-Log: 83721.0ms Unloading: Package Coronas
+Log: 422307.0ms Unloading: Package IpDrv
+Log: 422307.0ms Unloading: Package mp_OfficerTex
+Log: 422307.0ms Unloading: Package Doors_sm
+Log: 422307.0ms Unloading: Package doors_Tex
+Log: 422307.0ms Unloading: Package bullseye_Tex
+Log: 422307.0ms Unloading: Package Paradise_Tex
+Log: 422307.0ms Unloading: Package Tenement_Tex
+Log: 422307.0ms Unloading: Package train
+Log: 422307.0ms Unloading: Package Bar_Tex
+Log: 422307.0ms Unloading: Package Hosp
+Log: 422307.0ms Unloading: Package RedLibrary_Tex
+Log: 422307.0ms Unloading: Package Jewel_Tex
+Log: 422307.0ms Unloading: Package doors_knobs
+Log: 422307.0ms Unloading: Package Power_Tex
+Log: 422307.0ms Unloading: Package SWATMaleAnimation2
+Log: 422307.0ms Unloading: Package SWATofficerTex
+Log: 422307.0ms Unloading: Package maleMafiaTex
+Log: 422307.0ms Unloading: Package maleHomelessTex
+Log: 422307.0ms Unloading: Package MaleCasual3Tex
+Log: 422307.0ms Unloading: Package LeoMelTextureSet
+Log: 422307.0ms Unloading: Package MaleSuitTex
+Log: 422307.0ms Unloading: Package MaleJanitorTextureSet
+Log: 422307.0ms Unloading: Package MaleChubbyTex
+Log: 422308.0ms Unloading: Package MaleBarberTex
+Log: 422308.0ms Unloading: Package CASMtex
+Log: 422308.0ms Unloading: Package MaleCasual2Tex
+Log: 422308.0ms Unloading: Package SWATheavyTex
+Log: 422308.0ms Unloading: Package SWATinstructorTex
+Log: 422308.0ms Unloading: Package MaleCasual4Tex
+Log: 422308.0ms Unloading: Package MaleCasual1Tex
+Log: 422308.0ms Unloading: Package SWATnoArmourTex
+Log: 422308.0ms Unloading: Package MaleCasualArmorTex
+Log: 422308.0ms Unloading: Package CameraEffectsTex
+Log: 422308.0ms Unloading: Package ProgrammerTestObjectsTex
+Log: 422308.0ms Unloading: Package arms_sm
+Log: 422308.0ms Unloading: Package Outdoors_Tex
+Log: 422308.0ms Unloading: Package UWindow_res
+Log: 422308.0ms Unloading: Package CoopArrow
+Log: 422308.0ms Unloading: Package gui_tex2
+Log: 422308.0ms Unloading: Package gui_sas
+Log: 422308.0ms Unloading: Package SWATDoubleDoorAnimations
+Log: 422308.0ms Unloading: Package SWATDoorAnimation
+Log: 422308.0ms Unloading: Package SwatGear2_sm
+Log: 422308.0ms Unloading: Package SwatGear2Tex
+Log: 422308.0ms Unloading: Package druglab
+Log: 422308.0ms Unloading: Package SwatFX2tex
+Log: 422308.0ms Unloading: Package SwatEquipmentModels2
+Log: 422308.0ms Unloading: Package Coronas
 Exit: Game engine shut down
 Log: Unbound to IGVisualEffectsSubsystem.dll
-Log: 83722.0ms Unloading: Package IGVisualEffectsSubsystem
+Log: 422309.0ms Unloading: Package IGVisualEffectsSubsystem
 Log: Unbound to SwatEquipment.dll
-Log: 83722.0ms Unloading: Package SwatEquipment
-Log: 83722.0ms Unloading: Package SwatProcedures
-Log: 83723.0ms Unloading: Package Suspect1_officerTex
-Log: 83723.0ms Unloading: Package SWATbadguyTex
-Log: 83723.0ms Unloading: Package SwatProtectiveEquipment
-Log: 83723.0ms Unloading: Package SwatProtectiveEquipment2
-Log: 83723.0ms Unloading: Package FP_C2charge
-Log: 83723.0ms Unloading: Package FP_Pepperspray
-Log: 83723.0ms Unloading: Package FP_DoorWedge
-Log: 83723.0ms Unloading: Package FP_flashbangGrenade
-Log: 83723.0ms Unloading: Package FP_stingGrenade
-Log: 83723.0ms Unloading: Package FP_csGasGrenade
-Log: 83723.0ms Unloading: Package gui_FR
-Log: 83723.0ms Unloading: Package SwatProgrammerSampleClasses
-Log: 83723.0ms Unloading: Package SwatEquipmentModels3
-Log: 83723.0ms Unloading: Package SwatEquipmentModels
-Log: 83723.0ms Unloading: Package NovaPump_ThirdPerson
-Log: 83723.0ms Unloading: Package FP_C2detonator
-Log: 83723.0ms Unloading: Package Colt1911FL_ThirdPerson
-Log: 83723.0ms Unloading: Package FP_coltHG
-Log: 83723.0ms Unloading: Package FP_NovaPumpShotgun
-Log: 83723.0ms Unloading: Package FP_UMPsmg
-Log: 83723.0ms Unloading: Package Eotech552
-Log: 83723.0ms Unloading: Package FP_G36k
-Log: 83723.0ms Unloading: Package FP_9mmPistol
-Log: 83724.0ms Unloading: Package GearTex_sef
-Log: 83724.0ms Unloading: Package 1stPersonTex_sas
-Log: 83724.0ms Unloading: Package SurefireP101
-Log: 83724.0ms Unloading: Package NineMMpistol_ThirdPerson
-Log: 83724.0ms Unloading: Package FP_M4A1mg
-Log: 83724.0ms Unloading: Package FP_m4super90sg
-Log: 83724.0ms Unloading: Package FP_mp5SMG
-Log: 83724.0ms Unloading: Package FP_uzi
-Log: 83724.0ms Unloading: Package FP_mp5SMGsilenced
-Log: 83724.0ms Unloading: Package Optiwand_ThirdPerson
-Log: 83724.0ms Unloading: Package FP_Optiwand
-Log: 83724.0ms Unloading: Package scripted_tex
-Log: 83724.0ms Unloading: Package FP_BreachingSG
-Log: 83724.0ms Unloading: Package BreachingSG_ThirdPerson
-Log: 83724.0ms Unloading: Package FP_AK47
-Log: 83724.0ms Unloading: Package FP_toolkit
-Log: 83724.0ms Unloading: Package FP_Handcuffs
-Log: 83724.0ms Unloading: Package FP_paintball
-Log: 83724.0ms Unloading: Package FP_taser
-Log: 83724.0ms Unloading: Package FP_Revolver
-Log: 83724.0ms Unloading: Package FP_FragGrenade
-Log: 83724.0ms Unloading: Package gui_tex3
-Log: 83724.0ms Unloading: Package SW_FR
-Log: 83724.0ms Unloading: Package SwatDesignerClasses
-Log: 83724.0ms Unloading: Package SWATMaleAnimation
-Log: 83724.0ms Unloading: Package CultLeaderTextureSet
-Log: 83724.0ms Unloading: Package MaleDoctorTex
-Log: 83724.0ms Unloading: Package gear_sas
-Log: 83724.0ms Unloading: Package GearTex_sas
-Log: 83724.0ms Unloading: Package FP_M16A1_tex
-Log: 83724.0ms Unloading: Package coltsmg_static
-Log: 83724.0ms Unloading: Package ColtSMG
-Log: 83724.0ms Unloading: Package FP_coltsmg
-Log: 83724.0ms Unloading: Package SWATmeshFX_sm
-Log: 83724.0ms Unloading: Package Con_Tex
-Log: 83724.0ms Unloading: Package FP_M4A1_SFM500
-Log: 83724.0ms Unloading: Package M4A1_SFM500_static
-Log: 83724.0ms Unloading: Package FP_mp5k
-Log: 83724.0ms Unloading: Package FP_sg552
-Log: 83724.0ms Unloading: Package TP_UMPsmg_new
-Log: 83724.0ms Unloading: Package FP_UMPsmgsd
-Log: 83724.0ms Unloading: Package FP_browHP
-Log: 83724.0ms Unloading: Package TP_browHP
-Log: 83724.0ms Unloading: Package FP_M16A1
-Log: 83724.0ms Unloading: Package FP_hk33
-Log: 83724.0ms Unloading: Package FP_p226
-Log: 83724.0ms Unloading: Package TP_p226
-Log: 83724.0ms Unloading: Package fp_fnp90
-Log: 83724.0ms Unloading: Package p90sight
-Log: 83724.0ms Unloading: Package SWAT1stPersonTex2
-Log: 83724.0ms Unloading: Package FP_mp5ksd
-Log: 83724.0ms Unloading: Package FP_hk33s
-Log: 83724.0ms Unloading: Package FP_p226sd
-Log: 83724.0ms Unloading: Package TP_p226sd
-Log: 83724.0ms Unloading: Package FP_sg552sd
-Log: 83724.0ms Unloading: Package gear_sef
-Log: 83724.0ms Unloading: Package SwatArmory_Tex
-Log: 83725.0ms Unloading: Package bp_3P_tex
-Log: 83725.0ms Unloading: Package AimpointM2
-Log: 83725.0ms Unloading: Package gear_suspects
-Log: 83725.0ms Unloading: Package FP_M16A1sd
-Log: 83725.0ms Unloading: Package FP_browHPsd
-Log: 83725.0ms Unloading: Package TP_browHPsd
-Log: 83725.0ms Unloading: Package FP_llrem870
-Log: 83725.0ms Unloading: Package TP_rem870
-Log: 83725.0ms Unloading: Package FP_92fs
-Log: 83725.0ms Unloading: Package TP_92fs
-Log: 83725.0ms Unloading: Package FP_arwen37
-Log: 83725.0ms Unloading: Package fp_Stinger
-Log: 83725.0ms Unloading: Package taserX2
-Log: 83725.0ms Unloading: Package taserX2_static
-Log: 83725.0ms Unloading: Package FP_M4A1_CQB_Holo
-Log: 83725.0ms Unloading: Package m4a1_cqb_ThirdPerson
-Log: 83725.0ms Unloading: Package FP_HK69
-Log: 83725.0ms Unloading: Package FP_AR_15SD
-Log: 83725.0ms Unloading: Package ColtAcc
-Log: 83725.0ms Unloading: Package TP_coltAcc
-Log: 83725.0ms Unloading: Package FP_rem870
-Log: 83725.0ms Unloading: Package FP_M4A1_SFM500_sil
-Log: 83725.0ms Unloading: Package FP_M4A1_CQB_silHolo
-Log: 83725.0ms Unloading: Package TaserWire
-Log: 83725.0ms Unloading: Package Editor
+Log: 422309.0ms Unloading: Package SwatEquipment
+Log: 422310.0ms Unloading: Package SwatProcedures
+Log: 422310.0ms Unloading: Package Suspect1_officerTex
+Log: 422310.0ms Unloading: Package SWATbadguyTex
+Log: 422310.0ms Unloading: Package SwatProtectiveEquipment
+Log: 422310.0ms Unloading: Package SwatProtectiveEquipment2
+Log: 422310.0ms Unloading: Package FP_C2charge
+Log: 422310.0ms Unloading: Package FP_Pepperspray
+Log: 422310.0ms Unloading: Package FP_DoorWedge
+Log: 422310.0ms Unloading: Package FP_flashbangGrenade
+Log: 422310.0ms Unloading: Package FP_stingGrenade
+Log: 422310.0ms Unloading: Package FP_csGasGrenade
+Log: 422311.0ms Unloading: Package SW_FR
+Log: 422311.0ms Unloading: Package gui_FR
+Log: 422311.0ms Unloading: Package SWATMaleAnimation
+Log: 422311.0ms Unloading: Package CultLeaderTextureSet
+Log: 422311.0ms Unloading: Package MaleDoctorTex
+Log: 422311.0ms Unloading: Package gear_sas
+Log: 422311.0ms Unloading: Package GearTex_sas
+Log: 422311.0ms Unloading: Package 1stPersonTex_sas
+Log: 422311.0ms Unloading: Package FP_M16A1_tex
+Log: 422311.0ms Unloading: Package SwatProgrammerSampleClasses
+Log: 422311.0ms Unloading: Package SwatEquipmentModels3
+Log: 422311.0ms Unloading: Package SwatEquipmentModels
+Log: 422311.0ms Unloading: Package NovaPump_ThirdPerson
+Log: 422311.0ms Unloading: Package FP_C2detonator
+Log: 422311.0ms Unloading: Package Colt1911FL_ThirdPerson
+Log: 422311.0ms Unloading: Package FP_coltHG
+Log: 422311.0ms Unloading: Package FP_NovaPumpShotgun
+Log: 422311.0ms Unloading: Package FP_UMPsmg
+Log: 422311.0ms Unloading: Package Eotech552
+Log: 422311.0ms Unloading: Package FP_G36k
+Log: 422311.0ms Unloading: Package FP_9mmPistol
+Log: 422311.0ms Unloading: Package GearTex_sef
+Log: 422311.0ms Unloading: Package SurefireP101
+Log: 422311.0ms Unloading: Package NineMMpistol_ThirdPerson
+Log: 422311.0ms Unloading: Package FP_M4A1mg
+Log: 422311.0ms Unloading: Package FP_m4super90sg
+Log: 422311.0ms Unloading: Package FP_mp5SMG
+Log: 422311.0ms Unloading: Package FP_uzi
+Log: 422311.0ms Unloading: Package FP_mp5SMGsilenced
+Log: 422311.0ms Unloading: Package Optiwand_ThirdPerson
+Log: 422311.0ms Unloading: Package FP_Optiwand
+Log: 422311.0ms Unloading: Package scripted_tex
+Log: 422311.0ms Unloading: Package FP_BreachingSG
+Log: 422311.0ms Unloading: Package BreachingSG_ThirdPerson
+Log: 422311.0ms Unloading: Package FP_AK47
+Log: 422311.0ms Unloading: Package FP_toolkit
+Log: 422311.0ms Unloading: Package FP_Handcuffs
+Log: 422311.0ms Unloading: Package FP_paintball
+Log: 422311.0ms Unloading: Package FP_taser
+Log: 422311.0ms Unloading: Package FP_Revolver
+Log: 422311.0ms Unloading: Package FP_FragGrenade
+Log: 422312.0ms Unloading: Package gui_tex3
+Log: 422312.0ms Unloading: Package SwatDesignerClasses
+Log: 422312.0ms Unloading: Package SWATmeshFX_sm
+Log: 422312.0ms Unloading: Package Con_Tex
+Log: 422312.0ms Unloading: Package coltsmg_static
+Log: 422312.0ms Unloading: Package ColtSMG
+Log: 422312.0ms Unloading: Package FP_coltsmg
+Log: 422312.0ms Unloading: Package FP_M4A1_SFM500
+Log: 422312.0ms Unloading: Package M4A1_SFM500_static
+Log: 422312.0ms Unloading: Package FP_mp5k
+Log: 422312.0ms Unloading: Package FP_sg552
+Log: 422312.0ms Unloading: Package TP_UMPsmg_new
+Log: 422312.0ms Unloading: Package FP_UMPsmgsd
+Log: 422312.0ms Unloading: Package FP_browHP
+Log: 422312.0ms Unloading: Package TP_browHP
+Log: 422312.0ms Unloading: Package FP_M16A1
+Log: 422312.0ms Unloading: Package FP_hk33
+Log: 422312.0ms Unloading: Package FP_p226
+Log: 422312.0ms Unloading: Package TP_p226
+Log: 422312.0ms Unloading: Package fp_fnp90
+Log: 422312.0ms Unloading: Package p90sight
+Log: 422312.0ms Unloading: Package SWAT1stPersonTex2
+Log: 422312.0ms Unloading: Package FP_mp5ksd
+Log: 422312.0ms Unloading: Package FP_hk33s
+Log: 422312.0ms Unloading: Package FP_p226sd
+Log: 422312.0ms Unloading: Package TP_p226sd
+Log: 422312.0ms Unloading: Package FP_sg552sd
+Log: 422312.0ms Unloading: Package gear_sef
+Log: 422312.0ms Unloading: Package SwatArmory_Tex
+Log: 422312.0ms Unloading: Package bp_3P_tex
+Log: 422312.0ms Unloading: Package AimpointM2
+Log: 422312.0ms Unloading: Package gear_suspects
+Log: 422312.0ms Unloading: Package FP_M16A1sd
+Log: 422312.0ms Unloading: Package FP_browHPsd
+Log: 422312.0ms Unloading: Package TP_browHPsd
+Log: 422312.0ms Unloading: Package FP_llrem870
+Log: 422312.0ms Unloading: Package TP_rem870
+Log: 422312.0ms Unloading: Package FP_92fs
+Log: 422312.0ms Unloading: Package TP_92fs
+Log: 422312.0ms Unloading: Package FP_arwen37
+Log: 422312.0ms Unloading: Package fp_Stinger
+Log: 422312.0ms Unloading: Package taserX2
+Log: 422312.0ms Unloading: Package taserX2_static
+Log: 422312.0ms Unloading: Package FP_M4A1_CQB_Holo
+Log: 422312.0ms Unloading: Package m4a1_cqb_ThirdPerson
+Log: 422312.0ms Unloading: Package FP_HK69
+Log: 422312.0ms Unloading: Package FP_AR_15SD
+Log: 422312.0ms Unloading: Package ColtAcc
+Log: 422312.0ms Unloading: Package TP_coltAcc
+Log: 422312.0ms Unloading: Package FP_rem870
+Log: 422312.0ms Unloading: Package FP_M4A1_SFM500_sil
+Log: 422312.0ms Unloading: Package FP_M4A1_CQB_silHolo
+Log: 422312.0ms Unloading: Package TaserWire
+Log: 422312.0ms Unloading: Package Editor
 Log: Unbound to WinDrv.dll
-Log: Flushing viewport 0xB530780
-Log: Finished flushing viewport 0xB530780 in 0.014 seconds
+Log: Flushing viewport 0xF240780
+Log: Finished flushing viewport 0xF240780 in 0.017 seconds
 Log: Flushing viewport 0x0
-Log: Finished flushing viewport 0x0 in 0.004 seconds
+Log: Finished flushing viewport 0x0 in 0.007 seconds
 Exit: Windows client shut down
 Log: Unbound to D3DDrv.dll
-Log: 83906.0ms Unloading: Package Packages
+Log: 422421.0ms Unloading: Package Packages
 Exit: OpenAL Audio subsystem shut down.
-Log: 84039.0ms Unloading: Package GIGN
-Log: 84039.0ms Unloading: Package GIGN_OfficerTex
-Log: 84039.0ms Unloading: Package suspect1
-Log: 84039.0ms Unloading: Package suspect2
-Log: 84039.0ms Unloading: Package Suspect2_officerTex
-Log: 84039.0ms Unloading: Package Taiwan
-Log: 84039.0ms Unloading: Package Taiwan_OfficerTex
+Log: 422556.0ms Unloading: Package GIGN
+Log: 422556.0ms Unloading: Package GIGN_OfficerTex
+Log: 422556.0ms Unloading: Package suspect1
+Log: 422557.0ms Unloading: Package suspect2
+Log: 422557.0ms Unloading: Package Suspect2_officerTex
+Log: 422557.0ms Unloading: Package Taiwan
+Log: 422557.0ms Unloading: Package Taiwan_OfficerTex
 DevMassive: ADCLIENT: MMT_DeInitialize
-Log: 84039.0ms Unloading: Package Entry
+Log: 422557.0ms Unloading: Package Entry
 Log: Unbound to SwatGui.dll
-Log: 84039.0ms Unloading: Package SwatGui
-Log: 84040.0ms Unloading: Package bp_gui_tex
-Log: 84040.0ms Unloading: Package FP_MP5Ktactical
-Log: 84040.0ms Unloading: Package SwatArmory_sm
-Log: 84040.0ms Unloading: Package FP_coltsmgsil
-Log: 84040.0ms Unloading: Package FP_AKS74U
-Log: 84040.0ms Unloading: Package FP_SCARH07
-Log: 84040.0ms Unloading: Package FP_sg552Aim
-Log: 84040.0ms Unloading: Package TP_sg552Aim
-Log: 84040.0ms Unloading: Package FP_sg552Aimsd
-Log: 84040.0ms Unloading: Package TP_G36Knew
-Log: 84040.0ms Unloading: Package FP_G36ks
-Log: 84040.0ms Unloading: Package FP_M4A1_SFM500_Aim
-Log: 84040.0ms Unloading: Package M4A1_SFM500Aim
-Log: 84040.0ms Unloading: Package FP_M4A1_SFM500_silAim
-Log: 84040.0ms Unloading: Package FP_SAW
-Log: 84040.0ms Unloading: Package 3rd_SAW
-Log: 84040.0ms Unloading: Package TP_BM4
-Log: 84041.0ms Unloading: Package FP_m1super90
-Log: 84041.0ms Unloading: Package FP_DesertEagleNew
-Log: 84041.0ms Unloading: Package fp_tec9
-Log: 84041.0ms Unloading: Package SwatAmmo
-Log: 84041.0ms Unloading: Package SwatAmmo2
-Log: 84041.0ms Unloading: Package SwatProjectile
-Log: 84041.0ms Unloading: Package swatmeshfx2_sm
-Log: 84041.0ms Unloading: Package FP_NineBangGrenade
-Log: 84041.0ms Unloading: Package SWATcivilianGear_sm
-Log: 84041.0ms Unloading: Package FemaleNurseTex
-Log: 84041.0ms Unloading: Package FemaleCasual2Tex
-Log: 84041.0ms Unloading: Package FemaleOfficeTex
-Log: 84041.0ms Unloading: Package FemaleHeavyTex
-Log: 84041.0ms Unloading: Package TrainingAnimatedMeshes
-Log: 84041.0ms Unloading: Package FP_glowstick
-Log: 84041.0ms Unloading: Package Outdoors_sm
-Log: 84041.0ms Unloading: Package PerimeterAnimatedMeshes
-Log: 84041.0ms Unloading: Package Cars
-Log: 84041.0ms Unloading: Package Silence_sm
-Log: 84041.0ms Unloading: Package Repo_sm
-Log: 84041.0ms Unloading: Package mac_Tex
-Log: 84041.0ms Unloading: Package LocalizedTextures
-Log: 84041.0ms Unloading: Package Bar_sm
-Log: 84041.0ms Unloading: Package Junk_Tex
-Log: 84041.0ms Unloading: Package SwatEffects
-Log: 84041.0ms Unloading: Package AnimatedDecorMeshes
-Log: 84041.0ms Unloading: Package HotelAnimatedMeshes
-Log: 84041.0ms Unloading: Package TreeLeaves
-Log: 84041.0ms Unloading: Package JewelryAnimatedMeshes
-Log: 84041.0ms Unloading: Package SilenceShrub
-Log: 84041.0ms Unloading: Package VIPanimatedMeshes
-Log: 84041.0ms Unloading: Package REPOhelicopter
-Log: 84041.0ms Unloading: Package ArmsShrub
-Log: 84041.0ms Unloading: Package RedLibraryAnimatedMeshes
-Log: 84041.0ms Unloading: Package BarPullBarber
-Log: 84041.0ms Unloading: Package AbombStageLights
-Log: 84042.0ms Unloading: Package SwatFonts
-Log: 84044.0ms Unloading: Package SWATeffects2
-Log: 84044.0ms Unloading: Package VisualEffectsConfig
-Log: 84044.0ms Unloading: Package SWsef_weapons
-Log: 84044.0ms Unloading: Package SW_meta
-Log: 84044.0ms Unloading: Package SWSAS_weapons
-Log: 84044.0ms Unloading: Package SW_bounce
-Log: 84044.0ms Unloading: Package SW_hits
-Log: 84044.0ms Unloading: Package SWEXP_weapons
-Log: 84044.0ms Unloading: Package SWEXP_ambience
-Log: 84044.0ms Unloading: Package SW_objects
-Log: 84044.0ms Unloading: Package SW_vo
-Log: 84044.0ms Unloading: Package SW_ambients
-Log: 84044.0ms Unloading: Package SW_weapons
-Log: 84044.0ms Unloading: Package SW_bullets
-Log: 84044.0ms Unloading: Package SW_feet
-Log: 84044.0ms Unloading: Package SwatCameraEffects2
-Log: 84044.0ms Unloading: Package SwatCameraEffects
-Log: 84045.0ms Unloading: Package SwatSimpleEquipment
-Log: 84045.0ms Unloading: Package SwatObjectives
-Log: 84045.0ms Unloading: Package SoundEffectsConfig
-Log: 84045.0ms Unloading: Package SP-Training
-Log: 84046.0ms Unloading: Package train_sm
-Log: 84046.0ms Unloading: Package Utility_Tex
-Log: 84046.0ms Unloading: Package pier_sm
-Log: 84046.0ms Unloading: Package Power_sm
-Log: 84046.0ms Unloading: Package Barbershop_sm
-Log: 84046.0ms Unloading: Package Furniture_Tex
-Log: 84046.0ms Unloading: Package wall_sm
-Log: 84046.0ms Unloading: Package wall_Tex
-Log: 84046.0ms Unloading: Package off_sm
-Log: 84046.0ms Unloading: Package Con_sm
-Log: 84046.0ms Unloading: Package Hosp_sm
-Log: 84046.0ms Unloading: Package Junk_sm
+Log: 422557.0ms Unloading: Package SwatGui
+Log: 422557.0ms Unloading: Package bp_gui_tex
+Log: 422558.0ms Unloading: Package FP_MP5Ktactical
+Log: 422558.0ms Unloading: Package SwatArmory_sm
+Log: 422558.0ms Unloading: Package FP_coltsmgsil
+Log: 422558.0ms Unloading: Package FP_AKS74U
+Log: 422558.0ms Unloading: Package FP_SCARH07
+Log: 422558.0ms Unloading: Package FP_sg552Aim
+Log: 422558.0ms Unloading: Package TP_sg552Aim
+Log: 422558.0ms Unloading: Package FP_sg552Aimsd
+Log: 422558.0ms Unloading: Package TP_G36Knew
+Log: 422558.0ms Unloading: Package FP_G36ks
+Log: 422558.0ms Unloading: Package FP_M4A1_SFM500_Aim
+Log: 422558.0ms Unloading: Package M4A1_SFM500Aim
+Log: 422558.0ms Unloading: Package FP_M4A1_SFM500_silAim
+Log: 422558.0ms Unloading: Package FP_SAW
+Log: 422558.0ms Unloading: Package 3rd_SAW
+Log: 422558.0ms Unloading: Package TP_BM4
+Log: 422558.0ms Unloading: Package FP_m1super90
+Log: 422558.0ms Unloading: Package FP_DesertEagleNew
+Log: 422558.0ms Unloading: Package fp_tec9
+Log: 422558.0ms Unloading: Package SwatAmmo
+Log: 422558.0ms Unloading: Package SwatAmmo2
+Log: 422558.0ms Unloading: Package SwatProjectile
+Log: 422558.0ms Unloading: Package swatmeshfx2_sm
+Log: 422558.0ms Unloading: Package FP_NineBangGrenade
+Log: 422558.0ms Unloading: Package SWATcivilianGear_sm
+Log: 422558.0ms Unloading: Package FemaleNurseTex
+Log: 422558.0ms Unloading: Package FemaleCasual2Tex
+Log: 422558.0ms Unloading: Package FemaleOfficeTex
+Log: 422558.0ms Unloading: Package FemaleHeavyTex
+Log: 422558.0ms Unloading: Package TrainingAnimatedMeshes
+Log: 422558.0ms Unloading: Package FP_glowstick
+Log: 422558.0ms Unloading: Package Outdoors_sm
+Log: 422558.0ms Unloading: Package PerimeterAnimatedMeshes
+Log: 422558.0ms Unloading: Package Cars
+Log: 422558.0ms Unloading: Package Silence_sm
+Log: 422558.0ms Unloading: Package Repo_sm
+Log: 422558.0ms Unloading: Package mac_Tex
+Log: 422558.0ms Unloading: Package LocalizedTextures
+Log: 422558.0ms Unloading: Package Bar_sm
+Log: 422558.0ms Unloading: Package Junk_Tex
+Log: 422558.0ms Unloading: Package SwatEffects
+Log: 422559.0ms Unloading: Package AnimatedDecorMeshes
+Log: 422559.0ms Unloading: Package HotelAnimatedMeshes
+Log: 422559.0ms Unloading: Package TreeLeaves
+Log: 422559.0ms Unloading: Package JewelryAnimatedMeshes
+Log: 422559.0ms Unloading: Package SilenceShrub
+Log: 422559.0ms Unloading: Package VIPanimatedMeshes
+Log: 422559.0ms Unloading: Package REPOhelicopter
+Log: 422559.0ms Unloading: Package ArmsShrub
+Log: 422559.0ms Unloading: Package RedLibraryAnimatedMeshes
+Log: 422559.0ms Unloading: Package BarPullBarber
+Log: 422559.0ms Unloading: Package AbombStageLights
+Log: 422559.0ms Unloading: Package SwatFonts
+Log: 422561.0ms Unloading: Package SWATeffects2
+Log: 422561.0ms Unloading: Package VisualEffectsConfig
+Log: 422562.0ms Unloading: Package SWsef_weapons
+Log: 422562.0ms Unloading: Package SW_meta
+Log: 422562.0ms Unloading: Package SWSAS_weapons
+Log: 422562.0ms Unloading: Package SW_bounce
+Log: 422562.0ms Unloading: Package SW_hits
+Log: 422562.0ms Unloading: Package SWEXP_weapons
+Log: 422562.0ms Unloading: Package SWEXP_ambience
+Log: 422562.0ms Unloading: Package SW_objects
+Log: 422563.0ms Unloading: Package SW_vo
+Log: 422563.0ms Unloading: Package SW_ambients
+Log: 422563.0ms Unloading: Package SW_weapons
+Log: 422563.0ms Unloading: Package SW_bullets
+Log: 422563.0ms Unloading: Package SW_feet
+Log: 422563.0ms Unloading: Package SwatCameraEffects2
+Log: 422563.0ms Unloading: Package SwatCameraEffects
+Log: 422564.0ms Unloading: Package SwatSimpleEquipment
+Log: 422564.0ms Unloading: Package SwatObjectives
 Log: (Havok): Destroying static world for level.
+Log: 422566.0ms Unloading: Package Junk_sm
+Log: 422566.0ms Unloading: Package Hosp_sm
+Log: 422566.0ms Unloading: Package Con_sm
+Log: 422566.0ms Unloading: Package off_sm
+Log: 422566.0ms Unloading: Package wall_Tex
+Log: 422566.0ms Unloading: Package wall_sm
+Log: 422566.0ms Unloading: Package Furniture_Tex
+Log: 422566.0ms Unloading: Package Barbershop_sm
+Log: 422566.0ms Unloading: Package Power_sm
+Log: 422566.0ms Unloading: Package pier_sm
+Log: 422566.0ms Unloading: Package Utility_Tex
+Log: 422566.0ms Unloading: Package train_sm
+Log: 422566.0ms Unloading: Package SP-Training
+Log: 422566.0ms Unloading: Package SoundEffectsConfig
 Log: (Havok): Notifiing dependant DLLs of Havok shutdown..
 Log: (Havok): Shutting down base system.
-Log: Garbage: objects: 85107->0; refs: 886548
+Log: Garbage: objects: 85114->0; refs: 886548
 Exit: Object subsystem successfully closed.
 Exit: Exiting.
 Log: Waiting for file streaming thread to finish...
 Uninitialized: Name subsystem shut down
 Uninitialized: Memory Allocation Status
-Uninitialized: Curr Memory  0.588M /  11.973M
-Uninitialized: Peak Memory  836.582M /  841.211M
-Uninitialized: Allocs        1974 Current /  13835502 Total
-Uninitialized: Log file closed, 03/30/21 22:21:07
+Uninitialized: Curr Memory  0.636M /  12.055M
+Uninitialized: Peak Memory  829.860M /  835.637M
+Uninitialized: Allocs        2245 Current /  32128860 Total
+Uninitialized: Log file closed, 04/01/21 18:25:34
