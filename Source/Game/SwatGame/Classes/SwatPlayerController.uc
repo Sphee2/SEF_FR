@@ -233,7 +233,11 @@ function bool GetIronsightsDisabled()
 
   GC = SwatRepo(Level.GetRepo()).GuiConfig;
 
+  if ( ! SwatPlayer(Pawn).isLowReady() )
 	return GC.ExtraIntOptions[0] == 1;
+  else
+	 return false;
+ 
 }
 
 function bool GetViewmodelDisabled()

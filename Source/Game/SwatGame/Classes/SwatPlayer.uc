@@ -509,10 +509,13 @@ simulated protected function bool CanPawnUseLowReady()
   local HandheldEquipment Equipment;
   local PlayerController SGPC;
   local FiredWeapon Weapon;
+  local SwatGuiConfig GC;
+	
+	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 
   SGPC = PlayerController(Controller);
   if(SGPC == None)
-    return False;
+    return false;
 
   Equipment = Self.GetActiveItem();
   if(Equipment.IsA('Optiwand'))
@@ -523,7 +526,7 @@ simulated protected function bool CanPawnUseLowReady()
   Weapon = FiredWeapon(Equipment);
   if(Weapon != None)
   {
-    if(Weapon.IsFlashlightOn())
+    if(Weapon.IsFlashlightOn() && GC.ExtraIntOptions[6] == 0 ) //only in auto low ready option
     {
         // #402 - lowready not allowed when flashlight on
         return false;
@@ -540,6 +543,7 @@ function HandheldEquipment GetItemAtSlot(EquipmentSlot Slot)
 
 simulated function SetLowReady(bool bEnable, optional name Reason)
 {
+	
     if (bEnable == IsLowReady()) return;        //already there
     if (!CanPawnUseLowReady() && bEnable) return;
 

@@ -102,3 +102,9 @@ System/IGSoundEffectsSubsystem.u
 Source/Game/SwatAIAwareness/Inc/SwatAIAwarenessClasses.h
 *.bak
 System/swat4x.log
+System/swat4x.log
+System/DynamicLoadout.ini
+System/Campaign.ini
+System/GuiBase.ini
+System/MissionResults.ini
+System/UCC.log

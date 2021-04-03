@@ -36,8 +36,8 @@ var protected int NotUsed;
 var config float PreThrowTweenTime;
 var config float PreThrowRootBone;
 
-
 var private bool bIsLowReady;
+
 var private float NextIdleTweenTime;    //next time we play an idle, play with this tween time.  PLEASE only set with SetNextIdleTweenTime()
 
 simulated function PreBeginPlay()
@@ -134,15 +134,20 @@ simulated function UpdateHandsForRendering()
     //ADSInertia controls how fast we aim down sight. We set it by scaling the ViewInertia.
     ADSInertia = 1 - ((1 - ViewInertia) / 2.5);
 
-    //if the player is zooming, add the iron sight offset to the new location
-    if (OwnerController != None && OwnerController.WantsZoom && !OwnerController.GetIronsightsDisabled()) {
+    //if the player is zooming, add the iron sight offset to the new location , also the weapon should not be in low ready position
+    if (OwnerController != None && OwnerController.WantsZoom && !OwnerController.GetIronsightsDisabled() ) {  
     	AnimationProgress = (AnimationProgress * ADSInertia + 1 * (1 - ADSInertia));
+		SetLowReady(false); // not low ready anymore
     	//NewRotation += EquippedItem.GetIronsightsRotationOffset();
     } else {
     	AnimationProgress = (AnimationProgress * ADSInertia + 0 * (1 - ADSInertia));
     	//HACK: offset when the player isn't using iron sights, to fix the ******* P90 -K.F.
     	//NewRotation += EquippedItem.GetDefaultRotationOffset();
     	Offset = EquippedItem.GetDefaultLocationOffset();
+		
+		//fix for manual low ready state , it keeps the state always updated
+		if (!bIsLowReady)
+			SetLowReady(false);
     }
 
 	//look-down-scope animation for marksman (scoped) weapons
@@ -217,6 +222,7 @@ simulated function OnEquipKeyFrame()
 {
 //    log( self$" in Hands::OnEquipKeyFrame()" );
     Pawn(Owner).OnEquipKeyFrame();
+	SetLowReady(false); // not low ready anymore
 }
 
 simulated function OnUnequipKeyFrame()
@@ -339,6 +345,7 @@ function PlayNewAnim(name Sequence, float Rate, float TweenTime)
 //called by SwatPlayer::SetLowReady() only when low-ready changes
 function SetLowReady(bool bEnable)
 {
+	
     if (bIsLowReady == bEnable)
         return;
 

@@ -5285,12 +5285,19 @@ exec function PawnCollision(int on)
 exec function ToggleLowReady()
 {
     local SwatPlayer playerPawn;
+	local SwatGuiConfig GC;
+	
+	GC = SwatRepo(Level.GetRepo()).GuiConfig;
+	
+	
     playerPawn = SwatPlayer(Pawn);
-    if (playerPawn != None)
+    if (playerPawn != None && GC.ExtraIntOptions[6] == 1) //only in manual low ready option
     {
         playerPawn.SetLowReady(!playerPawn.IsLowReady());
     }
+	
 }
+
 
 ///////////////////////////////////////////////////////////////////////////////
 

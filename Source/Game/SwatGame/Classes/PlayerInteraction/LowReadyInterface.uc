@@ -67,12 +67,17 @@ simulated function PostUpdate(SwatGamePlayerController Player)
     local SwatPlayer PlayerPawn;
     local HandheldEquipment ActiveItem;
     local HUDPageBase HUD;
-
+	local SwatGuiConfig GC;
+	
     PlayerPawn = SwatPlayer(Player.Pawn);
     ActiveItem = PlayerPawn.GetActiveItem();
     HUD = Player.GetHUDPage();
-
-    //always low-ready in certain conditions:
+	
+	GC = SwatRepo(Level.GetRepo()).GuiConfig;
+	
+	
+	
+		//always low-ready in certain conditions:
     if  (
             (
                 Player.ActiveViewport != None           //controlling a viewport
@@ -94,7 +99,14 @@ simulated function PostUpdate(SwatGamePlayerController Player)
     if (!ShouldLowReady)
         LowReadyReason = '';
 
-    PlayerPawn.SetLowReady(ShouldLowReady, LowReadyReason);
+	if (GC.ExtraIntOptions[6] == 0) //if auto-lowready
+	{
+		PlayerPawn.SetLowReady(ShouldLowReady, LowReadyReason);
+	}
+	else
+	{
+		PlayerPawn.SetLowReady( PlayerPawn.islowReady(), LowReadyReason);
+	}
 }
 
 //
@@ -113,7 +125,13 @@ simulated function bool InLowReadyRefractoryPeriod()
 simulated function bool SpecialCondition_LowReadyPawn(SwatPlayer Player, Actor Target)
 {
 	local HandheldEquipment CurrentItem;
-
+	local SwatGuiConfig GC;
+	
+	GC = SwatRepo(Level.GetRepo()).GuiConfig;
+	
+	if (GC.ExtraIntOptions[6] == 0) //if auto-lowready
+	{
+	
 	CurrentItem = Player.GetActiveItem();
 	if(CurrentItem.IsA('Optiwand') || !CurrentItem.IsA('FiredWeapon'))
 	{	// Only FiredWeapons can trigger this context, but not Optiwands
@@ -132,6 +150,11 @@ simulated function bool SpecialCondition_LowReadyPawn(SwatPlayer Player, Actor T
 	}
 
 	return false;
+	}
+	else
+	{
+		return Player.IsLowReady();
+	}
 }
 
 simulated function BeginLowReadyRefractoryPeriod()
