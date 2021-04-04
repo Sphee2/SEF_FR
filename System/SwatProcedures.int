@@ -67,7 +67,7 @@ ChatMessage=[c=ffff00]Unauthorized Force (-5)[\c]
 
 [Procedure_PreventSuspectEscape]
 Description=Failed to apprehend fleeing suspect
-ChatMessage=[c=ffff00]Suspect Escaped (-5)[\c]
+ChatMessage=[c=ffff00]Suspect Escaped[\c]
 
 [Procedure_NoTrapsTriggered]
 Description=Tripped a trap
