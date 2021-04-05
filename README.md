@@ -11,6 +11,16 @@ https://discord.gg/Vu4r7sv7uF
 
 # FEATURE LIST: #
 
+#### V0.65 ####
+
+ADDED
+- Manual Low Ready system 
+- removed penalty for suspects escaped
+
+FIXED
+- MP5A4 Holo ADS point fixed
+
+
 #### V0.61 ####
 
 FIXED

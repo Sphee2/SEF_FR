@@ -5298,6 +5298,54 @@ exec function ToggleLowReady()
 	
 }
 
+exec function ToggleLowReadyUP()
+{
+    local SwatPlayer playerPawn;
+	local SwatGuiConfig GC;
+	
+	GC = SwatRepo(Level.GetRepo()).GuiConfig;
+	
+    playerPawn = SwatPlayer(Pawn);
+	
+    if (playerPawn != None && GC.ExtraIntOptions[6] == 1) //only in manual low ready option
+    {
+		if(playerPawn.IsLowReady()) //if low ready set ready
+		{
+			playerPawn.SetLowReady(!playerPawn.IsLowReady());
+		}
+		else
+		{
+			ToggleZoom(); //enable zoom
+		}
+    }
+	
+}
+
+exec function ToggleLowReadyDOWN()
+{
+    local SwatPlayer playerPawn;
+	local SwatGuiConfig GC;
+	
+	GC = SwatRepo(Level.GetRepo()).GuiConfig;
+	
+    playerPawn = SwatPlayer(Pawn);
+	
+    if (playerPawn != None && GC.ExtraIntOptions[6] == 1) //only in manual low ready option
+    {
+		if (WantsZoom && !playerPawn.IsLowReady()) //if zooming
+		{
+			 ToggleZoom(); //disable zoom
+		}
+		else if(!playerPawn.IsLowReady() ) //if ready set low ready
+		{
+			playerPawn.SetLowReady(!playerPawn.IsLowReady()); //set low ready
+		}
+		
+    }
+	
+}
+
+
 
 ///////////////////////////////////////////////////////////////////////////////
 
