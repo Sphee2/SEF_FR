@@ -5313,7 +5313,7 @@ exec function ToggleLowReadyUP()
 		{
 			playerPawn.SetLowReady(!playerPawn.IsLowReady());
 		}
-		else
+		else if (!WantsZoom && !playerPawn.IsLowReady() ) //if in ready state and not zooming
 		{
 			ToggleZoom(); //enable zoom
 		}
@@ -5332,9 +5332,10 @@ exec function ToggleLowReadyDOWN()
 	
     if (playerPawn != None && GC.ExtraIntOptions[6] == 1) //only in manual low ready option
     {
-		if (WantsZoom && !playerPawn.IsLowReady()) //if zooming
+		if (WantsZoom) //if zooming
 		{
 			 ToggleZoom(); //disable zoom
+			 playerPawn.SetLowReady(false); //reset state
 		}
 		else if(!playerPawn.IsLowReady() ) //if ready set low ready
 		{
