@@ -2423,6 +2423,9 @@ simulated function Possess(Pawn NewPawn)
 simulated private function InternalEquipSlot(coerce EquipmentSlot Slot)
 {
     local HandheldEquipment PendingItem;
+	local SwatPlayer playerPawn;
+	
+    playerPawn = SwatPlayer(Pawn);
 
     if (Level.GetEngine().EnableDevTools)
         mplog( self$"---SGPC::InternalEquipSlot(). Slot="$Slot );
@@ -2457,6 +2460,7 @@ simulated private function InternalEquipSlot(coerce EquipmentSlot Slot)
     if ( SwatPlayer.ValidateEquipSlot( Slot ))
     {
         SetZoom(false, true);
+		playerPawn.SetLowReady(false);
 
         if (Level.GetEngine().EnableDevTools)
             mplog( "...calling ServerRequestEquip()." );

@@ -18,6 +18,9 @@ ADDED
 - removed penalty for suspects escaped
 - Added "Pull Door" command to let player pull the door (thx Scape/S4 for the script)
 
+REMOVED
+- Optiwand now cant mirror under the door
+
 FIXED
 - MP5A4 Holo ADS point fixed
 
