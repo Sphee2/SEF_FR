@@ -16,6 +16,7 @@ https://discord.gg/Vu4r7sv7uF
 ADDED
 - Manual Low Ready system 
 - removed penalty for suspects escaped
+- Added "Pull Door" command to let player pull the door (thx Scape/S4 for the script)
 
 FIXED
 - MP5A4 Holo ADS point fixed
