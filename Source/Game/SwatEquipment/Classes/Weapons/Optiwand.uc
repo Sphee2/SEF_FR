@@ -352,12 +352,13 @@ simulated latent protected function DoUsingHook()
     PlayerOwner = SwatPlayer(Owner);
     PC = SwatGamePlayerController(PlayerOwner.Controller);
 
+	/*    now the optwand cant be used to see under the door
     if ( PC != None )
     {
         MirroringDoor = PC.GetDoorInWay();
         bMirroring = MirroringDoor != None;
     }
-
+    */
     Hands = PawnOwner.GetHands();
 
     mplog( Self$" DoUsingHook() Latent function 2" );
