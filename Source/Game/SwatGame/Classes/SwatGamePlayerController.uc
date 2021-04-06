@@ -3842,7 +3842,12 @@ exec function PullDoor()
     if (Door == None) return;
     if (Door.bIsMissionExit) return;
     if (!Door.CanInteract()) return; 
-    if (Door.IsClosed() && Door.IsLocked()) { ClientMessage("[c=FFFFFF]The door is locked.", 'SpeechManagerNotification'); return; }
+    if (Door.IsClosed() && Door.IsLocked()) 
+    { 
+        ClientMessage("[c=FFFFFF]The door is locked.", 'SpeechManagerNotification'); 
+        Door.BroadcastEffectEvent('LockedDoorTried'); 
+        return; 
+    }
     if (VSize2D(Door.Location - Pawn.Location) > 150) return;
     
     switch(Door.GetPosition())
