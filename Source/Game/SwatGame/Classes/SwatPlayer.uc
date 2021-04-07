@@ -1692,7 +1692,7 @@ simulated function AdjustPlayerMovementSpeed() {
   local float OriginalFwd, OriginalBck, OriginalSde;
   local float ModdedFwd, ModdedBck, ModdedSde;
   local float TotalWeight;
-
+    
   local AnimationSetManager AnimationSetManager;
   local AnimationSet setObject;
 
@@ -1711,6 +1711,14 @@ simulated function AdjustPlayerMovementSpeed() {
   ModdedBck *= LoadOut.GetWeightMovementModifier();
   ModdedSde *= LoadOut.GetWeightMovementModifier();
 
+
+	if( IsLowReady() ) //little more speed when low ready
+	{
+		ModdedFwd = ModdedFwd + (ModdedFwd/3);
+		ModdedSde = ModdedSde + (ModdedSde/3);
+	}
+  
+  
   AnimSet.AnimSpeedForward = ModdedFwd;
   AnimSet.AnimSpeedBackward = ModdedBck;
   AnimSet.AnimSpeedSidestep = ModdedSde;
