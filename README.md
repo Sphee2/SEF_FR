@@ -17,6 +17,8 @@ ADDED
 - Manual Low Ready system 
 - removed penalty for suspects escaped
 - Added "Pull Door" command to let player pull the door (thx Scape/S4 for the script)
+- Separated Flashlight and NVG keybinds 
+- AI now can use NVG instead of flashlights 
 
 REMOVED
 - Optiwand now cant mirror under the door
