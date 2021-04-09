@@ -3857,7 +3857,12 @@ exec function PullDoor()
             break;
 
         case DoorPosition_OpenLeft:
+			 Door.SetPositionForMove(DoorPosition_Closed, MR_Interacted); 
+            
+			break;
         case DoorPosition_OpenRight:
+			 Door.SetPositionForMove(DoorPosition_Closed, MR_Interacted); 
+            
             break;
 
         default:
