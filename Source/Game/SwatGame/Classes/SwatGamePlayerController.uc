@@ -5837,6 +5837,17 @@ exec function ToggleNVG()
     SwatPawn(Pawn).ToggleDesiredNVGState();
 }
 
+exec function ToggleNVGLightUP()
+{
+    SwatPawn(Pawn).UpdateNightvisionUP();
+}
+
+exec function ToggleNVGLightDown()
+{
+    SwatPawn(Pawn).UpdateNightvisionDown();
+}
+
+
 // modifier to hold the next command was pressed
 exec function HoldCommand(bool bPressed)
 {

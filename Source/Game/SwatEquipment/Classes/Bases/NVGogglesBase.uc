@@ -149,6 +149,39 @@ simulated event UpdateLight()
 		Light.LightRadius = 0;
 }
 
+//adjust NVG light down , controlled by SwatPawn and SwatGamePlayerController
+function NVGLightDown()
+{
+	local SwatPawn P;
+
+	P = SwatPawn(Owner);
+
+	if (Active && P.IsControlledByLocalHuman())
+	{
+		if (Light.LightRadius > 0)
+		{
+			Light.LightRadius = Light.LightRadius-16;
+		}
+		
+	}
+}
+
+//adjust NVG light up , controlled by SwatPawn and SwatGamePlayerController
+function NVGLightUp()
+{
+	local SwatPawn P;
+
+	P = SwatPawn(Owner);
+
+	if (Active && P.IsControlledByLocalHuman())
+	{
+		if (Light.LightRadius< 64)
+		{
+			Light.LightRadius = Light.LightRadius +16;
+		}
+	}
+}
+
 function QualifyProtectedRegion()
 {
     assertWithDescription(ProtectedRegion < REGION_Body_Max,

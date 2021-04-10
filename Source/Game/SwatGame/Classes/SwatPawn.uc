@@ -1726,6 +1726,38 @@ simulated function UpdateNightvision()
 	}
 }
 
+simulated function UpdateNightvisionUP()
+{
+	local NVGogglesBase CurrentVision;
+
+	// If we are wearing nightvision...
+	CurrentVision = NVGogglesBase(GetSkeletalRegionProtection(REGION_Head));
+	if (CurrentVision != None)
+	{
+		if (NightvisionShouldBeOn)
+		{
+			CurrentVision.NVGLightUp();
+		}
+	}
+}
+
+
+simulated function UpdateNightvisionDown()
+{
+	local NVGogglesBase CurrentVision;
+
+	// If we are wearing nightvision...
+	CurrentVision = NVGogglesBase(GetSkeletalRegionProtection(REGION_Head));
+	if (CurrentVision != None)
+	{
+		if (NightvisionShouldBeOn)
+		{
+			CurrentVision.NVGLightDown();
+		}
+	}
+}
+
+
 simulated function UpdateFlashlight()
 {
     local FiredWeapon CurrentWeapon;
