@@ -69,6 +69,7 @@ simulated function PostUpdate(SwatGamePlayerController Player)
     local HUDPageBase HUD;
 	local SwatGuiConfig GC;
 	
+	
     PlayerPawn = SwatPlayer(Player.Pawn);
     ActiveItem = PlayerPawn.GetActiveItem();
     HUD = Player.GetHUDPage();
@@ -105,7 +106,15 @@ simulated function PostUpdate(SwatGamePlayerController Player)
 	}
 	else
 	{
-		PlayerPawn.SetLowReady( PlayerPawn.islowReady(), LowReadyReason);
+		if (LowReadyReason == 'Obstruction')
+		{
+			Player.ToggleLowReadyDOWN();
+			PlayerPawn.SetLowReady(true, LowReadyReason);	
+		}
+		else
+		{
+			PlayerPawn.SetLowReady( PlayerPawn.islowReady(), LowReadyReason);
+		}
 	}
 }
 

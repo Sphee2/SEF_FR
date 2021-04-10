@@ -19,6 +19,7 @@ ADDED
 - Added "Pull Door" command to let player pull the door (thx Scape/S4 for the script)
 - Separated Flashlight and NVG keybinds 
 - AI now can use NVG instead of flashlights 
+- New keybinds to control NVG light
 
 REMOVED
 - Optiwand now cant mirror under the door
