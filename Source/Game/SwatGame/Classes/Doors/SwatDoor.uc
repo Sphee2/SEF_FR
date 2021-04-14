@@ -650,6 +650,7 @@ simulated function Interact(Pawn Other, optional bool Force)
     }
 }
 
+
 simulated function OnWedged()
 {
     TriggerEffectEvent('Wedged');
@@ -661,6 +662,22 @@ simulated function OnUnwedged()
     TriggerEffectEvent('UnWedged');
 }
 
+//hack to remove wedge by suspects
+simulated function EnemyRemoveWedge(Pawn Other)
+{
+	if (IsWedged())
+	{
+		DeployedWedge.OnRemoved();
+		OnUnwedged();
+		
+		if (ActorIsToMyLeft(Other))
+                SetPositionForMove( DoorPosition_OpenRight, MR_Interacted );
+            else
+                SetPositionForMove( DoorPosition_OpenLeft, MR_Interacted );
+		
+		Moved();
+	}
+}
 
 // It is not an error to call this function multiple times on the same
 // door. If a door is bIsUnlocked

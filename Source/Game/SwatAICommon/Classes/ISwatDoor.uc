@@ -47,6 +47,7 @@ function Blasted(Pawn Instigator);
 function OnUnlocked();
 function OnWedged();
 function OnUnwedged();
+function EnemyRemoveWedge(Pawn Other);
 function Actor GetDeployedWedge();
 function bool CanBeLocked();
 function Lock();

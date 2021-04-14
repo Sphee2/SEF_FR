@@ -1349,13 +1349,52 @@ private function RemoveSuspiciousGoals()
 //
 // Doors
 
-// if we find a wedged door, barricade!
+// if we find a wedged door
 function NotifyDoorWedged(Door WedgedDoor)
 {
-	// we're supposed to call down the chain
-	super.NotifyDoorWedged(WedgedDoor);
+	local ISwatDoor SD;
+	local SwatAIRepository SwatAIRepo;
 
-	CreateBarricadeGoal(WedgedDoor.Location, false, false);
+	SD=ISwatDoor(WedgedDoor);
+
+	//let the enemy remove wedges if they are high skill
+    if( (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High )   || ( FRand() > 0.5 ) ) //  EnemySkill_High with 50% chance        
+    {    
+	   //remove wedge
+       if (SD != None)
+		{
+			// do some speech
+			ISwatEnemy(m_Pawn).GetEnemySpeechManagerAction().TriggerDoorBlockedSpeech();
+			
+			if( !SD.IsLocked() ) //if door is not locked
+			{	
+		
+				//actually remove the wedge from the door
+				SD.EnemyRemoveWedge(m_Pawn);  
+				
+				//barricade after opening
+				CreateBarricadeGoal(WedgedDoor.Location, false, false);
+						
+				//let officers know the wedge is gone. UpdateOfficersKnowledge()
+				SwatAIRepo = SwatAIRepository(m_Pawn.Level.AIRepo);
+				assert(SwatAIRepo != None);
+
+				SwatAIRepo.NotifyOfficersDoorWedgeRemoved(WedgedDoor); 
+			}
+			else
+			{
+				//door is still locked anyway... just barricade!
+				CreateBarricadeGoal(WedgedDoor.Location, false, false);
+			}
+		}
+    }
+    else // barricade!
+	{
+		// we're supposed to call down the chain
+		super.NotifyDoorWedged(WedgedDoor);
+		
+		CreateBarricadeGoal(WedgedDoor.Location, false, false);
+	}
 }
 
 // if we find a blocked door that is blocked by a player or officer, barricade!
