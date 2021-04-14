@@ -314,7 +314,7 @@ replication
         ServerViewportActivate, ServerViewportDeactivate,
         ServerHandleViewportFire, ServerHandleViewportReload,
 		ServerDisableSpecialInteractions, ServerMPCommandIssued,
-		ServerDiscordTest, ServerDiscordTest2, ServerGiveItem;
+		ServerDiscordTest, ServerDiscordTest2, ServerGiveItem ,PullDoor, ToggleLowReady,ToggleNVGLightDown,ToggleLowReadyUP,ToggleNVG ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -3837,10 +3837,10 @@ exec function PullDoor()
     local SwatDoor Door;
     local actor HitActor;
     local vector HitNormal, HitLocation;
-    
+	
     if (Pawn == None) return;
     
-    HitActor = Trace(HitLocation, HitNormal, ViewTarget.Location + 150 * vector(Rotation),ViewTarget.Location, true);
+    HitActor = Trace(HitLocation, HitNormal, ViewTarget.Location + 10000 * vector(Rotation),ViewTarget.Location, true);
     Door = DoorModel(HitActor).Door;
     
     if (Door == None) return;
@@ -3849,25 +3849,16 @@ exec function PullDoor()
     if (Door.IsClosed() && Door.IsLocked()) { ClientMessage("[c=FFFFFF]The door is locked.", 'SpeechManagerNotification'); return; }
     if (VSize2D(Door.Location - Pawn.Location) > 150) return;
     
-    switch(Door.GetPosition())
+    if(Door.GetPosition() == DoorPosition_Closed)
     {
-        case DoorPosition_Closed:
-            if (Door.ActorIsToMyLeft(Pawn)) { Door.SetPositionForMove(DoorPosition_OpenLeft, MR_Interacted); }
-            else { Door.SetPositionForMove(DoorPosition_OpenRight, MR_Interacted); }
-            break;
-
-        case DoorPosition_OpenLeft:
-			 Door.SetPositionForMove(DoorPosition_Closed, MR_Interacted); 
-            
-			break;
-        case DoorPosition_OpenRight:
-			 Door.SetPositionForMove(DoorPosition_Closed, MR_Interacted); 
-            
-            break;
-
-        default:
-            break;
+			if (Door.ActorIsToMyLeft(Pawn))
+				Door.SetPositionForMove(DoorPosition_OpenLeft, MR_Interacted); 
+			else 
+				Door.SetPositionForMove(DoorPosition_OpenRight, MR_Interacted); 
     }
+	else
+		Door.Interact(Pawn);
+	
     Door.Moved();
 }
 
