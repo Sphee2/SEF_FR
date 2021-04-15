@@ -3840,13 +3840,13 @@ exec function PullDoor()
 	
     if (Pawn == None) return;
     
-    HitActor = Trace(HitLocation, HitNormal, ViewTarget.Location + 10000 * vector(Rotation),ViewTarget.Location, true);
+    HitActor = Trace(HitLocation, HitNormal, ViewTarget.Location + 150 * vector(Rotation),ViewTarget.Location, true);
     Door = DoorModel(HitActor).Door;
     
     if (Door == None) return;
     if (Door.bIsMissionExit) return;
     if (!Door.CanInteract()) return; 
-    if (Door.IsClosed() && Door.IsLocked()) { ClientMessage("[c=FFFFFF]The door is locked.", 'SpeechManagerNotification'); return; }
+    if (Door.IsClosed() && Door.IsLocked()) { CheckDoorLock(Door); return; }
     if (VSize2D(Door.Location - Pawn.Location) > 150) return;
     
     if(Door.GetPosition() == DoorPosition_Closed)
