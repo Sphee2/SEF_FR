@@ -5380,6 +5380,20 @@ exec function ToggleLowReadyDOWN()
 	
 }
 
+exec function ToggleZoomMLR()
+{
+	local SwatPlayer playerPawn;
+	
+	playerPawn = SwatPlayer(Pawn);
+	
+	
+	if ( playerPawn != None )
+	{
+		ToggleZoom();
+		playerPawn.SetLowReady(false); //reset state
+	}
+	
+}
 
 
 ///////////////////////////////////////////////////////////////////////////////
