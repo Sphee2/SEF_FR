@@ -5687,7 +5687,6 @@ public:
     INT NotUsed;
     FLOAT PreThrowTweenTime;
     FLOAT PreThrowRootBone;
-    BITFIELD WantsLowReady:1;
     BITFIELD bIsLowReady:1;
     FLOAT NextIdleTweenTime;
 	   DECLARE_CLASS(AHands,AActor,0|CLASS_Config,Engine)
