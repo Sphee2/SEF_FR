@@ -1,4 +1,4 @@
-Log: Log file open, 04/16/21 00:00:00
+Log: Log file open, 04/16/21 12:07:31
 Init: ----------------------------------------
 Init: SWAT VERSION NUMBER: 0.65b
 Init: ----------------------------------------
@@ -15,7 +15,7 @@ Init: User: admin
 Init: CPU Page size=4096, Processors=4
 Init: CPU Detected: PentiumPro-class processor (GenuineIntel)
 Init: CPU Features: CMov FPU RDTSC PAE MMX SSE
-Init: CPU Speed=3511.375310 MHz
+Init: CPU Speed=3512.112400 MHz
 Init: Memory total: Phys=2097151K Pagef=4194303K Virt=2097024K
 Init: Working set: 32000 / 159000
 Log: Bound to ScriptCompiler.dll
@@ -38,10 +38,10 @@ Warning: Missing Class Class Engine.KMeshProps
 Warning: Missing Class Class Engine.HkMeshProxy
 Warning: Missing Class Class Engine.Polys
 Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
 Warning: Missing Class Class Engine.Polys
 Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
 Warning: Missing Class Class Engine.Polys
 Warning: Missing Class Class Engine.HkMeshProxy
 Warning: Missing Class Class Engine.HkMeshProxy
@@ -400,7 +400,7 @@ Log: Saving SwatGame...
 Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatGame\Inc\SwatGameClasses.h
 Warning: Failed to load '..\SystemConform\SwatGame.u': Can't find file '..\SystemConform\SwatGame.u'
 Log: 0.0ms Unloading: Package SwatGame
-Log: Save=326.810519
+Log: Save=321.190912
 Log: Moving 'Save.tmp' to 'SwatGame.u'
 Heading: --------------------SwatEquipment - Release--------------------
 Warning: Failed to load 'Class SwatEquipmentModels2.NinebangGrenade_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.NinebangGrenade_FirstPerson'
@@ -492,8 +492,8 @@ Log: Success: Compiled 2366 line(s), 0 statement(s).
 Log: Saving SwatEquipment...
 Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatEquipment\Inc\SwatEquipmentClasses.h
 Warning: Failed to load '..\SystemConform\SwatEquipment.u': Can't find file '..\SystemConform\SwatEquipment.u'
-Log: 1256.0ms Unloading: Package SwatEquipment
-Log: Save=44.319720
+Log: 1239.0ms Unloading: Package SwatEquipment
+Log: Save=44.366749
 Log: Moving 'Save.tmp' to 'SwatEquipment.u'
 Heading: --------------------SwatObjectives - Release--------------------
 Log: Compiling DoNot_LetHostageDie
@@ -516,8 +516,8 @@ Log: Success: Compiled 452 line(s), 0 statement(s).
 
 Log: Saving SwatObjectives...
 Warning: Failed to load '..\SystemConform\SwatObjectives.u': Can't find file '..\SystemConform\SwatObjectives.u'
-Log: 1452.0ms Unloading: Package SwatObjectives
-Log: Save=17.742940
+Log: 1434.0ms Unloading: Package SwatObjectives
+Log: Save=17.740334
 Log: Moving 'Save.tmp' to 'SwatObjectives.u'
 Heading: --------------------SwatProcedures - Release--------------------
 Log: Compiling Procedure_EvacuateDownedOfficers
@@ -526,8 +526,8 @@ Log: Success: Compiled 59 line(s), 0 statement(s).
 
 Log: Saving SwatProcedures...
 Warning: Failed to load '..\SystemConform\SwatProcedures.u': Can't find file '..\SystemConform\SwatProcedures.u'
-Log: 1534.0ms Unloading: Package SwatProcedures
-Log: Save=22.213645
+Log: 1517.0ms Unloading: Package SwatProcedures
+Log: Save=21.893675
 Log: Moving 'Save.tmp' to 'SwatProcedures.u'
 Heading: --------------------SwatGui - Release--------------------
 Log: Compiling SwatDebriefingMenu
@@ -545,8 +545,8 @@ Log: Success: Compiled 1707 line(s), 0 statement(s).
 Log: Saving SwatGui...
 Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatGui\Inc\SwatGuiClasses.h
 Warning: Failed to load '..\SystemConform\SwatGui.u': Can't find file '..\SystemConform\SwatGui.u'
-Log: 1961.0ms Unloading: Package SwatGui
-Log: Save=123.805885
+Log: 1943.0ms Unloading: Package SwatGui
+Log: Save=124.480709
 Log: Moving 'Save.tmp' to 'SwatGui.u'
 Log: 
 
@@ -557,181 +557,181 @@ Exit: Preparing to exit.
 Log: Purging garbage
 Log: Unbound to Core.dll
 Log: Unbound to ScriptCompiler.dll
-Log: 2090.0ms Unloading: Package Core
-Log: 2090.0ms Unloading: Package Engine
-Log: 2090.0ms Unloading: Package Engine_res
-Log: 2091.0ms Unloading: Package SWAT4editorTex
-Log: 2091.0ms Unloading: Package SwatGear_sm
-Log: 2091.0ms Unloading: Package SwatGearTex
-Log: 2091.0ms Unloading: Package SWAT1stPersonTex
-Log: 2091.0ms Unloading: Package MP5A4_NEW
-Log: 2091.0ms Unloading: Package SwatFXtex
-Log: 2091.0ms Unloading: Package G36Knew
-Log: 2091.0ms Unloading: Package bm4
-Log: 2091.0ms Unloading: Package BenelliNovanew
-Log: 2091.0ms Unloading: Package M870Breach
-Log: 2091.0ms Unloading: Package mich_helmet
-Log: 2091.0ms Unloading: Package Kimber
-Log: 2091.0ms Unloading: Package UMPnew
-Log: 2091.0ms Unloading: Package MaleGang1Tex
-Log: 2091.0ms Unloading: Package M4A1_SFM500
-Log: 2091.0ms Unloading: Package surefireM900
-Log: 2091.0ms Unloading: Package FR_grenades
-Log: 2091.0ms Unloading: Package Glock
-Log: 2091.0ms Unloading: Package 92fs
-Log: 2091.0ms Unloading: Package motorola
-Log: 2091.0ms Unloading: Package safariland
-Log: 2091.0ms Unloading: Package SwatAICommon
-Log: 2091.0ms Unloading: Package Tyrion
-Log: 2091.0ms Unloading: Package AICommon
-Log: 2091.0ms Unloading: Package SwatAIAwareness
-Log: 2091.0ms Unloading: Package GUI
-Log: 2091.0ms Unloading: Package gui_tex
-Log: 2091.0ms Unloading: Package Scripting
-Log: 2091.0ms Unloading: Package EditorSprites
-Log: 2091.0ms Unloading: Package Voting
-Log: 2091.0ms Unloading: Package IGSoundEffectsSubsystem
-Log: 2091.0ms Unloading: Package IGEffectsSystem
-Log: 2091.0ms Unloading: Package IGEffectsSystem_EditorTextures
-Log: 2091.0ms Unloading: Package RWOSupport
-Log: 2091.0ms Unloading: Package Gameplay
-Log: 2091.0ms Unloading: Package IpDrv
-Log: 2091.0ms Unloading: Package mp_OfficerTex
-Log: 2091.0ms Unloading: Package HUD
-Log: 2091.0ms Unloading: Package SWATMaleAnimation2
-Log: 2091.0ms Unloading: Package SWATofficerTex
-Log: 2091.0ms Unloading: Package maleMafiaTex
-Log: 2091.0ms Unloading: Package maleHomelessTex
-Log: 2091.0ms Unloading: Package MaleCasual3Tex
-Log: 2091.0ms Unloading: Package LeoMelTextureSet
-Log: 2091.0ms Unloading: Package MaleSuitTex
-Log: 2091.0ms Unloading: Package MaleJanitorTextureSet
-Log: 2091.0ms Unloading: Package MaleChubbyTex
-Log: 2092.0ms Unloading: Package MaleBarberTex
-Log: 2092.0ms Unloading: Package CASMtex
-Log: 2092.0ms Unloading: Package MaleCasual2Tex
-Log: 2092.0ms Unloading: Package SWATheavyTex
-Log: 2092.0ms Unloading: Package SWATinstructorTex
-Log: 2092.0ms Unloading: Package MaleCasual4Tex
-Log: 2092.0ms Unloading: Package MaleCasual1Tex
-Log: 2092.0ms Unloading: Package SWATnoArmourTex
-Log: 2092.0ms Unloading: Package MaleCasualArmorTex
-Log: 2092.0ms Unloading: Package Doors_sm
-Log: 2092.0ms Unloading: Package doors_Tex
-Log: 2092.0ms Unloading: Package MetalShaders
-Log: 2092.0ms Unloading: Package Repo_Tex
-Log: 2092.0ms Unloading: Package bullseye_Tex
-Log: 2092.0ms Unloading: Package Paradise_Tex
-Log: 2092.0ms Unloading: Package Tenement_Tex
-Log: 2092.0ms Unloading: Package train
-Log: 2092.0ms Unloading: Package DNA_tex
-Log: 2092.0ms Unloading: Package VIP_Tex
-Log: 2092.0ms Unloading: Package Bar_Tex
-Log: 2092.0ms Unloading: Package Hosp
-Log: 2092.0ms Unloading: Package RedLibrary_Tex
-Log: 2092.0ms Unloading: Package Jewel_Tex
-Log: 2092.0ms Unloading: Package doors_knobs
-Log: 2092.0ms Unloading: Package Hotel
-Log: 2092.0ms Unloading: Package Arms_Tex
-Log: 2092.0ms Unloading: Package Silence_Tex
-Log: 2092.0ms Unloading: Package office_Tex
-Log: 2092.0ms Unloading: Package Power_Tex
-Log: 2092.0ms Unloading: Package barbershop_tex
-Log: 2092.0ms Unloading: Package CameraEffectsTex
-Log: 2092.0ms Unloading: Package arms_sm
-Log: 2092.0ms Unloading: Package Outdoors_Tex
-Log: 2092.0ms Unloading: Package Editor_res
-Log: 2092.0ms Unloading: Package ProgrammerTestObjectsTex
-Log: 2092.0ms Unloading: Package UWindow_res
-Log: 2092.0ms Unloading: Package SwatGear2_sm
-Log: 2092.0ms Unloading: Package SwatGear2Tex
-Log: 2092.0ms Unloading: Package druglab
-Log: 2092.0ms Unloading: Package SwatFX2tex
-Log: 2092.0ms Unloading: Package gui_tex2
-Log: 2092.0ms Unloading: Package gui_sas
-Log: 2092.0ms Unloading: Package CoopArrow
-Log: 2092.0ms Unloading: Package SWATDoubleDoorAnimations
-Log: 2092.0ms Unloading: Package SWATDoorAnimation
-Log: 2092.0ms Unloading: Package gear_sef
-Log: 2092.0ms Unloading: Package SwatArmory_Tex
-Log: 2092.0ms Unloading: Package GearTex_sef
-Log: 2092.0ms Unloading: Package GearTex_sas
-Log: 2092.0ms Unloading: Package bp_3P_tex
-Log: 2092.0ms Unloading: Package AimpointM2
-Log: 2092.0ms Unloading: Package gear_suspects
-Log: 2092.0ms Unloading: Package scripted_tex
-Log: 2092.0ms Unloading: Package Hotel_sm
-Log: 2092.0ms Unloading: Package HotelFXtex
-Log: 2092.0ms Unloading: Package SW_FR
-Log: 2092.0ms Unloading: Package TaserWire
-Log: 2092.0ms Unloading: Package swatmeshfx2_sm
-Log: 2092.0ms Unloading: Package FP_C2detonator
-Log: 2092.0ms Unloading: Package NovaPump_ThirdPerson
-Log: 2092.0ms Unloading: Package FP_NovaPumpShotgun
-Log: 2092.0ms Unloading: Package Colt1911FL_ThirdPerson
-Log: 2092.0ms Unloading: Package FP_coltHG
-Log: 2092.0ms Unloading: Package FP_csGasGrenade
-Log: 2092.0ms Unloading: Package FP_taser
-Log: 2092.0ms Unloading: Package fp_Stinger
-Log: 2092.0ms Unloading: Package taserX2
-Log: 2092.0ms Unloading: Package FP_HK69
-Log: 2092.0ms Unloading: Package SWAT1stPersonTex2
-Log: 2092.0ms Unloading: Package FP_glowstick
-Log: 2092.0ms Unloading: Package fp_fnp90
-Log: 2092.0ms Unloading: Package p90sight
-Log: 2092.0ms Unloading: Package FP_G36k
-Log: 2092.0ms Unloading: Package Eotech552
-Log: 2092.0ms Unloading: Package FP_uzi
-Log: 2092.0ms Unloading: Package FP_UMPsmg
-Log: 2092.0ms Unloading: Package fp_tec9
-Log: 2092.0ms Unloading: Package FP_stingGrenade
-Log: 2092.0ms Unloading: Package fp_deserteagle
-Log: 2092.0ms Unloading: Package FP_Hand2
-Log: 2092.0ms Unloading: Package SWAThands
-Log: 2093.0ms Unloading: Package SwatEquipmentModels2
-Log: 2093.0ms Unloading: Package IGVisualEffectsSubsystem
-Log: 2094.0ms Unloading: Package Editor
-Log: 2094.0ms Unloading: Package UWindow
-Log: 2094.0ms Unloading: Package SwatEd
-Log: 2097.0ms Unloading: Package Suspect1_officerTex
-Log: 2098.0ms Unloading: Package SWATbadguyTex
-Log: 2098.0ms Unloading: Package SwatProtectiveEquipment
-Log: 2098.0ms Unloading: Package SwatProtectiveEquipment2
-Log: 2098.0ms Unloading: Package gui_FR
-Log: 2098.0ms Unloading: Package SwatProgrammerSampleClasses
-Log: 2098.0ms Unloading: Package SwatEquipmentModels3
-Log: 2098.0ms Unloading: Package SwatEquipmentModels
-Log: 2098.0ms Unloading: Package FP_9mmPistol
-Log: 2098.0ms Unloading: Package 1stPersonTex_sas
-Log: 2098.0ms Unloading: Package SurefireP101
-Log: 2098.0ms Unloading: Package NineMMpistol_ThirdPerson
-Log: 2098.0ms Unloading: Package FP_M4A1mg
-Log: 2098.0ms Unloading: Package FP_m4super90sg
-Log: 2098.0ms Unloading: Package FP_mp5SMG
-Log: 2098.0ms Unloading: Package FP_flashbangGrenade
-Log: 2098.0ms Unloading: Package FP_mp5SMGsilenced
-Log: 2098.0ms Unloading: Package Optiwand_ThirdPerson
-Log: 2098.0ms Unloading: Package FP_Optiwand
-Log: 2098.0ms Unloading: Package FP_Pepperspray
-Log: 2098.0ms Unloading: Package FP_BreachingSG
-Log: 2098.0ms Unloading: Package BreachingSG_ThirdPerson
-Log: 2098.0ms Unloading: Package FP_AK47
-Log: 2098.0ms Unloading: Package FP_DoorWedge
-Log: 2098.0ms Unloading: Package FP_toolkit
-Log: 2098.0ms Unloading: Package Coronas
-Log: 2098.0ms Unloading: Package FP_C2charge
-Log: 2098.0ms Unloading: Package FP_Handcuffs
-Log: 2098.0ms Unloading: Package FP_paintball
-Log: 2098.0ms Unloading: Package FP_Revolver
-Log: 2098.0ms Unloading: Package FP_FragGrenade
-Log: 2098.0ms Unloading: Package gui_tex3
-Log: 2098.0ms Unloading: Package SwatDesignerClasses
-Log: 2098.0ms Unloading: Package SwatGame
-Log: 2098.0ms Unloading: Package SwatEquipment
+Log: 2074.0ms Unloading: Package Core
+Log: 2074.0ms Unloading: Package Engine
+Log: 2075.0ms Unloading: Package Engine_res
+Log: 2075.0ms Unloading: Package SWAT4editorTex
+Log: 2075.0ms Unloading: Package SwatGear_sm
+Log: 2075.0ms Unloading: Package SwatGearTex
+Log: 2075.0ms Unloading: Package SWAT1stPersonTex
+Log: 2075.0ms Unloading: Package MP5A4_NEW
+Log: 2075.0ms Unloading: Package SwatFXtex
+Log: 2075.0ms Unloading: Package G36Knew
+Log: 2075.0ms Unloading: Package bm4
+Log: 2075.0ms Unloading: Package BenelliNovanew
+Log: 2075.0ms Unloading: Package M870Breach
+Log: 2075.0ms Unloading: Package mich_helmet
+Log: 2075.0ms Unloading: Package Kimber
+Log: 2075.0ms Unloading: Package UMPnew
+Log: 2075.0ms Unloading: Package MaleGang1Tex
+Log: 2075.0ms Unloading: Package M4A1_SFM500
+Log: 2075.0ms Unloading: Package surefireM900
+Log: 2075.0ms Unloading: Package FR_grenades
+Log: 2075.0ms Unloading: Package Glock
+Log: 2075.0ms Unloading: Package 92fs
+Log: 2075.0ms Unloading: Package motorola
+Log: 2075.0ms Unloading: Package safariland
+Log: 2075.0ms Unloading: Package SwatAICommon
+Log: 2076.0ms Unloading: Package Tyrion
+Log: 2076.0ms Unloading: Package AICommon
+Log: 2076.0ms Unloading: Package SwatAIAwareness
+Log: 2076.0ms Unloading: Package GUI
+Log: 2076.0ms Unloading: Package gui_tex
+Log: 2076.0ms Unloading: Package Scripting
+Log: 2076.0ms Unloading: Package EditorSprites
+Log: 2076.0ms Unloading: Package Voting
+Log: 2076.0ms Unloading: Package IGSoundEffectsSubsystem
+Log: 2076.0ms Unloading: Package IGEffectsSystem
+Log: 2076.0ms Unloading: Package IGEffectsSystem_EditorTextures
+Log: 2076.0ms Unloading: Package RWOSupport
+Log: 2076.0ms Unloading: Package Gameplay
+Log: 2076.0ms Unloading: Package IpDrv
+Log: 2076.0ms Unloading: Package mp_OfficerTex
+Log: 2076.0ms Unloading: Package HUD
+Log: 2076.0ms Unloading: Package SWATMaleAnimation2
+Log: 2076.0ms Unloading: Package SWATofficerTex
+Log: 2076.0ms Unloading: Package maleMafiaTex
+Log: 2076.0ms Unloading: Package maleHomelessTex
+Log: 2076.0ms Unloading: Package MaleCasual3Tex
+Log: 2076.0ms Unloading: Package LeoMelTextureSet
+Log: 2076.0ms Unloading: Package MaleSuitTex
+Log: 2076.0ms Unloading: Package MaleJanitorTextureSet
+Log: 2076.0ms Unloading: Package MaleChubbyTex
+Log: 2076.0ms Unloading: Package MaleBarberTex
+Log: 2076.0ms Unloading: Package CASMtex
+Log: 2077.0ms Unloading: Package MaleCasual2Tex
+Log: 2077.0ms Unloading: Package SWATheavyTex
+Log: 2077.0ms Unloading: Package SWATinstructorTex
+Log: 2077.0ms Unloading: Package MaleCasual4Tex
+Log: 2077.0ms Unloading: Package MaleCasual1Tex
+Log: 2077.0ms Unloading: Package SWATnoArmourTex
+Log: 2077.0ms Unloading: Package MaleCasualArmorTex
+Log: 2077.0ms Unloading: Package Doors_sm
+Log: 2077.0ms Unloading: Package doors_Tex
+Log: 2077.0ms Unloading: Package MetalShaders
+Log: 2077.0ms Unloading: Package Repo_Tex
+Log: 2077.0ms Unloading: Package bullseye_Tex
+Log: 2077.0ms Unloading: Package Paradise_Tex
+Log: 2077.0ms Unloading: Package Tenement_Tex
+Log: 2077.0ms Unloading: Package train
+Log: 2077.0ms Unloading: Package DNA_tex
+Log: 2077.0ms Unloading: Package VIP_Tex
+Log: 2077.0ms Unloading: Package Bar_Tex
+Log: 2077.0ms Unloading: Package Hosp
+Log: 2077.0ms Unloading: Package RedLibrary_Tex
+Log: 2077.0ms Unloading: Package Jewel_Tex
+Log: 2077.0ms Unloading: Package doors_knobs
+Log: 2077.0ms Unloading: Package Hotel
+Log: 2077.0ms Unloading: Package Arms_Tex
+Log: 2077.0ms Unloading: Package Silence_Tex
+Log: 2077.0ms Unloading: Package office_Tex
+Log: 2077.0ms Unloading: Package Power_Tex
+Log: 2077.0ms Unloading: Package barbershop_tex
+Log: 2077.0ms Unloading: Package CameraEffectsTex
+Log: 2077.0ms Unloading: Package arms_sm
+Log: 2077.0ms Unloading: Package Outdoors_Tex
+Log: 2077.0ms Unloading: Package Editor_res
+Log: 2077.0ms Unloading: Package ProgrammerTestObjectsTex
+Log: 2077.0ms Unloading: Package UWindow_res
+Log: 2077.0ms Unloading: Package CoopArrow
+Log: 2077.0ms Unloading: Package gui_tex2
+Log: 2077.0ms Unloading: Package gui_sas
+Log: 2077.0ms Unloading: Package SWATDoubleDoorAnimations
+Log: 2077.0ms Unloading: Package SwatGear2_sm
+Log: 2077.0ms Unloading: Package SwatGear2Tex
+Log: 2077.0ms Unloading: Package druglab
+Log: 2077.0ms Unloading: Package SwatFX2tex
+Log: 2077.0ms Unloading: Package SWATDoorAnimation
+Log: 2077.0ms Unloading: Package gear_sef
+Log: 2077.0ms Unloading: Package SwatArmory_Tex
+Log: 2077.0ms Unloading: Package GearTex_sef
+Log: 2077.0ms Unloading: Package GearTex_sas
+Log: 2077.0ms Unloading: Package bp_3P_tex
+Log: 2077.0ms Unloading: Package AimpointM2
+Log: 2077.0ms Unloading: Package gear_suspects
+Log: 2077.0ms Unloading: Package scripted_tex
+Log: 2077.0ms Unloading: Package Hotel_sm
+Log: 2077.0ms Unloading: Package HotelFXtex
+Log: 2077.0ms Unloading: Package SW_FR
+Log: 2077.0ms Unloading: Package TaserWire
+Log: 2077.0ms Unloading: Package swatmeshfx2_sm
+Log: 2077.0ms Unloading: Package FP_C2detonator
+Log: 2077.0ms Unloading: Package NovaPump_ThirdPerson
+Log: 2077.0ms Unloading: Package FP_NovaPumpShotgun
+Log: 2077.0ms Unloading: Package Colt1911FL_ThirdPerson
+Log: 2077.0ms Unloading: Package FP_coltHG
+Log: 2077.0ms Unloading: Package FP_csGasGrenade
+Log: 2077.0ms Unloading: Package FP_taser
+Log: 2077.0ms Unloading: Package fp_Stinger
+Log: 2077.0ms Unloading: Package taserX2
+Log: 2077.0ms Unloading: Package FP_HK69
+Log: 2077.0ms Unloading: Package SWAT1stPersonTex2
+Log: 2077.0ms Unloading: Package FP_glowstick
+Log: 2077.0ms Unloading: Package fp_fnp90
+Log: 2077.0ms Unloading: Package p90sight
+Log: 2077.0ms Unloading: Package FP_G36k
+Log: 2077.0ms Unloading: Package Eotech552
+Log: 2077.0ms Unloading: Package FP_uzi
+Log: 2077.0ms Unloading: Package FP_UMPsmg
+Log: 2077.0ms Unloading: Package fp_tec9
+Log: 2077.0ms Unloading: Package FP_stingGrenade
+Log: 2077.0ms Unloading: Package fp_deserteagle
+Log: 2077.0ms Unloading: Package FP_Hand2
+Log: 2077.0ms Unloading: Package SWAThands
+Log: 2078.0ms Unloading: Package SwatEquipmentModels2
+Log: 2078.0ms Unloading: Package IGVisualEffectsSubsystem
+Log: 2078.0ms Unloading: Package Editor
+Log: 2078.0ms Unloading: Package UWindow
+Log: 2079.0ms Unloading: Package SwatEd
+Log: 2082.0ms Unloading: Package Suspect1_officerTex
+Log: 2082.0ms Unloading: Package SWATbadguyTex
+Log: 2082.0ms Unloading: Package SwatProtectiveEquipment
+Log: 2082.0ms Unloading: Package SwatProtectiveEquipment2
+Log: 2082.0ms Unloading: Package gui_FR
+Log: 2082.0ms Unloading: Package SwatProgrammerSampleClasses
+Log: 2082.0ms Unloading: Package SwatEquipmentModels3
+Log: 2082.0ms Unloading: Package SwatEquipmentModels
+Log: 2082.0ms Unloading: Package FP_9mmPistol
+Log: 2082.0ms Unloading: Package 1stPersonTex_sas
+Log: 2082.0ms Unloading: Package SurefireP101
+Log: 2082.0ms Unloading: Package NineMMpistol_ThirdPerson
+Log: 2082.0ms Unloading: Package FP_M4A1mg
+Log: 2082.0ms Unloading: Package FP_m4super90sg
+Log: 2082.0ms Unloading: Package FP_mp5SMG
+Log: 2082.0ms Unloading: Package FP_flashbangGrenade
+Log: 2082.0ms Unloading: Package FP_mp5SMGsilenced
+Log: 2082.0ms Unloading: Package Optiwand_ThirdPerson
+Log: 2082.0ms Unloading: Package FP_Optiwand
+Log: 2082.0ms Unloading: Package FP_Pepperspray
+Log: 2082.0ms Unloading: Package FP_BreachingSG
+Log: 2082.0ms Unloading: Package BreachingSG_ThirdPerson
+Log: 2082.0ms Unloading: Package FP_AK47
+Log: 2082.0ms Unloading: Package FP_DoorWedge
+Log: 2082.0ms Unloading: Package FP_toolkit
+Log: 2082.0ms Unloading: Package Coronas
+Log: 2082.0ms Unloading: Package FP_C2charge
+Log: 2082.0ms Unloading: Package FP_Handcuffs
+Log: 2082.0ms Unloading: Package FP_paintball
+Log: 2082.0ms Unloading: Package FP_Revolver
+Log: 2082.0ms Unloading: Package FP_FragGrenade
+Log: 2082.0ms Unloading: Package gui_tex3
+Log: 2082.0ms Unloading: Package SwatDesignerClasses
+Log: 2082.0ms Unloading: Package SwatGame
+Log: 2082.0ms Unloading: Package SwatEquipment
 Log: Garbage: objects: 55521->0; refs: 0
 Exit: Object subsystem successfully closed.
 Exit: Exiting.
 Log: Waiting for file streaming thread to finish...
 Uninitialized: Name subsystem shut down
 Uninitialized: Allocation checking disabled
-Uninitialized: Log file closed, 04/16/21 00:00:12
+Uninitialized: Log file closed, 04/16/21 12:07:42
