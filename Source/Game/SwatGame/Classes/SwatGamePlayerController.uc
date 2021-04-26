@@ -5316,85 +5316,53 @@ exec function PawnCollision(int on)
 }
 
 // @TEMP command to force toggle SetLowReady on the player
-exec function ToggleLowReady()
-{
-    local SwatPlayer playerPawn;
+exec function ToggleLowReady() {
 	local SwatGuiConfig GC;
-	
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 	
-	
-    playerPawn = SwatPlayer(Pawn);
-    if (playerPawn != None && GC.ExtraIntOptions[6] == 1) //only in manual low ready option
-    {
-        playerPawn.SetLowReady(!playerPawn.IsLowReady());
-    }
-	
+    if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1) 
+	    SwatPlayer(Pawn).SetLowReady(!SwatPlayer(Pawn).IsLowReady());
 }
 
 exec function ToggleLowReadyUP()
 {
-    local SwatPlayer playerPawn;
 	local SwatGuiConfig GC;
-	
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
-	
-    playerPawn = SwatPlayer(Pawn);
-	
-    if (playerPawn != None && GC.ExtraIntOptions[6] == 1) //only in manual low ready option
-    {
-		if(playerPawn.IsLowReady()) //if low ready set ready
-		{
-			playerPawn.SetLowReady(!playerPawn.IsLowReady());
+
+    if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1) {
+		if (!WantsZoom && !SwatPlayer(Pawn).IsLowReady() ) {
+			ToggleZoom();
+			return;
 		}
-		else if (!WantsZoom && !playerPawn.IsLowReady() ) //if in ready state and not zooming
-		{
-			ToggleZoom(); //enable zoom
-		}
+	    
+	  	SwatPlayer(Pawn).SetLowReady(false);
     }
 	
 }
 
 exec function ToggleLowReadyDOWN()
 {
-    local SwatPlayer playerPawn;
 	local SwatGuiConfig GC;
-	
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
-	
-    playerPawn = SwatPlayer(Pawn);
-	
-    if (playerPawn != None && GC.ExtraIntOptions[6] == 1) //only in manual low ready option
-    {
-		if (WantsZoom) //if zooming
-		{
-			 ToggleZoom(); //disable zoom
-			 playerPawn.SetLowReady(false); //reset state
+
+    if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1) {
+		if (WantsZoom) {
+			 ToggleZoom();
+			 SwatPlayer(Pawn).SetLowReady(false); 
+			 return;
 		}
-		else if(!playerPawn.IsLowReady() ) //if ready set low ready
-		{
-			playerPawn.SetLowReady(!playerPawn.IsLowReady()); //set low ready
-		}
-		
+	    
+		SwatPlayer(Pawn).SetLowReady(true); 	
     }
 	
 }
 
-exec function ToggleZoomMLR()
-{
-	local SwatPlayer playerPawn;
+exec function ToggleZoomMLR() {	
+	if ( SwatPlayer(Pawn) == None ) return;
 	
-	playerPawn = SwatPlayer(Pawn);
-	
-	
-	if ( playerPawn != None )
-	{
-		ToggleZoom();
-		playerPawn.SetLowReady(false); //reset state
-	}
-	
+	ToggleZoom();
+	SwatPlayer(Pawn).SetLowReady(false); //reset state
 }
-
 
 ///////////////////////////////////////////////////////////////////////////////
 
