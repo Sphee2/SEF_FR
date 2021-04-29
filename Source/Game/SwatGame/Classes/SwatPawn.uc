@@ -274,10 +274,10 @@ replication
 
     // replicated functions sent to server by owning client
     reliable if( Role < ROLE_Authority )
-        ServerToggleDesiredFlashlightState,ServerToggleDesiredNVGState,ServerSetLowReadyStatus;
-
+        ServerToggleDesiredFlashlightState,ServerToggleDesiredNVGState ,ServerSetLowReadyStatus;
+			
     reliable if ( Role == ROLE_Authority )
-        AnimFlags, FlashlightShouldBeOn, NightvisionShouldBeOn, bShouldBeAtLowReady, ReasonForShouldBeAtLowReady, bArrested, BeingArrested;
+        AnimFlags, FlashlightShouldBeOn, NightvisionShouldBeOn, bShouldBeAtLowReady, ReasonForShouldBeAtLowReady, bArrested, BeingArrested ;
 
     reliable if ( Role == ROLE_Authority && RemoteRole != ROLE_AutonomousProxy )
         bIsFlashbanged, bIsGassed, bIsPepperSprayed, bIsStung, bIsStunnedByC2, bIsTased, bIsWearingNightvision;
@@ -774,7 +774,7 @@ simulated function EAnimationSet GetLowReadySet()
 simulated protected function SetThirdPersonLowReadyAnims()
 {
     local EAnimationSet animationSet;
-    if (bIsLowReady)
+    if (bIsLowReady || bShouldBeAtLowReady)
     {
         animationSet = GetLowReadySet();
         if (animationSet != kAnimationSetNull)
@@ -1172,7 +1172,7 @@ function ServerSetLowReadyStatus( bool bEnable, name Reason )
     //mplog( self$"---SwatPawn::ServerSetLowReadyStatus(). bEnable="$bEnable );
     bShouldBeAtLowReady = bEnable;
     ReasonForShouldBeAtLowReady = Reason;
-
+	
     if ( !IsControlledByLocalHuman() )
         SetLowReady( bEnable, Reason );
 }
@@ -1183,7 +1183,10 @@ function ServerSetLowReadyStatus( bool bEnable, name Reason )
 simulated event OnLowReadyStatusChanged()
 {
     //mplog( self$"---SwatPawn::OnLowReadyStatusChanged(). Status="$bShouldBeAtLowReady$", Reason="$ReasonForShouldBeAtLowReady );
-    SetLowReady( bShouldBeAtLowReady, ReasonForShouldBeAtLowReady );
+	bIsLowReady = bShouldBeAtLowReady;
+    ReasonForLowReady = ReasonForShouldBeAtLowReady;
+    //SetLowReady( bIsLowReady, ReasonForLowReady );
+	ChangeAnimation();
 }
 
 ///////////////////////////////////////
@@ -2219,6 +2222,10 @@ defaultproperties
     // Flashlights off by default
     FlashlightShouldBeOn=false
     NightvisionShouldBeOn=false
+	
+	bShouldBeAtLowReady=false
+
+	
 
     // Shadows
     ShadowLightDistance			= 200
