@@ -314,7 +314,7 @@ replication
         ServerViewportActivate, ServerViewportDeactivate,
         ServerHandleViewportFire, ServerHandleViewportReload,
 		ServerDisableSpecialInteractions, ServerMPCommandIssued,
-		ServerDiscordTest, ServerDiscordTest2, ServerGiveItem ,PullDoor ,ToggleNVG;
+		ServerDiscordTest, ServerDiscordTest2, ServerGiveItem ,PullDoor;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
