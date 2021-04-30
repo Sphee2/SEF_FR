@@ -2911,6 +2911,11 @@ function ReactToStingGrenade(
 	Direction       = Location - Grenade.Location;
 	Distance        = VSize(Direction);
 	DistanceEffect = ((StingRadius + (StingRadius/4)) - Distance)/(StingRadius);
+	
+	//added minimum effect duration , avoiding effect crash
+	if (DistanceEffect < 0.2 )
+		DistanceEffect = 0.2; 
+	
 	PlayerStingDuration *= DistanceEffect;
 	HeavilyArmoredPlayerStingDuration *= DistanceEffect;
 	NonArmoredPlayerStingDuration *= DistanceEffect;
