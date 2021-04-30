@@ -1192,8 +1192,18 @@ exec function Fire()
     else if ( Level.NetMode == NM_Standalone
               || (!SwatPlayer.IsNonlethaled() && !SwatPlayer.IsArrested()) )
     {
-		if ( GC.ExtraIntOptions[6] == 1 && !SwatPlayer(Pawn).IsLowReady()) //with MLR fire when the player is not low ready
-			Super.Fire();
+		if ( GC.ExtraIntOptions[6] == 1)
+		{	
+			if(!SwatPlayer(Pawn).IsLowReady()) //with MLR fire when the player is not low ready
+			{
+				Super.Fire();
+			}
+			else  //if it's low ready just move to ready
+			{
+				ToggleLowReadyUP();
+			}
+			
+		}	
 		else if (GC.ExtraIntOptions[6] == 0)
 			Super.Fire();
     }
