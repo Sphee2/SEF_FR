@@ -108,12 +108,18 @@ simulated function PostUpdate(SwatGamePlayerController Player)
 	{
 		if (LowReadyReason == 'Obstruction')
 		{
-			Player.ToggleLowReadyDOWN();
+			if(Player.WantsZoom && PlayerPawn.WantedZoom )
+				Player.ToggleZoom();
+			
 			PlayerPawn.SetLowReady(true, LowReadyReason);	
 		}
 		else
 		{
-			PlayerPawn.SetLowReady( PlayerPawn.islowReady(), LowReadyReason);
+			PlayerPawn.SetLowReady( PlayerPawn.WantsLowReady , LowReadyReason);
+			
+			if(PlayerPawn.WantedZoom != Player.WantsZoom)
+				Player.ToggleZoom();
+			
 		}
 	}
 }

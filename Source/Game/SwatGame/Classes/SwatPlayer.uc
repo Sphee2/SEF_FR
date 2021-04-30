@@ -41,6 +41,8 @@ var private Material VIPHandsMaterial;
 
 // NonLethal Effects
 var config bool Unused7;
+var config bool Unused8;
+var config float Unused9;
 var private Timer StungTimer;
 var private Timer FlashbangedTimer;
 var private Timer GassedTimer;
@@ -90,8 +92,8 @@ var config float StingEffectFrequency;
 var config Rotator StingViewEffectAmplitude;
 var config float StingInputEffectAmplitude;
 // end revert
-var config float Unused8;
-var config float Unused9;
+//var config float Unused8;
+//var config float Unused9;
 
 var bool EquipOtherAfterUsed;                   //if true,
 var EquipmentSlot SlotForReequip;               //if TryToReequipAfterUsed is set, then SlotForReequip records the EquipmentSlot that should be used to try to reequip
@@ -137,6 +139,9 @@ var private CommandArrow    CommandArrow;
 var EquipmentUsedOnOther CachedQualifyEquipment;
 var Actor CachedQualifyTarget;
 
+//manual low ready interface
+var bool WantsLowReady;
+var bool WantedZoom;
 
 replication
 {
@@ -4245,6 +4250,8 @@ defaultproperties
     StandardLimpPenalty=3
     bTestingCameraEffects=false
     YouString="You"
+	
+	WantedZoom=false
 
 	// so AIs know when the player is blocking something
 	// the Reached Destination Threshold is the same size as the collision radius for players
