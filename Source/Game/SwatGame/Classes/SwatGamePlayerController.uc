@@ -183,7 +183,7 @@ var private IControllableThroughViewport ReplicatedViewportTeammate;
 
 // Timer for sniper alerts so we can pop up the right SniperPawn in the ExternalViewportManager if there is an sniper alert pending
 var Timer  SniperAlertTimer;
-var config float SniperAlertTime;
+//var config float SniperAlertTime;
 var string SniperAlertFilter;
 
 var input byte bControlViewport;
@@ -279,6 +279,10 @@ var vector LastFocusUpdateOrigin;
 var private name TeamSelectedBeforeControllingOfficerViewport;
 
 var eVoiceType VoiceType;
+
+//manual low ready interface
+var bool WantsLowReady;
+var bool WantedZoom;
 
 replication
 {
@@ -2328,7 +2332,7 @@ function OnSniperAlerted(SniperPawn AssociatedSniper)
 
     // Start the timer for how long the alert lasts
     SniperAlertTimer.TimerDelegate = OnSniperTimerEnded;
-    SniperAlertTimer.StartTimer( SniperAlertTime );
+    SniperAlertTimer.StartTimer( 4.0 );
     SniperAlertFilter = string(AssociatedSniper.Name);
 
     ClientMessage("",'SniperAlerted');
@@ -2479,9 +2483,9 @@ simulated private function InternalEquipSlot(coerce EquipmentSlot Slot)
 		
 		if ( Slot != SLOT_SecondaryWeapon && Slot != SLOT_PrimaryWeapon ) //keep zooming if the transition is between Primary and Secondary or viceversa
 		{
-			SwatPlayer(Pawn).WantedZoom=false;
+			WantedZoom=false;
 		}
-		SwatPlayer(Pawn).WantsLowReady=false;
+		WantsLowReady=false;
 		playerPawn.SetLowReady(false);
 
         if (Level.GetEngine().EnableDevTools)
@@ -5344,7 +5348,7 @@ exec function ToggleLowReady() {
 	
     if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1) 
 	{
-		SwatPlayer(Pawn).WantsLowReady= !SwatPlayer(Pawn).IsLowReady();
+		WantsLowReady= !SwatPlayer(Pawn).IsLowReady();
 	    SwatPlayer(Pawn).SetLowReady(!SwatPlayer(Pawn).IsLowReady());
 	}
 }
@@ -5355,11 +5359,11 @@ exec function ToggleLowReadyUP()
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 	
     if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1) {
-		if (!WantsZoom && !SwatPlayer(Pawn).IsLowReady() && !SwatPlayer(Pawn).WantedZoom) {
+		if (!WantsZoom && !SwatPlayer(Pawn).IsLowReady() && !WantedZoom) {
 			ToggleZoomMLR();
 			return;
 		}
-		SwatPlayer(Pawn).WantsLowReady=false;
+		WantsLowReady=false;
 	  	SwatPlayer(Pawn).SetLowReady(false);
     }
 	
@@ -5373,11 +5377,11 @@ exec function ToggleLowReadyDOWN()
     if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1) {
 		if (WantsZoom) {
 			 ToggleZoomMLR();
-			 SwatPlayer(Pawn).WantsLowReady=false;
+			 WantsLowReady=false;
 			 SwatPlayer(Pawn).SetLowReady(false); 
 			 return;
 		}
-	    SwatPlayer(Pawn).WantsLowReady=true;
+	    WantsLowReady=true;
 		SwatPlayer(Pawn).SetLowReady(true); 	
     }
 	
@@ -5386,9 +5390,9 @@ exec function ToggleLowReadyDOWN()
 exec function ToggleZoomMLR() {	
 	if ( SwatPlayer(Pawn) == None ) return;
 	
-	SwatPlayer(Pawn).WantedZoom=!SwatPlayer(Pawn).WantedZoom; //desired zoom state
+	WantedZoom=!WantedZoom; //desired zoom state
 	ToggleZoom();
-	SwatPlayer(Pawn).WantsLowReady=false;
+	WantsLowReady=false;
 	SwatPlayer(Pawn).SetLowReady(false); //reset state
 }
 
@@ -6716,7 +6720,7 @@ defaultproperties
     SpectateSpeed=+200.0
     BeingCuffedTimeout=10
     ThisPlayerIsTheVIP=false
-    SniperAlertTime=4
+    //SniperAlertTime=4
     EquipmentSlotForQualify=SLOT_Invalid
     FlashbangRetinaImageTextureWidth=800
     FlashbangRetinaImageTextureHeight=600

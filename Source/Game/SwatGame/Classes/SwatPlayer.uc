@@ -41,8 +41,6 @@ var private Material VIPHandsMaterial;
 
 // NonLethal Effects
 var config bool Unused7;
-var config bool Unused8;
-var config float Unused9;
 var private Timer StungTimer;
 var private Timer FlashbangedTimer;
 var private Timer GassedTimer;
@@ -92,8 +90,8 @@ var config float StingEffectFrequency;
 var config Rotator StingViewEffectAmplitude;
 var config float StingInputEffectAmplitude;
 // end revert
-//var config float Unused8;
-//var config float Unused9;
+var config float Unused8;
+var config float Unused9;
 
 var bool EquipOtherAfterUsed;                   //if true,
 var EquipmentSlot SlotForReequip;               //if TryToReequipAfterUsed is set, then SlotForReequip records the EquipmentSlot that should be used to try to reequip
@@ -138,10 +136,6 @@ var private CommandArrow    CommandArrow;
 // has been using the quick-equip interface.
 var EquipmentUsedOnOther CachedQualifyEquipment;
 var Actor CachedQualifyTarget;
-
-//manual low ready interface
-var bool WantsLowReady;
-var bool WantedZoom;
 
 replication
 {
@@ -553,7 +547,7 @@ simulated function SetLowReady(bool bEnable, optional name Reason)
     if (!CanPawnUseLowReady() && bEnable) return;
 
     Super.SetLowReady(bEnable, Reason);
-
+	
     if (GetHands() != None)
         GetHands().SetLowReady(bEnable);
 }
@@ -1700,21 +1694,24 @@ simulated function AdjustPlayerMovementSpeed() {
     
   local AnimationSetManager AnimationSetManager;
   local AnimationSet setObject;
+	
+  TotalWeight = LoadOut.GetTotalWeight();
+  
+  
+	AnimationSetManager = SwatRepo(Level.GetRepo()).GetAnimationSetManager();
+	setObject = AnimationSetManager.GetAnimationSet(GetMovementAnimSet());
 
-  AnimationSetManager = SwatRepo(Level.GetRepo()).GetAnimationSetManager();
-  setObject = AnimationSetManager.GetAnimationSet(GetMovementAnimSet());
+	OriginalFwd = setObject.AnimSpeedForward;
+	OriginalBck = setObject.AnimSpeedBackward;
+	OriginalSde = setObject.AnimSpeedSidestep;
 
-  OriginalFwd = setObject.AnimSpeedForward;
-  OriginalBck = setObject.AnimSpeedBackward;
-  OriginalSde = setObject.AnimSpeedSidestep;
+    ModdedFwd = OriginalFwd;
+	ModdedBck = OriginalBck;
+	ModdedSde = OriginalSde;
 
-  ModdedFwd = OriginalFwd;
-  ModdedBck = OriginalBck;
-  ModdedSde = OriginalSde;
-
-  ModdedFwd *= LoadOut.GetWeightMovementModifier();
-  ModdedBck *= LoadOut.GetWeightMovementModifier();
-  ModdedSde *= LoadOut.GetWeightMovementModifier();
+    ModdedFwd *= LoadOut.GetWeightMovementModifier();
+	ModdedBck *= LoadOut.GetWeightMovementModifier();
+	ModdedSde *= LoadOut.GetWeightMovementModifier();
 
 
 	if( IsLowReady() ) //little more speed when low ready
@@ -1724,11 +1721,10 @@ simulated function AdjustPlayerMovementSpeed() {
 	}
   
   
-  AnimSet.AnimSpeedForward = ModdedFwd;
-  AnimSet.AnimSpeedBackward = ModdedBck;
-  AnimSet.AnimSpeedSidestep = ModdedSde;
-
-  TotalWeight = LoadOut.GetTotalWeight();
+	AnimSet.AnimSpeedForward = ModdedFwd;
+	AnimSet.AnimSpeedBackward = ModdedBck;
+	AnimSet.AnimSpeedSidestep = ModdedSde;
+    
 }
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -2714,6 +2710,7 @@ private function ApplyDazedEffect(float PlayerStingDuration, float HeavilyArmore
     else
         StingDuration = PlayerStingDuration;
 
+	
 	if (Level.TimeSeconds > (LastStungTime + LastStungDuration))
 	{
 		// if we are done with any previous effect, just set the duration
@@ -2724,11 +2721,10 @@ private function ApplyDazedEffect(float PlayerStingDuration, float HeavilyArmore
 		// otherwise, do the max of the new duration and time that is left from the current effect
 		LastStungDuration = FMax(StingDuration, LastStungDuration - (Level.TimeSeconds - LastStungTime));
 	}
-
 	LastStungTime = Level.TimeSeconds;
 
     if (Level.NetMode != NM_Client)
-    {
+    {	
         StungTimer.StartTimer(LastStungDuration, false, true);    //don't loop, reset if already running
 
         if ( Controller.GetStateName() != 'BeingCuffed' && Controller.GetStateName() != 'BeingUncuffed' )
@@ -2911,10 +2907,6 @@ function ReactToStingGrenade(
 	Direction       = Location - Grenade.Location;
 	Distance        = VSize(Direction);
 	DistanceEffect = ((StingRadius + (StingRadius/4)) - Distance)/(StingRadius);
-	
-	//added minimum effect duration , avoiding effect crash
-	if (DistanceEffect < 0.2 )
-		DistanceEffect = 0.2; 
 	
 	PlayerStingDuration *= DistanceEffect;
 	HeavilyArmoredPlayerStingDuration *= DistanceEffect;
@@ -4256,7 +4248,6 @@ defaultproperties
     bTestingCameraEffects=false
     YouString="You"
 	
-	WantedZoom=false
 
 	// so AIs know when the player is blocking something
 	// the Reached Destination Threshold is the same size as the collision radius for players
