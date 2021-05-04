@@ -1224,6 +1224,7 @@ public:
     class AExternalViewportManager* ViewportManager;
     class IIControllableThroughViewport* ReplicatedViewportTeammate;
     class ATimer* SniperAlertTimer;
+    FLOAT SniperAlertTime;
     FStringNoInit SniperAlertFilter;
     BYTE bControlViewport;
     FVector FocusTraceOrigin;
@@ -1255,8 +1256,6 @@ public:
     FVector LastFocusUpdateOrigin;
     FName TeamSelectedBeforeControllingOfficerViewport;
     BYTE VoiceType;
-    BITFIELD WantsLowReady:1;
-    BITFIELD WantedZoom:1;
 	   DECLARE_FUNCTION(execIsNetRelevant);
 	   DECLARE_FUNCTION(execFlagForPrecache);
 	   DECLARE_FUNCTION(execGetLookAroundSpeed);
