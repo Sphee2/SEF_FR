@@ -21,6 +21,7 @@ ADDED
 - AI now can use NVG instead of flashlights 
 - New keybinds to control NVG light
 - Enemy suspects can now remove wedges (50% chance) and barricade just after.
+- Enemies can use flashlights (chance depending on enemy skill)
 
 REMOVED
 - Optiwand now cant mirror under the door
