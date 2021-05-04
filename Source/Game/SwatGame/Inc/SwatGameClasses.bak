@@ -603,8 +603,6 @@ enum ELastStingWeapon
 	 DirectGrenadeHit        =3,
 	 MeleeAttack             =4,
 };
-// Constant OneFrameNudgeDirectionStrength is declared in "..\SwatGame\Classes\SwatPlayer.uc"
-#define UCONST_OneFrameNudgeDirectionStrength 2.0
 
 // "event"	function whose parameters correspond to	"struct ASwatPlayer_eventUnTriggerNonLethaledEffectEvent_Parms"	is declared	in "..\SwatGame\Classes\SwatPlayer.uc"
 struct ASwatPlayer_eventUnTriggerNonLethaledEffectEvent_Parms
@@ -1224,7 +1222,6 @@ public:
     class AExternalViewportManager* ViewportManager;
     class IIControllableThroughViewport* ReplicatedViewportTeammate;
     class ATimer* SniperAlertTimer;
-    FLOAT SniperAlertTime;
     FStringNoInit SniperAlertFilter;
     BYTE bControlViewport;
     FVector FocusTraceOrigin;
@@ -1256,6 +1253,8 @@ public:
     FVector LastFocusUpdateOrigin;
     FName TeamSelectedBeforeControllingOfficerViewport;
     BYTE VoiceType;
+    BITFIELD WantsLowReady:1;
+    BITFIELD WantedZoom:1;
 	   DECLARE_FUNCTION(execIsNetRelevant);
 	   DECLARE_FUNCTION(execFlagForPrecache);
 	   DECLARE_FUNCTION(execGetLookAroundSpeed);
@@ -2671,7 +2670,6 @@ class SWATGAME_API	ALowReadyInterface	: public APlayerFocusInterface
 public:
     FLOAT LowReadyRefractoryPeriod;
     FLOAT LastTimeLowReadyRefractoryBegan;
-    BITFIELD WantsLowReady:1;
     BITFIELD ShouldLowReady:1;
     FName LowReadyReason;
 	   DECLARE_CLASS(ALowReadyInterface,APlayerFocusInterface,0|CLASS_Config,SwatGame)

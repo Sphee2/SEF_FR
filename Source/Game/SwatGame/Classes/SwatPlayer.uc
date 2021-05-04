@@ -509,8 +509,6 @@ simulated protected function bool CanPawnUseLowReady()
   local PlayerController SGPC;
   local FiredWeapon Weapon;
   local SwatGuiConfig GC;
-	
-	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 
   SGPC = PlayerController(Controller);
   if(SGPC == None)
@@ -522,10 +520,14 @@ simulated protected function bool CanPawnUseLowReady()
   else if(SGPC.WantsZoom && !Equipment.ShouldLowReadyInIronsights())
     return false;
 
+  GC = SwatRepo(Level.GetRepo()).GuiConfig;
+  if (GC.ExtraIntOptions[6] == 1) //if manual low ready is on 
+	  return true;
+  
   Weapon = FiredWeapon(Equipment);
   if(Weapon != None)
   {
-    if(Weapon.IsFlashlightOn() && GC.ExtraIntOptions[6] == 0 ) //only in auto low ready option
+    if(Weapon.IsFlashlightOn() ) //only in auto low ready option
     {
         // #402 - lowready not allowed when flashlight on
         return false;

@@ -1,6 +1,6 @@
-Log: Log file open, 03/21/21 21:58:15
+Log: Log file open, 05/04/21 09:49:20
 Init: ----------------------------------------
-Init: SWAT VERSION NUMBER: 0.61
+Init: SWAT VERSION NUMBER: 0.65b
 Init: ----------------------------------------
 Init: Compiled: Nov 22 2005 12:00:47
 Init: Command line: -server
@@ -21,7 +21,7 @@ Init: User: admin
 Init: CPU Page size=4096, Processors=4
 Init: CPU Detected: PentiumPro-class processor (GenuineIntel)
 Init: CPU Features: CMov FPU RDTSC PAE MMX SSE
-Init: CPU Speed=3512.107485 MHz
+Init: CPU Speed=3512.611970 MHz
 Init: Memory total: Phys=2097151K Pagef=4194303K Virt=2097024K
 Init: Working set: 32000 / 159000
 Log: Bound to SwatGame.dll
@@ -38,39 +38,40 @@ Log: Bound to IpDrv.dll
 Log: (Havok): Initializing base system.
 Log: Bound to IGVisualEffectsSubsystem.dll
 Init: Unreal engine initialized
-Log: Updating Revision level for F850AACE42B78449E1B016A484D7264F to 0
-Log: Updating Revision level for 042669EF4B55328F5982079F600925DC to 0
-Log: Updating Revision level for 15A46B114CCE2067D9E20986BAE5DAC7 to 0
-Log: Updating Revision level for 9023A0CC432D516638318FB0889C0458 to 0
-Log: Updating MD5 for 7D63DFDE4FB2D1C214B2DB923D187CE5 [33d3a4cd064af7a74eb1ddf668ca1430bea469d4bc2f8ca7e0f00a5f35dd20e1]
-Log: Updating Revision level for B13AC3EB4C5432755CBD6B8A77DF97FB to 0
-Log: Updating Revision level for 7C64375646AB56ACCE0B3BBD5085AAD6 to 0
-Log: Updating Revision level for 690C7E04424391C9D139BD99D027DD0F to 0
-Log: Updating Revision level for E5474505400551FB08F11B96A747D1FA to 0
-Log: Updating Revision level for BEB586CF47D4780588CE5E948F20CC53 to 0
-Log: Updating Revision level for 67ABFE764C3B7F6BFA1A04B2BE5CA332 to 0
-Log: Updating Revision level for 23673C124857966A4929AA86AFDAB51E to 0
-Log: Updating Revision level for 43C6879C4C17540A7C6C0BB277E44799 to 0
-Log: Updating Revision level for BB59FDF74D6D60B892E19BAD353B4F88 to 0
-Log: Updating MD5 for E480F25842843B8EA77BB89D465740BF [374e3762d0c2aa2979789ffe8c9d9c3031214d78ff9a122c20c4d66b6c6cd709]
-Log: Updating Revision level for 8F7F303F47AD3D38A16402B54AFE146F to 0
-Log: Updating Revision level for 1A1CFF054FB00FA3CAA1E6A7015542A5 to 0
-Log: Updating Revision level for E66E82604461C472E34001886DBB5ABB to 0
-Log: Updating Revision level for 3AB66B064FDEE64C52F1AE843B5CD4FC to 0
-Log: Updating Revision level for 067BF3114A0BF5DD1EBB60A3D3733396 to 0
-Log: Updating Revision level for 4A36E00A431EBA7BED1399955A4B08CF to 0
-Log: Updating MD5 for 2412E0A24CCD89CC0A5D6DA4DBDE1AD1 [d27f137f7f24822409c75ae7e82f45f78c97768104fead982dda0260a6a3d9e2]
-Log: Updating MD5 for 1CBB6ADF494193B35114CB8943A9E1EF [d27f137f7f24822409c75ae7e82f45f78c97768104fead982dda0260a6a3d9e25209e47c49f4b21b791531e12fa2ea4a]
+Log: Updating Revision level for D244446B43287C9DD795F2AA7F02F7FE to 0
+Log: Updating Revision level for D8B43B244D4CF310A0E00B8B11559F1C to 0
+Log: Updating Revision level for D402D3BF4405D288E3A9E580DBCE26F6 to 0
+Log: Updating Revision level for 3CC5B3134ACD8AECEBF891B5121DF905 to 0
+Log: Updating MD5 for 9A4AB4D24999026868F9BDB51DB8EAB8 [08e744263cce73dde794863ce8ed8e35ebb0338a98ee43139c0c5ca99e98ef8f]
+Log: Updating Revision level for A308FB2646B8DB141691518164949819 to 0
+Log: Updating Revision level for 4CAAE8A64DC1ECFE213F7F92573159B2 to 0
+Log: Updating Revision level for 4318810E460B0883DC6B55BAAEE038C9 to 0
+Log: Updating Revision level for 518D5F244EDBC1FEB94C5EBF93C3B69A to 0
+Log: Updating Revision level for 591A9E3D4D65F39A83D9B5A93E57EACB to 0
+Log: Updating Revision level for 959869734190AF43B3F160932363587E to 0
+Log: Updating Revision level for 91C68489446F5207C1EC4CA7C92DB90B to 0
+Log: Updating Revision level for A2E50EF5439237799A491C8348603400 to 0
+Log: Updating Revision level for A83739264EA1DA42BCC1738D3F6EB20A to 0
+Log: Updating MD5 for 21B24A214D185B03D5F8668A4ECEB8D5 [2ab7a2df769f179e58f2175d40901a498fffaab2f19a08d3bff45cb84dc8afdb]
+Log: Updating Revision level for 89C0E7ED4B8C692C6CBD07A52368F2C5 to 0
+Log: Updating Revision level for 9E10FC4347E0C858B92EF88B9A0BDC2E to 0
+Log: Updating Revision level for B62363F944E3D958744DD29559878344 to 0
+Log: Updating Revision level for 8656F7B749C114CC1F8781B1C46D56BB to 0
+Log: Updating Revision level for A0566C324211C6409B00E4BCBEEA12A6 to 0
+Log: Updating Revision level for EC0F262A4C2B15773FABF392D8B0FAB9 to 0
+Log: Updating MD5 for DEE5210D4C9313DB7E5D758F03090788 [3c53cf74d5be1c820c1697aff9af856c813a9fd2ec5762afd6fbd9efc57199e7]
+Log: Updating MD5 for C8BD3AB248A712BAE3D9AFAEA66405DA [3c53cf74d5be1c820c1697aff9af856c813a9fd2ec5762afd6fbd9efc57199e7f80e58df34c7db84f6deb1bbcd644f18]
+Warning: Failed to load 'Class DesertCamo.DesertCamoCustomSkin': Failed to find object 'Class DesertCamo.DesertCamoCustomSkin'
 Log: Initializing the game as a dedicated server!
 Log: UGameEngine::Init() ... CommandLine = -server
-Log: Browse: Entry.s4m?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
-Log: LoadMap: Entry.s4m?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
+Log: Browse: Entry.s4m?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
+Log: LoadMap: Entry.s4m?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
 Log: [dkaplan]: URL.Map = Entry.s4m
 Log: ****************************************************
 Log:  Beginning level load: 'Entry.s4m'
 Log: ****************************************************
 Log: ****************************************************
-Log:  Finished level load in 0.015 seconds
+Log:  Finished level load in 0.016 seconds
 Log: ****************************************************
 Log: Building Collision Octree...
 Log: Finished Building Collision Octree
@@ -153,19 +154,19 @@ Log: UGameSpyManager::InitAsServer().
 Log: Level is Level Entry.myLevel
 Log: *** WARNING - PATHS MAY NOT BE VALID ***
 Log: Bringing Level Entry.myLevel up for play (20)...
-Log: ---------- IsTheEntryLevel = 1, GameEngine=0x4FEED80, GameEngine->GEntry=0x0, GameEngine->GEntry->GetLevelInfo()=0x0, current LevelInfo=0xF9C7E00
+Log: ---------- IsTheEntryLevel = 1, GameEngine=0x51EE100, GameEngine->GEntry=0x0, GameEngine->GEntry->GetLevelInfo()=0x0, current LevelInfo=0x12915B00
 VoiceChat: (t=0.000): GameInfo0 VoiceReplicationInfo created: None
 Log: MasterServerUplink::Reconnect().
 Log: ...Engine URL Port=0
-Log: Loadmap executed in 1.29 seconds. (0.00 Verify) (0.02 Load) (1.27 Actor Init)
+Log: Loadmap executed in 1.17 seconds. (0.00 Verify) (0.02 Load) (1.15 Actor Init)
 Log: URL: Adding default option Class=SwatGame.SwatPlayer
 Log: URL: Adding default option team=255
-Log: Browse: SP-Backstage?Name=OfficerMonki?dedicated?Class=SwatGame.SwatPlayer?team=255
-Log: LoadMap: SP-Backstage?Name=OfficerMonki?dedicated?Class=SwatGame.SwatPlayer?team=255
-Log: [dkaplan]: URL.Map = SP-Backstage
+Log: Browse: SP-ABomb?Name=Bepperspray?dedicated?Class=SwatGame.SwatPlayer?team=255
+Log: LoadMap: SP-ABomb?Name=Bepperspray?dedicated?Class=SwatGame.SwatPlayer?team=255
+Log: [dkaplan]: URL.Map = SP-ABomb
 Exit: Socket shut down
 Log: ****************************************************
-Log:  Beginning level load: 'SP-Backstage'
+Log:  Beginning level load: 'SP-ABomb'
 Log: ****************************************************
 Log: (Havok): Physical world for ULevel being created.
 Log: (Havok): Using medium solver
@@ -175,43 +176,227 @@ Log: (Havok):   Precached ragdoll for file 'PaperTarget_rd.hke' in 1 ms.
 Log: (Havok):   Precached ragdoll for file 'SWATofficer_rd.hke' in 19 ms.
 Log: (Havok): Finished precaching ragdolls
 Log: ****************************************************
-Log:  Finished level load in 1.455 seconds
+Log:  Finished level load in 1.168 seconds
 Log: ****************************************************
 Log: Collecting garbage
 Log: Purging garbage
-Log: 9786.0ms Unloading: Package GIGN
-Log: 9786.0ms Unloading: Package GIGN_OfficerTex
-Log: 9786.0ms Unloading: Package suspect1
-Log: 9786.0ms Unloading: Package suspect2
-Log: 9786.0ms Unloading: Package Suspect2_officerTex
-Log: 9786.0ms Unloading: Package Taiwan
-Log: 9786.0ms Unloading: Package Taiwan_OfficerTex
-Log: 9786.0ms Unloading: Package SwatObjectives
-Log: 9786.0ms Unloading: Package Entry
-Log: 9786.0ms Unloading: Package UWindow
-Log: 9786.0ms Unloading: Package SwatEd
-Log: 9786.0ms Unloading: Package SwatSimpleEquipment
-Log: 9786.0ms Unloading: Package SwatGui
-Log: 9786.0ms Unloading: Package SwatAmmo
-Log: 9786.0ms Unloading: Package SwatAmmo2
-Log: 9786.0ms Unloading: Package SwatProjectile
-Log: 9786.0ms Unloading: Package SwatCameraEffects
-Log: 9786.0ms Unloading: Package SwatCameraEffects2
-Log: 9786.0ms Unloading: Package SW_Objects
-Log: 9786.0ms Unloading: Package SW_Bounce
-Log: 9786.0ms Unloading: Package SW_Ambients
-Log: 9786.0ms Unloading: Package SW_Bullets
-Log: 9786.0ms Unloading: Package SW_Feet
-Log: 9786.0ms Unloading: Package SW_Hits
-Log: 9786.0ms Unloading: Package SW_Meta
-Log: 9786.0ms Unloading: Package SW_VO
-Log: 9786.0ms Unloading: Package SW_Weapons
-Log: 9786.0ms Unloading: Package FemaleAnimation
-Log: 9786.0ms Unloading: Package FemaleCasual1Tex
-Log: 9786.0ms Unloading: Package FemaleCasual3Tex
+Log: 16479.0ms Unloading: Package 10_NYPD-ESUv1
+Log: 16479.0ms Unloading: Package skn_NYPD-ESUv1_Tex
+Log: 16479.0ms Unloading: Package 10_NYPD-ESUv2
+Log: 16479.0ms Unloading: Package skn_NYPD-ESUv2_Tex
+Log: 16479.0ms Unloading: Package 11_LAPD-SWATv1
+Log: 16479.0ms Unloading: Package skn_LAPD_SWATv1_Tex
+Log: 16479.0ms Unloading: Package 11_LAPD-SWATv2
+Log: 16479.0ms Unloading: Package skn_LAPD_SWATv2_Tex
+Log: 16479.0ms Unloading: Package 11_LAPD-SWATv3
+Log: 16479.0ms Unloading: Package skn_LAPD_SWATv3_Tex
+Log: 16479.0ms Unloading: Package 12_ACLUv1
+Log: 16479.0ms Unloading: Package skn_ACLUv1_Tex
+Log: 16479.0ms Unloading: Package 12_ACLUv2
+Log: 16479.0ms Unloading: Package skn_ACLUv2_Tex
+Log: 16479.0ms Unloading: Package 13_SWATv1
+Log: 16479.0ms Unloading: Package skn_SWATv1_Tex
+Log: 16479.0ms Unloading: Package 13_SWAT_Lead
+Log: 16479.0ms Unloading: Package skn_SWAT_Lead_Tex
+Log: 16479.0ms Unloading: Package 14_SWATUrbanv1
+Log: 16479.0ms Unloading: Package skn_SWATUrbanv1_Tex
+Log: 16479.0ms Unloading: Package 14_SWATUrban_Lead
+Log: 16479.0ms Unloading: Package skn_SWATUrban_Lead_Tex
+Log: 16479.0ms Unloading: Package 15_SWATCityv1
+Log: 16479.0ms Unloading: Package skn_SWATCityv1_Tex
+Log: 16479.0ms Unloading: Package 15_SWATCity_Lead
+Log: 16479.0ms Unloading: Package skn_SWATCity_Lead_Tex
+Log: 16479.0ms Unloading: Package 16_SASv1
+Log: 16479.0ms Unloading: Package skn_SASv1_Tex
+Log: 16479.0ms Unloading: Package 16_SAS_Lead
+Log: 16479.0ms Unloading: Package skn_SAS_Lead_Tex
+Log: 16479.0ms Unloading: Package 17_Maniken
+Log: 16479.0ms Unloading: Package skn_Maniken_Tex
+Log: 16479.0ms Unloading: Package 2_CSPD_SWATv1
+Log: 16480.0ms Unloading: Package skn_CSPD_SWATv1_Tex
+Log: 16480.0ms Unloading: Package 2_CSPD_SWATv2
+Log: 16480.0ms Unloading: Package skn_CSPD_SWATv2_Tex
+Log: 16480.0ms Unloading: Package 3_DEAv1
+Log: 16480.0ms Unloading: Package skn_DEAv1_Tex
+Log: 16480.0ms Unloading: Package 3_DEAv2
+Log: 16480.0ms Unloading: Package skn_DEAv2_Tex
+Log: 16480.0ms Unloading: Package 3_DEAv3
+Log: 16480.0ms Unloading: Package skn_DEAv3_Tex
+Log: 16480.0ms Unloading: Package 3_DEAv4
+Log: 16480.0ms Unloading: Package skn_DEAv4_Tex
+Log: 16480.0ms Unloading: Package 3_DEA_Lead
+Log: 16480.0ms Unloading: Package skn_DEA_Lead_Tex
+Log: 16480.0ms Unloading: Package 4_RedAssault
+Log: 16480.0ms Unloading: Package skn_RedAssault_Tex
+Log: 16480.0ms Unloading: Package 4_RedBreacher
+Log: 16480.0ms Unloading: Package skn_RedBreacher_Tex
+Log: 16480.0ms Unloading: Package 4_RedPointman
+Log: 16480.0ms Unloading: Package skn_RedPointman_Tex
+Log: 16480.0ms Unloading: Package 4_RedStealth
+Log: 16480.0ms Unloading: Package skn_RedStealth_Tex
+Log: 16480.0ms Unloading: Package 5_Police
+Log: 16480.0ms Unloading: Package skn_Police_Tex
+Log: 16480.0ms Unloading: Package 6_PoliceBlack
+Log: 16480.0ms Unloading: Package skn_PoliceBlack_Tex
+Log: 16480.0ms Unloading: Package 7_GIGN
+Log: 16480.0ms Unloading: Package skn_GIGN_Tex
+Log: 16480.0ms Unloading: Package 7_GIGN_Lead
+Log: 16480.0ms Unloading: Package skn_GIGN_Lead_Tex
+Log: 16480.0ms Unloading: Package 8_GIGNBlack
+Log: 16480.0ms Unloading: Package skn_GIGNBlack_Tex
+Log: 16480.0ms Unloading: Package 8_GIGNBlack_Lead
+Log: 16480.0ms Unloading: Package skn_GIGNBlack_Lead_Tex
+Log: 16480.0ms Unloading: Package 9_GIGNSnow
+Log: 16480.0ms Unloading: Package skn_GIGNSnow_Tex
+Log: 16480.0ms Unloading: Package 9_GIGNSnow_Lead
+Log: 16480.0ms Unloading: Package skn_GIGNSnow_Lead_Tex
+Log: 16480.0ms Unloading: Package ARAS
+Log: 16480.0ms Unloading: Package ARAS_Tex
+Log: 16480.0ms Unloading: Package ArgentineGEOF
+Log: 16480.0ms Unloading: Package ArgentineGEOF_Tex
+Log: 16480.0ms Unloading: Package BosnianSIPA1
+Log: 16480.0ms Unloading: Package BosnianSIPA1_Tex
+Log: 16480.0ms Unloading: Package BrazilianCore
+Log: 16480.0ms Unloading: Package BrazilianCore_Tex
+Log: 16480.0ms Unloading: Package BrazilianCoreII
+Log: 16480.0ms Unloading: Package BrazilianCoreII_Tex
+Log: 16480.0ms Unloading: Package BrazilianCOREx
+Log: 16480.0ms Unloading: Package BrazilianCOREx_Tex
+Log: 16480.0ms Unloading: Package cgsu
+Log: 16480.0ms Unloading: Package CGSU_Tex
+Log: 16480.0ms Unloading: Package CTSFO
+Log: 16480.0ms Unloading: Package CTSFO_Tex
+Log: 16480.0ms Unloading: Package DesertATF
+Log: 16480.0ms Unloading: Package DesertCamoATF_Tex
+Log: 16480.0ms Unloading: Package Taiwan_OfficerTex
+Log: 16480.0ms Unloading: Package DesertCamo
+Log: 16480.0ms Unloading: Package DesertCamo_Tex
+Log: 16480.0ms Unloading: Package DSI
+Log: 16480.0ms Unloading: Package DSI_Tex
+Log: 16480.0ms Unloading: Package DSItwo
+Log: 16480.0ms Unloading: Package DSItwo_Tex
+Log: 16480.0ms Unloading: Package FBIswat
+Log: 16480.0ms Unloading: Package FBIswat_Tex
+Log: 16480.0ms Unloading: Package ForceOneA
+Log: 16480.0ms Unloading: Package ForceOneA_Tex
+Log: 16480.0ms Unloading: Package ForceOneB
+Log: 16480.0ms Unloading: Package ForceOneB_Tex
+Log: 16480.0ms Unloading: Package GARDA
+Log: 16480.0ms Unloading: Package GARDA_Tex
+Log: 16480.0ms Unloading: Package GIGN
+Log: 16480.0ms Unloading: Package GIGN_OfficerTex
+Log: 16480.0ms Unloading: Package GIGNFR
+Log: 16480.0ms Unloading: Package GIGNFR_Tex
+Log: 16480.0ms Unloading: Package GreyDesert
+Log: 16480.0ms Unloading: Package SUSGreyDesert_Tex
+Log: 16480.0ms Unloading: Package Suspect2_officerTex
+Log: 16480.0ms Unloading: Package SUSSting_Tex
+Log: 16480.0ms Unloading: Package GSG
+Log: 16480.0ms Unloading: Package GSG_Tex
+Log: 16480.0ms Unloading: Package HungarianTEK
+Log: 16480.0ms Unloading: Package HungarianTEK_Tex
+Log: 16480.0ms Unloading: Package IndiaRAF
+Log: 16480.0ms Unloading: Package IndiaRAF_Tex
+Log: 16480.0ms Unloading: Package IndiaRAFv2
+Log: 16480.0ms Unloading: Package IndiaRAFv2_Tex
+Log: 16480.0ms Unloading: Package JapaneseSATcamo
+Log: 16480.0ms Unloading: Package JapaneseSATcamo_Tex
+Log: 16480.0ms Unloading: Package JungleATF
+Log: 16480.0ms Unloading: Package JungleCamoATF_Tex
+Log: 16480.0ms Unloading: Package JungleCamo
+Log: 16480.0ms Unloading: Package JungleCamo_Tex
+Log: 16480.0ms Unloading: Package Marshv1
+Log: 16480.0ms Unloading: Package skn_Marshv1_Tex
+Log: 16480.0ms Unloading: Package Marsh_Lead
+Log: 16480.0ms Unloading: Package skn_Marsh_Lead_Tex
+Log: 16480.0ms Unloading: Package NOCS
+Log: 16480.0ms Unloading: Package NOCS_Tex
+Log: 16480.0ms Unloading: Package PIKETEN
+Log: 16480.0ms Unloading: Package PIKETEN_Tex
+Log: 16481.0ms Unloading: Package PolishBOAground
+Log: 16481.0ms Unloading: Package PolishBOAground_Tex
+Log: 16481.0ms Unloading: Package PolishBOAsky
+Log: 16481.0ms Unloading: Package PolishBOAsky_Tex
+Log: 16481.0ms Unloading: Package PolishBOAskyb
+Log: 16481.0ms Unloading: Package PolishBOAskyb_Tex
+Log: 16481.0ms Unloading: Package PolishGROM
+Log: 16481.0ms Unloading: Package PolishGROM_Tex
+Log: 16481.0ms Unloading: Package RAID
+Log: 16481.0ms Unloading: Package RAID_Tex
+Log: 16481.0ms Unloading: Package RedDawn
+Log: 16481.0ms Unloading: Package Red_Dawn_Tex
+Log: 16481.0ms Unloading: Package UrbanCamoATF_Tex
+Log: 16481.0ms Unloading: Package RedDawnATF
+Log: 16481.0ms Unloading: Package RedDesert
+Log: 16481.0ms Unloading: Package SUSRedDesert_Tex
+Log: 16481.0ms Unloading: Package RussianOMONblue
+Log: 16481.0ms Unloading: Package RussianOMONblue_Tex
+Log: 16481.0ms Unloading: Package RussianOMONgreen
+Log: 16481.0ms Unloading: Package RussianOMONgreen_Tex
+Log: 16481.0ms Unloading: Package RussianTropical
+Log: 16481.0ms Unloading: Package SUSRussianTropical_Tex
+Log: 16481.0ms Unloading: Package SCO19
+Log: 16481.0ms Unloading: Package SCO19_Tex
+Log: 16481.0ms Unloading: Package SerbGendarmeryCamo
+Log: 16481.0ms Unloading: Package SerbGendarmeryCamo_Tex
+Log: 16481.0ms Unloading: Package SkyATF
+Log: 16481.0ms Unloading: Package SkyCamoATF_Tex
+Log: 16481.0ms Unloading: Package SkyCamo
+Log: 16481.0ms Unloading: Package SkyCamo_Tex
+Log: 16481.0ms Unloading: Package SkyPink
+Log: 16481.0ms Unloading: Package Sky_Pink_Tex
+Log: 16481.0ms Unloading: Package SkyPinkATF
+Log: 16481.0ms Unloading: Package suspect1
+Log: 16481.0ms Unloading: Package suspect2
+Log: 16481.0ms Unloading: Package Taiwan
+Log: 16481.0ms Unloading: Package skn_Taiwan_Tex
+Log: 16481.0ms Unloading: Package theTaiwan
+Log: 16481.0ms Unloading: Package theTaiwan_Tex
+Log: 16481.0ms Unloading: Package UrbanATF
+Log: 16481.0ms Unloading: Package UrbanCamo
+Log: 16481.0ms Unloading: Package UrbanCamo_Tex
+Log: 16481.0ms Unloading: Package URNA
+Log: 16481.0ms Unloading: Package URNA_Tex
+Log: 16481.0ms Unloading: Package Woodland1
+Log: 16481.0ms Unloading: Package woodlandCamo_Tex
+Log: 16481.0ms Unloading: Package Woodland1ATF
+Log: 16481.0ms Unloading: Package woodlandATF_Tex
+Log: 16481.0ms Unloading: Package Woodland2
+Log: 16481.0ms Unloading: Package WoodlandCamo2_Tex
+Log: 16481.0ms Unloading: Package Woodland2ATF
+Log: 16481.0ms Unloading: Package woodland2ATF_Tex
+Log: 16481.0ms Unloading: Package YellowSting
+Log: 16481.0ms Unloading: Package SwatObjectives
+Log: 16481.0ms Unloading: Package Entry
+Log: 16481.0ms Unloading: Package UWindow
+Log: 16481.0ms Unloading: Package SwatEd
+Log: 16481.0ms Unloading: Package SwatSimpleEquipment
+Log: 16481.0ms Unloading: Package SwatGui
+Log: 16481.0ms Unloading: Package SwatAmmo
+Log: 16481.0ms Unloading: Package SwatAmmo2
+Log: 16481.0ms Unloading: Package SwatProjectile
+Log: 16481.0ms Unloading: Package SwatCameraEffects
+Log: 16481.0ms Unloading: Package SwatCameraEffects2
+Log: 16481.0ms Unloading: Package SW_Objects
+Log: 16481.0ms Unloading: Package SW_Bounce
+Log: 16481.0ms Unloading: Package SW_Ambients
+Log: 16481.0ms Unloading: Package SW_Bullets
+Log: 16481.0ms Unloading: Package SW_Feet
+Log: 16481.0ms Unloading: Package SW_Hits
+Log: 16481.0ms Unloading: Package SW_Meta
+Log: 16481.0ms Unloading: Package SW_VO
+Log: 16481.0ms Unloading: Package SW_Weapons
+Log: 16481.0ms Unloading: Package FemaleAnimation
+Log: 16481.0ms Unloading: Package FemaleCasual1Tex
+Log: 16481.0ms Unloading: Package FemaleCasual3Tex
+Log: 16481.0ms Unloading: Package SwatDesignerClasses2
+Log: 16481.0ms Unloading: Package halfwayhouse_sm
+Log: 16481.0ms Unloading: Package halfway_tex
+Log: 16481.0ms Unloading: Package warehouse_sm
+Log: 16481.0ms Unloading: Package warehouse_tex
 Log: MasterServerUplink::Destroy().
-Log: Garbage: objects: 67004->66751; refs: 1379974
-Log: (Havok) Initialised level mopp in 0.06 seconds
+Log: Garbage: objects: 69339->67133; refs: 1162494
+Log: (Havok) Initialised level mopp in 0.04 seconds
 Log: Building Collision Octree...
 Log: Finished Building Collision Octree
 Log: Game class is 'SwatGameInfo'
@@ -288,29 +473,28 @@ Log: Server Package: SwatDesignerClasses2
 Log: Spawning: IpDrv.MasterServerUplink
 Log: UGameSpyManager::InitAsServer().
 Log: ...1
-Log: Level is Level SP-Backstage.myLevel
-Log: Bringing Level SP-Backstage.myLevel up for play (20)...
-Log: ---------- IsTheEntryLevel = 0, GameEngine=0x4FEED80, GameEngine->GEntry=0x0, GameEngine->GEntry->GetLevelInfo()=0x0, current LevelInfo=0xF9C4D00
+Log: Level is Level SP-ABomb.myLevel
+Log: *** WARNING - PATHS MAY NOT BE VALID ***
+Log: Bringing Level SP-ABomb.myLevel up for play (20)...
+Log: ---------- IsTheEntryLevel = 0, GameEngine=0x51EE100, GameEngine->GEntry=0x0, GameEngine->GEntry->GetLevelInfo()=0x0, current LevelInfo=0x12914D00
 VoiceChat: (t=0.000): SwatVoiceReplicationInfo0 ___________________PostNetBeginPlay
 VoiceChat: (t=0.000): SwatVoiceReplicationInfo0 AddVoiceChannel PRI:None
 VoiceChat: (t=0.000): SwatVoiceReplicationInfo0 AddVoiceChannel PRI:None
-VoiceChat: (t=0.000): SwatGameInfo0 VoiceReplicationInfo created: SP-Backstage.SwatVoiceReplicationInfo0
+VoiceChat: (t=0.000): SwatGameInfo0 VoiceReplicationInfo created: SP-ABomb.SwatVoiceReplicationInfo0
 Log: Resolving ...
 Log: Turning on AssertWithDescription dialog box.
 Log: MasterServerUplink::Reconnect().
 Log: ...Engine URL Port=10480
-Log: Loadmap executed in 4.12 seconds. (0.77 Verify) (1.46 Load) (1.60 Actor Init)
-Init: Game engine initialized in 9.488 seconds
-Log: Startup time: 11.396000 seconds
+Log: Loadmap executed in 3.47 seconds. (0.42 Verify) (1.17 Load) (1.61 Actor Init)
+Init: Game engine initialized in 13.532 seconds
+Log: Startup time: 18.099000 seconds
 Init: EffectsSystem Configuration: ..\system\SoundEffectsConfig.u is up-to-date.
 Log: [EFFECTS SYSTEM] The SoundEffectsSubsystem's configuration package is up-to-date.
-Log: WARNING: AEffectsSubsystem::execAddEventResponse() Found that the EventResponse named SwatPlayerReportedDeployingC2 is duplicated in the SoundEffectsSubsystem.
-Log: Assertion failed: !duplicate_event_response [File:.\IGEffectsSystem.cpp] [Line: 188]
 Log: There are no Streams specified for StreamSoundEffectSpecification: 
 Log: Collecting garbage
 Log: Purging garbage
-Log: 14187.0ms Unloading: Package UWindow
-Log: Garbage: objects: 108660->93962; refs: 992350
+Log: 20947.0ms Unloading: Package UWindow
+Log: Garbage: objects: 107144->92431; refs: 944397
 Log: SoundEffectsSubsystem created.
 Log: Resolved  (26.85.202.120)
 Log: In UGameSpyManager::ServerInit().
@@ -318,282 +502,255 @@ Log: In GameSpyWrapper---serverInitGameSpy().
 Log: 1... GameSpy query port: 10481
 Log: [Stats] Connecting on port 10480
 Log: FServerQueryInterface::OnReceivedData(). Responding to ping.
+Log: FServerQueryInterface::OnReceivedData(). Responding to ping.
 DevNet: NotifyAcceptingConnection: Server myLevel accept
-NetComeGo: Open myLevel 03/21/21 21:59:03 26.85.202.120:59343
-DevNet: NotifyAcceptingChannel Control 0 server Level SP-Backstage.myLevel: Accepted
+NetComeGo: Open myLevel 05/04/21 09:49:55 26.85.202.120:58509
+DevNet: NotifyAcceptingChannel Control 0 server Level SP-ABomb.myLevel: Accepted
 DevNet: Level server received: HELLO REVISION=0 MINVER=2000 VER=2226
 DevNet: Level server received: NETSPEED 10000
 Log: Client netspeed is 7000
-DevNet: Level server received: LOGIN RESPONSE=1987147044 URL=Index.s4m?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
-DevNet: Login request: Index.s4m?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
-DevNet: Level server received: VERIFYCONTENT FILE=SwatGear_sm.usx MD5=63a3a7a15babbc736720c76fb9e2e7c2
-DevNet: Level server received: VERIFYCONTENT FILE=SWAT1stPersonTex.utx MD5=7c69364a434c538d89c0b8d961b28df0
-DevNet: Level server received: VERIFYCONTENT FILE=SwatFXtex.utx MD5=4bbcb023de4eee60f59c6f70b4979cac
-DevNet: Level server received: VERIFYCONTENT FILE=HUD.utx MD5=cd6d87eb72f50ac2aeffdadf50c5ea38
-DevNet: Level server received: VERIFYCONTENT FILE=SwatDesignerClasses.u MD5=1f66ddb491666c73aee60400033d72be
-DevNet: Level server received: VERIFYCONTENT FILE=doors_Tex.utx MD5=3f57721c8ff6ce8f5856a7124d809932
-DevNet: Level server received: VERIFYCONTENT FILE=scripted_tex.utx MD5=8542d4c53ddc090bbffd928bb67c014d
-DevNet: Level server received: VERIFYCONTENT FILE=mp_OfficerTex.utx MD5=f920b299a9e72786747d02865f74f121
-DevNet: Level server received: VERIFYCONTENT FILE=SWATofficerTex.utx MD5=bce2649ba7662f1e17c301a591259384
-DevNet: Level server received: VERIFYCONTENT FILE=SWATheavyTex.utx MD5=2b31e9ef6f32ee3a0f8ed5b05640e6f0
-DevNet: Level server received: VERIFYCONTENT FILE=CameraEffectsTex.utx MD5=c3cb6fb15125c91bbbece6d82b5c1b39
-DevNet: Level server received: VERIFYCONTENT FILE=SwatProtectiveEquipment.u MD5=072044ca4e17e802b17b6e4195877de1
-DevNet: Level server received: VERIFYCONTENT FILE=SWATmeshFX_sm.usx MD5=19c7c2f08f6c091a962343fa67e7ddcd
-DevNet: Level server received: VERIFYCONTENT FILE=Coronas.utx MD5=ee7e737e880ed2e32a6993c8daf53be7
-DevNet: Level server received: VERIFYCONTENT FILE=SwatEffects.u MD5=0a589eb21f4b9d6024fb80ab6355960d
-DevNet: Level server received: VERIFYCONTENT FILE=SwatEquipmentModels.u MD5=e554905658f230f425279e393a52041e
-DevNet: Level server received: VERIFYCONTENT FILE=SwatAmmo.u MD5=63d86d9f7cc1d2afefdc4dfc3b4c371a
-DevNet: Level server received: VERIFYCONTENT FILE=SwatCameraEffects.u MD5=0e77fa4f01f27466ae7144a53c8c85b6
+DevNet: Level server received: LOGIN RESPONSE=-280787311 URL=Index.s4m?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
+DevNet: Login request: Index.s4m?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
+DevNet: Level server received: VERIFYCONTENT FILE=SwatGear_sm.usx MD5=91efb20f87fef38194ca68143916ad2b
+DevNet: Level server received: VERIFYCONTENT FILE=SWAT1stPersonTex.utx MD5=00b2a6266481a49c12fac153861edd21
+DevNet: Level server received: VERIFYCONTENT FILE=SwatFXtex.utx MD5=1a2a8f8ec05d01310c3be7ad6856757b
+DevNet: Level server received: VERIFYCONTENT FILE=HUD.utx MD5=eae613f8f505eb0a6e6bd6eed5bae134
+DevNet: Level server received: VERIFYCONTENT FILE=SwatDesignerClasses.u MD5=da26def9016c85031a130a9cec4efdbb
+DevNet: Level server received: VERIFYCONTENT FILE=doors_Tex.utx MD5=9ba494356cdc52bb17c520896f2b4cc1
+DevNet: Level server received: VERIFYCONTENT FILE=Coronas.utx MD5=fbfe86ab928c5518a2890304a607107c
+DevNet: Level server received: VERIFYCONTENT FILE=scripted_tex.utx MD5=f30c416fe15ce96f85118986b1fda602
+DevNet: Level server received: VERIFYCONTENT FILE=SwatEquipmentModels.u MD5=f47542f09d7446ffde8bf8ca2b409339
+DevNet: Level server received: VERIFYCONTENT FILE=SWATofficerTex.utx MD5=4792bd201f189f5844316f86cb4758f7
+DevNet: Level server received: VERIFYCONTENT FILE=SWATmeshFX_sm.usx MD5=30fb70cedbbc1b1beb04e0e79aa54a6a
+DevNet: Level server received: VERIFYCONTENT FILE=mp_OfficerTex.utx MD5=de90ecf0febbcda98a8048de9d1e082a
+DevNet: Level server received: VERIFYCONTENT FILE=SWATheavyTex.utx MD5=ea701ff5a70d9f6842b95cc6f4c3f8ad
+DevNet: Level server received: VERIFYCONTENT FILE=CameraEffectsTex.utx MD5=212dd440c947e54c1541f73a735f7bcd
+DevNet: Level server received: VERIFYCONTENT FILE=SwatProtectiveEquipment.u MD5=3b6823e4e75a8f26838a910a7ea30353
+DevNet: Level server received: VERIFYCONTENT FILE=SwatEffects.u MD5=ac833ab3e508185754a6b29f875b6486
+DevNet: Level server received: VERIFYCONTENT FILE=SwatAmmo.u MD5=3d97400695c4dae7b147fcbcca48e78d
+DevNet: Level server received: VERIFYCONTENT FILE=SwatCameraEffects.u MD5=21634df25775278e3f744a5f2f5fac90
 DevNet: Level server received: VERIFYCONTENTCLIENTFINISHEDSENDING
-DevNet: Level server received: CRITOBJCNT 41
-DevNet: Level server received: GAMESTATE 14B2DB923D187CE54FB2D1C27D63DFDEab260c42a2c84b8d7bf9d80d71b5e59a
-DevNet: Level server received: GAMESTATE 0A5D6DA4DBDE1AD14CCD89CC2412E0A2d0b2be842db18d6b0cee090e478dba33
-DevNet: Level server received: GAMESTATE 5114CB8943A9E1EF494193B31CBB6ADFd0d20e496318720c31a46ee0ad38461f
-DevNet: Level server received: GAMESTATE ED1399955A4B08CF431EBA7B4A36E00Ada8079a1697bac76c8c70060dd241dae
-DevNet: Level server received: GAMESTATE A77BB89D465740BF42843B8EE480F25817abd96ed8f35f03f695cd4c270c2340
-DevNet: Level server received: GAMESTATE D139BD99D027DD0F424391C9690C7E0488777c4d6ee5e43feda398570908761e
-DevNet: Level server received: GAMESTATE 88CE5E948F20CC5347D47805BEB586CF24151264fd97a798177ed3c32a92b25a
-DevNet: Level server received: GAMESTATE FA1A04B2BE5CA3324C3B7F6B67ABFE764fa4eab744783117d4bff51cdd08c5c6
-DevNet: Level server received: GAMESTATE 08F11B96A747D1FA400551FBE5474505f16098fde3bf6229dac819db378afdaa
-DevNet: Level server received: GAMESTATE 4929AA86AFDAB51E4857966A23673C121f9ae861dcf6b7cc0ebcb3284cac9fc8
-DevNet: Level server received: GAMESTATE 52F1AE843B5CD4FC4FDEE64C3AB66B06b3be42327d2e9d26936372cc26e72189
-DevNet: Level server received: GAMESTATE E34001886DBB5ABB4461C472E66E82606ab6f4ee0e30ab362c25e5767cb79d87
-DevNet: Level server received: GAMESTATE 5CBD6B8A77DF97FB4C543275B13AC3EB919d54355ee3c57a25d56911d911d965
-DevNet: Level server received: GAMESTATE CE0B3BBD5085AAD646AB56AC7C643756e685a8ee95b60d5bf925ca965fd09105
-DevNet: Level server received: GAMESTATE 38318FB0889C0458432D51669023A0CC531aa8c320615fefb6c1470b8943cf9d
-DevNet: Level server received: GAMESTATE 5982079F600925DC4B55328F042669EF4d11b438cd1874a549acd3b2daf9925b
-DevNet: Level server received: GAMESTATE 7C6C0BB277E447994C17540A43C6879Cb33d0e84d0e756012d198c813a55bc03
-DevNet: Level server received: GAMESTATE CE8247B20EDFA26843013414E0CA902A1f08c30acefdc896c66406b8d600603a
-DevNet: Level server received: GAMESTATE F7616B97292CD7204B33DFB8F711FE635b6a36725a7d3dbeb6a8c453cd5518bf
-DevNet: Level server received: GAMESTATE 4EBDA181278AB01E4857C26AF60C2784b137253ef92e8a65b3ac7babd1658206
-DevNet: Level server received: GAMESTATE 1EBB60A3D37333964A0BF5DD067BF311799c9db271b2a00bf465484dbf48a96a
-DevNet: Level server received: GAMESTATE 75FBF48641B970DE4113FC870C56B2114126fcda2fafa671bde03b7d2714e186
-DevNet: Level server received: GAMESTATE 72778D805ACAC623400206EC719EB1B157eb0a0e36ad9c3ca7a06b6273371980
-DevNet: Level server received: GAMESTATE E81B84930B17FE1046007FA6688D6346d51d4e68d34017970402ba78e999c542
-DevNet: Level server received: GAMESTATE E083EC8D8517E42649ADDC9AE659690A8076dd08e8eeabb566c8300445de8d8d
-DevNet: Level server received: GAMESTATE CAA1E6A7015542A54FB00FA31A1CFF053b880ae3a35e885d5c3f261903fd258a
-DevNet: Level server received: GAMESTATE E1B016A484D7264F42B78449F850AACEd979fc4024efc84a5677202028d3b742
-DevNet: Level server received: GAMESTATE 19D134BC9DF4E99745662470A6808BEA9b22b64acb8d718e55b7ba9d5302b0ef
-DevNet: Level server received: GAMESTATE AF113D90E0C29D1E4A3C62044F361525a91f6e20c390ead117e14d700117d05c
-DevNet: Level server received: GAMESTATE 4E6D8EBF83A6A4A046AE79CD957905FAd8509e9b5c9bcd871f1bab8abad4c48d
-DevNet: Level server received: GAMESTATE D39D658654DDE175485BFB12B028D44F2ea1485e57bbda082f0afdcf7da62426
-DevNet: Level server received: GAMESTATE A5C708BCE541542A44313845B20FEC73ae72de37b3d7f70234b82d3587017350
-DevNet: Level server received: GAMESTATE 99432EB58AF4D7724A64CA3DB513B318e69397cf207b2cf7af680b4eb5fddd21
-DevNet: Level server received: GAMESTATE 806B788F6097006E4A65021F3ECA670521b6d9d8bf4d4a61297d2eabe64661da
-DevNet: Level server received: GAMESTATE 12DDE5B483B889FB43D030A54DF484480f73d36511b139619e19a177527dbc7f
-DevNet: Level server received: GAMESTATE 3BC837BD7858805F47EB4F8880F0C5665b4fe785147511d3e9114599727e388d
-DevNet: Level server received: GAMESTATE 92E19BAD353B4F884D6D60B8BB59FDF78a52ec1bb34ef1db6352a060ce14b0c1
-DevNet: Level server received: GAMESTATE 972683BC671F83DC4A1CD6B5D43C01D2f94c9c36da4c1fa140cc7224c38f87ac
-DevNet: Level server received: GAMESTATE D9E20986BAE5DAC74CCE206715A46B116601f6f53248ba13498640901d4f2be6
-DevNet: Level server received: GAMESTATE BADECA9E4A7079FA4804939AB7EC94F08c6c4feacec68d0b5b9907fa95b2a700
-DevNet: Level server received: GAMESTATE EA850781902920B14C319053CFDDF2D09391542a993ca5a3720bfe713521d71b
+DevNet: Level server received: CRITOBJCNT 39
+DevNet: Level server received: GAMESTATE 68F9BDB51DB8EAB8499902689A4AB4D2ad56ae133207b11a9936193059f8d54a
+DevNet: Level server received: GAMESTATE 7E5D758F030907884C9313DBDEE5210D8409b8964c07be0e60022f6c3ace8b38
+DevNet: Level server received: GAMESTATE E3D9AFAEA66405DA48A712BAC8BD3AB2100eaf2ccb498cbbb5a85dc9d9f6fc58
+DevNet: Level server received: GAMESTATE 3FABF392D8B0FAB94C2B1577EC0F262Ac1b71e1e9546a39d46da375b9fc18125
+DevNet: Level server received: GAMESTATE DC6B55BAAEE038C9460B08834318810E6fcedf9dd1437d19d70c15383ad9d9d8
+DevNet: Level server received: GAMESTATE 83D9B5A93E57EACB4D65F39A591A9E3Dcbc017ba99a264fc140e49546c575fe3
+DevNet: Level server received: GAMESTATE B3F160932363587E4190AF439598697386011d334c4bba47b8af72f4d149ff87
+DevNet: Level server received: GAMESTATE B94C5EBF93C3B69A4EDBC1FE518D5F24dfd5621923f7a94650814a52331b2877
+DevNet: Level server received: GAMESTATE D5F8668A4ECEB8D54D185B0321B24A2191d059030eeca5aba6336169be564820
+DevNet: Level server received: GAMESTATE C1EC4CA7C92DB90B446F520791C684898971a2555b3f6731306b2179fa5f831c
+DevNet: Level server received: GAMESTATE 744DD2955987834444E3D958B62363F9ed5d57a9b19e0e0f33516686bd941ea9
+DevNet: Level server received: GAMESTATE 1F8781B1C46D56BB49C114CC8656F7B73bdb95ba66e080396b97ec0993001682
+DevNet: Level server received: GAMESTATE 169151816494981946B8DB14A308FB262d596aeac96560deb6b789ed7940d1d5
+DevNet: Level server received: GAMESTATE 213F7F92573159B24DC1ECFE4CAAE8A6cff657f364d932c9b655aff39b6d4b25
+DevNet: Level server received: GAMESTATE EBF891B5121DF9054ACD8AEC3CC5B3131f4062ee8886f8f15a9f968da8cc9af0
+DevNet: Level server received: GAMESTATE 4EBDA181278AB01E4857C26AF60C278403625c68fb9218fbf41d5456a179173c
+DevNet: Level server received: GAMESTATE 72778D805ACAC623400206EC719EB1B14e4159b89f6be0362385325d11df2c53
+DevNet: Level server received: GAMESTATE E81B84930B17FE1046007FA6688D6346a55fcf6a17225811633f50b95cfb23d0
+DevNet: Level server received: GAMESTATE 75FBF48641B970DE4113FC870C56B2115f492bbd695c216938b856a74d8244a7
+DevNet: Level server received: GAMESTATE E083EC8D8517E42649ADDC9AE659690Aee8c54b8d2d74e338e756722f94e062b
+DevNet: Level server received: GAMESTATE A0E00B8B11559F1C4D4CF310D8B43B248f80be0fd3146a1015a59d301e9be033
+DevNet: Level server received: GAMESTATE 9A491C834860340043923779A2E50EF592a3a421ed4e831a0a49ba11ec14e763
+DevNet: Level server received: GAMESTATE CE8247B20EDFA26843013414E0CA902Ae61f3a2d8becf5cae150d86ca34aa85e
+DevNet: Level server received: GAMESTATE F7616B97292CD7204B33DFB8F711FE6333a8320adbe902d272a6385330e234c1
+DevNet: Level server received: GAMESTATE 9B00E4BCBEEA12A64211C640A0566C3200d92ed7fdf9f1943e77029dbba79e0c
+DevNet: Level server received: GAMESTATE B92EF88B9A0BDC2E47E0C8589E10FC436c31b72ffd15a567b5f8d9625917724c
+DevNet: Level server received: GAMESTATE D795F2AA7F02F7FE43287C9DD244446B911e7241adafc6c7feebf715cde0c8b6
+DevNet: Level server received: GAMESTATE 9C2D7B99633715D14E1600A32EC9DBDF1e231c7ee34cdf1cd6a1cd23444eb6e1
+DevNet: Level server received: GAMESTATE AF113D90E0C29D1E4A3C62044F361525c849667b920b9ff6714276a57f4b3d49
+DevNet: Level server received: GAMESTATE 4E6D8EBF83A6A4A046AE79CD957905FAba3cb34f986545f2fe6f5845cf33507f
+DevNet: Level server received: GAMESTATE D39D658654DDE175485BFB12B028D44F49f15b6f904e5f8a2337fbd757ac684c
+DevNet: Level server received: GAMESTATE A5C708BCE541542A44313845B20FEC7340d1dd0589899770cc77ff9b71a69e46
+DevNet: Level server received: GAMESTATE 12DDE5B483B889FB43D030A54DF48448fc41862135cac86204e1d4233c59d140
+DevNet: Level server received: GAMESTATE BCC1738D3F6EB20A4EA1DA42A837392657e5d3d376c61919f3348738eb6a2925
+DevNet: Level server received: GAMESTATE 972683BC671F83DC4A1CD6B5D43C01D21bbe91f71bb7ae52b84b5018b3c3d4a0
+DevNet: Level server received: GAMESTATE E3A9E580DBCE26F64405D288D402D3BFcee01452532e758b50d12aec4b849ddc
+DevNet: Level server received: GAMESTATE BADECA9E4A7079FA4804939AB7EC94F0847bc19ddd2c17490dbafa9a922c0daa
+DevNet: Level server received: GAMESTATE EA850781902920B14C319053CFDDF2D001872758a55795938cb45528f8dcc8e7
+DevNet: Level server received: GAMESTATE 806B788F6097006E4A65021F3ECA6705feb1206c31010d452e6150f8c26a2cdf
 DevNet: Level server received: GAMECONFIGCOUNT 32
 DevNet: Server updated from client about MD5s - ExpectedConfigCount: 32 GivenConfigCount: 32
-DevNet: Level server received: GAMECONFIG CONFIGFILE=SWATPAWN.INI CONFIGMD5=042c0249fb05093af73a9fad44d71968
+DevNet: Level server received: GAMECONFIG CONFIGFILE=SWATPAWN.INI CONFIGMD5=6dab12c7cc4027368515dc64ee67234f
 DevNet: Test MD5 for Config file SWATPAWN.INI - Count is 0
-DevNet: Server MD5: 042c0249fb05093af73a9fad44d71968
-DevNet: Client MD5: 042c0249fb05093af73a9fad44d71968
+DevNet: Server MD5: 6dab12c7cc4027368515dc64ee67234f
+DevNet: Client MD5: 6dab12c7cc4027368515dc64ee67234f
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=SWATEQUIPMENT.INI CONFIGMD5=f6be9292228f3fb99e6879655a07b0d3
+DevNet: Level server received: GAMECONFIG CONFIGFILE=SWATEQUIPMENT.INI CONFIGMD5=c667a772b5fa6974e6d1de413eb80dfe
 DevNet: Test MD5 for Config file SWATEQUIPMENT.INI - Count is 1
-DevNet: Server MD5: f6be9292228f3fb99e6879655a07b0d3
-DevNet: Client MD5: f6be9292228f3fb99e6879655a07b0d3
+DevNet: Server MD5: c667a772b5fa6974e6d1de413eb80dfe
+DevNet: Client MD5: c667a772b5fa6974e6d1de413eb80dfe
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=SWATGAME.INI CONFIGMD5=fed563ac8e8decf52ee30d9dde59a089
+DevNet: Level server received: GAMECONFIG CONFIGFILE=SWATGAME.INI CONFIGMD5=edda9be13e69bcdac57bbebb0d67a15a
 DevNet: Test MD5 for Config file SWATGAME.INI - Count is 2
-DevNet: Server MD5: fed563ac8e8decf52ee30d9dde59a089
-DevNet: Client MD5: fed563ac8e8decf52ee30d9dde59a089
+DevNet: Server MD5: edda9be13e69bcdac57bbebb0d67a15a
+DevNet: Client MD5: edda9be13e69bcdac57bbebb0d67a15a
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=SKELETALREGIONINFORMATION.INI CONFIGMD5=a723513fcba499cb717ccaf69aaa73be
+DevNet: Level server received: GAMECONFIG CONFIGFILE=SKELETALREGIONINFORMATION.INI CONFIGMD5=0fd5b70963e82356fc3948c14ec231cd
 DevNet: Test MD5 for Config file SKELETALREGIONINFORMATION.INI - Count is 3
-DevNet: Server MD5: a723513fcba499cb717ccaf69aaa73be
-DevNet: Client MD5: a723513fcba499cb717ccaf69aaa73be
+DevNet: Server MD5: 0fd5b70963e82356fc3948c14ec231cd
+DevNet: Client MD5: 0fd5b70963e82356fc3948c14ec231cd
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=EFFECTSSYSTEM.INI CONFIGMD5=789b8fd2922ef9f87cc43452fc4ce12b
+DevNet: Level server received: GAMECONFIG CONFIGFILE=EFFECTSSYSTEM.INI CONFIGMD5=b36463425176f12744465fea820138d9
 DevNet: Test MD5 for Config file EFFECTSSYSTEM.INI - Count is 4
-DevNet: Server MD5: 789b8fd2922ef9f87cc43452fc4ce12b
-DevNet: Client MD5: 789b8fd2922ef9f87cc43452fc4ce12b
+DevNet: Server MD5: b36463425176f12744465fea820138d9
+DevNet: Client MD5: b36463425176f12744465fea820138d9
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=STATICLOADOUT.INI CONFIGMD5=f4bbd6cce53c45181748b1df7ffb90da
+DevNet: Level server received: GAMECONFIG CONFIGFILE=STATICLOADOUT.INI CONFIGMD5=e8fe5a3addbba0801748023ca8546395
 DevNet: Test MD5 for Config file STATICLOADOUT.INI - Count is 5
-DevNet: Server MD5: f4bbd6cce53c45181748b1df7ffb90da
-DevNet: Client MD5: f4bbd6cce53c45181748b1df7ffb90da
+DevNet: Server MD5: e8fe5a3addbba0801748023ca8546395
+DevNet: Client MD5: e8fe5a3addbba0801748023ca8546395
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=SWATPAWNANIMATIONSETS.INI CONFIGMD5=c53b43a5e94303f3f12c1a34b27b161f
+DevNet: Level server received: GAMECONFIG CONFIGFILE=SWATPAWNANIMATIONSETS.INI CONFIGMD5=b202df75c7bc3c4ddab15f2883d41894
 DevNet: Test MD5 for Config file SWATPAWNANIMATIONSETS.INI - Count is 6
-DevNet: Server MD5: c53b43a5e94303f3f12c1a34b27b161f
-DevNet: Client MD5: c53b43a5e94303f3f12c1a34b27b161f
+DevNet: Server MD5: b202df75c7bc3c4ddab15f2883d41894
+DevNet: Client MD5: b202df75c7bc3c4ddab15f2883d41894
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=SOUNDEFFECTS.INI CONFIGMD5=e76ef24c6597abcb199651096a7d3834
+DevNet: Level server received: GAMECONFIG CONFIGFILE=SOUNDEFFECTS.INI CONFIGMD5=0060b570bbcc460d8179afd12fb0707f
 DevNet: Test MD5 for Config file SOUNDEFFECTS.INI - Count is 7
-DevNet: Server MD5: e76ef24c6597abcb199651096a7d3834
-DevNet: Client MD5: e76ef24c6597abcb199651096a7d3834
+DevNet: Server MD5: 0060b570bbcc460d8179afd12fb0707f
+DevNet: Client MD5: 0060b570bbcc460d8179afd12fb0707f
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=AI.INI CONFIGMD5=21a8ee521e594e79aa7b0d318001523b
+DevNet: Level server received: GAMECONFIG CONFIGFILE=AI.INI CONFIGMD5=497c93e87be7c81570e472db2ff676b3
 DevNet: Test MD5 for Config file AI.INI - Count is 8
-DevNet: Server MD5: 21a8ee521e594e79aa7b0d318001523b
-DevNet: Client MD5: 21a8ee521e594e79aa7b0d318001523b
+DevNet: Server MD5: 497c93e87be7c81570e472db2ff676b3
+DevNet: Client MD5: 497c93e87be7c81570e472db2ff676b3
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=MISSIONOBJECTIVES.INI CONFIGMD5=ad8dbf37f97dec9b59518998fd80dca7
-DevNet: Test MD5 for Config file MISSIONOBJECTIVES.INI - Count is 9
-DevNet: Server MD5: ad8dbf37f97dec9b59518998fd80dca7
-DevNet: Client MD5: ad8dbf37f97dec9b59518998fd80dca7
+DevNet: Level server received: GAMECONFIG CONFIGFILE=OBJECTIVESPECS.INI CONFIGMD5=69678e12d8fc25342c31e7beebdf085f
+DevNet: Test MD5 for Config file OBJECTIVESPECS.INI - Count is 9
+DevNet: Server MD5: 69678e12d8fc25342c31e7beebdf085f
+DevNet: Client MD5: 69678e12d8fc25342c31e7beebdf085f
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=OBJECTIVESPECS.INI CONFIGMD5=b26e43480c44a07240b2aa1d0efaea4b
-DevNet: Test MD5 for Config file OBJECTIVESPECS.INI - Count is 10
-DevNet: Server MD5: b26e43480c44a07240b2aa1d0efaea4b
-DevNet: Client MD5: b26e43480c44a07240b2aa1d0efaea4b
+DevNet: Level server received: GAMECONFIG CONFIGFILE=MISSIONOBJECTIVES.INI CONFIGMD5=35e830de8a406843e790596f53b111c5
+DevNet: Test MD5 for Config file MISSIONOBJECTIVES.INI - Count is 10
+DevNet: Server MD5: 35e830de8a406843e790596f53b111c5
+DevNet: Client MD5: 35e830de8a406843e790596f53b111c5
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=CONVERSATIONS.INI CONFIGMD5=3b944afead8570828c12e7776cbf4980
-DevNet: Test MD5 for Config file CONVERSATIONS.INI - Count is 11
-DevNet: Server MD5: 3b944afead8570828c12e7776cbf4980
-DevNet: Client MD5: 3b944afead8570828c12e7776cbf4980
+DevNet: Level server received: GAMECONFIG CONFIGFILE=LEADERSHIP.INI CONFIGMD5=fd952a97fc7580f757e743cda010b970
+DevNet: Test MD5 for Config file LEADERSHIP.INI - Count is 11
+DevNet: Server MD5: fd952a97fc7580f757e743cda010b970
+DevNet: Client MD5: fd952a97fc7580f757e743cda010b970
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=LEADERSHIP.INI CONFIGMD5=6ee1c92ad238b1136b5b132714218d14
-DevNet: Test MD5 for Config file LEADERSHIP.INI - Count is 12
-DevNet: Server MD5: 6ee1c92ad238b1136b5b132714218d14
-DevNet: Client MD5: 6ee1c92ad238b1136b5b132714218d14
+DevNet: Level server received: GAMECONFIG CONFIGFILE=CONVERSATIONS.INI CONFIGMD5=c7ed237d1ab3072d028607f5dcc67506
+DevNet: Test MD5 for Config file CONVERSATIONS.INI - Count is 12
+DevNet: Server MD5: c7ed237d1ab3072d028607f5dcc67506
+DevNet: Client MD5: c7ed237d1ab3072d028607f5dcc67506
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=TRAININGTEXT.INI CONFIGMD5=78c07f99b78707d5afc4aa07143ae7ed
-DevNet: Test MD5 for Config file TRAININGTEXT.INI - Count is 13
-DevNet: Server MD5: 78c07f99b78707d5afc4aa07143ae7ed
-DevNet: Client MD5: 78c07f99b78707d5afc4aa07143ae7ed
+DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_PLAYERTAGS.INI CONFIGMD5=d58e399e817aa8d440114497e280bfc7
+DevNet: Test MD5 for Config file PLAYERINTERFACE_PLAYERTAGS.INI - Count is 13
+DevNet: Server MD5: d58e399e817aa8d440114497e280bfc7
+DevNet: Client MD5: d58e399e817aa8d440114497e280bfc7
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_PLAYERTAGS.INI CONFIGMD5=eddd164267d840e29b7bb8fbaa553d8c
-DevNet: Test MD5 for Config file PLAYERINTERFACE_PLAYERTAGS.INI - Count is 14
-DevNet: Server MD5: eddd164267d840e29b7bb8fbaa553d8c
-DevNet: Client MD5: eddd164267d840e29b7bb8fbaa553d8c
+DevNet: Level server received: GAMECONFIG CONFIGFILE=TRAININGTEXT.INI CONFIGMD5=17cde648d940330931f8825d72118bde
+DevNet: Test MD5 for Config file TRAININGTEXT.INI - Count is 14
+DevNet: Server MD5: 17cde648d940330931f8825d72118bde
+DevNet: Client MD5: 17cde648d940330931f8825d72118bde
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_LOWREADY.INI CONFIGMD5=4e8fe35bb94b5e4b8ddea8aa98409ff9
+DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_LOWREADY.INI CONFIGMD5=660ddb7443e77271c9f8e6a07c9e3c24
 DevNet: Test MD5 for Config file PLAYERINTERFACE_LOWREADY.INI - Count is 15
-DevNet: Server MD5: 4e8fe35bb94b5e4b8ddea8aa98409ff9
-DevNet: Client MD5: 4e8fe35bb94b5e4b8ddea8aa98409ff9
+DevNet: Server MD5: 660ddb7443e77271c9f8e6a07c9e3c24
+DevNet: Client MD5: 660ddb7443e77271c9f8e6a07c9e3c24
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_USE.INI CONFIGMD5=89d03568c6ec4c69846066bb2e4a806b
+DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_USE.INI CONFIGMD5=ba577168f156cb4ff4feb6cbf99e9490
 DevNet: Test MD5 for Config file PLAYERINTERFACE_USE.INI - Count is 16
-DevNet: Server MD5: 89d03568c6ec4c69846066bb2e4a806b
-DevNet: Client MD5: 89d03568c6ec4c69846066bb2e4a806b
+DevNet: Server MD5: ba577168f156cb4ff4feb6cbf99e9490
+DevNet: Client MD5: ba577168f156cb4ff4feb6cbf99e9490
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_COMMAND_MP.INI CONFIGMD5=269619b4541856ee7f30bb8b9af4e13f
-DevNet: Test MD5 for Config file PLAYERINTERFACE_COMMAND_MP.INI - Count is 17
-DevNet: Server MD5: 269619b4541856ee7f30bb8b9af4e13f
-DevNet: Client MD5: 269619b4541856ee7f30bb8b9af4e13f
+DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_FIRE.INI CONFIGMD5=39dbc18254489d1a2f1238a48d705e65
+DevNet: Test MD5 for Config file PLAYERINTERFACE_FIRE.INI - Count is 17
+DevNet: Server MD5: 39dbc18254489d1a2f1238a48d705e65
+DevNet: Client MD5: 39dbc18254489d1a2f1238a48d705e65
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_COMMAND_SP.INI CONFIGMD5=bc2c6aa34a375c2dc41eeddd9ce0b4e2
-DevNet: Test MD5 for Config file PLAYERINTERFACE_COMMAND_SP.INI - Count is 18
-DevNet: Server MD5: bc2c6aa34a375c2dc41eeddd9ce0b4e2
-DevNet: Client MD5: bc2c6aa34a375c2dc41eeddd9ce0b4e2
+DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_COMMAND_MP.INI CONFIGMD5=2e5fe737d1e73826a8bbece8706604bc
+DevNet: Test MD5 for Config file PLAYERINTERFACE_COMMAND_MP.INI - Count is 18
+DevNet: Server MD5: 2e5fe737d1e73826a8bbece8706604bc
+DevNet: Client MD5: 2e5fe737d1e73826a8bbece8706604bc
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_FIRE.INI CONFIGMD5=b6baf98164565632d6ed634dbcc33fb9
-DevNet: Test MD5 for Config file PLAYERINTERFACE_FIRE.INI - Count is 19
-DevNet: Server MD5: b6baf98164565632d6ed634dbcc33fb9
-DevNet: Client MD5: b6baf98164565632d6ed634dbcc33fb9
+DevNet: Level server received: GAMECONFIG CONFIGFILE=PLAYERINTERFACE_COMMAND_SP.INI CONFIGMD5=a508ed1c18313fe6bec19e713eeb91b3
+DevNet: Test MD5 for Config file PLAYERINTERFACE_COMMAND_SP.INI - Count is 19
+DevNet: Server MD5: a508ed1c18313fe6bec19e713eeb91b3
+DevNet: Client MD5: a508ed1c18313fe6bec19e713eeb91b3
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=VISUALEFFECTS.INI CONFIGMD5=b822b6e187070ffface55f548546888a
+DevNet: Level server received: GAMECONFIG CONFIGFILE=VISUALEFFECTS.INI CONFIGMD5=512cb4b6a26609c16a71f7e0b8acc9e9
 DevNet: Test MD5 for Config file VISUALEFFECTS.INI - Count is 20
-DevNet: Server MD5: b822b6e187070ffface55f548546888a
-DevNet: Client MD5: b822b6e187070ffface55f548546888a
+DevNet: Server MD5: 512cb4b6a26609c16a71f7e0b8acc9e9
+DevNet: Client MD5: 512cb4b6a26609c16a71f7e0b8acc9e9
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=CHARACTERTYPES.INI CONFIGMD5=81d451dccb2ee1fbc51a44a949926250
-DevNet: Test MD5 for Config file CHARACTERTYPES.INI - Count is 21
-DevNet: Server MD5: 81d451dccb2ee1fbc51a44a949926250
-DevNet: Client MD5: 81d451dccb2ee1fbc51a44a949926250
+DevNet: Level server received: GAMECONFIG CONFIGFILE=GUIBASE.INI CONFIGMD5=905b24de6404529fc4a5a666bf6925fc
+DevNet: Test MD5 for Config file GUIBASE.INI - Count is 21
+DevNet: Server MD5: 905b24de6404529fc4a5a666bf6925fc
+DevNet: Client MD5: 905b24de6404529fc4a5a666bf6925fc
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=IDLEACTIONSLIST.INI CONFIGMD5=648e3855bdd1f5fd552d92ff2f28cdef
-DevNet: Test MD5 for Config file IDLEACTIONSLIST.INI - Count is 22
-DevNet: Server MD5: 648e3855bdd1f5fd552d92ff2f28cdef
-DevNet: Client MD5: 648e3855bdd1f5fd552d92ff2f28cdef
+DevNet: Level server received: GAMECONFIG CONFIGFILE=CHARACTERTYPES.INI CONFIGMD5=923c28635017073d6a569d9399eb0c40
+DevNet: Test MD5 for Config file CHARACTERTYPES.INI - Count is 22
+DevNet: Server MD5: 923c28635017073d6a569d9399eb0c40
+DevNet: Client MD5: 923c28635017073d6a569d9399eb0c40
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=INITIALREACTIONSLIST.INI CONFIGMD5=b32e101bed93e1cf1153ee30f08f6c67
-DevNet: Test MD5 for Config file INITIALREACTIONSLIST.INI - Count is 23
-DevNet: Server MD5: b32e101bed93e1cf1153ee30f08f6c67
-DevNet: Client MD5: b32e101bed93e1cf1153ee30f08f6c67
+DevNet: Level server received: GAMECONFIG CONFIGFILE=IDLEACTIONSLIST.INI CONFIGMD5=63d5ccf3f7815e28833b235aba9a0aaf
+DevNet: Test MD5 for Config file IDLEACTIONSLIST.INI - Count is 23
+DevNet: Server MD5: 63d5ccf3f7815e28833b235aba9a0aaf
+DevNet: Client MD5: 63d5ccf3f7815e28833b235aba9a0aaf
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=GUIBASE.INI CONFIGMD5=96106e7d59b9449f5c8adfc04a43d0bd
-DevNet: Test MD5 for Config file GUIBASE.INI - Count is 24
-DevNet: Server MD5: 96106e7d59b9449f5c8adfc04a43d0bd
-DevNet: Client MD5: 96106e7d59b9449f5c8adfc04a43d0bd
+DevNet: Level server received: GAMECONFIG CONFIGFILE=INITIALREACTIONSLIST.INI CONFIGMD5=6452d9714963e437fa813dd855ae08c7
+DevNet: Test MD5 for Config file INITIALREACTIONSLIST.INI - Count is 24
+DevNet: Server MD5: 6452d9714963e437fa813dd855ae08c7
+DevNet: Client MD5: 6452d9714963e437fa813dd855ae08c7
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=ENEMYARCHETYPES.INI CONFIGMD5=3ca4a7e70fdca3b084e60fcf3a1a0234
+DevNet: Level server received: GAMECONFIG CONFIGFILE=ENEMYARCHETYPES.INI CONFIGMD5=7e3106f06310c90a9021f8b7b75103f9
 DevNet: Test MD5 for Config file ENEMYARCHETYPES.INI - Count is 25
-DevNet: Server MD5: 3ca4a7e70fdca3b084e60fcf3a1a0234
-DevNet: Client MD5: 3ca4a7e70fdca3b084e60fcf3a1a0234
+DevNet: Server MD5: 7e3106f06310c90a9021f8b7b75103f9
+DevNet: Client MD5: 7e3106f06310c90a9021f8b7b75103f9
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=COMMAND.INI CONFIGMD5=ede384dca94256c81a9e54de0c7738dc
+DevNet: Level server received: GAMECONFIG CONFIGFILE=COMMAND.INI CONFIGMD5=9d4237ee8fdec748c622b6fd60f222eb
 DevNet: Test MD5 for Config file COMMAND.INI - Count is 26
-DevNet: Server MD5: ede384dca94256c81a9e54de0c7738dc
-DevNet: Client MD5: ede384dca94256c81a9e54de0c7738dc
+DevNet: Server MD5: 9d4237ee8fdec748c622b6fd60f222eb
+DevNet: Client MD5: 9d4237ee8fdec748c622b6fd60f222eb
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=INANIMATEARCHETYPES.INI CONFIGMD5=c5d471133fb8a749838619fb3d69bac7
+DevNet: Level server received: GAMECONFIG CONFIGFILE=INANIMATEARCHETYPES.INI CONFIGMD5=2868fabe7003703c81345ce68659f99e
 DevNet: Test MD5 for Config file INANIMATEARCHETYPES.INI - Count is 27
-DevNet: Server MD5: c5d471133fb8a749838619fb3d69bac7
-DevNet: Client MD5: c5d471133fb8a749838619fb3d69bac7
+DevNet: Server MD5: 2868fabe7003703c81345ce68659f99e
+DevNet: Client MD5: 2868fabe7003703c81345ce68659f99e
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=HOSTAGEARCHETYPES.INI CONFIGMD5=927626c6287bcd963a413298ab025b93
+DevNet: Level server received: GAMECONFIG CONFIGFILE=HOSTAGEARCHETYPES.INI CONFIGMD5=93010ff75d749777aff2070660372571
 DevNet: Test MD5 for Config file HOSTAGEARCHETYPES.INI - Count is 28
-DevNet: Server MD5: 927626c6287bcd963a413298ab025b93
-DevNet: Client MD5: 927626c6287bcd963a413298ab025b93
+DevNet: Server MD5: 93010ff75d749777aff2070660372571
+DevNet: Client MD5: 93010ff75d749777aff2070660372571
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=COMMANDINTERFACEMENUS_SP.INI CONFIGMD5=76e0bf66d78f9d26546fb0b25fa47dd7
+DevNet: Level server received: GAMECONFIG CONFIGFILE=COMMANDINTERFACEMENUS_SP.INI CONFIGMD5=257ac2221e41a5a272a27bb1b0a18194
 DevNet: Test MD5 for Config file COMMANDINTERFACEMENUS_SP.INI - Count is 29
-DevNet: Server MD5: 76e0bf66d78f9d26546fb0b25fa47dd7
-DevNet: Client MD5: 76e0bf66d78f9d26546fb0b25fa47dd7
+DevNet: Server MD5: 257ac2221e41a5a272a27bb1b0a18194
+DevNet: Client MD5: 257ac2221e41a5a272a27bb1b0a18194
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=COMMANDINTERFACEMENUS_MP.INI CONFIGMD5=a57f9beee7a1d34405effabb0960c84b
+DevNet: Level server received: GAMECONFIG CONFIGFILE=COMMANDINTERFACEMENUS_MP.INI CONFIGMD5=739382eca45409116075d9976b9167cc
 DevNet: Test MD5 for Config file COMMANDINTERFACEMENUS_MP.INI - Count is 30
-DevNet: Server MD5: a57f9beee7a1d34405effabb0960c84b
-DevNet: Client MD5: a57f9beee7a1d34405effabb0960c84b
+DevNet: Server MD5: 739382eca45409116075d9976b9167cc
+DevNet: Client MD5: 739382eca45409116075d9976b9167cc
 DevNet: Equal:      0
-DevNet: Level server received: GAMECONFIG CONFIGFILE=MPARCHETYPES.INI CONFIGMD5=2ff1c70d736bec21de1251c3bdc31d86
+DevNet: Level server received: GAMECONFIG CONFIGFILE=MPARCHETYPES.INI CONFIGMD5=9045298867369817faa04bfb8d7c5f2f
 DevNet: Test MD5 for Config file MPARCHETYPES.INI - Count is 31
-DevNet: Server MD5: 2ff1c70d736bec21de1251c3bdc31d86
-DevNet: Client MD5: 2ff1c70d736bec21de1251c3bdc31d86
+DevNet: Server MD5: 9045298867369817faa04bfb8d7c5f2f
+DevNet: Client MD5: 9045298867369817faa04bfb8d7c5f2f
 DevNet: Equal:      0
 DevNet: Level server received: JOIN
-DevNet: Join request: Index.s4m?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
+DevNet: Join request: Index.s4m?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
 Log: SwatGamePlayerController0 got player TcpipConnection0
-Log: Opening user log chatlog_2021_3_21.txt
-DevNet: Join succeeded: OfficerMonki
-VoiceChat: (t=62.702): AddVoiceChatter:SP-Backstage.SwatPlayerReplicationInfo0 OfficerMonki 0
-VoiceChat: (t=62.702): SwatVoiceReplicationInfo0 AddVoiceChannel PRI:SP-Backstage.SwatPlayerReplicationInfo0
-VoiceChat: (t=62.702): Adding member OfficerMonki (0) to OfficerMonki (0)
+Log: Opening user log chatlog_2021_5_4.txt
+DevNet: Join succeeded: Bepperspray
+VoiceChat: (t=65.224): AddVoiceChatter:SP-ABomb.SwatPlayerReplicationInfo0 Bepperspray 0
+VoiceChat: (t=65.224): SwatVoiceReplicationInfo0 AddVoiceChannel PRI:SP-ABomb.SwatPlayerReplicationInfo0
+VoiceChat: (t=65.224): Adding member Bepperspray (0) to Bepperspray (0)
 DevNet: Level server received: OPENVOICE 1
 DevNet: OPENVOICE for PlayerID: 1 with codec: 1
 Log: @@@ Creating VoiceChannel for client
-Log: Opening user log chatlog_2021_3_21.txt
+Log: Opening user log chatlog_2021_5_4.txt
 Warning: Failed to load 'NULL': Can't resolve package name
 Warning: Failed to load 'Class None.': Can't resolve package name
 Log: [Stats] Stat tracking is not activated.
-Log: Opening user log chatlog_2021_3_21.txt
-Log: Opening user log chatlog_2021_3_21.txt
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction33
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction34
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction35
-Log: Opening user log chatlog_2021_3_21.txt
-Log: Opening user log chatlog_2021_3_21.txt
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction36
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction37
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction38
-Log: Opening user log chatlog_2021_3_21.txt
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction39
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction40
-Log: Opening user log chatlog_2021_3_21.txt
-Log: Opening user log chatlog_2021_3_21.txt
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction41
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction42
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction43
-Log: Opening user log chatlog_2021_3_21.txt
-Log: Opening user log chatlog_2021_3_21.txt
-Log: Opening user log chatlog_2021_3_21.txt
-Log: Opening user log chatlog_2021_3_21.txt
-Log: Opening user log chatlog_2021_3_21.txt
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action AimAroundAction SP-Backstage.AimAroundAction44
-Log: Opening user log chatlog_2021_3_21.txt
-Log: Opening user log chatlog_2021_3_21.txt
-NetComeGo: Close TcpipConnection0 26.85.202.120:59343 03/21/21 22:02:37
-Log: Opening user log chatlog_2021_3_21.txt
-Log: Opening user log chatlog_2021_3_21.txt
-VoiceChat: (t=261.184): RemoveVoiceChatter:SP-Backstage.SwatPlayerReplicationInfo0 OfficerMonki
+NetComeGo: Close TcpipConnection0 26.85.202.120:58509 05/04/21 09:51:29
+Log: Opening user log chatlog_2021_5_4.txt
+Log: Opening user log chatlog_2021_5_4.txt
+VoiceChat: (t=127.938): RemoveVoiceChatter:SP-ABomb.SwatPlayerReplicationInfo0 Bepperspray
 Log: FServerQueryInterface::OnReceivedData(). Responding to ping.
 Log: WLog::OnCommand ID_NotifyExit
 Log: appRequestExit(0)
@@ -633,341 +790,350 @@ Log: Unbound to GUI.dll
 Log: Unbound to SwatAICommon.dll
 Log: Unbound to Editor.dll
 Log: Unbound to ScriptCompiler.dll
-Log: 306749.0ms Unloading: Package SwatGame
-Log: 306750.0ms Unloading: Package Engine
-Log: 306750.0ms Unloading: Package Core
-Log: 306750.0ms Unloading: Package Engine_res
-Log: 306750.0ms Unloading: Package SWAT4editorTex
-Log: 306750.0ms Unloading: Package SwatGear_sm
-Log: 306750.0ms Unloading: Package SwatGearTex
-Log: 306750.0ms Unloading: Package SWAT1stPersonTex
-Log: 306750.0ms Unloading: Package MP5A4_NEW
-Log: 306750.0ms Unloading: Package SwatFXtex
-Log: 306750.0ms Unloading: Package G36Knew
-Log: 306750.0ms Unloading: Package bm4
-Log: 306750.0ms Unloading: Package BenelliNovanew
-Log: 306750.0ms Unloading: Package M870Breach
-Log: 306750.0ms Unloading: Package mich_helmet
-Log: 306750.0ms Unloading: Package Kimber
-Log: 306750.0ms Unloading: Package UMPnew
-Log: 306750.0ms Unloading: Package MaleGang1Tex
-Log: 306750.0ms Unloading: Package M4A1_SFM500
-Log: 306750.0ms Unloading: Package surefireM900
-Log: 306750.0ms Unloading: Package FR_grenades
-Log: 306750.0ms Unloading: Package Glock
-Log: 306750.0ms Unloading: Package 92fs
-Log: 306750.0ms Unloading: Package motorola
-Log: 306750.0ms Unloading: Package safariland
-Log: 306750.0ms Unloading: Package HUD
-Log: 306750.0ms Unloading: Package EditorSprites
-Log: 306750.0ms Unloading: Package FP_Hand2
+Log: 140728.0ms Unloading: Package SwatGame
+Log: 140728.0ms Unloading: Package Engine
+Log: 140729.0ms Unloading: Package Core
+Log: 140729.0ms Unloading: Package Engine_res
+Log: 140729.0ms Unloading: Package SWAT4editorTex
+Log: 140729.0ms Unloading: Package SwatGear_sm
+Log: 140729.0ms Unloading: Package SwatGearTex
+Log: 140729.0ms Unloading: Package SWAT1stPersonTex
+Log: 140729.0ms Unloading: Package MP5A4_NEW
+Log: 140729.0ms Unloading: Package SwatFXtex
+Log: 140729.0ms Unloading: Package G36Knew
+Log: 140729.0ms Unloading: Package bm4
+Log: 140729.0ms Unloading: Package BenelliNovanew
+Log: 140729.0ms Unloading: Package M870Breach
+Log: 140729.0ms Unloading: Package mich_helmet
+Log: 140729.0ms Unloading: Package Kimber
+Log: 140729.0ms Unloading: Package UMPnew
+Log: 140729.0ms Unloading: Package MaleGang1Tex
+Log: 140729.0ms Unloading: Package M4A1_SFM500
+Log: 140729.0ms Unloading: Package surefireM900
+Log: 140729.0ms Unloading: Package FR_grenades
+Log: 140729.0ms Unloading: Package Glock
+Log: 140729.0ms Unloading: Package 92fs
+Log: 140729.0ms Unloading: Package motorola
+Log: 140729.0ms Unloading: Package safariland
+Log: 140729.0ms Unloading: Package HUD
+Log: 140729.0ms Unloading: Package EditorSprites
+Log: 140729.0ms Unloading: Package FP_Hand2
 Log: Unbound to IGEffectsSystem.dll
-Log: 306750.0ms Unloading: Package IGEffectsSystem
-Log: 306750.0ms Unloading: Package SWAThands
-Log: 306751.0ms Unloading: Package Editor_res
-Log: 306751.0ms Unloading: Package Hotel_sm
-Log: 306751.0ms Unloading: Package Hotel
-Log: 306751.0ms Unloading: Package MetalShaders
-Log: 306751.0ms Unloading: Package Repo_Tex
-Log: 306751.0ms Unloading: Package Arms_Tex
-Log: 306751.0ms Unloading: Package Silence_Tex
-Log: 306751.0ms Unloading: Package office_Tex
-Log: 306751.0ms Unloading: Package DNA_tex
-Log: 306751.0ms Unloading: Package VIP_Tex
-Log: 306751.0ms Unloading: Package HotelFXtex
-Log: 306751.0ms Unloading: Package barbershop_tex
-Log: 306751.0ms Unloading: Package GUI
-Log: 306751.0ms Unloading: Package gui_tex
-Log: 306751.0ms Unloading: Package SwatAICommon
-Log: 306751.0ms Unloading: Package Tyrion
-Log: 306751.0ms Unloading: Package AICommon
-Log: 306751.0ms Unloading: Package SwatAIAwareness
-Log: 306751.0ms Unloading: Package Scripting
+Log: 140729.0ms Unloading: Package IGEffectsSystem
+Log: 140729.0ms Unloading: Package SWAThands
+Log: 140729.0ms Unloading: Package Editor_res
+Log: 140729.0ms Unloading: Package Hotel_sm
+Log: 140729.0ms Unloading: Package Hotel
+Log: 140729.0ms Unloading: Package MetalShaders
+Log: 140729.0ms Unloading: Package Repo_Tex
+Log: 140729.0ms Unloading: Package Arms_Tex
+Log: 140729.0ms Unloading: Package Silence_Tex
+Log: 140729.0ms Unloading: Package office_Tex
+Log: 140729.0ms Unloading: Package DNA_tex
+Log: 140729.0ms Unloading: Package VIP_Tex
+Log: 140729.0ms Unloading: Package HotelFXtex
+Log: 140729.0ms Unloading: Package barbershop_tex
+Log: 140729.0ms Unloading: Package SwatAICommon
+Log: 140729.0ms Unloading: Package Tyrion
+Log: 140729.0ms Unloading: Package AICommon
+Log: 140729.0ms Unloading: Package SwatAIAwareness
+Log: 140730.0ms Unloading: Package GUI
+Log: 140730.0ms Unloading: Package gui_tex
+Log: 140730.0ms Unloading: Package Scripting
+Log: 140730.0ms Unloading: Package Voting
 Log: Unbound to IGSoundEffectsSubsystem.dll
-Log: 306751.0ms Unloading: Package IGSoundEffectsSubsystem
-Log: 306751.0ms Unloading: Package IGEffectsSystem_EditorTextures
-Log: 306751.0ms Unloading: Package Voting
-Log: 306751.0ms Unloading: Package RWOSupport
-Log: 306751.0ms Unloading: Package Gameplay
+Log: 140730.0ms Unloading: Package IGSoundEffectsSubsystem
+Log: 140730.0ms Unloading: Package IGEffectsSystem_EditorTextures
+Log: 140730.0ms Unloading: Package RWOSupport
+Log: 140730.0ms Unloading: Package Gameplay
 Log: Unbound to SwatEquipment.dll
-Log: 306751.0ms Unloading: Package SwatEquipment
-Log: 306751.0ms Unloading: Package gear_sef
-Log: 306751.0ms Unloading: Package SwatArmory_Tex
-Log: 306751.0ms Unloading: Package GearTex_sef
-Log: 306751.0ms Unloading: Package GearTex_sas
-Log: 306752.0ms Unloading: Package SwatGear2Tex
-Log: 306752.0ms Unloading: Package bp_3P_tex
-Log: 306752.0ms Unloading: Package AimpointM2
-Log: 306752.0ms Unloading: Package gear_suspects
-Log: 306752.0ms Unloading: Package scripted_tex
-Log: 306752.0ms Unloading: Package SwatGear2_sm
-Log: 306752.0ms Unloading: Package druglab
-Log: 306752.0ms Unloading: Package SwatFX2tex
-Log: 306752.0ms Unloading: Package SW_FR
-Log: 306752.0ms Unloading: Package TaserWire
-Log: 306752.0ms Unloading: Package swatmeshfx2_sm
-Log: 306752.0ms Unloading: Package SwatProcedures
+Log: 140730.0ms Unloading: Package SwatEquipment
+Log: 140730.0ms Unloading: Package SwatEquipmentModels2
+Log: 140730.0ms Unloading: Package gear_sas
+Log: 140730.0ms Unloading: Package GearTex_sas
+Log: 140730.0ms Unloading: Package 1stPersonTex_sas
+Log: 140730.0ms Unloading: Package FP_M16A1_tex
+Log: 140730.0ms Unloading: Package gear_sef
+Log: 140730.0ms Unloading: Package SwatArmory_Tex
+Log: 140730.0ms Unloading: Package GearTex_sef
+Log: 140730.0ms Unloading: Package SwatGear2Tex
+Log: 140730.0ms Unloading: Package bp_3P_tex
+Log: 140730.0ms Unloading: Package AimpointM2
+Log: 140730.0ms Unloading: Package gear_suspects
+Log: 140730.0ms Unloading: Package SwatGear2_sm
+Log: 140730.0ms Unloading: Package druglab
+Log: 140730.0ms Unloading: Package SwatFX2tex
+Log: 140730.0ms Unloading: Package FP_mp5SMGsilenced
+Log: 140730.0ms Unloading: Package Eotech552
+Log: 140730.0ms Unloading: Package FP_SCARH07
+Log: 140730.0ms Unloading: Package TP_UMPsmg_new
+Log: 140730.0ms Unloading: Package TP_G36Knew
+Log: 140730.0ms Unloading: Package FP_mp5SMG
+Log: 140730.0ms Unloading: Package FP_9mmPistol
+Log: 140730.0ms Unloading: Package SurefireP101
+Log: 140730.0ms Unloading: Package SwatArmory_sm
+Log: 140730.0ms Unloading: Package FP_NovaPumpShotgun
+Log: 140730.0ms Unloading: Package FP_G36ks
+Log: 140730.0ms Unloading: Package FP_G36k
+Log: 140730.0ms Unloading: Package M4A1_SFM500Aim
+Log: 140730.0ms Unloading: Package FP_coltHG
+Log: 140730.0ms Unloading: Package Colt1911FL_ThirdPerson
+Log: 140730.0ms Unloading: Package FP_m4super90sg
+Log: 140730.0ms Unloading: Package FP_AK47
+Log: 140730.0ms Unloading: Package TP_BM4
+Log: 140730.0ms Unloading: Package FP_csGasGrenade
+Log: 140730.0ms Unloading: Package FP_C2detonator
+Log: 140730.0ms Unloading: Package m4a1_cqb_ThirdPerson
+Log: 140730.0ms Unloading: Package M4A1_SFM500_static
+Log: 140730.0ms Unloading: Package NovaPump_ThirdPerson
+Log: 140731.0ms Unloading: Package FP_MP5Ktactical
+Log: 140731.0ms Unloading: Package TP_sg552Aim
+Log: 140731.0ms Unloading: Package TP_rem870
+Log: 140731.0ms Unloading: Package FP_UMPsmg
+Log: 140731.0ms Unloading: Package FP_UMPsmgsd
+Log: 140731.0ms Unloading: Package fp_fnp90
+Log: 140731.0ms Unloading: Package p90sight
+Log: 140731.0ms Unloading: Package SWAT1stPersonTex2
+Log: 140731.0ms Unloading: Package FP_sg552
+Log: 140731.0ms Unloading: Package FP_mp5k
+Log: 140731.0ms Unloading: Package NineMMpistol_ThirdPerson
+Log: 140731.0ms Unloading: Package FP_taser
+Log: 140731.0ms Unloading: Package FP_flashbangGrenade
+Log: 140731.0ms Unloading: Package FP_p226
+Log: 140731.0ms Unloading: Package TP_p226
+Log: 140731.0ms Unloading: Package FP_hk33
+Log: 140731.0ms Unloading: Package FP_browHP
+Log: 140731.0ms Unloading: Package TP_browHP
+Log: 140731.0ms Unloading: Package FP_stingGrenade
+Log: 140731.0ms Unloading: Package FP_mp5ksd
+Log: 140731.0ms Unloading: Package FP_Revolver
+Log: 140731.0ms Unloading: Package FP_hk33s
+Log: 140731.0ms Unloading: Package FP_p226sd
+Log: 140731.0ms Unloading: Package TP_p226sd
+Log: 140731.0ms Unloading: Package FP_sg552sd
+Log: 140731.0ms Unloading: Package FP_browHPsd
+Log: 140731.0ms Unloading: Package TP_browHPsd
+Log: 140731.0ms Unloading: Package FP_llrem870
+Log: 140731.0ms Unloading: Package FP_DoorWedge
+Log: 140731.0ms Unloading: Package FP_BreachingSG
+Log: 140731.0ms Unloading: Package BreachingSG_ThirdPerson
+Log: 140731.0ms Unloading: Package FP_arwen37
+Log: 140731.0ms Unloading: Package fp_Stinger
+Log: 140731.0ms Unloading: Package taserX2
+Log: 140731.0ms Unloading: Package taserX2_static
+Log: 140731.0ms Unloading: Package FP_HK69
+Log: 140731.0ms Unloading: Package FP_Pepperspray
+Log: 140731.0ms Unloading: Package FP_AR_15SD
+Log: 140731.0ms Unloading: Package ColtAcc
+Log: 140731.0ms Unloading: Package TP_coltAcc
+Log: 140731.0ms Unloading: Package FP_paintball
+Log: 140731.0ms Unloading: Package FP_C2charge
+Log: 140731.0ms Unloading: Package Coronas
+Log: 140731.0ms Unloading: Package FP_rem870
+Log: 140731.0ms Unloading: Package FP_M4A1_SFM500
+Log: 140731.0ms Unloading: Package FP_M16A1
+Log: 140731.0ms Unloading: Package FP_M16A1sd
+Log: 140731.0ms Unloading: Package FP_92fs
+Log: 140731.0ms Unloading: Package TP_92fs
+Log: 140731.0ms Unloading: Package FP_M4A1_CQB_Holo
+Log: 140731.0ms Unloading: Package FP_NineBangGrenade
+Log: 140731.0ms Unloading: Package FP_M4A1_SFM500_sil
+Log: 140731.0ms Unloading: Package FP_Handcuffs
+Log: 140731.0ms Unloading: Package FP_uzi
+Log: 140731.0ms Unloading: Package FP_toolkit
+Log: 140731.0ms Unloading: Package FP_SAW
+Log: 140731.0ms Unloading: Package 3rd_SAW
+Log: 140732.0ms Unloading: Package FP_glowstick
+Log: 140732.0ms Unloading: Package FP_Optiwand
+Log: 140732.0ms Unloading: Package scripted_tex
+Log: 140732.0ms Unloading: Package Optiwand_ThirdPerson
+Log: 140732.0ms Unloading: Package FP_m1super90
+Log: 140732.0ms Unloading: Package FP_DesertEagleNew
+Log: 140732.0ms Unloading: Package FP_M4A1_SFM500_Aim
+Log: 140732.0ms Unloading: Package FP_M4A1_SFM500_silAim
+Log: 140732.0ms Unloading: Package FP_AKS74U
+Log: 140732.0ms Unloading: Package fp_tec9
+Log: 140732.0ms Unloading: Package FP_sg552Aim
+Log: 140732.0ms Unloading: Package FP_sg552Aimsd
+Log: 140732.0ms Unloading: Package FP_M4A1_CQB_silHolo
+Log: 140732.0ms Unloading: Package FP_mp5sd
+Log: 140732.0ms Unloading: Package gui_FR
+Log: 140732.0ms Unloading: Package gui_sas
+Log: 140732.0ms Unloading: Package gui_tex3
+Log: 140732.0ms Unloading: Package gui_tex2
+Log: 140732.0ms Unloading: Package SwatEquipmentModels3
+Log: 140732.0ms Unloading: Package SwatEquipmentModels
+Log: 140732.0ms Unloading: Package FP_M4A1mg
+Log: 140732.0ms Unloading: Package FP_FragGrenade
+Log: 140732.0ms Unloading: Package coltsmg_static
+Log: 140732.0ms Unloading: Package ColtSMG
+Log: 140732.0ms Unloading: Package FP_coltsmg
+Log: 140732.0ms Unloading: Package FP_coltsmgsil
+Log: 140732.0ms Unloading: Package SwatProgrammerSampleClasses
+Log: 140732.0ms Unloading: Package DeadPeople_sm
+Log: 140732.0ms Unloading: Package FemaleNurseTex
+Log: 140732.0ms Unloading: Package MaleDoctorTex
+Log: 140732.0ms Unloading: Package SWATbadguyTex
+Log: 140732.0ms Unloading: Package SWATofficerTex
+Log: 140732.0ms Unloading: Package MaleCasual2Tex
+Log: 140732.0ms Unloading: Package Paradise_sm
+Log: 140732.0ms Unloading: Package Paradise_Tex
+Log: 140732.0ms Unloading: Package Tenement_Tex
+Log: 140732.0ms Unloading: Package train
+Log: 140732.0ms Unloading: Package Bar_Tex
+Log: 140732.0ms Unloading: Package Doors_sm
+Log: 140732.0ms Unloading: Package doors_Tex
+Log: 140732.0ms Unloading: Package bullseye_Tex
+Log: 140732.0ms Unloading: Package Hosp
+Log: 140733.0ms Unloading: Package RedLibrary_Tex
+Log: 140733.0ms Unloading: Package Jewel_Tex
+Log: 140733.0ms Unloading: Package doors_knobs
+Log: 140733.0ms Unloading: Package Power_Tex
+Log: 140733.0ms Unloading: Package SWATmeshFX_sm
+Log: 140733.0ms Unloading: Package Con_Tex
+Log: 140733.0ms Unloading: Package SW_FR
+Log: 140733.0ms Unloading: Package SwatDesignerClasses
+Log: 140733.0ms Unloading: Package Bar_sm
+Log: 140733.0ms Unloading: Package Junk_Tex
+Log: 140733.0ms Unloading: Package Outdoors_Tex
+Log: 140733.0ms Unloading: Package Con_sm
+Log: 140733.0ms Unloading: Package mac_Tex
+Log: 140733.0ms Unloading: Package Tenement_sm
+Log: 140733.0ms Unloading: Package Silence_sm
+Log: 140733.0ms Unloading: Package off_sm
+Log: 140733.0ms Unloading: Package Repo_sm
+Log: 140733.0ms Unloading: Package LocalizedTextures
+Log: 140733.0ms Unloading: Package Barbershop_sm
+Log: 140733.0ms Unloading: Package Furniture_Tex
+Log: 140733.0ms Unloading: Package dna_sm
+Log: 140733.0ms Unloading: Package amc_Tex
+Log: 140733.0ms Unloading: Package VIP_sm
+Log: 140733.0ms Unloading: Package Cars
+Log: 140733.0ms Unloading: Package Hosp_sm
+Log: 140733.0ms Unloading: Package mac_sm
+Log: 140733.0ms Unloading: Package Power_sm
+Log: 140733.0ms Unloading: Package Jewel_sm
+Log: 140733.0ms Unloading: Package arms_sm
+Log: 140733.0ms Unloading: Package Redlibrary_sm
+Log: 140733.0ms Unloading: Package train_sm
+Log: 140733.0ms Unloading: Package Utility_Tex
+Log: 140733.0ms Unloading: Package Druglab_sm
+Log: 140733.0ms Unloading: Package utility_sm
+Log: 140733.0ms Unloading: Package bullseye_sm
+Log: 140733.0ms Unloading: Package Junk_sm
+Log: 140733.0ms Unloading: Package Cars_sm
+Log: 140733.0ms Unloading: Package MaleJanitorTextureSet
+Log: 140733.0ms Unloading: Package SWATMaleAnimation
+Log: 140733.0ms Unloading: Package LeoMelTextureSet
+Log: 140733.0ms Unloading: Package MaleSuitTex
+Log: 140733.0ms Unloading: Package MaleCasual3Tex
+Log: 140733.0ms Unloading: Package CultLeaderTextureSet
+Log: 140733.0ms Unloading: Package MaleBarberTex
+Log: 140733.0ms Unloading: Package SWATheavyTex
+Log: 140733.0ms Unloading: Package MaleChubbyTex
+Log: 140733.0ms Unloading: Package MaleCasual4Tex
+Log: 140733.0ms Unloading: Package SWATinstructorTex
+Log: 140733.0ms Unloading: Package MaleCasual1Tex
+Log: 140733.0ms Unloading: Package MaleCasualArmorTex
+Log: 140733.0ms Unloading: Package wall_sm
+Log: 140733.0ms Unloading: Package wall_Tex
+Log: 140733.0ms Unloading: Package MPbomb
+Log: 140733.0ms Unloading: Package TrainingAnimatedMeshes
+Log: 140733.0ms Unloading: Package TaserWire
+Log: 140733.0ms Unloading: Package swatmeshfx2_sm
+Log: 140733.0ms Unloading: Package SwatProcedures
 Log: Unbound to IpDrv.dll
-Log: 306752.0ms Unloading: Package IpDrv
-Log: 306752.0ms Unloading: Package mp_OfficerTex
-Log: 306752.0ms Unloading: Package SWATMaleAnimation2
-Log: 306752.0ms Unloading: Package SWATofficerTex
-Log: 306752.0ms Unloading: Package maleMafiaTex
-Log: 306752.0ms Unloading: Package maleHomelessTex
-Log: 306752.0ms Unloading: Package MaleCasual3Tex
-Log: 306752.0ms Unloading: Package LeoMelTextureSet
-Log: 306752.0ms Unloading: Package MaleSuitTex
-Log: 306752.0ms Unloading: Package MaleJanitorTextureSet
-Log: 306752.0ms Unloading: Package MaleChubbyTex
-Log: 306752.0ms Unloading: Package MaleBarberTex
-Log: 306752.0ms Unloading: Package CASMtex
-Log: 306752.0ms Unloading: Package MaleCasual2Tex
-Log: 306752.0ms Unloading: Package SWATheavyTex
-Log: 306752.0ms Unloading: Package SWATinstructorTex
-Log: 306752.0ms Unloading: Package MaleCasual4Tex
-Log: 306752.0ms Unloading: Package MaleCasual1Tex
-Log: 306752.0ms Unloading: Package SWATnoArmourTex
-Log: 306752.0ms Unloading: Package MaleCasualArmorTex
-Log: 306752.0ms Unloading: Package Doors_sm
-Log: 306752.0ms Unloading: Package doors_Tex
-Log: 306752.0ms Unloading: Package bullseye_Tex
-Log: 306752.0ms Unloading: Package Paradise_Tex
-Log: 306752.0ms Unloading: Package Tenement_Tex
-Log: 306752.0ms Unloading: Package train
-Log: 306752.0ms Unloading: Package Bar_Tex
-Log: 306752.0ms Unloading: Package Hosp
-Log: 306752.0ms Unloading: Package RedLibrary_Tex
-Log: 306752.0ms Unloading: Package Jewel_Tex
-Log: 306752.0ms Unloading: Package doors_knobs
-Log: 306752.0ms Unloading: Package Power_Tex
-Log: 306752.0ms Unloading: Package CameraEffectsTex
-Log: 306752.0ms Unloading: Package SwatProtectiveEquipment
-Log: 306752.0ms Unloading: Package gui_FR
-Log: 306752.0ms Unloading: Package SWATMaleAnimation
-Log: 306752.0ms Unloading: Package CultLeaderTextureSet
-Log: 306752.0ms Unloading: Package MaleDoctorTex
-Log: 306752.0ms Unloading: Package gear_sas
-Log: 306752.0ms Unloading: Package 1stPersonTex_sas
-Log: 306752.0ms Unloading: Package FP_M16A1_tex
-Log: 306752.0ms Unloading: Package ProgrammerTestObjectsTex
-Log: 306752.0ms Unloading: Package Suspect1_officerTex
-Log: 306752.0ms Unloading: Package arms_sm
-Log: 306752.0ms Unloading: Package Outdoors_Tex
-Log: 306752.0ms Unloading: Package SWATbadguyTex
-Log: 306752.0ms Unloading: Package gui_tex2
-Log: 306752.0ms Unloading: Package gui_sas
-Log: 306752.0ms Unloading: Package UWindow_res
-Log: 306752.0ms Unloading: Package CoopArrow
-Log: 306753.0ms Unloading: Package SWATDoubleDoorAnimations
-Log: 306753.0ms Unloading: Package SWATDoorAnimation
-Log: 306753.0ms Unloading: Package SwatProtectiveEquipment2
-Log: 306753.0ms Unloading: Package SwatEquipmentModels2
-Log: 306753.0ms Unloading: Package Coronas
+Log: 140733.0ms Unloading: Package IpDrv
+Log: 140733.0ms Unloading: Package mp_OfficerTex
+Log: 140733.0ms Unloading: Package SWATMaleAnimation2
+Log: 140733.0ms Unloading: Package maleMafiaTex
+Log: 140733.0ms Unloading: Package maleHomelessTex
+Log: 140733.0ms Unloading: Package CASMtex
+Log: 140733.0ms Unloading: Package SWATnoArmourTex
+Log: 140733.0ms Unloading: Package CameraEffectsTex
+Log: 140733.0ms Unloading: Package SwatProtectiveEquipment
+Log: 140733.0ms Unloading: Package Suspect1_officerTex
+Log: 140733.0ms Unloading: Package ProgrammerTestObjectsTex
+Log: 140733.0ms Unloading: Package UWindow_res
+Log: 140733.0ms Unloading: Package CoopArrow
+Log: 140733.0ms Unloading: Package SWATDoubleDoorAnimations
+Log: 140733.0ms Unloading: Package SWATDoorAnimation
+Log: 140733.0ms Unloading: Package SwatProtectiveEquipment2
 Exit: Game engine shut down
 Log: Unbound to IGVisualEffectsSubsystem.dll
-Log: 306753.0ms Unloading: Package IGVisualEffectsSubsystem
-Log: 306755.0ms Unloading: Package FP_C2charge
-Log: 306755.0ms Unloading: Package FP_Pepperspray
-Log: 306755.0ms Unloading: Package FP_DoorWedge
-Log: 306755.0ms Unloading: Package FP_flashbangGrenade
-Log: 306755.0ms Unloading: Package FP_stingGrenade
-Log: 306755.0ms Unloading: Package FP_csGasGrenade
-Log: 306755.0ms Unloading: Package SwatProgrammerSampleClasses
-Log: 306755.0ms Unloading: Package SwatEquipmentModels3
-Log: 306755.0ms Unloading: Package SwatEquipmentModels
-Log: 306755.0ms Unloading: Package NovaPump_ThirdPerson
-Log: 306755.0ms Unloading: Package FP_C2detonator
-Log: 306755.0ms Unloading: Package Colt1911FL_ThirdPerson
-Log: 306755.0ms Unloading: Package FP_coltHG
-Log: 306755.0ms Unloading: Package FP_NovaPumpShotgun
-Log: 306755.0ms Unloading: Package FP_UMPsmg
-Log: 306755.0ms Unloading: Package Eotech552
-Log: 306755.0ms Unloading: Package FP_G36k
-Log: 306755.0ms Unloading: Package FP_9mmPistol
-Log: 306755.0ms Unloading: Package SurefireP101
-Log: 306755.0ms Unloading: Package NineMMpistol_ThirdPerson
-Log: 306755.0ms Unloading: Package FP_M4A1mg
-Log: 306755.0ms Unloading: Package FP_m4super90sg
-Log: 306755.0ms Unloading: Package FP_mp5SMG
-Log: 306755.0ms Unloading: Package FP_uzi
-Log: 306755.0ms Unloading: Package FP_mp5SMGsilenced
-Log: 306755.0ms Unloading: Package Optiwand_ThirdPerson
-Log: 306755.0ms Unloading: Package FP_Optiwand
-Log: 306755.0ms Unloading: Package FP_BreachingSG
-Log: 306755.0ms Unloading: Package BreachingSG_ThirdPerson
-Log: 306755.0ms Unloading: Package FP_AK47
-Log: 306755.0ms Unloading: Package FP_toolkit
-Log: 306755.0ms Unloading: Package FP_Handcuffs
-Log: 306755.0ms Unloading: Package FP_paintball
-Log: 306755.0ms Unloading: Package FP_taser
-Log: 306755.0ms Unloading: Package FP_Revolver
-Log: 306755.0ms Unloading: Package FP_FragGrenade
-Log: 306755.0ms Unloading: Package gui_tex3
-Log: 306755.0ms Unloading: Package SwatDesignerClasses
-Log: 306755.0ms Unloading: Package FP_M4A1_SFM500
-Log: 306755.0ms Unloading: Package M4A1_SFM500_static
-Log: 306755.0ms Unloading: Package FP_mp5k
-Log: 306755.0ms Unloading: Package FP_sg552
-Log: 306755.0ms Unloading: Package TP_UMPsmg_new
-Log: 306755.0ms Unloading: Package FP_UMPsmgsd
-Log: 306755.0ms Unloading: Package FP_browHP
-Log: 306755.0ms Unloading: Package TP_browHP
-Log: 306755.0ms Unloading: Package FP_M16A1
-Log: 306755.0ms Unloading: Package FP_hk33
-Log: 306755.0ms Unloading: Package FP_p226
-Log: 306755.0ms Unloading: Package TP_p226
-Log: 306755.0ms Unloading: Package fp_fnp90
-Log: 306755.0ms Unloading: Package p90sight
-Log: 306755.0ms Unloading: Package SWAT1stPersonTex2
-Log: 306755.0ms Unloading: Package FP_mp5ksd
-Log: 306755.0ms Unloading: Package FP_hk33s
-Log: 306755.0ms Unloading: Package FP_p226sd
-Log: 306755.0ms Unloading: Package TP_p226sd
-Log: 306755.0ms Unloading: Package FP_sg552sd
-Log: 306755.0ms Unloading: Package FP_M16A1sd
-Log: 306755.0ms Unloading: Package FP_browHPsd
-Log: 306755.0ms Unloading: Package TP_browHPsd
-Log: 306755.0ms Unloading: Package FP_llrem870
-Log: 306755.0ms Unloading: Package TP_rem870
-Log: 306755.0ms Unloading: Package FP_92fs
-Log: 306755.0ms Unloading: Package TP_92fs
-Log: 306755.0ms Unloading: Package FP_arwen37
-Log: 306755.0ms Unloading: Package fp_Stinger
-Log: 306755.0ms Unloading: Package taserX2
-Log: 306755.0ms Unloading: Package taserX2_static
-Log: 306755.0ms Unloading: Package FP_M4A1_CQB_Holo
-Log: 306755.0ms Unloading: Package m4a1_cqb_ThirdPerson
-Log: 306755.0ms Unloading: Package FP_HK69
-Log: 306755.0ms Unloading: Package FP_AR_15SD
-Log: 306755.0ms Unloading: Package ColtAcc
-Log: 306755.0ms Unloading: Package TP_coltAcc
-Log: 306755.0ms Unloading: Package FP_rem870
-Log: 306755.0ms Unloading: Package FP_M4A1_SFM500_sil
-Log: 306755.0ms Unloading: Package FP_M4A1_CQB_silHolo
-Log: 306755.0ms Unloading: Package coltsmg_static
-Log: 306755.0ms Unloading: Package ColtSMG
-Log: 306755.0ms Unloading: Package FP_coltsmg
-Log: 306755.0ms Unloading: Package SWATmeshFX_sm
-Log: 306756.0ms Unloading: Package Con_Tex
-Log: 306756.0ms Unloading: Package Editor
-Log: 306756.0ms Unloading: Package Packages
-Log: (Havok): Destroying static world for level.
-Exit: Socket shut down
-Log: 306769.0ms Unloading: Package SwatEffects
-Log: 306769.0ms Unloading: Package Silence_sm
-Log: 306769.0ms Unloading: Package SWATcivilianGear_sm
-Log: 306769.0ms Unloading: Package FemaleNurseTex
-Log: 306769.0ms Unloading: Package FemaleCasual2Tex
-Log: 306769.0ms Unloading: Package FemaleOfficeTex
-Log: 306769.0ms Unloading: Package FemaleHeavyTex
-Log: 306769.0ms Unloading: Package TrainingAnimatedMeshes
-Log: Unbound to SwatGui.dll
-Log: 306769.0ms Unloading: Package SwatDesignerClasses2
-Log: 306769.0ms Unloading: Package mac_Tex
-Log: 306769.0ms Unloading: Package halfwayhouse_sm
-Log: 306769.0ms Unloading: Package halfway_tex
-Log: 306769.0ms Unloading: Package Paradise_sm
-Log: 306769.0ms Unloading: Package warehouse_sm
-Log: 306769.0ms Unloading: Package warehouse_tex
-Log: 306769.0ms Unloading: Package Barbershop_sm
-Log: 306769.0ms Unloading: Package Furniture_Tex
-Log: 306769.0ms Unloading: Package Bar_sm
-Log: 306769.0ms Unloading: Package Junk_Tex
-Log: 306769.0ms Unloading: Package off_sm
-Log: 306769.0ms Unloading: Package Hosp_sm
-Log: 306769.0ms Unloading: Package Junk_sm
-Log: 306769.0ms Unloading: Package PerimeterAnimatedMeshes
-Log: 306769.0ms Unloading: Package Cars
-Log: 306769.0ms Unloading: Package SP-Backstage
-Log: 306770.0ms Unloading: Package bs_Tex
-Log: 306770.0ms Unloading: Package Redlibrary_sm
-Log: 306770.0ms Unloading: Package Power_sm
-Log: 306770.0ms Unloading: Package Utility_Tex
-Log: 306770.0ms Unloading: Package Tenement_sm
-Log: 306770.0ms Unloading: Package Con_sm
-Log: 306770.0ms Unloading: Package SwatExpHavokClasses
-Log: 306770.0ms Unloading: Package Druglab_sm
-Log: 306770.0ms Unloading: Package VIP_sm
-Log: 306770.0ms Unloading: Package bs_sm
-Log: 306770.0ms Unloading: Package wall_sm
-Log: 306770.0ms Unloading: Package wall_Tex
-Log: 306770.0ms Unloading: Package Repo_sm
-Log: 306770.0ms Unloading: Package LocalizedTextures
-Log: 306770.0ms Unloading: Package mass_classes
-Log: 306770.0ms Unloading: Package mass_objects
-Log: 306770.0ms Unloading: Package mass_textures
-Log: 306770.0ms Unloading: Package dna_sm
-Log: 306770.0ms Unloading: Package amc_Tex
-Log: 306770.0ms Unloading: Package Jewel_sm
-Log: 306770.0ms Unloading: Package Mass_classes2
-Log: 306770.0ms Unloading: Package mass_objects2
-Log: 306770.0ms Unloading: Package subway_tex
-Log: 306770.0ms Unloading: Package desOff_tex
-Log: 306770.0ms Unloading: Package Outdoors_sm
-Log: 306770.0ms Unloading: Package train_sm
-Log: 306770.0ms Unloading: Package bullseye_sm
-Log: 306770.0ms Unloading: Package AnimatedDecorMeshes
-Log: 306770.0ms Unloading: Package HotelAnimatedMeshes
-Log: 306770.0ms Unloading: Package TreeLeaves
-Log: 306770.0ms Unloading: Package JewelryAnimatedMeshes
-Log: 306770.0ms Unloading: Package SilenceShrub
-Log: 306770.0ms Unloading: Package VIPanimatedMeshes
-Log: 306770.0ms Unloading: Package REPOhelicopter
-Log: 306770.0ms Unloading: Package ArmsShrub
-Log: 306770.0ms Unloading: Package RedLibraryAnimatedMeshes
-Log: 306770.0ms Unloading: Package BarPullBarber
-Log: 306770.0ms Unloading: Package AbombStageLights
-Log: 306770.0ms Unloading: Package bath_sm
-Log: 306770.0ms Unloading: Package bath_Tex
-Log: 306770.0ms Unloading: Package mac_sm
-Log: 306770.0ms Unloading: Package Cars_sm
-Log: 306775.0ms Unloading: Package utility_sm
-Log: 306775.0ms Unloading: Package SwatEd
-Log: 306775.0ms Unloading: Package SwatSimpleEquipment
-Log: 306775.0ms Unloading: Package SwatObjectives
-Log: 306775.0ms Unloading: Package SwatGui
-Log: 306775.0ms Unloading: Package SwatAmmo
-Log: 306775.0ms Unloading: Package SwatAmmo2
-Log: 306775.0ms Unloading: Package SwatProjectile
-Log: 306775.0ms Unloading: Package SwatCameraEffects
-Log: 306775.0ms Unloading: Package SwatCameraEffects2
-Log: 306775.0ms Unloading: Package SW_Objects
-Log: 306775.0ms Unloading: Package SW_Bounce
-Log: 306775.0ms Unloading: Package SW_Ambients
-Log: 306775.0ms Unloading: Package SW_Bullets
-Log: 306775.0ms Unloading: Package SW_Feet
-Log: 306775.0ms Unloading: Package SW_Hits
-Log: 306775.0ms Unloading: Package SW_Meta
-Log: 306775.0ms Unloading: Package SW_VO
-Log: 306775.0ms Unloading: Package SW_Weapons
-Log: 306775.0ms Unloading: Package FemaleAnimation
-Log: 306775.0ms Unloading: Package FemaleCasual1Tex
-Log: 306775.0ms Unloading: Package FemaleCasual3Tex
+Log: 140734.0ms Unloading: Package IGVisualEffectsSubsystem
+Log: 140736.0ms Unloading: Package Editor
+Log: 140737.0ms Unloading: Package Packages
 Log: MasterServerUplink::Destroy().
-Log: 306776.0ms Unloading: Package SwatArmory_sm
-Log: 306777.0ms Unloading: Package TP_G36Knew
-Log: 306777.0ms Unloading: Package FP_m1super90
-Log: 306777.0ms Unloading: Package TP_BM4
-Log: 306777.0ms Unloading: Package SoundEffectsConfig
-Log: 306777.0ms Unloading: Package SWEXP_ambience
-Log: 306777.0ms Unloading: Package SWEXP_weapons
-Log: 306777.0ms Unloading: Package SWSAS_weapons
-Log: 306777.0ms Unloading: Package SWsef_weapons
-Log: 306782.0ms Unloading: Package FP_NineBangGrenade
-Log: 306782.0ms Unloading: Package FP_DesertEagleNew
-Log: 306782.0ms Unloading: Package FP_coltsmgsil
-Log: 306782.0ms Unloading: Package FP_MP5Ktactical
-Log: 306782.0ms Unloading: Package suspect1
-Log: 306782.0ms Unloading: Package FP_glowstick
+Log: 140737.0ms Unloading: Package warehouse_tex
+Log: 140737.0ms Unloading: Package warehouse_sm
+Log: 140738.0ms Unloading: Package halfway_tex
+Log: 140738.0ms Unloading: Package halfwayhouse_sm
+Log: 140738.0ms Unloading: Package SwatDesignerClasses2
+Log: 140738.0ms Unloading: Package FemaleCasual3Tex
+Log: 140738.0ms Unloading: Package FemaleCasual1Tex
+Log: 140738.0ms Unloading: Package FemaleAnimation
+Log: 140738.0ms Unloading: Package SW_Weapons
+Log: 140738.0ms Unloading: Package SW_VO
+Log: 140738.0ms Unloading: Package SW_Meta
+Log: 140738.0ms Unloading: Package SW_Hits
+Log: 140738.0ms Unloading: Package SW_Feet
+Log: 140738.0ms Unloading: Package SW_Bullets
+Log: 140738.0ms Unloading: Package SW_Ambients
+Log: 140738.0ms Unloading: Package SW_Bounce
+Log: 140738.0ms Unloading: Package SW_Objects
+Log: 140738.0ms Unloading: Package SwatCameraEffects2
+Log: 140738.0ms Unloading: Package SwatCameraEffects
+Log: 140738.0ms Unloading: Package SwatProjectile
+Log: 140738.0ms Unloading: Package SwatAmmo2
+Log: 140738.0ms Unloading: Package SwatAmmo
+Log: 140738.0ms Unloading: Package SwatGui
+Log: 140738.0ms Unloading: Package SwatObjectives
+Log: 140738.0ms Unloading: Package SwatSimpleEquipment
+Log: 140738.0ms Unloading: Package SwatEd
+Exit: Socket shut down
+Log: (Havok): Destroying static world for level.
+Log: 140745.0ms Unloading: Package SwatEffects
+Log: 140745.0ms Unloading: Package SWATcivilianGear_sm
+Log: 140745.0ms Unloading: Package FemaleCasual2Tex
+Log: 140745.0ms Unloading: Package FemaleOfficeTex
+Log: 140745.0ms Unloading: Package FemaleHeavyTex
+Log: Unbound to SwatGui.dll
+Log: 140745.0ms Unloading: Package PerimeterAnimatedMeshes
+Log: 140745.0ms Unloading: Package SP-ABomb
+Log: 140746.0ms Unloading: Package mass_classes
+Log: 140746.0ms Unloading: Package mass_objects
+Log: 140746.0ms Unloading: Package mass_textures
+Log: 140746.0ms Unloading: Package Outdoors_sm
+Log: 140746.0ms Unloading: Package AnimatedDecorMeshes
+Log: 140746.0ms Unloading: Package HotelAnimatedMeshes
+Log: 140746.0ms Unloading: Package TreeLeaves
+Log: 140746.0ms Unloading: Package JewelryAnimatedMeshes
+Log: 140746.0ms Unloading: Package SilenceShrub
+Log: 140746.0ms Unloading: Package VIPanimatedMeshes
+Log: 140746.0ms Unloading: Package REPOhelicopter
+Log: 140746.0ms Unloading: Package ArmsShrub
+Log: 140746.0ms Unloading: Package RedLibraryAnimatedMeshes
+Log: 140746.0ms Unloading: Package BarPullBarber
+Log: 140746.0ms Unloading: Package AbombStageLights
+Log: 140746.0ms Unloading: Package bink_textures
+Log: 140746.0ms Unloading: Package Skybox
+Log: 140746.0ms Unloading: Package sky
+Log: 140753.0ms Unloading: Package SoundEffectsConfig
+Log: 140753.0ms Unloading: Package SWEXP_ambience
+Log: 140753.0ms Unloading: Package SWEXP_weapons
+Log: 140753.0ms Unloading: Package SWSAS_weapons
+Log: 140753.0ms Unloading: Package SWsef_weapons
+Log: 140756.0ms Unloading: Package suspect1
 Log: (Havok): Notifiing dependant DLLs of Havok shutdown..
 Log: (Havok): Shutting down base system.
-Log: Garbage: objects: 97268->0; refs: 992350
+Log: Garbage: objects: 94688->0; refs: 944397
 Exit: Object subsystem successfully closed.
 Exit: Exiting.
 Log: Waiting for file streaming thread to finish...
 Uninitialized: Name subsystem shut down
 Uninitialized: Memory Allocation Status
-Uninitialized: Curr Memory  0.256M /  11.746M
-Uninitialized: Peak Memory  368.376M /  403.523M
-Uninitialized: Allocs        2674 Current /  7169897 Total
-Uninitialized: Log file closed, 03/21/21 22:03:24
+Uninitialized: Curr Memory  0.230M /  10.617M
+Uninitialized: Peak Memory  335.572M /  365.141M
+Uninitialized: Allocs        2173 Current /  5437169 Total
+Uninitialized: Log file closed, 05/04/21 09:51:43

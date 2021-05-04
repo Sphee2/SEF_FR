@@ -1,4 +1,4 @@
-Log: Log file open, 04/16/21 12:07:31
+Log: Log file open, 05/04/21 11:03:55
 Init: ----------------------------------------
 Init: SWAT VERSION NUMBER: 0.65b
 Init: ----------------------------------------
@@ -15,7 +15,7 @@ Init: User: admin
 Init: CPU Page size=4096, Processors=4
 Init: CPU Detected: PentiumPro-class processor (GenuineIntel)
 Init: CPU Features: CMov FPU RDTSC PAE MMX SSE
-Init: CPU Speed=3512.112400 MHz
+Init: CPU Speed=3506.162240 MHz
 Init: Memory total: Phys=2097151K Pagef=4194303K Virt=2097024K
 Init: Working set: 32000 / 159000
 Log: Bound to ScriptCompiler.dll
@@ -29,21 +29,6 @@ Warning: Missing Class Class Engine.KMeshProps
 Warning: Missing Class Class Engine.Polys
 Warning: Missing Class Class Engine.KMeshProps
 Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.KMeshProps
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.HkMeshProxy
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.Polys
-Warning: Missing Class Class Engine.HkMeshProxy
 Warning: Missing Class Class Engine.HkMeshProxy
 Warning: Missing Class Class Engine.Polys
 Warning: Missing Class Class Engine.KMeshProps
@@ -56,21 +41,96 @@ Warning: Missing Class Class Engine.KMeshProps
 Warning: Missing Class Class Engine.HkMeshProxy
 Warning: Missing Class Class Engine.Polys
 Warning: Missing Class Class Engine.KMeshProps
-Log: Failed import: SkeletalMesh SkeletalMesh fp_deserteagle.fp_deserteagle (file ../Animations/fp_deserteagle.ukx)
-Log: Can't find SkeletalMesh in file 'SkeletalMesh fp_deserteagle.fp_deserteagle'
-Warning: Failed to load 'SwatEquipmentModels2': Can't find SkeletalMesh in file 'SkeletalMesh fp_deserteagle.fp_deserteagle'
-Log: Failed import: SkeletalMesh SkeletalMesh fp_deserteagle.fp_deserteagle (file ../Animations/fp_deserteagle.ukx)
-Log: Can't find SkeletalMesh in file 'SkeletalMesh fp_deserteagle.fp_deserteagle'
-Warning: Failed to load 'SwatEquipmentModels2': Can't find SkeletalMesh in file 'SkeletalMesh fp_deserteagle.fp_deserteagle'
-Warning: Missing Class Class SwatEquipmentModels2.DynamicFlashlightSpotLight
-Log: Failed import: SkeletalMesh SkeletalMesh fp_deserteagle.fp_deserteagle (file ../Animations/fp_deserteagle.ukx)
-Log: Can't find SkeletalMesh in file 'SkeletalMesh fp_deserteagle.fp_deserteagle'
-Warning: Failed to load 'SwatEquipmentModels2': Can't find SkeletalMesh in file 'SkeletalMesh fp_deserteagle.fp_deserteagle'
-Warning: Missing Class Class SwatEquipmentModels2.DynamicFlashlightPointLight
-Log: Failed import: SkeletalMesh SkeletalMesh fp_deserteagle.fp_deserteagle (file ../Animations/fp_deserteagle.ukx)
-Log: Can't find SkeletalMesh in file 'SkeletalMesh fp_deserteagle.fp_deserteagle'
-Warning: Failed to load 'SwatEquipmentModels2': Can't find SkeletalMesh in file 'SkeletalMesh fp_deserteagle.fp_deserteagle'
-Warning: Missing Class Class SwatEquipmentModels2.DynamicFlashlightCoronaLight
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.KMeshProps
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.HkMeshProxy
+Warning: Missing Class Class Engine.Polys
+Warning: Missing Class Class Engine.HkMeshProxy
 Log: Success: Everything is up to date
 Heading: --------------------IGEffectsSystem - Release--------------------
 Log: Success: Everything is up to date
@@ -110,138 +170,90 @@ Warning: Failed to load 'Class SwatProtectiveEquipment.EnhancedBodyArmor': Faile
 Warning: Failed to load 'Class SwatProtectiveEquipment.helmetGasMask': Failed to find object 'Class SwatProtectiveEquipment.helmetGasMask'
 Warning: Failed to load 'Class SwatEquipmentModels2.M4A1sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1sd_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.M4A1sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1sd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5k_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.mp5k_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5k_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.mp5k_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.sg552_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.sg552_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.sg552_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.sg552_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.mp5k_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.mp5k_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.mp5k_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.mp5k_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.UMP45sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45sd_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.UMP45sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45sd_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.BrowHP_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHP_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.BrowHP_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHP_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.M16A1_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M16A1_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.M16A1_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M16A1_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.hk33_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.hk33_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.hk33_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.hk33_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.p226_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.p226_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.p226_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.p226_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UMP45sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UMP45sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45sd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.BrowHP_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHP_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.BrowHP_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHP_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Beretta92fs_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Beretta92fs_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Beretta92fs_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Beretta92fs_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Arwen37_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Arwen37_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Arwen37_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Arwen37_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UMP45Holo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45Holo_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UMP45Holo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45Holo_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Glock19_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Glock19_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Glock18_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Glock18_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.sg552sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.sg552sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.sg552sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.sg552sd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.p226sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.p226sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.p226sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.p226sd_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.mp5ksd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.mp5ksd_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.mp5ksd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.mp5ksd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M16A1sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M16A1sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M16A1sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M16A1sd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.P90sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.P90sd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.P90sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.P90sd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.BrowHPsd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHPsd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.BrowHPsd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHPsd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.FAL_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.FAL_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.FAL_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.FAL_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.rem870_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.rem870_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.rem870_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.rem870_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolosd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolosd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolosd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolosd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolo_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolo_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.hk33s_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.hk33s_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.hk33s_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.hk33s_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.p226sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.p226sd_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.p226sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.p226sd_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.sg552sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.sg552sd_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.sg552sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.sg552sd_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.Glock19_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Glock19_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.Glock18_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Glock18_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.UMP45Holo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45Holo_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.UMP45Holo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45Holo_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.P90sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.P90sd_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.P90sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.P90sd_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M16A1sd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M16A1sd_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M16A1sd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M16A1sd_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.BrowHPsd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHPsd_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.BrowHPsd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.BrowHPsd_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.llrem870_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.llrem870_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.llrem870_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.llrem870_ThirdPerson'
-Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\SwatGame\Classes\SwatGamePlayerController.uc)
-Log: Class: SwatGamePlayerController extends SwatPlayerController
-Log: Updated native class 'Class SwatGame.SwatGamePlayerController'
-Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\SwatGame\Classes\SwatPawn.uc)
-Log: Class: SwatPawn extends Engine.Pawn
-Log: Updated native class 'Class SwatGame.SwatPawn'
-Log: Parsing SwatPawn
-Log: Parsing SwatRagdollPawn
+Warning: Failed to load 'Class SwatEquipmentModels2.FAL_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.FAL_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.FAL_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.FAL_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.Beretta92fs_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Beretta92fs_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.Beretta92fs_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Beretta92fs_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolosd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolosd_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolosd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolosd_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.Arwen37_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Arwen37_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.Arwen37_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Arwen37_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolo_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4CQBHolo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4CQBHolo_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.rem870_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.rem870_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.rem870_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.rem870_ThirdPerson'
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\SwatGame\Classes\SwatPlayer.uc)
+Log: Class: SwatPlayer extends SwatRagdollPawn
+Log: Updated native class 'Class SwatGame.SwatPlayer'
+Log: FactoryCreateText: Class with ClassFactoryUC (0 1 ..\SwatGame\Classes\AI\SwatEnemy.uc)
+Log: Class: SwatEnemy extends SwatAICharacter
+Log: Updated native class 'Class SwatGame.SwatEnemy'
 Log: Parsing SwatPlayer
 Log: Parsing NetPlayer
 Log: Parsing NetPlayerCoop
 Log: Parsing NetPlayerCoopSuspects
 Log: Parsing NetPlayerTeamA
 Log: Parsing NetPlayerTeamB
-Log: Parsing SwatAI
-Log: Parsing SwatOfficer
-Log: Parsing OfficerPersonality
-Log: Parsing OfficerBlueOne
-Log: Parsing OfficerBlueTwo
-Log: Parsing OfficerRedOne
-Log: Parsing OfficerRedTwo
-Log: Parsing SniperPawn
-Log: Parsing SwatAICharacter
 Log: Parsing SwatEnemy
 Log: Parsing SwatEscaper
 Log: Parsing SwatFlusher
-Log: Parsing SwatGamePlayerController
 Log: Parsing SwatGuard
-Log: Parsing SwatHostage
-Log: Parsing SwatTrainer
 Log: Parsing SwatUndercover
 Log: Parsing SwatWildGunner
-Log: Compiling ActionHUDSetDefaultCommandVisibility
-Log: Compiling ActionHUDSetFireModeVisibility
-Log: Compiling ActionSetExpectedCommand
-Log: Compiling ActionTrainerLookAtActor
-Log: Compiling ActionTrainerLookAtPlayer
-Log: Compiling ActionTrainerMoveToPoint
-Log: Compiling ActionTrainerPlayAnim
-Log: Compiling ActionTrainerStopAnim
-Log: Compiling AnimNotify_ClosePendingDoor
 Log: Compiling AnimNotify_DestroyEvidence
 Log: Compiling AnimNotify_DropWeapon
-Log: Compiling AnimNotify_HideSimpleEquipment
-Log: Compiling AnimNotify_OpenPendingDoor
-Log: Compiling AnimNotify_SecurePendingEvidence
-Log: Compiling AnimNotify_ShowSimpleEquipment
-Log: Compiling AnimNotify_TriggerAISpeech
-Log: Compiling AnimNotify_TurnOtherOfficersAway
 Log: Compiling Automatic_DoNot_Die
-Log: Compiling BattleRoomManager
 Log: Compiling BlockingVolumeFleeSafeguard
-Log: Compiling PepperSprayCameraEffect
 Log: Compiling PlayerFocusInterface
 Log: Compiling CommandInterface
-Log: Compiling ClassicCommandInterface
-Log: Compiling CommandInterfaceMenuInfo_MP
-Log: Compiling Conversation
-Log: Compiling ConversationManager
 Log: Compiling DoorBufferVolume
 Log: Compiling SwatDoor
-Log: Compiling DoubleDoor
 Log: Compiling LoadOut
-Log: Compiling QualifiedUseEquipment
 Log: Compiling EquipmentUsedOnOther
-Log: Compiling ExternalViewportManager
 Log: Compiling FireInterface
-Log: Compiling FlashbangCameraEffect
-Log: Compiling GUIBattleRoom
-Log: Compiling GUIGraphicCommandInterface
 Log: Compiling GUIOverlay
 Log: Compiling GUIReticle
-Log: Compiling GameEvent_PawnDied
-Log: Compiling GameEvent_PawnIncapacitated
 Log: Compiling GameModeMPBase
-Log: Compiling GameModeBS
-Log: Compiling GameModeCOOP
-Log: Compiling GameModeRD
 Log: Compiling GameModeSmashAndGrab
 Log: Compiling GameModeVIP
-Log: Compiling GraphicCommandInterface
 Log: Compiling HUDPageBase
 Log: Compiling HighGroundVolume
 Log: Compiling ItemGoalBase
 Log: Compiling LowReadyInterface
-Log: Compiling SwatPawn
 Log: Compiling SwatRagdollPawn
 Log: Compiling SwatPlayer
 Log: Compiling NetPlayer
@@ -250,101 +262,45 @@ Log: Compiling NetPlayerCoopSuspects
 Log: Compiling NetPlayerTeamA
 Log: Compiling NetPlayerTeamB
 Log: Compiling NetTeam
-Log: Compiling SwatAI
-Warning: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatGame\Classes\AI\SwatAI.uc(3158) : warning : 'EffectEventName' : unreferenced local variable
 Log: Compiling SwatOfficer
 Log: Compiling OfficerPersonality
-Log: Compiling OfficerBlueOne
-Log: Compiling OfficerBlueTwo
-Log: Compiling OfficerRedOne
-Log: Compiling OfficerRedTwo
-Log: Compiling PlayerTagInterface
-Log: Compiling SingleDoor
 Log: Compiling SmashAndGrabItemBase
-Log: Compiling SniperPawn
-Log: Compiling SniperVolume
 Log: Compiling SpeechCommandInterface
 Log: Compiling StingCameraEffect
 Log: Compiling SwatAICharacter
-Log: Compiling SwatAIController
 Log: Compiling SwatAdmin
 Log: Compiling SwatCheatManager
 Log: Compiling SwatEnemy
 Log: Compiling SwatPlayerController
 Log: Compiling SwatEscaper
 Log: Compiling SwatFlusher
-Log: Compiling SwatGUIControllerBase
 Log: Compiling SwatGameInfo
 Log: Compiling SwatGamePlayerController
-Warning: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatGame\Classes\SwatGamePlayerController.uc(2639) : warning : 'NewItem' : unreferenced local variable
-Log: Compiling SwatGameReplicationInfo
 Log: Compiling SwatGuard
-Log: Compiling SwatHUD
-Log: Compiling SwatHostage
-Log: Compiling SwatRepo
-Log: Compiling SwatTrainer
 Log: Compiling SwatUndercover
-Log: Compiling SwatWeaponCabinet
 Log: Compiling SwatWildGunner
-Log: Compiling TrainingTextManager
-Log: Compiling UseInterface
 Log: Compiling VIPGoalBase
 Log: Compiling WieldableEvidenceEquipment
-Log: Importing Defaults for ActionHUDSetDefaultCommandVisibility
-Log: Importing Defaults for ActionHUDSetFireModeVisibility
-Log: Importing Defaults for ActionSetExpectedCommand
-Log: Importing Defaults for ActionTrainerLookAtActor
-Log: Importing Defaults for ActionTrainerLookAtPlayer
-Log: Importing Defaults for ActionTrainerMoveToPoint
-Log: Importing Defaults for ActionTrainerPlayAnim
-Log: Importing Defaults for ActionTrainerStopAnim
-Log: Importing Defaults for AnimNotify_ClosePendingDoor
 Log: Importing Defaults for AnimNotify_DestroyEvidence
 Log: Importing Defaults for AnimNotify_DropWeapon
-Log: Importing Defaults for AnimNotify_HideSimpleEquipment
-Log: Importing Defaults for AnimNotify_OpenPendingDoor
-Log: Importing Defaults for AnimNotify_SecurePendingEvidence
-Log: Importing Defaults for AnimNotify_ShowSimpleEquipment
-Log: Importing Defaults for AnimNotify_TriggerAISpeech
-Log: Importing Defaults for AnimNotify_TurnOtherOfficersAway
 Log: Importing Defaults for Automatic_DoNot_Die
-Log: Importing Defaults for BattleRoomManager
 Log: Importing Defaults for BlockingVolumeFleeSafeguard
-Log: Importing Defaults for PepperSprayCameraEffect
 Log: Importing Defaults for PlayerFocusInterface
 Log: Importing Defaults for CommandInterface
-Log: Importing Defaults for ClassicCommandInterface
-Log: Importing Defaults for CommandInterfaceMenuInfo_MP
-Log: Importing Defaults for Conversation
-Log: Importing Defaults for ConversationManager
 Log: Importing Defaults for DoorBufferVolume
 Log: Importing Defaults for SwatDoor
-Log: Importing Defaults for DoubleDoor
 Log: Importing Defaults for LoadOut
-Log: Importing Defaults for QualifiedUseEquipment
 Log: Importing Defaults for EquipmentUsedOnOther
-Log: Importing Defaults for ExternalViewportManager
-Error: SwatGame.ExternalViewportManager: Unknown property in defaults:     ViewportFont=Font'SwatFonts.Pix800X600'
 Log: Importing Defaults for FireInterface
-Log: Importing Defaults for FlashbangCameraEffect
-Log: Importing Defaults for GUIBattleRoom
-Log: Importing Defaults for GUIGraphicCommandInterface
 Log: Importing Defaults for GUIOverlay
 Log: Importing Defaults for GUIReticle
-Log: Importing Defaults for GameEvent_PawnDied
-Log: Importing Defaults for GameEvent_PawnIncapacitated
 Log: Importing Defaults for GameModeMPBase
-Log: Importing Defaults for GameModeBS
-Log: Importing Defaults for GameModeCOOP
-Log: Importing Defaults for GameModeRD
 Log: Importing Defaults for GameModeSmashAndGrab
 Log: Importing Defaults for GameModeVIP
-Log: Importing Defaults for GraphicCommandInterface
 Log: Importing Defaults for HUDPageBase
 Log: Importing Defaults for HighGroundVolume
 Log: Importing Defaults for ItemGoalBase
 Log: Importing Defaults for LowReadyInterface
-Log: Importing Defaults for SwatPawn
 Log: Importing Defaults for SwatRagdollPawn
 Log: Importing Defaults for SwatPlayer
 Error: SwatGame.SwatPlayer: Unknown property in defaults:     LimpThreshold=10
@@ -356,72 +312,67 @@ Log: Importing Defaults for NetPlayerCoopSuspects
 Log: Importing Defaults for NetPlayerTeamA
 Log: Importing Defaults for NetPlayerTeamB
 Log: Importing Defaults for NetTeam
-Log: Importing Defaults for SwatAI
 Log: Importing Defaults for SwatOfficer
 Log: Importing Defaults for OfficerPersonality
-Log: Importing Defaults for OfficerBlueOne
-Log: Importing Defaults for OfficerBlueTwo
-Log: Importing Defaults for OfficerRedOne
-Log: Importing Defaults for OfficerRedTwo
-Log: Importing Defaults for PlayerTagInterface
-Log: Importing Defaults for SingleDoor
 Log: Importing Defaults for SmashAndGrabItemBase
-Log: Importing Defaults for SniperPawn
-Log: Importing Defaults for SniperVolume
 Log: Importing Defaults for SpeechCommandInterface
 Log: Importing Defaults for StingCameraEffect
 Log: Importing Defaults for SwatAICharacter
-Log: Importing Defaults for SwatAIController
 Log: Importing Defaults for SwatAdmin
 Log: Importing Defaults for SwatCheatManager
 Log: Importing Defaults for SwatEnemy
 Log: Importing Defaults for SwatPlayerController
 Log: Importing Defaults for SwatEscaper
 Log: Importing Defaults for SwatFlusher
-Log: Importing Defaults for SwatGUIControllerBase
 Log: Importing Defaults for SwatGameInfo
 Log: Importing Defaults for SwatGamePlayerController
-Log: Importing Defaults for SwatGameReplicationInfo
 Log: Importing Defaults for SwatGuard
-Log: Importing Defaults for SwatHUD
-Log: Importing Defaults for SwatHostage
-Log: Importing Defaults for SwatRepo
-Log: Importing Defaults for SwatTrainer
 Log: Importing Defaults for SwatUndercover
-Log: Importing Defaults for SwatWeaponCabinet
 Log: Importing Defaults for SwatWildGunner
-Log: Importing Defaults for TrainingTextManager
-Log: Importing Defaults for UseInterface
 Log: Importing Defaults for VIPGoalBase
 Log: Importing Defaults for WieldableEvidenceEquipment
-Log: Success: Compiled 53305 line(s), 4326 statement(s).
+Log: Success: Compiled 28521 line(s), 1145 statement(s).
 
 Log: Saving SwatGame...
 Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatGame\Inc\SwatGameClasses.h
 Warning: Failed to load '..\SystemConform\SwatGame.u': Can't find file '..\SystemConform\SwatGame.u'
 Log: 0.0ms Unloading: Package SwatGame
-Log: Save=321.190912
+Log: Save=333.637310
 Log: Moving 'Save.tmp' to 'SwatGame.u'
 Heading: --------------------SwatEquipment - Release--------------------
 Warning: Failed to load 'Class SwatEquipmentModels2.NinebangGrenade_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.NinebangGrenade_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.NinebangGrenade_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.NinebangGrenade_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.SCARH_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.SCARH_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.SCARH_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.SCARH_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5kt_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.mp5kt_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.mp5kt_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.mp5kt_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.SCARHA_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.SCARHA_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.SCARHA_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.SCARHA_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.mp5kt_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.mp5kt_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.mp5kt_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.mp5kt_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.G36KHolo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.G36KHolo_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.G36KHolo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.G36KHolo_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.G36Ksd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.G36Ksd_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.G36ksd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.G36ksd_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.AK74su_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.AK74su_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.XDM_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.XDM_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.XDM_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.XDM_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.AK74su_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.AK74su_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.UZIt_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.UZIt_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.AK47t_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.AK47t_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.UZIt_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.UZIt_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.UMP45Holosd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45Holosd_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.UMP45Holosd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.UMP45Holosd_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.G36KHolosd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.G36KHolosd_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.G36kHolosd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.G36kHolosd_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.Glock19_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Glock19_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.Glock19_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Glock19_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M1Super90sg_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M1Super90sg_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M1Super90sg_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M1Super90sg_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4A1A_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1A_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4A1A_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1A_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4A1ASD_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1ASD_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4A1ASD_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1ASD_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4Super90Holo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4Super90Holo_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.M4Super90Holo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4Super90Holo_ThirdPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.MP5Holo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.MP5Holo_FirstPerson'
+Warning: Failed to load 'Class SwatEquipmentModels2.MP5Holo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.MP5Holo_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.sg552Aimsd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.sg552Aimsd_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.sg552Aimsd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.sg552Aimsd_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.mp5ktsd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.mp5ktsd_FirstPerson'
@@ -434,90 +385,48 @@ Warning: Failed to load 'Class SwatEquipmentModels2.SCARHsd_FirstPerson': Failed
 Warning: Failed to load 'Class SwatEquipmentModels2.SCARHsd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.SCARHsd_ThirdPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.SCARHAsd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.SCARHAsd_FirstPerson'
 Warning: Failed to load 'Class SwatEquipmentModels2.SCARHAsd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.SCARHAsd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.G36KHolosd_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.G36KHolosd_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.G36kHolosd_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.G36kHolosd_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.MP5Holo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.MP5Holo_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.MP5Holo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.MP5Holo_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4Super90Holo_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4Super90Holo_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4Super90Holo_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4Super90Holo_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Glock19_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.Glock19_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.Glock19_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.Glock19_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1ASD_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1ASD_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1ASD_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1ASD_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1A_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1A_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M4A1A_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M4A1A_ThirdPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M1Super90sg_FirstPerson': Failed to find object 'Class SwatEquipmentModels2.M1Super90sg_FirstPerson'
-Warning: Failed to load 'Class SwatEquipmentModels2.M1Super90sg_ThirdPerson': Failed to find object 'Class SwatEquipmentModels2.M1Super90sg_ThirdPerson'
 Warning: Failed to load 'Class SwatProtectiveEquipment.MediumBodyArmor': Failed to find object 'Class SwatProtectiveEquipment.MediumBodyArmor'
 Warning: Failed to load 'Class SwatProtectiveEquipment.EnhancedBodyArmor': Failed to find object 'Class SwatProtectiveEquipment.EnhancedBodyArmor'
 Warning: Failed to load 'Class SwatProtectiveEquipment.helmetGasMask': Failed to find object 'Class SwatProtectiveEquipment.helmetGasMask'
-Log: Compiling LightstickProjectile
 Log: Compiling C2Charge
 Log: Compiling GrenadeWeapon
 Log: Compiling CSBallBase
-Log: Compiling ClipBasedAmmo
-Log: Compiling Cuffs
 Log: Compiling Detonator
-Log: Compiling RoundBasedAmmo
-Log: Compiling GasMaskBase
 Log: Compiling Lightstick
-Log: Compiling NVGogglesBase
-Log: Compiling NoWeapon
 Log: Compiling Optiwand
 Log: Compiling PepperSpray
 Log: Compiling PepperSprayAmmoBase
-Log: Compiling SierraTeamWeapon
-Log: Compiling Taser
 Log: Compiling Wedge
-Log: Importing Defaults for LightstickProjectile
 Log: Importing Defaults for C2Charge
 Log: Importing Defaults for GrenadeWeapon
 Log: Importing Defaults for CSBallBase
-Log: Importing Defaults for ClipBasedAmmo
-Log: Importing Defaults for Cuffs
 Log: Importing Defaults for Detonator
-Log: Importing Defaults for RoundBasedAmmo
-Log: Importing Defaults for GasMaskBase
 Log: Importing Defaults for Lightstick
-Log: Importing Defaults for NVGogglesBase
-Log: Importing Defaults for NoWeapon
 Log: Importing Defaults for Optiwand
 Log: Importing Defaults for PepperSpray
 Log: Importing Defaults for PepperSprayAmmoBase
-Log: Importing Defaults for SierraTeamWeapon
-Log: Importing Defaults for Taser
 Log: Importing Defaults for Wedge
-Log: Success: Compiled 2366 line(s), 0 statement(s).
+Log: Success: Compiled 1000 line(s), 0 statement(s).
 
 Log: Saving SwatEquipment...
 Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatEquipment\Inc\SwatEquipmentClasses.h
 Warning: Failed to load '..\SystemConform\SwatEquipment.u': Can't find file '..\SystemConform\SwatEquipment.u'
-Log: 1239.0ms Unloading: Package SwatEquipment
-Log: Save=44.366749
+Log: 1224.0ms Unloading: Package SwatEquipment
+Log: Save=47.110744
 Log: Moving 'Save.tmp' to 'SwatEquipment.u'
 Heading: --------------------SwatObjectives - Release--------------------
-Log: Compiling DoNot_LetHostageDie
 Log: Compiling Do_ArrestTargetEnemies
 Log: Compiling Do_NeutralizeAllEnemies
 Log: Compiling Do_NeutralizeTargetEnemies
-Log: Compiling Do_ReportTargetHostages
-Log: Compiling Do_RescueAllHostages
-Log: Compiling Do_RescueHostages
-Log: Compiling Do_RescueTargetHostages
-Log: Importing Defaults for DoNot_LetHostageDie
 Log: Importing Defaults for Do_ArrestTargetEnemies
 Log: Importing Defaults for Do_NeutralizeAllEnemies
 Log: Importing Defaults for Do_NeutralizeTargetEnemies
-Log: Importing Defaults for Do_ReportTargetHostages
-Log: Importing Defaults for Do_RescueAllHostages
-Log: Importing Defaults for Do_RescueHostages
-Log: Importing Defaults for Do_RescueTargetHostages
-Log: Success: Compiled 452 line(s), 0 statement(s).
+Log: Success: Compiled 198 line(s), 0 statement(s).
 
 Log: Saving SwatObjectives...
 Warning: Failed to load '..\SystemConform\SwatObjectives.u': Can't find file '..\SystemConform\SwatObjectives.u'
-Log: 1434.0ms Unloading: Package SwatObjectives
-Log: Save=17.740334
+Log: 1382.0ms Unloading: Package SwatObjectives
+Log: Save=38.834382
 Log: Moving 'Save.tmp' to 'SwatObjectives.u'
 Heading: --------------------SwatProcedures - Release--------------------
 Log: Compiling Procedure_EvacuateDownedOfficers
@@ -526,212 +435,237 @@ Log: Success: Compiled 59 line(s), 0 statement(s).
 
 Log: Saving SwatProcedures...
 Warning: Failed to load '..\SystemConform\SwatProcedures.u': Can't find file '..\SystemConform\SwatProcedures.u'
-Log: 1517.0ms Unloading: Package SwatProcedures
-Log: Save=21.893675
+Log: 1492.0ms Unloading: Package SwatProcedures
+Log: Save=22.625108
 Log: Moving 'Save.tmp' to 'SwatProcedures.u'
 Heading: --------------------SwatGui - Release--------------------
-Log: Compiling SwatDebriefingMenu
-Log: Compiling SwatGUIController
-Log: Compiling SwatGameControlSettingsPanel
-Log: Compiling SwatGamespyProfilePopup
 Log: Compiling SwatMPScoresPanel
-Log: Importing Defaults for SwatDebriefingMenu
-Log: Importing Defaults for SwatGUIController
-Log: Importing Defaults for SwatGameControlSettingsPanel
-Log: Importing Defaults for SwatGamespyProfilePopup
 Log: Importing Defaults for SwatMPScoresPanel
-Log: Success: Compiled 1707 line(s), 0 statement(s).
+Log: Success: Compiled 340 line(s), 0 statement(s).
 
 Log: Saving SwatGui...
 Log: Autogenerating C++ header: E:\GOG Games\SWAT 4\SEF_FR\Source\Game\SwatGui\Inc\SwatGuiClasses.h
 Warning: Failed to load '..\SystemConform\SwatGui.u': Can't find file '..\SystemConform\SwatGui.u'
-Log: 1943.0ms Unloading: Package SwatGui
-Log: Save=124.480709
+Log: 1864.0ms Unloading: Package SwatGui
+Log: Save=124.677369
 Log: Moving 'Save.tmp' to 'SwatGui.u'
 Log: 
 
 Log: 
 
-Log: Success - 0 error(s), 2 warning(s)
+Log: Success - 0 error(s), 0 warning(s)
 Exit: Preparing to exit.
 Log: Purging garbage
 Log: Unbound to Core.dll
 Log: Unbound to ScriptCompiler.dll
-Log: 2074.0ms Unloading: Package Core
-Log: 2074.0ms Unloading: Package Engine
-Log: 2075.0ms Unloading: Package Engine_res
-Log: 2075.0ms Unloading: Package SWAT4editorTex
-Log: 2075.0ms Unloading: Package SwatGear_sm
-Log: 2075.0ms Unloading: Package SwatGearTex
-Log: 2075.0ms Unloading: Package SWAT1stPersonTex
-Log: 2075.0ms Unloading: Package MP5A4_NEW
-Log: 2075.0ms Unloading: Package SwatFXtex
-Log: 2075.0ms Unloading: Package G36Knew
-Log: 2075.0ms Unloading: Package bm4
-Log: 2075.0ms Unloading: Package BenelliNovanew
-Log: 2075.0ms Unloading: Package M870Breach
-Log: 2075.0ms Unloading: Package mich_helmet
-Log: 2075.0ms Unloading: Package Kimber
-Log: 2075.0ms Unloading: Package UMPnew
-Log: 2075.0ms Unloading: Package MaleGang1Tex
-Log: 2075.0ms Unloading: Package M4A1_SFM500
-Log: 2075.0ms Unloading: Package surefireM900
-Log: 2075.0ms Unloading: Package FR_grenades
-Log: 2075.0ms Unloading: Package Glock
-Log: 2075.0ms Unloading: Package 92fs
-Log: 2075.0ms Unloading: Package motorola
-Log: 2075.0ms Unloading: Package safariland
-Log: 2075.0ms Unloading: Package SwatAICommon
-Log: 2076.0ms Unloading: Package Tyrion
-Log: 2076.0ms Unloading: Package AICommon
-Log: 2076.0ms Unloading: Package SwatAIAwareness
-Log: 2076.0ms Unloading: Package GUI
-Log: 2076.0ms Unloading: Package gui_tex
-Log: 2076.0ms Unloading: Package Scripting
-Log: 2076.0ms Unloading: Package EditorSprites
-Log: 2076.0ms Unloading: Package Voting
-Log: 2076.0ms Unloading: Package IGSoundEffectsSubsystem
-Log: 2076.0ms Unloading: Package IGEffectsSystem
-Log: 2076.0ms Unloading: Package IGEffectsSystem_EditorTextures
-Log: 2076.0ms Unloading: Package RWOSupport
-Log: 2076.0ms Unloading: Package Gameplay
-Log: 2076.0ms Unloading: Package IpDrv
-Log: 2076.0ms Unloading: Package mp_OfficerTex
-Log: 2076.0ms Unloading: Package HUD
-Log: 2076.0ms Unloading: Package SWATMaleAnimation2
-Log: 2076.0ms Unloading: Package SWATofficerTex
-Log: 2076.0ms Unloading: Package maleMafiaTex
-Log: 2076.0ms Unloading: Package maleHomelessTex
-Log: 2076.0ms Unloading: Package MaleCasual3Tex
-Log: 2076.0ms Unloading: Package LeoMelTextureSet
-Log: 2076.0ms Unloading: Package MaleSuitTex
-Log: 2076.0ms Unloading: Package MaleJanitorTextureSet
-Log: 2076.0ms Unloading: Package MaleChubbyTex
-Log: 2076.0ms Unloading: Package MaleBarberTex
-Log: 2076.0ms Unloading: Package CASMtex
-Log: 2077.0ms Unloading: Package MaleCasual2Tex
-Log: 2077.0ms Unloading: Package SWATheavyTex
-Log: 2077.0ms Unloading: Package SWATinstructorTex
-Log: 2077.0ms Unloading: Package MaleCasual4Tex
-Log: 2077.0ms Unloading: Package MaleCasual1Tex
-Log: 2077.0ms Unloading: Package SWATnoArmourTex
-Log: 2077.0ms Unloading: Package MaleCasualArmorTex
-Log: 2077.0ms Unloading: Package Doors_sm
-Log: 2077.0ms Unloading: Package doors_Tex
-Log: 2077.0ms Unloading: Package MetalShaders
-Log: 2077.0ms Unloading: Package Repo_Tex
-Log: 2077.0ms Unloading: Package bullseye_Tex
-Log: 2077.0ms Unloading: Package Paradise_Tex
-Log: 2077.0ms Unloading: Package Tenement_Tex
-Log: 2077.0ms Unloading: Package train
-Log: 2077.0ms Unloading: Package DNA_tex
-Log: 2077.0ms Unloading: Package VIP_Tex
-Log: 2077.0ms Unloading: Package Bar_Tex
-Log: 2077.0ms Unloading: Package Hosp
-Log: 2077.0ms Unloading: Package RedLibrary_Tex
-Log: 2077.0ms Unloading: Package Jewel_Tex
-Log: 2077.0ms Unloading: Package doors_knobs
-Log: 2077.0ms Unloading: Package Hotel
-Log: 2077.0ms Unloading: Package Arms_Tex
-Log: 2077.0ms Unloading: Package Silence_Tex
-Log: 2077.0ms Unloading: Package office_Tex
-Log: 2077.0ms Unloading: Package Power_Tex
-Log: 2077.0ms Unloading: Package barbershop_tex
-Log: 2077.0ms Unloading: Package CameraEffectsTex
-Log: 2077.0ms Unloading: Package arms_sm
-Log: 2077.0ms Unloading: Package Outdoors_Tex
-Log: 2077.0ms Unloading: Package Editor_res
-Log: 2077.0ms Unloading: Package ProgrammerTestObjectsTex
-Log: 2077.0ms Unloading: Package UWindow_res
-Log: 2077.0ms Unloading: Package CoopArrow
-Log: 2077.0ms Unloading: Package gui_tex2
-Log: 2077.0ms Unloading: Package gui_sas
-Log: 2077.0ms Unloading: Package SWATDoubleDoorAnimations
-Log: 2077.0ms Unloading: Package SwatGear2_sm
-Log: 2077.0ms Unloading: Package SwatGear2Tex
-Log: 2077.0ms Unloading: Package druglab
-Log: 2077.0ms Unloading: Package SwatFX2tex
-Log: 2077.0ms Unloading: Package SWATDoorAnimation
-Log: 2077.0ms Unloading: Package gear_sef
-Log: 2077.0ms Unloading: Package SwatArmory_Tex
-Log: 2077.0ms Unloading: Package GearTex_sef
-Log: 2077.0ms Unloading: Package GearTex_sas
-Log: 2077.0ms Unloading: Package bp_3P_tex
-Log: 2077.0ms Unloading: Package AimpointM2
-Log: 2077.0ms Unloading: Package gear_suspects
-Log: 2077.0ms Unloading: Package scripted_tex
-Log: 2077.0ms Unloading: Package Hotel_sm
-Log: 2077.0ms Unloading: Package HotelFXtex
-Log: 2077.0ms Unloading: Package SW_FR
-Log: 2077.0ms Unloading: Package TaserWire
-Log: 2077.0ms Unloading: Package swatmeshfx2_sm
-Log: 2077.0ms Unloading: Package FP_C2detonator
-Log: 2077.0ms Unloading: Package NovaPump_ThirdPerson
-Log: 2077.0ms Unloading: Package FP_NovaPumpShotgun
-Log: 2077.0ms Unloading: Package Colt1911FL_ThirdPerson
-Log: 2077.0ms Unloading: Package FP_coltHG
-Log: 2077.0ms Unloading: Package FP_csGasGrenade
-Log: 2077.0ms Unloading: Package FP_taser
-Log: 2077.0ms Unloading: Package fp_Stinger
-Log: 2077.0ms Unloading: Package taserX2
-Log: 2077.0ms Unloading: Package FP_HK69
-Log: 2077.0ms Unloading: Package SWAT1stPersonTex2
-Log: 2077.0ms Unloading: Package FP_glowstick
-Log: 2077.0ms Unloading: Package fp_fnp90
-Log: 2077.0ms Unloading: Package p90sight
-Log: 2077.0ms Unloading: Package FP_G36k
-Log: 2077.0ms Unloading: Package Eotech552
-Log: 2077.0ms Unloading: Package FP_uzi
-Log: 2077.0ms Unloading: Package FP_UMPsmg
-Log: 2077.0ms Unloading: Package fp_tec9
-Log: 2077.0ms Unloading: Package FP_stingGrenade
-Log: 2077.0ms Unloading: Package fp_deserteagle
-Log: 2077.0ms Unloading: Package FP_Hand2
-Log: 2077.0ms Unloading: Package SWAThands
-Log: 2078.0ms Unloading: Package SwatEquipmentModels2
-Log: 2078.0ms Unloading: Package IGVisualEffectsSubsystem
-Log: 2078.0ms Unloading: Package Editor
-Log: 2078.0ms Unloading: Package UWindow
-Log: 2079.0ms Unloading: Package SwatEd
-Log: 2082.0ms Unloading: Package Suspect1_officerTex
-Log: 2082.0ms Unloading: Package SWATbadguyTex
-Log: 2082.0ms Unloading: Package SwatProtectiveEquipment
-Log: 2082.0ms Unloading: Package SwatProtectiveEquipment2
-Log: 2082.0ms Unloading: Package gui_FR
-Log: 2082.0ms Unloading: Package SwatProgrammerSampleClasses
-Log: 2082.0ms Unloading: Package SwatEquipmentModels3
-Log: 2082.0ms Unloading: Package SwatEquipmentModels
-Log: 2082.0ms Unloading: Package FP_9mmPistol
-Log: 2082.0ms Unloading: Package 1stPersonTex_sas
-Log: 2082.0ms Unloading: Package SurefireP101
-Log: 2082.0ms Unloading: Package NineMMpistol_ThirdPerson
-Log: 2082.0ms Unloading: Package FP_M4A1mg
-Log: 2082.0ms Unloading: Package FP_m4super90sg
-Log: 2082.0ms Unloading: Package FP_mp5SMG
-Log: 2082.0ms Unloading: Package FP_flashbangGrenade
-Log: 2082.0ms Unloading: Package FP_mp5SMGsilenced
-Log: 2082.0ms Unloading: Package Optiwand_ThirdPerson
-Log: 2082.0ms Unloading: Package FP_Optiwand
-Log: 2082.0ms Unloading: Package FP_Pepperspray
-Log: 2082.0ms Unloading: Package FP_BreachingSG
-Log: 2082.0ms Unloading: Package BreachingSG_ThirdPerson
-Log: 2082.0ms Unloading: Package FP_AK47
-Log: 2082.0ms Unloading: Package FP_DoorWedge
-Log: 2082.0ms Unloading: Package FP_toolkit
-Log: 2082.0ms Unloading: Package Coronas
-Log: 2082.0ms Unloading: Package FP_C2charge
-Log: 2082.0ms Unloading: Package FP_Handcuffs
-Log: 2082.0ms Unloading: Package FP_paintball
-Log: 2082.0ms Unloading: Package FP_Revolver
-Log: 2082.0ms Unloading: Package FP_FragGrenade
-Log: 2082.0ms Unloading: Package gui_tex3
-Log: 2082.0ms Unloading: Package SwatDesignerClasses
-Log: 2082.0ms Unloading: Package SwatGame
-Log: 2082.0ms Unloading: Package SwatEquipment
-Log: Garbage: objects: 55521->0; refs: 0
+Log: 1994.0ms Unloading: Package Core
+Log: 1994.0ms Unloading: Package Engine
+Log: 1995.0ms Unloading: Package Engine_res
+Log: 1995.0ms Unloading: Package SWAT4editorTex
+Log: 1995.0ms Unloading: Package SwatGear_sm
+Log: 1995.0ms Unloading: Package SwatGearTex
+Log: 1995.0ms Unloading: Package SWAT1stPersonTex
+Log: 1995.0ms Unloading: Package MP5A4_NEW
+Log: 1995.0ms Unloading: Package SwatFXtex
+Log: 1995.0ms Unloading: Package G36Knew
+Log: 1995.0ms Unloading: Package bm4
+Log: 1995.0ms Unloading: Package BenelliNovanew
+Log: 1995.0ms Unloading: Package M870Breach
+Log: 1995.0ms Unloading: Package mich_helmet
+Log: 1995.0ms Unloading: Package Kimber
+Log: 1995.0ms Unloading: Package UMPnew
+Log: 1995.0ms Unloading: Package MaleGang1Tex
+Log: 1995.0ms Unloading: Package M4A1_SFM500
+Log: 1995.0ms Unloading: Package surefireM900
+Log: 1995.0ms Unloading: Package FR_grenades
+Log: 1995.0ms Unloading: Package Glock
+Log: 1995.0ms Unloading: Package 92fs
+Log: 1995.0ms Unloading: Package motorola
+Log: 1995.0ms Unloading: Package safariland
+Log: 1995.0ms Unloading: Package HUD
+Log: 1995.0ms Unloading: Package EditorSprites
+Log: 1995.0ms Unloading: Package FP_Hand2
+Log: 1995.0ms Unloading: Package IGEffectsSystem
+Log: 1995.0ms Unloading: Package SWAThands
+Log: 1995.0ms Unloading: Package Editor_res
+Log: 1995.0ms Unloading: Package Hotel_sm
+Log: 1995.0ms Unloading: Package Hotel
+Log: 1995.0ms Unloading: Package MetalShaders
+Log: 1995.0ms Unloading: Package Repo_Tex
+Log: 1995.0ms Unloading: Package Arms_Tex
+Log: 1995.0ms Unloading: Package Silence_Tex
+Log: 1995.0ms Unloading: Package office_Tex
+Log: 1995.0ms Unloading: Package DNA_tex
+Log: 1995.0ms Unloading: Package VIP_Tex
+Log: 1995.0ms Unloading: Package HotelFXtex
+Log: 1995.0ms Unloading: Package barbershop_tex
+Log: 1996.0ms Unloading: Package SwatEquipmentModels2
+Log: 1996.0ms Unloading: Package SwatAICommon
+Log: 1997.0ms Unloading: Package Tyrion
+Log: 1997.0ms Unloading: Package AICommon
+Log: 1997.0ms Unloading: Package SwatAIAwareness
+Log: 1997.0ms Unloading: Package GUI
+Log: 1997.0ms Unloading: Package gui_tex
+Log: 1997.0ms Unloading: Package Scripting
+Log: 1997.0ms Unloading: Package Voting
+Log: 1997.0ms Unloading: Package IGSoundEffectsSubsystem
+Log: 1997.0ms Unloading: Package IGEffectsSystem_EditorTextures
+Log: 1997.0ms Unloading: Package RWOSupport
+Log: 1997.0ms Unloading: Package Gameplay
+Log: 1997.0ms Unloading: Package gui_FR
+Log: 1997.0ms Unloading: Package gui_sas
+Log: 1997.0ms Unloading: Package gui_tex3
+Log: 1997.0ms Unloading: Package gui_tex2
+Log: 1997.0ms Unloading: Package gear_sef
+Log: 1997.0ms Unloading: Package SwatArmory_Tex
+Log: 1997.0ms Unloading: Package GearTex_sef
+Log: 1997.0ms Unloading: Package GearTex_sas
+Log: 1997.0ms Unloading: Package SwatGear2Tex
+Log: 1997.0ms Unloading: Package bp_3P_tex
+Log: 1997.0ms Unloading: Package AimpointM2
+Log: 1997.0ms Unloading: Package gear_suspects
+Log: 1997.0ms Unloading: Package SwatEquipmentModels3
+Log: 1997.0ms Unloading: Package SwatEquipmentModels
+Log: 1997.0ms Unloading: Package NovaPump_ThirdPerson
+Log: 1997.0ms Unloading: Package FP_C2detonator
+Log: 1997.0ms Unloading: Package FP_csGasGrenade
+Log: 1997.0ms Unloading: Package Colt1911FL_ThirdPerson
+Log: 1997.0ms Unloading: Package FP_coltHG
+Log: 1997.0ms Unloading: Package FP_NovaPumpShotgun
+Log: 1997.0ms Unloading: Package FP_UMPsmg
+Log: 1997.0ms Unloading: Package Eotech552
+Log: 1997.0ms Unloading: Package FP_G36k
+Log: 1997.0ms Unloading: Package FP_9mmPistol
+Log: 1997.0ms Unloading: Package 1stPersonTex_sas
+Log: 1997.0ms Unloading: Package SurefireP101
+Log: 1997.0ms Unloading: Package NineMMpistol_ThirdPerson
+Log: 1997.0ms Unloading: Package FP_M4A1mg
+Log: 1997.0ms Unloading: Package FP_m4super90sg
+Log: 1997.0ms Unloading: Package FP_mp5SMG
+Log: 1997.0ms Unloading: Package FP_uzi
+Log: 1997.0ms Unloading: Package FP_flashbangGrenade
+Log: 1997.0ms Unloading: Package FP_stingGrenade
+Log: 1997.0ms Unloading: Package FP_mp5SMGsilenced
+Log: 1997.0ms Unloading: Package Optiwand_ThirdPerson
+Log: 1997.0ms Unloading: Package FP_Optiwand
+Log: 1998.0ms Unloading: Package scripted_tex
+Log: 1998.0ms Unloading: Package FP_Pepperspray
+Log: 1998.0ms Unloading: Package FP_BreachingSG
+Log: 1998.0ms Unloading: Package BreachingSG_ThirdPerson
+Log: 1998.0ms Unloading: Package FP_AK47
+Log: 1998.0ms Unloading: Package FP_DoorWedge
+Log: 1998.0ms Unloading: Package FP_toolkit
+Log: 1998.0ms Unloading: Package Coronas
+Log: 1998.0ms Unloading: Package FP_C2charge
+Log: 1998.0ms Unloading: Package FP_Handcuffs
+Log: 1998.0ms Unloading: Package FP_paintball
+Log: 1998.0ms Unloading: Package FP_taser
+Log: 1998.0ms Unloading: Package FP_Revolver
+Log: 1998.0ms Unloading: Package FP_FragGrenade
+Log: 1998.0ms Unloading: Package coltsmg_static
+Log: 1998.0ms Unloading: Package ColtSMG
+Log: 1998.0ms Unloading: Package FP_coltsmg
+Log: 1998.0ms Unloading: Package FP_coltsmgsil
+Log: 1998.0ms Unloading: Package SwatGear2_sm
+Log: 1998.0ms Unloading: Package druglab
+Log: 1998.0ms Unloading: Package SwatFX2tex
+Log: 1998.0ms Unloading: Package SwatProgrammerSampleClasses
+Log: 1998.0ms Unloading: Package DeadPeople_sm
+Log: 1998.0ms Unloading: Package FemaleNurseTex
+Log: 1998.0ms Unloading: Package MaleDoctorTex
+Log: 1998.0ms Unloading: Package SWATbadguyTex
+Log: 1998.0ms Unloading: Package SWATofficerTex
+Log: 1998.0ms Unloading: Package MaleCasual2Tex
+Log: 1998.0ms Unloading: Package Paradise_sm
+Log: 1998.0ms Unloading: Package Paradise_Tex
+Log: 1998.0ms Unloading: Package Tenement_Tex
+Log: 1998.0ms Unloading: Package train
+Log: 1998.0ms Unloading: Package Bar_Tex
+Log: 1998.0ms Unloading: Package Doors_sm
+Log: 1998.0ms Unloading: Package doors_Tex
+Log: 1998.0ms Unloading: Package bullseye_Tex
+Log: 1998.0ms Unloading: Package Hosp
+Log: 1998.0ms Unloading: Package RedLibrary_Tex
+Log: 1998.0ms Unloading: Package Jewel_Tex
+Log: 1998.0ms Unloading: Package doors_knobs
+Log: 1998.0ms Unloading: Package Power_Tex
+Log: 1998.0ms Unloading: Package SWATmeshFX_sm
+Log: 1998.0ms Unloading: Package Con_Tex
+Log: 1998.0ms Unloading: Package SW_FR
+Log: 1998.0ms Unloading: Package SwatDesignerClasses
+Log: 1998.0ms Unloading: Package Bar_sm
+Log: 1999.0ms Unloading: Package Junk_Tex
+Log: 1999.0ms Unloading: Package Outdoors_Tex
+Log: 1999.0ms Unloading: Package Con_sm
+Log: 1999.0ms Unloading: Package mac_Tex
+Log: 1999.0ms Unloading: Package Tenement_sm
+Log: 1999.0ms Unloading: Package Silence_sm
+Log: 1999.0ms Unloading: Package off_sm
+Log: 1999.0ms Unloading: Package Repo_sm
+Log: 1999.0ms Unloading: Package LocalizedTextures
+Log: 1999.0ms Unloading: Package Barbershop_sm
+Log: 1999.0ms Unloading: Package Furniture_Tex
+Log: 1999.0ms Unloading: Package dna_sm
+Log: 1999.0ms Unloading: Package amc_Tex
+Log: 1999.0ms Unloading: Package VIP_sm
+Log: 1999.0ms Unloading: Package Cars
+Log: 1999.0ms Unloading: Package mac_sm
+Log: 1999.0ms Unloading: Package Hosp_sm
+Log: 1999.0ms Unloading: Package Power_sm
+Log: 1999.0ms Unloading: Package Jewel_sm
+Log: 1999.0ms Unloading: Package arms_sm
+Log: 1999.0ms Unloading: Package Redlibrary_sm
+Log: 1999.0ms Unloading: Package Utility_Tex
+Log: 1999.0ms Unloading: Package train_sm
+Log: 1999.0ms Unloading: Package utility_sm
+Log: 1999.0ms Unloading: Package bullseye_sm
+Log: 1999.0ms Unloading: Package Junk_sm
+Log: 1999.0ms Unloading: Package Cars_sm
+Log: 1999.0ms Unloading: Package MaleJanitorTextureSet
+Log: 1999.0ms Unloading: Package wall_sm
+Log: 1999.0ms Unloading: Package wall_Tex
+Log: 1999.0ms Unloading: Package TrainingAnimatedMeshes
+Log: 1999.0ms Unloading: Package MPbomb
+Log: 1999.0ms Unloading: Package SWATMaleAnimation
+Log: 1999.0ms Unloading: Package LeoMelTextureSet
+Log: 1999.0ms Unloading: Package MaleSuitTex
+Log: 1999.0ms Unloading: Package MaleCasual3Tex
+Log: 1999.0ms Unloading: Package CultLeaderTextureSet
+Log: 1999.0ms Unloading: Package MaleBarberTex
+Log: 1999.0ms Unloading: Package SWATheavyTex
+Log: 1999.0ms Unloading: Package MaleChubbyTex
+Log: 1999.0ms Unloading: Package MaleCasual4Tex
+Log: 1999.0ms Unloading: Package SWATinstructorTex
+Log: 1999.0ms Unloading: Package MaleCasual1Tex
+Log: 1999.0ms Unloading: Package MaleCasualArmorTex
+Log: 1999.0ms Unloading: Package TaserWire
+Log: 1999.0ms Unloading: Package swatmeshfx2_sm
+Log: 1999.0ms Unloading: Package IpDrv
+Log: 1999.0ms Unloading: Package mp_OfficerTex
+Log: 1999.0ms Unloading: Package SWATMaleAnimation2
+Log: 2000.0ms Unloading: Package maleMafiaTex
+Log: 2000.0ms Unloading: Package maleHomelessTex
+Log: 2000.0ms Unloading: Package CASMtex
+Log: 2000.0ms Unloading: Package SWATnoArmourTex
+Log: 2000.0ms Unloading: Package CameraEffectsTex
+Log: 2000.0ms Unloading: Package SwatProtectiveEquipment
+Log: 2000.0ms Unloading: Package Suspect1_officerTex
+Log: 2000.0ms Unloading: Package ProgrammerTestObjectsTex
+Log: 2000.0ms Unloading: Package UWindow_res
+Log: 2000.0ms Unloading: Package CoopArrow
+Log: 2000.0ms Unloading: Package SWATDoubleDoorAnimations
+Log: 2000.0ms Unloading: Package SWATDoorAnimation
+Log: 2000.0ms Unloading: Package SwatProtectiveEquipment2
+Log: 2000.0ms Unloading: Package IGVisualEffectsSubsystem
+Log: 2000.0ms Unloading: Package Editor
+Log: 2000.0ms Unloading: Package UWindow
+Log: 2001.0ms Unloading: Package SwatEd
+Log: 2003.0ms Unloading: Package SwatGame
+Log: 2004.0ms Unloading: Package SwatEquipment
+Log: Garbage: objects: 55584->0; refs: 0
 Exit: Object subsystem successfully closed.
 Exit: Exiting.
 Log: Waiting for file streaming thread to finish...
 Uninitialized: Name subsystem shut down
 Uninitialized: Allocation checking disabled
-Uninitialized: Log file closed, 04/16/21 12:07:42
+Uninitialized: Log file closed, 05/04/21 11:04:06

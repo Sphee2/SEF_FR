@@ -1,4 +1,4 @@
-Log: Log file open, 04/16/21 11:32:47
+Log: Log file open, 05/04/21 09:49:23
 Init: ----------------------------------------
 Init: SWAT VERSION NUMBER: 0.65b
 Init: ----------------------------------------
@@ -21,7 +21,7 @@ Init: User: admin
 Init: CPU Page size=4096, Processors=4
 Init: CPU Detected: PentiumPro-class processor (GenuineIntel)
 Init: CPU Features: CMov FPU RDTSC PAE MMX SSE
-Init: CPU Speed=3512.078050 MHz
+Init: CPU Speed=3512.125750 MHz
 Init: Memory total: Phys=2097151K Pagef=4194303K Virt=2097024K
 Init: Working set: 32000 / 159000
 Init: Physical Memory: 2047 MByte
@@ -47,9 +47,9 @@ Log: Bound to GUI.dll
 Log: Bound to SwatAICommon.dll
 Log: Bound to Editor.dll
 Log: Bound to ScriptCompiler.dll
-Log: Bound to SwatEquipment.dll
-Log: Bound to IGSoundEffectsSubsystem.dll
 Log: Bound to IGEffectsSystem.dll
+Log: Bound to IGSoundEffectsSubsystem.dll
+Log: Bound to SwatEquipment.dll
 Log: Bound to IpDrv.dll
 Log: (Havok): Initializing base system.
 Log: Bound to IGVisualEffectsSubsystem.dll
@@ -101,32 +101,33 @@ Init: D3D Device: dwSubSysId=611391962
 Init: D3D Device: dwRevision=161
 Init: D3D Detected: NVidia video card
 Init: D3D Device: using cubemaps [with mipmaps]
-Log: Adding MD5 Entry for 135F76054104A89D335BE0AECEAF8B2E [2a505f0ea0516abdf22726c6543ba5e9]
-Log: Adding MD5 Entry for 1D5817CB468D8BB91C92989F5929257F [a1bdd456cfb19c02981be90cfd91cf8f]
-Log: Adding MD5 Entry for BC3D7C2D43FD58C9F12168A082208C0D [01f22ec08301a443361472f22c5828c3]
-Log: Adding MD5 Entry for B1192E3546F21E7ED0DC5B9EB469FFF2 [a648c5d6c032f59eda20659858625688]
-Log: Adding MD5 Entry for FA32E31D4F9FBE6CD52F2EA242EDC5C3 [a648c5d6c032f59eda206598586256887a3b017013d6fe6e10e66f4b2abc2862]
-Log: Adding MD5 Entry for BB819AB04C134FFA4546B2A4BB373CA3 [dc72d7ac01d7c4dfecc55910ac0a751d]
-Log: Adding MD5 Entry for A8425AA0445EA3161FC78E8DAC0613C0 [403750532e2a219b75ad3c5757ca0272]
-Log: Adding MD5 Entry for 727DFCC94A859C0E697BEEB93322E775 [c9057a2a288d97eb3df4b18908f7eb87]
-Log: Adding MD5 Entry for EB25D33E42AE4771AD9FD7B10908759D [6476a97844ae494de48f2fd5e78c1271]
-Log: Adding MD5 Entry for B4E2A02843BEE38220172C96D853C4EE [5cb548c00b1ddb5889478fc6f1329f5c]
-Log: Adding MD5 Entry for 258F3928493102075B7729AC6C7099E8 [ebeef7cc8eb61ad6c91c63e1b9cb078c]
-Log: Adding MD5 Entry for 92C38B604973B6A382B469BFD720A154 [0f0af3bbddc82f059a8ffd6c22f83151]
-Log: Adding MD5 Entry for E4551AA2455C0075A360DE9DBCD2BC5C [027f1d7fb475ee497809d2a857fd36ff]
-Log: Adding MD5 Entry for E90FDF7C421C8EC8F03AAAAB443BD57D [10009fb7f048049bb2d26ea1cbf5fa9b]
-Log: Adding MD5 Entry for 2615EE394F63FD5395381EBFCF7A9B41 [10009fb7f048049bb2d26ea1cbf5fa9bb2c91d3bc430c2562f8639266ff4230e]
-Log: Adding MD5 Entry for A782A3BB4AD0F74D121FB5B09DC27FEA [190e902727664d22fafe5539ab6c6906]
-Log: Adding MD5 Entry for 0BBBFEA4437E18766FA3E2A7AC9C3855 [58f8762ee9a142d33bf057eacacf60ae]
-Log: Adding MD5 Entry for FBF9581348B83CD25F9D66B5585857A3 [4b36116a6d4eba830c99f96b662c3375]
-Log: Adding MD5 Entry for CD357FA548AF3610B45E58A670FA74FA [813273591d5b489e802a61249773a500]
-Log: Adding MD5 Entry for 549C634640D40D54DB0D1E8370898F26 [732fce343d5521a450623176157358e5]
-Log: Adding MD5 Entry for C7968711459E2F598B2C98BEB3DAD48F [33797ff4a67dbc66ddf19610a8c96ad0]
-Log: Adding MD5 Entry for 5EA8CCD744C02312C49C3BA77297630D [33797ff4a67dbc66ddf19610a8c96ad0526f2b2f52dba3236727636e6ccfef36]
-Log: Adding MD5 Entry for 99EF7C724765D3E3085778A0F5A579E3 [33797ff4a67dbc66ddf19610a8c96ad0526f2b2f52dba3236727636e6ccfef3697778868f8a877a893726ca074ba5da1]
+Log: Updating Revision level for D244446B43287C9DD795F2AA7F02F7FE to 0
+Log: Updating Revision level for D8B43B244D4CF310A0E00B8B11559F1C to 0
+Log: Updating Revision level for D402D3BF4405D288E3A9E580DBCE26F6 to 0
+Log: Updating Revision level for 3CC5B3134ACD8AECEBF891B5121DF905 to 0
+Log: Updating MD5 for 9A4AB4D24999026868F9BDB51DB8EAB8 [08e744263cce73dde794863ce8ed8e35ebb0338a98ee43139c0c5ca99e98ef8f]
+Log: Updating Revision level for A308FB2646B8DB141691518164949819 to 0
+Log: Updating Revision level for 4CAAE8A64DC1ECFE213F7F92573159B2 to 0
+Log: Updating Revision level for 4318810E460B0883DC6B55BAAEE038C9 to 0
+Log: Updating Revision level for 518D5F244EDBC1FEB94C5EBF93C3B69A to 0
+Log: Updating Revision level for 591A9E3D4D65F39A83D9B5A93E57EACB to 0
+Log: Updating Revision level for 959869734190AF43B3F160932363587E to 0
+Log: Updating Revision level for 91C68489446F5207C1EC4CA7C92DB90B to 0
+Log: Updating Revision level for A2E50EF5439237799A491C8348603400 to 0
+Log: Updating Revision level for A83739264EA1DA42BCC1738D3F6EB20A to 0
+Log: Updating MD5 for 21B24A214D185B03D5F8668A4ECEB8D5 [2ab7a2df769f179e58f2175d40901a498fffaab2f19a08d3bff45cb84dc8afdb]
+Log: Updating Revision level for 89C0E7ED4B8C692C6CBD07A52368F2C5 to 0
+Log: Updating Revision level for 9E10FC4347E0C858B92EF88B9A0BDC2E to 0
+Log: Updating Revision level for B62363F944E3D958744DD29559878344 to 0
+Log: Updating Revision level for 8656F7B749C114CC1F8781B1C46D56BB to 0
+Log: Updating Revision level for A0566C324211C6409B00E4BCBEEA12A6 to 0
+Log: Updating Revision level for EC0F262A4C2B15773FABF392D8B0FAB9 to 0
+Log: Updating MD5 for DEE5210D4C9313DB7E5D758F03090788 [3c53cf74d5be1c820c1697aff9af856c813a9fd2ec5762afd6fbd9efc57199e7]
+Log: Updating MD5 for C8BD3AB248A712BAE3D9AFAEA66405DA [3c53cf74d5be1c820c1697aff9af856c813a9fd2ec5762afd6fbd9efc57199e7f80e58df34c7db84f6deb1bbcd644f18]
 Log: LocalizedSoundPathRoot for language 'int' is 'int\Sounds\'
 Log: ALAudio: Using DirectSound to record audio.
 Init: ALAudio: subsystem initialized.
+Warning: Failed to load 'Class DesertCamo.DesertCamoCustomSkin': Failed to find object 'Class DesertCamo.DesertCamoCustomSkin'
 DevMassive: ADCLIENT: MMT_Initialize swat_4_pc_na: MMT_SUCCESS
 Log: LoadMap: Entry
 Log: [dkaplan]: URL.Map = Entry
@@ -142,20 +143,20 @@ Log: Game class is 'GameInfo'
 Log: Level is Level Entry.myLevel
 Log: *** WARNING - PATHS MAY NOT BE VALID ***
 Log: Bringing Level Entry.myLevel up for play (0)...
-Log: ---------- IsTheEntryLevel = 1, GameEngine=0x61CDE80, GameEngine->GEntry=0x0, GameEngine->GEntry->GetLevelInfo()=0x0, current LevelInfo=0xD9D6200
+Log: ---------- IsTheEntryLevel = 1, GameEngine=0x63DE100, GameEngine->GEntry=0x0, GameEngine->GEntry->GetLevelInfo()=0x0, current LevelInfo=0xD835B00
 VoiceChat: GameInfo0 VoiceReplicationInfo created: None
 DevMassive: ADCLIENT: Level has empty ZoneName.
 DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
-Log: Loadmap executed in 0.06 seconds. (0.02 Verify) (0.02 Load) (0.02 Actor Init)
+Log: Loadmap executed in 0.04 seconds. (0.01 Verify) (0.02 Load) (0.00 Actor Init)
 Log: UGameEngine::Init() ... CommandLine = 
-Log: Browse: Entry.s4m?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
-Log: LoadMap: Entry.s4m?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
+Log: Browse: Entry.s4m?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
+Log: LoadMap: Entry.s4m?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
 Log: [dkaplan]: URL.Map = Entry.s4m
 Log: ****************************************************
 Log:  Beginning level load: 'Entry.s4m'
 Log: ****************************************************
 Log: ****************************************************
-Log:  Finished level load in 0.002 seconds
+Log:  Finished level load in 0.001 seconds
 Log: ****************************************************
 DevMassive: ADCLIENT: Level has empty ZoneName.
 DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
@@ -252,8 +253,8 @@ Log: WM_KILLFOCUS was called
 Log: WM_SETFOCUS was called
 Log: Opened viewport
 Log: Enter SetRes: 2560x1080 Fullscreen 1
-Log: Flushing viewport 0x130FE600
-Log: Finished flushing viewport 0x130FE600 in 0.001 seconds
+Log: Flushing viewport 0x1741B900
+Log: Finished flushing viewport 0x1741B900 in 0.001 seconds
 Init: Best-match display mode: 2560x1080x32@60
 Log: Using back-buffer format 22(32-bit)
 Log: Using depth-buffer format 75(32-bit)
@@ -265,170 +266,657 @@ Log: Creating IME context.
 Log: Initializing COM and the Speech API.
 Log: Failed to load our grammar into the speech recognition context.
 Log: Failed to initialize the Speech API
-Init: Game engine initialized in 14.315 seconds
-Log: Startup time: 18.746000 seconds
-Log: URL: Adding default option Name=OfficerMonki
+Init: Game engine initialized in 12.885 seconds
+Log: Startup time: 17.389000 seconds
+Log: URL: Adding default option Name=Bepperspray
 Log: URL: Adding default option Class=SwatGame.SwatPlayer
 Log: URL: Adding default option team=255
-Log: Browse: swat_splashscene?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
-Log: LoadMap: swat_splashscene?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
+Log: Browse: swat_splashscene?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
+Log: LoadMap: swat_splashscene?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
 Log: [dkaplan]: URL.Map = swat_splashscene
 Log: ****************************************************
 Log:  Beginning level load: 'swat_splashscene'
 Log: ****************************************************
 Log: ****************************************************
-Log:  Finished level load in 1.279 seconds
+Log:  Finished level load in 0.234 seconds
 Log: ****************************************************
 Log: Collecting garbage
 Log: Purging garbage
-Log: 21419.0ms Unloading: Package SwatObjectives
-Log: 21419.0ms Unloading: Package SwatSimpleEquipment
-Log: Garbage: objects: 50408->50062; refs: 595392
+Log: 18662.0ms Unloading: Package DesertCamo
+Log: 18662.0ms Unloading: Package DesertCamo_Tex
+Log: 18662.0ms Unloading: Package SwatObjectives
+Log: 18662.0ms Unloading: Package SwatSimpleEquipment
+Log: Garbage: objects: 52375->52025; refs: 616885
 Log: Building Collision Octree...
 Log: Finished Building Collision Octree
 Log: Game class is 'GameInfo'
 Log: Level is Level swat_splashscene.myLevel
 Log: Bringing Level swat_splashscene.myLevel up for play (0)...
-Log: ---------- IsTheEntryLevel = 0, GameEngine=0x61CDE80, GameEngine->GEntry=0x13318C00, GameEngine->GEntry->GetLevelInfo()=0xD9D6200, current LevelInfo=0x216CA800
+Log: ---------- IsTheEntryLevel = 0, GameEngine=0x63DE100, GameEngine->GEntry=0x17328C00, GameEngine->GEntry->GetLevelInfo()=0xD835B00, current LevelInfo=0x1EE49A00
 VoiceChat: GameInfo1 VoiceReplicationInfo created: None
 Log: Spawning new actor for Viewport WindowsViewport0
 Log: SwatEntryPlayerController1 got player WindowsViewport0
 Log: Creating IME context.
-Log: Flushing viewport 0x130FE600
-Log: Finished flushing viewport 0x130FE600 in 0.001 seconds
+Log: Flushing viewport 0x1741B900
+Log: Finished flushing viewport 0x1741B900 in 0.001 seconds
 DevMassive: ADCLIENT: Level has empty ZoneName.
 DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
-Log: Loadmap executed in 2.80 seconds. (0.55 Verify) (1.28 Load) (0.23 Actor Init)
+Log: Loadmap executed in 1.36 seconds. (0.34 Verify) (0.23 Load) (0.08 Actor Init)
 Log: Precaching: swat_splashscene.LevelInfo0
 Log: Finished Static Mesh Batch build in 0.000 seconds
 Log: Static mesh batches: 3380000 vertex bytes, 185430 index bytes
 Log: Allocating 16384 byte dynamic index buffer.
 Log: Allocating 65536 byte dynamic vertex buffer.
-Log: Finished precaching geometry in 0.302 seconds
-Log: Finished precaching textures in 1.525 seconds
+Log: Finished precaching geometry in 0.230 seconds
+Log: Finished precaching textures in 0.296 seconds
 Init: EffectsSystem Configuration: ..\system\VisualEffectsConfig.u is up-to-date.
 Log: [EFFECTS SYSTEM] The VisualEffectsSubsystem's configuration package is up-to-date.
 Log: Collecting garbage
 Log: Purging garbage
-Log: Garbage: objects: 52140->51772; refs: 617800
+Log: Garbage: objects: 54103->53735; refs: 639293
 Log: VisualEffectsSubsystem created.
 Init: EffectsSystem Configuration: ..\system\SoundEffectsConfig.u is up-to-date.
 Log: [EFFECTS SYSTEM] The SoundEffectsSubsystem's configuration package is up-to-date.
 Log: There are no Streams specified for StreamSoundEffectSpecification: 
 Log: Collecting garbage
 Log: Purging garbage
-Log: Garbage: objects: 83807->69825; refs: 711097
+Log: Garbage: objects: 85829->71826; refs: 732788
 Log: SoundEffectsSubsystem created.
 Log: Creating IME context.
 Log: Precaching: swat_splashscene.LevelInfo0
-Log: Finished precaching geometry in 0.011 seconds
-Log: Finished precaching textures in 0.054 seconds
-Log: URL: Adding default option Name=OfficerMonki
+Log: Finished precaching geometry in 0.012 seconds
+Log: Finished precaching textures in 0.009 seconds
+Log: UGameSpyManager::execInitGameSpyClient().
+Log: UGameSpyManager::InitAsClient().
+Log: In UGameSpyManager::ClientInit().
+Log: sb_ServerBrowserCallBack(). reason=0
+Log: ---ServerAdded: IP=2026525978, port=61736
+Log: sb_ServerBrowserCallBack(). reason=1
+Init: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
+Init: WinSock: I am PC-CASA (26.85.202.120)
+Log: sb_ServerBrowserCallBack(). reason=4
+Log: sb_ServerBrowserCallBack(). reason=0
+Log: ---ServerAdded: IP=2026525978, port=61736
+Log: sb_ServerBrowserCallBack(). reason=1
+Log: sb_ServerBrowserCallBack(). reason=4
+Log: sb_ServerBrowserCallBack(). reason=4
 Log: URL: Adding default option Class=SwatGame.SwatPlayer
 Log: URL: Adding default option team=255
-Log: Browse: SP-Training?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
-Log: LoadMap: SP-Training?Name=OfficerMonki?Class=SwatGame.SwatPlayer?team=255
-Warning: Failed to load 'pier_tex': Can't find file for package 'pier_tex'
-Warning: Failed to load 'pier_tex': Can't find file for package 'pier_tex'
-Warning: Missing Texture Texture pier_tex.shiphull
-Log: [dkaplan]: URL.Map = SP-Training
+Log: Browse: 26.85.202.120/Index.s4m?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
+Init: WinSock: Socket queue 32768 / 32768
+DevNet: Game client on port 0, rate 10000
+Log: Browse: Entry.s4m?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
+Log: LoadMap: Entry.s4m?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
+Log: [dkaplan]: URL.Map = Entry.s4m
 Log: Static mesh batches: 0 vertex bytes, 0 index bytes
 Log: ****************************************************
-Log:  Beginning level load: 'SP-Training'
+Log:  Beginning level load: 'Entry.s4m'
+Log: ****************************************************
+Log: ****************************************************
+Log:  Finished level load in 0.017 seconds
+Log: ****************************************************
+Log: Static mesh batches: 0 vertex bytes, 0 index bytes
+Log: Building Collision Octree...
+Log: Finished Building Collision Octree
+Log: Game class is 'GameInfo'
+Log: Level is Level Entry.myLevel
+Log: *** WARNING - PATHS MAY NOT BE VALID ***
+Log: Bringing Level Entry.myLevel up for play (0)...
+Log: ---------- IsTheEntryLevel = 1, GameEngine=0x63DE100, GameEngine->GEntry=0x17328C00, GameEngine->GEntry->GetLevelInfo()=0xD835B00, current LevelInfo=0xD835B00
+VoiceChat: GameInfo2 VoiceReplicationInfo created: None
+Log: Spawning new actor for Viewport WindowsViewport0
+Log: SwatEntryPlayerController2 got player WindowsViewport0
+Log: Creating IME context.
+Log: Flushing viewport 0x1741B900
+Log: Finished flushing viewport 0x1741B900 in 0.01 seconds
+Log: Precaching: Entry.LevelInfo0
+Log: Allocating 16384 byte dynamic index buffer.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Finished precaching geometry in 0.004 seconds
+Log: Finished precaching textures in 0.003 seconds
+DevMassive: ADCLIENT: Level has empty ZoneName.
+DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
+Log: Loadmap executed in 0.06 seconds. (0.00 Verify) (0.02 Load) (0.02 Actor Init)
+DevNet: PendingLevel received: CHALLENGE VER=2226 CHALLENGE=1106473692 STATS=0 SEC=1
+DevNet: PendingLevel received: USES GUID=3A4425904DEDE2F9FB1C358E3E8CAF70 PKG=SP-ABomb FLAGS=1 SIZE=15266205 GEN=1 FNAME=SP-ABomb.s4m
+DevNet: PendingLevel received: USES GUID=DEE5210D4C9313DB7E5D758F03090788 PKG=Engine FLAGS=65537 SIZE=3665200 GEN=1 FNAME=Engine.u
+DevNet: PendingLevel received: USES GUID=C8BD3AB248A712BAE3D9AFAEA66405DA PKG=Core FLAGS=65537 SIZE=162344 GEN=1 FNAME=Core.u
+DevNet: PendingLevel received: USES GUID=F41D4978407FFDADF4A72C8D91D1BCE6 PKG=Engine_res FLAGS=1 SIZE=988523 GEN=1 FNAME=Engine_res.pkg
+DevNet: PendingLevel received: USES GUID=CEB04DDC47CB0B0D75DECFB4F27E4A1C PKG=SWAT4editorTex FLAGS=1 SIZE=50683 GEN=1 FNAME=SWAT4editorTex.utx
+DevNet: PendingLevel received: USES GUID=37347BAE4C104A0036399F9812070B94 PKG=SwatGear_sm FLAGS=1 SIZE=35195547 GEN=1 FNAME=SwatGear_sm.usx
+DevNet: PendingLevel received: USES GUID=3FF4813A4306CE961D01F28D80D01590 PKG=SwatGearTex FLAGS=1 SIZE=3626377 GEN=1 FNAME=SwatGearTex.utx
+DevNet: PendingLevel received: USES GUID=6D6054F045F0EBB32603AEB2010DC795 PKG=SWAT1stPersonTex FLAGS=1 SIZE=23845921 GEN=1 FNAME=SWAT1stPersonTex.utx
+DevNet: PendingLevel received: USES GUID=A59883AA4C92D8C068BAF9A73CB63DCE PKG=MP5A4_NEW FLAGS=1 SIZE=17130971 GEN=1 FNAME=MP5A4_NEW.utx
+DevNet: PendingLevel received: USES GUID=C10DCD824678FBE91B945BB8F974E635 PKG=SwatFXtex FLAGS=1 SIZE=3421862 GEN=1 FNAME=SwatFXtex.utx
+DevNet: PendingLevel received: USES GUID=6018065B407A82A0571A89BBD86A5BED PKG=G36Knew FLAGS=1 SIZE=11536245 GEN=1 FNAME=G36Knew.utx
+DevNet: PendingLevel received: USES GUID=EE7A2F74411BB72A9953B583045F2589 PKG=bm4 FLAGS=1 SIZE=16082147 GEN=1 FNAME=bm4.utx
+DevNet: PendingLevel received: USES GUID=6C4B4431435E7723354160B71FFD3FDC PKG=BenelliNovanew FLAGS=1 SIZE=19575922 GEN=1 FNAME=BenelliNovanew.utx
+DevNet: PendingLevel received: USES GUID=DCB44E5A4D4E557D67A9119C66253A45 PKG=M870Breach FLAGS=1 SIZE=16082238 GEN=1 FNAME=M870Breach.utx
+DevNet: PendingLevel received: USES GUID=508DB8A1426CCD6551A825873A91389D PKG=mich_helmet FLAGS=1 SIZE=6991930 GEN=1 FNAME=mich_helmet.utx
+DevNet: PendingLevel received: USES GUID=DDBD85C143F9874C1C4098B09B947B61 PKG=Kimber FLAGS=1 SIZE=22372213 GEN=1 FNAME=Kimber.utx
+DevNet: PendingLevel received: USES GUID=4664C26E4392E3388BD091818BBD520D PKG=UMPnew FLAGS=1 SIZE=11886308 GEN=1 FNAME=UMPnew.utx
+DevNet: PendingLevel received: USES GUID=9A1DAFDC4661A0203D626A914916755C PKG=MaleGang1Tex FLAGS=1 SIZE=7923595 GEN=1 FNAME=MaleGang1Tex.utx
+DevNet: PendingLevel received: USES GUID=6B7E75B94BF8C2517452A1B3CE97EE85 PKG=M4A1_SFM500 FLAGS=1 SIZE=19806915 GEN=1 FNAME=M4A1_SFM500.utx
+DevNet: PendingLevel received: USES GUID=3606A3CD42EA9AB0F4B5EFB4B379D4BD PKG=surefireM900 FLAGS=1 SIZE=3497642 GEN=1 FNAME=surefireM900.utx
+DevNet: PendingLevel received: USES GUID=1955FEBE4DE036F5AF76ABA4EDAFD9AF PKG=motorola FLAGS=1 SIZE=700454 GEN=1 FNAME=motorola.utx
+DevNet: PendingLevel received: USES GUID=295197B243D3D30D78FFDFA14D449F93 PKG=FR_grenades FLAGS=1 SIZE=219820 GEN=1 FNAME=FR_grenades.utx
+DevNet: PendingLevel received: USES GUID=DAED08604665EBC2CF4ACEB7A5C4188A PKG=safariland FLAGS=1 SIZE=803657 GEN=1 FNAME=safariland.utx
+DevNet: PendingLevel received: USES GUID=5DA2CD87482772B4D26F2AB5393D505C PKG=92fs FLAGS=1 SIZE=23072488 GEN=1 FNAME=92fs.utx
+DevNet: PendingLevel received: USES GUID=0529FEAB4F677FA4EEC5E99F8DE8C71C PKG=Glock FLAGS=1 SIZE=11886348 GEN=1 FNAME=Glock.utx
+DevNet: PendingLevel received: USES GUID=090F5BA1407F4DC15DB57F8B2B26EE0C PKG=HUD FLAGS=1 SIZE=1098914 GEN=1 FNAME=HUD.utx
+DevNet: PendingLevel received: USES GUID=C78536B440F01733149A3188BCCD8136 PKG=EditorSprites FLAGS=1 SIZE=87492 GEN=1 FNAME=EditorSprites.utx
+DevNet: PendingLevel received: USES GUID=077F10A1498645CCEB2FAF94874CFC25 PKG=FP_Hand2 FLAGS=1 SIZE=3820902 GEN=1 FNAME=FP_Hand2.ukx
+DevNet: PendingLevel received: USES GUID=EC0F262A4C2B15773FABF392D8B0FAB9 PKG=IGEffectsSystem FLAGS=65537 SIZE=87167 GEN=1 FNAME=IGEffectsSystem.u
+DevNet: PendingLevel received: USES GUID=CEB98B1D47D589EFFDE58A9F19DAE668 PKG=SWAThands FLAGS=1 SIZE=2797569 GEN=1 FNAME=SWAThands.utx
+DevNet: PendingLevel received: USES GUID=BBF4C4E94BE6B459069AC4B00B6F040D PKG=Editor_res FLAGS=1 SIZE=460249 GEN=1 FNAME=Editor_res.pkg
+DevNet: PendingLevel received: USES GUID=34A5D8A44852D2675717F9B54ECB73E4 PKG=Hotel_sm FLAGS=1 SIZE=13374043 GEN=1 FNAME=Hotel_sm.usx
+DevNet: PendingLevel received: USES GUID=FCD52F944E5A23B029EFADAD0DD23F35 PKG=Hotel FLAGS=1 SIZE=20341023 GEN=1 FNAME=Hotel.utx
+DevNet: PendingLevel received: USES GUID=1DDEB2924044CDE4193155951EE38847 PKG=MetalShaders FLAGS=1 SIZE=1171601 GEN=1 FNAME=MetalShaders.utx
+DevNet: PendingLevel received: USES GUID=A2AC25FE44701D25B0D82FB99375F93F PKG=Repo_Tex FLAGS=1 SIZE=25715970 GEN=1 FNAME=Repo_Tex.utx
+DevNet: PendingLevel received: USES GUID=DC7137D84AFC23E7824C26996ECE9274 PKG=Arms_Tex FLAGS=1 SIZE=26550675 GEN=1 FNAME=Arms_Tex.utx
+DevNet: PendingLevel received: USES GUID=7FC856B441843D2472789DB13DB3C5BF PKG=Silence_Tex FLAGS=1 SIZE=36832077 GEN=1 FNAME=Silence_Tex.utx
+DevNet: PendingLevel received: USES GUID=2AE25F6D4D148EE731202C9470575F85 PKG=office_Tex FLAGS=1 SIZE=10451613 GEN=1 FNAME=office_Tex.utx
+DevNet: PendingLevel received: USES GUID=78E4884A45B96F1BB253858E28C71866 PKG=HotelFXtex FLAGS=1 SIZE=482243 GEN=1 FNAME=HotelFXtex.utx
+DevNet: PendingLevel received: USES GUID=6840D78742A944A1AED542BC7BE08A73 PKG=barbershop_tex FLAGS=1 SIZE=23458532 GEN=1 FNAME=barbershop_tex.utx
+DevNet: PendingLevel received: USES GUID=8B494BA64CE16CF8CED071A133EEFB0D PKG=DNA_tex FLAGS=1 SIZE=28024292 GEN=1 FNAME=DNA_tex.utx
+DevNet: PendingLevel received: USES GUID=9ABE89AA4B182FB25414DAA7DA3B9876 PKG=VIP_Tex FLAGS=1 SIZE=11611015 GEN=1 FNAME=VIP_Tex.utx
+DevNet: PendingLevel received: USES GUID=4318810E460B0883DC6B55BAAEE038C9 PKG=SwatAICommon FLAGS=65537 SIZE=3530585 GEN=1 FNAME=SwatAICommon.u
+DevNet: PendingLevel received: USES GUID=591A9E3D4D65F39A83D9B5A93E57EACB PKG=Tyrion FLAGS=65537 SIZE=438023 GEN=1 FNAME=Tyrion.u
+DevNet: PendingLevel received: USES GUID=959869734190AF43B3F160932363587E PKG=AICommon FLAGS=65537 SIZE=44902 GEN=1 FNAME=AICommon.u
+DevNet: PendingLevel received: USES GUID=518D5F244EDBC1FEB94C5EBF93C3B69A PKG=SwatAIAwareness FLAGS=65537 SIZE=14822 GEN=1 FNAME=SwatAIAwareness.u
+DevNet: PendingLevel received: USES GUID=E659690A49ADDC9AE083EC8D8517E426 PKG=SwatDesignerClasses FLAGS=1 SIZE=203031 GEN=1 FNAME=SwatDesignerClasses.u
+DevNet: PendingLevel received: USES GUID=A308FB2646B8DB141691518164949819 PKG=RWOSupport FLAGS=65537 SIZE=158995 GEN=1 FNAME=RWOSupport.u
+DevNet: PendingLevel received: USES GUID=8656F7B749C114CC1F8781B1C46D56BB PKG=IGSoundEffectsSubsystem FLAGS=65537 SIZE=155497 GEN=1 FNAME=IGSoundEffectsSubsystem.u
+DevNet: PendingLevel received: USES GUID=4BB700124B97CB3FFD0C2AA798F3DDF4 PKG=IGEffectsSystem_EditorTextures FLAGS=1 SIZE=2970 GEN=1 FNAME=IGEffectsSystem_EditorTextures.pkg
+DevNet: PendingLevel received: USES GUID=4CAAE8A64DC1ECFE213F7F92573159B2 PKG=Gameplay FLAGS=65537 SIZE=54160 GEN=1 FNAME=Gameplay.u
+DevNet: PendingLevel received: USES GUID=91C68489446F5207C1EC4CA7C92DB90B PKG=Scripting FLAGS=65537 SIZE=202141 GEN=1 FNAME=Scripting.u
+DevNet: PendingLevel received: USES GUID=7EB1591F42D1E0776E2C25A133DBFB51 PKG=Bar_sm FLAGS=1 SIZE=13033497 GEN=1 FNAME=Bar_sm.usx
+DevNet: PendingLevel received: USES GUID=3AD09D8C45EF8903F722FD95D1EE7A97 PKG=Bar_Tex FLAGS=1 SIZE=29022347 GEN=1 FNAME=Bar_Tex.utx
+DevNet: PendingLevel received: USES GUID=207C5D2F4B3CA4A2C1DD5A8A191717F0 PKG=Junk_Tex FLAGS=1 SIZE=2856824 GEN=1 FNAME=Junk_Tex.utx
+DevNet: PendingLevel received: USES GUID=7896C5974924520A6A1536BFE300702B PKG=bullseye_Tex FLAGS=1 SIZE=9955669 GEN=1 FNAME=bullseye_Tex.utx
+DevNet: PendingLevel received: USES GUID=30807F8B4BACEF8B524561A15E50CAA9 PKG=Paradise_Tex FLAGS=1 SIZE=19783262 GEN=1 FNAME=Paradise_Tex.utx
+DevNet: PendingLevel received: USES GUID=487B3A0F4C382EAD6E2F7BA05EC09D42 PKG=Tenement_Tex FLAGS=1 SIZE=32971202 GEN=1 FNAME=Tenement_Tex.utx
+DevNet: PendingLevel received: USES GUID=8866CFEA4200D8C255D793AF4580E3F9 PKG=train FLAGS=1 SIZE=26749963 GEN=1 FNAME=train.utx
+DevNet: PendingLevel received: USES GUID=5EE76A0A4AD6BC065110F0AF67C44A85 PKG=Hosp FLAGS=1 SIZE=15481177 GEN=1 FNAME=Hosp.utx
+DevNet: PendingLevel received: USES GUID=BA90EB884AE9394C3258A28670D97342 PKG=RedLibrary_Tex FLAGS=1 SIZE=17947068 GEN=1 FNAME=RedLibrary_Tex.utx
+DevNet: PendingLevel received: USES GUID=3E79280D4F7E5F658B22EF9FA08035EF PKG=Outdoors_Tex FLAGS=1 SIZE=42729636 GEN=1 FNAME=Outdoors_Tex.utx
+DevNet: PendingLevel received: USES GUID=1F02588347DEC1AF0FC3EAABFA6C00C6 PKG=Con_Tex FLAGS=1 SIZE=24692497 GEN=1 FNAME=Con_Tex.utx
+DevNet: PendingLevel received: USES GUID=8E171C3C47A7892B4F7B598736A8BA2B PKG=Con_sm FLAGS=1 SIZE=12862863 GEN=1 FNAME=Con_sm.usx
+DevNet: PendingLevel received: USES GUID=74139EC04AEBD70327BC5DA6E933A0E3 PKG=mac_Tex FLAGS=1 SIZE=1651591 GEN=1 FNAME=mac_Tex.utx
+DevNet: PendingLevel received: USES GUID=71EB96DB45205078C3A5D58BDF32FDDE PKG=Doors_sm FLAGS=1 SIZE=7590650 GEN=1 FNAME=Doors_sm.usx
+DevNet: PendingLevel received: USES GUID=15917F004F494673B03745B8090DC2B7 PKG=doors_Tex FLAGS=1 SIZE=18010092 GEN=1 FNAME=doors_Tex.utx
+DevNet: PendingLevel received: USES GUID=E70B4B5C40B97A76A5FF3E9BD794B3D4 PKG=Jewel_Tex FLAGS=1 SIZE=18875212 GEN=1 FNAME=Jewel_Tex.utx
+DevNet: PendingLevel received: USES GUID=38655A2C40A3127E1212C8933BBA3EAF PKG=doors_knobs FLAGS=1 SIZE=1582024 GEN=1 FNAME=doors_knobs.utx
+DevNet: PendingLevel received: USES GUID=0202EFBA492E281CDF2A85BDCAF005A0 PKG=Power_Tex FLAGS=1 SIZE=15377411 GEN=1 FNAME=Power_Tex.utx
+DevNet: PendingLevel received: USES GUID=172A06744D63BCEDDFDD15868558508E PKG=Tenement_sm FLAGS=1 SIZE=15800772 GEN=1 FNAME=Tenement_sm.usx
+DevNet: PendingLevel received: USES GUID=6434D58C4A086ABECC51C28CBBB04FF2 PKG=Silence_sm FLAGS=1 SIZE=22267334 GEN=1 FNAME=Silence_sm.usx
+DevNet: PendingLevel received: USES GUID=73E42DAB4931A488BF666C8DBF9542C7 PKG=off_sm FLAGS=1 SIZE=6028275 GEN=1 FNAME=off_sm.usx
+DevNet: PendingLevel received: USES GUID=103D935A4DFB09CDD4E0B7AF7BD6070A PKG=Repo_sm FLAGS=1 SIZE=12760305 GEN=1 FNAME=Repo_sm.usx
+DevNet: PendingLevel received: USES GUID=77A9AB274720BAA94C5709B028B1254B PKG=LocalizedTextures FLAGS=1 SIZE=350601 GEN=1 FNAME=LocalizedTextures.utx
+DevNet: PendingLevel received: USES GUID=9A4AB4D24999026868F9BDB51DB8EAB8 PKG=SwatGame FLAGS=65537 SIZE=5949869 GEN=1 FNAME=SwatGame.u
+DevNet: PendingLevel received: USES GUID=21B24A214D185B03D5F8668A4ECEB8D5 PKG=GUI FLAGS=65537 SIZE=830237 GEN=1 FNAME=GUI.u
+DevNet: PendingLevel received: USES GUID=C0D1330B47CA0CBDC71671AD4B8661FD PKG=gui_tex FLAGS=1 SIZE=19423542 GEN=1 FNAME=gui_tex.utx
+DevNet: PendingLevel received: USES GUID=B62363F944E3D958744DD29559878344 PKG=Voting FLAGS=65537 SIZE=42719 GEN=1 FNAME=Voting.u
+DevNet: PendingLevel received: USES GUID=3CC5B3134ACD8AECEBF891B5121DF905 PKG=SwatEquipment FLAGS=65537 SIZE=538373 GEN=1 FNAME=SwatEquipment.u
+DevNet: PendingLevel received: USES GUID=F60C27844857C26A4EBDA181278AB01E PKG=SwatEquipmentModels2 FLAGS=1 SIZE=62099 GEN=1 FNAME=SwatEquipmentModels2.u
+DevNet: PendingLevel received: USES GUID=068504A44007C70BF72FCEA0F4C248D3 PKG=gear_sas FLAGS=1 SIZE=7372247 GEN=1 FNAME=gear_sas.usx
+DevNet: PendingLevel received: USES GUID=77411ABC442DBE814B4BE38318A7D581 PKG=GearTex_sas FLAGS=1 SIZE=3427892 GEN=1 FNAME=GearTex_sas.utx
+DevNet: PendingLevel received: USES GUID=14A7AED546F74B0828F08785BACFCE30 PKG=1stPersonTex_sas FLAGS=1 SIZE=43771571 GEN=1 FNAME=1stPersonTex_sas.utx
+DevNet: PendingLevel received: USES GUID=6E4450784AC6A8A15357C9AADFB3111B PKG=FP_M16A1_tex FLAGS=1 SIZE=8915305 GEN=1 FNAME=FP_M16A1_tex.utx
+DevNet: PendingLevel received: USES GUID=F7D528B74017277048084C840ECFB550 PKG=gear_sef FLAGS=1 SIZE=11128373 GEN=1 FNAME=gear_sef.usx
+DevNet: PendingLevel received: USES GUID=C7A338664BC1CD494B9F98992CCF5F10 PKG=SwatArmory_Tex FLAGS=1 SIZE=15096453 GEN=1 FNAME=SwatArmory_Tex.utx
+DevNet: PendingLevel received: USES GUID=81880C814DBEB1737C668890EDE7F118 PKG=GearTex_sef FLAGS=1 SIZE=5673374 GEN=1 FNAME=GearTex_sef.utx
+DevNet: PendingLevel received: USES GUID=0F311D224A262CDC73761CA468E114CB PKG=SwatGear2Tex FLAGS=1 SIZE=1141942 GEN=1 FNAME=SwatGear2Tex.utx
+DevNet: PendingLevel received: USES GUID=DEBE9BB64914CE80E9335B8F10DD1431 PKG=bp_3P_tex FLAGS=1 SIZE=350653 GEN=1 FNAME=bp_3P_tex.utx
+DevNet: PendingLevel received: USES GUID=A7342D294B4945A5DCB3ABA75FBC29D3 PKG=AimpointM2 FLAGS=1 SIZE=3673589 GEN=1 FNAME=AimpointM2.utx
+DevNet: PendingLevel received: USES GUID=465AD47945CD31F43E58EBB77C3D07AA PKG=gear_suspects FLAGS=1 SIZE=10660385 GEN=1 FNAME=gear_suspects.utx
+DevNet: PendingLevel received: USES GUID=40BD455045AF42EE4B7E8BBF6759D774 PKG=SwatGear2_sm FLAGS=1 SIZE=2018743 GEN=1 FNAME=SwatGear2_sm.usx
+DevNet: PendingLevel received: USES GUID=FF54481F4DCFDC106C8BDE8D1816938C PKG=druglab FLAGS=1 SIZE=4688689 GEN=1 FNAME=druglab.utx
+DevNet: PendingLevel received: USES GUID=354B04874D130291CCABCEAD0087C1A0 PKG=SwatFX2tex FLAGS=1 SIZE=15283 GEN=1 FNAME=SwatFX2tex.utx
+DevNet: PendingLevel received: USES GUID=CD1B5F1943A25DFED0698581FB4899D4 PKG=FP_mp5SMGsilenced FLAGS=1 SIZE=31747701 GEN=1 FNAME=FP_mp5SMGsilenced.ukx
+DevNet: PendingLevel received: USES GUID=ED95A24E4B38E4E172E741B37B27394C PKG=Eotech552 FLAGS=1 SIZE=3935732 GEN=1 FNAME=Eotech552.utx
+DevNet: PendingLevel received: USES GUID=965D421F4E8591B844A540BB41EA82F5 PKG=FP_SCARH07 FLAGS=1 SIZE=13036561 GEN=1 FNAME=FP_SCARH07.ukx
+DevNet: PendingLevel received: USES GUID=F04872EE44DB7A35A0FD80AFF0CDDE39 PKG=TP_UMPsmg_new FLAGS=1 SIZE=18273056 GEN=1 FNAME=TP_UMPsmg_new.ukx
+DevNet: PendingLevel received: USES GUID=35BD271049F3021E9832A6A215634497 PKG=TP_G36Knew FLAGS=1 SIZE=24434361 GEN=1 FNAME=TP_G36Knew.ukx
+DevNet: PendingLevel received: USES GUID=B5A448A54DB56AF46FCD6491BFF94F03 PKG=FP_mp5SMG FLAGS=1 SIZE=20534970 GEN=1 FNAME=FP_mp5SMG.ukx
+DevNet: PendingLevel received: USES GUID=668445DE4910077C6768D3BD6B38870D PKG=FP_9mmPistol FLAGS=1 SIZE=2663721 GEN=1 FNAME=FP_9mmPistol.ukx
+DevNet: PendingLevel received: USES GUID=EADC392B40E87F76E253DEA41D81A6AC PKG=SurefireP101 FLAGS=1 SIZE=11186268 GEN=1 FNAME=SurefireP101.utx
+DevNet: PendingLevel received: USES GUID=7FC2F87D4121E0AC669AE9895CA6F3B8 PKG=SwatArmory_sm FLAGS=1 SIZE=1666324 GEN=1 FNAME=SwatArmory_sm.usx
+DevNet: PendingLevel received: USES GUID=553273D04DC71CA0C9DF8B85F425E038 PKG=FP_NovaPumpShotgun FLAGS=1 SIZE=2163686 GEN=1 FNAME=FP_NovaPumpShotgun.ukx
+DevNet: PendingLevel received: USES GUID=781C324E40969B34466602A260FFBACE PKG=FP_G36ks FLAGS=1 SIZE=11448044 GEN=1 FNAME=FP_G36ks.ukx
+DevNet: PendingLevel received: USES GUID=9D0355B84A4323CFEF706E91A4EB37E3 PKG=FP_G36k FLAGS=1 SIZE=11345597 GEN=1 FNAME=FP_G36k.ukx
+DevNet: PendingLevel received: USES GUID=8856E1984E9EF2EEA8FF4BA419EAC1B0 PKG=M4A1_SFM500Aim FLAGS=1 SIZE=4734032 GEN=1 FNAME=M4A1_SFM500Aim.usx
+DevNet: PendingLevel received: USES GUID=A3F24CFB41408EBB70BF488B3AD23C2D PKG=FP_coltHG FLAGS=1 SIZE=2916923 GEN=1 FNAME=FP_coltHG.ukx
+DevNet: PendingLevel received: USES GUID=7CA7C3B64C687E68405F609AEEB2BB1D PKG=Colt1911FL_ThirdPerson FLAGS=1 SIZE=2912317 GEN=1 FNAME=Colt1911FL_ThirdPerson.ukx
+DevNet: PendingLevel received: USES GUID=5261F4C6489046C3418380B68A3E6730 PKG=FP_m4super90sg FLAGS=1 SIZE=8698339 GEN=1 FNAME=FP_m4super90sg.ukx
+DevNet: PendingLevel received: USES GUID=3F66498A4CD5645313BFDEBBC153BA08 PKG=FP_AK47 FLAGS=1 SIZE=3191487 GEN=1 FNAME=FP_AK47.ukx
+DevNet: PendingLevel received: USES GUID=A65DF8784FBDA150D96B80A8F7889898 PKG=TP_BM4 FLAGS=1 SIZE=8694469 GEN=1 FNAME=TP_BM4.ukx
+DevNet: PendingLevel received: USES GUID=91EECF164985107D317CB3B4B31808F4 PKG=FP_csGasGrenade FLAGS=1 SIZE=251570 GEN=1 FNAME=FP_csGasGrenade.ukx
+DevNet: PendingLevel received: USES GUID=AF4A5AE7464A5391907958BC4801967F PKG=FP_C2detonator FLAGS=1 SIZE=105620 GEN=1 FNAME=FP_C2detonator.ukx
+DevNet: PendingLevel received: USES GUID=726F0A3E45EECE1FBF73D39A21EF9D31 PKG=m4a1_cqb_ThirdPerson FLAGS=1 SIZE=11706820 GEN=1 FNAME=m4a1_cqb_ThirdPerson.ukx
+DevNet: PendingLevel received: USES GUID=FEC2BB7F4EE94376E307C8A33C45DB29 PKG=M4A1_SFM500_static FLAGS=1 SIZE=4073562 GEN=1 FNAME=M4A1_SFM500_static.usx
+DevNet: PendingLevel received: USES GUID=118F5944497BBAF84E1F198AB50D673D PKG=NovaPump_ThirdPerson FLAGS=1 SIZE=2163013 GEN=1 FNAME=NovaPump_ThirdPerson.ukx
+DevNet: PendingLevel received: USES GUID=27BCD2D6468E1AD5A2CCD88E6C5C1708 PKG=FP_MP5Ktactical FLAGS=1 SIZE=2235312 GEN=1 FNAME=FP_MP5Ktactical.ukx
+DevNet: PendingLevel received: USES GUID=8FA133B34C0B44E02E2F4580AB50E52E PKG=TP_sg552Aim FLAGS=1 SIZE=3114453 GEN=1 FNAME=TP_sg552Aim.ukx
+DevNet: PendingLevel received: USES GUID=2719357F495E135D343F67B3B8113579 PKG=TP_rem870 FLAGS=1 SIZE=249355 GEN=1 FNAME=TP_rem870.ukx
+DevNet: PendingLevel received: USES GUID=10EC86B14D66767C09A870B759820AD9 PKG=FP_UMPsmg FLAGS=1 SIZE=9253570 GEN=1 FNAME=FP_UMPsmg.ukx
+DevNet: PendingLevel received: USES GUID=2E1275474AEDFA1B285E69A9CEBEBF63 PKG=FP_UMPsmgsd FLAGS=1 SIZE=9345956 GEN=1 FNAME=FP_UMPsmgsd.ukx
+DevNet: PendingLevel received: USES GUID=A1C5415B445FC6C781DEC783A34DD4D2 PKG=fp_fnp90 FLAGS=1 SIZE=1115067 GEN=1 FNAME=fp_fnp90.ukx
+DevNet: PendingLevel received: USES GUID=91F9F1BE42C6AB90E0CABFA8004477D5 PKG=p90sight FLAGS=1 SIZE=350427 GEN=1 FNAME=p90sight.utx
+DevNet: PendingLevel received: USES GUID=CFD636524AEEC734F8C8B38DF84103EA PKG=SWAT1stPersonTex2 FLAGS=1 SIZE=6495704 GEN=1 FNAME=SWAT1stPersonTex2.utx
+DevNet: PendingLevel received: USES GUID=1BB9678442FA3720AF3106BDBA6AE9A2 PKG=FP_mp5k FLAGS=1 SIZE=471343 GEN=1 FNAME=FP_mp5k.ukx
+DevNet: PendingLevel received: USES GUID=9574459845A068A7C8BCC89A9D1CA78C PKG=FP_sg552 FLAGS=1 SIZE=4129175 GEN=1 FNAME=FP_sg552.ukx
+DevNet: PendingLevel received: USES GUID=48BD7BF4423EDD444822B38ADAF69699 PKG=FP_p226 FLAGS=1 SIZE=1434822 GEN=1 FNAME=FP_p226.ukx
+DevNet: PendingLevel received: USES GUID=A3A7F37A454B3D4D734CBAA635BE049A PKG=TP_p226 FLAGS=1 SIZE=405285 GEN=1 FNAME=TP_p226.ukx
+DevNet: PendingLevel received: USES GUID=483251F84472480CFFD4B28E393CE4F8 PKG=FP_hk33 FLAGS=1 SIZE=2436922 GEN=1 FNAME=FP_hk33.ukx
+DevNet: PendingLevel received: USES GUID=39D53DEA4F2878206DE4098A637D4A05 PKG=FP_browHP FLAGS=1 SIZE=535764 GEN=1 FNAME=FP_browHP.ukx
+DevNet: PendingLevel received: USES GUID=55E1B9124AF99085CF9604BD8E480C67 PKG=TP_browHP FLAGS=1 SIZE=708157 GEN=1 FNAME=TP_browHP.ukx
+DevNet: PendingLevel received: USES GUID=CB300D1D47A61431C905EDA61A9201FD PKG=FP_mp5ksd FLAGS=1 SIZE=502502 GEN=1 FNAME=FP_mp5ksd.ukx
+DevNet: PendingLevel received: USES GUID=24BAE4E3467ED6C390628589FFAE2C3A PKG=FP_hk33s FLAGS=1 SIZE=3359422 GEN=1 FNAME=FP_hk33s.ukx
+DevNet: PendingLevel received: USES GUID=4529A0D041822C9A28784A919828F433 PKG=FP_p226sd FLAGS=1 SIZE=1472014 GEN=1 FNAME=FP_p226sd.ukx
+DevNet: PendingLevel received: USES GUID=3F18F8914CDE725CCE74A6B17F8DFFA8 PKG=TP_p226sd FLAGS=1 SIZE=443581 GEN=1 FNAME=TP_p226sd.ukx
+DevNet: PendingLevel received: USES GUID=B0B1A8CB4C81D2D07B465B946BEE9FE3 PKG=FP_sg552sd FLAGS=1 SIZE=4013187 GEN=1 FNAME=FP_sg552sd.ukx
+DevNet: PendingLevel received: USES GUID=34107B02411548236C2149AB7F24D0ED PKG=FP_browHPsd FLAGS=1 SIZE=689954 GEN=1 FNAME=FP_browHPsd.ukx
+DevNet: PendingLevel received: USES GUID=BB9AFDF84DB907D2207ECAA51197C5BF PKG=TP_browHPsd FLAGS=1 SIZE=749306 GEN=1 FNAME=TP_browHPsd.ukx
+DevNet: PendingLevel received: USES GUID=62C7B7B24C7303BA8D0CDCB971CBAACF PKG=FP_llrem870 FLAGS=1 SIZE=336269 GEN=1 FNAME=FP_llrem870.ukx
+DevNet: PendingLevel received: USES GUID=5690C02040ADF2509876F7B7D50B65AC PKG=FP_arwen37 FLAGS=1 SIZE=1752669 GEN=1 FNAME=FP_arwen37.ukx
+DevNet: PendingLevel received: USES GUID=102CDFEB4952CCCA489CB185A99F2233 PKG=fp_Stinger FLAGS=1 SIZE=961291 GEN=1 FNAME=fp_Stinger.ukx
+DevNet: PendingLevel received: USES GUID=78C679AF4539D731697AC394853A096E PKG=taserX2 FLAGS=1 SIZE=9579962 GEN=1 FNAME=taserX2.utx
+DevNet: PendingLevel received: USES GUID=CFA4C7274885ECFC119C9486848A3A32 PKG=taserX2_static FLAGS=1 SIZE=620491 GEN=1 FNAME=taserX2_static.usx
+DevNet: PendingLevel received: USES GUID=01BCDB4A406B076E8968D5B2B9BDE6B3 PKG=FP_HK69 FLAGS=1 SIZE=624649 GEN=1 FNAME=FP_HK69.ukx
+DevNet: PendingLevel received: USES GUID=21E95C5443126BC1CE831EAC1287C27D PKG=TP_coltAcc FLAGS=1 SIZE=1936433 GEN=1 FNAME=TP_coltAcc.ukx
+DevNet: PendingLevel received: USES GUID=05377A7D4791A942EEDDC8A27F19F535 PKG=ColtAcc FLAGS=1 SIZE=13983552 GEN=1 FNAME=ColtAcc.utx
+DevNet: PendingLevel received: USES GUID=7CCCEE754481E1F0D6E38F9AC40DDAE1 PKG=FP_rem870 FLAGS=1 SIZE=336250 GEN=1 FNAME=FP_rem870.ukx
+DevNet: PendingLevel received: USES GUID=C86F74F940E7F758F085F0B0E9DD0633 PKG=FP_M4A1_SFM500 FLAGS=1 SIZE=2763178 GEN=1 FNAME=FP_M4A1_SFM500.ukx
+DevNet: PendingLevel received: USES GUID=83D465254C6C9165EA5F9EAA65445DC1 PKG=FP_Revolver FLAGS=1 SIZE=464284 GEN=1 FNAME=FP_Revolver.ukx
+DevNet: PendingLevel received: USES GUID=62282701436F5C5D77092AB0F4E27EB8 PKG=FP_M16A1 FLAGS=1 SIZE=2219597 GEN=1 FNAME=FP_M16A1.ukx
+DevNet: PendingLevel received: USES GUID=243D8A034A6E03CEA454DA9D77F3E343 PKG=FP_M16A1sd FLAGS=1 SIZE=2279008 GEN=1 FNAME=FP_M16A1sd.ukx
+DevNet: PendingLevel received: USES GUID=B54C606843C7149C3100AC9C66E36740 PKG=FP_92fs FLAGS=1 SIZE=3799698 GEN=1 FNAME=FP_92fs.ukx
+DevNet: PendingLevel received: USES GUID=889C686644E4216167DCAF84156C93DF PKG=TP_92fs FLAGS=1 SIZE=3792237 GEN=1 FNAME=TP_92fs.ukx
+DevNet: PendingLevel received: USES GUID=17F58DD54B191292BD772FA671997000 PKG=FP_M4A1_CQB_Holo FLAGS=1 SIZE=5898036 GEN=1 FNAME=FP_M4A1_CQB_Holo.ukx
+DevNet: PendingLevel received: USES GUID=1BBF4E4F4DFA05458B78A59D25CF4FB1 PKG=FP_taser FLAGS=1 SIZE=465333 GEN=1 FNAME=FP_taser.ukx
+DevNet: PendingLevel received: USES GUID=0A99C08640407A46677BB89C8831F0DE PKG=FP_NineBangGrenade FLAGS=1 SIZE=251563 GEN=1 FNAME=FP_NineBangGrenade.ukx
+DevNet: PendingLevel received: USES GUID=452AD52341BC568B903DCDA2C0C2A429 PKG=FP_paintball FLAGS=1 SIZE=392029 GEN=1 FNAME=FP_paintball.ukx
+DevNet: PendingLevel received: USES GUID=F0FBE4EB492BB273489CFDB5059FC6C1 PKG=FP_M4A1_SFM500_sil FLAGS=1 SIZE=2817100 GEN=1 FNAME=FP_M4A1_SFM500_sil.ukx
+DevNet: PendingLevel received: USES GUID=1B4981944BD96921A0A3B291027AFE86 PKG=FP_Handcuffs FLAGS=1 SIZE=179225 GEN=1 FNAME=FP_Handcuffs.ukx
+DevNet: PendingLevel received: USES GUID=891C89464CDEA9E79661F39444D80430 PKG=FP_C2charge FLAGS=1 SIZE=366733 GEN=1 FNAME=FP_C2charge.ukx
+DevNet: PendingLevel received: USES GUID=B3DA38A0420C20EA93BA7581F0109194 PKG=Coronas FLAGS=1 SIZE=462884 GEN=1 FNAME=Coronas.utx
+DevNet: PendingLevel received: USES GUID=6EE5B7BF4FD711F585635EA7B33D6319 PKG=FP_toolkit FLAGS=1 SIZE=356248 GEN=1 FNAME=FP_toolkit.ukx
+DevNet: PendingLevel received: USES GUID=AB2CED2245CCB1E432DF4195D9FD8385 PKG=FP_DoorWedge FLAGS=1 SIZE=271722 GEN=1 FNAME=FP_DoorWedge.ukx
+DevNet: PendingLevel received: USES GUID=A733DCBD48B00CE1AA4FEABDE37E029F PKG=BreachingSG_ThirdPerson FLAGS=1 SIZE=3702651 GEN=1 FNAME=BreachingSG_ThirdPerson.ukx
+DevNet: PendingLevel received: USES GUID=159DC234476F33B8EAB82580FA7D30ED PKG=FP_SAW FLAGS=1 SIZE=992661 GEN=1 FNAME=FP_SAW.ukx
+DevNet: PendingLevel received: USES GUID=7F69AAEF48327E52129880B968E70354 PKG=3rd_SAW FLAGS=1 SIZE=242281 GEN=1 FNAME=3rd_SAW.ukx
+DevNet: PendingLevel received: USES GUID=C8493307434C35CC27FEE9B571A9229D PKG=FP_BreachingSG FLAGS=1 SIZE=3702879 GEN=1 FNAME=FP_BreachingSG.ukx
+DevNet: PendingLevel received: USES GUID=B552C10848F18C4A0322818217F70A52 PKG=FP_Pepperspray FLAGS=1 SIZE=167606 GEN=1 FNAME=FP_Pepperspray.ukx
+DevNet: PendingLevel received: USES GUID=77E65C924FA8AF337CE1A4AB07AE8B17 PKG=FP_glowstick FLAGS=1 SIZE=131093 GEN=1 FNAME=FP_glowstick.ukx
+DevNet: PendingLevel received: USES GUID=F91EA8F746BE3C73AA0049A8789AB81B PKG=FP_Optiwand FLAGS=1 SIZE=276214 GEN=1 FNAME=FP_Optiwand.ukx
+DevNet: PendingLevel received: USES GUID=0D4A98984BDD4446893AE491F6C38A21 PKG=scripted_tex FLAGS=1 SIZE=1485 GEN=1 FNAME=scripted_tex.utx
+DevNet: PendingLevel received: USES GUID=B89B4066417C48BC7EE0318FED4D56E3 PKG=Optiwand_ThirdPerson FLAGS=1 SIZE=229775 GEN=1 FNAME=Optiwand_ThirdPerson.ukx
+DevNet: PendingLevel received: USES GUID=9EE85C0444268651711D65A9CABD4584 PKG=FP_m1super90 FLAGS=1 SIZE=376016 GEN=1 FNAME=FP_m1super90.ukx
+DevNet: PendingLevel received: USES GUID=ED84387240620C60BB1232AE78C26E99 PKG=FP_DesertEagleNew FLAGS=1 SIZE=1424369 GEN=1 FNAME=FP_DesertEagleNew.ukx
+DevNet: PendingLevel received: USES GUID=3EFC67FD4BB7FF5A5C73AE985B40A52C PKG=FP_M4A1_SFM500_Aim FLAGS=1 SIZE=3276672 GEN=1 FNAME=FP_M4A1_SFM500_Aim.ukx
+DevNet: PendingLevel received: USES GUID=DFC312654AA040375F69F486F9F7C071 PKG=FP_stingGrenade FLAGS=1 SIZE=265466 GEN=1 FNAME=FP_stingGrenade.ukx
+DevNet: PendingLevel received: USES GUID=68DC8EDF47DF7B69991D9D89BD702CB7 PKG=FP_flashbangGrenade FLAGS=1 SIZE=321789 GEN=1 FNAME=FP_flashbangGrenade.ukx
+DevNet: PendingLevel received: USES GUID=2BAF3E3D4B764A5CBA7A8CAA111E1366 PKG=FP_uzi FLAGS=1 SIZE=565345 GEN=1 FNAME=FP_uzi.ukx
+DevNet: PendingLevel received: USES GUID=A3210ABD4F988612593EB696C0585272 PKG=FP_M4A1_SFM500_silAim FLAGS=1 SIZE=3331485 GEN=1 FNAME=FP_M4A1_SFM500_silAim.ukx
+DevNet: PendingLevel received: USES GUID=65B9E4174B4A7E3B1AF01EA92AD24F21 PKG=FP_AKS74U FLAGS=1 SIZE=2234469 GEN=1 FNAME=FP_AKS74U.ukx
+DevNet: PendingLevel received: USES GUID=CE1EAB4A45F4ADB1E32C9DB98EC195E8 PKG=fp_tec9 FLAGS=1 SIZE=391075 GEN=1 FNAME=fp_tec9.ukx
+DevNet: PendingLevel received: USES GUID=673B22074CFD46A2DE264DA4A5184906 PKG=NineMMpistol_ThirdPerson FLAGS=1 SIZE=1765241 GEN=1 FNAME=NineMMpistol_ThirdPerson.ukx
+DevNet: PendingLevel received: USES GUID=1701407441E87C356B3755939907AD66 PKG=FP_sg552Aim FLAGS=1 SIZE=5215477 GEN=1 FNAME=FP_sg552Aim.ukx
+DevNet: PendingLevel received: USES GUID=13EE00E34D3FA1D156B69B804C7EB3A4 PKG=FP_AR_15SD FLAGS=1 SIZE=1967390 GEN=1 FNAME=FP_AR_15SD.ukx
+DevNet: PendingLevel received: USES GUID=C29DD6F340E72FCC60D56E98204ECB25 PKG=FP_sg552Aimsd FLAGS=1 SIZE=5094373 GEN=1 FNAME=FP_sg552Aimsd.ukx
+DevNet: PendingLevel received: USES GUID=F866E5FF4E6ED57E2E9E63935E3F874E PKG=FP_M4A1_CQB_silHolo FLAGS=1 SIZE=5957238 GEN=1 FNAME=FP_M4A1_CQB_silHolo.ukx
+DevNet: PendingLevel received: USES GUID=24559B7B4295344DDC42BE8AFFEDD4FC PKG=FP_mp5sd FLAGS=1 SIZE=1011764 GEN=1 FNAME=FP_mp5sd.ukx
+DevNet: PendingLevel received: USES GUID=D97CC71B4968844278E5CDBA125B47EE PKG=gui_FR FLAGS=1 SIZE=5741060 GEN=1 FNAME=gui_FR.utx
+DevNet: PendingLevel received: USES GUID=ABC278F44AFA52A3471DA7BF764E57CA PKG=gui_sas FLAGS=1 SIZE=6986004 GEN=1 FNAME=gui_sas.utx
+DevNet: PendingLevel received: USES GUID=8E5B317846A9E5CEDA89829309F55EF8 PKG=gui_tex3 FLAGS=1 SIZE=42647149 GEN=1 FNAME=gui_tex3.utx
+DevNet: PendingLevel received: USES GUID=D4866F654EF69ACE68B90F97F7AA25F6 PKG=gui_tex2 FLAGS=1 SIZE=14545162 GEN=1 FNAME=gui_tex2.utx
+DevNet: PendingLevel received: USES GUID=719EB1B1400206EC72778D805ACAC623 PKG=SwatEquipmentModels3 FLAGS=1 SIZE=2520 GEN=1 FNAME=SwatEquipmentModels3.u
+DevNet: PendingLevel received: USES GUID=688D634646007FA6E81B84930B17FE10 PKG=SwatEquipmentModels FLAGS=1 SIZE=33133 GEN=1 FNAME=SwatEquipmentModels.u
+DevNet: PendingLevel received: USES GUID=CFB33CBD44269D5D0F5483B2D47EF49C PKG=FP_M4A1mg FLAGS=1 SIZE=493619 GEN=1 FNAME=FP_M4A1mg.ukx
+DevNet: PendingLevel received: USES GUID=2BF7B6D74A1C4F52064D969ABFF40788 PKG=FP_FragGrenade FLAGS=1 SIZE=374878 GEN=1 FNAME=FP_FragGrenade.ukx
+DevNet: PendingLevel received: USES GUID=DAC11BA848337BF8966C618EE04D40C8 PKG=coltsmg_static FLAGS=1 SIZE=3164627 GEN=1 FNAME=coltsmg_static.usx
+DevNet: PendingLevel received: USES GUID=825169DB4566CFDF2C388398803123AD PKG=ColtSMG FLAGS=1 SIZE=15093604 GEN=1 FNAME=ColtSMG.utx
+DevNet: PendingLevel received: USES GUID=A4F0B2204F6F781EEF25DE936F1EC2DD PKG=FP_coltsmg FLAGS=1 SIZE=2140425 GEN=1 FNAME=FP_coltsmg.ukx
+DevNet: PendingLevel received: USES GUID=8374049F4D2BB116C30C3F92EDEA262D PKG=FP_coltsmgsil FLAGS=1 SIZE=2135387 GEN=1 FNAME=FP_coltsmgsil.ukx
+DevNet: PendingLevel received: USES GUID=0C56B2114113FC8775FBF48641B970DE PKG=SwatProgrammerSampleClasses FLAGS=1 SIZE=1731 GEN=1 FNAME=SwatProgrammerSampleClasses.u
+DevNet: PendingLevel received: USES GUID=3047965943160C9BC199FBB81EFABEAB PKG=DeadPeople_sm FLAGS=1 SIZE=2915474 GEN=1 FNAME=DeadPeople_sm.usx
+DevNet: PendingLevel received: USES GUID=42B00C064B97F96E2B836892A727F5E5 PKG=FemaleNurseTex FLAGS=1 SIZE=3153477 GEN=1 FNAME=FemaleNurseTex.utx
+DevNet: PendingLevel received: USES GUID=CBE29F144C746F5E671FD4AA3452D2AB PKG=MaleDoctorTex FLAGS=1 SIZE=3327144 GEN=1 FNAME=MaleDoctorTex.utx
+DevNet: PendingLevel received: USES GUID=7D60177E44CD5A5F81BD4989FA29F061 PKG=SWATbadguyTex FLAGS=1 SIZE=3546980 GEN=1 FNAME=SWATbadguyTex.utx
+DevNet: PendingLevel received: USES GUID=BB43FE4F4D12B23E2C08EBAFF0872465 PKG=SWATofficerTex FLAGS=1 SIZE=1631499 GEN=1 FNAME=SWATofficerTex.utx
+DevNet: PendingLevel received: USES GUID=FC857D64410B4E380B8BCDBBE4C2E178 PKG=MaleCasual2Tex FLAGS=1 SIZE=4555148 GEN=1 FNAME=MaleCasual2Tex.utx
+DevNet: PendingLevel received: USES GUID=B312FB2B4746ECF75361188CA6F43CD5 PKG=Paradise_sm FLAGS=1 SIZE=10538763 GEN=1 FNAME=Paradise_sm.usx
+DevNet: PendingLevel received: USES GUID=79F426E246552125C8942AABEC81919A PKG=SWATmeshFX_sm FLAGS=1 SIZE=1063692 GEN=1 FNAME=SWATmeshFX_sm.usx
+DevNet: PendingLevel received: USES GUID=AB11804D41AF9067526304A525264865 PKG=SW_FR FLAGS=1 SIZE=2762685 GEN=1 FNAME=SW_FR.uax
+DevNet: PendingLevel received: USES GUID=35A0B53F4F80C5CA9D13D3829CF7E7B1 PKG=TaserWire FLAGS=1 SIZE=128806 GEN=1 FNAME=TaserWire.ukx
+DevNet: PendingLevel received: USES GUID=CBB0129D474B4ECF740BF79BBC9BFC8B PKG=swatmeshfx2_sm FLAGS=1 SIZE=66387 GEN=1 FNAME=swatmeshfx2_sm.usx
+DevNet: PendingLevel received: USES GUID=D8B43B244D4CF310A0E00B8B11559F1C PKG=SwatProcedures FLAGS=65537 SIZE=175908 GEN=1 FNAME=SwatProcedures.u
+DevNet: PendingLevel received: USES GUID=7F24A7B94DA6B325A1D552914CD84ABE PKG=mp_OfficerTex FLAGS=1 SIZE=5837391 GEN=1 FNAME=mp_OfficerTex.utx
+DevNet: PendingLevel received: USES GUID=FCBCE27B4E61F486060AF2B0A13F8F40 PKG=SWATMaleAnimation2 FLAGS=1 SIZE=43838405 GEN=1 FNAME=SWATMaleAnimation2.ukx
+DevNet: PendingLevel received: USES GUID=EF8569164D4A4E7506306A9416076876 PKG=maleMafiaTex FLAGS=1 SIZE=11551211 GEN=1 FNAME=maleMafiaTex.utx
+DevNet: PendingLevel received: USES GUID=526BF3B44CDAEC45104B9A8F2AAA4490 PKG=maleHomelessTex FLAGS=1 SIZE=4200735 GEN=1 FNAME=maleHomelessTex.utx
+DevNet: PendingLevel received: USES GUID=329F20A6421B37B6C0B2D195B03FE13F PKG=MaleCasual3Tex FLAGS=1 SIZE=4203421 GEN=1 FNAME=MaleCasual3Tex.utx
+DevNet: PendingLevel received: USES GUID=E745C18F4193E8967825549241A718FF PKG=LeoMelTextureSet FLAGS=1 SIZE=9281498 GEN=1 FNAME=LeoMelTextureSet.utx
+DevNet: PendingLevel received: USES GUID=A35C644F42B7B69CADCA4FBE6B573252 PKG=MaleSuitTex FLAGS=1 SIZE=3334169 GEN=1 FNAME=MaleSuitTex.utx
+DevNet: PendingLevel received: USES GUID=FD4CF2254C4FA9E9800A1A9937FCE86B PKG=MaleJanitorTextureSet FLAGS=1 SIZE=2977673 GEN=1 FNAME=MaleJanitorTextureSet.utx
+DevNet: PendingLevel received: USES GUID=3FB85E894DA1354A1646BD90FADBC3C6 PKG=MaleChubbyTex FLAGS=1 SIZE=5428912 GEN=1 FNAME=MaleChubbyTex.utx
+DevNet: PendingLevel received: USES GUID=774E34E24B2A26B669C869918B4612DB PKG=MaleBarberTex FLAGS=1 SIZE=3327233 GEN=1 FNAME=MaleBarberTex.utx
+DevNet: PendingLevel received: USES GUID=885D1E674209CEE0573836A017A1FA17 PKG=CASMtex FLAGS=1 SIZE=2800699 GEN=1 FNAME=CASMtex.utx
+DevNet: PendingLevel received: USES GUID=5623A2C24B9F978C3CF37EA073389466 PKG=SWATheavyTex FLAGS=1 SIZE=1927422 GEN=1 FNAME=SWATheavyTex.utx
+DevNet: PendingLevel received: USES GUID=6B6C55A245353BA28DC8A38DFC8AA8DF PKG=SWATinstructorTex FLAGS=1 SIZE=4728352 GEN=1 FNAME=SWATinstructorTex.utx
+DevNet: PendingLevel received: USES GUID=7D41BB164ED6CFDE7D72E7B84C9D6479 PKG=MaleCasual4Tex FLAGS=1 SIZE=5779958 GEN=1 FNAME=MaleCasual4Tex.utx
+DevNet: PendingLevel received: USES GUID=7131BEE6408E87D5A6D8ABB68BA284EB PKG=MaleCasual1Tex FLAGS=1 SIZE=8252121 GEN=1 FNAME=MaleCasual1Tex.utx
+DevNet: PendingLevel received: USES GUID=BB354FEF456358B49146F2B0A206045D PKG=SWATnoArmourTex FLAGS=1 SIZE=1050501 GEN=1 FNAME=SWATnoArmourTex.utx
+DevNet: PendingLevel received: USES GUID=5B1902B6412DC4FA5C4DA585CB7C62DA PKG=MaleCasualArmorTex FLAGS=1 SIZE=4418077 GEN=1 FNAME=MaleCasualArmorTex.utx
+DevNet: PendingLevel received: USES GUID=E4BEEECB4C70CBEE1F73E8BCB92E1984 PKG=CameraEffectsTex FLAGS=1 SIZE=23215 GEN=1 FNAME=CameraEffectsTex.utx
+DevNet: PendingLevel received: USES GUID=E0CA902A43013414CE8247B20EDFA268 PKG=SwatProtectiveEquipment FLAGS=1 SIZE=6584 GEN=1 FNAME=SwatProtectiveEquipment.u
+DevNet: PendingLevel received: USES GUID=0648EC3C43DCA5EB12243EA7F3FC2356 PKG=SWATMaleAnimation FLAGS=1 SIZE=38267579 GEN=1 FNAME=SWATMaleAnimation.ukx
+DevNet: PendingLevel received: USES GUID=DD4D286C445BE8ADF64D31B376F1E3D2 PKG=CultLeaderTextureSet FLAGS=1 SIZE=3682986 GEN=1 FNAME=CultLeaderTextureSet.utx
+DevNet: PendingLevel received: USES GUID=9BDAAA3942C3B80ED4103B8B14EB792A PKG=Suspect1_officerTex FLAGS=1 SIZE=2970107 GEN=1 FNAME=Suspect1_officerTex.utx
+DevNet: PendingLevel received: USES GUID=C8AF2D0348B5CBF92C61F286E3F64E59 PKG=ProgrammerTestObjectsTex FLAGS=1 SIZE=624012 GEN=1 FNAME=ProgrammerTestObjectsTex.utx
+DevNet: PendingLevel received: USES GUID=0E69EA054B8414A6621247A6C408F802 PKG=arms_sm FLAGS=1 SIZE=14521177 GEN=1 FNAME=arms_sm.usx
+DevNet: PendingLevel received: USES GUID=4FAFA2A844171EE91E299DB1AE380F3D PKG=UWindow_res FLAGS=1 SIZE=133765 GEN=1 FNAME=UWindow_res.pkg
+DevNet: PendingLevel received: USES GUID=A3B9E46E4414B99B9EF8F5A64EC787E4 PKG=CoopArrow FLAGS=1 SIZE=63165 GEN=1 FNAME=CoopArrow.ukx
+DevNet: PendingLevel received: USES GUID=3F6D00414989FE2505D56B91BB6F4303 PKG=SWATDoubleDoorAnimations FLAGS=1 SIZE=34997 GEN=1 FNAME=SWATDoubleDoorAnimations.ukx
+DevNet: PendingLevel received: USES GUID=D5AFB798439AE06F2B8B79B37658E321 PKG=SWATDoorAnimation FLAGS=1 SIZE=27341 GEN=1 FNAME=SWATDoorAnimation.ukx
+DevNet: PendingLevel received: USES GUID=F711FE634B33DFB8F7616B97292CD720 PKG=SwatProtectiveEquipment2 FLAGS=1 SIZE=2210 GEN=1 FNAME=SwatProtectiveEquipment2.u
+DevNet: PendingLevel received: USES GUID=FCD65A5D4B5AA39A17291A8CFDE74718 PKG=Barbershop_sm FLAGS=1 SIZE=13454743 GEN=1 FNAME=Barbershop_sm.usx
+DevNet: PendingLevel received: USES GUID=58CFFBED426C50EE3AE752B5463C16AE PKG=Furniture_Tex FLAGS=1 SIZE=462653 GEN=1 FNAME=Furniture_Tex.utx
+DevNet: PendingLevel received: USES GUID=CC7FAADE4DB8C30A13B8B2A78E75F75A PKG=dna_sm FLAGS=1 SIZE=16645282 GEN=1 FNAME=dna_sm.usx
+DevNet: PendingLevel received: USES GUID=503CB9CE4E1057A80E51FDA9B2583056 PKG=amc_Tex FLAGS=1 SIZE=1143961 GEN=1 FNAME=amc_Tex.utx
+DevNet: PendingLevel received: USES GUID=4F48E3214BD0FD6A62B8D18E9ED04FF8 PKG=VIP_sm FLAGS=1 SIZE=7447224 GEN=1 FNAME=VIP_sm.usx
+DevNet: PendingLevel received: USES GUID=99749C7A47A58F5117F4FDB11FAB96EA PKG=Cars FLAGS=1 SIZE=27647785 GEN=1 FNAME=Cars.utx
+DevNet: PendingLevel received: USES GUID=1379666A40BADF0E444B0AB9186CC90F PKG=Hosp_sm FLAGS=1 SIZE=14214924 GEN=1 FNAME=Hosp_sm.usx
+DevNet: PendingLevel received: USES GUID=CD9448114A06FDBE0220F0B743DBBC2E PKG=mac_sm FLAGS=1 SIZE=1160857 GEN=1 FNAME=mac_sm.usx
+DevNet: PendingLevel received: USES GUID=05F374A042E84FD1B0A652977A5AFF66 PKG=Power_sm FLAGS=1 SIZE=14357486 GEN=1 FNAME=Power_sm.usx
+DevNet: PendingLevel received: USES GUID=73194E2B4D1569B15E0672B4FD116AA3 PKG=Jewel_sm FLAGS=1 SIZE=18815992 GEN=1 FNAME=Jewel_sm.usx
+DevNet: PendingLevel received: USES GUID=902C593B4967398687838A81EE62365C PKG=Redlibrary_sm FLAGS=1 SIZE=14419157 GEN=1 FNAME=Redlibrary_sm.usx
+DevNet: PendingLevel received: USES GUID=779F88E8420300ADDC5014A4F588C8E7 PKG=train_sm FLAGS=1 SIZE=10635930 GEN=1 FNAME=train_sm.usx
+DevNet: PendingLevel received: USES GUID=00BA57C24CFD3CC2A483BB97D8707695 PKG=Utility_Tex FLAGS=1 SIZE=122001 GEN=1 FNAME=Utility_Tex.utx
+DevNet: PendingLevel received: USES GUID=07346F5A464D4AB91C6A4ABA1BB659AA PKG=Druglab_sm FLAGS=1 SIZE=3904810 GEN=1 FNAME=Druglab_sm.usx
+DevNet: PendingLevel received: USES GUID=4B7928F9474C9E964B5D84872EC81765 PKG=utility_sm FLAGS=1 SIZE=180391 GEN=1 FNAME=utility_sm.usx
+DevNet: PendingLevel received: USES GUID=26C995D3468724E241E6BBBA10036840 PKG=bullseye_sm FLAGS=1 SIZE=12988944 GEN=1 FNAME=bullseye_sm.usx
+DevNet: PendingLevel received: USES GUID=340EA6F54D479EDA0B1416AE7186493F PKG=Junk_sm FLAGS=1 SIZE=2502571 GEN=1 FNAME=Junk_sm.usx
+DevNet: PendingLevel received: USES GUID=70E1ED6649442A828A18D8A210BDA96B PKG=Cars_sm FLAGS=1 SIZE=13179329 GEN=1 FNAME=Cars_sm.usx
+DevNet: PendingLevel received: USES GUID=378BF38F4B5F2F9DE85D2A98CE748A62 PKG=wall_sm FLAGS=1 SIZE=7179257 GEN=1 FNAME=wall_sm.usx
+DevNet: PendingLevel received: USES GUID=D0CC49394836D3765AF9AF97BA2A0FF4 PKG=wall_Tex FLAGS=1 SIZE=1490834 GEN=1 FNAME=wall_Tex.utx
+DevNet: PendingLevel received: USES GUID=D4C6BCBE4B5E7543BD4E0981D02EC67D PKG=MPbomb FLAGS=1 SIZE=586168 GEN=1 FNAME=MPbomb.ukx
+DevNet: PendingLevel received: USES GUID=433BB060434DDFB840714EA79DC8D5C4 PKG=TrainingAnimatedMeshes FLAGS=1 SIZE=683409 GEN=1 FNAME=TrainingAnimatedMeshes.ukx
+DevNet: PendingLevel received: USES GUID=4DF4844843D030A512DDE5B483B889FB PKG=mass_classes FLAGS=1 SIZE=3201 GEN=1 FNAME=mass_classes.u
+DevNet: PendingLevel received: USES GUID=FDB26E3A4BC14C61AB212989509210DC PKG=mass_objects FLAGS=1 SIZE=629423 GEN=1 FNAME=mass_objects.usx
+DevNet: PendingLevel received: USES GUID=CB235B2A40B422DD96DE07BAE2C62012 PKG=mass_textures FLAGS=1 SIZE=266125 GEN=1 FNAME=mass_textures.utx
+DevNet: PendingLevel received: USES GUID=316C54954EA40E5BBE5D03AA87FA1F2E PKG=Outdoors_sm FLAGS=1 SIZE=4686150 GEN=1 FNAME=Outdoors_sm.usx
+DevNet: PendingLevel received: USES GUID=B20FEC7344313845A5C708BCE541542A PKG=AnimatedDecorMeshes FLAGS=1 SIZE=13762 GEN=1 FNAME=AnimatedDecorMeshes.u
+DevNet: PendingLevel received: USES GUID=59251D0046EC94071C58D3A0252EE6CD PKG=PerimeterAnimatedMeshes FLAGS=1 SIZE=4045109 GEN=1 FNAME=PerimeterAnimatedMeshes.ukx
+DevNet: PendingLevel received: USES GUID=952232474D96CAB1B4437C84B686937C PKG=FemaleOfficeTex FLAGS=1 SIZE=4203549 GEN=1 FNAME=FemaleOfficeTex.utx
+DevNet: PendingLevel received: USES GUID=2ECD10EC4B6A56C090A4B8868E0033B0 PKG=HotelAnimatedMeshes FLAGS=1 SIZE=945768 GEN=1 FNAME=HotelAnimatedMeshes.ukx
+DevNet: PendingLevel received: USES GUID=9831C43F40405B2BFCD57A92C79CBDDB PKG=TreeLeaves FLAGS=1 SIZE=425368 GEN=1 FNAME=TreeLeaves.ukx
+DevNet: PendingLevel received: USES GUID=FBB4F99A47013F634EBEB795CC06D130 PKG=SWATcivilianGear_sm FLAGS=1 SIZE=1778435 GEN=1 FNAME=SWATcivilianGear_sm.usx
+DevNet: PendingLevel received: USES GUID=6CF6A05B474760DE3304D1A57740ED3E PKG=FemaleCasual2Tex FLAGS=1 SIZE=2803613 GEN=1 FNAME=FemaleCasual2Tex.utx
+DevNet: PendingLevel received: USES GUID=A6366A264C14B8D869EEABAF914D2AB9 PKG=FemaleHeavyTex FLAGS=1 SIZE=2807758 GEN=1 FNAME=FemaleHeavyTex.utx
+DevNet: PendingLevel received: USES GUID=CD3E0B7C42B4A2EAA7C406927F7C5B6A PKG=JewelryAnimatedMeshes FLAGS=1 SIZE=450554 GEN=1 FNAME=JewelryAnimatedMeshes.ukx
+DevNet: PendingLevel received: USES GUID=ECA0670C49E194EC90BD9C828D2F5A85 PKG=SilenceShrub FLAGS=1 SIZE=317672 GEN=1 FNAME=SilenceShrub.ukx
+DevNet: PendingLevel received: USES GUID=1F950F124BEFCFDE0B3A939BB607F79A PKG=VIPanimatedMeshes FLAGS=1 SIZE=1181459 GEN=1 FNAME=VIPanimatedMeshes.ukx
+DevNet: PendingLevel received: USES GUID=1ABBEEBB412B9B22B5371F89CE21404D PKG=REPOhelicopter FLAGS=1 SIZE=1207740 GEN=1 FNAME=REPOhelicopter.ukx
+DevNet: PendingLevel received: USES GUID=67A0497B45CEC27EB35EC6A0F4EE75D6 PKG=ArmsShrub FLAGS=1 SIZE=309758 GEN=1 FNAME=ArmsShrub.ukx
+DevNet: PendingLevel received: USES GUID=509924EC4FDC8E8C007DE7AF184DE0EA PKG=RedLibraryAnimatedMeshes FLAGS=1 SIZE=52524 GEN=1 FNAME=RedLibraryAnimatedMeshes.ukx
+DevNet: PendingLevel received: USES GUID=911AF66546C237B008376BA0D4EC06CE PKG=BarPullBarber FLAGS=1 SIZE=1863785 GEN=1 FNAME=BarPullBarber.ukx
+DevNet: PendingLevel received: USES GUID=EFF6EDC5401DE67E2F64F1A1C7AD29F1 PKG=AbombStageLights FLAGS=1 SIZE=295172 GEN=1 FNAME=AbombStageLights.ukx
+DevNet: PendingLevel received: USES GUID=B028D44F485BFB12D39D658654DDE175 PKG=SwatEffects FLAGS=1 SIZE=256176 GEN=1 FNAME=SwatEffects.u
+DevNet: PendingLevel received: USES GUID=A0566C324211C6409B00E4BCBEEA12A6 PKG=IGVisualEffectsSubsystem FLAGS=65537 SIZE=48691 GEN=1 FNAME=IGVisualEffectsSubsystem.u
+DevNet: PendingLevel received: USES GUID=A68160A8480B65B28AB6819F242349C9 PKG=bink_textures FLAGS=1 SIZE=1115248 GEN=1 FNAME=bink_textures.utx
+DevNet: PendingLevel received: USES GUID=6DC585D74A6FED8720D31BB8E3D856FA PKG=Skybox FLAGS=1 SIZE=972008 GEN=1 FNAME=Skybox.usx
+DevNet: PendingLevel received: USES GUID=27250F494E7E43786506EAB04321C693 PKG=sky FLAGS=1 SIZE=1576455 GEN=1 FNAME=sky.utx
+DevNet: PendingLevel received: USES GUID=9E10FC4347E0C858B92EF88B9A0BDC2E PKG=Editor FLAGS=65537 SIZE=91721 GEN=1 FNAME=Editor.u
+DevNet: PendingLevel received: USES GUID=A83739264EA1DA42BCC1738D3F6EB20A PKG=SwatEd FLAGS=65537 SIZE=28227 GEN=1 FNAME=SwatEd.u
+DevNet: PendingLevel received: USES GUID=D43C01D24A1CD6B5972683BC671F83DC PKG=SwatSimpleEquipment FLAGS=1 SIZE=17006 GEN=1 FNAME=SwatSimpleEquipment.u
+DevNet: PendingLevel received: USES GUID=D402D3BF4405D288E3A9E580DBCE26F6 PKG=SwatObjectives FLAGS=65537 SIZE=120712 GEN=1 FNAME=SwatObjectives.u
+DevNet: PendingLevel received: USES GUID=D244446B43287C9DD795F2AA7F02F7FE PKG=SwatGui FLAGS=65537 SIZE=2184696 GEN=1 FNAME=SwatGui.u
+DevNet: PendingLevel received: USES GUID=2EC9DBDF4E1600A39C2D7B99633715D1 PKG=SwatAmmo FLAGS=1 SIZE=35624 GEN=1 FNAME=SwatAmmo.u
+DevNet: PendingLevel received: USES GUID=4F3615254A3C6204AF113D90E0C29D1E PKG=SwatAmmo2 FLAGS=1 SIZE=6602 GEN=1 FNAME=SwatAmmo2.u
+DevNet: PendingLevel received: USES GUID=957905FA46AE79CD4E6D8EBF83A6A4A0 PKG=SwatProjectile FLAGS=1 SIZE=907 GEN=1 FNAME=SwatProjectile.u
+DevNet: PendingLevel received: USES GUID=B7EC94F04804939ABADECA9E4A7079FA PKG=SwatCameraEffects FLAGS=1 SIZE=1785 GEN=1 FNAME=SwatCameraEffects.u
+DevNet: PendingLevel received: USES GUID=CFDDF2D04C319053EA850781902920B1 PKG=SwatCameraEffects2 FLAGS=1 SIZE=680 GEN=1 FNAME=SwatCameraEffects2.u
+DevNet: PendingLevel received: USES GUID=08A52DD049DD12C728AA78AB8CE89CC2 PKG=SW_Objects FLAGS=1 SIZE=5358283 GEN=1 FNAME=SW_Objects.uax
+DevNet: PendingLevel received: USES GUID=9F01F8124140E2C6DB8E538C1AAEE9B6 PKG=SW_Bounce FLAGS=1 SIZE=3939083 GEN=1 FNAME=SW_Bounce.uax
+DevNet: PendingLevel received: USES GUID=2EEA7E0747601B72B346F9AC11B764B4 PKG=SW_Ambients FLAGS=1 SIZE=13511974 GEN=1 FNAME=SW_Ambients.uax
+DevNet: PendingLevel received: USES GUID=61BAB62C478A00C963D620890595137D PKG=SW_Bullets FLAGS=1 SIZE=3438737 GEN=1 FNAME=SW_Bullets.uax
+DevNet: PendingLevel received: USES GUID=BB07956B4F7A0772CB3FB4922EB6AB91 PKG=SW_Feet FLAGS=1 SIZE=4552801 GEN=1 FNAME=SW_Feet.uax
+DevNet: PendingLevel received: USES GUID=618598BE4B8E6EB93EE42D8266CA6F26 PKG=SW_Hits FLAGS=1 SIZE=4205495 GEN=1 FNAME=SW_Hits.uax
+DevNet: PendingLevel received: USES GUID=7AE910144D367899DDBDF99FE146A813 PKG=SW_Meta FLAGS=1 SIZE=374935 GEN=1 FNAME=SW_Meta.uax
+DevNet: PendingLevel received: USES GUID=1F0583254AB90930E161E39567D8C473 PKG=SW_VO FLAGS=1 SIZE=25425856 GEN=1 FNAME=SW_VO.uax
+DevNet: PendingLevel received: USES GUID=CB68D2AF48C9B83ACBAABE8F76DF7989 PKG=SW_Weapons FLAGS=1 SIZE=11372447 GEN=1 FNAME=SW_Weapons.uax
+DevNet: PendingLevel received: USES GUID=B1AFA9D640969668910B7BADECE81662 PKG=FemaleAnimation FLAGS=1 SIZE=22435383 GEN=1 FNAME=FemaleAnimation.ukx
+DevNet: PendingLevel received: USES GUID=BFF504354F7548E629524E97D8D8857D PKG=FemaleCasual1Tex FLAGS=1 SIZE=3853615 GEN=1 FNAME=FemaleCasual1Tex.utx
+DevNet: PendingLevel received: USES GUID=3F798E1F40D3A2565CD777AC80371CD9 PKG=FemaleCasual3Tex FLAGS=1 SIZE=2452518 GEN=1 FNAME=FemaleCasual3Tex.utx
+DevNet: PendingLevel received: USES GUID=3ECA67054A65021F806B788F6097006E PKG=SwatDesignerClasses2 FLAGS=1 SIZE=6891 GEN=1 FNAME=SwatDesignerClasses2.u
+DevNet: PendingLevel received: USES GUID=07B225444DF063FE9F887A8B3721E316 PKG=halfwayhouse_sm FLAGS=1 SIZE=1684118 GEN=1 FNAME=halfwayhouse_sm.usx
+DevNet: PendingLevel received: USES GUID=3BBD9FEC4742E526C108D8B801BCD8B7 PKG=halfway_tex FLAGS=1 SIZE=2930877 GEN=1 FNAME=halfway_tex.utx
+DevNet: PendingLevel received: USES GUID=335B9DB24C1B2778B5A670BBE3E29EF5 PKG=warehouse_sm FLAGS=1 SIZE=978972 GEN=1 FNAME=warehouse_sm.usx
+DevNet: PendingLevel received: USES GUID=1FF355A34B762DCE7B4810A7181B53B3 PKG=warehouse_tex FLAGS=1 SIZE=1121972 GEN=1 FNAME=warehouse_tex.utx
+DevNet: PendingLevel received: DLMGR CLASS=Engine.ChannelDownload PARAMS=Enabled COMPRESSION=0
+DevNet: PendingLevel received: WELCOME LEVEL=SP-ABomb LONE=0
+DevNet: Welcomed by server: LEVEL=SP-ABomb LONE=0
+DevNet: PendingLevel received: VERIFIEDCONTENTMD5
+Log: LoadMap: 26.85.202.120/SP-ABomb?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
+Log: [dkaplan]: URL.Map = SP-ABomb
+Log: ****************************************************
+Log:  Beginning level load: 'SP-ABomb'
 Log: ****************************************************
 Log: (Havok): Physical world for ULevel being created.
 Log: (Havok): Using medium solver
 Log: (Havok): Found 3 ragdoll files matching search path '..\HavokData\*.hke'
-Log: (Havok):   Precached ragdoll for file 'HotelSuitBag_rd.hke' in 49 ms.
-Log: (Havok):   Precached ragdoll for file 'PaperTarget_rd.hke' in 16 ms.
-Log: (Havok):   Precached ragdoll for file 'SWATofficer_rd.hke' in 41 ms.
+Log: (Havok):   Precached ragdoll for file 'HotelSuitBag_rd.hke' in 1 ms.
+Log: (Havok):   Precached ragdoll for file 'PaperTarget_rd.hke' in 1 ms.
+Log: (Havok):   Precached ragdoll for file 'SWATofficer_rd.hke' in 20 ms.
 Log: (Havok): Finished precaching ragdolls
 Log: ****************************************************
-Log:  Finished level load in 2.387 seconds
+Log:  Finished level load in 1.163 seconds
 Log: ****************************************************
 Log: Collecting garbage
 Log: Purging garbage
-Log: 33125.0ms Unloading: Package swat_splashscene
-Log: 33125.0ms Unloading: Package GUIanimations
-Log: 33125.0ms Unloading: Package VisualEffectsConfig
-Log: 33125.0ms Unloading: Package SWATeffects2
-Log: 33125.0ms Unloading: Package SWsef_weapons
-Log: 33125.0ms Unloading: Package SW_meta
-Log: 33126.0ms Unloading: Package SWSAS_weapons
-Log: 33126.0ms Unloading: Package SW_bounce
-Log: 33126.0ms Unloading: Package SW_hits
-Log: 33126.0ms Unloading: Package SWEXP_weapons
-Log: 33126.0ms Unloading: Package SWEXP_ambience
-Log: 33126.0ms Unloading: Package SW_objects
-Log: 33126.0ms Unloading: Package SW_vo
-Log: 33126.0ms Unloading: Package SW_ambients
-Log: 33126.0ms Unloading: Package SW_weapons
-Log: 33126.0ms Unloading: Package SW_bullets
-Log: 33126.0ms Unloading: Package SW_feet
-Log: 33126.0ms Unloading: Package SoundEffectsConfig
-Log: 33128.0ms Unloading: Package SwatObjectives
-Log: Garbage: objects: 82148->61137; refs: 933386
-Log: (Havok): Calling HavokInitActor on all 2235 Actors in the level
+Log: 40499.0ms Unloading: Package swat_splashscene
+Log: 40499.0ms Unloading: Package GUIanimations
+Log: 40499.0ms Unloading: Package VisualEffectsConfig
+Log: 40499.0ms Unloading: Package SWATeffects2
+Log: 40500.0ms Unloading: Package SWsef_weapons
+Log: 40500.0ms Unloading: Package SWSAS_weapons
+Log: 40500.0ms Unloading: Package SWEXP_weapons
+Log: 40500.0ms Unloading: Package SWEXP_ambience
+Log: 40500.0ms Unloading: Package SoundEffectsConfig
+Log: Garbage: objects: 96156->75245; refs: 1320235
+Log: (Havok): Calling HavokInitActor on all 3526 Actors in the level
 Log: (Havok) Initialised level mopp in 0.04 seconds
 Log: Building Collision Octree...
 Log: Finished Building Collision Octree
-Log: Game class is 'SwatGameInfo'
-Log: Level is Level SP-Training.myLevel
+Log: UGameSpyManager::InitAsClient().
+Log: ...1
+Log: Level is Level SP-ABomb.myLevel
 Log: *** WARNING - PATHS MAY NOT BE VALID ***
-Log: Bringing Level SP-Training.myLevel up for play (0)...
-Log: ---------- IsTheEntryLevel = 0, GameEngine=0x61CDE80, GameEngine->GEntry=0x13318C00, GameEngine->GEntry->GetLevelInfo()=0xD9D6200, current LevelInfo=0x2DF9EE00
-Init: WinSock: version 1.1 (2.2), MaxSocks=32767, MaxUdp=65467
-Init: WinSock: I am PC-CASA (26.85.202.120)
-Log: Resolving ...
+Log: Bringing Level SP-ABomb.myLevel up for play (90)...
+Log: ---------- IsTheEntryLevel = 0, GameEngine=0x63DE100, GameEngine->GEntry=0x17328C00, GameEngine->GEntry->GetLevelInfo()=0xD835B00, current LevelInfo=0x2B951C00
 Log: Spawning new actor for Viewport WindowsViewport0
-Log: SwatGamePlayerController0 got player WindowsViewport0
-Log: Creating IME context.
-Log: Flushing viewport 0x130FE600
-Log: Finished flushing viewport 0x130FE600 in 0.01 seconds
-DevMassive: ADCLIENT: Level has empty ZoneName.
-DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
-Log: Loadmap executed in 3.91 seconds. (0.25 Verify) (2.39 Load) (0.90 Actor Init)
-Log: Resolved  (26.85.202.120)
-Log: Precaching: SP-Training.LevelInfo0
-Log: Finished Static Mesh Batch build in 0.001 seconds
-Log: Static mesh batches: 25361932 vertex bytes, 2155428 index bytes
-Log: Allocating 16384 byte dynamic index buffer.
-Log: Allocating 65536 byte dynamic vertex buffer.
-Log: Finished precaching geometry in 0.361 seconds
-Log: Finished precaching textures in 1.506 seconds
+Log: SwatEntryPlayerController3 got player WindowsViewport0
+Log: Flushing viewport 0x1741B900
+Log: Finished flushing viewport 0x1741B900 in 0.002 seconds
+DevMassive: ADCLIENT: OnLevelLoad, fetching zone SP-ABomb
+DevMassive: ADCLIENT: MMT_GetZoneHeaders
+Log: Loadmap executed in 2.11 seconds. (0.37 Verify) (1.16 Load) (0.16 Actor Init)
+Error: Failed to deactivate our speech recognition grammar rules.
+Warning: Failed to load 'Package0': Can't find file for package 'Package0'
+Warning: Failed to load 'Material Package0.None': Can't find file for package 'Package0'
+Log: SwatGamePlayerController0 setplayer WindowsViewport0
+Log: Flushing viewport 0x1741B900
+Log: Finished flushing viewport 0x1741B900 in 0.002 seconds
+Warning: Failed to load 'Package1': Can't find file for package 'Package1'
+Warning: Failed to load 'StaticMesh Package1.None': Can't find file for package 'Package1'
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Failed to load 'NULL': Can't resolve package name
+Warning: Failed to load 'Class None.None': Can't resolve package name
+Warning: Missing Texture Texture gui_tex3.thumb_SP-ArabVillageDay
+Warning: Missing Texture Texture gui_tex3.thumb_SP-BusStation
+Warning: Missing Texture Texture gui_tex3.thumb_GrowOp
+Warning: Missing Texture Texture gui_tex3.thumb_SP-Shipyard
+Warning: Missing Texture Texture gui_tex3.thumb_University
+Warning: Failed to load 'Field_Bank_Tex': Can't find file for package 'Field_Bank_Tex'
+Warning: Missing Package Package Field_Bank_Tex.Walls
+Warning: Failed to load 'Field_Bank_Tex': Can't find file for package 'Field_Bank_Tex'
+Warning: Missing Package Package Field_Bank_Tex.Walls
+Warning: Missing Texture Texture Field_Bank_Tex.Walls.Bathroom_Tiles01
+Warning: Failed to load 'Field_Bank_Tex': Can't find file for package 'Field_Bank_Tex'
+VoiceChat: (t=40.807): SwatVoiceReplicationInfo0 ___________________PostNetBeginPlay
+VoiceChat: (t=40.807): SwatVoiceReplicationInfo0 AddVoiceChannel PRI:None
+VoiceChat: (t=40.807): SwatVoiceReplicationInfo0 AddVoiceChannel PRI:None
 Init: EffectsSystem Configuration: ..\system\VisualEffectsConfig.u is up-to-date.
 Log: [EFFECTS SYSTEM] The VisualEffectsSubsystem's configuration package is up-to-date.
 Log: Collecting garbage
 Log: Purging garbage
-Log: Garbage: objects: 66079->65812; refs: 811698
+Log: Garbage: objects: 80948->80702; refs: 1122177
 Log: VisualEffectsSubsystem created.
 Init: EffectsSystem Configuration: ..\system\SoundEffectsConfig.u is up-to-date.
 Log: [EFFECTS SYSTEM] The SoundEffectsSubsystem's configuration package is up-to-date.
 Log: There are no Streams specified for StreamSoundEffectSpecification: 
 Log: Collecting garbage
 Log: Purging garbage
-Log: Garbage: objects: 98929->84511; refs: 908560
+Log: Garbage: objects: 113418->99311; refs: 1218591
 Log: SoundEffectsSubsystem created.
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-Training.IdleAimAroundAction7
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-Training.IdleAimAroundAction8
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-Training.IdleAimAroundAction9
-Log: setActionParameters: WARNING: parameter BoolProperty SwatAICommon.AimAroundGoal.CancelWhenCompliant doesn't exist in action IdleAimAroundAction SP-Training.IdleAimAroundAction10
-Log: Precaching: SP-Training.LevelInfo0
-Log: Finished precaching geometry in 0.013 seconds
-Log: Finished precaching textures in 0.025 seconds
-Localization: No localization: Engine.KeyNames.W (int)
-Localization: No localization: Engine.KeyNames.S (int)
-Localization: No localization: Engine.KeyNames.A (int)
-Localization: No localization: Engine.KeyNames.D (int)
-Localization: No localization: Engine.KeyNames.Period (int)
-Localization: No localization: Engine.KeyNames.C (int)
-Localization: No localization: Engine.KeyNames.Q (int)
-Localization: No localization: Engine.KeyNames.E (int)
-Log: Allocating 68544 byte dynamic vertex buffer.
-Log: Allocating 86832 byte dynamic vertex buffer.
-Localization: No localization: Engine.KeyNames.F (int)
-Localization: No localization: Engine.KeyNames.F (int)
-Localization: No localization: Engine.KeyNames.R (int)
+Log: Precaching: SP-ABomb.LevelInfo0
+Log: Finished Static Mesh Batch build in 0.001 seconds
+Log: Static mesh batches: 28202420 vertex bytes, 2064834 index bytes
+Log: Allocating 16384 byte dynamic index buffer.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Finished precaching geometry in 0.647 seconds
+Log: Finished precaching textures in 2.277 seconds
+Log: Creating IME context.
+Log: Allocating 125856 byte dynamic vertex buffer.
+Log: Allocating 128000 byte dynamic vertex buffer.
+Error: Failed to register sound: E:\GOG Games\SWAT 4\Content\Sounds\ScriptedVO\AbombLoad_dis.ogg
+Error: Failed to register sound: ScriptedVO/AbombLoad_dis.ogg
+DevMassive: OnGetZoneHeaders: MMT_SUCCESS MMT_STATUS_OBJECT_NOT_FOUND
+DevMassive: Couldn't retrieve the level's zone, no ads will be served.
+Log: URL: Adding default option Name=Bepperspray
+Log: URL: Adding default option Class=SwatGame.SwatPlayer
+Log: URL: Adding default option team=255
+Log: Browse: swat_splashscene?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
+Log: LoadMap: swat_splashscene?Name=Bepperspray?Class=SwatGame.SwatPlayer?team=255
+Log: [dkaplan]: URL.Map = swat_splashscene
+NetComeGo: Close TcpipConnection0 26.85.202.120:10480 05/04/21 09:51:29
+Error: Failed to deactivate our speech recognition grammar rules.
+Exit: Socket shut down
+Log: (Havok): Destroying static world for level.
+Log: ****************************************************
+Log:  Beginning level load: 'swat_splashscene'
+Log: ****************************************************
+Log: ****************************************************
+Log:  Finished level load in 0.251 seconds
+Log: ****************************************************
+Log: Collecting garbage
+Log: Purging garbage
+Log: 123581.0ms Unloading: Package SW_Meta
+Log: 123582.0ms Unloading: Package SW_Bounce
+Log: 123582.0ms Unloading: Package SW_Hits
+Log: 123582.0ms Unloading: Package SW_Objects
+Log: 123582.0ms Unloading: Package SW_VO
+Log: 123582.0ms Unloading: Package SW_Ambients
+Log: 123582.0ms Unloading: Package SW_Weapons
+Log: 123582.0ms Unloading: Package SW_Bullets
+Log: 123582.0ms Unloading: Package SW_Feet
+Log: 123584.0ms Unloading: Package SWATeffects2
+Log: 123584.0ms Unloading: Package VisualEffectsConfig
+Log: 123588.0ms Unloading: Package SWsef_weapons
+Log: 123588.0ms Unloading: Package SWSAS_weapons
+Log: 123588.0ms Unloading: Package SWEXP_weapons
+Log: 123588.0ms Unloading: Package SWEXP_ambience
+Log: 123589.0ms Unloading: Package warehouse_tex
+Log: 123589.0ms Unloading: Package warehouse_sm
+Log: 123589.0ms Unloading: Package halfwayhouse_sm
+Log: 123589.0ms Unloading: Package SwatDesignerClasses2
+Log: 123589.0ms Unloading: Package FemaleCasual3Tex
+Log: 123589.0ms Unloading: Package FemaleCasual1Tex
+Log: 123589.0ms Unloading: Package FemaleAnimation
+Log: 123589.0ms Unloading: Package SwatCameraEffects2
+Log: 123589.0ms Unloading: Package SwatCameraEffects
+Log: 123589.0ms Unloading: Package SwatObjectives
+Log: 123589.0ms Unloading: Package SwatSimpleEquipment
+Log: 123589.0ms Unloading: Package SwatEd
+Log: 123589.0ms Unloading: Package sky
+Log: 123589.0ms Unloading: Package Skybox
+Log: 123589.0ms Unloading: Package mass_textures
+Log: 123589.0ms Unloading: Package mass_objects
+Log: 123589.0ms Unloading: Package mass_classes
+Log: 123589.0ms Unloading: Package SP-ABomb
+Log: 123590.0ms Unloading: Package SoundEffectsConfig
+Log: Garbage: objects: 100782->53964; refs: 806252
+Log: Building Collision Octree...
+Log: Finished Building Collision Octree
+Log: Game class is 'GameInfo'
+Log: Level is Level swat_splashscene.myLevel
+Log: Bringing Level swat_splashscene.myLevel up for play (0)...
+Log: ---------- IsTheEntryLevel = 0, GameEngine=0x63DE100, GameEngine->GEntry=0x17328C00, GameEngine->GEntry->GetLevelInfo()=0xD835B00, current LevelInfo=0x2AFC1C00
+VoiceChat: (t=122.985): GameInfo3 VoiceReplicationInfo created: None
+Log: Spawning new actor for Viewport WindowsViewport0
+Log: SwatEntryPlayerController4 got player WindowsViewport0
+Log: Creating IME context.
+Log: Flushing viewport 0x1741B900
+Log: Finished flushing viewport 0x1741B900 in 0.014 seconds
+Log: Precaching: swat_splashscene.LevelInfo0
+Log: Finished Static Mesh Batch build in 0.000 seconds
+Log: Static mesh batches: 3380000 vertex bytes, 185430 index bytes
+Log: Allocating 16384 byte dynamic index buffer.
+Log: Allocating 65536 byte dynamic vertex buffer.
+Log: Finished precaching geometry in 0.143 seconds
+Log: Finished precaching textures in 0.253 seconds
+DevMassive: ADCLIENT: Level has empty ZoneName.
+DevMassive: ADCLIENT: Zone could not be downloaded, no ads will be served.
+Log: Loadmap executed in 1.28 seconds. (0.01 Verify) (0.25 Load) (0.50 Actor Init)
+Init: EffectsSystem Configuration: ..\system\VisualEffectsConfig.u is up-to-date.
+Log: [EFFECTS SYSTEM] The VisualEffectsSubsystem's configuration package is up-to-date.
+Log: Collecting garbage
+Log: Purging garbage
+Log: Garbage: objects: 56061->55693; refs: 829443
+Log: VisualEffectsSubsystem created.
+Init: EffectsSystem Configuration: ..\system\SoundEffectsConfig.u is up-to-date.
+Log: [EFFECTS SYSTEM] The SoundEffectsSubsystem's configuration package is up-to-date.
+Log: There are no Streams specified for StreamSoundEffectSpecification: 
+Log: Collecting garbage
+Log: Purging garbage
+Log: Garbage: objects: 87787->73784; refs: 922938
+Log: SoundEffectsSubsystem created.
+Log: Creating IME context.
+Log: Precaching: swat_splashscene.LevelInfo0
+Log: Finished precaching geometry in 0.009 seconds
+Log: Finished precaching textures in 0.010 seconds
+Log: sb_ServerBrowserCallBack(). reason=0
+Log: ---ServerAdded: IP=2026525978, port=61736
+Log: sb_ServerBrowserCallBack(). reason=0
+Log: ---ServerAdded: IP=2026525978, port=61736
+Log: sb_ServerBrowserCallBack(). reason=1
+Log: sb_ServerBrowserCallBack(). reason=4
+Log: sb_ServerBrowserCallBack(). reason=4
 Log: Closing by request
 Log: appRequestExit(0)
 Exit: Preparing to exit.
@@ -447,354 +935,872 @@ Log: Unbound to GUI.dll
 Log: Unbound to SwatAICommon.dll
 Log: Unbound to Editor.dll
 Log: Unbound to ScriptCompiler.dll
-Log: 92723.0ms Unloading: Package SwatGame
-Log: 92723.0ms Unloading: Package Engine
-Log: 92724.0ms Unloading: Package Core
-Log: 92724.0ms Unloading: Package Engine_res
-Log: 92724.0ms Unloading: Package SWAT4editorTex
-Log: 92724.0ms Unloading: Package SwatEquipmentModels2
-Log: 92724.0ms Unloading: Package SwatGear_sm
-Log: 92724.0ms Unloading: Package SwatGearTex
-Log: 92724.0ms Unloading: Package SWAT1stPersonTex
-Log: 92724.0ms Unloading: Package MP5A4_NEW
-Log: 92724.0ms Unloading: Package SwatFXtex
-Log: 92724.0ms Unloading: Package G36Knew
-Log: 92724.0ms Unloading: Package bm4
-Log: 92724.0ms Unloading: Package BenelliNovanew
-Log: 92724.0ms Unloading: Package M870Breach
-Log: 92724.0ms Unloading: Package mich_helmet
-Log: 92724.0ms Unloading: Package Kimber
-Log: 92724.0ms Unloading: Package UMPnew
-Log: 92724.0ms Unloading: Package MaleGang1Tex
-Log: 92724.0ms Unloading: Package M4A1_SFM500
-Log: 92724.0ms Unloading: Package surefireM900
-Log: 92724.0ms Unloading: Package FR_grenades
-Log: 92724.0ms Unloading: Package Glock
-Log: 92724.0ms Unloading: Package 92fs
-Log: 92724.0ms Unloading: Package motorola
-Log: 92724.0ms Unloading: Package safariland
-Log: 92724.0ms Unloading: Package gear_sas
-Log: 92724.0ms Unloading: Package GearTex_sas
-Log: 92724.0ms Unloading: Package 1stPersonTex_sas
-Log: 92724.0ms Unloading: Package FP_M16A1_tex
-Log: Unbound to SwatEquipment.dll
-Log: 92724.0ms Unloading: Package SwatEquipment
-Log: 92724.0ms Unloading: Package gui_FR
-Log: 92724.0ms Unloading: Package GUI
-Log: 92724.0ms Unloading: Package gui_tex
-Log: 92724.0ms Unloading: Package gui_sas
-Log: 92724.0ms Unloading: Package gui_tex3
-Log: 92724.0ms Unloading: Package gui_tex2
-Log: 92724.0ms Unloading: Package RWOSupport
-Log: 92724.0ms Unloading: Package SwatAICommon
-Log: 92725.0ms Unloading: Package Tyrion
-Log: 92725.0ms Unloading: Package AICommon
-Log: 92725.0ms Unloading: Package SwatAIAwareness
-Log: Unbound to IGSoundEffectsSubsystem.dll
+Log: 132274.0ms Unloading: Package SwatGame
+Log: 132275.0ms Unloading: Package Engine
+Log: 132275.0ms Unloading: Package Core
+Log: 132275.0ms Unloading: Package Engine_res
+Log: 132276.0ms Unloading: Package SWAT4editorTex
+Log: 132276.0ms Unloading: Package SwatGear_sm
+Log: 132276.0ms Unloading: Package SwatGearTex
+Log: 132276.0ms Unloading: Package SWAT1stPersonTex
+Log: 132276.0ms Unloading: Package MP5A4_NEW
+Log: 132276.0ms Unloading: Package SwatFXtex
+Log: 132276.0ms Unloading: Package G36Knew
+Log: 132276.0ms Unloading: Package bm4
+Log: 132276.0ms Unloading: Package BenelliNovanew
+Log: 132276.0ms Unloading: Package M870Breach
+Log: 132276.0ms Unloading: Package mich_helmet
+Log: 132276.0ms Unloading: Package Kimber
+Log: 132276.0ms Unloading: Package UMPnew
+Log: 132276.0ms Unloading: Package MaleGang1Tex
+Log: 132276.0ms Unloading: Package M4A1_SFM500
+Log: 132276.0ms Unloading: Package surefireM900
+Log: 132276.0ms Unloading: Package FR_grenades
+Log: 132276.0ms Unloading: Package Glock
+Log: 132276.0ms Unloading: Package 92fs
+Log: 132276.0ms Unloading: Package motorola
+Log: 132276.0ms Unloading: Package safariland
+Log: 132276.0ms Unloading: Package HUD
+Log: 132276.0ms Unloading: Package EditorSprites
+Log: 132276.0ms Unloading: Package FP_Hand2
 Log: Unbound to IGEffectsSystem.dll
-Log: 92725.0ms Unloading: Package IGSoundEffectsSubsystem
-Log: 92725.0ms Unloading: Package IGEffectsSystem
-Log: 92725.0ms Unloading: Package IGEffectsSystem_EditorTextures
-Log: 92725.0ms Unloading: Package Gameplay
-Log: 92725.0ms Unloading: Package Scripting
-Log: 92725.0ms Unloading: Package EditorSprites
-Log: 92725.0ms Unloading: Package gear_sef
-Log: 92725.0ms Unloading: Package SwatArmory_Tex
-Log: 92725.0ms Unloading: Package GearTex_sef
-Log: 92725.0ms Unloading: Package SwatGear2Tex
-Log: 92725.0ms Unloading: Package bp_3P_tex
-Log: 92725.0ms Unloading: Package AimpointM2
-Log: 92725.0ms Unloading: Package gear_suspects
-Log: 92725.0ms Unloading: Package SwatEquipmentModels3
-Log: 92725.0ms Unloading: Package SwatEquipmentModels
-Log: 92725.0ms Unloading: Package NovaPump_ThirdPerson
-Log: 92725.0ms Unloading: Package FP_C2detonator
-Log: 92725.0ms Unloading: Package FP_csGasGrenade
-Log: 92725.0ms Unloading: Package Colt1911FL_ThirdPerson
-Log: 92725.0ms Unloading: Package FP_coltHG
-Log: 92725.0ms Unloading: Package FP_NovaPumpShotgun
-Log: 92725.0ms Unloading: Package FP_UMPsmg
-Log: 92725.0ms Unloading: Package Eotech552
-Log: 92725.0ms Unloading: Package FP_G36k
-Log: 92725.0ms Unloading: Package FP_9mmPistol
-Log: 92725.0ms Unloading: Package SurefireP101
-Log: 92725.0ms Unloading: Package NineMMpistol_ThirdPerson
-Log: 92725.0ms Unloading: Package FP_M4A1mg
-Log: 92725.0ms Unloading: Package FP_m4super90sg
-Log: 92725.0ms Unloading: Package FP_mp5SMG
-Log: 92725.0ms Unloading: Package FP_uzi
-Log: 92725.0ms Unloading: Package FP_flashbangGrenade
-Log: 92725.0ms Unloading: Package FP_stingGrenade
-Log: 92725.0ms Unloading: Package FP_mp5SMGsilenced
-Log: 92726.0ms Unloading: Package Optiwand_ThirdPerson
-Log: 92726.0ms Unloading: Package FP_Optiwand
-Log: 92726.0ms Unloading: Package scripted_tex
-Log: 92726.0ms Unloading: Package FP_Pepperspray
-Log: 92726.0ms Unloading: Package FP_BreachingSG
-Log: 92726.0ms Unloading: Package BreachingSG_ThirdPerson
-Log: 92726.0ms Unloading: Package FP_AK47
-Log: 92726.0ms Unloading: Package FP_DoorWedge
-Log: 92726.0ms Unloading: Package FP_toolkit
-Log: 92726.0ms Unloading: Package Coronas
-Log: 92726.0ms Unloading: Package FP_C2charge
-Log: 92726.0ms Unloading: Package FP_Handcuffs
-Log: 92726.0ms Unloading: Package FP_paintball
-Log: 92726.0ms Unloading: Package FP_taser
-Log: 92726.0ms Unloading: Package FP_Revolver
-Log: 92726.0ms Unloading: Package FP_FragGrenade
-Log: 92726.0ms Unloading: Package coltsmg_static
-Log: 92726.0ms Unloading: Package ColtSMG
-Log: 92726.0ms Unloading: Package FP_coltsmg
-Log: 92726.0ms Unloading: Package FP_coltsmgsil
-Log: 92726.0ms Unloading: Package swatmeshfx2_sm
-Log: 92726.0ms Unloading: Package SwatFX2tex
-Log: 92726.0ms Unloading: Package TaserWire
-Log: 92726.0ms Unloading: Package SW_FR
-Log: 92726.0ms Unloading: Package Hotel_sm
-Log: 92726.0ms Unloading: Package Hotel
-Log: 92726.0ms Unloading: Package MetalShaders
-Log: 92726.0ms Unloading: Package Repo_Tex
-Log: 92726.0ms Unloading: Package Arms_Tex
-Log: 92726.0ms Unloading: Package Silence_Tex
-Log: 92726.0ms Unloading: Package office_Tex
-Log: 92726.0ms Unloading: Package DNA_tex
-Log: 92726.0ms Unloading: Package VIP_Tex
-Log: 92726.0ms Unloading: Package HotelFXtex
-Log: 92726.0ms Unloading: Package barbershop_tex
-Log: 92726.0ms Unloading: Package SwatGear2_sm
-Log: 92726.0ms Unloading: Package druglab
-Log: 92726.0ms Unloading: Package HUD
-Log: 92726.0ms Unloading: Package SwatProgrammerSampleClasses
-Log: 92726.0ms Unloading: Package DeadPeople_sm
-Log: 92726.0ms Unloading: Package FemaleNurseTex
-Log: 92726.0ms Unloading: Package MaleDoctorTex
-Log: 92726.0ms Unloading: Package SWATbadguyTex
-Log: 92726.0ms Unloading: Package SWATofficerTex
-Log: 92726.0ms Unloading: Package MaleCasual2Tex
-Log: 92726.0ms Unloading: Package Paradise_sm
-Log: 92726.0ms Unloading: Package Paradise_Tex
-Log: 92726.0ms Unloading: Package Tenement_Tex
-Log: 92726.0ms Unloading: Package train
-Log: 92726.0ms Unloading: Package Bar_Tex
-Log: 92726.0ms Unloading: Package Doors_sm
-Log: 92726.0ms Unloading: Package doors_Tex
-Log: 92726.0ms Unloading: Package bullseye_Tex
-Log: 92726.0ms Unloading: Package Hosp
-Log: 92726.0ms Unloading: Package RedLibrary_Tex
-Log: 92726.0ms Unloading: Package Jewel_Tex
-Log: 92726.0ms Unloading: Package doors_knobs
-Log: 92726.0ms Unloading: Package Power_Tex
-Log: 92726.0ms Unloading: Package SWATmeshFX_sm
-Log: 92726.0ms Unloading: Package Con_Tex
-Log: 92726.0ms Unloading: Package SwatDesignerClasses
-Log: 92726.0ms Unloading: Package Bar_sm
-Log: 92726.0ms Unloading: Package Editor_res
-Log: 92726.0ms Unloading: Package Junk_Tex
-Log: 92726.0ms Unloading: Package Outdoors_Tex
-Log: 92727.0ms Unloading: Package Con_sm
-Log: 92727.0ms Unloading: Package mac_Tex
-Log: 92727.0ms Unloading: Package Tenement_sm
-Log: 92727.0ms Unloading: Package Silence_sm
-Log: 92727.0ms Unloading: Package off_sm
-Log: 92727.0ms Unloading: Package Repo_sm
-Log: 92727.0ms Unloading: Package LocalizedTextures
-Log: 92727.0ms Unloading: Package Barbershop_sm
-Log: 92727.0ms Unloading: Package Furniture_Tex
-Log: 92727.0ms Unloading: Package dna_sm
-Log: 92727.0ms Unloading: Package amc_Tex
-Log: 92727.0ms Unloading: Package VIP_sm
-Log: 92727.0ms Unloading: Package Cars
-Log: 92727.0ms Unloading: Package Hosp_sm
-Log: 92727.0ms Unloading: Package mac_sm
-Log: 92727.0ms Unloading: Package Power_sm
-Log: 92727.0ms Unloading: Package Jewel_sm
-Log: 92727.0ms Unloading: Package arms_sm
-Log: 92727.0ms Unloading: Package Redlibrary_sm
-Log: 92727.0ms Unloading: Package train_sm
-Log: 92727.0ms Unloading: Package Utility_Tex
-Log: 92727.0ms Unloading: Package Druglab_sm
-Log: 92727.0ms Unloading: Package utility_sm
-Log: 92727.0ms Unloading: Package bullseye_sm
-Log: 92727.0ms Unloading: Package Junk_sm
-Log: 92727.0ms Unloading: Package Cars_sm
-Log: 92727.0ms Unloading: Package MaleJanitorTextureSet
-Log: 92727.0ms Unloading: Package SWATMaleAnimation
-Log: 92727.0ms Unloading: Package LeoMelTextureSet
-Log: 92727.0ms Unloading: Package MaleSuitTex
-Log: 92727.0ms Unloading: Package MaleCasual3Tex
-Log: 92727.0ms Unloading: Package CultLeaderTextureSet
-Log: 92727.0ms Unloading: Package MaleBarberTex
-Log: 92727.0ms Unloading: Package SWATheavyTex
-Log: 92727.0ms Unloading: Package MaleChubbyTex
-Log: 92727.0ms Unloading: Package MaleCasual4Tex
-Log: 92727.0ms Unloading: Package SWATinstructorTex
-Log: 92727.0ms Unloading: Package MaleCasual1Tex
-Log: 92727.0ms Unloading: Package MaleCasualArmorTex
-Log: 92727.0ms Unloading: Package wall_sm
-Log: 92727.0ms Unloading: Package wall_Tex
-Log: 92727.0ms Unloading: Package MPbomb
-Log: 92727.0ms Unloading: Package TrainingAnimatedMeshes
-Log: 92727.0ms Unloading: Package FP_SCARH07
-Log: 92727.0ms Unloading: Package TP_UMPsmg_new
-Log: 92727.0ms Unloading: Package TP_G36Knew
-Log: 92727.0ms Unloading: Package SwatArmory_sm
-Log: 92727.0ms Unloading: Package FP_G36ks
-Log: 92727.0ms Unloading: Package M4A1_SFM500Aim
-Log: 92727.0ms Unloading: Package TP_BM4
-Log: 92727.0ms Unloading: Package m4a1_cqb_ThirdPerson
-Log: 92727.0ms Unloading: Package M4A1_SFM500_static
-Log: 92727.0ms Unloading: Package FP_MP5Ktactical
-Log: 92727.0ms Unloading: Package TP_sg552Aim
-Log: 92727.0ms Unloading: Package TP_rem870
-Log: 92727.0ms Unloading: Package FP_UMPsmgsd
-Log: 92727.0ms Unloading: Package fp_fnp90
-Log: 92727.0ms Unloading: Package p90sight
-Log: 92727.0ms Unloading: Package SWAT1stPersonTex2
-Log: 92727.0ms Unloading: Package FP_sg552
-Log: 92727.0ms Unloading: Package FP_mp5k
-Log: 92727.0ms Unloading: Package FP_p226
-Log: 92727.0ms Unloading: Package TP_p226
-Log: 92727.0ms Unloading: Package FP_hk33
-Log: 92728.0ms Unloading: Package FP_browHP
-Log: 92728.0ms Unloading: Package TP_browHP
-Log: 92728.0ms Unloading: Package FP_mp5ksd
-Log: 92728.0ms Unloading: Package FP_hk33s
-Log: 92728.0ms Unloading: Package FP_p226sd
-Log: 92728.0ms Unloading: Package TP_p226sd
-Log: 92728.0ms Unloading: Package FP_sg552sd
-Log: 92728.0ms Unloading: Package FP_browHPsd
-Log: 92728.0ms Unloading: Package TP_browHPsd
-Log: 92728.0ms Unloading: Package FP_llrem870
-Log: 92728.0ms Unloading: Package FP_arwen37
-Log: 92728.0ms Unloading: Package fp_Stinger
-Log: 92728.0ms Unloading: Package taserX2
-Log: 92728.0ms Unloading: Package taserX2_static
-Log: 92728.0ms Unloading: Package FP_HK69
-Log: 92728.0ms Unloading: Package FP_AR_15SD
-Log: 92728.0ms Unloading: Package ColtAcc
-Log: 92728.0ms Unloading: Package TP_coltAcc
-Log: 92728.0ms Unloading: Package FP_rem870
-Log: 92728.0ms Unloading: Package FP_M4A1_SFM500
-Log: 92728.0ms Unloading: Package FP_M16A1
-Log: 92728.0ms Unloading: Package FP_M16A1sd
-Log: 92728.0ms Unloading: Package FP_92fs
-Log: 92728.0ms Unloading: Package TP_92fs
-Log: 92728.0ms Unloading: Package FP_M4A1_CQB_Holo
-Log: 92728.0ms Unloading: Package FP_NineBangGrenade
-Log: 92728.0ms Unloading: Package FP_M4A1_SFM500_sil
-Log: 92728.0ms Unloading: Package FP_SAW
-Log: 92728.0ms Unloading: Package 3rd_SAW
-Log: 92728.0ms Unloading: Package FP_glowstick
-Log: 92728.0ms Unloading: Package FP_m1super90
-Log: 92728.0ms Unloading: Package FP_DesertEagleNew
-Log: 92728.0ms Unloading: Package FP_M4A1_SFM500_Aim
-Log: 92728.0ms Unloading: Package FP_M4A1_SFM500_silAim
-Log: 92728.0ms Unloading: Package FP_AKS74U
-Log: 92728.0ms Unloading: Package fp_tec9
-Log: 92728.0ms Unloading: Package FP_sg552Aim
-Log: 92728.0ms Unloading: Package FP_sg552Aimsd
-Log: 92728.0ms Unloading: Package FP_M4A1_CQB_silHolo
-Log: 92728.0ms Unloading: Package FP_mp5sd
-Log: 92728.0ms Unloading: Package FP_Hand2
-Log: 92728.0ms Unloading: Package SWAThands
-Log: 92728.0ms Unloading: Package Voting
-Log: 92728.0ms Unloading: Package SwatProcedures
+Log: 132276.0ms Unloading: Package IGEffectsSystem
+Log: 132276.0ms Unloading: Package SWAThands
+Log: 132276.0ms Unloading: Package Editor_res
+Log: 132276.0ms Unloading: Package Hotel_sm
+Log: 132276.0ms Unloading: Package Hotel
+Log: 132276.0ms Unloading: Package MetalShaders
+Log: 132276.0ms Unloading: Package Repo_Tex
+Log: 132276.0ms Unloading: Package Arms_Tex
+Log: 132276.0ms Unloading: Package Silence_Tex
+Log: 132276.0ms Unloading: Package office_Tex
+Log: 132276.0ms Unloading: Package DNA_tex
+Log: 132276.0ms Unloading: Package VIP_Tex
+Log: 132276.0ms Unloading: Package HotelFXtex
+Log: 132276.0ms Unloading: Package barbershop_tex
+Log: 132276.0ms Unloading: Package SwatAICommon
+Log: 132277.0ms Unloading: Package Tyrion
+Log: 132277.0ms Unloading: Package AICommon
+Log: 132277.0ms Unloading: Package SwatAIAwareness
+Log: 132277.0ms Unloading: Package GUI
+Log: 132277.0ms Unloading: Package gui_tex
+Log: 132277.0ms Unloading: Package Scripting
+Log: 132277.0ms Unloading: Package Voting
+Log: Unbound to IGSoundEffectsSubsystem.dll
+Log: 132277.0ms Unloading: Package IGSoundEffectsSubsystem
+Log: 132277.0ms Unloading: Package IGEffectsSystem_EditorTextures
+Log: 132277.0ms Unloading: Package RWOSupport
+Log: 132277.0ms Unloading: Package Gameplay
+Log: Unbound to SwatEquipment.dll
+Log: 132277.0ms Unloading: Package SwatEquipment
+Log: 132277.0ms Unloading: Package SwatEquipmentModels2
+Log: 132277.0ms Unloading: Package gear_sas
+Log: 132277.0ms Unloading: Package GearTex_sas
+Log: 132277.0ms Unloading: Package 1stPersonTex_sas
+Log: 132277.0ms Unloading: Package FP_M16A1_tex
+Log: 132277.0ms Unloading: Package gear_sef
+Log: 132277.0ms Unloading: Package SwatArmory_Tex
+Log: 132277.0ms Unloading: Package GearTex_sef
+Log: 132277.0ms Unloading: Package SwatGear2Tex
+Log: 132277.0ms Unloading: Package bp_3P_tex
+Log: 132277.0ms Unloading: Package AimpointM2
+Log: 132277.0ms Unloading: Package gear_suspects
+Log: 132277.0ms Unloading: Package SwatGear2_sm
+Log: 132277.0ms Unloading: Package druglab
+Log: 132277.0ms Unloading: Package SwatFX2tex
+Log: 132277.0ms Unloading: Package FP_mp5SMGsilenced
+Log: 132277.0ms Unloading: Package Eotech552
+Log: 132277.0ms Unloading: Package FP_SCARH07
+Log: 132277.0ms Unloading: Package TP_UMPsmg_new
+Log: 132277.0ms Unloading: Package TP_G36Knew
+Log: 132277.0ms Unloading: Package FP_mp5SMG
+Log: 132277.0ms Unloading: Package FP_9mmPistol
+Log: 132277.0ms Unloading: Package SurefireP101
+Log: 132277.0ms Unloading: Package SwatArmory_sm
+Log: 132277.0ms Unloading: Package FP_NovaPumpShotgun
+Log: 132277.0ms Unloading: Package FP_G36ks
+Log: 132277.0ms Unloading: Package FP_G36k
+Log: 132278.0ms Unloading: Package M4A1_SFM500Aim
+Log: 132278.0ms Unloading: Package FP_coltHG
+Log: 132278.0ms Unloading: Package Colt1911FL_ThirdPerson
+Log: 132278.0ms Unloading: Package FP_m4super90sg
+Log: 132278.0ms Unloading: Package FP_AK47
+Log: 132278.0ms Unloading: Package TP_BM4
+Log: 132278.0ms Unloading: Package FP_csGasGrenade
+Log: 132278.0ms Unloading: Package FP_C2detonator
+Log: 132278.0ms Unloading: Package m4a1_cqb_ThirdPerson
+Log: 132278.0ms Unloading: Package M4A1_SFM500_static
+Log: 132278.0ms Unloading: Package NovaPump_ThirdPerson
+Log: 132278.0ms Unloading: Package FP_MP5Ktactical
+Log: 132278.0ms Unloading: Package TP_sg552Aim
+Log: 132278.0ms Unloading: Package TP_rem870
+Log: 132278.0ms Unloading: Package FP_UMPsmg
+Log: 132278.0ms Unloading: Package FP_UMPsmgsd
+Log: 132278.0ms Unloading: Package fp_fnp90
+Log: 132278.0ms Unloading: Package p90sight
+Log: 132278.0ms Unloading: Package SWAT1stPersonTex2
+Log: 132278.0ms Unloading: Package FP_sg552
+Log: 132278.0ms Unloading: Package FP_mp5k
+Log: 132278.0ms Unloading: Package NineMMpistol_ThirdPerson
+Log: 132278.0ms Unloading: Package FP_taser
+Log: 132278.0ms Unloading: Package FP_flashbangGrenade
+Log: 132278.0ms Unloading: Package FP_p226
+Log: 132278.0ms Unloading: Package TP_p226
+Log: 132278.0ms Unloading: Package FP_hk33
+Log: 132278.0ms Unloading: Package FP_browHP
+Log: 132278.0ms Unloading: Package TP_browHP
+Log: 132278.0ms Unloading: Package FP_stingGrenade
+Log: 132278.0ms Unloading: Package FP_mp5ksd
+Log: 132278.0ms Unloading: Package FP_Revolver
+Log: 132278.0ms Unloading: Package FP_hk33s
+Log: 132278.0ms Unloading: Package FP_p226sd
+Log: 132278.0ms Unloading: Package TP_p226sd
+Log: 132278.0ms Unloading: Package FP_sg552sd
+Log: 132278.0ms Unloading: Package FP_browHPsd
+Log: 132278.0ms Unloading: Package TP_browHPsd
+Log: 132278.0ms Unloading: Package FP_llrem870
+Log: 132278.0ms Unloading: Package FP_DoorWedge
+Log: 132278.0ms Unloading: Package FP_BreachingSG
+Log: 132278.0ms Unloading: Package BreachingSG_ThirdPerson
+Log: 132278.0ms Unloading: Package FP_arwen37
+Log: 132278.0ms Unloading: Package fp_Stinger
+Log: 132278.0ms Unloading: Package taserX2
+Log: 132278.0ms Unloading: Package taserX2_static
+Log: 132278.0ms Unloading: Package FP_HK69
+Log: 132278.0ms Unloading: Package FP_Pepperspray
+Log: 132278.0ms Unloading: Package FP_AR_15SD
+Log: 132278.0ms Unloading: Package ColtAcc
+Log: 132278.0ms Unloading: Package TP_coltAcc
+Log: 132278.0ms Unloading: Package FP_paintball
+Log: 132278.0ms Unloading: Package FP_C2charge
+Log: 132278.0ms Unloading: Package Coronas
+Log: 132278.0ms Unloading: Package FP_rem870
+Log: 132278.0ms Unloading: Package FP_M4A1_SFM500
+Log: 132278.0ms Unloading: Package FP_M16A1
+Log: 132278.0ms Unloading: Package FP_M16A1sd
+Log: 132278.0ms Unloading: Package FP_92fs
+Log: 132278.0ms Unloading: Package TP_92fs
+Log: 132278.0ms Unloading: Package FP_M4A1_CQB_Holo
+Log: 132278.0ms Unloading: Package FP_NineBangGrenade
+Log: 132278.0ms Unloading: Package FP_M4A1_SFM500_sil
+Log: 132278.0ms Unloading: Package FP_Handcuffs
+Log: 132278.0ms Unloading: Package FP_uzi
+Log: 132278.0ms Unloading: Package FP_toolkit
+Log: 132278.0ms Unloading: Package FP_SAW
+Log: 132278.0ms Unloading: Package 3rd_SAW
+Log: 132279.0ms Unloading: Package FP_glowstick
+Log: 132279.0ms Unloading: Package FP_Optiwand
+Log: 132279.0ms Unloading: Package scripted_tex
+Log: 132279.0ms Unloading: Package Optiwand_ThirdPerson
+Log: 132279.0ms Unloading: Package FP_m1super90
+Log: 132279.0ms Unloading: Package FP_DesertEagleNew
+Log: 132279.0ms Unloading: Package FP_M4A1_SFM500_Aim
+Log: 132279.0ms Unloading: Package FP_M4A1_SFM500_silAim
+Log: 132279.0ms Unloading: Package FP_AKS74U
+Log: 132279.0ms Unloading: Package fp_tec9
+Log: 132279.0ms Unloading: Package FP_sg552Aim
+Log: 132279.0ms Unloading: Package FP_sg552Aimsd
+Log: 132279.0ms Unloading: Package FP_M4A1_CQB_silHolo
+Log: 132279.0ms Unloading: Package FP_mp5sd
+Log: 132279.0ms Unloading: Package gui_FR
+Log: 132279.0ms Unloading: Package gui_sas
+Log: 132279.0ms Unloading: Package gui_tex3
+Log: 132279.0ms Unloading: Package gui_tex2
+Log: 132279.0ms Unloading: Package SwatEquipmentModels3
+Log: 132279.0ms Unloading: Package SwatEquipmentModels
+Log: 132279.0ms Unloading: Package FP_M4A1mg
+Log: 132279.0ms Unloading: Package FP_FragGrenade
+Log: 132279.0ms Unloading: Package coltsmg_static
+Log: 132279.0ms Unloading: Package ColtSMG
+Log: 132279.0ms Unloading: Package FP_coltsmg
+Log: 132279.0ms Unloading: Package FP_coltsmgsil
+Log: 132279.0ms Unloading: Package SwatProgrammerSampleClasses
+Log: 132279.0ms Unloading: Package DeadPeople_sm
+Log: 132279.0ms Unloading: Package FemaleNurseTex
+Log: 132279.0ms Unloading: Package MaleDoctorTex
+Log: 132279.0ms Unloading: Package SWATbadguyTex
+Log: 132279.0ms Unloading: Package SWATofficerTex
+Log: 132279.0ms Unloading: Package MaleCasual2Tex
+Log: 132279.0ms Unloading: Package Paradise_sm
+Log: 132279.0ms Unloading: Package Paradise_Tex
+Log: 132279.0ms Unloading: Package Tenement_Tex
+Log: 132279.0ms Unloading: Package train
+Log: 132279.0ms Unloading: Package Bar_Tex
+Log: 132279.0ms Unloading: Package Doors_sm
+Log: 132279.0ms Unloading: Package doors_Tex
+Log: 132279.0ms Unloading: Package bullseye_Tex
+Log: 132279.0ms Unloading: Package Hosp
+Log: 132279.0ms Unloading: Package RedLibrary_Tex
+Log: 132279.0ms Unloading: Package Jewel_Tex
+Log: 132279.0ms Unloading: Package doors_knobs
+Log: 132279.0ms Unloading: Package Power_Tex
+Log: 132279.0ms Unloading: Package SWATmeshFX_sm
+Log: 132279.0ms Unloading: Package Con_Tex
+Log: 132279.0ms Unloading: Package SW_FR
+Log: 132279.0ms Unloading: Package SwatDesignerClasses
+Log: 132279.0ms Unloading: Package Bar_sm
+Log: 132279.0ms Unloading: Package Junk_Tex
+Log: 132279.0ms Unloading: Package Outdoors_Tex
+Log: 132280.0ms Unloading: Package Con_sm
+Log: 132280.0ms Unloading: Package mac_Tex
+Log: 132280.0ms Unloading: Package Tenement_sm
+Log: 132280.0ms Unloading: Package Silence_sm
+Log: 132280.0ms Unloading: Package off_sm
+Log: 132280.0ms Unloading: Package Repo_sm
+Log: 132280.0ms Unloading: Package LocalizedTextures
+Log: 132280.0ms Unloading: Package Barbershop_sm
+Log: 132280.0ms Unloading: Package Furniture_Tex
+Log: 132280.0ms Unloading: Package dna_sm
+Log: 132280.0ms Unloading: Package amc_Tex
+Log: 132280.0ms Unloading: Package VIP_sm
+Log: 132280.0ms Unloading: Package Cars
+Log: 132280.0ms Unloading: Package Hosp_sm
+Log: 132280.0ms Unloading: Package mac_sm
+Log: 132280.0ms Unloading: Package Power_sm
+Log: 132280.0ms Unloading: Package Jewel_sm
+Log: 132280.0ms Unloading: Package arms_sm
+Log: 132280.0ms Unloading: Package Redlibrary_sm
+Log: 132280.0ms Unloading: Package train_sm
+Log: 132280.0ms Unloading: Package Utility_Tex
+Log: 132280.0ms Unloading: Package Druglab_sm
+Log: 132280.0ms Unloading: Package utility_sm
+Log: 132280.0ms Unloading: Package bullseye_sm
+Log: 132280.0ms Unloading: Package Junk_sm
+Log: 132280.0ms Unloading: Package Cars_sm
+Log: 132280.0ms Unloading: Package MaleJanitorTextureSet
+Log: 132280.0ms Unloading: Package SWATMaleAnimation
+Log: 132280.0ms Unloading: Package LeoMelTextureSet
+Log: 132280.0ms Unloading: Package MaleSuitTex
+Log: 132280.0ms Unloading: Package MaleCasual3Tex
+Log: 132280.0ms Unloading: Package CultLeaderTextureSet
+Log: 132280.0ms Unloading: Package MaleBarberTex
+Log: 132280.0ms Unloading: Package SWATheavyTex
+Log: 132280.0ms Unloading: Package MaleChubbyTex
+Log: 132280.0ms Unloading: Package MaleCasual4Tex
+Log: 132280.0ms Unloading: Package SWATinstructorTex
+Log: 132280.0ms Unloading: Package MaleCasual1Tex
+Log: 132280.0ms Unloading: Package MaleCasualArmorTex
+Log: 132280.0ms Unloading: Package wall_sm
+Log: 132280.0ms Unloading: Package wall_Tex
+Log: 132280.0ms Unloading: Package MPbomb
+Log: 132280.0ms Unloading: Package TrainingAnimatedMeshes
+Log: 132280.0ms Unloading: Package TaserWire
+Log: 132280.0ms Unloading: Package swatmeshfx2_sm
+Log: 132280.0ms Unloading: Package SwatProcedures
 Log: Unbound to IpDrv.dll
-Log: 92728.0ms Unloading: Package IpDrv
-Log: 92728.0ms Unloading: Package mp_OfficerTex
-Log: 92728.0ms Unloading: Package SWATMaleAnimation2
-Log: 92728.0ms Unloading: Package maleMafiaTex
-Log: 92728.0ms Unloading: Package maleHomelessTex
-Log: 92728.0ms Unloading: Package CASMtex
-Log: 92728.0ms Unloading: Package SWATnoArmourTex
-Log: 92728.0ms Unloading: Package CameraEffectsTex
-Log: 92728.0ms Unloading: Package SwatProtectiveEquipment
-Log: 92728.0ms Unloading: Package Suspect1_officerTex
-Log: 92728.0ms Unloading: Package ProgrammerTestObjectsTex
-Log: 92728.0ms Unloading: Package UWindow_res
-Log: 92728.0ms Unloading: Package SWATDoorAnimation
-Log: 92728.0ms Unloading: Package SWATDoubleDoorAnimations
-Log: 92728.0ms Unloading: Package CoopArrow
-Log: 92728.0ms Unloading: Package SwatProtectiveEquipment2
+Log: 132280.0ms Unloading: Package IpDrv
+Log: 132280.0ms Unloading: Package mp_OfficerTex
+Log: 132280.0ms Unloading: Package SWATMaleAnimation2
+Log: 132280.0ms Unloading: Package maleMafiaTex
+Log: 132280.0ms Unloading: Package maleHomelessTex
+Log: 132280.0ms Unloading: Package CASMtex
+Log: 132280.0ms Unloading: Package SWATnoArmourTex
+Log: 132280.0ms Unloading: Package CameraEffectsTex
+Log: 132280.0ms Unloading: Package SwatProtectiveEquipment
+Log: 132280.0ms Unloading: Package Suspect1_officerTex
+Log: 132280.0ms Unloading: Package ProgrammerTestObjectsTex
+Log: 132281.0ms Unloading: Package UWindow_res
+Log: 132281.0ms Unloading: Package CoopArrow
+Log: 132281.0ms Unloading: Package SWATDoubleDoorAnimations
+Log: 132281.0ms Unloading: Package SWATDoorAnimation
+Log: 132281.0ms Unloading: Package SwatProtectiveEquipment2
 Exit: Game engine shut down
 Log: Unbound to IGVisualEffectsSubsystem.dll
-Log: 92729.0ms Unloading: Package IGVisualEffectsSubsystem
-Log: 92730.0ms Unloading: Package Editor
+Log: 132282.0ms Unloading: Package IGVisualEffectsSubsystem
+Log: 132283.0ms Unloading: Package Editor
 Log: Unbound to WinDrv.dll
-Log: Flushing viewport 0x130FE600
-Log: Finished flushing viewport 0x130FE600 in 0.02 seconds
+Log: Flushing viewport 0x1741B900
+Log: Finished flushing viewport 0x1741B900 in 0.012 seconds
 Log: Flushing viewport 0x0
-Log: Finished flushing viewport 0x0 in 0.006 seconds
+Log: Finished flushing viewport 0x0 in 0.005 seconds
 Exit: Windows client shut down
 Log: Unbound to D3DDrv.dll
-Log: 92926.0ms Unloading: Package Packages
+Log: 132356.0ms Unloading: Package Packages
 Exit: OpenAL Audio subsystem shut down.
-Log: 93058.0ms Unloading: Package GIGN
-Log: 93058.0ms Unloading: Package GIGN_OfficerTex
-Log: 93058.0ms Unloading: Package suspect1
-Log: 93058.0ms Unloading: Package suspect2
-Log: 93058.0ms Unloading: Package Suspect2_officerTex
-Log: 93058.0ms Unloading: Package Taiwan
-Log: 93058.0ms Unloading: Package Taiwan_OfficerTex
+Log: 132495.0ms Unloading: Package 10_NYPD-ESUv1
+Log: 132495.0ms Unloading: Package skn_NYPD-ESUv1_Tex
+Log: 132495.0ms Unloading: Package 10_NYPD-ESUv2
+Log: 132495.0ms Unloading: Package skn_NYPD-ESUv2_Tex
+Log: 132495.0ms Unloading: Package 11_LAPD-SWATv1
+Log: 132495.0ms Unloading: Package skn_LAPD_SWATv1_Tex
+Log: 132495.0ms Unloading: Package 11_LAPD-SWATv2
+Log: 132495.0ms Unloading: Package skn_LAPD_SWATv2_Tex
+Log: 132495.0ms Unloading: Package 11_LAPD-SWATv3
+Log: 132495.0ms Unloading: Package skn_LAPD_SWATv3_Tex
+Log: 132495.0ms Unloading: Package 12_ACLUv1
+Log: 132495.0ms Unloading: Package skn_ACLUv1_Tex
+Log: 132495.0ms Unloading: Package 12_ACLUv2
+Log: 132495.0ms Unloading: Package skn_ACLUv2_Tex
+Log: 132495.0ms Unloading: Package 13_SWATv1
+Log: 132495.0ms Unloading: Package skn_SWATv1_Tex
+Log: 132495.0ms Unloading: Package 13_SWAT_Lead
+Log: 132495.0ms Unloading: Package skn_SWAT_Lead_Tex
+Log: 132495.0ms Unloading: Package 14_SWATUrbanv1
+Log: 132495.0ms Unloading: Package skn_SWATUrbanv1_Tex
+Log: 132495.0ms Unloading: Package 14_SWATUrban_Lead
+Log: 132495.0ms Unloading: Package skn_SWATUrban_Lead_Tex
+Log: 132495.0ms Unloading: Package 15_SWATCityv1
+Log: 132495.0ms Unloading: Package skn_SWATCityv1_Tex
+Log: 132495.0ms Unloading: Package 15_SWATCity_Lead
+Log: 132495.0ms Unloading: Package skn_SWATCity_Lead_Tex
+Log: 132495.0ms Unloading: Package 16_SASv1
+Log: 132495.0ms Unloading: Package skn_SASv1_Tex
+Log: 132495.0ms Unloading: Package 16_SAS_Lead
+Log: 132495.0ms Unloading: Package skn_SAS_Lead_Tex
+Log: 132495.0ms Unloading: Package 17_Maniken
+Log: 132495.0ms Unloading: Package skn_Maniken_Tex
+Log: 132495.0ms Unloading: Package 2_CSPD_SWATv1
+Log: 132495.0ms Unloading: Package skn_CSPD_SWATv1_Tex
+Log: 132495.0ms Unloading: Package 2_CSPD_SWATv2
+Log: 132495.0ms Unloading: Package skn_CSPD_SWATv2_Tex
+Log: 132495.0ms Unloading: Package 3_DEAv1
+Log: 132495.0ms Unloading: Package skn_DEAv1_Tex
+Log: 132495.0ms Unloading: Package 3_DEAv2
+Log: 132495.0ms Unloading: Package skn_DEAv2_Tex
+Log: 132495.0ms Unloading: Package 3_DEAv3
+Log: 132495.0ms Unloading: Package skn_DEAv3_Tex
+Log: 132495.0ms Unloading: Package 3_DEAv4
+Log: 132495.0ms Unloading: Package skn_DEAv4_Tex
+Log: 132495.0ms Unloading: Package 3_DEA_Lead
+Log: 132495.0ms Unloading: Package skn_DEA_Lead_Tex
+Log: 132496.0ms Unloading: Package 4_RedAssault
+Log: 132496.0ms Unloading: Package skn_RedAssault_Tex
+Log: 132496.0ms Unloading: Package 4_RedBreacher
+Log: 132496.0ms Unloading: Package skn_RedBreacher_Tex
+Log: 132496.0ms Unloading: Package 4_RedPointman
+Log: 132496.0ms Unloading: Package skn_RedPointman_Tex
+Log: 132496.0ms Unloading: Package 4_RedStealth
+Log: 132496.0ms Unloading: Package skn_RedStealth_Tex
+Log: 132496.0ms Unloading: Package 5_Police
+Log: 132496.0ms Unloading: Package skn_Police_Tex
+Log: 132496.0ms Unloading: Package 6_PoliceBlack
+Log: 132496.0ms Unloading: Package skn_PoliceBlack_Tex
+Log: 132496.0ms Unloading: Package 7_GIGN
+Log: 132496.0ms Unloading: Package skn_GIGN_Tex
+Log: 132496.0ms Unloading: Package 7_GIGN_Lead
+Log: 132496.0ms Unloading: Package skn_GIGN_Lead_Tex
+Log: 132496.0ms Unloading: Package 8_GIGNBlack
+Log: 132496.0ms Unloading: Package skn_GIGNBlack_Tex
+Log: 132496.0ms Unloading: Package 8_GIGNBlack_Lead
+Log: 132496.0ms Unloading: Package skn_GIGNBlack_Lead_Tex
+Log: 132496.0ms Unloading: Package 9_GIGNSnow
+Log: 132496.0ms Unloading: Package skn_GIGNSnow_Tex
+Log: 132496.0ms Unloading: Package 9_GIGNSnow_Lead
+Log: 132496.0ms Unloading: Package skn_GIGNSnow_Lead_Tex
+Log: 132496.0ms Unloading: Package ARAS
+Log: 132496.0ms Unloading: Package ARAS_Tex
+Log: 132496.0ms Unloading: Package ArgentineGEOF
+Log: 132496.0ms Unloading: Package ArgentineGEOF_Tex
+Log: 132496.0ms Unloading: Package BosnianSIPA1
+Log: 132496.0ms Unloading: Package BosnianSIPA1_Tex
+Log: 132496.0ms Unloading: Package BrazilianCore
+Log: 132496.0ms Unloading: Package BrazilianCore_Tex
+Log: 132496.0ms Unloading: Package BrazilianCoreII
+Log: 132496.0ms Unloading: Package BrazilianCoreII_Tex
+Log: 132496.0ms Unloading: Package BrazilianCOREx
+Log: 132496.0ms Unloading: Package BrazilianCOREx_Tex
+Log: 132496.0ms Unloading: Package cgsu
+Log: 132496.0ms Unloading: Package CGSU_Tex
+Log: 132496.0ms Unloading: Package CTSFO
+Log: 132496.0ms Unloading: Package CTSFO_Tex
+Log: 132496.0ms Unloading: Package DesertATF
+Log: 132496.0ms Unloading: Package DesertCamoATF_Tex
+Log: 132496.0ms Unloading: Package Taiwan_OfficerTex
+Log: 132496.0ms Unloading: Package DSI
+Log: 132496.0ms Unloading: Package DSI_Tex
+Log: 132496.0ms Unloading: Package DSItwo
+Log: 132496.0ms Unloading: Package DSItwo_Tex
+Log: 132496.0ms Unloading: Package FBIswat
+Log: 132496.0ms Unloading: Package FBIswat_Tex
+Log: 132496.0ms Unloading: Package ForceOneA
+Log: 132496.0ms Unloading: Package ForceOneA_Tex
+Log: 132496.0ms Unloading: Package ForceOneB
+Log: 132496.0ms Unloading: Package ForceOneB_Tex
+Log: 132496.0ms Unloading: Package GARDA
+Log: 132496.0ms Unloading: Package GARDA_Tex
+Log: 132496.0ms Unloading: Package GIGN
+Log: 132496.0ms Unloading: Package GIGN_OfficerTex
+Log: 132496.0ms Unloading: Package GIGNFR
+Log: 132496.0ms Unloading: Package GIGNFR_Tex
+Log: 132496.0ms Unloading: Package GreyDesert
+Log: 132496.0ms Unloading: Package SUSGreyDesert_Tex
+Log: 132496.0ms Unloading: Package Suspect2_officerTex
+Log: 132496.0ms Unloading: Package SUSSting_Tex
+Log: 132496.0ms Unloading: Package GSG
+Log: 132497.0ms Unloading: Package GSG_Tex
+Log: 132497.0ms Unloading: Package HungarianTEK
+Log: 132497.0ms Unloading: Package HungarianTEK_Tex
+Log: 132497.0ms Unloading: Package IndiaRAF
+Log: 132497.0ms Unloading: Package IndiaRAF_Tex
+Log: 132497.0ms Unloading: Package IndiaRAFv2
+Log: 132497.0ms Unloading: Package IndiaRAFv2_Tex
+Log: 132497.0ms Unloading: Package JapaneseSATcamo
+Log: 132497.0ms Unloading: Package JapaneseSATcamo_Tex
+Log: 132497.0ms Unloading: Package JungleATF
+Log: 132497.0ms Unloading: Package JungleCamoATF_Tex
+Log: 132497.0ms Unloading: Package JungleCamo
+Log: 132497.0ms Unloading: Package JungleCamo_Tex
+Log: 132497.0ms Unloading: Package Marshv1
+Log: 132497.0ms Unloading: Package skn_Marshv1_Tex
+Log: 132497.0ms Unloading: Package Marsh_Lead
+Log: 132497.0ms Unloading: Package skn_Marsh_Lead_Tex
+Log: 132497.0ms Unloading: Package NOCS
+Log: 132497.0ms Unloading: Package NOCS_Tex
+Log: 132497.0ms Unloading: Package PIKETEN
+Log: 132497.0ms Unloading: Package PIKETEN_Tex
+Log: 132497.0ms Unloading: Package PolishBOAground
+Log: 132497.0ms Unloading: Package PolishBOAground_Tex
+Log: 132497.0ms Unloading: Package PolishBOAsky
+Log: 132497.0ms Unloading: Package PolishBOAsky_Tex
+Log: 132497.0ms Unloading: Package PolishBOAskyb
+Log: 132497.0ms Unloading: Package PolishBOAskyb_Tex
+Log: 132497.0ms Unloading: Package PolishGROM
+Log: 132497.0ms Unloading: Package PolishGROM_Tex
+Log: 132497.0ms Unloading: Package RAID
+Log: 132497.0ms Unloading: Package RAID_Tex
+Log: 132497.0ms Unloading: Package RedDawn
+Log: 132497.0ms Unloading: Package Red_Dawn_Tex
+Log: 132497.0ms Unloading: Package UrbanCamoATF_Tex
+Log: 132497.0ms Unloading: Package RedDawnATF
+Log: 132497.0ms Unloading: Package RedDesert
+Log: 132497.0ms Unloading: Package SUSRedDesert_Tex
+Log: 132497.0ms Unloading: Package RussianOMONblue
+Log: 132497.0ms Unloading: Package RussianOMONblue_Tex
+Log: 132497.0ms Unloading: Package RussianOMONgreen
+Log: 132497.0ms Unloading: Package RussianOMONgreen_Tex
+Log: 132497.0ms Unloading: Package RussianTropical
+Log: 132497.0ms Unloading: Package SUSRussianTropical_Tex
+Log: 132497.0ms Unloading: Package SCO19
+Log: 132497.0ms Unloading: Package SCO19_Tex
+Log: 132497.0ms Unloading: Package SerbGendarmeryCamo
+Log: 132497.0ms Unloading: Package SerbGendarmeryCamo_Tex
+Log: 132497.0ms Unloading: Package SkyATF
+Log: 132497.0ms Unloading: Package SkyCamoATF_Tex
+Log: 132497.0ms Unloading: Package SkyCamo
+Log: 132497.0ms Unloading: Package SkyCamo_Tex
+Log: 132497.0ms Unloading: Package SkyPink
+Log: 132497.0ms Unloading: Package Sky_Pink_Tex
+Log: 132497.0ms Unloading: Package SkyPinkATF
+Log: 132497.0ms Unloading: Package suspect1
+Log: 132497.0ms Unloading: Package suspect2
+Log: 132497.0ms Unloading: Package Taiwan
+Log: 132497.0ms Unloading: Package skn_Taiwan_Tex
+Log: 132497.0ms Unloading: Package theTaiwan
+Log: 132497.0ms Unloading: Package theTaiwan_Tex
+Log: 132497.0ms Unloading: Package UrbanATF
+Log: 132497.0ms Unloading: Package UrbanCamo
+Log: 132497.0ms Unloading: Package UrbanCamo_Tex
+Log: 132497.0ms Unloading: Package URNA
+Log: 132497.0ms Unloading: Package URNA_Tex
+Log: 132497.0ms Unloading: Package Woodland1
+Log: 132497.0ms Unloading: Package woodlandCamo_Tex
+Log: 132497.0ms Unloading: Package Woodland1ATF
+Log: 132497.0ms Unloading: Package woodlandATF_Tex
+Log: 132497.0ms Unloading: Package Woodland2
+Log: 132497.0ms Unloading: Package WoodlandCamo2_Tex
+Log: 132497.0ms Unloading: Package Woodland2ATF
+Log: 132497.0ms Unloading: Package woodland2ATF_Tex
+Log: 132497.0ms Unloading: Package YellowSting
 DevMassive: ADCLIENT: MMT_DeInitialize
-Log: 93058.0ms Unloading: Package Entry
+Log: 132497.0ms Unloading: Package Entry
 Log: Unbound to SwatGui.dll
-Log: 93058.0ms Unloading: Package SwatGui
-Log: 93059.0ms Unloading: Package bp_gui_tex
-Log: 93059.0ms Unloading: Package SwatAmmo
-Log: 93059.0ms Unloading: Package SwatAmmo2
-Log: 93059.0ms Unloading: Package SwatProjectile
-Log: 93059.0ms Unloading: Package SWATcivilianGear_sm
-Log: 93059.0ms Unloading: Package FemaleCasual2Tex
-Log: 93059.0ms Unloading: Package FemaleOfficeTex
-Log: 93059.0ms Unloading: Package FemaleHeavyTex
-Log: 93059.0ms Unloading: Package Outdoors_sm
-Log: 93059.0ms Unloading: Package PerimeterAnimatedMeshes
-Log: 93059.0ms Unloading: Package SwatEffects
-Log: 93059.0ms Unloading: Package AnimatedDecorMeshes
-Log: 93059.0ms Unloading: Package HotelAnimatedMeshes
-Log: 93059.0ms Unloading: Package TreeLeaves
-Log: 93059.0ms Unloading: Package JewelryAnimatedMeshes
-Log: 93059.0ms Unloading: Package SilenceShrub
-Log: 93059.0ms Unloading: Package VIPanimatedMeshes
-Log: 93059.0ms Unloading: Package REPOhelicopter
-Log: 93059.0ms Unloading: Package ArmsShrub
-Log: 93059.0ms Unloading: Package RedLibraryAnimatedMeshes
-Log: 93060.0ms Unloading: Package BarPullBarber
-Log: 93060.0ms Unloading: Package AbombStageLights
-Log: 93060.0ms Unloading: Package SwatFonts
-Log: 93062.0ms Unloading: Package SWATeffects2
-Log: 93062.0ms Unloading: Package VisualEffectsConfig
-Log: 93062.0ms Unloading: Package SWsef_weapons
-Log: 93062.0ms Unloading: Package SW_meta
-Log: 93062.0ms Unloading: Package SWSAS_weapons
-Log: 93062.0ms Unloading: Package SW_bounce
-Log: 93062.0ms Unloading: Package SW_hits
-Log: 93062.0ms Unloading: Package SWEXP_weapons
-Log: 93062.0ms Unloading: Package SWEXP_ambience
-Log: 93062.0ms Unloading: Package SW_objects
-Log: 93063.0ms Unloading: Package SW_vo
-Log: 93063.0ms Unloading: Package SW_ambients
-Log: 93063.0ms Unloading: Package SW_weapons
-Log: 93063.0ms Unloading: Package SW_bullets
-Log: 93064.0ms Unloading: Package SW_feet
-Log: 93064.0ms Unloading: Package SwatCameraEffects2
-Log: 93064.0ms Unloading: Package SwatCameraEffects
-Log: 93065.0ms Unloading: Package SwatSimpleEquipment
-Log: 93065.0ms Unloading: Package SwatObjectives
-Log: (Havok): Destroying static world for level.
-Log: 93067.0ms Unloading: Package pier_sm
-Log: 93067.0ms Unloading: Package SP-Training
-Log: 93067.0ms Unloading: Package SoundEffectsConfig
+Log: 132497.0ms Unloading: Package SwatGui
+Log: 132498.0ms Unloading: Package bp_gui_tex
+Log: 132498.0ms Unloading: Package SwatAmmo
+Log: 132498.0ms Unloading: Package SwatAmmo2
+Log: 132498.0ms Unloading: Package SwatProjectile
+Log: 132499.0ms Unloading: Package SWATcivilianGear_sm
+Log: 132499.0ms Unloading: Package FemaleCasual2Tex
+Log: 132499.0ms Unloading: Package FemaleOfficeTex
+Log: 132499.0ms Unloading: Package FemaleHeavyTex
+Log: 132499.0ms Unloading: Package Outdoors_sm
+Log: 132499.0ms Unloading: Package PerimeterAnimatedMeshes
+Log: 132499.0ms Unloading: Package SwatEffects
+Log: 132499.0ms Unloading: Package AnimatedDecorMeshes
+Log: 132499.0ms Unloading: Package HotelAnimatedMeshes
+Log: 132499.0ms Unloading: Package TreeLeaves
+Log: 132499.0ms Unloading: Package JewelryAnimatedMeshes
+Log: 132499.0ms Unloading: Package SilenceShrub
+Log: 132499.0ms Unloading: Package VIPanimatedMeshes
+Log: 132499.0ms Unloading: Package REPOhelicopter
+Log: 132499.0ms Unloading: Package ArmsShrub
+Log: 132499.0ms Unloading: Package RedLibraryAnimatedMeshes
+Log: 132499.0ms Unloading: Package BarPullBarber
+Log: 132499.0ms Unloading: Package AbombStageLights
+Log: 132499.0ms Unloading: Package SwatFonts
+Log: 132500.0ms Unloading: Package GUIanimations
+Log: 132500.0ms Unloading: Package YorkRock_Tex
+Log: 132500.0ms Unloading: Package SP-YorkRock
+Log: 132500.0ms Unloading: Package SP-Warehouse5thStreet
+Log: 132500.0ms Unloading: Package SP-Wainwright_Offices
+Log: 132500.0ms Unloading: Package SP-Ventura
+Log: 132500.0ms Unloading: Package SP-Vacuity
+Log: 132500.0ms Unloading: Package SP-VacantOffice
+Log: 132500.0ms Unloading: Package SP-USTT_Enemy_Territory2
+Log: 132500.0ms Unloading: Package SP-U273
+Log: 132500.0ms Unloading: Package SP-TRANSPORT
+Log: 132500.0ms Unloading: Package SP-Trainingcenter
+Log: 132500.0ms Unloading: Package SP-TheManor
+Log: 132500.0ms Unloading: Package SP-TheBuilding-v1_1
+Log: 132500.0ms Unloading: Package SP-Terrorista
+Log: 132500.0ms Unloading: Package SP-Terminal
+Log: 132500.0ms Unloading: Package SP-Tenement-RMX
+Log: 132500.0ms Unloading: Package SP-Tenement-HC
+Log: 132500.0ms Unloading: Package PRED2TEX_1
+Log: 132500.0ms Unloading: Package SP-SWAT4Predator2
+Log: 132500.0ms Unloading: Package SP-SubwayTunnels
+Log: 132500.0ms Unloading: Package SP-SubwayStation
+Log: 132500.0ms Unloading: Package SP-St_Paul_Asylum_v1_0
+Log: 132501.0ms Unloading: Package SP-StuckInTheWoods
+Log: 132501.0ms Unloading: Package SP-streetpoes1
+Log: 132501.0ms Unloading: Package SP-StarWars
+Log: 132501.0ms Unloading: Package SP-SSFNightRescue
+Log: 132501.0ms Unloading: Package SP-Snake-loft
+Log: 132501.0ms Unloading: Package SP-SkyTower
+Log: 132501.0ms Unloading: Package SP-ShootHouseNight
+Log: 132501.0ms Unloading: Package SP-SchoolDay-RMX
+Log: 132501.0ms Unloading: Package SP-School
+Log: 132501.0ms Unloading: Package Rest5thStreet_Tex
+Log: 132501.0ms Unloading: Package SP-Restaurant5thStreet
+Log: 132501.0ms Unloading: Package SP-ResidentialOps
+Log: 132501.0ms Unloading: Package SP-Renovate
+Log: 132501.0ms Unloading: Package SP-RedLibraryRMX
+Log: 132501.0ms Unloading: Package SP-RedLibrary
+Log: 132501.0ms Unloading: Package SP-RedLibrary-HC
+Log: 132501.0ms Unloading: Package SP-Realfort
+Log: 132501.0ms Unloading: Package SP-ProjectSero
+Log: 132501.0ms Unloading: Package SP-Prison
+Log: 132501.0ms Unloading: Package SP-PrecinctHQ
+Log: 132501.0ms Unloading: Package SP-PowerPlant
+Log: 132501.0ms Unloading: Package SP-PowerPlant-v2
+Log: 132501.0ms Unloading: Package SP-Poseidon
+Log: 132501.0ms Unloading: Package SP-PoliceStation
+Log: 132502.0ms Unloading: Package pk1_m4_Tex
+Log: 132502.0ms Unloading: Package SP-pk1_m4
+Log: 132502.0ms Unloading: Package pk1_m2_Tex
+Log: 132502.0ms Unloading: Package SP-pk1_m2
+Log: 132502.0ms Unloading: Package Pier13_Tex
+Log: 132502.0ms Unloading: Package SP-Pier13
+Log: 132502.0ms Unloading: Package SP-PhoenixClub
+Log: 132502.0ms Unloading: Package SP-Penthousev2
+Log: 132502.0ms Unloading: Package SP-NOVATECHsBUILDING
+Log: 132502.0ms Unloading: Package SP-Nova-Corp
+Log: 132502.0ms Unloading: Package Nightclub_Tex
+Log: 132502.0ms Unloading: Package SP-Nightclub
+Log: 132502.0ms Unloading: Package SP-NewLibrary
+Log: 132502.0ms Unloading: Package SP-NewGraniteHotel-RMX
+Log: 132502.0ms Unloading: Package SP-Newfort27EXP
+Log: 132502.0ms Unloading: Package SP-Newfort24
+Log: 132502.0ms Unloading: Package SP-MoutMckennaSnow
+Log: 132502.0ms Unloading: Package SP-MoutMckenna
+Log: 132502.0ms Unloading: Package SP-Mittelplate_Alpha
+Log: 132502.0ms Unloading: Package SP-Metropol
+Log: 132502.0ms Unloading: Package SP-MeatBarn-v2
+Log: 132502.0ms Unloading: Package SP-Massacre
+Log: 132502.0ms Unloading: Package SP-MadShopping
+Log: 132502.0ms Unloading: Package SP-Madmap
+Log: 132502.0ms Unloading: Package SP-Last-Stop_COOP
+Log: 132502.0ms Unloading: Package SP-LabKeo
+Log: 132502.0ms Unloading: Package SP-KEOWAREHOUSE
+Log: 132503.0ms Unloading: Package SP-Keoclub
+Log: 132503.0ms Unloading: Package SP-JohnsonResidence
+Log: 132503.0ms Unloading: Package SP-JewelryHeist-RMX
+Log: 132503.0ms Unloading: Package SP-INTERVAL-17-rmx
+Log: 132503.0ms Unloading: Package SP-Hotel_TGZ
+Log: 132503.0ms Unloading: Package SP-Getts
+Log: 132503.0ms Unloading: Package SP-Genovese&Feinbloom
+Log: 132503.0ms Unloading: Package SP-FPTenement
+Log: 132503.0ms Unloading: Package SP-FPSnowMeltingDown
+Log: 132503.0ms Unloading: Package SP-FPOldOfficeSite
+Log: 132503.0ms Unloading: Package SP-FPAbandonedMineTower
+Log: 132503.0ms Unloading: Package SP-Foodwall-RMX
+Log: 132503.0ms Unloading: Package SP-FairfaxResidence-HC
+Log: 132503.0ms Unloading: Package Fairfax_Flats
+Log: 132503.0ms Unloading: Package SP-FairfaxFlats
+Log: 132503.0ms Unloading: Package SP-FAIRFAX-Reloaded
+Log: 132503.0ms Unloading: Package SP-EPsacrifice
+Log: 132503.0ms Unloading: Package SP-EPpower
+Log: 132503.0ms Unloading: Package SP-EPhosp
+Log: 132503.0ms Unloading: Package EPtextures2
+Log: 132503.0ms Unloading: Package SP-EPdrugsdeal
+Log: 132503.0ms Unloading: Package SP-Entrepot
+Log: 132503.0ms Unloading: Package Rulez
+Log: 132503.0ms Unloading: Package SP-Dusk
+Log: 132503.0ms Unloading: Package SP-DodgeCityDay-RMX
+Log: 132503.0ms Unloading: Package SP-DOCJT
+Log: 132503.0ms Unloading: Package SP-DNA-RMX
+Log: 132504.0ms Unloading: Package SP-Desert_Dust
+Log: 132504.0ms Unloading: Package SP-DesertOpsVillage
+Log: 132504.0ms Unloading: Package SP-DesertOps2
+Log: 132504.0ms Unloading: Package SP-DELTA-CENTER
+Log: 132504.0ms Unloading: Package SP-DayBreak
+Log: 132504.0ms Unloading: Package Dark_Scarlet_Tex
+Log: 132504.0ms Unloading: Package SP-Dark_Scarlet
+Log: 132504.0ms Unloading: Package SP-ConvenienceStore-RMX
+Log: 132504.0ms Unloading: Package SP-ConvenienceStore-HC
+Log: 132504.0ms Unloading: Package SP-Construction
+Log: 132504.0ms Unloading: Package SP-Construction-v2
+Log: 132504.0ms Unloading: Package SP-CombatZone
+Log: 132504.0ms Unloading: Package SP-Civil_Unrest
+Log: 132504.0ms Unloading: Package SP-City_Hall
+Log: 132504.0ms Unloading: Package SP-CityStreets
+Log: 132504.0ms Unloading: Package SP-CityHall
+Log: 132504.0ms Unloading: Package SP-CineparkConflict
+Log: 132504.0ms Unloading: Package SP-CHINA-HOTEL
+Log: 132504.0ms Unloading: Package SP-Central_Base
+Log: 132504.0ms Unloading: Package SP-CBlock
+Log: 132504.0ms Unloading: Package SP-CaveSystem-RMX
+Log: 132504.0ms Unloading: Package SP-CaveComplex
+Log: 132504.0ms Unloading: Package SP-CARsDEALER
+Log: 132504.0ms Unloading: Package SP-Carlyle2k5v2-0
+Log: 132504.0ms Unloading: Package SP-CabinFever
+Log: 132504.0ms Unloading: Package SP-Bunker
+Log: 132504.0ms Unloading: Package SP-Bordertown-RMX
+Log: 132504.0ms Unloading: Package SP-Bordertown-Extreme
+Log: 132504.0ms Unloading: Package SP-BlackWater
+Log: 132504.0ms Unloading: Package SP-BATHS-Of-ANUBIS
+Log: 132504.0ms Unloading: Package SP-Bank
+Log: 132505.0ms Unloading: Package SP-AutoGarage
+Log: 132505.0ms Unloading: Package SP-Ashes_And_Ghosts_Night
+Log: 132505.0ms Unloading: Package SP-Ashes_And_Ghosts_Day
+Log: 132505.0ms Unloading: Package SP-ArtCenter
+Log: 132505.0ms Unloading: Package SP-ArmsDeal-HC
+Log: 132505.0ms Unloading: Package SP-Apollo
+Log: 132505.0ms Unloading: Package AMY_Tex
+Log: 132505.0ms Unloading: Package SP-Amityville_Horror
+Log: 132505.0ms Unloading: Package SP-AirplaneAssault
+Log: 132505.0ms Unloading: Package sniperandmirrortest
+Log: 132505.0ms Unloading: Package MP-Warehouse5thStreet
+Log: 132505.0ms Unloading: Package Wainwright_offices
+Log: 132505.0ms Unloading: Package MP-Wainwright_Offices
+Log: 132505.0ms Unloading: Package Vent_Tex
+Log: 132505.0ms Unloading: Package MP-Ventura
+Log: 132505.0ms Unloading: Package MP-USTT_Enemy_Territory2
+Log: 132505.0ms Unloading: Package MP-U273
+Log: 132505.0ms Unloading: Package MP-Trainingcenter
+Log: 132505.0ms Unloading: Package MP-Training
+Log: 132505.0ms Unloading: Package MP-The_Watercrip
+Log: 132505.0ms Unloading: Package MP-Terminal
+Log: 132505.0ms Unloading: Package MP-Tenement
+Log: 132505.0ms Unloading: Package MP-TantiveIV
+Log: 132505.0ms Unloading: Package MP-SubwayStation
+Log: 132505.0ms Unloading: Package MP-StuckInTheWoods
+Log: 132505.0ms Unloading: Package MP-SOGtraining
+Log: 132505.0ms Unloading: Package MP-ShootHouseNight
+Log: 132505.0ms Unloading: Package MP-School
+Log: 132505.0ms Unloading: Package MP-Renovate
+Log: 132505.0ms Unloading: Package MP-RedLibrary
+Log: 132505.0ms Unloading: Package MP-Realfort
+Log: 132505.0ms Unloading: Package MP-ProjectSero
+Log: 132505.0ms Unloading: Package MP-Prison
+Log: 132505.0ms Unloading: Package MP-PrecinctHQ
+Log: 132506.0ms Unloading: Package MP-PowerPlant
+Log: 132506.0ms Unloading: Package MP-PhoenixClub
+Log: 132506.0ms Unloading: Package MP-ParkingGarage
+Log: 132506.0ms Unloading: Package MP-PaintballMadness
+Log: 132506.0ms Unloading: Package MP-NewLibrary
+Log: 132506.0ms Unloading: Package MP-Newfort24
+Log: 132506.0ms Unloading: Package MP-MoutMckennaSnow
+Log: 132506.0ms Unloading: Package MP-MoutMckenna
+Log: 132506.0ms Unloading: Package MP-Mittelplate_Alpha
+Log: 132506.0ms Unloading: Package MP-MeatBarn
+Log: 132506.0ms Unloading: Package MP-MadShopping
+Log: 132506.0ms Unloading: Package MP-Madmap
+Log: 132506.0ms Unloading: Package MP-LeCamp
+Log: 132506.0ms Unloading: Package MP-Last-Stop
+Log: 132506.0ms Unloading: Package MP-JewelryHeist
+Log: 132506.0ms Unloading: Package MP-Hotel
+Log: 132506.0ms Unloading: Package MP-Hospital
+Log: 132506.0ms Unloading: Package Getts_Tex
+Log: 132506.0ms Unloading: Package MP-Getts
+Log: 132506.0ms Unloading: Package MP-Genovese&Feinbloom
+Log: 132506.0ms Unloading: Package MP-Foodwall
+Log: 132506.0ms Unloading: Package MP-FairfaxResidence
+Log: 132506.0ms Unloading: Package MP-DOCJT
+Log: 132506.0ms Unloading: Package MP-DNA
+Log: 132506.0ms Unloading: Package MP-Desert_Dust
+Log: 132506.0ms Unloading: Package MP-DesertOpsVillage
+Log: 132506.0ms Unloading: Package MP-DesertOps2
+Log: 132506.0ms Unloading: Package MP-DEAD_END
+Log: 132506.0ms Unloading: Package MP-DayBreak
+Log: 132506.0ms Unloading: Package MP-Courthouse
+Log: 132506.0ms Unloading: Package MP-ConvenienceStore
+Log: 132506.0ms Unloading: Package MP-Construction
+Log: 132506.0ms Unloading: Package MP-CombatZone
+Log: 132506.0ms Unloading: Package MP-Clear
+Log: 132506.0ms Unloading: Package Civil_Unrest_Tex
+Log: 132506.0ms Unloading: Package MP-Civil_Unrest
+Log: 132506.0ms Unloading: Package MP-City_Hall_VIP
+Log: 132507.0ms Unloading: Package City_Hall_Tex
+Log: 132507.0ms Unloading: Package MP-City_Hall
+Log: 132507.0ms Unloading: Package MP-CityStreets
+Log: 132507.0ms Unloading: Package MP-CityHall
+Log: 132507.0ms Unloading: Package MP-Central_Base
+Log: 132507.0ms Unloading: Package MP-CBlock
+Log: 132507.0ms Unloading: Package MP-Casino
+Log: 132507.0ms Unloading: Package MP-Bunker
+Log: 132507.0ms Unloading: Package MP-BlackWater
+Log: 132507.0ms Unloading: Package Battleship
+Log: 132507.0ms Unloading: Package MP-BattleShips
+Log: 132507.0ms Unloading: Package MP-AutoGarage
+Log: 132507.0ms Unloading: Package MP-ATLConvention
+Log: 132507.0ms Unloading: Package MP-ArtCenter
+Log: 132507.0ms Unloading: Package MP-ArmsDeal
+Log: 132507.0ms Unloading: Package MP-Apollo
+Log: 132507.0ms Unloading: Package MP-ABomb
+Log: 132507.0ms Unloading: Package FinalCrackDown_COOP
+Log: 132507.0ms Unloading: Package ClearTest
+Log: 132507.0ms Unloading: Package Walcott_Farm_Tex
+Log: 132507.0ms Unloading: Package SP-WolcottFarm-TSS
+Log: 132507.0ms Unloading: Package SP-Warehouse-RMX
+Log: 132507.0ms Unloading: Package SP-UsedCarLot-fix
+Log: 132507.0ms Unloading: Package SP-University-TSS
+Log: 132507.0ms Unloading: Package SP-UnderWorld
+Log: 132507.0ms Unloading: Package SP-UNDERGROUND
+Log: 132507.0ms Unloading: Package SP-TheAsylum-TSS
+Log: 132507.0ms Unloading: Package SP-Terminal-TSS
+Log: 132507.0ms Unloading: Package SP-SwankyMansion
+Log: 132507.0ms Unloading: Package SP-StormFront-fix
+Log: 132507.0ms Unloading: Package SP-SistersofMercy-RMX
+Log: 132507.0ms Unloading: Package SP-Shipyard-TSS
+Log: 132507.0ms Unloading: Package SP-ShippingTerminal
+Log: 132507.0ms Unloading: Package SP-Renovate-TSS
+Log: 132508.0ms Unloading: Package SP-Protest-TSS
+Log: 132508.0ms Unloading: Package SP-Prison-TSS
+Log: 132508.0ms Unloading: Package SP-PrecinctHQ-fix
+Log: 132508.0ms Unloading: Package SP-PhoenixClub-TSS
+Log: 132508.0ms Unloading: Package SP-PANIC-ROOM-Coop
+Log: 132508.0ms Unloading: Package SP-NorthsideVending-RMX
+Log: 132508.0ms Unloading: Package SP-Newfort24-TSS
+Log: 132508.0ms Unloading: Package SP-NeverAlone
+Log: 132508.0ms Unloading: Package SP-Metropol-TSS
+Log: 132508.0ms Unloading: Package metropol
+Log: 132508.0ms Unloading: Package SP-Metropol-TSS-Rev-a
+Log: 132508.0ms Unloading: Package SP-Massacre-TSS
+Log: 132508.0ms Unloading: Package SP-Madmap-TSS
+Log: 132508.0ms Unloading: Package MBTex
+Log: 132508.0ms Unloading: Package SP-MadButcher
+Log: 132508.0ms Unloading: Package SP-LenaSinCity
+Log: 132508.0ms Unloading: Package SP-L&L_Hospital
+Log: 132508.0ms Unloading: Package SP-KeoFactory
+Log: 132508.0ms Unloading: Package SP-JohnsonResidence-fix
+Log: 132508.0ms Unloading: Package SP-Import-TSS
+Log: 132508.0ms Unloading: Package SP-Hotel_TGZ-TSS
+Log: 132508.0ms Unloading: Package SP-Hospital-RMX
+Log: 132508.0ms Unloading: Package SP-GrowOpV2-TSS
+Log: 132508.0ms Unloading: Package SP-FresnalStation-RMX
+Log: 132508.0ms Unloading: Package SP-FAYAsREFUGEES-v2
+Log: 132508.0ms Unloading: Package EPtextures
+Log: 132508.0ms Unloading: Package SP-EPsacrifice-fix
+Log: 132508.0ms Unloading: Package SP-EPpower-TSS
+Log: 132508.0ms Unloading: Package SP-EPhosp-TSS
+Log: 132508.0ms Unloading: Package SP-EPdrugsdeal-TSS
+Log: 132508.0ms Unloading: Package SP-EncoreMall-TSS
+Log: 132509.0ms Unloading: Package SP-DrugLab-RMX
+Log: 132509.0ms Unloading: Package SP-DrugLab-HC
+Log: 132509.0ms Unloading: Package SP-DEAD_END-TSS
+Log: 132509.0ms Unloading: Package SP-CriminalMayhem
+Log: 132509.0ms Unloading: Package SP-CREEPY-HOTEL
+Log: 132509.0ms Unloading: Package SP-CombatZone-TSS
+Log: 132509.0ms Unloading: Package SP-ClubATL-TSS
+Log: 132509.0ms Unloading: Package SP-CityHall-TSS
+Log: 132509.0ms Unloading: Package SP-CabinFever-fix
+Log: 132509.0ms Unloading: Package SP-BusStationxpansion-TSS
+Log: 132509.0ms Unloading: Package SP-BrentReloaded-TSS
+Log: 132509.0ms Unloading: Package SP-Blackhawk-TSS
+Log: 132509.0ms Unloading: Package SP-Bank-TSS
+Log: 132509.0ms Unloading: Package SP-Backstage-RMX
+Log: 132509.0ms Unloading: Package SP-AutoGarage-RMX
+Log: 132509.0ms Unloading: Package SP-Arcade
+Log: 132509.0ms Unloading: Package SP-ArabVillageDay-TSS
+Log: 132509.0ms Unloading: Package Apollo_tex
+Log: 132509.0ms Unloading: Package SP-Apollo-fix
+Log: 132509.0ms Unloading: Package SP-Apartment525-TSS
+Log: 132509.0ms Unloading: Package SP-AlKala-TSS
+Log: 132509.0ms Unloading: Package SP-AlKala-TSS-RevA
+Log: 132509.0ms Unloading: Package SP-2940_Enemy_Territory-TSS
+Log: 132509.0ms Unloading: Package MP-Warehouse
+Log: 132509.0ms Unloading: Package MP-University-TSS
+Log: 132509.0ms Unloading: Package MP-Training-smash
+Log: 132509.0ms Unloading: Package MP-Tenement-smash
+Log: 132509.0ms Unloading: Package MP-Subway
+Log: 132509.0ms Unloading: Package MP-Shipyard-TSS
+Log: 132510.0ms Unloading: Package MP-ShippingTerminal
+Log: 132510.0ms Unloading: Package MP-RedLibrary-smash
+Log: 132510.0ms Unloading: Package MP-PowerPlant-smash
+Log: 132510.0ms Unloading: Package MP-Office
+Log: 132510.0ms Unloading: Package MP-MeatBarn-smash
+Log: 132510.0ms Unloading: Package MP-JewelryHeist-smash
+Log: 132510.0ms Unloading: Package MP-Hotel-smash
+Log: 132510.0ms Unloading: Package MP-Hospital-smash
+Log: 132510.0ms Unloading: Package MP-HalfwayHouse
+Log: 132510.0ms Unloading: Package MP-GrowOpV2-TSS
+Log: 132510.0ms Unloading: Package MP-Foodwall-smash
+Log: 132510.0ms Unloading: Package MP-FairfaxResidence-smash
+Log: 132510.0ms Unloading: Package MP-EncoreMall-TSS
+Log: 132510.0ms Unloading: Package MP-DrugLab
+Log: 132510.0ms Unloading: Package MP-DNA-smash
+Log: 132510.0ms Unloading: Package MP-Desert_Dust-TSS
+Log: 132510.0ms Unloading: Package MP-Courthouse-smash
+Log: 132510.0ms Unloading: Package MP-ConvenienceStore-smash
+Log: 132510.0ms Unloading: Package MP-Casino-smash
+Log: 132510.0ms Unloading: Package MP-BusStationxpansion-TSS
+Log: 132510.0ms Unloading: Package MP-Backstage
+Log: 132510.0ms Unloading: Package MP-AutoGarage-smash
+Log: 132510.0ms Unloading: Package MP-ArmsDeal-smash
+Log: 132510.0ms Unloading: Package MP-Arcade
+Log: 132510.0ms Unloading: Package MP-ArabVillageDay-TSS
+Log: 132510.0ms Unloading: Package MP-ABomb-smash
+Log: 132510.0ms Unloading: Package CoopQMMLobby
+Log: 132510.0ms Unloading: Package swat_splashscene
+Log: 132510.0ms Unloading: Package SP-Warehouse
+Log: 132510.0ms Unloading: Package SP-Training
+Log: 132510.0ms Unloading: Package SP-Tenement
+Log: 132511.0ms Unloading: Package SP-Subway
+Log: 132511.0ms Unloading: Package SP-Office
+Log: 132511.0ms Unloading: Package SP-MeatBarn
+Log: 132511.0ms Unloading: Package SP-JewelryHeist
+Log: 132511.0ms Unloading: Package SP-Hotel
+Log: 132511.0ms Unloading: Package SP-Hospital
+Log: 132511.0ms Unloading: Package SP-HalfwayHouse
+Log: 132511.0ms Unloading: Package SP-FoodWall
+Log: 132511.0ms Unloading: Package SP-FairfaxResidence
+Log: 132511.0ms Unloading: Package SP-DrugLab
+Log: 132511.0ms Unloading: Package SP-DNA
+Log: 132511.0ms Unloading: Package SP-DemoRoomsAv3
+Log: 132511.0ms Unloading: Package SP-Courthouse
+Log: 132511.0ms Unloading: Package SP-ConvenienceStore
+Log: 132511.0ms Unloading: Package SP-Casino
+Log: 132511.0ms Unloading: Package SP-Backstage
+Log: 132511.0ms Unloading: Package SP-ArmsDeal
+Log: 132511.0ms Unloading: Package Autoplay
+Log: 132512.0ms Unloading: Package halfway_tex
+Log: 132512.0ms Unloading: Package bink_textures
+Log: 132514.0ms Unloading: Package SWATeffects2
+Log: 132514.0ms Unloading: Package VisualEffectsConfig
+Log: 132514.0ms Unloading: Package SWsef_weapons
+Log: 132514.0ms Unloading: Package SW_Meta
+Log: 132514.0ms Unloading: Package SWSAS_weapons
+Log: 132514.0ms Unloading: Package SW_Bounce
+Log: 132514.0ms Unloading: Package SW_Hits
+Log: 132514.0ms Unloading: Package SWEXP_weapons
+Log: 132514.0ms Unloading: Package SWEXP_ambience
+Log: 132514.0ms Unloading: Package SW_Objects
+Log: 132514.0ms Unloading: Package SW_VO
+Log: 132514.0ms Unloading: Package SW_Ambients
+Log: 132514.0ms Unloading: Package SW_Weapons
+Log: 132514.0ms Unloading: Package SW_Bullets
+Log: 132514.0ms Unloading: Package SW_Feet
+Log: 132514.0ms Unloading: Package SoundEffectsConfig
 Log: (Havok): Notifiing dependant DLLs of Havok shutdown..
 Log: (Havok): Shutting down base system.
-Log: Garbage: objects: 85221->0; refs: 908560
+Log: Garbage: objects: 73818->0; refs: 922938
 Exit: Object subsystem successfully closed.
 Exit: Exiting.
 Log: Waiting for file streaming thread to finish...
 Uninitialized: Name subsystem shut down
 Uninitialized: Memory Allocation Status
-Uninitialized: Curr Memory  0.517M /  11.762M
-Uninitialized: Peak Memory  446.433M /  452.023M
-Uninitialized: Allocs        2112 Current /  11886006 Total
-Uninitialized: Log file closed, 04/16/21 11:34:24
+Uninitialized: Curr Memory  1.271M /  14.531M
+Uninitialized: Peak Memory  574.616M /  605.789M
+Uninitialized: Allocs        2551 Current /  25420262 Total
+Uninitialized: Log file closed, 05/04/21 09:51:40
