@@ -768,6 +768,11 @@ function HandheldEquipment GetItemAtSlot(EquipmentSlot Slot)
 	return LoadOut.GetItemAtSlot(Slot);
 }
 
+function RemoveGivenEquipment(HandheldEquipment Equipment)
+{
+    LoadOut.RemoveGivenEquipment(Equipment);
+}
+
 // overridden from ISwatAI
 function float GetTimeToWaitBeforeFiring()
 {
