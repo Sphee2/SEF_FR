@@ -183,7 +183,7 @@ RateOfFire=700 RPM
 
 
 [M16A1MG]
-Description=Originally designed in 1964 based on the Armalite AR-15 blueprints, the M16 rifle was first deployed in the jungles of Vietnam. The M16A1 was an incremental improvement, redesigning the muzzle to avoid catching on foliage and reducing the high failure rate of its predecessor's receiver. This particular variant is equipped with a tactical flashlight.
+Description=Originally designed in 1964 based on the Armalite AR-15 blueprints, the M16 rifle was first deployed in the jungles of Vietnam. The M16A1 was an incremental improvement, redesigning the muzzle to avoid catching on foliage and reducing the high failure rate of its predecessor's receiver.
 FriendlyName=M16A1
 ShortName=M16A1
 Manufacturer=Colt
@@ -191,12 +191,12 @@ Caliber=5.56x45mm NATO
 CountryOfOrigin=United States
 ProductionStart=1967
 FireModes=Semi-Automatic, Full Auto
-MagazineSizeString=20
+MagazineSizeString=30
 TotalAmmoString=10 magazines
 RateOfFire=700 RPM
 
 [SilencedM16A1MG]
-Description=Originally designed in 1964 based on the Armalite AR-15 blueprints, the M16 rifle was first deployed in the jungles of Vietnam. The M16A1 was an incremental improvement, redesigning the muzzle to avoid catching on foliage and reducing the high failure rate of its predecessor's receiver. This particular variant is equipped with a suppressor and a tactical flashlight.
+Description=Originally designed in 1964 based on the Armalite AR-15 blueprints, the M16 rifle was first deployed in the jungles of Vietnam. The M16A1 was an incremental improvement, redesigning the muzzle to avoid catching on foliage and reducing the high failure rate of its predecessor's receiver. This particular variant is equipped with a suppressor.
 FriendlyName=Suppressed M16A1
 ShortName=Sup. M16A1
 Manufacturer=Colt
@@ -204,7 +204,7 @@ Caliber=5.56x45mm NATO
 CountryOfOrigin=United States
 ProductionStart=1967
 FireModes=Semi-Automatic, Full Auto
-MagazineSizeString=20
+MagazineSizeString=30
 TotalAmmoString=10 magazines
 RateOfFire=700 RPM
 
