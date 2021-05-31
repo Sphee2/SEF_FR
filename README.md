@@ -22,6 +22,7 @@ ADDED
 - New keybinds to control NVG light
 - Enemy suspects can now remove wedges (50% chance) and barricade just after.
 - Enemies can use flashlights (chance depending on enemy skill)
+- Enemy pickup weapon restored (thank you EFdee)
 
 REMOVED
 - Optiwand now cant mirror under the door

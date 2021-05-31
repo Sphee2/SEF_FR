@@ -1551,8 +1551,7 @@ function FinishedMovingEngageBehavior()
 latent function DecideToStayCompliant()
 {
 	local HandHeldEquipmentModel FoundWeaponModel;
-	local bool bFoundNearbyWeapon;
-	local float fGainedMorale;
+	
 
 	if(m_Pawn.IsA('SwatGuard') || m_Pawn.IsA('SwatUndercover'))
 	{
@@ -1580,35 +1579,12 @@ latent function DecideToStayCompliant()
 		// This might seem high, but keep in mind that half the values are going to be below this and the effect can stack.
 		Sleep(FRand() * 2.0);
 
-		if (GetCurrentMorale() >= LeaveCompliantStateMoraleThreshold)
-		{
-			FoundWeaponModel = ISwatEnemy(m_Pawn).FindNearbyWeaponModel();
-			if(FoundWeaponModel != None)
-			{
-				bFoundNearbyWeapon = true;
-			}
-			else if(bFoundNearbyWeapon)
-			{
-				// If there was a nearby weapon in the last tick and the player picked it up, lose all gained morale
-				ChangeMorale( -fGainedMorale, "Unobserved Compliance" );
-				bFoundNearbyWeapon = false;
-			}
-		}
-
 		// Increase moral when not being guarded (unobserved)
 		if (ISwatAI(m_Pawn).IsUnobservedByOfficers())
-		{
-			if(bFoundNearbyWeapon)
-			{
-				ChangeMorale( GetUnobservedComplianceMoraleModification() * 2, "Unobserved Compliance" );
-				fGainedMorale += GetUnobservedComplianceMoraleModification() * 2;
-			}
-			else
-			{
-				ChangeMorale( GetUnobservedComplianceMoraleModification(), "Unobserved Compliance" );
-				fGainedMorale += GetUnobservedComplianceMoraleModification();
-			}
-		}
+			ChangeMorale( GetUnobservedComplianceMoraleModification(), "Unobserved Compliance" );
+
+		if (GetCurrentMorale() >= LeaveCompliantStateMoraleThreshold)
+			FoundWeaponModel = ISwatEnemy(m_Pawn).FindNearbyWeaponModel();
 
 
 		if (m_pawn.logTyrion)
