@@ -3861,6 +3861,12 @@ function DoorIsNotLocked()
   ClientMessage("[c=FFFFFF]The door is not locked.", 'SpeechManagerNotification');
 }
 
+function DoorMightBeTrapped()
+{
+   ClientMessage("[c=FFFFFF]Might be trapped.", 'SpeechManagerNotification');	
+}
+
+
 exec function PullDoor()
 {
     local SwatDoor Door;

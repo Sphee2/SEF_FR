@@ -26,6 +26,7 @@ var() bool bPlayerCanUse "If false, then a Player is unable to interact with the
 var private bool        bIsBoobyTrapped;
 var private bool				bBoobyTrapTripped;
 var private BoobyTrap   BoobyTrap;
+var private bool DoorCheckLockTrapped;
 
 struct native DoorAttachmentSpec
 {
@@ -48,7 +49,7 @@ var config float QualifyTimeForToolkit;
 //in seconds, the time required to qualify to wedge a door
 var config float QualifyTimeForWedge;
 //in seconds, the time required to qualify to place a C2Charge on a door
-var config float QualifyTimeForC2Charge;
+//var config float QualifyTimeForC2Charge;
 
 // The doorway is an invisible copy of the DoorModel's static mesh, and it does
 // not move. It is used to define the region of space that is occupied by the
@@ -264,7 +265,7 @@ replication
     reliable if (Role == Role_Authority)
         bIsLocked, bIsBroken, ReasonForMove, LockedKnowledge,
         DeployedWedge, DeployedC2ChargeLeft, DeployedC2ChargeRight,
-				Broken, Blasted;
+				Broken, Blasted ,DoorCheckLockTrapped;
 }
 ///////////////////////////
 
@@ -353,6 +354,15 @@ simulated function PreBeginPlay()
     LockedKnowledge[ 0 ] = 0;
     LockedKnowledge[ 1 ] = 0;
     LockedKnowledge[ 2 ] = 0;
+	
+	//chance of spottin a trap with check door function
+	if ( IsBoobyTrapped() )  //higher chance to find the door as trapped
+		{
+			if (FRand() < 0.75)
+				DoorCheckLockTrapped=true;
+		}
+		else if (FRand() < 0.25)  // door not trapped might give a false trap statement.
+				DoorCheckLockTrapped=true;
 }
 
 simulated function PostBeginPlay()
@@ -767,7 +777,10 @@ simulated function bool TryDoorLock(SwatGamePlayerController Caller)
 		LockedKnowledge[1] = 0;
 		LockedKnowledge[2] = 0;
 	}
-
+	
+	if ( DoorCheckLockTrapped )
+	   Caller.DoorMightBeTrapped();
+	
 	return true;
 }
 
@@ -2651,7 +2664,8 @@ simulated function OnUsedByC2Charge(ICanUseC2Charge Instigator)
 //return the time to qualify to use this with a C2Charge
 simulated function float GetQualifyTimeForC2Charge()
 {
-    return QualifyTimeForC2Charge;
+    //return QualifyTimeForC2Charge;
+	return 3.0;
 }
 
 // IHaveSkeletalRegions implementation
@@ -2792,6 +2806,8 @@ defaultproperties
     bCollideWhenPlacing=false
 	bBoobyTrapTripped=false
 
+	DoorCheckLockTrapped=false
+	
 	MoveAndClearPauseThreshold=128.0
 
 	LeftAdditionalGrenadeThrowDistance=100.0
