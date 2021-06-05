@@ -23,6 +23,8 @@ ADDED
 - Enemy suspects can now remove wedges (50% chance) and barricade just after.
 - Enemies can use flashlights (chance depending on enemy skill)
 - Enemy pickup weapon restored (thank you EFdee)
+- Check Lock can possibly return the presence of a trap... but can be a false statement! 
+  Also AI officers now report possible traps when checking the lock but... they can be wrong! 
 
 REMOVED
 - Optiwand now cant mirror under the door

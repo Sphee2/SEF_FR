@@ -100,6 +100,23 @@ private function TriggerReportResultsSpeech()
 		// it's open!  play a sound!
 		ISwatOfficer(m_Pawn).GetOfficerSpeechManagerAction().TriggerReportDoorOpenSpeech();
 	}
+	
+	
+}
+
+latent function ReportPossibleTrap()
+{
+	local ISwatDoor SwatTargetDoor;
+
+	SwatTargetDoor = ISwatDoor(TargetDoor);
+	assert(SwatTargetDoor != None);
+	
+	if (SwatTargetDoor.IsDoorCheckLockTrapped())		//might be trapped
+	{
+		Sleep(2.0);
+		ISwatOfficer(m_Pawn).GetOfficerSpeechManagerAction().TriggerExaminedFoundTrapSpeech();
+	}
+	
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -190,6 +207,7 @@ Begin:
 			// re-enable collision avoidance
 			m_Pawn.EnableCollisionAvoidance();
 			ReportResultsToTeam();
+			ReportPossibleTrap();
 		}
 	}
 

@@ -17,6 +17,7 @@ function bool IsBroken();
 function bool IsLocked();
 function bool IsWedged();
 function bool IsBoobyTrapped();
+function bool IsDoorCheckLockTrapped();
 function bool IsBoobyTrapTriggered();
 function bool IsChargePlacedOnLeft();
 function bool IsChargePlacedOnRight();
