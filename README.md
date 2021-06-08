@@ -31,7 +31,7 @@ REMOVED
 
 FIXED
 - MP5A4 Holo ADS point fixed
-
+- Adjusted some weights here and there
 
 #### V0.61 ####
 
