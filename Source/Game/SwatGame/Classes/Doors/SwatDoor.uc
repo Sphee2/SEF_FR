@@ -470,6 +470,23 @@ simulated function bool IsBoobyTrapped()
     return bIsBoobyTrapped;
 }
 
+// is there a trap active on this door?
+simulated function bool IsActivelyTrapped()
+{
+	local BoobyTrap_Door Trap;
+
+	if(!IsBoobyTrapped())
+	{
+		return false;
+	}
+
+	Trap = BoobyTrap_Door(BoobyTrap);
+	assert(Trap != None);
+
+	return Trap.bActive && !bBoobyTrapTripped;
+}
+
+
 simulated function bool IsDoorCheckLockTrapped()
 {
     return DoorCheckLockTrapped;
@@ -526,7 +543,16 @@ simulated function bool IsBoobyTrapTriggered()
 	return bBoobyTrapTripped;
 }
 
+simulated function Actor GetTrapOnDoor()
+{	
+	local BoobyTrap_Door Trap;
+	if(!IsBoobyTrapped())
+	{
+		return None;
 
+		return BoobyTrap;
+	}
+}
 //
 // Registering for Door Opening
 //
