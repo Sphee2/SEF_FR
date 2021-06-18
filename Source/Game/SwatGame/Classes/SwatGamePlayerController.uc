@@ -1786,7 +1786,7 @@ ignores ActivateViewport;
     }
 
 	// Zooming is handled the same as alt fire for the viewport
-    exec function ToggleZoom()
+    exec function ToggleZoomMLR()
     {
         ActiveViewport.HandleAltFire();
     }
