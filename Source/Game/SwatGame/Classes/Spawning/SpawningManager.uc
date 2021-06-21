@@ -58,12 +58,7 @@ function RefreshUnallocatedSpawners(SwatGameInfo Game)
     foreach Game.AllActors(class'Spawner', Spawner)
     {
         //try to disqualify the spawner for this level
-		log("[SPAWNING]...iterate over spawner "$Spawner.Name$
-        "...SpawnMode="$Spawner.SpawnMode$
-        "...HasSpawned="$Spawner.HasSpawned$
-        "...Disabled="$Spawner.Disabled$
-        "...MissionSpawn="$Spawner.MissionSpawn
-        );
+		
 		
         //spawners can only spawn once.
         if (Spawner.HasSpawned)
@@ -88,9 +83,7 @@ function RefreshUnallocatedSpawners(SwatGameInfo Game)
                     Spawner.MissionSpawn == MissionSpawn_CampaignOnly
                 &&  UsingCustomScenario
                 &&  !CustomScenario.UseCampaignObjectives
-				&&  !CustomScenario.ForceScriptedSequences
                 )
-				log("[SPAWNING] RefreshUnallocatedSpawners: Refreshing because MissionSpawn_CampaignOnly and not UseCampaignObjectives or ForceScriptedSequences");
                 continue;
 
             if  (
@@ -351,7 +344,7 @@ function array<int> DoSpawning(SwatGameInfo Game, optional bool bTesting)
     if (Game.DebugSpawning)
         log("[SPAWNING] SpawningManager is done spawning Rosters.");
 
-    if (!UsingCustomScenario  || CustomScenario.ForceScriptedSequences) // TODO: make this into a different boolean
+    if (!UsingCustomScenario)
     {
         if (Game.DebugSpawning)
             log("[SPAWNING] Now telling remaining unallocated Spawners to spawn from local properties.");
@@ -364,7 +357,6 @@ function array<int> DoSpawning(SwatGameInfo Game, optional bool bTesting)
             if (!Spawner.Disabled)
             {
                 Spawned = Spawner.SpawnFromLocalProperties(bTesting);
-				log("[SPAWNING] Picked spawner "$Spawner.name$" (disabled = "$Spawner.Disabled$")");
                 //for testing, record counts of each type of spawned Actor
                 if (Spawned != None)
                     SpawnedCounts[Spawner.ProfileArrayIndex] = SpawnedCounts[Spawner.ProfileArrayIndex] + 1;    //note can't use ++ operator because it can't grow the dyn. array
