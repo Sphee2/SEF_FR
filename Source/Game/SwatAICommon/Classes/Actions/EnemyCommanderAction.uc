@@ -1354,21 +1354,34 @@ function NotifyDoorWedged(Door WedgedDoor)
 {
 	local ISwatDoor SD;
 	local SwatAIRepository SwatAIRepo;
-
+	local Controller C;
+	local float Distance;
+	local bool DoRemoveWedge;
+	
 	SD=ISwatDoor(WedgedDoor);
 
 	//let the enemy remove wedges if they are high skill
-    if( (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High ) && ( FRand() > 0.5 ) ) //  EnemySkill_High with 50% chance        
+    if( ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High  && ( FRand() > 0.5 ) ) //  EnemySkill_High with 50% chance        
     {    
-	   //remove wedge
-       if (SD != None)
+	
+		for (C = Level.ControllerList; C != none && !DoRemoveWedge ; C = C.nextController)
 		{
-			// do some speech
+			Distance = VSize2D(WedgedDoor.Location - C.Location);
+			if (Distance < 2000) //2000 estimated distance... to be tested!
+			{
+					DoRemoveWedge=true;
+			}
+		}
+		
+		
+		// do remove wedge
+		if (SD != None && DoRemoveWedge )
+		{
+		// do some speech
 			ISwatEnemy(m_Pawn).GetEnemySpeechManagerAction().TriggerDoorBlockedSpeech();
 			
 			if( !SD.IsLocked() ) //if door is not locked
 			{	
-		
 				//actually remove the wedge from the door
 				SD.EnemyRemoveWedge(m_Pawn);  
 				
@@ -1387,6 +1400,7 @@ function NotifyDoorWedged(Door WedgedDoor)
 				CreateBarricadeGoal(WedgedDoor.Location, false, false);
 			}
 		}
+		
     }
     else // barricade!
 	{
