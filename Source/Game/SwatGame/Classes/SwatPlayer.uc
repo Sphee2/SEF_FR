@@ -1692,13 +1692,10 @@ simulated function float GetFireTweenTime()
 simulated function AdjustPlayerMovementSpeed() {
   local float OriginalFwd, OriginalBck, OriginalSde;
   local float ModdedFwd, ModdedBck, ModdedSde;
-  local float TotalWeight;
-    
+  local float WeightMovMod;
+   
   local AnimationSetManager AnimationSetManager;
-  local AnimationSet setObject;
-	
-  TotalWeight = LoadOut.GetTotalWeight();
-  
+  local AnimationSet setObject;  
   
 	AnimationSetManager = SwatRepo(Level.GetRepo()).GetAnimationSetManager();
 	setObject = AnimationSetManager.GetAnimationSet(GetMovementAnimSet());
@@ -1711,22 +1708,25 @@ simulated function AdjustPlayerMovementSpeed() {
 	ModdedBck = OriginalBck;
 	ModdedSde = OriginalSde;
 
-    ModdedFwd *= LoadOut.GetWeightMovementModifier();
-	ModdedBck *= LoadOut.GetWeightMovementModifier();
-	ModdedSde *= LoadOut.GetWeightMovementModifier();
-
+    //ModdedFwd *= LoadOut.GetWeightMovementModifier();
+	//ModdedBck *= LoadOut.GetWeightMovementModifier();
+	//ModdedSde *= LoadOut.GetWeightMovementModifier();
 
 	if( IsLowReady() ) //little more speed when low ready
 	{
-		ModdedFwd = ModdedFwd + (ModdedFwd/3);
-		ModdedSde = ModdedSde + (ModdedSde/3);
+		AnimSet.AnimSpeedForward = ModdedFwd + (ModdedFwd/3);
+		AnimSet.AnimSpeedSidestep = ModdedSde + (ModdedSde/3);
+		AnimSet.AnimSpeedBackward = ModdedBck + (ModdedBck/3);
 	}
-  
-  
-	AnimSet.AnimSpeedForward = ModdedFwd;
-	AnimSet.AnimSpeedBackward = ModdedBck;
-	AnimSet.AnimSpeedSidestep = ModdedSde;
-    
+	else
+	{
+		WeightMovMod=LoadOut.GetWeightMovementModifier();
+		
+		AnimSet.AnimSpeedForward = ModdedFwd * WeightMovMod;
+		AnimSet.AnimSpeedBackward = ModdedBck * WeightMovMod;
+		AnimSet.AnimSpeedSidestep = ModdedSde * WeightMovMod;
+	}
+
 }
 
 ////////////////////////////////////////////////////////////////////////////////
