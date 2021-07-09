@@ -277,7 +277,7 @@ replication
         ServerToggleDesiredFlashlightState,ServerToggleDesiredNVGState ,ServerSetLowReadyStatus;
 			
     reliable if ( Role == ROLE_Authority )
-        AnimFlags, FlashlightShouldBeOn, NightvisionShouldBeOn, bShouldBeAtLowReady, ReasonForShouldBeAtLowReady, bArrested, BeingArrested ;
+        AnimFlags, FlashlightShouldBeOn, NightvisionShouldBeOn, bShouldBeAtLowReady, ReasonForShouldBeAtLowReady, bArrested, BeingArrested, bIsLowReady ;
 
     reliable if ( Role == ROLE_Authority && RemoteRole != ROLE_AutonomousProxy )
         bIsFlashbanged, bIsGassed, bIsPepperSprayed, bIsStung, bIsStunnedByC2, bIsTased, bIsWearingNightvision;
@@ -940,7 +940,10 @@ simulated function bool IsTurning()
 // Notifications called by OnEquipKeyFrame to let us know that the Active Item has been equipped
 simulated function OnActiveItemEquipped()
 {
-    if (GetActiveItem() != None)
+    //fix for fps loss on equip weapon
+	SetLowReady(false);
+	
+	if (GetActiveItem() != None)
     {
         ChangeAnimation();
     }
@@ -959,12 +962,16 @@ simulated function OnEquippingFinished()
     Super.OnEquippingFinished();
     //mplog( self$"---SwatPawn::OnEquippingFinished()." );
     HasEquippedFirstItemYet = true;
+	
+	//fix for fps loss on equip weapon
+	SetLowReady(false);
+	
 }
 
 simulated function OnActiveItemUnEquipped()
 {
     TriggerEffectEvent('UnEquipped', GetActiveItem());
-
+	
     if (IsControlledByLocalHuman())
         UpdateHUDFireMode();
 }
