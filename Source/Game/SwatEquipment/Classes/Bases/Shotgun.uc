@@ -5,6 +5,8 @@ class Shotgun extends RoundBasedWeapon;
 var(Shotgun) config float WoodBreachingChance "The chance to breach a wooden door, per pellet.";
 var(Shotgun) config float MetalBreachingChance "The chance to breach a metal door, per pellet.";
 var(Shotgun) config bool IgnoreAmmoOverrides "Whether to ignore breaching chance overrides from ammo types.";
+var(Shotgun) config int ShellTextureIndex_FP;
+var(Shotgun) config int ShellTextureIndex_TP;
 
 function bool ShouldBreach(float BreachingChance)
 {
@@ -113,8 +115,76 @@ simulated function bool HandleBallisticImpact(
 	    ExitMaterial);
 }
 
+simulated function changeShellsMaterial()
+{
+local String ShellTextureName;
+local ShotgunAmmo ShotgunAmmo;
+
+ShotgunAmmo = ShotgunAmmo(Ammo);
+	
+if (ShotgunAmmo != None) //asserting shotgun is using shotgun ammo.... kind of a joke but still
+{
+	
+	//Get Shell type , associate with Texture
+	switch( ShotgunAmmo.GetShortName() ) //get FriendlyName , you can find it in the Class-Ammo-FriendlyName field
+	{
+		case "000 Buck":
+					ShellTextureName = "Shells.000buck"; 
+		break;
+		case "00 Buck":
+					ShellTextureName = "Shells.00buck"; 
+		break;
+		case "0 Buck":
+					ShellTextureName = "Shells.0buck"; 
+		break;
+		case "1 Buck":
+					ShellTextureName = "Shells.1buck"; 
+		break;
+		case "4 Buck":
+					ShellTextureName = "Shells.4buck"; 
+		break;
+		case "4 Buck":
+					ShellTextureName = "Shells.4buck"; 
+		break;
+		case "12 Gauge Frangible":
+					ShellTextureName = "Shells.12gauge"; 
+		break;
+		case "Sabot Slug":
+					ShellTextureName = "Shells.sabot"; 
+		break;
+		default:  //default texture just to avoid CTD
+				ShellTextureName = "Shells.00buck";
+		break;
+	}
+	
+	
+	
+	if (ShellTextureIndex_FP > -1 )
+	{
+		//change material
+		FirstPersonModel.Skins[ShellTextureIndex_FP] = Material(DynamicLoadObject( ShellTextureName, class'Material'));	
+	}
+	
+	if (ShellTextureIndex_TP > -1 )
+	{
+		//change material
+		ThirdPersonModel.Skins[ShellTextureIndex_TP] = Material(DynamicLoadObject( ShellTextureName, class'Material'));
+	}
+}	
+	
+}
+
+simulated function EquippedHook()
+{
+    Super.EquippedHook();
+	
+	changeShellsMaterial();
+}
+
 defaultproperties
 {
 	WoodBreachingChance = 0.1;
 	MetalBreachingChance = 0.05;
+	ShellTextureIndex_FP = -1;
+	ShellTextureIndex_TP = -1;
 }
