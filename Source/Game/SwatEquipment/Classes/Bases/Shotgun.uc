@@ -118,6 +118,7 @@ simulated function bool HandleBallisticImpact(
 simulated function changeShellsMaterial()
 {
 local String ShellTextureName;
+local String ShellTextureNameTP;
 local ShotgunAmmo ShotgunAmmo;
 
 ShotgunAmmo = ShotgunAmmo(Ammo);
@@ -130,30 +131,35 @@ if (ShotgunAmmo != None) //asserting shotgun is using shotgun ammo.... kind of a
 	{
 		case "000 Buck":
 					ShellTextureName = "Shells.000buck"; 
+					ShellTextureNameTP = "Shells.000buck_256"; 
 		break;
 		case "00 Buck":
 					ShellTextureName = "Shells.00buck"; 
+					ShellTextureNameTP = "Shells.00buck_256"; 
 		break;
 		case "0 Buck":
 					ShellTextureName = "Shells.0buck"; 
+					ShellTextureNameTP = "Shells.0buck_256"; 
 		break;
 		case "1 Buck":
 					ShellTextureName = "Shells.1buck"; 
+					ShellTextureNameTP = "Shells.1buck_256"; 
 		break;
 		case "4 Buck":
 					ShellTextureName = "Shells.4buck"; 
-		break;
-		case "4 Buck":
-					ShellTextureName = "Shells.4buck"; 
+					ShellTextureNameTP = "Shells.4buck_256"; 
 		break;
 		case "12 Gauge Frangible":
 					ShellTextureName = "Shells.12gauge"; 
+					ShellTextureNameTP = "Shells.12gauge_256"; 
 		break;
 		case "Sabot Slug":
 					ShellTextureName = "Shells.sabot"; 
+					ShellTextureNameTP = "Shells.sabot_256"; 
 		break;
 		default:  //default texture just to avoid CTD
 				ShellTextureName = "Shells.00buck";
+				ShellTextureNameTP = "Shells.00buck_256"; 
 		break;
 	}
 	
@@ -168,7 +174,7 @@ if (ShotgunAmmo != None) //asserting shotgun is using shotgun ammo.... kind of a
 	if (ShellTextureIndex_TP > -1 )
 	{
 		//change material
-		ThirdPersonModel.Skins[ShellTextureIndex_TP] = Material(DynamicLoadObject( ShellTextureName, class'Material'));
+		ThirdPersonModel.Skins[ShellTextureIndex_TP] = Material(DynamicLoadObject( ShellTextureNameTP, class'Material'));
 	}
 }	
 	
