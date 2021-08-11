@@ -11,6 +11,16 @@ https://discord.gg/Vu4r7sv7uF
 
 # FEATURE LIST: #
 
+#### V0.66 ####
+
+ADDED:
+- Dynamic shell textures on Breaching SG an Benelli M4 depending on shell type.
+
+FIXED:
+- Fixed many fps loss when low ready in MP
+- Suspects can remove wedges only within 35 mts from players.
+
+
 #### V0.65 ####
 
 ADDED
