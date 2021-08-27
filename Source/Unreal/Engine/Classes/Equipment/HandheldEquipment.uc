@@ -43,6 +43,7 @@ enum EquipmentSlot
 	Slot_IAmCuffed,         //13 (not accessable to player)
 	Slot_Lightstick,        //14
 	Slot_AmmoBandolier,     //15
+	Slot_Maglite,           //16
 	kNumEquipmentSlots,
 };
 

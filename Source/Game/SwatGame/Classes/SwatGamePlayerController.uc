@@ -1214,6 +1214,44 @@ exec function Fire()
 }
 
 
+exec simulated function EvidenceHighlight(bool bEnable)
+{
+local IEvidence Evidence;
+local HandHeldEquipmentModel EvidenceModel;
+local String HighlightTextureName;
+local int mat_count;
+local Actor SEvidence;
+	
+ if (bEnable)
+	  HighlightTextureName = "SwatGearTex.FlashlightLensOnShader" ;
+ else
+     HighlightTextureName = "" ;
+ 
+ 
+    foreach DynamicActors(class'IEvidence', Evidence) 
+    {
+        if (Evidence.CanBeUsedNow())
+        {
+			EvidenceModel = HandHeldEquipmentModel(Evidence);
+            EvidenceModel.Skins[0] = Material(DynamicLoadObject( HighlightTextureName, class'Material'));  
+            
+            mat_count=0;
+            while(mat_count < 10 )
+            {
+                EvidenceModel.Skins[mat_count] = Material(DynamicLoadObject( HighlightTextureName, class'Material'));     
+				mat_count = mat_count + 1;
+            }
+			
+			SEvidence = Actor(Evidence);
+			SEvidence.skins[0] = Material(DynamicLoadObject( HighlightTextureName, class'Material'));  
+			
+		}
+    }
+
+   
+}
+
+
 // Executes only on the client.
 simulated function ClientBeginFiringWeapon( Pawn PawnWhoFired, EquipmentSlot ItemSlot, FireMode CurrentFireMode )
 {
@@ -2665,7 +2703,7 @@ simulated function bool TryGiveItem(SwatPawn Other)
 
 function ServerGiveItem(SwatPawn Other)
 {
-    local HandheldEquipment NewItem;
+    //local HandheldEquipment NewItem;
     local HandheldEquipment ActiveItem;
 
     ActiveItem = SwatPlayer.GetActiveItem();
