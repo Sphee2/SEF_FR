@@ -35,7 +35,36 @@ simulated function evidence()
     }
 }
 
+simulated latent protected function DoUsingHook()
+{
+	//it is supposed to do nothing... 
+	//here just to avoid fire sound and shit
+}
+
+
+simulated function UnequippedHook() //remove evidence highlight when unequip.
+{
+local SwatGamePlayerController SGPC; 
+local Controller C;
+
+    for (C = Level.ControllerList; C != none; C = C.nextController)
+    {
+        SGPC = SwatGamePlayerController(C);
+
+        if (C.bIsPlayer == true)
+        {
+			if (evidence_is_highlight)
+			{
+				SGPC.ToggleFlashlight();
+			}
+        }
+    }
+
+}
+
+
 defaultproperties
 {
+	bAbletoMelee=false
     Slot=Slot_Maglite
 }

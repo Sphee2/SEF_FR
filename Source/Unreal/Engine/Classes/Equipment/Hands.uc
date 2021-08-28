@@ -135,7 +135,7 @@ simulated function UpdateHandsForRendering()
     ADSInertia = 1 - ((1 - ViewInertia) / 2.5);
 
     //if the player is zooming, add the iron sight offset to the new location , also the weapon should not be in low ready position
-    if (OwnerController != None && OwnerController.WantsZoom && !OwnerController.GetIronsightsDisabled() ) {  
+    if (OwnerController != None && OwnerController.WantsZoom && !OwnerController.GetIronsightsDisabled() && !EquippedItem.IsA('MagliteTorch')) {  
     	AnimationProgress = (AnimationProgress * ADSInertia + 1 * (1 - ADSInertia));
 		SetLowReady(false); // not low ready anymore
     	//NewRotation += EquippedItem.GetIronsightsRotationOffset();
