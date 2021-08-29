@@ -17,11 +17,11 @@ ADDED:
 - Dynamic shell textures on Breaching SG an Benelli M4 depending on shell type.
 - Fleeing suspects are considered threat if running with a gun within 15 mts from a player 
 - Maglite Torch , using the light makes evidence glowing to allow player a faster search of them. 
+- new Body Armors (taken from vanilla) , Level II armor and Kevlar (no sleeves).
 
 FIXED:
 - Fixed many fps loss when low ready in MP
 - Suspects can remove wedges only within 35 mts from players.
-
 
 #### V0.65 ####
 

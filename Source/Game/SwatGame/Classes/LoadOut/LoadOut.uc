@@ -717,7 +717,7 @@ simulated function Material GetNameMaterial()
 
 simulated function Material GetFaceMaterial()
 {
-    return GetMaterial(MaterialPocket.MATERIAL_Face);
+	 return GetMaterial(MaterialPocket.MATERIAL_Face);
 }
 
 simulated function Material GetVestMaterial()
@@ -786,6 +786,22 @@ simulated function bool HasNoArmor()
 {
     if ( PocketEquipment[Pocket.Pocket_BodyArmor] != None )
         return PocketEquipment[Pocket.Pocket_BodyArmor].IsA('NoBodyArmor');
+    else
+        return false; // The VIP has no armor in Pocket_BodyArmor.
+}
+
+simulated function bool HasLevelIIArmor()
+{
+    if ( PocketEquipment[Pocket.Pocket_BodyArmor] != None )
+        return PocketEquipment[Pocket.Pocket_BodyArmor].IsA('LevelIIBodyArmor');
+    else
+        return false; // The VIP has no armor in Pocket_BodyArmor.
+}
+
+simulated function bool HasInstructorArmor()
+{
+    if ( PocketEquipment[Pocket.Pocket_BodyArmor] != None )
+        return PocketEquipment[Pocket.Pocket_BodyArmor].IsA('InstructorBodyArmor');
     else
         return false; // The VIP has no armor in Pocket_BodyArmor.
 }

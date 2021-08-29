@@ -637,10 +637,47 @@ private function ReceiveLoadOut()
 
     log( "------LoadOut.Owner="$LoadOut.Owner );
 
+	if ( LoadOut.HasLevelIIArmor() )
+	{
+		if (self.IsA('OfficerBlueOne') )
+			Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshBShader",class'Material'));
+		else if (self.IsA('OfficerBlueTwo') )
+			Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshCShader",class'Material'));
+		else if (self.IsA('OfficerRedOne') )
+			Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshDShader",class'Material'));
+		else if (self.IsA('OfficerRedTwo') )
+			Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshEShader",class'Material'));
+		
+		Skins[1] = Material(DynamicLoadObject("MaleCasualArmorTex.MCA_CadetClothesShader",class'Material'));
+	}
+	else if ( LoadOut.HasInstructorArmor() )
+	{
+		if (self.IsA('OfficerBlueOne') )
+			Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_BlueOneFleshShader",class'Material'));
+		else if (self.IsA('OfficerBlueTwo') )
+			Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_BlueTwoFleshShader",class'Material'));
+		else if (self.IsA('OfficerRedOne') )
+			Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_RedOneFleshShader",class'Material'));
+		else if (self.IsA('OfficerRedTwo') )
+			Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_RedTwoFleshShader",class'Material'));
+		
+		Skins[1] = Material(DynamicLoadObject("SWATinstructorTex.SI_ClothesCshader",class'Material'));
+	}
+	else
+	{
+		Skins[0] = LoadOut.GetPantsMaterial();
+		Skins[1] = LoadOut.GetFaceMaterial();
+		Skins[2] = LoadOut.GetNameMaterial();
+		Skins[3] = LoadOut.GetVestMaterial();
+	}
+
+
+/* old skin code
     Skins[0] = LoadOut.GetPantsMaterial();
     Skins[1] = LoadOut.GetFaceMaterial();
     Skins[2] = LoadOut.GetNameMaterial();
     Skins[3] = LoadOut.GetVestMaterial();
+*/
 
     if ( LoadOut.GetPrimaryWeapon() != None && !LoadOut.GetPrimaryWeapon().IsA('NoWeapon') && !LoadOut.GetPrimaryWeapon().OfficerWontEquipAsPrimary )
     {

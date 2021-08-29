@@ -578,11 +578,62 @@ simulated function ReceiveLoadOut(OfficerLoadOut inLoadOut)
 simulated function SetPlayerSkins( OfficerLoadOut inLoadOut )
 {
     //mplog( self$"---SwatPlayer::SetPlayerSkins()." );
+local float MPFace;
 
-    Skins[0] = inLoadOut.GetPantsMaterial();
-    Skins[1] = inLoadOut.GetFaceMaterial();
-    Skins[2] = inLoadOut.GetNameMaterial();
-    Skins[3] = inLoadOut.GetVestMaterial();
+	if ( GetLoadOut().HasLevelIIArmor() )
+	{
+		if ( Level.NetMode == NM_Standalone ) //in SP give Lead face
+			Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshAShader",class'Material'));
+		else // in MP give random face
+		{
+			MPFace=FRand();
+			
+			if ( MPFace < 0.2 )
+				Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshBShader",class'Material'));
+			else if (  MPFace >= 0.2 && MPFace < 0.4  )
+				Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshCShader",class'Material'));
+			else if ( MPFace >= 0.4 && MPFace < 0.6 )
+				Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshDShader",class'Material'));
+			else if ( MPFace >= 0.6 && MPFace < 0.8)
+				Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshEShader",class'Material'));
+			else if ( MPFace >= 0.8 && MPFace <= 1 )
+				Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshAShader",class'Material'));
+		}
+		
+		Skins[1] = Material(DynamicLoadObject("MaleCasualArmorTex.MCA_CadetClothesShader",class'Material'));
+	}
+	else if ( GetLoadOut().HasInstructorArmor() )
+	{
+		if ( Level.NetMode == NM_Standalone ) //in SP give Lead face
+		{
+			Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_ElementLeadFleshShader",class'Material'));
+			
+		}
+		else // in MP give random face
+		{
+			MPFace=FRand();
+			
+			if ( MPFace < 0.2 )
+				Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_ElementLeadFleshShader",class'Material'));
+			else if (  MPFace >= 0.2 && MPFace < 0.4  )
+				Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_BlueOneFleshShader",class'Material'));
+			else if ( MPFace >= 0.4 && MPFace < 0.6 )
+				Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_BlueTwoFleshShader",class'Material'));
+			else if ( MPFace >= 0.6 && MPFace < 0.8)
+				Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_RedOneFleshShader",class'Material'));
+			else if ( MPFace >= 0.8 && MPFace <= 1 )
+				Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_RedTwoFleshShader",class'Material'));
+		}
+		
+		Skins[1] = Material(DynamicLoadObject("SWATinstructorTex.SI_ClothesCshader",class'Material'));
+	}
+	else
+	{
+		Skins[0] = inLoadOut.GetPantsMaterial();
+		Skins[1] = inLoadOut.GetFaceMaterial();
+		Skins[2] = inLoadOut.GetNameMaterial();
+		Skins[3] = inLoadOut.GetVestMaterial();
+	}
 
     //mplog( "...Skins[0]="$Skins[0] );
     //mplog( "...Skins[1]="$Skins[1] );
