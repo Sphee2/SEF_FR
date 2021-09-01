@@ -231,6 +231,19 @@ public function UpdateOfficerLOD()
 			se.bHidden		= false;
 			se.CullDistance = 0; // never cull
 		}
+		
+		//level II body armor special - remove pockets
+		if ( LoadOut.HasLevelIIArmor() )
+		{
+			if ( i != Pocket.Pocket_SimpleRadioPouch &&  i != Pocket.Pocket_SimpleHolster )
+			{
+				// Hide all simpleequipment on officers
+				se.bHidden		= true;
+				se.CullDistance = 1; // doesn't really matter, but just in case culldistance is checked earlier in pipeline than bHidden
+			}
+		}
+		
+		
 	}
 
 }

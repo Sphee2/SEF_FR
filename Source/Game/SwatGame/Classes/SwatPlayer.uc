@@ -562,12 +562,32 @@ simulated function OfficerLoadOut GetLoadOut()
 
 simulated function ReceiveLoadOut(OfficerLoadOut inLoadOut)
 {
+	local int i;
+	local SimpleEquipment se;
+	
     //mplog( self$"---SwatPlayer::ReceiveLoadOut(). LoadOut="$inLoadOut );
     LoadOut = inLoadOut;
 
     //log( "------LoadOut.Owner="$LoadOut.Owner );
 
     SetPlayerSkins( inLoadOut );
+	
+	
+	//level II body armor special - remove pockets
+	for (i = Pocket.Pocket_SimpleBackPouch; i <= Pocket.Pocket_SimpleRadioPouch; ++i)
+	{
+		se = SimpleEquipment(Loadout.GetItemAtPocket(Pocket(i)));
+		assertWithDescription(se != None, "Item at pocket "$GetEnum(Pocket, i)$" is None or not SimpleEquipment");
+		if ( LoadOut.HasLevelIIArmor() )
+		{
+			if ( i != Pocket.Pocket_SimpleRadioPouch &&  i != Pocket.Pocket_SimpleHolster )
+			{
+				// Hide all simpleequipment on officers
+				se.bHidden		= true;
+				se.CullDistance = 1; // doesn't really matter, but just in case culldistance is checked earlier in pipeline than bHidden
+			}
+		}	
+	}
 
 	// make sure we have the correct animations to go with our loadout
 	ChangeAnimation();
