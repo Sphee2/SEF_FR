@@ -32,3 +32,4 @@ simulated function bool IsTased();          // is under effect of a taser
 ///////////////////////////////////////////////////////////////////////////////
 
 simulated function bool GetFlashlightState();
+simulated function ToggleDesiredFlashlightState();

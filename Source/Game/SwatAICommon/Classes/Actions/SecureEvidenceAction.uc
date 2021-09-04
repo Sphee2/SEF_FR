@@ -17,6 +17,8 @@ var(parameters) private IEvidence		EvidenceTarget;
 var private MoveToActorGoal				CurrentMoveToActorGoal;
 var private RotateTowardRotationGoal	CurrentRotateTowardRotationGoal;
 
+var private HandheldEquipment Torch;
+
 const kSecureOnFloorThreshold = 48;
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -148,10 +150,29 @@ latent function SecureEvidence()
 	}
 }
 
+latent function EquipMaglite()
+{
+    Torch = ISwatOfficer(m_Pawn).GetItemAtSlot(Slot_Maglite);
+    assert(Torch != None && Torch.IsA('MagliteTorch'));
+    Torch.LatentWaitForIdleAndEquip();
+	
+	ISwatPawn(m_Pawn).ToggleDesiredFlashlightState(); //set it on	
+	
+}
+
+latent function UnequipMaglite()
+{
+    // re-equip our best weapon
+    ISwatOfficer(m_Pawn).ReEquipFiredWeapon();
+}
+
 state Running
 {
 Begin:
+	
 	useResources(class'AI_Resource'.const.RU_ARMS);
+
+	EquipMaglite(); 
 
 	MoveIntoPosition();
 
@@ -160,6 +181,8 @@ Begin:
 	useResources(class'AI_Resource'.const.RU_LEGS);
 	SecureEvidence();
 
+	UnequipMaglite();
+	
 	succeed();
 }
 ///////////////////////////////////////////////////////////////////////////////

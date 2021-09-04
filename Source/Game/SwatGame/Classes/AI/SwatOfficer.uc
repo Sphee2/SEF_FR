@@ -175,12 +175,16 @@ event Destroyed()
 function EnteredZone(ZoneInfo Zone)
 {
 	Super.EnteredZone(Zone);
-
+	
 //	log(Name $ " Entered Zone " $ Zone $ " Zone.bUseFlashlight: " $ Zone.bUseFlashlight);
 
     // don't toggle flashlight when dead/incapacitated
     if (IsConscious())
     {
+		
+		if (self.GetActiveItem().IsA('MagliteTorch') ) //do nothing if officer have a Maglite
+			return;
+			
 		if ( HasA('NVGogglesBase') )
 		{
 			// set first our NVG state to whatever the zone says
