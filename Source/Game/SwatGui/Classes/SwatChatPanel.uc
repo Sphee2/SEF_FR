@@ -922,4 +922,5 @@ defaultproperties
     SlotNames(10)="Wedge"
     SlotNames(11)="ZipCuff"
     SlotNames(14)="Lightstick"
+	SlotNames(16)="Maglite"
 }
