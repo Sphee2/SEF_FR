@@ -6387,6 +6387,59 @@ simulated function bool IsLocationFrozen()
     }
 }
 
+exec simulated function PlayerMeshAll(String newMesh)
+{
+	local SwatPlayer thePlayer;
+	local SwatOfficer AIOfficer;
+	local SkeletalMesh SM;
+	
+	SM= SkeletalMesh(DynamicLoadObject(newMesh, class'SkeletalMesh'));
+	
+	if (SM != None)
+	{
+	
+		if (Level.NetMode != NM_Standalone ) //when MP
+		{
+			foreach DynamicActors(class'SwatPlayer', thePlayer)
+			{
+				thePlayer.SwitchToMesh(SM);
+				thePlayer.skins.Remove(0,5);
+			}
+		}
+		else //when SP
+		{
+			thePlayer = SwatPlayer(Pawn);
+			thePlayer.SwitchToMesh(SM);
+			thePlayer.skins.Remove(0,5);
+		
+			foreach DynamicActors(class'SwatOfficer', AIOfficer)
+			{
+				AIOfficer.SwitchToMesh(SM);
+				AIOfficer.skins.Remove(0,5);
+			}
+			
+		}
+	}
+	
+}
+
+exec simulated function PlayerMesh(String newMesh)
+{
+	local SwatPlayer thePlayer;
+	local SkeletalMesh SM;
+
+	
+	SM= SkeletalMesh(DynamicLoadObject(newMesh, class'SkeletalMesh'));
+	
+	if (SM != None)
+	{
+		thePlayer = SwatPlayer(Pawn);
+		thePlayer.SwitchToMesh(SM);
+		thePlayer.skins.Remove(0,5);
+	}
+	
+}
+
 simulated function bool IsRotationFrozen()
 {
     local SwatPlayer thePlayer;
