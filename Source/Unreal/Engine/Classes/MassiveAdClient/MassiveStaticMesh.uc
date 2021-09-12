@@ -22,5 +22,20 @@ defaultproperties
 
 	bLogImpressionData = false
 }
+#else
+
+var string Unused1;
+var int Unused2;
+var Object Unused3;
+var bool Unused4;
+
+defaultproperties
+{
+	bStatic = false // static objects cannot update textures, static must be false.
+	bNoDelete = true // must be true since bStatic is false, otherwise this will be deleted on clients.
+	StaticMesh=StaticMesh'Editor_res.TexPropCube'
+
+	bLogImpressionData = false
+}
 
 #endif

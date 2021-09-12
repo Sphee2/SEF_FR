@@ -1,6 +1,6 @@
 class EquipmentUsedOnOther extends QualifiedUseEquipment
-    implements IAmUsedOnOther
-    dependsOn(SwatGamePlayerController)
+	implements IAmUsedOnOther 
+	dependsOn(SwatGamePlayerController)
     abstract;
 
 import enum EFocusInterface from SwatGamePlayerController;

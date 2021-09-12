@@ -61,7 +61,13 @@ var transient const int AutomationDriver;
 #if IG_ADCLIENT_INTEGRATION // dbeswick: Massive AdClient integration
 var int MassiveAdClient;
 var config float MassiveUpdateDelay;
+#else
+var int Unused1;
+var float Unused2;
 #endif
+
+
+
 
 defaultproperties
 {
