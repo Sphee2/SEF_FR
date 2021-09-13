@@ -35,7 +35,63 @@ var private BarricadeGoal						CurrentBarricadeGoal;
 var private EngageOfficerGoal					CurrentEngageOfficerGoal;
 var private ConverseWithHostagesGoal			CurrentConverseWithHostagesGoal;
 var private PickUpWeaponGoal					CurrentPickUpWeaponGoal;
+var private AttackTargetGoal					CurrentAttackTargetGoal;
 
+var float Unused1;
+var float Unused2;
+var float Unused3;
+var float Unused4;
+var float Unused5;
+var float Unused6;
+var float Unused7;
+var float Unused8;
+var float Unused9;
+var float Unused10;
+var float Unused11;
+var float Unused12;
+var float Unused13;
+var float Unused14;
+var float Unused15;
+var float Unused16;
+var float Unused17;
+var float Unused18;
+var float Unused19;
+var float Unused20;
+var float Unused21;
+var float Unused22;
+var float Unused23;
+var float Unused24;
+var float Unused25;
+var float Unused26;
+var float Unused27;
+var float Unused28;
+var float Unused29;
+var float Unused30;
+var float Unused31;
+var float Unused32;
+var float Unused33;
+var float Unused34;
+var float Unused35;
+var float Unused36;
+var float Unused37;
+var float Unused38;
+var float Unused39;
+var float Unused40;
+var float Unused41;
+var float Unused42;
+var float Unused43;
+var float Unused44;
+var float Unused45;
+var float Unused46;
+var float Unused47;
+var float Unused48;
+var float Unused49;
+var float Unused50;
+var float Unused51;
+var float Unused52;
+
+
+/*
 // Initial Reaction variables
 
 var config float								LowSkillInitialReactionChance;
@@ -50,8 +106,8 @@ var config float                                HighSkillScreamChance;
 
 // Morale variables
 
-var config float                                SurprisedComplianceAngle;
-var private float                               SurprisedComplianceDotProduct;
+var config float                                SurprisedComplianceAngle;*/
+var private float                               SurprisedComplianceDotProduct;/*
 var config float                                MaxSurprisedComplianceDistance;
 var config float                                LowSkillSurprisedComplianceMoraleModification;
 var config float                                MediumSkillSurprisedComplianceMoraleModification;
@@ -113,7 +169,7 @@ var config float								HighSkillReactToThrownGrenadeChance;
 
 var config float								MinLostPawnDeltaTime;
 var config float								MaxLostPawnDeltaTime;
-
+*/
 // Constants
 const kRotateToSuspiciousNoisePriority = 55;
 
@@ -125,7 +181,7 @@ function initAction(AI_Resource r, AI_Goal goal)
 {
 	super.initAction(r, goal);
 
-	SurprisedComplianceDotProduct = cos(SurprisedComplianceAngle / 2.0 * DEGREES_TO_RADIANS);
+	SurprisedComplianceDotProduct = cos(class'EnemyCommanderActionConfig'.default.SurprisedComplianceAngle / 2.0 * DEGREES_TO_RADIANS);
 //	log("SurprisedComplianceDotProduct is "$SurprisedComplianceDotProduct);
 
 	// enemies use the comply sensor
@@ -185,6 +241,12 @@ function cleanup()
 		CurrentPickUpWeaponGoal.Release();
 		CurrentPickUpWeaponGoal = None;
 	}
+	
+	if (CurrentAttackTargetGoal != None)
+	{
+		CurrentAttackTargetGoal.Release();
+		CurrentAttackTargetGoal = None;
+	}
 
 	DeactivateLostPawnTimer();
 }
@@ -235,6 +297,15 @@ function RemoveNonDeathGoals()
 		CurrentPickUpWeaponGoal.Release();
 		CurrentPickUpWeaponGoal = None;
 	}
+	
+	if (CurrentAttackTargetGoal != None)
+	{
+		CurrentAttackTargetGoal.unPostGoal(self);
+		CurrentAttackTargetGoal.Release();
+		CurrentAttackTargetGoal = None;
+	}
+	
+	
 }
 
 // prevent the AI from doing anything
@@ -288,6 +359,12 @@ function goalNotAchievedCB( AI_Goal goal, AI_Action child, ACT_ErrorCodes errorC
 		CurrentPickUpWeaponGoal.Release();
 		CurrentPickUpWeaponGoal = None;
 	}
+	else if (goal == CurrentAttackTargetGoal)
+	{
+		CurrentAttackTargetGoal.unPostGoal(self);
+		CurrentAttackTargetGoal.Release();
+		CurrentAttackTargetGoal = None;
+	}
 }
 
 protected function bool ShouldRemoveFailedPatrolGoal()
@@ -325,15 +402,15 @@ function float GetFlashbangedMoraleModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillFlashbangedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillFlashbangedMoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillFlashbangedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillFlashbangedMoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillFlashbangedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillFlashbangedMoraleModification;
 	}
 }
 
@@ -341,15 +418,15 @@ function float GetGassedMoraleModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillGassedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillGassedMoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillGassedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillGassedMoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillGassedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillGassedMoraleModification;
 	}
 }
 
@@ -357,15 +434,15 @@ function float GetPepperSprayedMoraleModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillPepperSprayedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillPepperSprayedMoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillPepperSprayedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillPepperSprayedMoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillPepperSprayedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillPepperSprayedMoraleModification;
 	}
 }
 
@@ -373,15 +450,15 @@ function float GetStungMoraleModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillStungMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillStungMoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillStungMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillStungMoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillStungMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillStungMoraleModification;
 	}
 }
 
@@ -389,15 +466,15 @@ function float GetTasedMoraleModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillTasedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillTasedMoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillTasedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillTasedMoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillTasedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillTasedMoraleModification;
 	}
 }
 
@@ -405,15 +482,15 @@ function float GetStunnedByC2DetonationMoraleModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillStunnedByC2MoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillStunnedByC2MoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillStunnedByC2MoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillStunnedByC2MoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillStunnedByC2MoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillStunnedByC2MoraleModification;
 	}
 }
 
@@ -425,15 +502,15 @@ function float GetShotMoraleModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillShotMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillShotMoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillShotMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillShotMoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillShotMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillShotMoraleModification;
 	}
 }
 
@@ -445,15 +522,15 @@ private function float GetWeaponDroppedMoraleModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillWeaponDroppedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillWeaponDroppedMoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillWeaponDroppedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillWeaponDroppedMoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillWeaponDroppedMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillWeaponDroppedMoraleModification;
 	}
 }
 
@@ -474,15 +551,15 @@ private function float GetKilledOfficerMoraleModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillKilledOfficerMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillKilledOfficerMoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillKilledOfficerMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillKilledOfficerMoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillKilledOfficerMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillKilledOfficerMoraleModification;
 	}
 }
 
@@ -498,15 +575,15 @@ private function float GetNearbyEnemyKilledMoraleModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillNearbyEnemyKilledMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillNearbyEnemyKilledMoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillNearbyEnemyKilledMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillNearbyEnemyKilledMoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillNearbyEnemyKilledMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillNearbyEnemyKilledMoraleModification;
 	}
 }
 
@@ -532,15 +609,15 @@ private function float GetOutOfWeaponsMoraleModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillOutOfUsableWeaponsMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillOutOfUsableWeaponsMoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillOutOfUsableWeaponsMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillOutOfUsableWeaponsMoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillOutOfUsableWeaponsMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillOutOfUsableWeaponsMoraleModification;
 	}
 }
 
@@ -630,7 +707,7 @@ private function ActivateLostPawnTimer()
 	{
 		LostPawnTimer = m_Pawn.Spawn(class'Timer');
 		LostPawnTimer.timerDelegate = LostPawnTimerTriggered;
-		LostPawnTimer.startTimer(RandRange(MinLostPawnDeltaTime, MaxLostPawnDeltaTime));
+		LostPawnTimer.startTimer(RandRange(class'EnemyCommanderActionConfig'.default.MinLostPawnDeltaTime, class'EnemyCommanderActionConfig'.default.MaxLostPawnDeltaTime));
 	}
 }
 
@@ -835,15 +912,15 @@ private function float GetScreamChance()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillScreamChance;
+		return class'EnemyCommanderActionConfig'.default.HighSkillScreamChance;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillScreamChance;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillScreamChance;
 	}
 	else // == low skill
 	{
-		return LowSkillScreamChance;
+		return class'EnemyCommanderActionConfig'.default.LowSkillScreamChance;
 	}
 }
 
@@ -860,21 +937,21 @@ function float GetSkillSpecificSurpriseComplianceModification()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillSurprisedComplianceMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.HighSkillSurprisedComplianceMoraleModification;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillSurprisedComplianceMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillSurprisedComplianceMoraleModification;
 	}
 	else // == low skill
 	{
-		return LowSkillSurprisedComplianceMoraleModification;
+		return class'EnemyCommanderActionConfig'.default.LowSkillSurprisedComplianceMoraleModification;
 	}
 }
 
 function float GetUnobservedComplianceMoraleModification()
 {
-	return UnobservedComplianceMoraleModification;
+	return class'EnemyCommanderActionConfig'.default.UnobservedComplianceMoraleModification;
 }
 
 function bool WasSurprised()
@@ -895,7 +972,7 @@ function bool CheckIfSurprisedByEnemy(Pawn Enemy)
 
 	fDistanceToEnemy = VSize(m_Pawn.Location - Enemy.Location);
 
-	if (fDistanceToEnemy < MaxSurprisedComplianceDistance)
+	if (fDistanceToEnemy < class'EnemyCommanderActionConfig'.default.MaxSurprisedComplianceDistance)
 	{
 		EnemyDirectionNoZ   = Normal(Enemy.Location - m_Pawn.Location);
 		EnemyDirectionNoZ.Z = 0.0;
@@ -1003,6 +1080,13 @@ protected function NotifyBecameCompliant()
 		CurrentPatrolGoal.Release();
 		CurrentPatrolGoal = None;
 	}
+	
+	if (CurrentAttackTargetGoal != None)
+	{
+		CurrentAttackTargetGoal.unPostGoal(self);
+		CurrentAttackTargetGoal.Release();
+		CurrentAttackTargetGoal = None;
+	}
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1014,15 +1098,15 @@ protected function float GetSkillSpecificReactToThrownGrenadeChance()
 {
 	if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High)
 	{
-		return HighSkillReactToThrownGrenadeChance;
+		return class'EnemyCommanderActionConfig'.default.HighSkillReactToThrownGrenadeChance;
 	}
 	else if (ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_Medium)
 	{
-		return MediumSkillReactToThrownGrenadeChance;
+		return class'EnemyCommanderActionConfig'.default.MediumSkillReactToThrownGrenadeChance;
 	}
 	else // == low skill
 	{
-		return LowSkillReactToThrownGrenadeChance;
+		return class'EnemyCommanderActionConfig'.default.LowSkillReactToThrownGrenadeChance;
 	}
 }
 
@@ -1067,7 +1151,7 @@ private function bool ShouldEncounterNewEnemy(Pawn NewEnemy)
 		DistanceToCurrentEnemy = VSize(CurrentEnemy.Location - m_Pawn.Location);
 		DistanceToNewEnemy     = VSize(NewEnemy.Location - m_Pawn.Location);
 
-		if (((DistanceToNewEnemy < DistanceToCurrentEnemy) && (DistanceToNewEnemy < DeltaDistanceToSwitchEnemies)) ||
+		if (((DistanceToNewEnemy < DistanceToCurrentEnemy) && (DistanceToNewEnemy < class'EnemyCommanderActionConfig'.default.DeltaDistanceToSwitchEnemies)) ||
 			(! m_Pawn.CanHit(CurrentEnemy) && m_Pawn.CanHit(NewEnemy)))
 		{
 			return true;
@@ -1181,11 +1265,11 @@ private function float GetInitialReactionChance()
 	    switch(CurrentEnemySkill)
 	    {
 		    case EnemySkill_Low:
-                return LowSkillInitialReactionChance;
+                return class'EnemyCommanderActionConfig'.default.LowSkillInitialReactionChance;
             case EnemySkill_Medium:
-                return MediumSkillInitialReactionChance;
+                return class'EnemyCommanderActionConfig'.default.MediumSkillInitialReactionChance;
             case EnemySkill_High:
-                return HighSkillInitialReactionChance;
+                return class'EnemyCommanderActionConfig'.default.HighSkillInitialReactionChance;
             default:
                 assert(false);
                 return 0.0;
@@ -1204,7 +1288,7 @@ private function bool ShouldDoInitialReaction()
 		assert(HiveMind != None);
 
 		// returns true if we are outside the required distance for playing the initial reaction
-		return ! HiveMind.IsPawnWithinDistanceOfOfficers(m_Pawn, MinDistanceToOfficersToDoInitialReaction, true);
+		return ! HiveMind.IsPawnWithinDistanceOfOfficers(m_Pawn, class'EnemyCommanderActionConfig'.default.MinDistanceToOfficersToDoInitialReaction, true);
 	}
 }
 
@@ -1327,6 +1411,19 @@ function CreatePickUpWeaponGoal(HandHeldEquipmentModel WeaponModel)
 	}
 }
 
+function AttackEnemyWithWeapon(Actor Target)
+{
+		CurrentAttackTargetGoal = new class'AttackTargetGoal'(AI_Resource(m_Pawn.weaponAI), achievingGoal.priority, Target);
+		assert(CurrentAttackTargetGoal != None);
+		CurrentAttackTargetGoal.AddRef();
+
+		CurrentAttackTargetGoal.SetOrderedToAttackTarget(true);
+		CurrentAttackTargetGoal.SetHavePerfectAim(true);
+		CurrentAttacktargetGoal.SetWaitTimeBeforeFiring(1.0f);
+		CurrentAttackTargetGoal.postGoal(self);
+}
+
+
 // removes either the Barricade or Investigate goal
 private function RemoveSuspiciousGoals()
 {
@@ -1357,22 +1454,23 @@ function NotifyDoorWedged(Door WedgedDoor)
 	local Controller C;
 	local float Distance;
 	local bool DoRemoveWedge;
-	
 	SD=ISwatDoor(WedgedDoor);
 
 	//let the enemy remove wedges if they are high skill
-    if( ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High  && ( FRand() > 0.5 ) ) //  EnemySkill_High with 50% chance        
+    if( ISwatEnemy(m_Pawn).GetEnemySkill() == EnemySkill_High  && ( FRand() > 0.5 ) ) //  EnemySkill_High with 50% chance       
     {    
-	
+	   
 		for (C = Level.ControllerList; C != none && !DoRemoveWedge ; C = C.nextController)
 		{
 			Distance = VSize2D(WedgedDoor.Location - C.Location);
-			if (Distance < 2000) //2000 estimated distance... to be tested!
+			if (Distance < 2000 ) //4000 estimated distance... to be tested!
 			{
-					DoRemoveWedge=true;
+				DoRemoveWedge=true;
 			}
+
 		}
 		
+		DoRemoveWedge=true;
 		
 		// do remove wedge
 		if (SD != None && DoRemoveWedge )
@@ -1382,6 +1480,7 @@ function NotifyDoorWedged(Door WedgedDoor)
 			
 			if( !SD.IsLocked() ) //if door is not locked
 			{	
+				
 				//actually remove the wedge from the door
 				SD.EnemyRemoveWedge(m_Pawn);  
 				
@@ -1579,12 +1678,12 @@ latent function DecideToStayCompliant()
 		{
 			// If we found a weapon model, then our morale gain is 2x but our leave compliance threshold is also 2x.
 			// This is so that gunfights are a little more engaging for the player to deal with.
-			if(GetCurrentMorale() >= (LeaveCompliantStateMoraleThreshold*2))
+			if(GetCurrentMorale() >= (class'EnemyCommanderActionConfig'.default.LeaveCompliantStateMoraleThreshold*2))
 			{
 				break;
 			}
 		}
-		else if(GetCurrentMorale() >= LeaveCompliantStateMoraleThreshold)
+		else if(GetCurrentMorale() >= class'EnemyCommanderActionConfig'.default.LeaveCompliantStateMoraleThreshold)
 		{
 			break;
 		}
@@ -1597,7 +1696,7 @@ latent function DecideToStayCompliant()
 		if (ISwatAI(m_Pawn).IsUnobservedByOfficers())
 			ChangeMorale( GetUnobservedComplianceMoraleModification(), "Unobserved Compliance" );
 
-		if (GetCurrentMorale() >= LeaveCompliantStateMoraleThreshold)
+		if (GetCurrentMorale() >= class'EnemyCommanderActionConfig'.default.LeaveCompliantStateMoraleThreshold)
 			FoundWeaponModel = ISwatEnemy(m_Pawn).FindNearbyWeaponModel();
 
 
