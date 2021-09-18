@@ -102,7 +102,7 @@ var bool SpecialInteractionsDisabled;
 //interaction
 //
 
-var config float FocusTestDistance;
+//var config float FocusTestDistance;
 var config float FocusTestInterval;    //how often to look for a focus
 
 var private Timer FocusPollTimer;
@@ -284,6 +284,12 @@ var eVoiceType VoiceType;
 var bool WantsLowReady;
 var bool WantedZoom;
 
+//class size adjustment
+var MovingMode unused1;
+var MovingMode unused2;
+var MovingMode unused3;
+var MovingMode unused4;
+
 replication
 {
     // Things the server should send to the client
@@ -393,6 +399,7 @@ simulated function PostBeginPlay()
 	{
 		Stats = new class'StatsInterface';
 	}
+	
 }
 
 simulated function PostNetBeginPlay()
@@ -784,7 +791,7 @@ simulated function UpdateFocus()
     }
 
     FocusTraceOrigin = CameraLocation;
-    FocusTraceVector = vector(CameraRotation) * FocusTestDistance;
+    FocusTraceVector = vector(CameraRotation) * 3000;
 
     foreach TraceActors(
         class'Actor',
@@ -3904,7 +3911,6 @@ function DoorMightBeTrapped()
    ClientMessage("[c=FFFFFF]Might be trapped.", 'SpeechManagerNotification');	
 }
 
-
 exec function PullDoor()
 {
     local SwatDoor Door;
@@ -5991,7 +5997,7 @@ function ServerIssueCompliance( optional string VoiceTag )
         {
             Pawn.BroadcastEffectEvent('AnnouncedComplyWithGun',,,,,,,,name(VoiceTag));
         }
-        else if(!SwatPawn(Pawn).ShouldIssueTaunt(CameraLocation, vector(CameraRotation), FocusTestDistance, TargetIsSuspect, TargetIsAggressiveHostage, Candidate))
+        else if(!SwatPawn(Pawn).ShouldIssueTaunt(CameraLocation, vector(CameraRotation), 3000, TargetIsSuspect, TargetIsAggressiveHostage, Candidate))
 		{
           Pawn.BroadcastEffectEvent('AnnouncedComply',,,,,,,,name(VoiceTag));
         }
@@ -6779,7 +6785,7 @@ simulated event RenderOverlays( canvas Canvas )
 			// way to get the size of a Material (only Textures)
 			Canvas.DrawTile(
 				ZoomBlurFader,	    // material
-				Canvas.ClipX,		// extend the drawing to the bottom-right corner of screen
+				Canvas.ClipX,		// extend the drawing to the bottom-right corner of screencalcdraw
 				Canvas.ClipY,		// extend the drawing to the bottom-right corner of screen
 				0,					// Start with the top-left corner of the texture
 				0,					// Start with the top-left corner of the texture
@@ -6809,6 +6815,49 @@ simulated function RenderDebugInfo(Canvas Canvas)
 ///////////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////////
+
+
+exec function LeanWalk (string position)
+{
+	
+	if (SwatPawn(Pawn).LWS == Lean_Right && (position == "right" || position == "left" )) 
+	{
+		SwatPawn(Pawn).LWS = Lean_UnRight;
+	//	ConsoleMessage("cent");
+	}
+	else if (SwatPawn(Pawn).LWS == Lean_Left && (position == "right" || position == "left" )) 
+	{
+		SwatPawn(Pawn).LWS = Lean_UnLeft;
+	//	ConsoleMessage("cent");
+	}
+	else if ( (SwatPawn(Pawn).LWS == Lean_Cent || SwatPawn(Pawn).LWS == Lean_UnLeft || SwatPawn(Pawn).LWS == Lean_Unright ) && position == "right")
+	{
+		SwatPawn(Pawn).LWS = Lean_Right;
+	//	ConsoleMessage("right");
+	}
+	else if ((SwatPawn(Pawn).LWS == Lean_Cent || SwatPawn(Pawn).LWS == Lean_UnLeft || SwatPawn(Pawn).LWS == Lean_Unright )  &&  position == "left")
+	{
+		SwatPawn(Pawn).LWS = Lean_Left;
+	//	ConsoleMessage("left");
+	}
+	else
+	{
+		SwatPawn(Pawn).LWS = Lean_Cent;
+	//	ConsoleMessage("cent");
+	}
+		
+	SwatPawn(Pawn).StartLeaning();
+}
+
+exec function handtest (int rollrate)
+{
+	local rotator rotoffset;
+	rotoffset.pitch=0;
+	rotoffset.yaw=0;
+	rotoffset.roll=rollrate;
+	Swatplayer.GetHands().SetBoneRotation('bone01',rotoffset,1,1);
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 
 defaultproperties

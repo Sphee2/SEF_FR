@@ -33,7 +33,7 @@ var config name	 Unused4;
 
 var float ThrowAnimationTweenTime;
 
-var config float Unused5;
+var config int Unused5;
 var config Range Unused6;
 
 var private Material SuspectHandsMaterial;
@@ -3618,7 +3618,7 @@ simulated function vector GetThirdPersonEyesLocation()
 // the camera is at the proper offset according to lean
 simulated event rotator ViewRotationOffset()
 {
-    return GetStungRotationOffset() + GetLeanRotationOffset();
+    return GetStungRotationOffset()  + GetLWSRotOffset(); //+ GetLeanRotationOffset()
 }
 simulated function vector ViewLocationOffset(Rotator CameraRotation)
 {
@@ -3649,7 +3649,7 @@ simulated function rotator GetViewRotation()
         baseRotation = GetAimRotation();
     }
 
-    return baseRotation + GetStungRotationOffset() + GetLeanRotationOffset();
+    return baseRotation + GetStungRotationOffset() + GetLWSRotOffset(); // + GetLeanRotationOffset()
 }
 
 simulated event ApplyRotationOffset(out Vector Acceleration)

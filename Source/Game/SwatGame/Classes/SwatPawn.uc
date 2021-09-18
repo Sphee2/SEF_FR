@@ -95,7 +95,7 @@ var protected config array<string> MaleAnimGroups;
 var protected config array<string> FemaleAnimGroups;
 
 // percentage of health left required to play intense Injury speech
-var private config float PercentageHealthForIntenseInjury;
+var private config float PercentageHealthForIntenseInjury; 
 
 // Animation state variables
 
@@ -210,8 +210,7 @@ var bool bIsWearingNightvision;
 
 
 // Compliance
-var private config float			MaxComplianceIssueDistance;
-
+//var private config float			MaxComplianceIssueDistance; 2000.0
 
 // Being Arrested
 var private bool					bArrested;					// if we are arrested
@@ -258,6 +257,23 @@ var private Rotator LastAimRotator;
 // dbeswick: havok character interaction
 var config float HavokObjectInteractionFactor;
 
+//enum LeanWalkState
+enum LeanWalkState
+{
+	Lean_Left,
+	Lean_Right,
+	Lean_UnLeft,
+	Lean_UnRight,
+	Lean_Cent
+};
+
+var LeanWalkState LWS;
+
+var int LWSrollrate;
+/*var LeanWalkState unused1;
+var LeanWalkState unused2;
+var LeanWalkState unused3;
+var LeanWalkState unused4;*/
 ///////////////////////////////////////////////////////////////////////////////
 
 replication
@@ -331,6 +347,10 @@ simulated event PostBeginPlay()
     // Initialize the perlin noise object for mouth movement
     InitAnimationForCurrentMesh();
     InitMouthMovementPerlinNoise();
+	
+	//init lean
+	LWS = Lean_Cent;
+	
 }
 
 simulated event PostNetBeginPlay()
@@ -1810,7 +1830,7 @@ simulated function bool CanIssueComplianceTo(Pawn otherPawn)
 	// if the other pawn is a swat ai character, within the correct distance,
 	// and there is line of sight to the character
 	if (otherPawn.IsA('SwatAICharacter') &&
-		(VSize(otherPawn.Location - Location) <= MaxComplianceIssueDistance) &&
+		(VSize(otherPawn.Location - Location) <= 2000.0) &&  //MaxComplianceIssueDistance
 		LineOfSightTo(otherPawn) &&
 //    otherPawn.PlayerCanSeeMe() &&
         SwatCharacterResource(otherPawn.characterAI).CommonSensorAction.GetComplySensor() != None)
@@ -2177,6 +2197,136 @@ simulated function GivenEquipmentFromPawn(class<HandheldEquipment> Equipment) {}
 
 ///////////////////////////////////////////////////////////////////////////////
 
+
+state Leaning
+{
+ Begin:
+		if (LWS == Lean_Right)
+		{
+			LnRight();
+		}
+		else if (LWS == Lean_Left)
+		{
+			LnLeft();
+		}
+		else if (LWS == Lean_UnRight)
+		{
+			UnLnright();
+		}
+		else if (LWS == Lean_UnLeft)
+		{
+			UnLnleft();
+		}
+		else if (LWS == Lean_Cent)
+		{
+			LnCent();
+		}
+		
+Goto('');		
+}
+
+
+function StartLeaning()
+{
+	gotostate('Leaning');
+}
+
+latent function LnRight()
+{
+	
+	local float AlphaTime;
+	
+	local rotator rotoffset;
+	rotoffset.pitch=5000;
+	rotoffset.yaw=2500;
+	rotoffset.roll=0;
+	
+	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
+	{
+		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+		LWSrollrate= LWSrollrate + 167;
+		sleep(0.01);
+	}
+}
+
+latent function LnLeft()
+{
+	local float AlphaTime;
+	local rotator rotoffset;
+	rotoffset.pitch=-5000;
+	rotoffset.yaw=-2500;
+	rotoffset.roll=0;
+	
+	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
+	{
+		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+		LWSrollrate = LWSrollrate - 167;
+		sleep(0.01);
+	}
+}
+
+latent function LnCent()
+{
+	local rotator rotoffset;
+	rotoffset.pitch=0;
+	rotoffset.yaw=0;
+	rotoffset.roll=0;
+	
+	SetBoneRotation('bip01_spine2',rotoffset,1,1.0);
+	LWSrollrate=0;
+	
+}
+
+latent function UnLnRight()
+{
+	
+	local float AlphaTime;
+	
+	local rotator rotoffset;
+	rotoffset.pitch=5000;
+	rotoffset.yaw=2500;
+	rotoffset.roll=0;
+	
+	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
+	{
+		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+		LWSrollrate= LWSrollrate - 167;
+		sleep(0.01);
+	}
+	
+	LWSrollrate= 0;
+}
+
+latent function UnLnLeft()
+{
+	local float AlphaTime;
+	local rotator rotoffset;
+	rotoffset.pitch=-5000;
+	rotoffset.yaw=-2500;
+	rotoffset.roll=0;
+	
+	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
+	{
+		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+		LWSrollrate= LWSrollrate + 167;
+		sleep(0.01);
+	}
+	
+	LWSrollrate= 0;
+}
+
+function Rotator GetLWSRotOffset()
+{	
+local rotator endrot;
+
+endrot.roll=LWSrollrate;
+endrot.yaw=0;
+endrot.pitch=0;
+
+	return 	endrot;
+}
+
+//////////////////////////////////////////////////////////////////////////////
 defaultproperties
 {
     Skins[0] = Texture'SWATofficerTex.swat_bdu_camo'
