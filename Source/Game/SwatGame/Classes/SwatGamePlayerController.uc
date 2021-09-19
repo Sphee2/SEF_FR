@@ -102,7 +102,7 @@ var bool SpecialInteractionsDisabled;
 //interaction
 //
 
-//var config float FocusTestDistance;
+var config float FocusTestDistance;
 var config float FocusTestInterval;    //how often to look for a focus
 
 var private Timer FocusPollTimer;
@@ -285,10 +285,10 @@ var bool WantsLowReady;
 var bool WantedZoom;
 
 //class size adjustment
-var MovingMode unused1;
+/*var MovingMode unused1;
 var MovingMode unused2;
 var MovingMode unused3;
-var MovingMode unused4;
+var MovingMode unused4;*/
 
 replication
 {
@@ -791,7 +791,7 @@ simulated function UpdateFocus()
     }
 
     FocusTraceOrigin = CameraLocation;
-    FocusTraceVector = vector(CameraRotation) * 3000;
+    FocusTraceVector = vector(CameraRotation) * FocusTestDistance;
 
     foreach TraceActors(
         class'Actor',
@@ -5894,7 +5894,7 @@ exec function ToggleNVG()
 {
     SwatPawn(Pawn).ToggleDesiredNVGState();
 }
-
+/*
 exec function ToggleNVGLightUP()
 {
     SwatPawn(Pawn).UpdateNightvisionUP();
@@ -5904,7 +5904,7 @@ exec function ToggleNVGLightDown()
 {
     SwatPawn(Pawn).UpdateNightvisionDown();
 }
-
+*/
 
 // modifier to hold the next command was pressed
 exec function HoldCommand(bool bPressed)
@@ -5997,7 +5997,7 @@ function ServerIssueCompliance( optional string VoiceTag )
         {
             Pawn.BroadcastEffectEvent('AnnouncedComplyWithGun',,,,,,,,name(VoiceTag));
         }
-        else if(!SwatPawn(Pawn).ShouldIssueTaunt(CameraLocation, vector(CameraRotation), 3000, TargetIsSuspect, TargetIsAggressiveHostage, Candidate))
+        else if(!SwatPawn(Pawn).ShouldIssueTaunt(CameraLocation, vector(CameraRotation), FocusTestDistance, TargetIsSuspect, TargetIsAggressiveHostage, Candidate))
 		{
           Pawn.BroadcastEffectEvent('AnnouncedComply',,,,,,,,name(VoiceTag));
         }
@@ -6785,7 +6785,7 @@ simulated event RenderOverlays( canvas Canvas )
 			// way to get the size of a Material (only Textures)
 			Canvas.DrawTile(
 				ZoomBlurFader,	    // material
-				Canvas.ClipX,		// extend the drawing to the bottom-right corner of screencalcdraw
+				Canvas.ClipX,		// extend the drawing to the bottom-right corner of screen
 				Canvas.ClipY,		// extend the drawing to the bottom-right corner of screen
 				0,					// Start with the top-left corner of the texture
 				0,					// Start with the top-left corner of the texture
@@ -6845,17 +6845,16 @@ exec function LeanWalk (string position)
 		SwatPawn(Pawn).LWS = Lean_Cent;
 	//	ConsoleMessage("cent");
 	}
-		
-	SwatPawn(Pawn).StartLeaning();
+	
+	if ( SwatPlayer != None ) 
+		SwatPlayer.StartLeaning();
+	
 }
 
-exec function handtest (int rollrate)
+exec function handtest (rotator rotoffset)
 {
-	local rotator rotoffset;
-	rotoffset.pitch=0;
-	rotoffset.yaw=0;
-	rotoffset.roll=rollrate;
-	Swatplayer.GetHands().SetBoneRotation('bone01',rotoffset,1,1);
+	
+	Swatplayer.GetHands().SetBoneRotation('parent',rotoffset,1,1);
 }
 
 ///////////////////////////////////////////////////////////////////////////////

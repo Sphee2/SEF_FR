@@ -3622,13 +3622,13 @@ simulated event rotator ViewRotationOffset()
 }
 simulated function vector ViewLocationOffset(Rotator CameraRotation)
 {
-    return GetTasedViewLocationOffset(CameraRotation);
+    return GetTasedViewLocationOffset(CameraRotation) ;//+ (GetLWSLocOffset()>>CameraRotation);
 }
 
 //overridden from Pawn, so the gun is drawn at the proper offset according to lean
 simulated function vector CalcDrawOffset()
 {
-    return Super.CalcDrawOffset() + GetLeanPositionOffset();
+    return Super.CalcDrawOffset() + GetLeanPositionOffset(); //+ GetLeanPositionOffset();
 }
 
 //overridden from Pawn, so the gun is drawn at the proper offset according to lean
@@ -4295,6 +4295,43 @@ simulated function int GetNumberOfArmsInjured()
     return ArmsInjured;
 }
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+state Leaning
+{
+ Begin:
+		if (LWS == Lean_Right)
+		{
+			LnRight();
+		}
+		else if (LWS == Lean_Left)
+		{
+			LnLeft();
+		}
+		else if (LWS == Lean_UnRight)
+		{
+			UnLnright();
+		}
+		else if (LWS == Lean_UnLeft)
+		{
+			UnLnleft();
+		}
+		else if (LWS == Lean_Cent)
+		{
+			LnCent();
+		}
+		
+Goto('');		
+}
+
+
+function StartLeaning()
+{
+	gotostate('Leaning');
+}
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////
 defaultproperties
 {
     SuspectHandsMaterial=Material'SWAT1stPersonTex.HandGang_aShader'

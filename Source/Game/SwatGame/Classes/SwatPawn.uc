@@ -210,13 +210,13 @@ var bool bIsWearingNightvision;
 
 
 // Compliance
-//var private config float			MaxComplianceIssueDistance; 2000.0
+var private config float			MaxComplianceIssueDistance;
 
 // Being Arrested
 var private bool					bArrested;					// if we are arrested
 var private bool					BeingArrested;				// if we are being arrested
 var private Pawn					ArrestedBy;					// who arrested us
-var protected config float			QualifyTimeForArrest;
+var protected config float 			QualifyTimeForArrest;
 
 // Fire Modes
 var bool                            bWantsToContinueAutoFiring;  //if auto-firing, should contine.  NOTE: This does *not* indicate whether the Pawn is currently firing at all.
@@ -230,7 +230,7 @@ var (Shadow) float ShadowCullDistance "Shadows will completely disappear when th
 // Lean positional and rotational offset on the camera
 var private Vector  LeanPositionOffset;
 var private Rotator LeanRotationOffset;
-var private float   LastLeanOffsetsUpdateTime;
+//var private float   LastLeanOffsetsUpdateTime;
 
 // Tweakable parameters for conmtrolling the extent and feel of the camera lean
 var config private float LeanVerticalDistance;
@@ -255,7 +255,7 @@ const kDeathRenderBoundingBoxExpansionSize = 100.0;
 var private Rotator LastAimRotator;
 
 // dbeswick: havok character interaction
-var config float HavokObjectInteractionFactor;
+//var config float HavokObjectInteractionFactor;
 
 //enum LeanWalkState
 enum LeanWalkState
@@ -270,10 +270,8 @@ enum LeanWalkState
 var LeanWalkState LWS;
 
 var int LWSrollrate;
-/*var LeanWalkState unused1;
-var LeanWalkState unused2;
-var LeanWalkState unused3;
-var LeanWalkState unused4;*/
+//var int LWSlocoffset;
+
 ///////////////////////////////////////////////////////////////////////////////
 
 replication
@@ -349,7 +347,7 @@ simulated event PostBeginPlay()
     InitMouthMovementPerlinNoise();
 	
 	//init lean
-	LWS = Lean_Cent;
+	//LWS = Lean_Cent;
 	
 }
 
@@ -1756,6 +1754,7 @@ simulated function UpdateNightvision()
 	}
 }
 
+/*
 simulated function UpdateNightvisionUP()
 {
 	local NVGogglesBase CurrentVision;
@@ -1786,7 +1785,7 @@ simulated function UpdateNightvisionDown()
 		}
 	}
 }
-
+*/
 
 simulated function UpdateFlashlight()
 {
@@ -1830,7 +1829,7 @@ simulated function bool CanIssueComplianceTo(Pawn otherPawn)
 	// if the other pawn is a swat ai character, within the correct distance,
 	// and there is line of sight to the character
 	if (otherPawn.IsA('SwatAICharacter') &&
-		(VSize(otherPawn.Location - Location) <= 2000.0) &&  //MaxComplianceIssueDistance
+		(VSize(otherPawn.Location - Location) <= MaxComplianceIssueDistance) && 
 		LineOfSightTo(otherPawn) &&
 //    otherPawn.PlayerCanSeeMe() &&
         SwatCharacterResource(otherPawn.characterAI).CommonSensorAction.GetComplySensor() != None)
@@ -2031,6 +2030,10 @@ simulated function float GetQualifyTimeForArrest(Pawn Arrester)
 
 //returns whether we've been arrested
 simulated native function bool IsArrested();
+/*simulated function bool IsArrested()
+{
+	return bArrested;
+}*/
 
 // returns who arrested us
 simulated function Pawn GetArrester()
@@ -2180,7 +2183,7 @@ event bool HavokCharacterCollision(HavokCharacterObjectInteractionEvent data, ou
 	{
 		ImpulseMag = VSize(res.ObjectImpulse);
 		ImpulseDir = res.ObjectImpulse / ImpulseMag;
-		res.ObjectImpulse = ImpulseDir * H.ClampImpulse(ImpulseMag * HavokObjectInteractionFactor);
+		res.ObjectImpulse = ImpulseDir * H.ClampImpulse(ImpulseMag * 0.1); //HavokObjectInteractionFactor = 0.1
 	}
 
 	return true;
@@ -2198,38 +2201,6 @@ simulated function GivenEquipmentFromPawn(class<HandheldEquipment> Equipment) {}
 ///////////////////////////////////////////////////////////////////////////////
 
 
-state Leaning
-{
- Begin:
-		if (LWS == Lean_Right)
-		{
-			LnRight();
-		}
-		else if (LWS == Lean_Left)
-		{
-			LnLeft();
-		}
-		else if (LWS == Lean_UnRight)
-		{
-			UnLnright();
-		}
-		else if (LWS == Lean_UnLeft)
-		{
-			UnLnleft();
-		}
-		else if (LWS == Lean_Cent)
-		{
-			LnCent();
-		}
-		
-Goto('');		
-}
-
-
-function StartLeaning()
-{
-	gotostate('Leaning');
-}
 
 latent function LnRight()
 {
@@ -2244,7 +2215,8 @@ latent function LnRight()
 	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
 	{
 		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-		LWSrollrate= LWSrollrate + 167;
+		LWSrollrate= LWSrollrate + 84;
+		//LWSlocoffset = LWSlocoffset - 1;
 		sleep(0.01);
 	}
 }
@@ -2260,7 +2232,8 @@ latent function LnLeft()
 	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
 	{
 		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-		LWSrollrate = LWSrollrate - 167;
+		LWSrollrate = LWSrollrate - 84;
+		//LWSlocoffset = LWSlocoffset + 1;
 		sleep(0.01);
 	}
 }
@@ -2274,6 +2247,7 @@ latent function LnCent()
 	
 	SetBoneRotation('bip01_spine2',rotoffset,1,1.0);
 	LWSrollrate=0;
+	//LWSlocoffset = 0;
 	
 }
 
@@ -2290,11 +2264,13 @@ latent function UnLnRight()
 	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
 	{
 		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-		LWSrollrate= LWSrollrate - 167;
+		LWSrollrate= LWSrollrate - 84;
+		//LWSlocoffset = LWSlocoffset + 1;
 		sleep(0.01);
 	}
 	
 	LWSrollrate= 0;
+	//LWSlocoffset = 0;
 }
 
 latent function UnLnLeft()
@@ -2308,11 +2284,13 @@ latent function UnLnLeft()
 	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
 	{
 		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-		LWSrollrate= LWSrollrate + 167;
+		LWSrollrate= LWSrollrate + 84;
+		//LWSlocoffset = LWSlocoffset - 1;
 		sleep(0.01);
 	}
 	
 	LWSrollrate= 0;
+	//LWSlocoffset = 0;
 }
 
 function Rotator GetLWSRotOffset()
@@ -2325,6 +2303,17 @@ endrot.pitch=0;
 
 	return 	endrot;
 }
+
+/*function vector GetLWSLocOffset()
+{
+	local vector offset;
+	
+	offset.x=0;
+	offset.y=LWSlocoffset;
+	offset.z=0;	
+  
+	return offset;
+}*/
 
 //////////////////////////////////////////////////////////////////////////////
 defaultproperties
@@ -2398,7 +2387,7 @@ defaultproperties
 
     bTriggerEffectEventsBeforeGameStarts=true
 
-	HavokObjectInteractionFactor = 0.1
+	//HavokObjectInteractionFactor = 0.1
 }
 
 ///////////////////////////////////////////////////////////////////////////////
