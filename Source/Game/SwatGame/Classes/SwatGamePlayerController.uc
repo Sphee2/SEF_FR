@@ -6851,11 +6851,18 @@ exec function LeanWalk (string position)
 	
 }
 
-exec function handtest (rotator rotoffset)
+exec function handrot (rotator rotoffset)
 {
 	
 	Swatplayer.GetHands().SetBoneRotation('parent',rotoffset,1,1);
 }
+
+exec function handloc (vector offset)
+{
+	
+	Swatplayer.GetHands().SetBoneLocation('parent',offset,1);
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////
 

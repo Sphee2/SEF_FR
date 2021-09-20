@@ -3622,7 +3622,7 @@ simulated event rotator ViewRotationOffset()
 }
 simulated function vector ViewLocationOffset(Rotator CameraRotation)
 {
-    return GetTasedViewLocationOffset(CameraRotation) ;//+ (GetLWSLocOffset()>>CameraRotation);
+    return GetTasedViewLocationOffset(CameraRotation) + (GetLWSLocOffset()>>CameraRotation);
 }
 
 //overridden from Pawn, so the gun is drawn at the proper offset according to lean

@@ -270,7 +270,7 @@ enum LeanWalkState
 var LeanWalkState LWS;
 
 var int LWSrollrate;
-//var int LWSlocoffset;
+
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -2207,15 +2207,21 @@ latent function LnRight()
 	
 	local float AlphaTime;
 	
+	local vector offset;
 	local rotator rotoffset;
 	rotoffset.pitch=5000;
 	rotoffset.yaw=2500;
 	rotoffset.roll=0;
+	offset.x=0;
+	offset.y=5;
+	offset.z=0;
+	
 	
 	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
 	{
 		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
 		LWSrollrate= LWSrollrate + 84;
+		//GetHands().SetBoneLocation('parent',offset,AlphaTime);
 		//LWSlocoffset = LWSlocoffset - 1;
 		sleep(0.01);
 	}
@@ -2304,16 +2310,16 @@ endrot.pitch=0;
 	return 	endrot;
 }
 
-/*function vector GetLWSLocOffset()
+function vector GetLWSLocOffset()
 {
 	local vector offset;
 	
 	offset.x=0;
-	offset.y=LWSlocoffset;
+	offset.y=LWSrollrate/168; //conversion from 2500 roll rate to y movement (2500 roll = 1 y ) x 30 times update 
 	offset.z=0;	
   
 	return offset;
-}*/
+}
 
 //////////////////////////////////////////////////////////////////////////////
 defaultproperties
