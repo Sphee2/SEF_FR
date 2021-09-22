@@ -168,7 +168,14 @@ var config Rotator DefaultRotationOffset;
 var config vector IronSightLocationOffset;
 var config vector PlayerViewOffset;
 var config Rotator IronSightRotationOffset;
-var config Rotator PlayerViewRotation;
+//var config Rotator PlayerViewRotation;
+var config int IronSightLeanYawLeft; //lean adjustment for IronSightLocation
+var config int IronSightLeanYawRight; //lean adjustment for IronSightLocation
+//unused vars for class space
+var private int IronSightLeanOriginal;
+
+
+//////////////////////////////////////////
 var config float ZoomedAimErrorModifier;
 var config float ViewInertia;
 var config float MaxInertiaOffset;
@@ -1429,6 +1436,24 @@ simulated function EquippedHook()
     }
   }
 
+//lean adj storing
+IronSightLeanOriginal = IronSightRotationOffset.yaw;
+
+
+if ( Pawn(Owner).Gethands().LeanState == -1 )
+{
+	//move to the left
+	IronSightRotationOffset.yaw -= IronSightLeanYawLeft;
+}
+else if ( Pawn(Owner).Gethands().LeanState == 1 )
+{
+	//move to the right
+	IronSightRotationOffset.yaw +=  IronSightLeanYawRight;
+}
+
+	//cha-cha real smooth! ----------only 90s kids will get it 
+	
+
 }
 
 simulated function bool AllowedToPassItem()
@@ -1486,7 +1511,15 @@ function UnRegisterInterestedGrenadeThrowing(IInterestedGrenadeThrowing Client)
 	}
 }
 
-//simulated function UnEquippedHook();  //TMC do we want to blank the HUD's ammo count?
+simulated function UnEquippedHook()
+{
+	Super.UnEquippedHook();
+	
+	//restore original value
+	IronSightRotationOffset.yaw = IronSightLeanOriginal;
+	
+	
+}  //TMC do we want to blank the HUD's ammo count?
 
 defaultproperties
 {

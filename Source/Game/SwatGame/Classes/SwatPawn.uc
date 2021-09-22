@@ -347,7 +347,7 @@ simulated event PostBeginPlay()
     InitMouthMovementPerlinNoise();
 	
 	//init lean
-	//LWS = Lean_Cent;
+	LWS = Lean_Cent;
 	
 }
 
@@ -2206,54 +2206,84 @@ latent function LnRight()
 {
 	
 	local float AlphaTime;
-	
-	local vector offset;
 	local rotator rotoffset;
+	local int offset;
+	local bool isWeapon;
+	
 	rotoffset.pitch=5000;
 	rotoffset.yaw=2500;
 	rotoffset.roll=0;
-	offset.x=0;
-	offset.y=5;
-	offset.z=0;
 	
+	Gethands().LeanState = 1;
+	
+	if( SwatWeapon(GetActiveItem()) != none)
+	{
+		isWeapon=true;
+		offset=SwatWeapon(getactiveitem()).IronSightLeanYawRight;
+	}
 	
 	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
 	{
 		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+		
+		if (isWeapon)
+			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw + (offset/30) ;
+		
 		LWSrollrate= LWSrollrate + 84;
-		//GetHands().SetBoneLocation('parent',offset,AlphaTime);
-		//LWSlocoffset = LWSlocoffset - 1;
 		sleep(0.01);
 	}
+	
+	
 }
 
 latent function LnLeft()
 {
 	local float AlphaTime;
 	local rotator rotoffset;
+	local int offset;
+	local bool isWeapon;
 	rotoffset.pitch=-5000;
 	rotoffset.yaw=-2500;
 	rotoffset.roll=0;
+
+
+	if( SwatWeapon(GetActiveItem()) != none)
+	{
+		isWeapon=true;
+		offset=SwatWeapon(getactiveitem()).IronSightLeanYawLeft;
+	}
+	
+	Gethands().LeanState = -1;
 	
 	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
 	{
 		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+		
+		if (isWeapon)
+			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw - (offset/30) ;
+		
 		LWSrollrate = LWSrollrate - 84;
-		//LWSlocoffset = LWSlocoffset + 1;
 		sleep(0.01);
 	}
 }
 
-latent function LnCent()
+latent function LnCent() //lean reset
 {
+
 	local rotator rotoffset;
+
+	
 	rotoffset.pitch=0;
 	rotoffset.yaw=0;
 	rotoffset.roll=0;
+
+
+	Gethands().LeanState = 0;
+	LWSrollrate=0;
 	
 	SetBoneRotation('bip01_spine2',rotoffset,1,1.0);
-	LWSrollrate=0;
-	//LWSlocoffset = 0;
+	
+	
 	
 }
 
@@ -2261,42 +2291,67 @@ latent function UnLnRight()
 {
 	
 	local float AlphaTime;
-	
 	local rotator rotoffset;
+	local int offset;
+	local bool isWeapon;
+	
 	rotoffset.pitch=5000;
 	rotoffset.yaw=2500;
 	rotoffset.roll=0;
 	
+	Gethands().LeanState = 0;
+
+	if( SwatWeapon(GetActiveItem()) != none)
+	{
+		isWeapon=true;
+		offset=SwatWeapon(getactiveitem()).IronSightLeanYawRight;
+	}
+	
 	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
 	{
 		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+
+		if (isWeapon)
+			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw - (offset/30) ;
+
 		LWSrollrate= LWSrollrate - 84;
-		//LWSlocoffset = LWSlocoffset + 1;
 		sleep(0.01);
 	}
 	
 	LWSrollrate= 0;
-	//LWSlocoffset = 0;
 }
 
 latent function UnLnLeft()
 {
 	local float AlphaTime;
 	local rotator rotoffset;
+	local int offset;
+	local bool isWeapon;
+	
 	rotoffset.pitch=-5000;
 	rotoffset.yaw=-2500;
 	rotoffset.roll=0;
 	
+	Gethands().LeanState = 0;
+
+	if( SwatWeapon(GetActiveItem()) != none )
+	{
+		isWeapon=true;
+		offset=SwatWeapon(getactiveitem()).IronSightLeanYawLeft;
+	}
+	
 	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
 	{
 		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+		
+		if (isWeapon)
+			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw + (offset/30) ;
+		
 		LWSrollrate= LWSrollrate + 84;
-		//LWSlocoffset = LWSlocoffset - 1;
 		sleep(0.01);
 	}
 	
 	LWSrollrate= 0;
-	//LWSlocoffset = 0;
 }
 
 function Rotator GetLWSRotOffset()
@@ -2315,7 +2370,7 @@ function vector GetLWSLocOffset()
 	local vector offset;
 	
 	offset.x=0;
-	offset.y=LWSrollrate/168; //conversion from 2500 roll rate to y movement (2500 roll = 1 y ) x 30 times update 
+	offset.y=LWSrollrate/168; //conversion from 2500 roll rate to y movement (2500 roll = 0.5 y ) x 30 times update 
 	offset.z=0;	
   
 	return offset;

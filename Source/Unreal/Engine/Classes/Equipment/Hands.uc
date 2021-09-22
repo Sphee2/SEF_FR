@@ -31,7 +31,8 @@ enum HandAnimationPass
 };
 
 var protected array<vector> HandsPass;
-var protected int NotUsed;
+//lean adjustment variable... i cant pass SwatPawn's LWS directly :(  -1 = left / 0=center / 1=right
+var int LeanState;
 
 var config float PreThrowTweenTime;
 var config float PreThrowRootBone;
