@@ -10,29 +10,20 @@ simulated function OnHolderDesiredFlashlightStateChanged() //we dont shoot here.
 	
 }
 
-simulated function evidence()
+function evidence()
 {
-	local SwatGamePlayerController SGPC; 
-    local Controller C;
-
-
-    for (C = Level.ControllerList; C != none; C = C.nextController)
-    {
-        SGPC = SwatGamePlayerController(C);
-			 if (C.bIsPlayer == true)
-			 {
-				if (!evidence_is_highlight)
-				{
-					SGPC.evidencehighlight(true);	
-					evidence_is_highlight=true;
-				}
-				else
-				{
-					SGPC.evidencehighlight(false);
-					evidence_is_highlight=false;
-				}
-			}
-    }
+	
+	if (!evidence_is_highlight)
+	{
+		Level.GetLocalPlayerController().ConsoleCommand("evidencehighlight 1");
+		evidence_is_highlight=true;
+	}
+	else
+	{
+		Level.GetLocalPlayerController().ConsoleCommand("evidencehighlight 0");
+		evidence_is_highlight=false;
+	}
+	
 }
 
 simulated latent protected function DoUsingHook()
@@ -44,20 +35,11 @@ simulated latent protected function DoUsingHook()
 
 simulated function UnequippedHook() //remove evidence highlight when unequip.
 {
-local SwatGamePlayerController SGPC; 
-local Controller C;
 
 Super.UnequippedHook();
 
- for (C = Level.ControllerList; C != none; C = C.nextController)
- {
-    SGPC = SwatGamePlayerController(C);
-    if (C.bIsPlayer == true)
-    {
-			SGPC.ConsoleCommand("evidencehighlight 0");
-			evidence_is_highlight = false;
-	}
- } 
+Level.GetLocalPlayerController().ConsoleCommand("evidencehighlight 0");
+evidence_is_highlight=false;
 
 }
 
