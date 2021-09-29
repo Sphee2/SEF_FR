@@ -294,7 +294,7 @@ replication
 {
     // Things the server should send to the client
     reliable if ( bNetOwner && bNetDirty && (Role == ROLE_Authority) )
-        SwatPlayer, DoorCannotBeLocked, DoorIsLocked, DoorIsNotLocked, SpecialInteractionsNotification;
+        SwatPlayer, DoorCannotBeLocked, DoorIsLocked, DoorIsNotLocked, SpecialInteractionsNotification ;
 
     // replicated functions sent to client by server
     reliable if( Role == ROLE_Authority )
@@ -311,7 +311,7 @@ replication
         ClientAITriggerEffectEvent, ClientAIDroppedAllWeapons, ClientAIDroppedActiveWeapon, ClientAIDroppedAllEvidence,
         ClientInterruptAndGotoState, ClientInterruptState, ClientSetObjectiveVisibility, ClientReportableReportedToTOC,
         ClientAddPrecacheableMaterial, ClientAddPrecacheableMesh, ClientAddPrecacheableStaticMesh, ClientPrecacheAll,
-        ClientViewFromLocation, ClientForceObserverCam, ReplicatedObserverCamTarget, ReplicatedViewportTeammate;
+        ClientViewFromLocation, ClientForceObserverCam, ReplicatedObserverCamTarget, ReplicatedViewportTeammate ;
 
     // replicated functions sent to server by owning client
     reliable if( Role < ROLE_Authority )
@@ -325,6 +325,7 @@ replication
         ServerHandleViewportFire, ServerHandleViewportReload,
 		ServerDisableSpecialInteractions, ServerMPCommandIssued,
 		ServerDiscordTest, ServerDiscordTest2, ServerGiveItem ,PullDoor;
+		
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1221,7 +1222,7 @@ exec function Fire()
 }
 
 
-exec simulated function EvidenceHighlight(bool bEnable)
+exec function EvidenceHighlight(bool bEnable)
 {
 local IEvidence Evidence;
 local HandHeldEquipmentModel EvidenceModel;
@@ -6817,39 +6818,7 @@ simulated function RenderDebugInfo(Canvas Canvas)
 ///////////////////////////////////////////////////////////////////////////////
 
 
-exec function LeanWalk (string position)
-{
-	
-	if (SwatPawn(Pawn).LWS == Lean_Right && (position == "right" || position == "left" )) 
-	{
-		SwatPawn(Pawn).LWS = Lean_UnRight;
-	//	ConsoleMessage("cent");
-	}
-	else if (SwatPawn(Pawn).LWS == Lean_Left && (position == "right" || position == "left" )) 
-	{
-		SwatPawn(Pawn).LWS = Lean_UnLeft;
-	//	ConsoleMessage("cent");
-	}
-	else if ( (SwatPawn(Pawn).LWS == Lean_Cent || SwatPawn(Pawn).LWS == Lean_UnLeft || SwatPawn(Pawn).LWS == Lean_Unright ) && position == "right")
-	{
-		SwatPawn(Pawn).LWS = Lean_Right;
-	//	ConsoleMessage("right");
-	}
-	else if ((SwatPawn(Pawn).LWS == Lean_Cent || SwatPawn(Pawn).LWS == Lean_UnLeft || SwatPawn(Pawn).LWS == Lean_Unright )  &&  position == "left")
-	{
-		SwatPawn(Pawn).LWS = Lean_Left;
-	//	ConsoleMessage("left");
-	}
-	else
-	{
-		SwatPawn(Pawn).LWS = Lean_Cent;
-	//	ConsoleMessage("cent");
-	}
-	
-	if ( SwatPlayer != None ) 
-		SwatPlayer.StartLeaning();
-	
-}
+
 
 exec function handrot (rotator rotoffset)
 {
@@ -6863,6 +6832,12 @@ exec function handloc (vector offset)
 	Swatplayer.GetHands().SetBoneLocation('parent',offset,1);
 }
 
+exec function lws()
+{
+	SwatPlayer(Pawn).LWS = Lean_Cent;
+	SwatPlayer(Pawn).LeanWalk("cent");
+	
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 

@@ -33,7 +33,7 @@ var config name	 Unused4;
 
 var float ThrowAnimationTweenTime;
 
-var config int Unused5;
+//var config int Unused5;
 var config Range Unused6;
 
 var private Material SuspectHandsMaterial;
@@ -90,8 +90,23 @@ var config float StingEffectFrequency;
 var config Rotator StingViewEffectAmplitude;
 var config float StingInputEffectAmplitude;
 // end revert
-var config float Unused8;
-var config float Unused9;
+//var config float Unused8;
+var protected float WeightModifier;
+
+//enum LeanWalkState
+enum LeanWalkState
+{
+	Lean_Cent,
+	Lean_Left,
+	Lean_Right,
+	Lean_UnLeft,
+	Lean_UnRight
+	
+};
+
+var LeanWalkState LWS;
+
+var int LWSrollrate;
 
 var bool EquipOtherAfterUsed;                   //if true,
 var EquipmentSlot SlotForReequip;               //if TryToReequipAfterUsed is set, then SlotForReequip records the EquipmentSlot that should be used to try to reequip
@@ -139,22 +154,23 @@ var Actor CachedQualifyTarget;
 
 replication
 {
+	
 	// replicated functions sent to server by owning client
 	reliable if( Role < ROLE_Authority )
-        ServerRequestQualify, ServerRequestUse, ServerSetIsUsingOptiwand, ServerSetForceCrouchWhileOptiwanding;
+        ServerRequestQualify, ServerRequestUse, ServerSetIsUsingOptiwand, ServerSetForceCrouchWhileOptiwanding,LeanWalk  ;
 
     // replicated functions sent to client by server
     reliable if( Role == ROLE_Authority )
         ClientFaceRotation, CurrentLimp,
         ClientStartQualify, ClientFinishQualify, ClientUse,
-        DeployedC2Charge,
+        DeployedC2Charge, 
         GivenFlashbangs, GivenStinger, GivenGas, GivenC2, GivenWedge, GivenPepperSpray,
         ClientOnFlashbangTimerExpired, ClientOnGassedTimerExpired, ClientOnStungTimerExpired,
         ClientOnPepperSprayedTimerExpired, ClientOnTasedTimerExpired,
         ClientDoFlashbangReaction, ClientDoGassedReaction, ClientDoStungReaction,
         ClientDoPepperSprayedReaction, ClientDoTasedReaction,
-        bIsUsingOptiwand, bHasBeenReportedToTOC, ClientPlayEmptyFired, ArmInjuryFlags,
-        ClientSetItemAvailableCount;
+        bIsUsingOptiwand, bHasBeenReportedToTOC, ClientPlayEmptyFired, ArmInjuryFlags, 
+        ClientSetItemAvailableCount,ClientStartLeaning ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -403,6 +419,12 @@ simulated event PreBeginPlay()
     GassedTimer.TimerDelegate           = OnGassedTimerExpired;
     PepperSprayedTimer.TimerDelegate    = OnPepperSprayedTimerExpired;
     TasedTimer.TimerDelegate            = OnTasedTimerExpired;
+	
+	//init lean
+	LWS = Lean_Cent;
+	
+	//init weight modifier
+	WeightModifier=LoadOut.GetWeightMovementModifier();
 }
 
 simulated event PostBeginPlay()
@@ -433,6 +455,12 @@ simulated event PostNetBeginPlay()
 {
     super.PostNetBeginPlay();
 //    log( self$"---SwatPlayer::PostNetBeginPlay() called." );
+
+//init lean
+	LWS = Lean_Cent;
+	
+//init weight modifier
+	WeightModifier=LoadOut.GetWeightMovementModifier();
 }
 
 
@@ -1519,6 +1547,9 @@ simulated function OnEquippingFinished()
             }
         }
     }
+	
+
+	WeightModifier=LoadOut.GetWeightMovementModifier();
 }
 
 
@@ -1646,6 +1677,8 @@ simulated function OnReloadingFinished()
             SwatGamePlayerController(Controller).ConsiderAutoReloading();
         }
     }
+	
+	WeightModifier=LoadOut.GetWeightMovementModifier();
 }
 
 //returns true iff it needed to begin equipping something else
@@ -1763,7 +1796,7 @@ simulated function float GetFireTweenTime()
 simulated function AdjustPlayerMovementSpeed() {
   local float OriginalFwd, OriginalBck, OriginalSde;
   local float ModdedFwd, ModdedBck, ModdedSde;
-  local float WeightMovMod;
+  //local float WeightMovMod;
    
   local AnimationSetManager AnimationSetManager;
   local AnimationSet setObject;  
@@ -1791,11 +1824,11 @@ simulated function AdjustPlayerMovementSpeed() {
 	}
 	else
 	{
-		WeightMovMod=LoadOut.GetWeightMovementModifier();
+		//WeightModifier=LoadOut.GetWeightMovementModifier();
 		
-		AnimSet.AnimSpeedForward = ModdedFwd * WeightMovMod;
-		AnimSet.AnimSpeedBackward = ModdedBck * WeightMovMod;
-		AnimSet.AnimSpeedSidestep = ModdedSde * WeightMovMod;
+		AnimSet.AnimSpeedForward = ModdedFwd * WeightModifier;//WeightMovMod;
+		AnimSet.AnimSpeedBackward = ModdedBck * WeightModifier;//WeightMovMod;
+		AnimSet.AnimSpeedSidestep = ModdedSde * WeightModifier;//WeightMovMod;
 	}
 
 }
@@ -3618,7 +3651,7 @@ simulated function vector GetThirdPersonEyesLocation()
 // the camera is at the proper offset according to lean
 simulated event rotator ViewRotationOffset()
 {
-    return GetStungRotationOffset()  + GetLWSRotOffset(); //+ GetLeanRotationOffset()
+    return GetStungRotationOffset()  + GetLWSRotOffset() + GetLeanRotationOffset();
 }
 simulated function vector ViewLocationOffset(Rotator CameraRotation)
 {
@@ -3628,7 +3661,7 @@ simulated function vector ViewLocationOffset(Rotator CameraRotation)
 //overridden from Pawn, so the gun is drawn at the proper offset according to lean
 simulated function vector CalcDrawOffset()
 {
-    return Super.CalcDrawOffset() + GetLeanPositionOffset(); //+ GetLeanPositionOffset();
+    return Super.CalcDrawOffset() + GetLeanPositionOffset(); 
 }
 
 //overridden from Pawn, so the gun is drawn at the proper offset according to lean
@@ -4297,39 +4330,276 @@ simulated function int GetNumberOfArmsInjured()
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-state Leaning
+simulated state LeaningWalk
 {
- Begin:
+	
+
+Begin:
+
+ if (!IsControlledByLocalHuman() && Level.NetMode == NM_client )
+	swatgameplayercontroller(controller).consolecommand("say state leaning init " $ LWS $ "!");
+
 		if (LWS == Lean_Right)
 		{
 			LnRight();
+			
 		}
 		else if (LWS == Lean_Left)
 		{
 			LnLeft();
+			
 		}
 		else if (LWS == Lean_UnRight)
 		{
 			UnLnright();
+			
 		}
 		else if (LWS == Lean_UnLeft)
 		{
 			UnLnleft();
+			
 		}
 		else if (LWS == Lean_Cent)
 		{
-			LnCent();
+			lnright();
+			//LnCent(); 
 		}
-		
-Goto('');		
+
+	if (!IsControlledByLocalHuman() && Level.NetMode == NM_client )					
+		swatgameplayercontroller(controller).consolecommand("say end leaning " $ LWS $ "!");
+	
+Gotostate('');		
 }
 
-
-function StartLeaning()
+latent event LnRight()
 {
-	gotostate('Leaning');
+	
+	local float AlphaTime;
+	local rotator rotoffset;
+	local int offset;
+	local bool isWeapon;
+	
+	rotoffset.pitch=5000;
+	rotoffset.yaw=2500;
+	rotoffset.roll=0;
+	
+	Gethands().LeanState = 1;
+	
+	if( SwatWeapon(GetActiveItem()) != none)
+	{
+		isWeapon=true;
+		offset=SwatWeapon(getactiveitem()).IronSightLeanYawRight;
+	}
+	
+	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
+	{
+		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+		
+		if (isWeapon)
+			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw + (offset/30) ;
+		
+		LWSrollrate= LWSrollrate + 84;
+		sleep(0.01);
+	}
+
 }
 
+latent event LnLeft()
+{
+	local float AlphaTime;
+	local rotator rotoffset;
+	local int offset;
+	local bool isWeapon;
+	rotoffset.pitch=-5000;
+	rotoffset.yaw=-2500;
+	rotoffset.roll=0;
+
+	if( SwatWeapon(GetActiveItem()) != none)
+	{
+		isWeapon=true;
+		offset=SwatWeapon(getactiveitem()).IronSightLeanYawLeft;
+	}
+	
+	Gethands().LeanState = -1;
+	
+	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
+	{
+		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+		
+		if (isWeapon)
+			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw - (offset/30) ;
+		
+		LWSrollrate = LWSrollrate - 84;
+		sleep(0.01);
+	}
+	
+
+}
+
+latent event LnCent() //lean reset
+{
+
+	local rotator rotoffset;
+	
+	rotoffset.pitch=0;
+	rotoffset.yaw=0;
+	rotoffset.roll=0;
+
+
+	Gethands().LeanState = 0;
+	LWSrollrate=0;
+	
+	SetBoneRotation('bip01_spine2',rotoffset,1,1.0);
+
+}
+
+latent event UnLnRight()
+{
+	
+	local float AlphaTime;
+	local rotator rotoffset;
+	local int offset;
+	local bool isWeapon;
+	
+	rotoffset.pitch=5000;
+	rotoffset.yaw=2500;
+	rotoffset.roll=0;
+	
+	Gethands().LeanState = 0;
+
+	if( SwatWeapon(GetActiveItem()) != none)
+	{
+		isWeapon=true;
+		offset=SwatWeapon(getactiveitem()).IronSightLeanYawRight;
+	}
+	
+	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
+	{
+		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+
+		if (isWeapon)
+			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw - (offset/30) ;
+
+		LWSrollrate= LWSrollrate - 84;
+		sleep(0.01);
+	}
+	
+	LWSrollrate= 0;
+
+}
+
+latent event UnLnLeft()
+{
+	local float AlphaTime;
+	local rotator rotoffset;
+	local int offset;
+	local bool isWeapon;
+	
+	rotoffset.pitch=-5000;
+	rotoffset.yaw=-2500;
+	rotoffset.roll=0;
+	
+	Gethands().LeanState = 0;
+
+	if( SwatWeapon(GetActiveItem()) != none )
+	{
+		isWeapon=true;
+		offset=SwatWeapon(getactiveitem()).IronSightLeanYawLeft;
+	}
+	
+	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
+	{
+		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
+		
+		if (isWeapon)
+			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw + (offset/30) ;
+		
+		LWSrollrate= LWSrollrate + 84;
+		sleep(0.01);
+	}
+	
+	LWSrollrate= 0;
+
+}
+
+
+
+
+exec function LeanWalk(string position)
+{
+	
+	if (LWS == Lean_Right && (position == "right" || position == "left" )) 
+	{
+		LWS = Lean_UnRight;
+		//ConsoleMessage("unright");
+	}
+	else if (LWS == Lean_Left && (position == "right" || position == "left" )) 
+	{
+		LWS = Lean_UnLeft;
+		//ConsoleMessage("unleft");
+	}
+	else if ( (LWS == Lean_Cent || LWS == Lean_UnLeft || LWS == Lean_Unright ) && position == "right")
+	{
+		LWS = Lean_Right;
+		//ConsoleMessage("right");
+	}
+	else if ((LWS == Lean_Cent || LWS == Lean_UnLeft || LWS == Lean_Unright )  &&  position == "left")
+	{
+		LWS = Lean_Left;
+		//ConsoleMessage("left");
+	}
+	else
+	{
+		LWS = Lean_Right;
+		//ConsoleMessage("cent");
+	}
+
+	
+	
+	gotostate('LeaningWalk');
+	
+	
+	if ( Controller != Level.GetLocalPlayerController() ) 
+		ClientStartLeaning(LWS);
+	
+}
+
+function ServerStartLeaning(LeanWalkState RemoteLWS)
+{
+	LWS = RemoteLWS;
+	
+	Swatgameplayercontroller(Controller).Clientgotostate('LeaningWalk','Begin');
+}
+
+simulated function ClientStartLeaning(LeanWalkState RemoteLWS)
+{
+	LWS = RemoteLWS;
+	gotostate('LeaningWalk');
+}
+
+
+
+function Rotator GetLWSRotOffset()
+{	
+local rotator endrot;
+
+endrot.roll=LWSrollrate;
+endrot.yaw=0;
+endrot.pitch=0;
+
+	return 	endrot;
+}
+
+function vector GetLWSLocOffset()
+{
+	local vector offset;
+	
+	offset.x=0;
+	offset.y=LWSrollrate/168; //conversion from 2500 roll rate to y movement (2500 roll = 0.5 y ) x 30 times update 
+	offset.z=0;	
+  
+	return offset;
+}
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 defaultproperties

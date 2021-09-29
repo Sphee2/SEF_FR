@@ -230,7 +230,7 @@ var (Shadow) float ShadowCullDistance "Shadows will completely disappear when th
 // Lean positional and rotational offset on the camera
 var private Vector  LeanPositionOffset;
 var private Rotator LeanRotationOffset;
-//var private float   LastLeanOffsetsUpdateTime;
+var private float   LastLeanOffsetsUpdateTime;
 
 // Tweakable parameters for conmtrolling the extent and feel of the camera lean
 var config private float LeanVerticalDistance;
@@ -257,19 +257,7 @@ var private Rotator LastAimRotator;
 // dbeswick: havok character interaction
 //var config float HavokObjectInteractionFactor;
 
-//enum LeanWalkState
-enum LeanWalkState
-{
-	Lean_Left,
-	Lean_Right,
-	Lean_UnLeft,
-	Lean_UnRight,
-	Lean_Cent
-};
-
-var LeanWalkState LWS;
-
-var int LWSrollrate;
+var int Unused8;
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -289,12 +277,13 @@ replication
     // replicated functions sent to server by owning client
     reliable if( Role < ROLE_Authority )
         ServerToggleDesiredFlashlightState,ServerToggleDesiredNVGState ,ServerSetLowReadyStatus;
-			
+
+	// replicated functions sent to server by owning client			
     reliable if ( Role == ROLE_Authority )
         AnimFlags, FlashlightShouldBeOn, NightvisionShouldBeOn, bShouldBeAtLowReady, ReasonForShouldBeAtLowReady, bArrested, BeingArrested, bIsLowReady ;
 
     reliable if ( Role == ROLE_Authority && RemoteRole != ROLE_AutonomousProxy )
-        bIsFlashbanged, bIsGassed, bIsPepperSprayed, bIsStung, bIsStunnedByC2, bIsTased, bIsWearingNightvision;
+        bIsFlashbanged, bIsGassed, bIsPepperSprayed, bIsStung, bIsStunnedByC2, bIsTased, bIsWearingNightvision  ;
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -345,9 +334,6 @@ simulated event PostBeginPlay()
     // Initialize the perlin noise object for mouth movement
     InitAnimationForCurrentMesh();
     InitMouthMovementPerlinNoise();
-	
-	//init lean
-	LWS = Lean_Cent;
 	
 }
 
@@ -2201,180 +2187,6 @@ simulated function GivenEquipmentFromPawn(class<HandheldEquipment> Equipment) {}
 ///////////////////////////////////////////////////////////////////////////////
 
 
-
-latent function LnRight()
-{
-	
-	local float AlphaTime;
-	local rotator rotoffset;
-	local int offset;
-	local bool isWeapon;
-	
-	rotoffset.pitch=5000;
-	rotoffset.yaw=2500;
-	rotoffset.roll=0;
-	
-	Gethands().LeanState = 1;
-	
-	if( SwatWeapon(GetActiveItem()) != none)
-	{
-		isWeapon=true;
-		offset=SwatWeapon(getactiveitem()).IronSightLeanYawRight;
-	}
-	
-	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
-	{
-		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-		
-		if (isWeapon)
-			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw + (offset/30) ;
-		
-		LWSrollrate= LWSrollrate + 84;
-		sleep(0.01);
-	}
-	
-	
-}
-
-latent function LnLeft()
-{
-	local float AlphaTime;
-	local rotator rotoffset;
-	local int offset;
-	local bool isWeapon;
-	rotoffset.pitch=-5000;
-	rotoffset.yaw=-2500;
-	rotoffset.roll=0;
-
-
-	if( SwatWeapon(GetActiveItem()) != none)
-	{
-		isWeapon=true;
-		offset=SwatWeapon(getactiveitem()).IronSightLeanYawLeft;
-	}
-	
-	Gethands().LeanState = -1;
-	
-	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
-	{
-		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-		
-		if (isWeapon)
-			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw - (offset/30) ;
-		
-		LWSrollrate = LWSrollrate - 84;
-		sleep(0.01);
-	}
-}
-
-latent function LnCent() //lean reset
-{
-
-	local rotator rotoffset;
-
-	
-	rotoffset.pitch=0;
-	rotoffset.yaw=0;
-	rotoffset.roll=0;
-
-
-	Gethands().LeanState = 0;
-	LWSrollrate=0;
-	
-	SetBoneRotation('bip01_spine2',rotoffset,1,1.0);
-	
-	
-	
-}
-
-latent function UnLnRight()
-{
-	
-	local float AlphaTime;
-	local rotator rotoffset;
-	local int offset;
-	local bool isWeapon;
-	
-	rotoffset.pitch=5000;
-	rotoffset.yaw=2500;
-	rotoffset.roll=0;
-	
-	Gethands().LeanState = 0;
-
-	if( SwatWeapon(GetActiveItem()) != none)
-	{
-		isWeapon=true;
-		offset=SwatWeapon(getactiveitem()).IronSightLeanYawRight;
-	}
-	
-	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
-	{
-		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-
-		if (isWeapon)
-			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw - (offset/30) ;
-
-		LWSrollrate= LWSrollrate - 84;
-		sleep(0.01);
-	}
-	
-	LWSrollrate= 0;
-}
-
-latent function UnLnLeft()
-{
-	local float AlphaTime;
-	local rotator rotoffset;
-	local int offset;
-	local bool isWeapon;
-	
-	rotoffset.pitch=-5000;
-	rotoffset.yaw=-2500;
-	rotoffset.roll=0;
-	
-	Gethands().LeanState = 0;
-
-	if( SwatWeapon(GetActiveItem()) != none )
-	{
-		isWeapon=true;
-		offset=SwatWeapon(getactiveitem()).IronSightLeanYawLeft;
-	}
-	
-	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
-	{
-		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-		
-		if (isWeapon)
-			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw + (offset/30) ;
-		
-		LWSrollrate= LWSrollrate + 84;
-		sleep(0.01);
-	}
-	
-	LWSrollrate= 0;
-}
-
-function Rotator GetLWSRotOffset()
-{	
-local rotator endrot;
-
-endrot.roll=LWSrollrate;
-endrot.yaw=0;
-endrot.pitch=0;
-
-	return 	endrot;
-}
-
-function vector GetLWSLocOffset()
-{
-	local vector offset;
-	
-	offset.x=0;
-	offset.y=LWSrollrate/168; //conversion from 2500 roll rate to y movement (2500 roll = 0.5 y ) x 30 times update 
-	offset.z=0;	
-  
-	return offset;
-}
 
 //////////////////////////////////////////////////////////////////////////////
 defaultproperties
