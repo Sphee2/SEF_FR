@@ -115,7 +115,7 @@ simulated function bool HandleBallisticImpact(
 	    ExitMaterial);
 }
 
-simulated function changeShellsMaterial()
+function changeShellsMaterial()
 {
 local String ShellTextureName;
 local String ShellTextureNameTP;
@@ -127,7 +127,7 @@ if (ShotgunAmmo != None) //asserting shotgun is using shotgun ammo.... kind of a
 {
 	
 	//Get Shell type , associate with Texture
-	switch( ShotgunAmmo.GetShortName() ) //get FriendlyName , you can find it in the Class-Ammo-FriendlyName field
+	switch( ShotgunAmmo.GetFriendlyName() ) //get FriendlyName , you can find it in the Class-Ammo-FriendlyName field
 	{
 		case "000 Buck":
 					ShellTextureName = "Shells.000buck"; 
