@@ -154,10 +154,11 @@ var Actor CachedQualifyTarget;
 
 replication
 {
+
 	
 	// replicated functions sent to server by owning client
 	reliable if( Role < ROLE_Authority )
-        ServerRequestQualify, ServerRequestUse, ServerSetIsUsingOptiwand, ServerSetForceCrouchWhileOptiwanding,LeanWalk  ;
+        ServerRequestQualify, ServerRequestUse, ServerSetIsUsingOptiwand, ServerSetForceCrouchWhileOptiwanding , LeanWalk ;
 
     // replicated functions sent to client by server
     reliable if( Role == ROLE_Authority )
@@ -170,7 +171,7 @@ replication
         ClientDoFlashbangReaction, ClientDoGassedReaction, ClientDoStungReaction,
         ClientDoPepperSprayedReaction, ClientDoTasedReaction,
         bIsUsingOptiwand, bHasBeenReportedToTOC, ClientPlayEmptyFired, ArmInjuryFlags, 
-        ClientSetItemAvailableCount,ClientStartLeaning ;
+        ClientSetItemAvailableCount ; //,ClientStartLeaning
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -1905,8 +1906,108 @@ simulated function EndThrow( float ThrowHeldTimeFromNetwork )
     GotoState( 'ThrowingFinish' );
 }
 
-function OnTick(){}
+function OnTick(){
+}
 
+
+simulated function leanr( float dTime )
+{
+local rotator rotoffset;
+local float Alpha;
+local int offset;
+local SwatWeapon SW;
+SW = SwatWeapon(GetActiveItem());
+
+
+	if ( LWS == Lean_Right && LWSrollrate < 2500  )
+	{
+		rotoffset.pitch=5000;
+		rotoffset.yaw=2500;
+		rotoffset.roll=0;
+		
+		LWSrollrate = LWSrollrate + ( 84 * ( dTime / 0.00666 ) );
+		Alpha = (LWSrollrate / 2500.0 );
+		
+		SetBoneRotation('bip01_spine2',rotoffset,1, Alpha );
+		
+		if( SW != None )
+		{
+			offset=SW.IronSightLeanYawRight;
+			SW.IronSightRotationOffset.yaw = SW.IronSightRotationOffset.yaw + offset; //- (offset/30) 
+		}
+		
+		ClientMessage("[c=FFFFFF] " $ Alpha $ " " $ LWSrollrate $ " ", 'SpeechManagerNotification');
+	} 
+	else if ( LWS == Lean_UnRight && LWSrollrate > 0 )
+	{
+		rotoffset.pitch=5000;
+		rotoffset.yaw=2500;
+		rotoffset.roll=0;
+		
+		LWSrollrate = LWSrollrate - ( 84 * ( dTime / 0.00666 ) );
+		Alpha = (LWSrollrate / 2500.0 );
+		
+		if ( Alpha < 0 )
+		{
+			Alpha = 0;
+			LWSrollrate = 0;
+		}
+		
+		SetBoneRotation('bip01_spine2',rotoffset,1, Alpha );
+		
+		if( SW != None )
+		{
+			offset=SW.IronSightLeanYawRight;
+			SW.IronSightRotationOffset.yaw = SW.IronSightRotationOffset.yaw - offset; //- (offset/30) 
+		}
+		
+		ClientMessage("[c=FFFFFF] " $ Alpha $ " " $ LWSrollrate $ " ", 'SpeechManagerNotification');
+	}
+	else if ( LWS == Lean_Left && LWSrollrate > -2500  )
+	{
+		rotoffset.pitch=-5000;
+		rotoffset.yaw=-2500;
+		rotoffset.roll=0;
+		
+		LWSrollrate = LWSrollrate - ( 84 * ( dTime / 0.00666 ) );
+		Alpha =  - (LWSrollrate / 2500.0 );
+		
+		SetBoneRotation('bip01_spine2',rotoffset,1, Alpha );
+		
+		if( SW != None )
+		{
+			offset=SW.IronSightLeanYawLeft;
+			SW.IronSightRotationOffset.yaw = SW.IronSightRotationOffset.yaw -  offset; //- (offset/30) 
+		}
+		
+		ClientMessage("[c=FFFFFF] " $ Alpha $ " " $ LWSrollrate $ " ", 'SpeechManagerNotification');
+	} 
+	else if ( LWS == Lean_UnLeft && LWSrollrate < 0 )
+	{
+		rotoffset.pitch=-5000;
+		rotoffset.yaw=-2500;
+		rotoffset.roll=0;
+		
+		LWSrollrate = LWSrollrate + ( 84 * ( dTime / 0.00666 ) );
+		Alpha =  -( LWSrollrate / 2500.0 );
+		
+		if ( Alpha < 0 )
+		{
+			Alpha = 0;
+			LWSrollrate = 0;
+		}
+		
+		SetBoneRotation('bip01_spine2',rotoffset,1, Alpha );
+		
+		if( SW != None )
+		{
+			offset=SW.IronSightLeanYawLeft;
+			SW.IronSightRotationOffset.yaw = SW.IronSightRotationOffset.yaw + offset ; //- (offset/30) 
+		}
+		
+		ClientMessage("[c=FFFFFF] " $ Alpha $ " " $ LWSrollrate $ " ", 'SpeechManagerNotification');
+	}
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 ///
@@ -2300,6 +2401,7 @@ Begin:
 simulated function Tick(float dTime) {
     AdjustPlayerMovementSpeed();
     OnTick();
+	leanr(dTime);
 }
 
 
@@ -4341,7 +4443,7 @@ Begin:
 
 		if (LWS == Lean_Right)
 		{
-			LnRight();
+			//LnRight();
 			
 		}
 		else if (LWS == Lean_Left)
@@ -4361,8 +4463,8 @@ Begin:
 		}
 		else if (LWS == Lean_Cent)
 		{
-			lnright();
-			//LnCent(); 
+			//lnright();
+			LnCent(); 
 		}
 
 	if (!IsControlledByLocalHuman() && Level.NetMode == NM_client )					
@@ -4371,7 +4473,7 @@ Begin:
 Gotostate('');		
 }
 
-latent event LnRight()
+simulated latent event LnRight()
 {
 	
 	local float AlphaTime;
@@ -4404,7 +4506,7 @@ latent event LnRight()
 
 }
 
-latent event LnLeft()
+simulated latent event LnLeft()
 {
 	local float AlphaTime;
 	local rotator rotoffset;
@@ -4436,7 +4538,7 @@ latent event LnLeft()
 
 }
 
-latent event LnCent() //lean reset
+simulated latent event LnCent() //lean reset
 {
 
 	local rotator rotoffset;
@@ -4453,7 +4555,7 @@ latent event LnCent() //lean reset
 
 }
 
-latent event UnLnRight()
+simulated latent event UnLnRight()
 {
 	
 	local float AlphaTime;
@@ -4488,7 +4590,7 @@ latent event UnLnRight()
 
 }
 
-latent event UnLnLeft()
+simulated latent event UnLnLeft()
 {
 	local float AlphaTime;
 	local rotator rotoffset;
@@ -4527,54 +4629,97 @@ latent event UnLnLeft()
 
 exec function LeanWalk(string position)
 {
+local int offset;
+
+	
+		log("Lean " $ self.name $ " : " $ position $ "." );
+	
+		ClientMessage("[c=FFFFFF]Lean " $ self.name $ " : " $ position $ "." , 'SpeechManagerNotification');
+	
 	
 	if (LWS == Lean_Right && (position == "right" || position == "left" )) 
 	{
 		LWS = Lean_UnRight;
 		//ConsoleMessage("unright");
+		
+		Gethands().LeanState = 0;
+		
+		
 	}
 	else if (LWS == Lean_Left && (position == "right" || position == "left" )) 
 	{
 		LWS = Lean_UnLeft;
 		//ConsoleMessage("unleft");
+		
+		Gethands().LeanState = 0;
+		
 	}
 	else if ( (LWS == Lean_Cent || LWS == Lean_UnLeft || LWS == Lean_Unright ) && position == "right")
 	{
 		LWS = Lean_Right;
+		
+		Gethands().LeanState = 1;
+		
 		//ConsoleMessage("right");
 	}
 	else if ((LWS == Lean_Cent || LWS == Lean_UnLeft || LWS == Lean_Unright )  &&  position == "left")
 	{
 		LWS = Lean_Left;
 		//ConsoleMessage("left");
+		
+		Gethands().LeanState = -1;
+			
 	}
 	else
 	{
-		LWS = Lean_Right;
+		LWS = Lean_Cent;
 		//ConsoleMessage("cent");
+		
+		Gethands().LeanState = 0;
+		
 	}
-
 	
 	
-	gotostate('LeaningWalk');
-	
-	
-	if ( Controller != Level.GetLocalPlayerController() ) 
-		ClientStartLeaning(LWS);
-	
+	//if ( Level.NetMode == NM_DedicatedServer )
+		//ServerStartLeaning(LWS);
+		//ClientStartLeaning(LWS);
+		
+	// RPC to client who is AutonomousProxy.
+    //if ( Controller != Level.GetLocalPlayerController() )
+        ClientStartLeaning(LWS);
+		
 }
 
 function ServerStartLeaning(LeanWalkState RemoteLWS)
 {
 	LWS = RemoteLWS;
-	
-	Swatgameplayercontroller(Controller).Clientgotostate('LeaningWalk','Begin');
+}
+
+exec function testLWS()
+{
+local SwatPlayer SP;
+
+	foreach DynamicActors(class'SwatPlayer', SP) 
+    {
+		log("Lean " $ SP.name $ " : " $ SP.LWS $ "." );
+	}
+}
+
+exec simulated function testLWS2()
+{
+local SwatPlayer SP;
+
+	foreach DynamicActors(class'SwatPlayer', SP) 
+    {
+		SP.LWS = Lean_Right;
+		log("Lean " $ SP.name $ " : " $ SP.LWS $ "." );
+	}
 }
 
 simulated function ClientStartLeaning(LeanWalkState RemoteLWS)
 {
 	LWS = RemoteLWS;
-	gotostate('LeaningWalk');
+	//gotostate('LeaningWalk');
 }
 
 
