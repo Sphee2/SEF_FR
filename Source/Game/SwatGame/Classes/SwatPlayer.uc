@@ -4440,215 +4440,13 @@ simulated function int GetNumberOfArmsInjured()
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
-simulated state LeaningWalk
-{
-	
-
-Begin:
-
- if (!IsControlledByLocalHuman() && Level.NetMode == NM_client )
-	swatgameplayercontroller(controller).consolecommand("say state leaning init " $ LWS $ "!");
-
-		if (LWS == Lean_Right)
-		{
-			//LnRight();
-			
-		}
-		else if (LWS == Lean_Left)
-		{
-			LnLeft();
-			
-		}
-		else if (LWS == Lean_UnRight)
-		{
-			UnLnright();
-			
-		}
-		else if (LWS == Lean_UnLeft)
-		{
-			UnLnleft();
-			
-		}
-		else if (LWS == Lean_Cent)
-		{
-			//lnright();
-			LnCent(); 
-		}
-
-	if (!IsControlledByLocalHuman() && Level.NetMode == NM_client )					
-		swatgameplayercontroller(controller).consolecommand("say end leaning " $ LWS $ "!");
-	
-Gotostate('');		
-}
-
-simulated latent event LnRight()
-{
-	
-	local float AlphaTime;
-	local rotator rotoffset;
-	local int offset;
-	local bool isWeapon;
-	
-	rotoffset.pitch=5000;
-	rotoffset.yaw=2500;
-	rotoffset.roll=0;
-	
-	Gethands().LeanState = 1;
-	
-	if( SwatWeapon(GetActiveItem()) != none)
-	{
-		isWeapon=true;
-		offset=SwatWeapon(getactiveitem()).IronSightLeanYawRight;
-	}
-	
-	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
-	{
-		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-		
-		if (isWeapon)
-			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw + (offset/30) ;
-		
-		LWSrollrate= LWSrollrate + 84;
-		sleep(0.01);
-	}
-
-}
-
-simulated latent event LnLeft()
-{
-	local float AlphaTime;
-	local rotator rotoffset;
-	local int offset;
-	local bool isWeapon;
-	rotoffset.pitch=-5000;
-	rotoffset.yaw=-2500;
-	rotoffset.roll=0;
-
-	if( SwatWeapon(GetActiveItem()) != none)
-	{
-		isWeapon=true;
-		offset=SwatWeapon(getactiveitem()).IronSightLeanYawLeft;
-	}
-	
-	Gethands().LeanState = -1;
-	
-	for ( AlphaTime = 0.0 ; AlphaTime <= 1 ; AlphaTime += 0.03 )
-	{
-		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-		
-		if (isWeapon)
-			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw - (offset/30) ;
-		
-		LWSrollrate = LWSrollrate - 84;
-		sleep(0.01);
-	}
-	
-
-}
-
-simulated latent event LnCent() //lean reset
-{
-
-	local rotator rotoffset;
-	
-	rotoffset.pitch=0;
-	rotoffset.yaw=0;
-	rotoffset.roll=0;
-
-
-	Gethands().LeanState = 0;
-	LWSrollrate=0;
-	
-	SetBoneRotation('bip01_spine2',rotoffset,1,1.0);
-
-}
-
-simulated latent event UnLnRight()
-{
-	
-	local float AlphaTime;
-	local rotator rotoffset;
-	local int offset;
-	local bool isWeapon;
-	
-	rotoffset.pitch=5000;
-	rotoffset.yaw=2500;
-	rotoffset.roll=0;
-	
-	Gethands().LeanState = 0;
-
-	if( SwatWeapon(GetActiveItem()) != none)
-	{
-		isWeapon=true;
-		offset=SwatWeapon(getactiveitem()).IronSightLeanYawRight;
-	}
-	
-	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
-	{
-		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-
-		if (isWeapon)
-			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw - (offset/30) ;
-
-		LWSrollrate= LWSrollrate - 84;
-		sleep(0.01);
-	}
-	
-	LWSrollrate= 0;
-
-}
-
-simulated latent event UnLnLeft()
-{
-	local float AlphaTime;
-	local rotator rotoffset;
-	local int offset;
-	local bool isWeapon;
-	
-	rotoffset.pitch=-5000;
-	rotoffset.yaw=-2500;
-	rotoffset.roll=0;
-	
-	Gethands().LeanState = 0;
-
-	if( SwatWeapon(GetActiveItem()) != none )
-	{
-		isWeapon=true;
-		offset=SwatWeapon(getactiveitem()).IronSightLeanYawLeft;
-	}
-	
-	for ( AlphaTime = 1.0 ; AlphaTime >= 0 ; AlphaTime -= 0.03 )
-	{
-		SetBoneRotation('bip01_spine2',rotoffset,1,AlphaTime);
-		
-		if (isWeapon)
-			SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw = SwatWeapon(getactiveitem()).IronSightRotationOffset.yaw + (offset/30) ;
-		
-		LWSrollrate= LWSrollrate + 84;
-		sleep(0.01);
-	}
-	
-	LWSrollrate= 0;
-
-}
-
-
-
-
 exec simulated function LeanWalk(string position)
 {
-local int offset;
-
-	
-		//log("Lean " $ self.name $ " : " $ position $ "." );
-	
-		ClientMessage("[c=FFFFFF]Lean " $ self.name $ " : " $ position $ "." , 'SpeechManagerNotification');
-	
 	
 	if (LWS == Lean_Right && (position == "right" || position == "left" )) 
 	{
 		LWS = Lean_UnRight;
-		//ConsoleMessage("unright");
+		
 		
 		Gethands().LeanState = 0;
 		
@@ -4657,7 +4455,6 @@ local int offset;
 	else if (LWS == Lean_Left && (position == "right" || position == "left" )) 
 	{
 		LWS = Lean_UnLeft;
-		//ConsoleMessage("unleft");
 		
 		Gethands().LeanState = 0;
 		
@@ -4668,29 +4465,25 @@ local int offset;
 		
 		Gethands().LeanState = 1;
 		
-		//ConsoleMessage("right");
 	}
 	else if ((LWS == Lean_Cent || LWS == Lean_UnLeft || LWS == Lean_Unright )  &&  position == "left")
 	{
 		LWS = Lean_Left;
-		//ConsoleMessage("left");
 		
 		Gethands().LeanState = -1;
-			
 	}
 	else
 	{
 		LWS = Lean_Cent;
-		//ConsoleMessage("cent");
 		
 		Gethands().LeanState = 0;
-		
 	}
 	
+	log("Lean " $ self.name $ " : " $ position $ "." );
 	
+	//ClientMessage("[c=FFFFFF]Lean " $ self.name $ " : " $ position $ "." , 'SpeechManagerNotification');
 	
-		ServerStartLeaning(LWS);
-		
+	ServerStartLeaning(LWS);	
 }
 
 function ServerStartLeaning(LeanWalkState RemoteLWS)
@@ -4701,35 +4494,6 @@ function ServerStartLeaning(LeanWalkState RemoteLWS)
 		log("Lean " $ self.name $ " : " $ LWS $ "." );
 	}
 }
-
-exec function testLWS()
-{
-local SwatPlayer SP;
-
-	foreach DynamicActors(class'SwatPlayer', SP) 
-    {
-		log("Lean " $ SP.name $ " : " $ SP.LWS $ "." );
-	}
-}
-
-exec simulated function testLWS2()
-{
-local SwatPlayer SP;
-
-	foreach DynamicActors(class'SwatPlayer', SP) 
-    {
-		SP.LWS = Lean_Right;
-		log("Lean " $ SP.name $ " : " $ SP.LWS $ "." );
-	}
-}
-
-simulated function ClientStartLeaning(LeanWalkState RemoteLWS)
-{
-	LWS = RemoteLWS;
-	//gotostate('LeaningWalk');
-}
-
-
 
 function Rotator GetLWSRotOffset()
 {	
@@ -4780,7 +4544,7 @@ defaultproperties
     bTestingCameraEffects=false
     YouString="You"
 	LWS = Lean_Cent
-
+	NetPriority = 5 //default 3
 	// so AIs know when the player is blocking something
 	// the Reached Destination Threshold is the same size as the collision radius for players
 	// and includes the AI's collision radius as well (so is 2x the collision radius)
