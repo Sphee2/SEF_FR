@@ -172,7 +172,7 @@ var config Rotator IronSightRotationOffset;
 var config int IronSightLeanYawLeft; //lean adjustment for IronSightLocation
 var config int IronSightLeanYawRight; //lean adjustment for IronSightLocation
 //unused vars for class space
-var private int IronSightLeanOriginal;
+var int IronSightLeanOriginal;
 
 
 //////////////////////////////////////////
