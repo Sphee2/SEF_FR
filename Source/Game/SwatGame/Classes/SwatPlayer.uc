@@ -1789,7 +1789,7 @@ simulated function float GetFireTweenTime()
         return 0.0;
 }
 
-simulated function AdjustPlayerMovementSpeed() {
+simulated function AdjustPlayerMovementSpeed(float dTime) {
   local float OriginalFwd, OriginalBck, OriginalSde;
   local float ModdedFwd, ModdedBck, ModdedSde;
   //local float WeightMovMod;
@@ -1818,9 +1818,9 @@ simulated function AdjustPlayerMovementSpeed() {
 		AnimSet.AnimSpeedSidestep = ModdedSde + (ModdedSde/3);
 		AnimSet.AnimSpeedBackward = ModdedBck + (ModdedBck/3);
 	}
-	else
+	else if ( dTime > 0.5 ) //update 2 times per second , dont need every tick.... should make a good perf boost for server and clients.
 	{
-		//WeightModifier=LoadOut.GetWeightMovementModifier();
+		WeightModifier=LoadOut.GetWeightMovementModifier();
 		
 		AnimSet.AnimSpeedForward = ModdedFwd * WeightModifier;//WeightMovMod;
 		AnimSet.AnimSpeedBackward = ModdedBck * WeightModifier;//WeightMovMod;
@@ -2114,7 +2114,7 @@ simulated state ThrowingPrep
     {
         Global.Tick(dTime);
 
-        AdjustPlayerMovementSpeed();
+        AdjustPlayerMovementSpeed(dTime);
         OnTick();
 
         if (!DoneThrowing)
@@ -2198,7 +2198,7 @@ simulated state Throwing
         Global.Tick(dTime);
         OnTick();
 
-        AdjustPlayerMovementSpeed();
+        AdjustPlayerMovementSpeed(dTime);
 
         if (!DoneThrowing)
         {
@@ -2407,7 +2407,7 @@ Begin:
 ////////////////////////////////////////////////////////////////////////////////
 
 simulated function Tick(float dTime) {
-    AdjustPlayerMovementSpeed();
+    AdjustPlayerMovementSpeed(dtime);
     OnTick();
 	leanr(dTime);
 }
