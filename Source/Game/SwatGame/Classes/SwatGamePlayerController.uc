@@ -324,7 +324,7 @@ replication
         ServerViewportActivate, ServerViewportDeactivate,
         ServerHandleViewportFire, ServerHandleViewportReload,
 		ServerDisableSpecialInteractions, ServerMPCommandIssued,
-		ServerDiscordTest, ServerDiscordTest2, ServerGiveItem ,PullDoor;
+		ServerDiscordTest, ServerDiscordTest2, ServerGiveItem ,PullDoor , PlayerMeshAll , PlayerMesh;
 		
 }
 
@@ -5400,7 +5400,7 @@ exec function ToggleLowReady() {
 	local SwatGuiConfig GC;
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 	
-    if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1) 
+    if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1 && SwatPlayer(Pawn).GetActiveItem().IsIdle() ) 
 	{
 		WantsLowReady= !SwatPlayer(Pawn).IsLowReady();
 	    SwatPlayer(Pawn).SetLowReady(!SwatPlayer(Pawn).IsLowReady());
@@ -5412,7 +5412,7 @@ exec function ToggleLowReadyUP()
 	local SwatGuiConfig GC;
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 	
-    if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1) {
+    if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1 && SwatPlayer(Pawn).GetActiveItem().IsIdle() ){
 		if (!WantsZoom && !SwatPlayer(Pawn).IsLowReady() && !WantedZoom) {
 			ToggleZoomMLR();
 			return;
@@ -5428,7 +5428,7 @@ exec function ToggleLowReadyDOWN()
 	local SwatGuiConfig GC;
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 
-    if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1) {
+    if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1 && SwatPlayer(Pawn).GetActiveItem().IsIdle() ) {
 		if (WantsZoom) {
 			 ToggleZoomMLR();
 			 WantsLowReady=false;
@@ -6811,32 +6811,6 @@ simulated function RenderDebugInfo(Canvas Canvas)
     YP += 16;
     Canvas.SetPos(10, YP);
     Canvas.DrawText("GivenFlashbangs AvailableCount: " $ SwatPlayer(Pawn).GivenFlashbangs.GetAvailableCount());
-}
-
-///////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////
-
-
-
-
-exec function handrot (rotator rotoffset)
-{
-	
-	Swatplayer.GetHands().SetBoneRotation('parent',rotoffset,1,1);
-}
-
-exec function handloc (vector offset)
-{
-	
-	Swatplayer.GetHands().SetBoneLocation('parent',offset,1);
-}
-
-exec function lws()
-{
-	SwatPlayer(Pawn).LWS = Lean_Cent;
-	SwatPlayer(Pawn).LeanWalk("cent");
-	
 }
 
 ///////////////////////////////////////////////////////////////////////////////

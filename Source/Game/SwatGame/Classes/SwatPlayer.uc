@@ -1596,6 +1596,15 @@ simulated function OnUsingFinished()
     if ( class'Pawn'.static.CheckDead( self ) )
         return;
 
+	//attempt to avoid Low ready lag
+	if ( IsLowReady() && GetActiveItem().ShouldUseWhileLowReady() )
+    {
+        SetLowReady(false);
+    }
+    if (IsControlledByLocalHuman())
+        SwatGamePlayerController(Controller).BeginLowReadyRefractoryPeriod();    //don't go back to low-ready for some time, ie. avoid historesis
+	
+
     if  ( Level.NetMode != NM_Client )
     {
         if ( EquipOtherAfterUsed )
@@ -1812,7 +1821,7 @@ simulated function AdjustPlayerMovementSpeed(float dTime) {
 	//ModdedBck *= LoadOut.GetWeightMovementModifier();
 	//ModdedSde *= LoadOut.GetWeightMovementModifier();
 
-	if( IsLowReady() ) //little more speed when low ready
+	if( IsLowReady() && PlayerController(Controller).bRun == 1 ) //little more speed when low ready
 	{
 		AnimSet.AnimSpeedForward = ModdedFwd + (ModdedFwd/3);
 		AnimSet.AnimSpeedSidestep = ModdedSde + (ModdedSde/3);

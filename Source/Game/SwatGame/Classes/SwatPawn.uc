@@ -1169,6 +1169,8 @@ simulated function SetLowReady(bool bEnable, optional name Reason)
         ReasonForLowReady = Reason;
         ChangeAnimation();
     }
+	
+	log ("LR " $ bIsLowReady $ " ." );
 }
 
 ///////////////////////////////////////
@@ -1186,6 +1188,8 @@ function ServerSetLowReadyStatus( bool bEnable, name Reason )
 	
     if ( !IsControlledByLocalHuman() )
         SetLowReady( bEnable, Reason );
+	
+	log ("LR " $ bIsLowReady $ " ." );
 }
 
 
