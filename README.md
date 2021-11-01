@@ -14,6 +14,8 @@ https://discord.gg/Vu4r7sv7uF
 #### V0.66 ####
 
 ADDED:
+- Lean/Walk System , ability to lean and walk.... finally an hystoric moment for Swat4 modding! 
+- Partial Open Door System , holding CTRL and Mouse Wheel Up/Down wil swing the door partially, making possible to shoot or throw a grenade.
 - Dynamic shell textures on Breaching SG an Benelli M4 depending on shell type.
 - Fleeing suspects are considered threat if running with a gun within 15 mts from a player 
 - Maglite Torch , using the light makes evidence glowing to allow player a faster search of them. Even AI can use this feature when got ordered to secure evidence!

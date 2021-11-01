@@ -9,7 +9,9 @@ enum DoorPosition
 {
     DoorPosition_Closed,
     DoorPosition_OpenLeft,
-    DoorPosition_OpenRight
+    DoorPosition_OpenRight,
+	DoorPosition_PartialOpenLeft,
+    DoorPosition_PartialOpenRight
 };
 var DoorPosition DesiredPosition;
 

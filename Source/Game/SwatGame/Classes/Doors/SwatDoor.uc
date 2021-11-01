@@ -690,7 +690,18 @@ simulated function Interact(Pawn Other, optional bool Force)
 
             SetPositionForMove( DoorPosition_Closed, MR_Interacted );
             break;
-
+		case DoorPosition_PartialOpenLeft:
+			if (!ActorIsToMyLeft(Other))
+                SetPositionForMove( DoorPosition_OpenLeft, MR_Interacted );
+            else
+                SetPositionForMove( DoorPosition_Closed, MR_Interacted );
+            break;
+        case DoorPosition_PartialOpenRight:
+			 if (ActorIsToMyLeft(Other))
+                SetPositionForMove( DoorPosition_OpenRight, MR_Interacted );
+            else
+                SetPositionForMove( DoorPosition_Closed, MR_Interacted );
+            break;
         default:
             assert(false);  //unexpected DoorPosition
         }
@@ -1461,8 +1472,27 @@ simulated state Moving
 
     function Tick( float dTime )
     {
+		local float frame,rate;
+		local name seq;
+		
         super.Tick( dTime );
-
+		
+		GetAnimParams(0,seq,frame,rate);
+		
+		if ( ( (PendingPosition == DoorPosition_PartialOpenLeft ) || (PendingPosition == DoorPosition_PartialOpenRight  ) && CurrentPosition == DoorPosition_Closed ))
+		{
+			log("DOOR " $ frame $ " " $ CurrentPosition $ " "  $ PendingPosition $ " ");
+			if ( frame >= 0.36 && (seq == 'OpenLeft' || seq == 'OpenRight' ) )  //around frame 15 of opening a door
+			{
+				Log("DOOR " $ frame $ " FREEZE!!! ");
+				FreezeAnimAt(15);
+				CurrentPosition=PendingPosition; //train arrived
+				
+				GotoState('');
+			}
+		}
+		
+		
         UpdateAttachmentLocations();
     }
 
@@ -1501,7 +1531,7 @@ Begin:
 simulated state Opening extends Moving
 {
     simulated function StartMoving()
-    {
+    {	
 		NotifyRegistrantsDoorOpening();
 
         if ( IsBoobyTrapped() && !GetLastInteractor().IsA('SwatEnemy') && !GetLastInteractor().IsA('SwatHostage') )
@@ -1510,10 +1540,32 @@ simulated state Opening extends Moving
             BoobyTrap.OnTriggeredByDoor(GetLastInteractor());
         }
 
-        if (PendingPosition == DoorPosition_OpenLeft)
+		if (PendingPosition == DoorPosition_PartialOpenLeft && CurrentPosition == DoorPosition_Closed)
+		{
             PlayAnim('OpenLeft');
-        else
+		}
+		else if (PendingPosition == DoorPosition_PartialOpenRight && CurrentPosition == DoorPosition_Closed)
+		{
             PlayAnim('OpenRight');
+		}
+		else if (PendingPosition == DoorPosition_OpenLeft && CurrentPosition == DoorPosition_PartialOpenLeft )
+		{
+			PlayAnim('OpenLeft'); 
+			SetAnimFrame(16,0,1);
+		}
+        else if (PendingPosition == DoorPosition_OpenRight && CurrentPosition == DoorPosition_PartialOpenRight )
+		{
+            PlayAnim('OpenRight');
+			SetAnimFrame(16,0,1);
+		}
+        else if (PendingPosition == DoorPosition_OpenLeft && CurrentPosition == DoorPosition_Closed )
+		{
+			PlayAnim('OpenLeft');
+		}
+        else if (PendingPosition == DoorPosition_OpenRight && CurrentPosition == DoorPosition_Closed )
+		{
+            PlayAnim('OpenRight');
+		}
     }
 
 	// WARNING: can't do per-state override of native functions, so this
@@ -1538,9 +1590,27 @@ simulated state Closing extends Moving
     {
         if (CurrentPosition == DoorPosition_OpenLeft)
             PlayAnim('CloseFromLeft');
-        else
+        else if (CurrentPosition == DoorPosition_OpenRight)
             PlayAnim('CloseFromRight');
+		else if (CurrentPosition == DoorPosition_PartialOpenleft)
+        {
+			PlayAnim('CloseFromLeft');
+			SetAnimFrame(26,0,1);
+		}
+		else if (CurrentPosition == DoorPosition_PartialOpenRight)
+        {
+			PlayAnim('CloseFromRight');
+			SetAnimFrame(26,0,1);
+		}
+		
     }
+	
+	function Tick( float dTime )
+    {
+		super.Tick( dTime );
+		UpdateAttachmentLocations();
+	}
+	
 }
 
 //this happens when an attempt is made to Move a door that is blocked

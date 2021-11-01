@@ -324,7 +324,7 @@ replication
         ServerViewportActivate, ServerViewportDeactivate,
         ServerHandleViewportFire, ServerHandleViewportReload,
 		ServerDisableSpecialInteractions, ServerMPCommandIssued,
-		ServerDiscordTest, ServerDiscordTest2, ServerGiveItem ,PullDoor , PlayerMeshAll , PlayerMesh;
+		ServerDiscordTest, ServerDiscordTest2, ServerGiveItem ,PullDoor ,PartialDoorPush, PartialDoorPull, PlayerMeshAll , PlayerMesh;
 		
 }
 
@@ -3928,7 +3928,7 @@ exec function PullDoor()
     if (!Door.CanInteract()) return; 
     if (Door.IsClosed() && Door.IsLocked()) { CheckDoorLock(Door); return; }
     if (VSize2D(Door.Location - Pawn.Location) > 150) return;
-    
+	
     if(Door.GetPosition() == DoorPosition_Closed)
     {
 			if (Door.ActorIsToMyLeft(Pawn))
@@ -3941,6 +3941,101 @@ exec function PullDoor()
 	
     Door.Moved();
 }
+
+exec function PartialDoorPush()
+{
+    local SwatDoor Door;
+    local actor HitActor;
+    local vector HitNormal, HitLocation;
+	
+    if (Pawn == None) return; 
+    
+    HitActor = Trace(HitLocation, HitNormal, ViewTarget.Location + 150 * vector(Rotation),ViewTarget.Location, true);
+    Door = DoorModel(HitActor).Door;
+    
+    if (Door == None) return;
+    if (Door.bIsMissionExit) return;
+    if (!Door.CanInteract()) return; 
+    if (Door.IsClosed() && Door.IsLocked()) { CheckDoorLock(Door); return; }
+    if (VSize2D(Door.Location - Pawn.Location) > 150) return;
+    
+    if(Door.GetPosition() == DoorPosition_Closed)
+    {
+			if (Door.ActorIsToMyLeft(Pawn))
+				Door.SetPositionForMove(DoorPosition_PartialOpenRight, MR_Interacted); 
+			else 
+				Door.SetPositionForMove(DoorPosition_PartialOpenLeft, MR_Interacted); 
+    }
+	else if ( Door.GetPosition() == DoorPosition_PartialOpenRight )
+	{
+			if (Door.ActorIsToMyLeft(Pawn))
+				Door.SetPositionForMove(DoorPosition_OpenRight, MR_Interacted); 
+			else 
+				Door.SetPositionForMove(DoorPosition_Closed, MR_Interacted); 
+	}
+	else if ( Door.GetPosition() == DoorPosition_PartialOpenLeft)
+	{
+			if (Door.ActorIsToMyLeft(Pawn))
+				Door.SetPositionForMove(DoorPosition_Closed, MR_Interacted); 
+			else 
+				Door.SetPositionForMove(DoorPosition_OpenLeft, MR_Interacted); 
+	}
+	else
+	{
+		Door.Interact(Pawn);
+	}
+	
+    Door.Moved();
+}
+
+exec function PartialDoorPull()
+{
+    local SwatDoor Door;
+    local actor HitActor;
+    local vector HitNormal, HitLocation;
+	
+    if (Pawn == None) return; 
+    
+    HitActor = Trace(HitLocation, HitNormal, ViewTarget.Location + 150 * vector(Rotation),ViewTarget.Location, true);
+    Door = DoorModel(HitActor).Door;
+    
+    if (Door == None) return;
+    if (Door.bIsMissionExit) return;
+    if (!Door.CanInteract()) return; 
+    if (Door.IsClosed() && Door.IsLocked()) { CheckDoorLock(Door); return; }
+    if (VSize2D(Door.Location - Pawn.Location) > 150) return;
+    
+    if(Door.GetPosition() == DoorPosition_Closed)
+    {
+			if (Door.ActorIsToMyLeft(Pawn))
+				Door.SetPositionForMove(DoorPosition_PartialOpenLeft, MR_Interacted); 
+			else 
+				Door.SetPositionForMove(DoorPosition_PartialOpenRight, MR_Interacted); 
+    }
+	else if ( Door.GetPosition() == DoorPosition_PartialOpenRight )
+	{
+			if (Door.ActorIsToMyLeft(Pawn))
+				Door.SetPositionForMove(DoorPosition_Closed, MR_Interacted); 
+			else 
+				Door.SetPositionForMove(DoorPosition_OpenRight, MR_Interacted); 
+	}
+	else if ( Door.GetPosition() == DoorPosition_PartialOpenLeft)
+	{
+			if (Door.ActorIsToMyLeft(Pawn))
+				Door.SetPositionForMove(DoorPosition_OpenLeft, MR_Interacted); 
+			else 
+				Door.SetPositionForMove(DoorPosition_Closed, MR_Interacted); 
+	}
+	else
+	{
+		Door.Interact(Pawn);
+	}
+	
+    Door.Moved();
+}
+
+
+
 
 function DoSetEndRoundTarget( Actor Target, string TargetName, bool TargetIsOnSWAT )
 {
@@ -5400,6 +5495,12 @@ exec function ToggleLowReady() {
 	local SwatGuiConfig GC;
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 	
+	if ( bHoldCommand == 1) 
+	{
+		PartialDoorPush();
+		return;
+	}
+	
     if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1 && SwatPlayer(Pawn).GetActiveItem().IsIdle() ) 
 	{
 		WantsLowReady= !SwatPlayer(Pawn).IsLowReady();
@@ -5411,6 +5512,13 @@ exec function ToggleLowReadyUP()
 {
 	local SwatGuiConfig GC;
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
+	
+	if ( bHoldCommand == 1) 
+	{
+		PartialDoorPush();
+		return;
+	}
+	
 	
     if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1 && SwatPlayer(Pawn).GetActiveItem().IsIdle() ){
 		if (!WantsZoom && !SwatPlayer(Pawn).IsLowReady() && !WantedZoom) {
@@ -5427,6 +5535,12 @@ exec function ToggleLowReadyDOWN()
 {
 	local SwatGuiConfig GC;
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
+
+		if ( bHoldCommand == 1) 
+	{
+		PartialDoorPull();
+		return;
+	}
 
     if (SwatPlayer(Pawn) != None && GC.ExtraIntOptions[6] == 1 && SwatPlayer(Pawn).GetActiveItem().IsIdle() ) {
 		if (WantsZoom) {

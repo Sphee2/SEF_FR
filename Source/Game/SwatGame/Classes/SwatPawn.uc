@@ -255,9 +255,9 @@ const kDeathRenderBoundingBoxExpansionSize = 100.0;
 var private Rotator LastAimRotator;
 
 // dbeswick: havok character interaction
-//var config float HavokObjectInteractionFactor;
+var config float HavokObjectInteractionFactor;
 
-var int Unused8;
+//var int Unused8;
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2173,7 +2173,7 @@ event bool HavokCharacterCollision(HavokCharacterObjectInteractionEvent data, ou
 	{
 		ImpulseMag = VSize(res.ObjectImpulse);
 		ImpulseDir = res.ObjectImpulse / ImpulseMag;
-		res.ObjectImpulse = ImpulseDir * H.ClampImpulse(ImpulseMag * 0.1); //HavokObjectInteractionFactor = 0.1
+		res.ObjectImpulse = ImpulseDir * H.ClampImpulse(ImpulseMag * HavokObjectInteractionFactor);
 	}
 
 	return true;
@@ -2264,7 +2264,7 @@ defaultproperties
 
     bTriggerEffectEventsBeforeGameStarts=true
 
-	//HavokObjectInteractionFactor = 0.1
+	HavokObjectInteractionFactor = 0.1
 }
 
 ///////////////////////////////////////////////////////////////////////////////
