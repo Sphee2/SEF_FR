@@ -61,3 +61,4 @@ function float GetAdditionalGrenadeThrowDistance(vector Origin);
 function array<Actor> GetDoorModels();
 function bool IsActivelyTrapped();
 function Actor GetTrapOnDoor();
+function bool isPartialOpen();

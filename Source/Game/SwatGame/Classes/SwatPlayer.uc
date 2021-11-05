@@ -33,7 +33,7 @@ var config name	 Unused4;
 
 var float ThrowAnimationTweenTime;
 
-//var config int Unused5;
+var config int Unused5;
 var config Range Unused6;
 
 var private Material SuspectHandsMaterial;
@@ -91,7 +91,7 @@ var config Rotator StingViewEffectAmplitude;
 var config float StingInputEffectAmplitude;
 // end revert
 //var config float Unused8;
-var protected float WeightModifier;
+
 
 //enum LeanWalkState
 enum LeanWalkState
@@ -422,8 +422,6 @@ simulated event PreBeginPlay()
     PepperSprayedTimer.TimerDelegate    = OnPepperSprayedTimerExpired;
     TasedTimer.TimerDelegate            = OnTasedTimerExpired;
 	
-	//init weight modifier
-	WeightModifier=LoadOut.GetWeightMovementModifier();
 }
 
 simulated event PostBeginPlay()
@@ -454,9 +452,6 @@ simulated event PostNetBeginPlay()
 {
     super.PostNetBeginPlay();
 //    log( self$"---SwatPlayer::PostNetBeginPlay() called." );
-	
-//init weight modifier
-	WeightModifier=LoadOut.GetWeightMovementModifier();
 }
 
 
@@ -1544,8 +1539,6 @@ simulated function OnEquippingFinished()
         }
     }
 	
-
-	WeightModifier=LoadOut.GetWeightMovementModifier();
 }
 
 
@@ -1683,7 +1676,6 @@ simulated function OnReloadingFinished()
         }
     }
 	
-	WeightModifier=LoadOut.GetWeightMovementModifier();
 }
 
 //returns true iff it needed to begin equipping something else
@@ -1801,10 +1793,15 @@ simulated function float GetFireTweenTime()
 simulated function AdjustPlayerMovementSpeed(float dTime) {
   local float OriginalFwd, OriginalBck, OriginalSde;
   local float ModdedFwd, ModdedBck, ModdedSde;
-  //local float WeightMovMod;
-   
+  local float WeightMovMod;
+  local int TSnow,TSdiff;
+ 
   local AnimationSetManager AnimationSetManager;
   local AnimationSet setObject;  
+
+  if(class'Pawn'.static.CheckDead( self )) // we are dead... no need to continue to suffer..............
+	  return;
+
   
 	AnimationSetManager = SwatRepo(Level.GetRepo()).GetAnimationSetManager();
 	setObject = AnimationSetManager.GetAnimationSet(GetMovementAnimSet());
@@ -1827,13 +1824,21 @@ simulated function AdjustPlayerMovementSpeed(float dTime) {
 		AnimSet.AnimSpeedSidestep = ModdedSde + (ModdedSde/3);
 		AnimSet.AnimSpeedBackward = ModdedBck + (ModdedBck/3);
 	}
-	else if ( dTime > 0.5 ) //update 2 times per second , dont need every tick.... should make a good perf boost for server and clients.
-	{
-		WeightModifier=LoadOut.GetWeightMovementModifier();
+	else 
+	{	
+		TSnow=Level.TimeSeconds;
+		TSdiff=Level.TimeSeconds - dTime;
 		
-		AnimSet.AnimSpeedForward = ModdedFwd * WeightModifier;//WeightMovMod;
-		AnimSet.AnimSpeedBackward = ModdedBck * WeightModifier;//WeightMovMod;
-		AnimSet.AnimSpeedSidestep = ModdedSde * WeightModifier;//WeightMovMod;
+		if ( TSnow !=  TSdiff )  //do it only once per second
+		{
+		WeightMovMod = LoadOut.GetWeightMovementModifier();
+		AnimSet.AnimSpeedForward = ModdedFwd * WeightMovMod;
+		AnimSet.AnimSpeedBackward = ModdedBck * WeightMovMod;
+		AnimSet.AnimSpeedSidestep = ModdedSde * WeightMovMod;
+		log("WeightMovMod=" $ WeightMovMod $ " TW=" $ Loadout.GetTotalWeight() $ " .");
+		}
+		
+		
 	}
 
 }
@@ -1922,7 +1927,9 @@ local int offset;
 local SwatWeapon SW;
 SW = SwatWeapon(GetActiveItem());
 
-
+ if(class'Pawn'.static.CheckDead( self )) // we are dead... no need to continue to suffer..............
+	  return;
+	  
 	if ( LWS == Lean_Right && LWSrollrate < 2500  )
 	{
 		rotoffset.pitch=5000;
@@ -3801,7 +3808,7 @@ simulated function rotator GetViewRotation()
         baseRotation = GetAimRotation();
     }
 
-    return baseRotation + GetStungRotationOffset() + GetLWSRotOffset(); // + GetLeanRotationOffset()
+    return baseRotation + GetStungRotationOffset() + GetLWSRotOffset(); //+ GetLeanRotationOffset();
 }
 
 simulated event ApplyRotationOffset(out Vector Acceleration)
@@ -4451,22 +4458,21 @@ simulated function int GetNumberOfArmsInjured()
 
 exec simulated function LeanWalk(string position)
 {
+	 if(class'Pawn'.static.CheckDead( self )) // we are dead... no need to continue to suffer..............
+	  return;
 	
 	if (LWS == Lean_Right && (position == "right" || position == "left" )) 
 	{
 		LWS = Lean_UnRight;
 		
-		
 		Gethands().LeanState = 0;
-		
 		
 	}
 	else if (LWS == Lean_Left && (position == "right" || position == "left" )) 
 	{
 		LWS = Lean_UnLeft;
 		
-		Gethands().LeanState = 0;
-		
+		Gethands().LeanState = 0;	
 	}
 	else if ( (LWS == Lean_Cent || LWS == Lean_UnLeft || LWS == Lean_Unright ) && position == "right")
 	{

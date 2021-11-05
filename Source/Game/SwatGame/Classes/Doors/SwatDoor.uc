@@ -444,7 +444,12 @@ simulated function RosterOpenLeft()
 	bWasInitiallyOpen = true;
 	InitialPosition = DoorPosition_OpenLeft;
 	CurrentPosition = DoorPosition_Closed;    // set the door position to closed in case it was left open when a designer was viewing paths to the left or the right
-    SetPositionForMove( GetInitialPosition(), MR_Interacted );
+    
+	if ( frand() > 0.5 )
+		SetPositionForMove( GetInitialPosition(), MR_Interacted );
+	else
+		SetPositionForMove( DoorPosition_PartialOpenLeft, MR_Interacted );	
+	
     Moved(true); //instantly to initial position
 }
 
@@ -456,7 +461,12 @@ simulated function RosterOpenRight()
 	bWasInitiallyOpen = true;
 	InitialPosition = DoorPosition_OpenRight;
 	CurrentPosition = DoorPosition_Closed;    // set the door position to closed in case it was left open when a designer was viewing paths to the left or the right
-    SetPositionForMove( GetInitialPosition(), MR_Interacted );
+
+	if ( frand() > 0.5 )
+		SetPositionForMove( GetInitialPosition(), MR_Interacted );
+	else
+		SetPositionForMove( DoorPosition_PartialOpenRight, MR_Interacted );	
+
     Moved(true); //instantly to initial position
 }
 
@@ -976,8 +986,16 @@ simulated function Moved(optional bool Instantly, optional bool Force)
             case DoorPosition_OpenLeft:
                 PlayAnim('AtOpenLeft');
                 break;
+				
+			case DoorPosition_PartialOpenLeft:
+                PlayAnim('AtOpenLeft');
+                break;
 
             case DoorPosition_OpenRight:
+                PlayAnim('AtOpenRight');
+                break;
+				
+			 case DoorPosition_PartialOpenRight:
                 PlayAnim('AtOpenRight');
                 break;
 
@@ -1135,8 +1153,9 @@ function NotifyClientsOfDoorBlocked( bool OpeningBlocked )
 simulated function Blasted(Pawn Instigator)
 {
     SetPositionForMove( CurrentPosition, MR_Blasted );	//We want the lock to be obliterated, but we dont want the door to swing open
-		Broken();
-		OnUnlocked();
+		
+	Broken();
+	OnUnlocked();
 }
 
 // Note: In multiplayer function Blasted only happens on the server
@@ -1662,8 +1681,8 @@ simulated state BeingBlasted extends Moving
 
     simulated function StartMoving()
     {
+		
 		NotifyRegistrantsDoorOpening();
-
         /*if (PendingPosition == DoorPosition_OpenLeft)
             PlayAnim('BlastedLeft');
         else
@@ -1702,10 +1721,20 @@ simulated state BeingBreached extends Moving
 
 				NotifyRegistrantsDoorOpening();
 
-        if (PendingPosition == DoorPosition_OpenLeft)
+        if (PendingPosition == DoorPosition_OpenLeft && CurrentPosition == DoorPosition_Closed)
             PlayAnim('BreachedLeft');
-        else
+        else  if (PendingPosition == DoorPosition_OpenRight && CurrentPosition == DoorPosition_Closed)
             PlayAnim('BreachedRight');
+		else if (PendingPosition == DoorPosition_OpenLeft && CurrentPosition == DoorPosition_PartialOpenLeft)
+        {
+			PlayAnim('BreachedLeft');
+			SetAnimFrame(2.5,0,1);
+		}
+        else  if (PendingPosition == DoorPosition_OpenRight && CurrentPosition == DoorPosition_PartialOpenRight)
+        {
+			PlayAnim('BreachedRight');
+			SetAnimFrame(2.5,0,1);
+		}
 
 		if ( IsBoobyTrapped() )
 		{
@@ -2871,6 +2900,18 @@ simulated function Vector GetPushAwayDirection(SwatRagdollPawn thePawn)
 simulated function InitializeRemainingUpdateAttachmentLocationsCounter()
 {
     RemainingUpdateAttachmentLocationsCounter = 2; // Ugh.
+}
+
+simulated function bool isPartialOpen()
+{
+	log( "IPO...CurrentPosition="$CurrentPosition );
+	log( "IPO...PendingPosition="$PendingPosition );
+	log( "IPO...DesiredPosition="$DesiredPosition );
+	
+	if ( (CurrentPosition == DoorPosition_PartialOpenLeft) || (CurrentPosition == DoorPosition_PartialOpenRight) )
+		return true;
+	else
+		return false;
 }
 
 defaultproperties

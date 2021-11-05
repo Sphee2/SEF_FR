@@ -33,7 +33,7 @@ function OnTick()
 {
 	if(Role < ROLE_Authority)
 	{
-		log("NetPlayerCoop tick: NextReplicatedEquipmentGiven = " $ NextReplicatedEquipmentGiven $ ", LastEquipmentGiven = " $ LastEquipmentGiven);
+		//log("NetPlayerCoop tick: NextReplicatedEquipmentGiven = " $ NextReplicatedEquipmentGiven $ ", LastEquipmentGiven = " $ LastEquipmentGiven);
 		if(NextReplicatedEquipmentGiven != LastEquipmentGiven)
 		{
 			log("Replicated equipment given: " $ NextReplicatedEquipmentGiven);

@@ -5495,7 +5495,7 @@ exec function ToggleLowReady() {
 	local SwatGuiConfig GC;
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 	
-	if ( bHoldCommand == 1) 
+	if ( bHoldCommand == 1  ) 
 	{
 		PartialDoorPush();
 		return;
@@ -5513,7 +5513,7 @@ exec function ToggleLowReadyUP()
 	local SwatGuiConfig GC;
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 	
-	if ( bHoldCommand == 1) 
+	if ( bHoldCommand == 1  ) 
 	{
 		PartialDoorPush();
 		return;
@@ -5536,7 +5536,7 @@ exec function ToggleLowReadyDOWN()
 	local SwatGuiConfig GC;
 	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 
-		if ( bHoldCommand == 1) 
+	if ( bHoldCommand == 1 ) 
 	{
 		PartialDoorPull();
 		return;
@@ -6027,17 +6027,17 @@ exec function HoldCommand(bool bPressed)
 	local OfficerTeamInfo Team;
     local GraphicCommandInterface GCI;
 
-	if (Level.NetMode != NM_Standalone)
-		return;
-
-	Team = GetCommandInterface().CurrentCommandTeam;
-    GCI = GraphicCommandInterface(GetCommandInterface());
-
 	//LOG("HOLDCOMMAND:" @ bPressed @ "GDC:" @ GCI != None && GCI.IsOpen() @ "DEF:" @ GetCommandInterface().GetDefaultCommand());
 	if (bPressed)
 		bHoldCommand = 1;
 	else
 		bHoldCommand = 0;
+
+	if (Level.NetMode != NM_Standalone)
+		return;
+
+	Team = GetCommandInterface().CurrentCommandTeam;
+    GCI = GraphicCommandInterface(GetCommandInterface());
 
 	if (bPressed)
 	{
@@ -6560,6 +6560,79 @@ exec simulated function PlayerMesh(String newMesh)
 	}
 	
 }
+
+exec function LeanLeftN(bool bPressed)
+{
+	if (bPressed)
+	{
+		if (bLeanRight == 1 )
+		{
+			bLeanRight = 0;
+			return;
+		}
+	
+		if ( bHoldCommand == 1 )
+		{
+			bLeanLeft=1;
+			if (SwatPlayer(Pawn).LWS == Lean_Left)
+				SwatPlayer(Pawn).LeanWalk("left");
+			return;
+		}
+		else if ( bHoldCommand == 0 && bLeanLeft == 1)
+		{
+			bLeanLeft=0;
+			SwatPlayer(Pawn).LeanWalk("left");
+			return;
+		}
+		else
+		{
+			SwatPlayer(Pawn).LeanWalk("left");
+			return;
+		}
+	}
+	else
+	{
+		//bLeanleft=0;
+	}
+	
+}
+
+exec function LeanRightN(bool bPressed)
+{
+	if (bPressed)
+	{
+		if (bLeanLeft == 1 )
+		{
+			bLeanLeft = 0;
+			return;
+		}
+
+		if ( bHoldCommand == 1 )
+		{
+			bLeanRight=1;
+			if (SwatPlayer(Pawn).LWS == Lean_Right)
+				SwatPlayer(Pawn).LeanWalk("right");
+			return;
+		}
+		else if ( bHoldCommand == 0 && bLeanRight == 1)
+		{
+			bLeanRight=0;
+			SwatPlayer(Pawn).LeanWalk("right");
+			return;
+		}
+		else 
+		{
+			SwatPlayer(Pawn).LeanWalk("right");
+			return;
+		}
+	}
+	else
+	{
+		//bLeanRight=0;
+	}
+	
+}
+
 
 simulated function bool IsRotationFrozen()
 {
