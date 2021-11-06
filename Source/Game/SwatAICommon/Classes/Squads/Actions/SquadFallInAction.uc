@@ -179,6 +179,9 @@ latent function FallInSquad()
 		Officer = squad().pawns[i];
 
 		ISwatOfficer(Officer).SetCurrentFormation(FallInFormation);
+		
+		if( ISwatOfficer(Officer).GetItemAtSlot(Slot_Maglite).IsA('MagliteTorch') ) 
+			ISwatOfficer(Officer).ReEquipFiredWeapon();
 
 		// post the fall in goal
 		(new class'FallInGoal'(AI_CharacterResource(Officer.CharacterAI))).postGoal(self);

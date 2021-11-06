@@ -1229,6 +1229,7 @@ local HandHeldEquipmentModel EvidenceModel;
 local String HighlightTextureName;
 local int mat_count;
 local Actor SEvidence;
+local bool FirstPass;
 	
  if (bEnable)
 	  HighlightTextureName = "SwatGearTex.FlashlightLensOnShader" ;
@@ -1241,6 +1242,16 @@ local Actor SEvidence;
         if (Evidence.CanBeUsedNow())
         {
 			EvidenceModel = HandHeldEquipmentModel(Evidence);
+			
+			if ( !FirstPass ) //first time eh?
+			{
+				log("EH skin 0=" $ String(EvidenceModel.Skins[0]) $ ".");
+				FirstPass = true;
+				if( EvidenceModel.Skins[0] == Material(DynamicLoadObject( HighlightTextureName, class'Material')) && bEnable) //then 99,9% we are already highlighting evidence
+					return; //ragequit
+			
+			}	 
+			
             EvidenceModel.Skins[0] = Material(DynamicLoadObject( HighlightTextureName, class'Material'));  
             
             mat_count=0;
