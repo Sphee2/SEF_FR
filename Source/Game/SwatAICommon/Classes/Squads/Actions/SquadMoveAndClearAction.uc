@@ -739,7 +739,7 @@ latent function PrepareToThrowGrenade(EquipmentSlot GrenadeSlot, bool bWaitToThr
 
 	CurrentThrowGrenadeGoal.SetThrowSide(ThrowSide);
 	CurrentThrowGrenadeGoal.SetThrowRotation(ThrowRotation);
-	CurrentThrowGrenadeGoal.SetWaitToThrowGrenade(TargetDoor.IsClosed() && ! TargetDoor.IsOpening() && bWaitToThrowGrenade);
+	CurrentThrowGrenadeGoal.SetWaitToThrowGrenade( (TargetDoor.IsClosed() && ! TargetDoor.IsOpening() && bWaitToThrowGrenade ) || ( ISwatDoor(TargetDoor).isPartialOpen() ));
 	CurrentThrowGrenadeGoal.RegisterForGrenadeThrowing(self);
 	CurrentThrowGrenadeGoal.postGoal(self);
 
@@ -751,7 +751,7 @@ latent function PrepareToThrowGrenade(EquipmentSlot GrenadeSlot, bool bWaitToThr
 
 latent function ThrowGrenade()
 {
-	if (TargetDoor.IsClosed() && !TargetDoor.IsOpening()/* && !TargetDoor.IsBroken()*/ && !TargetDoor.IsEmptyDoorway())
+	if ( (TargetDoor.IsClosed() && !TargetDoor.IsOpening()/* && !TargetDoor.IsBroken()*/ && !TargetDoor.IsEmptyDoorway() ) || ( ISwatDoor(TargetDoor).isPartialOpen() ) )
 	{
 		// start over again because the door isn't open or opening
 		instantFail(ACT_GENERAL_FAILURE);
@@ -964,7 +964,7 @@ latent function OpenDoorForThrowingGrenade()
 	{
 		WaitToFinishOpeningDoor();
 	}
-	else if (TargetDoor.IsClosed() && !TargetDoor.IsOpening() /*&& !ISwatDoor(TargetDoor).IsBroken()*/)
+	else if ( (TargetDoor.IsClosed() && !TargetDoor.IsOpening() ) || ( ISwatDoor(TargetDoor).isPartialOpen() ) ) /*&& !ISwatDoor(TargetDoor).IsBroken()*/
 	{
 		pause();
 	}

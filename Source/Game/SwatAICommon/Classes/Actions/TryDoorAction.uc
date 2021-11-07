@@ -107,11 +107,20 @@ private function TriggerReportResultsSpeech()
 latent function ReportPossibleTrap()
 {
 	local ISwatDoor SwatTargetDoor;
-
-	SwatTargetDoor = ISwatDoor(TargetDoor);
-	assert(SwatTargetDoor != None);
+	local bool TrappedLevel;
+	local Door TempDoor;
 	
-	if (SwatTargetDoor.IsDoorCheckLockTrapped())		//might be trapped
+	SwatTargetDoor = ISwatDoor(TargetDoor);
+	assert(SwatTargetDoor != None && !SwatTargetDoor.isPartialOpen() );
+	
+	foreach level.AllActors( class'Door' , TempDoor )
+	{
+		TrappedLevel = (TrappedLevel || ISwatDoor(TempDoor).IsBoobyTrapped());	
+	}
+	
+	log("check for traps in level: " $ TrappedLevel $ " ");
+	
+	if (SwatTargetDoor.IsDoorCheckLockTrapped() && TrappedLevel )		//might be trapped
 	{
 		Sleep(2.0);
 		ISwatOfficer(m_Pawn).GetOfficerSpeechManagerAction().TriggerExaminedFoundTrapSpeech();
@@ -155,10 +164,14 @@ latent function TryDoor()
 	SwatDoorTarget = ISwatDoor(TargetDoor);
 	assert(SwatDoorTarget != None);
 
-	AnimName		   = SwatDoorTarget.GetTryDoorAnimation(m_Pawn, TryDoorUsageSide);
-	AnimSpecialChannel = m_Pawn.AnimPlaySpecial(AnimName);
+	if ( !SwatDoorTarget.isPartialOpen() )
+	{
+		AnimName		   = SwatDoorTarget.GetTryDoorAnimation(m_Pawn, TryDoorUsageSide);
+		AnimSpecialChannel = m_Pawn.AnimPlaySpecial(AnimName);
 
-	m_Pawn.FinishAnim(AnimSpecialChannel);
+		m_Pawn.FinishAnim(AnimSpecialChannel);
+	}
+		
 }
 
 function bool DoorIsLockable()
@@ -173,7 +186,7 @@ function bool DoorIsLockable()
 
 private function bool CanInteractWithTargetDoor()
 {
-	return (! TargetDoor.IsEmptyDoorWay() && TargetDoor.IsClosed() && !TargetDoor.IsOpening() /*&& !ISwatDoor(TargetDoor).IsBroken()*/);
+	return (! TargetDoor.IsEmptyDoorWay() && TargetDoor.IsClosed() && !TargetDoor.IsOpening()  /*&& !ISwatDoor(TargetDoor).IsBroken()*/) || ISwatDoor(TargetDoor).isPartialOpen() ;
 }
 
 state Running

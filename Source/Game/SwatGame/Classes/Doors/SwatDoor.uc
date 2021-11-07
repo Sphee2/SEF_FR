@@ -1279,9 +1279,16 @@ simulated function bool PositionIsBlocked(DoorPosition TestPosition)  //TMC TODO
     if ( Level.NetMode == NM_Client )
         return false;
 
+	//dont need to test blocking if door is partially open.
+	if ( isPartialOpen() 
+		|| (CurrentPosition == DoorPosition_Closed  && PendingPosition == DoorPosition_PartialOpenLeft)
+		|| (CurrentPosition == DoorPosition_Closed  && PendingPosition == DoorPosition_PartialOpenRight)
+		)
+		return false; 
+
     if  (
             TestPosition == DoorPosition_OpenRight
-        ||  CurrentPosition == DoorPosition_OpenRight
+        ||  CurrentPosition == DoorPosition_OpenRight 
         )
         TestSide = DoorPosition_OpenRight;
     else
@@ -1489,7 +1496,7 @@ simulated state Moving
     {
     }
 
-    function Tick( float dTime )
+    simulated function Tick( float dTime )
     {
 		local float frame,rate;
 		local name seq;
@@ -1500,7 +1507,7 @@ simulated state Moving
 		
 		if ( ( (PendingPosition == DoorPosition_PartialOpenLeft ) || (PendingPosition == DoorPosition_PartialOpenRight  ) && CurrentPosition == DoorPosition_Closed ))
 		{
-			log("DOOR " $ frame $ " " $ CurrentPosition $ " "  $ PendingPosition $ " ");
+			log("DOOR " $ frame $ " C " $ CurrentPosition $ " P "  $ PendingPosition $ "  D "$ PendingPosition $ " ");
 			if ( frame >= 0.36 && (seq == 'OpenLeft' || seq == 'OpenRight' ) )  //around frame 15 of opening a door
 			{
 				Log("DOOR " $ frame $ " FREEZE!!! ");
@@ -1552,7 +1559,10 @@ simulated state Opening extends Moving
     simulated function StartMoving()
     {	
 		NotifyRegistrantsDoorOpening();
-
+		
+		if ( level.NetMode != NM_Client)
+			log("Server PendingPosition: " $ PendingPosition $ ""); 
+		
         if ( IsBoobyTrapped() && !GetLastInteractor().IsA('SwatEnemy') && !GetLastInteractor().IsA('SwatHostage') )
         {
             assert(BoobyTrap != None);
@@ -2542,6 +2552,7 @@ simulated function SetPendingInteractor(Pawn Interactor)
 // only for doors opening the opposite of the Other
 simulated function bool IsBlockedFor(Pawn Other)
 {
+			
 	if (ActorIsToMyLeft(Other))
 	{
 		return PositionIsBlocked(DoorPosition_OpenRight);
@@ -2904,10 +2915,6 @@ simulated function InitializeRemainingUpdateAttachmentLocationsCounter()
 
 simulated function bool isPartialOpen()
 {
-	log( "IPO...CurrentPosition="$CurrentPosition );
-	log( "IPO...PendingPosition="$PendingPosition );
-	log( "IPO...DesiredPosition="$DesiredPosition );
-	
 	if ( (CurrentPosition == DoorPosition_PartialOpenLeft) || (CurrentPosition == DoorPosition_PartialOpenRight) )
 		return true;
 	else
