@@ -115,7 +115,7 @@ simulated function bool HandleBallisticImpact(
 	    ExitMaterial);
 }
 
-function changeShellsMaterial()
+simulated function changeShellsMaterial()
 {
 local String ShellTextureName;
 local String ShellTextureNameTP;
@@ -125,7 +125,7 @@ ShotgunAmmo = ShotgunAmmo(Ammo);
 	
 if (ShotgunAmmo != None) //asserting shotgun is using shotgun ammo.... kind of a joke but still
 {
-	
+	log("ShotgunAmmo =" $ ShotgunAmmo.GetFriendlyName() $ ".");
 	//Get Shell type , associate with Texture
 	switch( ShotgunAmmo.GetFriendlyName() ) //get FriendlyName , you can find it in the Class-Ammo-FriendlyName field
 	{
