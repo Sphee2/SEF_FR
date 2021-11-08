@@ -70,12 +70,22 @@ function SetSkins(TeamInfo NewTeam)
 	ReplicatedSkins[0] = Skins[0];
 	ReplicatedSkins[1] = Skins[1];
 	ReplicatedSkins[3] = Skins[3];
+
 }
 
 simulated function SetPlayerSkins( OfficerLoadOut inLoadOut )
 {
-	if (ReplicatedCustomSkinClassName != "SwatGame.DefaultCustomSkin")
+	if( GetLoadOut().HasLevelIIArmor() )
+		ReplicatedCustomSkinClassName = "MONKIFLIP"; //great coding masterpiece
+	
+	if (GetLoadout().HasHeavyArmor() && ReplicatedCustomSkinClassName == "SwatGame.DefaultCustomSkin" )
 		Super.SetPlayerSkins( inLoadOut );
+	
+	if (GetLoadout().HasInstructorArmor() && ReplicatedCustomSkinClassName == "SwatGame.DefaultCustomSkin" )
+		ReplicatedCustomSkinClassName = "MONKIFLIP"; //great coding masterpiece
+	
+	if  ( ReplicatedCustomSkinClassName != "SwatGame.DefaultCustomSkin" ) 
+			Super.SetPlayerSkins( inLoadOut );
 }
 
 function OnTeamChanging(TeamInfo NewTeam)

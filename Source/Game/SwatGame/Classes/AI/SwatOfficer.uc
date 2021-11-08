@@ -678,7 +678,7 @@ private function ReceiveLoadOut()
 		else if (self.IsA('OfficerRedTwo') )
 			Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_RedTwoFleshShader",class'Material'));
 		
-		Skins[1] = Material(DynamicLoadObject("SWATinstructorTex.SI_ClothesCshader",class'Material'));
+		Skins[1] = LoadOut.GetPantsMaterial();
 	}
 	else
 	{

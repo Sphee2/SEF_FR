@@ -777,7 +777,7 @@ simulated function Material GetCustomMaterial( MaterialPocket pock )
 simulated function bool HasHeavyArmor()
 {
     if ( PocketEquipment[Pocket.Pocket_BodyArmor] != None )
-        return PocketEquipment[Pocket.Pocket_BodyArmor].IsA('HeavyBodyArmor');
+        return PocketEquipment[Pocket.Pocket_BodyArmor].IsA('HeavyBodyArmor') || PocketEquipment[Pocket.Pocket_BodyArmor].IsA('EnhancedBodyArmor');
     else
         return false; // The VIP has no armor in Pocket_BodyArmor.
 }

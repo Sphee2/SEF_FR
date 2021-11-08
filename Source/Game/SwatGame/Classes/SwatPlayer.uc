@@ -619,7 +619,7 @@ simulated function SetPlayerSkins( OfficerLoadOut inLoadOut )
     //mplog( self$"---SwatPlayer::SetPlayerSkins()." );
 local float MPFace;
 
-	if ( GetLoadOut().HasLevelIIArmor() )
+	if ( inLoadOut.HasLevelIIArmor() )
 	{
 		if ( Level.NetMode == NM_Standalone ) //in SP give Lead face
 			Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshAShader",class'Material'));
@@ -641,7 +641,7 @@ local float MPFace;
 		
 		Skins[1] = Material(DynamicLoadObject("MaleCasualArmorTex.MCA_CadetClothesShader",class'Material'));
 	}
-	else if ( GetLoadOut().HasInstructorArmor() )
+	else if ( inLoadOut.HasInstructorArmor() )
 	{
 		if ( Level.NetMode == NM_Standalone ) //in SP give Lead face
 		{
@@ -664,7 +664,10 @@ local float MPFace;
 				Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_RedTwoFleshShader",class'Material'));
 		}
 		
-		Skins[1] = Material(DynamicLoadObject("SWATinstructorTex.SI_ClothesCshader",class'Material'));
+		if( inLoadOut.GetPantsMaterial() != None)
+			Skins[1] = inLoadOut.GetPantsMaterial();
+		else
+			Skins[1] = Material(DynamicLoadObject("SWATinstructorTex.SI_ClothesCshader",class'Material'));
 	}
 	else
 	{
@@ -1818,14 +1821,14 @@ simulated function AdjustPlayerMovementSpeed(float dTime) {
 	//ModdedBck *= LoadOut.GetWeightMovementModifier();
 	//ModdedSde *= LoadOut.GetWeightMovementModifier();
 
-	if( IsLowReady() && PlayerController(Controller).bRun == 1 ) //little more speed when low ready
+	/*if( IsLowReady() && PlayerController(Controller).bRun == 1 ) //little more speed when low ready
 	{
 		AnimSet.AnimSpeedForward = ModdedFwd + (ModdedFwd/3);
 		AnimSet.AnimSpeedSidestep = ModdedSde + (ModdedSde/3);
 		AnimSet.AnimSpeedBackward = ModdedBck + (ModdedBck/3);
 	}
 	else 
-	{	
+	{*/	
 		TSnow=Level.TimeSeconds;
 		TSdiff=Level.TimeSeconds - dTime;
 		
@@ -1839,7 +1842,7 @@ simulated function AdjustPlayerMovementSpeed(float dTime) {
 		}
 		
 		
-	}
+	//}
 
 }
 
@@ -2129,9 +2132,11 @@ simulated state ThrowingPrep
     simulated function Tick(float dTime)
     {
         Global.Tick(dTime);
-
-        AdjustPlayerMovementSpeed(dTime);
-        OnTick();
+		
+		if(Level.NetMode == NM_StandAlone) //speed modifier for SP only (cause it creates more bugs than features)
+			AdjustPlayerMovementSpeed(dtime);
+        
+		OnTick();
 
         if (!DoneThrowing)
         {
@@ -2213,8 +2218,9 @@ simulated state Throwing
     {
         Global.Tick(dTime);
         OnTick();
-
-        AdjustPlayerMovementSpeed(dTime);
+		
+		if(Level.NetMode == NM_StandAlone) //speed modifier for SP only (cause it creates more bugs than features)
+			AdjustPlayerMovementSpeed(dtime);
 
         if (!DoneThrowing)
         {
@@ -2423,9 +2429,12 @@ Begin:
 ////////////////////////////////////////////////////////////////////////////////
 
 simulated function Tick(float dTime) {
-    AdjustPlayerMovementSpeed(dtime);
+    leanr(dTime);
+
+	if(Level.NetMode == NM_StandAlone) //speed modifier for SP only (cause it creates more bugs than features)
+		AdjustPlayerMovementSpeed(dtime);
+	
     OnTick();
-	leanr(dTime);
 }
 
 

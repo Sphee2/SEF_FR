@@ -6519,7 +6519,7 @@ simulated function bool IsLocationFrozen()
     }
 }
 
-exec simulated function PlayerMeshAll(String newMesh)
+exec function PlayerMeshAll(String newMesh)
 {
 	local SwatPlayer thePlayer;
 	local SwatOfficer AIOfficer;
@@ -6530,7 +6530,7 @@ exec simulated function PlayerMeshAll(String newMesh)
 	if (SM != None)
 	{
 	
-		if (Level.NetMode != NM_Standalone ) //when MP
+		if (Level.NetMode != NM_Standalone && Level.NetMode != NM_DedicatedServer ) //when MP , client only!
 		{
 			foreach DynamicActors(class'SwatPlayer', thePlayer)
 			{
@@ -6555,11 +6555,12 @@ exec simulated function PlayerMeshAll(String newMesh)
 	
 }
 
-exec simulated function PlayerMesh(String newMesh)
+exec function PlayerMesh(String newMesh)
 {
 	local SwatPlayer thePlayer;
 	local SkeletalMesh SM;
 
+	assert(Level.NetMode != NM_DedicatedServer); //to avoid server crash!
 	
 	SM= SkeletalMesh(DynamicLoadObject(newMesh, class'SkeletalMesh'));
 	
