@@ -624,6 +624,33 @@ exec function OpenDoorsToRight()
 	}
 }
 
+exec function OpenDoorsToPartial()
+{
+	local NavigationPoint Iter;
+	local SwatDoor Door;
+
+	for(Iter = Level.navigationPointList; Iter != None; Iter = Iter.nextNavigationPoint)
+	{
+		Door = SwatDoor(Iter);
+
+		if (Door != None)
+		{
+			if (frand()> 0.5)
+			{
+				Door.SetPositionForMove( DoorPosition_PartialOpenLeft, MR_Interacted );
+				Door.Moved();
+			}
+			else
+			{
+				Door.SetPositionForMove( DoorPosition_PartialOpenRight, MR_Interacted );
+				Door.Moved();
+			}
+		}
+	}
+}
+
+
+
 exec function LockAllDoors()
 {
 	local NavigationPoint Iter;
