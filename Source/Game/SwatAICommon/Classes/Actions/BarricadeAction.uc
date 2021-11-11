@@ -285,7 +285,7 @@ private function PopulateDoorsInRoom()
 
 		// if there's a door that isn't broken, isn't locked, and isn't opening,
 		// we consider the door usable
-		if (!IterDoor.IsEmptyDoorWay() && !IterSwatDoor.IsBroken() && !IterDoor.IsOpening() && !IterDoor.IsClosing() && !IterSwatDoor.IsLocked())
+		if (!IterDoor.IsEmptyDoorWay() && !IterSwatDoor.IsBroken() && !IterDoor.IsOpening() && !IterDoor.IsClosing() && !IterSwatDoor.IsLocked() && !IterSwatDoor.IsPartialOpen() )
 		{
 			ClosableDoorsInRoom[ClosableDoorsInRoom.Length] = IterDoor;
 		}
@@ -454,7 +454,7 @@ latent function CloseAndLockDoorsInRoom()
 			CurrentDoor = GetClosestDoorToStimuliOrigin();
 			RemoveDoorFromCloseAndLockList(CurrentDoor);
 
-            if(ISwatDoor(CurrentDoor).IsOpen() && !ISwatDoor(CurrentDoor).IsLocked())
+            if(ISwatDoor(CurrentDoor).IsOpen() && !ISwatDoor(CurrentDoor).IsLocked() && !ISwatDoor(CurrentDoor).IsPartialOpen())
             { // it's possible for another AI to have locked and closed the door in the meantime
              CloseDoor(CurrentDoor);
 			 LockDoor(CurrentDoor);

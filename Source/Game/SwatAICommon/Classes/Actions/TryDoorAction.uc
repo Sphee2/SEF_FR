@@ -206,7 +206,11 @@ Begin:
 		{
 			ReportResultsToTeam();
 		}
-		else if (CanInteractWithTargetDoor())
+		else if (ISwatDoor(TargetDoor).isPartialOpen() ) //it's open...
+		{
+			ReportResultsToTeam();
+		}
+		else if (CanInteractWithTargetDoor() && ! ISwatDoor(TargetDoor).isPartialOpen() )
 		{
 			// keep us facing the correct direction
 			ISwatAI(m_Pawn).AimToRotation(TryDoorUsageRotation);

@@ -166,7 +166,7 @@ latent function OpenDoor()
 		if (ShouldContinueToOpenDoor() || ISwatDoor(TargetDoor).isPartialOpen() )
 		{
 			// save off whether the door is blocked right now
-			bIsDoorBlockedBeforeOpen = SwatDoorTarget.IsBlockedFor(m_Pawn) || ISwatDoor(TargetDoor).isPartialOpen() ;
+			bIsDoorBlockedBeforeOpen = SwatDoorTarget.IsBlockedFor(m_Pawn);
 
 			// tell the pawn to play the opening animation - take over the arms
 			OpenAnimName = SwatDoorTarget.GetOpenAnimation(m_Pawn, GetDoorUsageSide(), bOpenFrantically);

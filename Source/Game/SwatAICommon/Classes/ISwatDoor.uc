@@ -8,6 +8,14 @@ interface ISwatDoor;
 
 import enum AIDoorUsageSide from ISwatAI;
 import enum ESkeletalRegion from Engine.Actor;
+import enum DoorPosition from Engine.Door;
+
+enum EMoveReason
+{
+    MR_Interacted,
+    MR_Breached,
+    MR_Blasted
+};
 
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -62,3 +70,5 @@ function array<Actor> GetDoorModels();
 function bool IsActivelyTrapped();
 function Actor GetTrapOnDoor();
 function bool isPartialOpen();
+simulated function SetPositionForMove( DoorPosition inPositionForMove, EMoveReason inReasonForMove, optional bool bDontUpdateDesired );
+simulated function Moved(optional bool Instantly, optional bool Force);

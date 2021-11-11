@@ -1470,7 +1470,7 @@ function NotifyDoorWedged(Door WedgedDoor)
 
 		}
 		
-		DoRemoveWedge=true;
+		//DoRemoveWedge=true;
 		
 		// do remove wedge
 		if (SD != None && DoRemoveWedge )

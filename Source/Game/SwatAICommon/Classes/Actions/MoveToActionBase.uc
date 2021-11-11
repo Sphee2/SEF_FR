@@ -492,9 +492,30 @@ protected latent function NavigateThroughDoor(Door Target)
 
 //	log(m_Pawn.Name $ " finished waiting - PendingDoorInteractor " $ PendingDoorInteractor $ " IsClosed " $ Target.IsClosed() $ " IsBroken " $ SwatDoorTarget.IsBroken() $ " IsOpening " $ Target.IsOpening());
 
-	if (Target.IsClosed() && /*!SwatDoorTarget.IsBroken() &&*/ !Target.IsOpening() &&
-		((PendingDoorInteractor == None) || (PendingDoorInteractor == m_Pawn)))
+	if ( (Target.IsClosed() && /*!SwatDoorTarget.IsBroken() &&*/ !Target.IsOpening() &&
+		((PendingDoorInteractor == None) || (PendingDoorInteractor == m_Pawn))) || IswatDoor(Target).isPartialOpen() )
 	{
+		
+		//little knock to help my boy Tyrion
+		if( (IswatDoor(Target).ActorIsToMyLeft(m_Pawn) && Target.DesiredPosition == DoorPosition_PartialOpenLeft) || (!IswatDoor(Target).ActorIsToMyLeft(m_Pawn) && Target.DesiredPosition == DoorPosition_PartialOpenRight) ) 
+		{
+			//if (m_Pawn.logTyrion)
+				log(m_Pawn.Name $ " attempting to navigate through door KNOCK KNOCK");
+			
+			if (Target.DesiredPosition == DoorPosition_PartialOpenLeft)
+				IswatDoor(Target).SetPositionForMove( DoorPosition_PartialOpenRight, MR_Interacted );
+			else
+				IswatDoor(Target).SetPositionForMove( DoorPosition_PartialOpenLeft, MR_Interacted );
+		
+			//IswatDoor(Target).SetPositionForMove( DoorPosition_Closed, MR_Interacted );
+		
+			IswatDoor(Target).Moved();
+			
+			
+		}
+		
 		PostOpenDoorGoal(Target);
+		
 	}
+	
 }
