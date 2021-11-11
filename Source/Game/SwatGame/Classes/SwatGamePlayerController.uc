@@ -311,7 +311,7 @@ replication
         ClientAITriggerEffectEvent, ClientAIDroppedAllWeapons, ClientAIDroppedActiveWeapon, ClientAIDroppedAllEvidence,
         ClientInterruptAndGotoState, ClientInterruptState, ClientSetObjectiveVisibility, ClientReportableReportedToTOC,
         ClientAddPrecacheableMaterial, ClientAddPrecacheableMesh, ClientAddPrecacheableStaticMesh, ClientPrecacheAll,
-        ClientViewFromLocation, ClientForceObserverCam, ReplicatedObserverCamTarget, ReplicatedViewportTeammate ;
+        ClientViewFromLocation, ClientForceObserverCam, ReplicatedObserverCamTarget, ReplicatedViewportTeammate;
 
     // replicated functions sent to server by owning client
     reliable if( Role < ROLE_Authority )
@@ -324,7 +324,7 @@ replication
         ServerViewportActivate, ServerViewportDeactivate,
         ServerHandleViewportFire, ServerHandleViewportReload,
 		ServerDisableSpecialInteractions, ServerMPCommandIssued,
-		ServerDiscordTest, ServerDiscordTest2, ServerGiveItem ,PullDoor ,PartialDoorPush, PartialDoorPull, PlayerMeshAll , PlayerMesh;
+		ServerDiscordTest, ServerDiscordTest2, ServerGiveItem ,PullDoor ,PartialDoorPush, PartialDoorPull;
 		
 }
 
@@ -1230,6 +1230,8 @@ local String HighlightTextureName;
 local int mat_count;
 local Actor SEvidence;
 local bool FirstPass;
+local SwatPlayer SP;
+local SwatOfficer SO;
 	
  if (bEnable)
 	  HighlightTextureName = "SwatGearTex.FlashlightLensOnShader" ;
@@ -1243,14 +1245,35 @@ local bool FirstPass;
         {
 			EvidenceModel = HandHeldEquipmentModel(Evidence);
 			
-			if ( !FirstPass ) //first time eh?
+			if ( !FirstPass &&  bEnable) //first time eh?
 			{
 				log("EH skin 0=" $ String(EvidenceModel.Skins[0]) $ ".");
 				FirstPass = true;
 				if( EvidenceModel.Skins[0] == Material(DynamicLoadObject( HighlightTextureName, class'Material')) && bEnable) //then 99,9% we are already highlighting evidence
 					return; //ragequit
 			
-			}	 
+			}	
+			else if ( !FirstPass &&  !bEnable)
+			{
+				if ( Level.NetMode != NM_Standalone)
+				{
+					foreach DynamicActors(class'SwatPlayer', SP) 
+					{
+						if( SP.GetActiveItem().isa('MagliteTorch') && SP.GetDesiredFlashlightState())
+							return; //do nothing
+					}
+				}
+				else
+				{
+					foreach DynamicActors(class'SwatOfficer', SO) 
+					{
+						if( SO.GetActiveItem().isa('MagliteTorch') && SO.GetDesiredFlashlightState())
+							return; //do nothing
+					}
+					
+				}
+					
+			}
 			
             EvidenceModel.Skins[0] = Material(DynamicLoadObject( HighlightTextureName, class'Material'));  
             
@@ -2568,6 +2591,7 @@ simulated function InternalMelee(optional bool UseMeleeOnly, optional bool UseCh
   local vector HitLocation, HitNormal, CameraLocation, TraceEnd;
   local rotator CameraRotation;
   local Material HitMaterial;
+  local bool doorPartialopen;
 
 	if (Level.GetEngine().EnableDevTools)
         log( "...in SwatGamePlayerController::InternalMelee()" );
@@ -2622,9 +2646,16 @@ simulated function InternalMelee(optional bool UseMeleeOnly, optional bool UseCh
 	    }
 	    else if(!SpecialInteractionsDisabled &&
 			Candidate.IsA('DoorModel'))
-	    {
-	      if(CheckDoorLock(DoorModel(Candidate).Door))
-	        return;
+	    {	
+			if ( DoorModel(Candidate).Door.DesiredPosition == DoorPosition_PartialOpenLeft || DoorModel(Candidate).Door.DesiredPosition == DoorPosition_PartialOpenRight) 
+			{
+				doorPartialopen = true;
+			}
+			else
+			{
+				if(CheckDoorLock(DoorModel(Candidate).Door) )
+				return;
+			}
 	    }
 	}
 
@@ -2640,6 +2671,9 @@ simulated function InternalMelee(optional bool UseMeleeOnly, optional bool UseCh
             mplog( "...calling ServerRequestMelee()." );
 
 		SwatPlayer.ServerRequestMelee( SwatPlayer.GetActiveItem().GetSlot() );
+		
+		if (doorPartialopen)
+			Partialdoorpush(); //push the door
 	}
 }
 
@@ -6525,31 +6559,28 @@ exec function PlayerMeshAll(String newMesh)
 	local SwatOfficer AIOfficer;
 	local SkeletalMesh SM;
 	
+	assert(Level.NetMode == NM_Standalone); //to avoid server crash!
+	
 	SM= SkeletalMesh(DynamicLoadObject(newMesh, class'SkeletalMesh'));
 	
 	if (SM != None)
 	{
 	
-		if (Level.NetMode != NM_Standalone && Level.NetMode != NM_DedicatedServer ) //when MP , client only!
+		
+		foreach DynamicActors(class'SwatPlayer', thePlayer)
 		{
-			foreach DynamicActors(class'SwatPlayer', thePlayer)
-			{
-				thePlayer.SwitchToMesh(SM);
-				thePlayer.skins.Remove(0,5);
-			}
-		}
-		else //when SP
-		{
-			thePlayer = SwatPlayer(Pawn);
 			thePlayer.SwitchToMesh(SM);
 			thePlayer.skins.Remove(0,5);
+		}
 		
-			foreach DynamicActors(class'SwatOfficer', AIOfficer)
-			{
-				AIOfficer.SwitchToMesh(SM);
-				AIOfficer.skins.Remove(0,5);
-			}
-			
+		thePlayer = SwatPlayer(Pawn);
+		thePlayer.SwitchToMesh(SM);
+		thePlayer.skins.Remove(0,5);
+		
+		foreach DynamicActors(class'SwatOfficer', AIOfficer)
+		{
+			AIOfficer.SwitchToMesh(SM);
+			AIOfficer.skins.Remove(0,5);
 		}
 	}
 	
@@ -6560,7 +6591,7 @@ exec function PlayerMesh(String newMesh)
 	local SwatPlayer thePlayer;
 	local SkeletalMesh SM;
 
-	assert(Level.NetMode != NM_DedicatedServer); //to avoid server crash!
+	assert(Level.NetMode == NM_Standalone); //to avoid server crash!
 	
 	SM= SkeletalMesh(DynamicLoadObject(newMesh, class'SkeletalMesh'));
 	
