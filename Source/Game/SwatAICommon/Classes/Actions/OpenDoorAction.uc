@@ -211,7 +211,7 @@ state Running
 	// if it was blocked, try opening again soon
 	if (! bIsDoorBlockedBeforeOpen)
 	{
-		while ( (TargetDoor.IsClosed() && !SwatDoorTarget.IsWedged() ) || (ISwatDoor(TargetDoor).IsPartialOpen() || !TargetDoor.IsOpening() ) )
+		while ( (TargetDoor.IsClosed() && !SwatDoorTarget.IsWedged() && !TargetDoor.IsOpening()  ) )//|| (ISwatDoor(TargetDoor).IsPartialOpen() ) )
 		{
 			yield();
 		}
@@ -219,7 +219,7 @@ state Running
 	else
 	{
 		sleep(BlockedSleepTime);
-		goto('Begin');
+		goto('Begin');	
 	}
 
 	succeed();

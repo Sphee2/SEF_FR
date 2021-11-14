@@ -99,19 +99,24 @@ latent function MoveToLocation()
 					// (because of the inaccuracies of movement)
 					bCloseFromLeft = ! ISwatDoor(currentDestination).PointIsToMyLeft(m_Pawn.Location);
 
-					if (m_Pawn.logTyrion)
-						log(m_Pawn.Name $ " calling NavigateThroughDoor - bCloseFromLeft is: " $ bCloseFromLeft);
+					//if (m_Pawn.logTyrion)
+						log(m_Pawn.Name $ " calling NavigateThroughDoor - MovetoLocationAction- bCloseFromLeft is: " $ bCloseFromLeft );
 
 					NavigateThroughDoor(Door(currentDestination));
-
+					
+					// wait for the door to finish closing (if it is)
+					while (Door(currentDestination).IsClosing())	
+						yield();
+					
 					// in case it changed
 					m_pawn.controller.moveTarget = currentDestination;
 
-					if (Door(currentDestination).IsClosed() && !Door(currentDestination).IsOpening() /*&& !ISwatDoor(CurrentDestination).IsBroken()*/)
-					{
-						yield();
+                    if ((Door(currentDestination).IsClosed() && !Door(currentDestination).IsOpening()) || ISwatDoor(CurrentDestination).IsPartialOpen())  /*&& !ISwatDoor(CurrentDestination).IsBroken()*/
+                    {
+                        yield();
+						log("NavigateThroughDoor - MovetoLocationAction - yield()");
 						continue;
-					}
+                    }
 				}
 
 				assert(m_pawn.controller.moveTarget == currentDestination);

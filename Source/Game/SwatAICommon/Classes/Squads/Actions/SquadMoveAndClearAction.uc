@@ -461,19 +461,53 @@ protected function bool ShouldRunToStackupPoint()
 //		    (we want them to assume a door is closed until they try and open the door,
 //			 and when they can't open it they now "know" that the door is wedged or locked)
 latent function OpenTargetDoor(Pawn Officer)
-{
+{	
 	assert(Officer != None);
 
 	// only open the door if it's closed and not broken
 	if (CanInteractWithTargetDoor())
 	{
 		ISwatDoor(TargetDoor).RegisterInterestedInDoorOpening(self);
+		
+		if( IswatDoor(TargetDoor).isPartialOpen() ) 
+		{
+			
+			if (TargetDoor.DesiredPosition == DoorPosition_PartialOpenLeft )
+			{
+				if ( IswatDoor(TargetDoor).ActorIsToMyLeft(Officer))
+				{
+					log(" OpenTargetDoor - partial open left case");
+					IswatDoor(TargetDoor).SetPositionForMove( DoorPosition_Closed, MR_Interacted );
+				/*else
+					IswatDoor(TargetDoor).SetPositionForMove( DoorPosition_PartialOpenLeft, MR_Interacted );*/
+				
+				IswatDoor(TargetDoor).Moved();
+				
+				}
+			}
+			else if (TargetDoor.DesiredPosition == DoorPosition_PartialOpenRight)
+			{
+				if (!IswatDoor(TargetDoor).ActorIsToMyLeft(Officer))
+				{	
+			
+					log(" OpenTargetDoor - partial open right case");
+					IswatDoor(TargetDoor).SetPositionForMove( DoorPosition_Closed, MR_Interacted );
+				/*else
+					IswatDoor(TargetDoor).SetPositionForMove( DoorPosition_PartialOpenRight, MR_Interacted );*/
+				
+				IswatDoor(TargetDoor).Moved();
+				}
+			}			
+			
+			//IswatDoor(TargetDoor).SetPositionForMove( DoorPosition_Closed, MR_Interacted );
+			
+		}
 
 		// have him open the door
 		CurrentOpenDoorGoal = new class'OpenDoorGoal'(AI_Resource(Officer.MovementAI), TargetDoor);
 		assert(CurrentOpenDoorGoal != None);
 		CurrentOpenDoorGoal.AddRef();
-
+	
 		CurrentOpenDoorGoal.SetPreferSides();
 
 		CurrentOpenDoorGoal.postGoal(self);
@@ -952,7 +986,7 @@ latent function WaitToFinishOpeningDoor()
 }
 
 latent function OpenDoorForThrowingGrenade()
-{
+{	
 	// open the target door
 	OpenTargetDoor(GetFirstOfficer());
 
@@ -964,7 +998,7 @@ latent function OpenDoorForThrowingGrenade()
 	{
 		WaitToFinishOpeningDoor();
 	}
-	else if ( (TargetDoor.IsClosed() && !TargetDoor.IsOpening() ) || ( ISwatDoor(TargetDoor).isPartialOpen() ) ) /*&& !ISwatDoor(TargetDoor).IsBroken()*/
+	else if ( (TargetDoor.IsClosed() && !TargetDoor.IsOpening() ) || ISwatDoor(TargetDoor).isPartialOpen()  ) /*&& !ISwatDoor(TargetDoor).IsBroken()*/
 	{
 		pause();
 	}

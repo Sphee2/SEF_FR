@@ -378,6 +378,8 @@ private latent function PostOpenDoorGoal(Door Target)
 		CurrentOpenDoorGoal = None;
 	}
 
+	log(m_Pawn.Name $ " attempting to navigate through door - PostOpenDoorGoal");
+
 	// priority of the open door behavior needs to be greater than this behavior's priority
 	CurrentOpenDoorGoal = new class'OpenDoorGoal'(AI_Resource(m_pawn.movementAI), achievingGoal.priority+1, Target);
 	assert(CurrentOpenDoorGoal != None);
@@ -480,6 +482,8 @@ protected latent function NavigateThroughDoor(Door Target)
 
 	SwatDoorTarget = ISwatDoor(Target);
 	assert(SwatDoorTarget != None);
+	
+	assert(CurrentOpenDoorGoal == None); //we are already trying to opening a door....
 
 	PendingDoorInteractor = SwatDoorTarget.GetPendingInteractor();
 
@@ -506,13 +510,14 @@ protected latent function NavigateThroughDoor(Door Target)
 				IswatDoor(Target).SetPositionForMove( DoorPosition_PartialOpenRight, MR_Interacted );
 			else
 				IswatDoor(Target).SetPositionForMove( DoorPosition_PartialOpenLeft, MR_Interacted );
-		
+			
 			//IswatDoor(Target).SetPositionForMove( DoorPosition_Closed, MR_Interacted );
 		
 			IswatDoor(Target).Moved();
 			
-			
+			sleep(0.5);
 		}
+		
 		
 		PostOpenDoorGoal(Target);
 		

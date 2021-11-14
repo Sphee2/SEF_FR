@@ -48,6 +48,8 @@ function cleanup()
 
 latent function RotateTowardActor(Actor Target)
 {
+	assert(Target != None);
+	
     ISwatAI(m_Pawn).AimAtActor(Target);
 	FinishRotation();
 }
