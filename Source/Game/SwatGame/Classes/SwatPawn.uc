@@ -1170,7 +1170,7 @@ simulated function SetLowReady(bool bEnable, optional name Reason)
         ChangeAnimation();
     }
 	
-	log ("LR " $ bIsLowReady $ " ." );
+	//log ("LR " $ bIsLowReady $ " ." );
 }
 
 ///////////////////////////////////////

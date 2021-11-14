@@ -23,7 +23,7 @@ ADDED:
 - new headgear ( boonie hat , ballistic goggles )
 
 FIXED:
-- Fixed many fps loss when low ready in MP
+- Stuttering in MP : reverted speed by weight adjustment to vanilla. Player speed is depend now on armor used. (MP only!)
 - Suspects can remove wedges only within 35 mts from players.
 
 #### V0.65 ####
