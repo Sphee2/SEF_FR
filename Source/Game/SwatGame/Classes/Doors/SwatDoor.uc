@@ -2552,7 +2552,9 @@ simulated function SetPendingInteractor(Pawn Interactor)
 // only for doors opening the opposite of the Other
 simulated function bool IsBlockedFor(Pawn Other)
 {
-			
+	if (isPartialOpen()) //no block whatsoever
+		return false;	
+	
 	if (ActorIsToMyLeft(Other))
 	{
 		return PositionIsBlocked(DoorPosition_OpenRight);
