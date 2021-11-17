@@ -174,13 +174,17 @@ function bool CheckWeightBulkValidity()
 	Weight = MyCurrentLoadOut.GetTotalWeight();
 	Bulk = MyCurrentLoadOut.GetTotalBulk();
 
+	log("MP Panel weight:" $ Weight $ " bulk " $ bulk $ " ");
+
 	if(Weight > MyCurrentLoadOut.GetMaximumWeight())
 	{
+		log("Check weight false " $ MyCurrentLoadOut.GetMaximumWeight() $ " ");
 	    TooMuchWeightModal();
 	    return false;
 	}
 	else if(Bulk > MyCurrentLoadOut.GetMaximumBulk())
 	{
+		log("Check bulk false " $ MyCurrentLoadOut.GetMaximumbulk() $ " ");
 	    TooMuchBulkModal();
 	    return false;
 	}

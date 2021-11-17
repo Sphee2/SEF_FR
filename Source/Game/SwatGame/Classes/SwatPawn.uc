@@ -1189,7 +1189,7 @@ function ServerSetLowReadyStatus( bool bEnable, name Reason )
     if ( !IsControlledByLocalHuman() )
         SetLowReady( bEnable, Reason );
 	
-	log ("LR " $ bIsLowReady $ " ." );
+	//log ("LR " $ bIsLowReady $ " ." );
 }
 
 
