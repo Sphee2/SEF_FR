@@ -14,17 +14,22 @@ https://discord.gg/Vu4r7sv7uF
 #### V0.66 ####
 
 ADDED:
-- Lean/Walk System , ability to lean and walk.... finally an hystoric moment for Swat4 modding! 
+- Lean/Walk System , ability to lean and walk.... finally an hystoric moment for Swat4 modding!  
+    New and old lean system are working together for a complete... lean experience! 
+    	Q and E - new lean/walk system 
+	   CTRL + Q and CTRL + E - old lean 
 - Partial Open Door System , holding CTRL and Mouse Wheel Up/Down wil swing the door partially, making possible to shoot or throw a grenade.
+- NEW TAC-AID: Maglite Torch! Using the light makes evidence glowing to allow player a faster search of them. Even AI can use this feature when got ordered to secure evidence!
 - Dynamic shell textures on Breaching SG an Benelli M4 depending on shell type.
 - Fleeing suspects are considered threat if running with a gun within 15 mts from a player 
-- Maglite Torch , using the light makes evidence glowing to allow player a faster search of them. Even AI can use this feature when got ordered to secure evidence!
-- new Body Armors (taken from vanilla) , Level II armor and Kevlar (no sleeves).
-- new headgear ( boonie hat , ballistic goggles )
+
+- new body armors (from vanilla) , Level II armor and Kevlar (no sleeves). 
+- new headgear ( boonie hat , ballistic glasses )
 
 FIXED:
-- Stuttering in MP : reverted speed by weight adjustment to vanilla. Player speed is depend now on armor used. (MP only!)
+- Stuttering and weight bugs in MP : removed old SEF system in change of a new simplified system with better net performances.
 - Suspects can remove wedges only within 35 mts from players.
+- Trapped doors are signaled by AI only there are traps in the map.
 
 #### V0.65 ####
 

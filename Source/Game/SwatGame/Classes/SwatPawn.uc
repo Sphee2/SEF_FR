@@ -1744,8 +1744,7 @@ simulated function UpdateNightvision()
 	}
 }
 
-/*
-simulated function UpdateNightvisionUP()
+function UpdateNightvisionUP()
 {
 	local NVGogglesBase CurrentVision;
 
@@ -1761,7 +1760,7 @@ simulated function UpdateNightvisionUP()
 }
 
 
-simulated function UpdateNightvisionDown()
+function UpdateNightvisionDown()
 {
 	local NVGogglesBase CurrentVision;
 
@@ -1775,7 +1774,6 @@ simulated function UpdateNightvisionDown()
 		}
 	}
 }
-*/
 
 simulated function UpdateFlashlight()
 {
