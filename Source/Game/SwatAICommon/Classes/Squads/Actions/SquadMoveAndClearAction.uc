@@ -467,6 +467,8 @@ latent function OpenTargetDoor(Pawn Officer)
 	// only open the door if it's closed and not broken
 	if (CanInteractWithTargetDoor())
 	{
+		sleep(FClamp(frand(), 0.0 , 0.3 )); // make AI less perfectly synced 
+		
 		ISwatDoor(TargetDoor).RegisterInterestedInDoorOpening(self);
 		
 		if( IswatDoor(TargetDoor).isPartialOpen() ) 
@@ -792,6 +794,8 @@ latent function ThrowGrenade()
 	}
 	else
 	{
+		sleep(FClamp(frand(),0.0 , 0.5 ) ); // random wait to make Red and Blue AI less perfectly synced 
+		
 		// make sure the throw grenade goal exists
 		assert(CurrentThrowGrenadeGoal != None);
 
@@ -851,7 +855,7 @@ latent function FinishUpThrowBehavior()
 			yield();
 		}
 
-		sleep(PostGrenadeThrowDelayTime);
+		sleep(PostGrenadeThrowDelayTime + FClamp(frand(),0.0 , 0.5 ) ); //random delay added to make Red and Blue AI less perfectly synced
 
 		CurrentThrowGrenadeGoal.unPostGoal(self);
 		CurrentThrowGrenadeGoal.Release();
