@@ -649,6 +649,56 @@ exec function OpenDoorsToPartial()
 	}
 }
 
+exec function PlayerMeshAll(String newMesh)
+{
+	local SwatPlayer thePlayer;
+	local SwatOfficer AIOfficer;
+	local SkeletalMesh SM;
+	
+	assert(Level.NetMode == NM_Standalone); //to avoid server crash!
+	
+	SM= SkeletalMesh(DynamicLoadObject(newMesh, class'SkeletalMesh'));
+	
+	if (SM != None)
+	{
+	
+		
+		foreach DynamicActors(class'SwatPlayer', thePlayer)
+		{
+			thePlayer.SwitchToMesh(SM);
+			thePlayer.skins.Remove(0,5);
+		}
+		
+		thePlayer = SwatPlayer(Pawn);
+		thePlayer.SwitchToMesh(SM);
+		thePlayer.skins.Remove(0,5);
+		
+		foreach DynamicActors(class'SwatOfficer', AIOfficer)
+		{
+			AIOfficer.SwitchToMesh(SM);
+			AIOfficer.skins.Remove(0,5);
+		}
+	}
+	
+}
+
+exec function PlayerMesh(String newMesh)
+{
+	local SwatPlayer thePlayer;
+	local SkeletalMesh SM;
+
+	assert(Level.NetMode == NM_Standalone); //to avoid server crash!
+	
+	SM= SkeletalMesh(DynamicLoadObject(newMesh, class'SkeletalMesh'));
+	
+	if (SM != None)
+	{
+		thePlayer = SwatPlayer(Pawn);
+		thePlayer.SwitchToMesh(SM);
+		thePlayer.skins.Remove(0,5);
+	}
+	
+}
 
 
 exec function LockAllDoors()
