@@ -6564,6 +6564,9 @@ exec function LeanLeftN(bool bPressed)
 	
 		if ( bHoldCommand == 1 )
 		{
+			if (SwatPlayer(Pawn).LWS == Lean_Right)
+				return;
+			
 			bLeanLeft=1;
 			if (SwatPlayer(Pawn).LWS == Lean_Left)
 				SwatPlayer(Pawn).LeanWalk("left");
@@ -6592,7 +6595,7 @@ exec function LeanRightN(bool bPressed)
 {
 	if (bPressed)
 	{
-		if (bLeanLeft == 1 )
+		if (bLeanLeft == 1)
 		{
 			bLeanLeft = 0;
 			return;
@@ -6600,6 +6603,9 @@ exec function LeanRightN(bool bPressed)
 
 		if ( bHoldCommand == 1 )
 		{
+			if (SwatPlayer(Pawn).LWS == Lean_Left)
+				return;
+			
 			bLeanRight=1;
 			if (SwatPlayer(Pawn).LWS == Lean_Right)
 				SwatPlayer(Pawn).LeanWalk("right");
