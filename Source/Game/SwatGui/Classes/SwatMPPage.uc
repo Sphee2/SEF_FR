@@ -449,7 +449,6 @@ function CommonOnClick(GUIComponent Sender)
                 bPressedReady = true;
                 MyStartButton.SetCaption(UnreadyString);
               }
-			  MyMPLoadoutPanel.DeActivate();
             } else {
               SwatGuiController(Controller).SetPlayerNotReady();
               bPressedReady = false;
