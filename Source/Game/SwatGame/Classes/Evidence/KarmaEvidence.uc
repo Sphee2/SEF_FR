@@ -44,6 +44,7 @@ simulated function OnUsed(Pawn SecurerPawn)
 simulated function PostUsed()
 {
     Secured = true;
+	SetPhysics(PHYS_None);
 }
 
 simulated function String UniqueID()

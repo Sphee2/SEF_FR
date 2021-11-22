@@ -68,6 +68,7 @@ simulated function PostUsed()
 {
     Secured = true;
 	Hide();
+	SetPhysics(PHYS_None); //we dont need to have physics after hiding
 }
 
 simulated function String UniqueID()
