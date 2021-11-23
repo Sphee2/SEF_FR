@@ -2580,7 +2580,13 @@ simulated private function InternalEquipSlot(coerce EquipmentSlot Slot)
 
 simulated function bool CheckDoorLock(SwatDoor Door)
 {
-  return Door.TryDoorLock(self);
+	if ( CanIssueCommand() )
+	{
+		StartIssueCommandTimer();
+		return Door.TryDoorLock(self);
+	}
+	
+	return true;
 }
 
 simulated function InternalMelee(optional bool UseMeleeOnly, optional bool UseCheckLockOnly, optional bool UseGiveItemOnly)
