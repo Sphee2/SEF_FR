@@ -817,7 +817,7 @@ Description=The opti-wand is a sophisticated observation device which allows off
 FriendlyName=Optiwand
 
 [MagliteTorch]
-Description=Maglite Torch
+Description=Maglite Torch allows you to highlight evidences by using the flashlight.
 FriendlyName=Maglite Torch
 ShortName=Maglite
 GivenName=Maglite

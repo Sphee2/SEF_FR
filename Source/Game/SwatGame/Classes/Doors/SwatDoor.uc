@@ -806,6 +806,8 @@ simulated function OnUnlocked()
 
 simulated function bool TryDoorLock(SwatGamePlayerController Caller)
 {
+local Door LevelDoor;	
+	
 	if(IsClosing() || IsOpening() || IsEmptyDoorWay() || IsOpen())
 	{
 		return false;
@@ -838,8 +840,21 @@ simulated function bool TryDoorLock(SwatGamePlayerController Caller)
 		LockedKnowledge[2] = 0;
 	}
 	
+	
+	
 	if ( DoorCheckLockTrapped )
-	   Caller.DoorMightBeTrapped();
+	{
+		foreach level.AllActors( class'Door' , LevelDoor ) //make sure to catch if there are booby trapped doors in level....
+		{
+			if ( LevelDoor.IsBoobyTrapped() )
+			{
+				Caller.DoorMightBeTrapped();
+				return true;
+			}
+			
+		}
+	   
+	}
 	
 	return true;
 }
