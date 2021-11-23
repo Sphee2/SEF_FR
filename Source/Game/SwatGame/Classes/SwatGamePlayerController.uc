@@ -1259,7 +1259,7 @@ local SwatOfficer SO;
 				{
 					foreach DynamicActors(class'SwatPlayer', SP) 
 					{
-						if( SP.GetActiveItem().isa('MagliteTorch') && SP.GetDesiredFlashlightState())
+						if( SP.GetActiveItem().isa('MagliteTorch') && SP.GetDesiredFlashlightState() && SwatPlayer(Pawn) != SP )
 							return; //do nothing
 					}
 				}
