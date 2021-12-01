@@ -31,7 +31,7 @@ simulated function PostBeginPlay()
 	Light = Spawn(class'DynamicLightEffect');
 	Light.RemoteRole = ROLE_None;
 	Light.bImportantDynamicLight = true;
-	Light.LightBrightness = 64;
+	Light.LightBrightness = 0; //64
 	Light.LightHue = 0;
 	Light.LightSaturation = 255;
 }
@@ -144,7 +144,7 @@ simulated event UpdateLight()
 	P = SwatPawn(Owner);
 
 	if (Active && P.IsControlledByLocalHuman())
-		Light.LightRadius = 32;
+		Light.LightRadius = 255;
 	else
 		Light.LightRadius = 0;
 }
@@ -158,9 +158,9 @@ function NVGLightDown()
 
 	if (Active && P.IsControlledByLocalHuman())
 	{
-		if (Light.LightRadius > 0)
+		if (Light.LightBrightness > 0)
 		{
-			Light.LightRadius = Light.LightRadius-16;
+			Light.LightBrightness = Light.LightBrightness - 16;
 		}
 		
 	}
@@ -175,9 +175,9 @@ function NVGLightUp()
 
 	if (Active && P.IsControlledByLocalHuman())
 	{
-		if (Light.LightRadius< 64)
+		if (Light.LightBrightness< 64)
 		{
-			Light.LightRadius = Light.LightRadius +16;
+			Light.LightBrightness = Light.LightBrightness + 16;
 		}
 	}
 }
