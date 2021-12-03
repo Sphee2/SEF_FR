@@ -444,12 +444,7 @@ simulated function RosterOpenLeft()
 	bWasInitiallyOpen = true;
 	InitialPosition = DoorPosition_OpenLeft;
 	CurrentPosition = DoorPosition_Closed;    // set the door position to closed in case it was left open when a designer was viewing paths to the left or the right
-    
-	if ( frand() > 0.5 )
-		SetPositionForMove( GetInitialPosition(), MR_Interacted );
-	else
-		SetPositionForMove( DoorPosition_PartialOpenLeft, MR_Interacted );	
-	
+    SetPositionForMove( GetInitialPosition(), MR_Interacted );
     Moved(true); //instantly to initial position
 }
 
@@ -461,12 +456,7 @@ simulated function RosterOpenRight()
 	bWasInitiallyOpen = true;
 	InitialPosition = DoorPosition_OpenRight;
 	CurrentPosition = DoorPosition_Closed;    // set the door position to closed in case it was left open when a designer was viewing paths to the left or the right
-
-	if ( frand() > 0.5 )
-		SetPositionForMove( GetInitialPosition(), MR_Interacted );
-	else
-		SetPositionForMove( DoorPosition_PartialOpenRight, MR_Interacted );	
-
+    SetPositionForMove( GetInitialPosition(), MR_Interacted );
     Moved(true); //instantly to initial position
 }
 
