@@ -74,7 +74,8 @@ event PostBeginPlay()
 
 simulated function bool CanBeUsedNow()
 {
-    return true;
+   // return true; 
+   return false; //no more fancy pickups... they are dumb! 
 }
 
 simulated function OnUsed(Pawn Other)
