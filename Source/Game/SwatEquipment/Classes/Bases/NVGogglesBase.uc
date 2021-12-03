@@ -175,7 +175,7 @@ function NVGLightUp()
 
 	if (Active && P.IsControlledByLocalHuman())
 	{
-		if (Light.LightBrightness< 64)
+		if (Light.LightBrightness< 128)
 		{
 			Light.LightBrightness = Light.LightBrightness + 16;
 		}

@@ -8,3 +8,7 @@ simulated function Activate();
 simulated function Deactivate();
 simulated function ToggleActive();
 simulated function ApplyEnhancement();
+
+//NVG functions
+function NVGLightUp();
+function NVGLightDown();

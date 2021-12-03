@@ -1746,10 +1746,9 @@ simulated function UpdateNightvision()
 
 function UpdateNightvisionUP()
 {
-	local NVGogglesBase CurrentVision;
-
+local IVisionEnhancement CurrentVision;
 	// If we are wearing nightvision...
-	CurrentVision = NVGogglesBase(GetSkeletalRegionProtection(REGION_Head));
+	CurrentVision = IVisionEnhancement(GetSkeletalRegionProtection(REGION_Head));
 	if (CurrentVision != None)
 	{
 		if (NightvisionShouldBeOn)
@@ -1762,10 +1761,9 @@ function UpdateNightvisionUP()
 
 function UpdateNightvisionDown()
 {
-	local NVGogglesBase CurrentVision;
-
+local IVisionEnhancement CurrentVision;
 	// If we are wearing nightvision...
-	CurrentVision = NVGogglesBase(GetSkeletalRegionProtection(REGION_Head));
+	CurrentVision = IVisionEnhancement(GetSkeletalRegionProtection(REGION_Head));
 	if (CurrentVision != None)
 	{
 		if (NightvisionShouldBeOn)

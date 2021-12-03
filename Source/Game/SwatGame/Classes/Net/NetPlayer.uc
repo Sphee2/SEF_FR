@@ -1110,7 +1110,7 @@ simulated event OnAmmoInfoChanged()
 simulated function Material GetViewportOverlay()
 {
     //return ViewportOverlayMaterial;
-	return Material'HUD.officerviewport';
+	return Material(DynamicLoadObject("HUD.officerviewport",class'Material'));
 }
 
 // IControllableThroughViewport interface
