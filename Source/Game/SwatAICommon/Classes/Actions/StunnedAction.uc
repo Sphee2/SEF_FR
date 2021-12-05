@@ -254,6 +254,13 @@ private function bool CanGetOutOfRoomSafely()
 	local int i;
 	local Hive HiveMind;
 
+	if(m_Pawn.GetRoomNameSafe() == 'Unknown')
+    {
+        // This can cause errors!
+        return false;
+    }
+     
+
 	HiveMind = SwatAIRepository(m_Pawn.Level.AIRepo).GetHive();
 
 	SwatAIRepo = SwatAIRepository(m_Pawn.Level.AIRepo);
@@ -429,8 +436,10 @@ private function FleePoint FindFleePointDestination()
 
     SwatAIRepo = SwatAIRepository(m_Pawn.Level.AIRepo);
 
+    log("Flee point room name: " $ m_Pawn.GetRoomNameSafe() $ " ");
+
     // we exclude the flee points that are in the room we're in
-    ExcludesFleePoints = SwatAIRepo.GetRoomNavigationPointsOfType(m_Pawn.GetRoomName(), 'FleePoint');
+    ExcludesFleePoints = SwatAIRepo.GetRoomNavigationPointsOfType(m_Pawn.GetRoomNameSafe(), 'FleePoint');
     AllFleePoints = SwatAIRepo.FindAllOfNavigationPointClass(class'FleePoint', ExcludesFleePoints);
 
 	CurrentEnemy = ISwatEnemy(m_Pawn).GetEnemyCommanderAction().GetCurrentEnemy();

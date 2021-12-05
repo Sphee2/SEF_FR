@@ -103,9 +103,11 @@ private function FlushPoint FindFlushPointDestination()
 	local array<FlushPoint> PossibleDestinations;
 
     SwatAIRepo = SwatAIRepository(m_Pawn.Level.AIRepo);
+    
+	log("Flush point room name: " $ m_Pawn.GetRoomNameSafe() $ " ");
 
     // we exclude the flee points that are in the room we're in
-    ExcludesFlushPoints = SwatAIRepo.GetRoomNavigationPointsOfType(m_Pawn.GetRoomName(), 'FlushPoint');
+    ExcludesFlushPoints = SwatAIRepo.GetRoomNavigationPointsOfType(m_Pawn.GetRoomNameSafe(), 'FlushPoint');
     AllFlushPoints = SwatAIRepo.FindAllOfNavigationPointClass(class'FlushPoint', ExcludesFlushPoints);
 
 	CurrentEnemy = ISwatEnemy(m_Pawn).GetEnemyCommanderAction().GetCurrentEnemy();
