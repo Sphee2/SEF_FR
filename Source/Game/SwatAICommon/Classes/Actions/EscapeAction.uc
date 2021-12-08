@@ -96,8 +96,6 @@ private function EscapePoint FindEscapePointDestination()
 	local array<EscapePoint> PossibleDestinations;
     
     SwatAIRepo = SwatAIRepository(m_Pawn.Level.AIRepo);
-	
-	log("Escape point room name: " $ m_Pawn.GetRoomNameSafe() $ " ");
 
     // we exclude the escape points that are in the room we're in
     ExcludesEscapePoints = SwatAIRepo.GetRoomNavigationPointsOfType(m_Pawn.GetRoomNameSafe(), 'EscapePoint');

@@ -94,6 +94,13 @@ private function bool CanGetOutOfRoomSafely()
 	local Door DoorInRoom;
 	local int i;
 	local Hive HiveMind;
+    
+	if(m_Pawn.GetRoomNameSafe() == 'Unknown')
+    {
+        // This can cause errors!
+        return false;
+    }
+ 
 
 	HiveMind = SwatAIRepository(m_Pawn.Level.AIRepo).GetHive();
 
