@@ -599,7 +599,7 @@ simulated function ReceiveLoadOut(OfficerLoadOut inLoadOut)
 		assertWithDescription(se != None, "Item at pocket "$GetEnum(Pocket, i)$" is None or not SimpleEquipment");
 		if ( LoadOut.HasLevelIIArmor() )
 		{
-			if ( i != Pocket.Pocket_SimpleRadioPouch &&  i != Pocket.Pocket_SimpleHolster )
+			if ( i != Pocket.Pocket_SimpleRadioPouch &&  i != Pocket.Pocket_SimpleHolster && i != Pocket.Pocket_SimpleHipPouch )
 			{
 				// Hide all simpleequipment on officers
 				se.bHidden		= true;
@@ -622,24 +622,28 @@ local float MPFace;
 	if ( inLoadOut.HasLevelIIArmor() )
 	{
 		if ( Level.NetMode == NM_Standalone ) //in SP give Lead face
-			Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshAShader",class'Material'));
+			Skins[0] = Material(DynamicLoadObject("SWATLVL2Tex.SI_ElementLeadFleshShader",class'Material'));
 		else // in MP give random face
 		{
 			MPFace=FRand();
 			
 			if ( MPFace < 0.2 )
-				Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshBShader",class'Material'));
+				Skins[0] = Material(DynamicLoadObject("SWATLVL2Tex.SI_ElementLeadFleshShader",class'Material'));
 			else if (  MPFace >= 0.2 && MPFace < 0.4  )
-				Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshCShader",class'Material'));
+				Skins[0] = Material(DynamicLoadObject("SWATLVL2Tex.SI_BlueOneFleshShader",class'Material'));
 			else if ( MPFace >= 0.4 && MPFace < 0.6 )
-				Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshDShader",class'Material'));
+				Skins[0] = Material(DynamicLoadObject("SWATLVL2Tex.SI_BlueTwoFleshShader",class'Material'));
 			else if ( MPFace >= 0.6 && MPFace < 0.8)
-				Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshEShader",class'Material'));
+				Skins[0] = Material(DynamicLoadObject("SWATLVL2Tex.SI_RedOneFleshShader",class'Material'));
 			else if ( MPFace >= 0.8 && MPFace <= 1 )
-				Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshAShader",class'Material'));
+				Skins[0] = Material(DynamicLoadObject("SWATLVLTex.SI_RedTwoFleshShader",class'Material'));
+				
 		}
 		
-		Skins[1] = Material(DynamicLoadObject("MaleCasualArmorTex.MCA_CadetClothesShader",class'Material'));
+		if( inLoadOut.GetPantsMaterial() != None)
+			Skins[1] = inLoadOut.GetPantsMaterial();
+		else
+			Skins[1] = Material(DynamicLoadObject("SWATLVL2Tex.SI_PantsJeansShader",class'Material'));
 	}
 	else if ( inLoadOut.HasInstructorArmor() )
 	{

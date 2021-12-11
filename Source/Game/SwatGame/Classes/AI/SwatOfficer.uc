@@ -239,7 +239,7 @@ public function UpdateOfficerLOD()
 		//level II body armor special - remove pockets
 		if ( LoadOut.HasLevelIIArmor() )
 		{
-			if ( i != Pocket.Pocket_SimpleRadioPouch &&  i != Pocket.Pocket_SimpleHolster )
+			if ( i != Pocket.Pocket_SimpleRadioPouch &&  i != Pocket.Pocket_SimpleHolster && i != Pocket.Pocket_SimpleHipPouch )
 			{
 				// Hide all simpleequipment on officers
 				se.bHidden		= true;
@@ -657,15 +657,15 @@ private function ReceiveLoadOut()
 	if ( LoadOut.HasLevelIIArmor() )
 	{
 		if (self.IsA('OfficerBlueOne') )
-			Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshBShader",class'Material'));
+			Skins[0] = Material(DynamicLoadObject("SWATLVL2Tex.SI_BlueOneFleshShader",class'Material'));
 		else if (self.IsA('OfficerBlueTwo') )
-			Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshCShader",class'Material'));
+			Skins[0] = Material(DynamicLoadObject("SWATLVL2Tex.SI_BlueTwoFleshShader",class'Material'));
 		else if (self.IsA('OfficerRedOne') )
-			Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshDShader",class'Material'));
+			Skins[0] = Material(DynamicLoadObject("SWATLVL2Tex.SI_RedOneFleshShader",class'Material'));
 		else if (self.IsA('OfficerRedTwo') )
-			Skins[0] = Material(DynamicLoadObject("MaleCasual3Tex.MC3_FleshEShader",class'Material'));
+			Skins[0] = Material(DynamicLoadObject("SWATLVL2Tex.SI_RedTwoFleshShader",class'Material'));
 		
-		Skins[1] = Material(DynamicLoadObject("MaleCasualArmorTex.MCA_CadetClothesShader",class'Material'));
+		Skins[1] = Material(DynamicLoadObject("SWATLVL2Tex.SI_PantsJeansShader",class'Material'));
 	}
 	else if ( LoadOut.HasInstructorArmor() )
 	{
