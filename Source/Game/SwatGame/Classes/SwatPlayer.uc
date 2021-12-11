@@ -676,6 +676,12 @@ local float MPFace;
 		Skins[2] = inLoadOut.GetNameMaterial();
 		Skins[3] = inLoadOut.GetVestMaterial();
 	}
+	
+	//different hands mesh
+    if (inLoadOut.HasInstructorArmor() || inLoadout.HasLevelIIArmor())	
+	{
+		GetHands().UseSkinMesh();
+	}
 
     //mplog( "...Skins[0]="$Skins[0] );
     //mplog( "...Skins[1]="$Skins[1] );

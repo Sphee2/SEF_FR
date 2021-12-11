@@ -58,6 +58,11 @@ simulated function PreBeginPlay()
     SetCollision(false,false,false);
 }
 
+simulated function UseSkinMesh() //change mesh here due to delay of loadout loading after beginplay
+{
+	Linkmesh(SkeletalMesh(DynamicLoadObject("FP_Hand2.1stPersonHandSkin", class'SkeletalMesh')),true);
+}
+
 simulated event PostNetBeginPlay()
 {
     Super.PostNetBeginPlay();
