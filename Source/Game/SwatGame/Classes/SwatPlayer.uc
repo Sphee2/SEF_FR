@@ -36,7 +36,7 @@ var float ThrowAnimationTweenTime;
 var config int Unused5;
 var config Range Unused6;
 
-var private Material SuspectHandsMaterial;
+var private Material SWATDefaultPants;
 var private Material VIPHandsMaterial;
 
 // NonLethal Effects
@@ -475,7 +475,7 @@ simulated function InitializeHands()
         // change it if these hands belong to a suspect.
         if ( NetPlayerTeamB(self) != None )
         {
-            Hands.SetMaterialForHands( SuspectHandsMaterial );
+            //Hands.SetMaterialForHands( SuspectHandsMaterial );
         }
         else if ( IsTheVIP() )
         {
@@ -642,7 +642,7 @@ local float MPFace;
 			else if ( MPFace >= 0.8 && MPFace <= 1 )
 				Skins[0] = Material(DynamicLoadObject("SWATLVL2Tex.SI_RedTwoFleshShader",class'Material'));
 			
-			if( inLoadOut.GetPantsMaterial() != None && inLoadOut.GetPantsMaterial() != Material'mp_OfficerTex.mpSWAT_bdu_camoShader') //get only custom skins
+			if( inLoadOut.GetPantsMaterial() != None && inLoadOut.GetPantsMaterial() !=  SwatDefaultPants ) //get only custom skins
 				Skins[1] = inLoadOut.GetPantsMaterial();
 			else
 				Skins[1] = Material(DynamicLoadObject("SWATLVL2Tex.SI_PantsJeansShader",class'Material'));
@@ -674,7 +674,7 @@ local float MPFace;
 			else if ( MPFace >= 0.8 && MPFace <= 1 )
 				Skins[0] = Material(DynamicLoadObject("SWATinstructorTex.SI_RedTwoFleshShader",class'Material'));
 			
-		if( inLoadOut.GetPantsMaterial() != None && inLoadOut.GetPantsMaterial() != Material'mp_OfficerTex.mpSWAT_bdu_camoShader') //get only custom skins
+		if( inLoadOut.GetPantsMaterial() != None && inLoadOut.GetPantsMaterial() != SwatDefaultPants) //get only custom skins
 			Skins[1] = inLoadOut.GetPantsMaterial();
 		else
 			Skins[1] = Material(DynamicLoadObject("SWATinstructorTex.SI_blackbdu_shader",class'Material'));
@@ -4567,7 +4567,7 @@ function vector GetLWSLocOffset()
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 defaultproperties
 {
-    SuspectHandsMaterial=Material'SWAT1stPersonTex.HandGang_aShader'
+    SWATDefaultPants=Material'SWATOfficerTex.Swat_BDU_blackshader'
     VIPHandsMaterial=Material'SWAT1stPersonTex.HandVIPshader'
     LeanTransitionDuration=0.3
     LeanHorizontalDistance=44.0f

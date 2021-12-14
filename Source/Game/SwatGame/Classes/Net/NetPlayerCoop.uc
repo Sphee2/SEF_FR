@@ -82,10 +82,10 @@ simulated function SetPlayerSkins( OfficerLoadOut inLoadOut )
 	if (GetLoadout().HasInstructorArmor() && ReplicatedCustomSkinClassName == "SwatGame.DefaultCustomSkin" )
 	 	ReplicatedCustomSkinClassName = "MONKIFLIP"; //great coding masterpiece
 
-	if (GetLoadout().HasHeavyArmor() && ReplicatedCustomSkinClassName == "SwatGame.DefaultCustomSkin" )
+	/*if (GetLoadout().HasHeavyArmor() && ReplicatedCustomSkinClassName == "SwatGame.DefaultCustomSkin" )
 		Super.SetPlayerSkins( inLoadOut );
 	
-	if  ( ReplicatedCustomSkinClassName != "SwatGame.DefaultCustomSkin" ) 
+	if  ( ReplicatedCustomSkinClassName != "SwatGame.DefaultCustomSkin" ) */
 			Super.SetPlayerSkins( inLoadOut );
 }
 
