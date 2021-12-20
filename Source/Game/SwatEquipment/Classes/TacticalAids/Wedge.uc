@@ -58,7 +58,7 @@ function UpdateHUD()
 
 simulated function float GetQualifyDuration()
 {
-    return IAmUsedByWedge(Other).GetQualifyTimeForWedge() * GetQualifyModifier();
+    return IAmUsedByWedge(Other).GetQualifyTimeForWedge(); //* GetQualifyModifier();
 }
 
 // IAmUsedOnOther implementation

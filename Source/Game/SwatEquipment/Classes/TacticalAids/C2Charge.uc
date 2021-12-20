@@ -70,7 +70,7 @@ simulated function EquipmentSlot GetSlotForReequip()
 
 simulated function float GetQualifyDuration()
 {
-    return IAmUsedByC2Charge(Other).GetQualifyTimeForC2Charge() * GetQualifyModifier();
+    return IAmUsedByC2Charge(Other).GetQualifyTimeForC2Charge(); //* GetQualifyModifier();
 }
 
 // IAmUsedOnOther implementation
