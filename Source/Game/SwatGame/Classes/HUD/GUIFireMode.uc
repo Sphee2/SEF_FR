@@ -11,7 +11,18 @@ var() private config localized string FireModeAutoText;
 function SelectFireMode( FireMode mode )
 {
     SetCaption(FireModeText(mode));
+	if ( SwatGUIControllerBase(Controller).isMinimalHud() )
+		SetTimer( 1.0 , true );
+	else 
+		Show();
 }
+
+event Timer()
+{
+	Hide();
+	KillTimer();
+}
+
 
 private function string FireModeText( FireMode mode )
 {
