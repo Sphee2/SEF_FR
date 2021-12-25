@@ -69,7 +69,7 @@ var() int NumTicks;
 function OnConstruct(GUIController MyController)
 {
 	local int i;
-
+	
     Super.OnConstruct(MyController);
 
     Feedback = GUIFeedback(AddComponent("SwatGame.GUIFeedback", "HUDPage_feedback"));
@@ -206,6 +206,25 @@ function OnTick( float Delta )
 			NumTicks = -1;
 		}
 	}
+	
+  //MINIMAL HUD	
+  if(SwatGUIControllerBase(Controller).isMinimalHud())
+  {
+	if (!Feedback.MustBeVisible())
+		Feedback.Hide();
+	else 
+	   Feedback.Show();
+   
+	DamageIndicator.Hide();
+	WeightIndicator.Hide();
+  }
+  else
+  {
+	Feedback.Show();
+	DamageIndicator.Show(); 
+	Updateweight();
+  }
+	
 }
 
 function OnGameOver()
@@ -412,7 +431,7 @@ function OpenGenericComponents()
     UpdateFireMode();
 
     assert(WeightIndicator != None);
-    UpdateWeight();
+	UpdateWeight();
 
     assert(ArmorProtectionIndicator != None);
     ArmorProtectionIndicator.Show();
@@ -526,12 +545,13 @@ simulated function UpdateWeight()
   local float Weight;
   local GUIWeight WeightLabel;
 
+
   if(PlayerOwner().Pawn != None) {
     Weight = SwatPlayer(PlayerOwner().Pawn).GetTotalWeight();
   }
 
   WeightLabel = GUIWeight(WeightIndicator);
-
+  
   WeightLabel.Show();
   WeightLabel.SetWeightText(Weight);
 }
@@ -589,7 +609,7 @@ simulated function UpdateFireMode()
 
         //log("[FIRE MODE] ActiveItem is not a FiredWeapon.");
     }
-    else if(SwatGrenade != None || WedgeItem != None || HandheldEquipment.IsA('C2Charge') || HandheldEquipment.IsA('Detonator'))
+    else if(SwatGrenade != None || WedgeItem != None || HandheldEquipment.IsA('C2Charge') || HandheldEquipment.IsA('Detonator') )
     {
         FireMode.Hide();
         AmmoStatus.Show();

@@ -123,6 +123,15 @@ private function SetRoundBasedWeaponStatus( RoundBasedAmmo Ammo )
     RoundsRemainingBar.Show();
 
     HideRoundsRemainingBars();
+	
+	//MINMAL HUD
+	if ( SwatGUIControllerBase(Controller).isMinimalHud() )
+	{
+		MagazineSizeLabel.Hide();
+		LoadedAmmoLabel.Hide();
+		ExtraAmmoLabel.Hide();
+	}
+	
 }
 
 private function SetClipBasedWeaponStatus( ClipBasedAmmo Ammo )
@@ -169,6 +178,15 @@ private function SetClipBasedWeaponStatus( ClipBasedAmmo Ammo )
         else
             ClipRoundsRemainingBar[i].Hide();
     }
+
+	//MINMAL HUD
+	if ( SwatGUIControllerBase(Controller).isMinimalHud() )
+	{
+		MagazineSizeLabel.Hide();
+		LoadedAmmoLabel.Hide();
+		ExtraAmmoLabel.Hide();
+	}
+	
 }
 
 defaultproperties

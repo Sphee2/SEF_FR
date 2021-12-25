@@ -53,6 +53,19 @@ function UpdateCaption()
     }
 }
 
+function bool MustBeVisible()
+{
+	//we keep some feedbacks for gameplay reasons
+	
+	if( Left(UseLabel.Caption,11) == "Use: Report")
+		return true;
+	
+	if( Left(UseLabel.Caption,9) == "Use: Exit")
+		return true;
+	
+	return false;
+}
+
 defaultproperties
 {
     bPersistent=True

@@ -181,6 +181,8 @@ enum eExtraInts
     ExtraInt_InertiaDisabled,       // Boolean
 	ExtraInt_ZoomDisabled,			// Boolean
     ExtraInt_ImperialMeasurements,  // Boolean
+	ExtraInt_ManualLowReady,	    // Boolean
+	ExtraInt_MinimalHud  			// Boolean
 };
 
 var() config            array<string>    ExtraStrOptions "Extra (usermod) options for saving, as strings";
