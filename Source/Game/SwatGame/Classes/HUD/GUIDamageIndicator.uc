@@ -94,6 +94,18 @@ function ClearDamage()
     KillTimer();
 }
 
+function bool IsDamaged()
+{
+	local int i;
+    
+    for( i = 0; i < ESkeletalRegion.REGION_Body_Max; i++ )
+    {
+        if (HitRegions[i].bDamaged)
+          return true;
+    }
+    return false;
+}
+
 //handle hits (TakeDamage)
 function SkeletalRegionHit(ESkeletalRegion RegionHit, int damage)
 {

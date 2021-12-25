@@ -215,7 +215,11 @@ function OnTick( float Delta )
 	else 
 	   Feedback.Show();
    
-	DamageIndicator.Hide();
+	if ( !DamageIndicator.IsDamaged() ) 
+		DamageIndicator.Hide();
+	else
+		DamageIndicator.Show();
+	
 	WeightIndicator.Hide();
   }
   else
