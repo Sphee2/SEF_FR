@@ -41,7 +41,7 @@ function InitComponent(GUIComponent Owner)
     for( i = 0; i < ESkeletalRegion.REGION_Body_Max; i++ )
     {
         newRegion.RegionImage = GUIImage(AddComponent("GUI.GUIImage", self.Name$"_"$GetEnum(ESkeletalRegion,i), true));
-        newRegion.RegionImage.ImageStyle = ISTY_Scaled;
+        //newRegion.RegionImage.ImageStyle = ISTY_Scaled;
         newRegion.RegionImage.ImageRenderStyle = MSTY_Normal;
         newRegion.RegionImage.WinWidth = 1.0;
         newRegion.RegionImage.WinHeight = 1.0;

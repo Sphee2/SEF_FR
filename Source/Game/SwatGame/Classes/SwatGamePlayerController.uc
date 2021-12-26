@@ -6955,6 +6955,8 @@ native simulated function bool IsNetRelevant( Pawn PawnInQuestion );
 simulated event RenderOverlays( canvas Canvas )
 {
 	local HandheldEquipment ActiveItem;
+	local SwatGuiConfig GC;
+	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 
 	if (ZoomAlpha > 0 && ZoomBlurFader != None)
 	{
@@ -6962,7 +6964,8 @@ simulated event RenderOverlays( canvas Canvas )
 		if ( ActiveItem != None &&                  // don't draw if nothing in hand
 		     ActiveItem.ZoomedFOV != BaseFOV &&     // don't draw overlay if desired zoom is same as default FOV
              ActiveItem.ZoomedFOV != 0 &&           // don't draw overlay if zoom is unset (i.e., is 0)
-			 ActiveItem.ZoomBlurOverlay != None)    // don't draw if no overlay
+			 ActiveItem.ZoomBlurOverlay != None &&    // don't draw if no overlay
+			 ( GC.ExtraIntOptions[4] == 0 || ActiveItem.ShouldIgnoreDisabledZoom() )  ) //GC.ExtraIntOptions[4] - Disable zoom ADS or we ignore the zoom settings
 		{
 			//log("ZoomAlpha = "$ZoomAlpha$" ZoomAlpha*255="$ZoomAlpha * 255$" ActiveItem.ZoomedFOV = "$ActiveItem.ZoomedFOV$" BaseFOV = "$BaseFOV);
 			//log("ZoomBlurFader = "$ZoomBlurFader);
