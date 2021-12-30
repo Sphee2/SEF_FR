@@ -40,7 +40,7 @@ var private Material SWATDefaultPants;
 var private Material VIPHandsMaterial;
 
 // NonLethal Effects
-var config bool Unused7;
+var config bool HitEvent;
 var private Timer StungTimer;
 var private Timer FlashbangedTimer;
 var private Timer GassedTimer;
@@ -3871,7 +3871,11 @@ function Rotator GetStungRotationOffset()
 
         //scale the StingDuration over the range [0,1]
         Alpha = (Now - LastStungTime) / LastStungDuration;
-        Alpha = FClamp(Alpha, 0.0, 1.0);
+
+		Alpha = FClamp(Alpha, 0.0, 1.0);
+		
+		if (Alpha >= 1.0) // not really stunned by C2... hit punch implementation!
+			HitEvent=false;
 
         //calculate the ordinate for evaluation of the noise function
         Ordinate = Alpha * StingEffectFrequency;
@@ -3882,10 +3886,37 @@ function Rotator GetStungRotationOffset()
         //apply noise to the roll and yaw
         Result.Roll = RollAndYawAbcissa * ScaleStingEffectAmplitude(StingViewEffectAmplitude.Roll, Alpha);
         Result.Yaw = RollAndYawAbcissa * ScaleStingEffectAmplitude(StingViewEffectAmplitude.Yaw, Alpha);
-    }
+	}
+	else if ( HitEvent ) // not really stunned by C2... hit punch implementation!
+	{
+		 Now = Level.TimeSeconds;
 
-    return Result;
+        //scale the StingDuration over the range [0,1]
+        Alpha = (Now - LastStungTime) / LastStungDuration;
+		
+		
+		Alpha = FClamp(Alpha, 0.0, 1.0);
+		
+		if (Alpha >= 1.0) // not really stunned by C2... hit punch implementation!
+			HitEvent=false;
+			
+		//calculate the ordinate for evaluation of the noise function
+		Ordinate = Alpha * 3;
+        //apply noise to the pitch
+        Result.Pitch = ScaleStingEffectAmplitude(4500, Alpha) * PerlinNoiseAxisA.Noise1(Ordinate);
+        //calculate the value of the perlin noise function at the RollAndYawOrdinate
+        RollAndYawAbcissa = PerlinNoiseAxisB.Noise1(Ordinate);
+        //apply noise to the roll and yaw
+        Result.Roll = RollAndYawAbcissa * ScaleStingEffectAmplitude(4500, Alpha);
+        Result.Yaw = RollAndYawAbcissa * ScaleStingEffectAmplitude(4500, Alpha);
+		log("HIT STING: " $ Result.Roll $ " " $ Result.Yaw $ " ." );
+	}
+
+	return Result;	
 }
+
+
+
 
 simulated event ApplyStungRotationOffset(out Vector Acceleration)
 {
@@ -3895,9 +3926,15 @@ simulated event ApplyStungRotationOffset(out Vector Acceleration)
     {
         StungRotation = GetStungRotationOffset();
         StungRotation.Pitch = 0;
-
-        Acceleration = Acceleration << (StungRotation * StingInputEffectAmplitude);
+		Acceleration = Acceleration << (StungRotation * StingInputEffectAmplitude);
     }
+	else if ( HitEvent )
+	{
+			StungRotation = GetStungRotationOffset();
+			StungRotation.Pitch = 0;
+			// not really stunned by C2... hit punch implementation!
+			Acceleration = Acceleration << (StungRotation * 3);
+	}
 }
 
 function vector GetTasedViewLocationOffset(Rotator CameraRotation)
@@ -3988,6 +4025,7 @@ simulated function bool IsLowerBodyInjured()
 ///////////////////////////////////////////////////////////////////////////////
 simulated function OnSkeletalRegionHit(ESkeletalRegion RegionHit, vector HitLocation, vector HitNormal, int Damage, class<DamageType> DamageType, Actor Instigator)
 {
+
     local SkeletalRegionInformation RegionInfo;
 
     if ( Level.NetMode != NM_Client )
@@ -4009,7 +4047,7 @@ simulated function OnSkeletalRegionHit(ESkeletalRegion RegionHit, vector HitLoca
             {
                 ArmInjuryFlags = ArmInjuryFlags | 2;
             }
-
+			
             CurrentLimp += class'SwatPlayerConfig'.static.GetStandardLimpPenalty() * RandRange(RegionInfo.LimpModifier.Min, RegionInfo.LimpModifier.Max);
 
             // MCJ: On clients, this will get called in
@@ -4017,8 +4055,82 @@ simulated function OnSkeletalRegionHit(ESkeletalRegion RegionHit, vector HitLoca
             // and on servers, so we need to call it here explicitly.
             ChangeAnimation();
         }
+		//hit punch effect
+		HitEvent=true;
+		ApplyHitEffect(0.75, 0.5, 1);
     }
 }
+
+
+// This function assumes LastStingWeapon has be correctly set before being called
+private function ApplyHitEffect(float PlayerStingDuration, float HeavilyArmoredPlayerStingDuration, float NonArmoredPlayerStingDuration)
+{
+	local float StingDuration;
+	local name Reason;
+    local name NewControllerState;
+    local name NewPawnState;
+
+    //reinitialize the noise generator to prepare for a new effect
+    PerlinNoiseAxisA.Reinitialize();
+    PerlinNoiseAxisB.Reinitialize();
+
+	if (GetLoadOut().HasHeavyArmor())
+        StingDuration = HeavilyArmoredPlayerStingDuration;
+	else if (GetLoadOut().HasNoArmor())
+		StingDuration = NonArmoredPlayerStingDuration;
+    else
+        StingDuration = PlayerStingDuration;
+
+	
+	if (Level.TimeSeconds > (LastStungTime + LastStungDuration))
+	{
+		// if we are done with any previous effect, just set the duration
+		LastStungDuration = StingDuration;
+	}
+	else
+	{
+		// otherwise, do the max of the new duration and time that is left from the current effect
+		LastStungDuration = FMax(StingDuration, LastStungDuration - (Level.TimeSeconds - LastStungTime));
+	}
+	LastStungTime = Level.TimeSeconds;
+
+    if (Level.NetMode != NM_Client)
+    {	
+        StungTimer.StartTimer(LastStungDuration, false, true);    //don't loop, reset if already running
+
+        if ( Controller.GetStateName() != 'BeingCuffed' && Controller.GetStateName() != 'BeingUncuffed' )
+        {
+            Reason = 'ReactingToNonlethal';
+            NewControllerState = 'PlayerWalking';
+            NewPawnState = '';
+
+            if ( Level.NetMode != NM_Standalone )
+            {
+                // We are the server
+                SwatGameReplicationInfo(Level.GetGameReplicationInfo()).NotifyClientsToInterruptAndGotoState( self, Reason, NewControllerState, NewPawnState );
+            }
+
+            // Executes on server or in standalone
+            InterruptState( Reason );
+            Controller.InterruptState( Reason );
+            GotoState( NewPawnState );
+            Controller.GotoState( NewControllerState );
+        }
+    }
+
+    //SetIsStung(true);
+    RefreshCameraEffects(self);
+
+    //ChangeAnimation();
+    //bIsTriggered_ReactedSting = 0; // Causes UpdateNonLethalEffectEvents to retrigger the event
+    UpdateNonLethalEffectEvents();
+
+    // RPC to client who is AutonomousProxy.
+    if ( Controller != Level.GetLocalPlayerController() )
+        ClientDoStungReaction( LastStungDuration, LastStingWeapon );
+}
+
+
 
 //
 // Pickup Support
