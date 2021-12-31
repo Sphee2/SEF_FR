@@ -3878,9 +3878,6 @@ function Rotator GetStungRotationOffset()
         Alpha = (Now - LastStungTime) / LastStungDuration;
 
 		Alpha = FClamp(Alpha, 0.0, 1.0);
-		
-		if (Alpha >= 1.0) // not really stunned by C2... hit punch implementation!
-			HitEvent=false;
 
         //calculate the ordinate for evaluation of the noise function
         Ordinate = Alpha * StingEffectFrequency;
@@ -3914,7 +3911,6 @@ function Rotator GetStungRotationOffset()
         //apply noise to the roll and yaw
         Result.Roll = RollAndYawAbcissa * ScaleStingEffectAmplitude(4500, Alpha);
         Result.Yaw = RollAndYawAbcissa * ScaleStingEffectAmplitude(4500, Alpha);
-		log("HIT STING: " $ Result.Roll $ " " $ Result.Yaw $ " ." );
 	}
 
 	return Result;	

@@ -27,7 +27,13 @@ ADDED:
 - Fleeing suspects are considered threat if running with a gun within 15 mts from a player 
 - new body armors (from vanilla) , Level II armor and Kevlar (no sleeves). 
 - new headgear ( boonie hat , ballistic glasses )
-
+- New Minimal HUD (optional) 
+- Restored Weapon Zoom (disabled by default). 
+- New "Shake Camera" added when get shot or near a C2 blast. 
+- "Shoulder look" for a free head camera to issue orders 
+       Pressing ALT makes head camera free to move.
+	   Press ALT to reset camera.
+	 
 FIXED:
 - Stuttering and weight bugs in MP : removed old SEF system in change of a new simplified system with better net performances.
 - Suspects can remove wedges only within 35 mts from players.
