@@ -3422,7 +3422,12 @@ simulated function bool IsVulnerableToTaser()
 function ReactToC2Detonation(
     Actor C2Charge,
     float StunRadius,
-    float AIStunDuration);
+    float AIStunDuration)
+{
+	//we react to C2 with a shake
+	HitEvent=true;
+	ApplyHitEffect(0.5,0.5,0.5);
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 //

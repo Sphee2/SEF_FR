@@ -142,6 +142,10 @@ function AffectVictims()
 
 			Victim.ReactToC2Detonation(self, StunRadius, StunDuration);
         }
+		
+		//C2 affects players with a camera shake
+		if(Victim.IsA('SwatPlayer') && (VSize(VictimActor.Location - Location) < DamageRadius ) ) //just trigger players for that
+			Victim.ReactToC2Detonation(self, StunRadius, StunDuration);
 
         if  (
                 VSize(VictimActor.Location - Location) < DamageRadius
