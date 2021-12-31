@@ -3418,6 +3418,27 @@ function UpdateRotation(float DeltaTime, float maxPitch)
             ViewRotation.Yaw = Pawn.LeanLockedYaw + LeftYawLimit;
         }
     }
+	else if ( Pawn != None && Pawn.bShoulderLook )
+	{
+		                
+		ViewYawRelativeToLockedYaw = WrapAngle0To2Pi(ViewRotation.Yaw - Pawn.Rotation.Yaw);
+
+		                                                        
+		YawEdgeAlpha = Pawn.GetYawEdgeAlpha(ViewRotation.Pitch);
+
+		                                       
+		                                                     
+		LeftYawLimit = 25000;
+		RightYawLimit = 25000;
+		LeftYawLimit  = WrapAngle0To2Pi(65536 - (LeftYawLimit * YawEdgeAlpha));
+		RightYawLimit = WrapAngle0To2Pi(RightYawLimit * YawEdgeAlpha);
+
+		                  
+		if ( ViewYawRelativeToLockedYaw > RightYawLimit && ViewYawRelativeToLockedYaw <= 32768 )
+			ViewRotation.Yaw = Pawn.Rotation.Yaw + RightYawLimit;
+		else if ( ViewYawRelativeToLockedYaw < LeftYawLimit && ViewYawRelativeToLockedYaw > 32768 )
+			ViewRotation.Yaw = Pawn.Rotation.Yaw + LeftYawLimit;
+	}
 #endif
 
 	SetRotation(ViewRotation);
@@ -3427,8 +3448,11 @@ function UpdateRotation(float DeltaTime, float maxPitch)
 
 	NewRotation = ViewRotation;
 	NewRotation.Roll = Rotation.Roll;
+	
+	/*if ( Pawn != None && Pawn.bShoulderLook )
+		Pawn.FaceRotation(NewRotation); NewRotation.Yaw = Pawn.Rotation.Yaw;*/
 
-	if ( !bRotateToDesired && (Pawn != None) && (!bFreeCamera || !bBehindView) )
+	if ( !bRotateToDesired && (Pawn != None) && (!bFreeCamera || !bBehindView) && !Pawn.bShoulderLook )
 		Pawn.FaceRotation(NewRotation);
 }
 

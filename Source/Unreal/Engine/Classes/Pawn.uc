@@ -123,6 +123,7 @@ var private bool bForceCrouch;       // Used in VIP mode; if true the pawn will 
 // We handle leaning similarly to how Unreal handles crouching. [darren]
 var bool        bWantsToLeanLeft;
 var bool        bWantsToLeanRight;
+var bool		bShoulderLook;		//Shoulder Look
 
 enum ELeanState
 {
