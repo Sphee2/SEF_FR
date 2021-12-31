@@ -226,12 +226,12 @@ simulated function PlayEquip()
 		HandsOwner = Pawn(Hands.Owner);
 		if(HandsOwner.IsA('IAmAffectedByWeight'))
 		{
-			EquipRate *= IAmAffectedByWeight(HandsOwner).GetBulkSpeedModifier();
+			EquipRate *=  1; //IAmAffectedByWeight(HandsOwner).GetBulkSpeedModifier();
 		}
 	}
 	else if(Owner.IsA('IAmAffectedByWeight'))
 	{	// apply the bulk reload speed modifier
-		EquipRate *= IAmAffectedByWeight(Owner).GetBulkSpeedModifier();
+		EquipRate *= 1; //IAmAffectedByWeight(HandsOwner).GetBulkSpeedModifier();
 	}
 	else
 	{
@@ -327,12 +327,12 @@ simulated function PlayUnequip()
 		HandsOwner = Pawn(Hands.Owner);
 		if(HandsOwner.IsA('IAmAffectedByWeight'))
 		{
-			UnequipRate *= IAmAffectedByWeight(HandsOwner).GetBulkSpeedModifier();
+			UnequipRate *=  1; //IAmAffectedByWeight(HandsOwner).GetBulkSpeedModifier();
 		}
 	}
 	else if(Owner.IsA('IAmAffectedByWeight'))
 	{	// apply the bulk reload speed modifier
-		UnequipRate *= IAmAffectedByWeight(Owner).GetBulkSpeedModifier();
+		UnequipRate *=  1; //IAmAffectedByWeight(HandsOwner).GetBulkSpeedModifier();
 	}
 	else
 	{
