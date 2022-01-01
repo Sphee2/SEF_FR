@@ -57,6 +57,8 @@ simulated function OnDeployed(SwatPawn inDeployedBy)
 
 simulated function OnDetonated()
 {
+	local SwatPlayer SP;
+	
     mplog( self$"---DeployedC2ChargeBase::OnDetonated()." );
 
     assertWithDescription(AssociatedDoor != None,
@@ -79,7 +81,11 @@ simulated function OnDetonated()
 
         Hide();
     }
-
+	
+	//C2 affects players with a camera shake
+	foreach RadiusActors(class'SwatPlayer', SP, DamageRadius )
+		SP.ReactToC2Detonation(self, StunRadius, StunDuration);
+	
     CurrentlyDeployed = false;
 }
 
@@ -142,10 +148,6 @@ function AffectVictims()
 
 			Victim.ReactToC2Detonation(self, StunRadius, StunDuration);
         }
-		
-		//C2 affects players with a camera shake
-		if(Victim.IsA('SwatPlayer') && (VSize(VictimActor.Location - Location) < DamageRadius ) ) //just trigger players for that
-			Victim.ReactToC2Detonation(self, StunRadius, StunDuration);
 
         if  (
                 VSize(VictimActor.Location - Location) < DamageRadius

@@ -169,7 +169,7 @@ replication
         GivenFlashbangs, GivenStinger, GivenGas, GivenC2, GivenWedge, GivenPepperSpray,
         ClientOnFlashbangTimerExpired, ClientOnGassedTimerExpired, ClientOnStungTimerExpired,
         ClientOnPepperSprayedTimerExpired, ClientOnTasedTimerExpired,
-        ClientDoFlashbangReaction, ClientDoGassedReaction, ClientDoStungReaction,
+        ClientDoFlashbangReaction, ClientDoGassedReaction, ClientDoStungReaction, ClientDoHitReaction, 
         ClientDoPepperSprayedReaction, ClientDoTasedReaction,
         bIsUsingOptiwand, bHasBeenReportedToTOC, ClientPlayEmptyFired, ArmInjuryFlags, 
         ClientSetItemAvailableCount ; //,ClientStartLeaning
@@ -3425,7 +3425,6 @@ function ReactToC2Detonation(
     float AIStunDuration)
 {
 	//we react to C2 with a shake
-	HitEvent=true;
 	ApplyHitEffect(0.5,0.5,0.5);
 }
 
@@ -4057,7 +4056,6 @@ simulated function OnSkeletalRegionHit(ESkeletalRegion RegionHit, vector HitLoca
             ChangeAnimation();
         }
 		//hit punch effect
-		HitEvent=true;
 		ApplyHitEffect(0.75, 0.5, 1);
     }
 }
@@ -4082,7 +4080,8 @@ private function ApplyHitEffect(float PlayerStingDuration, float HeavilyArmoredP
     else
         StingDuration = PlayerStingDuration;
 
-	
+	HitEvent=true;
+		
 	if (Level.TimeSeconds > (LastStungTime + LastStungDuration))
 	{
 		// if we are done with any previous effect, just set the duration
@@ -4128,10 +4127,34 @@ private function ApplyHitEffect(float PlayerStingDuration, float HeavilyArmoredP
 
     // RPC to client who is AutonomousProxy.
     if ( Controller != Level.GetLocalPlayerController() )
-        ClientDoStungReaction( LastStungDuration, LastStingWeapon );
+       ClientDoHitReaction( LastStungDuration, LastStingWeapon );
 }
 
+simulated function ClientDoHitReaction( float PlayerDuration, ELastStingWeapon iLastStingWeapon )
+{
+    if ( Level.NetMode == NM_Client
+         && Controller == Level.GetLocalPlayerController() )
+    {
+        if (class'Pawn'.static.CheckDead( self ))  //Can't hurt me if I'm dead
+            return;
 
+        //reinitialize the noise generator to prepare for a new effect
+        PerlinNoiseAxisA.Reinitialize();
+        PerlinNoiseAxisB.Reinitialize();
+
+        LastStingWeapon = iLastStingWeapon;
+
+        LastStungDuration = PlayerDuration;
+        LastStungTime     = Level.TimeSeconds;
+
+        //SetIsStung(true);
+        RefreshCameraEffects(self);
+
+        //ChangeAnimation();
+        //bIsTriggered_ReactedSting = 0; // Causes UpdateNonLethalEffectEvents to retrigger the event
+        UpdateNonLethalEffectEvents();
+    }
+}
 
 //
 // Pickup Support
