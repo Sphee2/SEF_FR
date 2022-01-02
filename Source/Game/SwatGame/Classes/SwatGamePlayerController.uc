@@ -1188,7 +1188,7 @@ exec function Fire()
 {
     local HandheldEquipment ActiveItem;
 	local SwatGuiConfig GC;
-	GC = SwatRepo(Level.GetRepo()).GuiConfig;	
+	GC = SwatRepo(Level.GetRepo()).GuiConfig;
 
     ActiveItem = Pawn.GetActiveItem();
 
@@ -1208,9 +1208,6 @@ exec function Fire()
 		{	
 			if(!SwatPlayer(Pawn).IsLowReady()) //with MLR fire when the player is not low ready
 			{
-				if ( Pawn.bShoulderLook )
-				return;
-				
 				Super.Fire();
 			}
 			else  //if it's low ready just move to ready
@@ -1220,12 +1217,7 @@ exec function Fire()
 			
 		}	
 		else if (GC.ExtraIntOptions[6] == 0)
-		{
-			if ( Pawn.bShoulderLook )
-				return;
-			
 			Super.Fire();
-		}
     }
 }
 
@@ -6077,18 +6069,6 @@ exec function ToggleNVGLightUP()
 exec function ToggleNVGLightDown()
 {
     SwatPawn(Pawn).UpdateNightvisionDown();
-}
-
-exec function ShoulderLook()
-{
-	if ( Pawn == None )
-		return;
-
-	Pawn.bShoulderLook = !Pawn.bShoulderLook;
-
-	if ( !Pawn.bShoulderLook )
-		SetRotation(Pawn.Rotation);
-
 }
 
 // modifier to hold the next command was pressed

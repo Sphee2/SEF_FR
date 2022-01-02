@@ -221,10 +221,6 @@ simulated function UpdateHandsForRendering()
     }
 
     SetLocation(NewLocation);
-	
-	if ( OwnerPawn.bShoulderLook )
-		NewRotation.Yaw = OwnerPawn.Rotation.Yaw;
-	
     SetRotation(NewRotation);
 }
 
