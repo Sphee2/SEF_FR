@@ -274,6 +274,15 @@ function bool DoorRelatedContextMatches(SwatPlayer Player, SwatDoor Door, Player
 			return false;
 		}
 	}
+	
+	if(Context.CaresAboutPartialOpen)
+	{
+		// If we care about whether the door is open, Context.IsOpen should match Door.IsOpen
+		if(Door.IsPartialOpen())
+		{
+			return false;
+		}
+	}
 
 	if(Context.CaresAboutLocked)
 	{

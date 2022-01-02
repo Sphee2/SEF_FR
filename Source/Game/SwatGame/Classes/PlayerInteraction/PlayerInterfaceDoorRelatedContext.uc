@@ -15,6 +15,7 @@ var config array<name> ExceptActiveItem;
 var config ESkeletalRegion SkeletalRegion;
 
 var config bool CaresAboutOpen;
+var config bool CaresAboutPartialOpen;
 var config bool IsOpen;
 
 var config bool CaresAboutLocked;
