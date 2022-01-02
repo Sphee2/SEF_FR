@@ -147,14 +147,110 @@ Begin:
 
 	for(FlashBang= 0; FlashBang<9; FlashBang+=1)
 	{
+		
+		switch(FlashBang) //to manage 9 different sounds effects
+		{
+          case 1:  		
+		  
 		TriggerEffectEvent(
-			'Detonated',
+			'Detonated1',
 			,					// use default Other
 			,					// use default TargetMaterial
 			self.Location,		// location of projectile
 			Rotator(vect(0,0,1)) // scorch should always orient downward to avoid weird clipping with the floor
 		);
-
+		  break;
+		  
+		  case 2:
+		  
+		TriggerEffectEvent(
+			'Detonated2',
+			,					// use default Other
+			,					// use default TargetMaterial
+			self.Location,		// location of projectile
+			Rotator(vect(0,0,1)) // scorch should always orient downward to avoid weird clipping with the floor
+		);
+		  break;
+		  
+		  case 3:
+		  
+		TriggerEffectEvent(
+			'Detonated3',
+			,					// use default Other
+			,					// use default TargetMaterial
+			self.Location,		// location of projectile
+			Rotator(vect(0,0,1)) // scorch should always orient downward to avoid weird clipping with the floor
+		);
+		  break;
+		  
+		  case 4:
+		  
+		TriggerEffectEvent(
+			'Detonated4',
+			,					// use default Other
+			,					// use default TargetMaterial
+			self.Location,		// location of projectile
+			Rotator(vect(0,0,1)) // scorch should always orient downward to avoid weird clipping with the floor
+		);
+		  break;
+		  
+		  case 5:
+		  
+		TriggerEffectEvent(
+			'Detonated5',
+			,					// use default Other
+			,					// use default TargetMaterial
+			self.Location,		// location of projectile
+			Rotator(vect(0,0,1)) // scorch should always orient downward to avoid weird clipping with the floor
+		);
+		  break;
+		  
+		  case 6:
+		  
+		TriggerEffectEvent(
+			'Detonated6',
+			,					// use default Other
+			,					// use default TargetMaterial
+			self.Location,		// location of projectile
+			Rotator(vect(0,0,1)) // scorch should always orient downward to avoid weird clipping with the floor
+		);
+		  break;
+		  
+		  case 7:
+		  
+		TriggerEffectEvent(
+			'Detonated7',
+			,					// use default Other
+			,					// use default TargetMaterial
+			self.Location,		// location of projectile
+			Rotator(vect(0,0,1)) // scorch should always orient downward to avoid weird clipping with the floor
+		);
+		  break;
+		  
+		  case 8:
+		  
+		TriggerEffectEvent(
+			'Detonated8',
+			,					// use default Other
+			,					// use default TargetMaterial
+			self.Location,		// location of projectile
+			Rotator(vect(0,0,1)) // scorch should always orient downward to avoid weird clipping with the floor
+		);
+		  break;
+		  
+		  case 9:
+		  
+		TriggerEffectEvent(
+			'Detonated9',
+			,					// use default Other
+			,					// use default TargetMaterial
+			self.Location,		// location of projectile
+			Rotator(vect(0,0,1)) // scorch should always orient downward to avoid weird clipping with the floor
+		);
+		  break;
+		  
+		}
+		
 		NotifyRegistrantsGrenadeDetonated();
 
 		Detonated();
