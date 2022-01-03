@@ -712,6 +712,7 @@ latent function PrepareToThrowGrenade(EquipmentSlot GrenadeSlot, bool bWaitToThr
 
 	if (PlacedThrowPointToUse != None)
 	{
+		log("PrepareToThrowGrenade() : LatentMoveOfficerToActor()");
 		// move to the throw point
 		LatentMoveOfficerToActor(Thrower, PlacedThrowPointToUse, kMoveToThrowGrenadePriority);
 
@@ -732,7 +733,8 @@ latent function PrepareToThrowGrenade(EquipmentSlot GrenadeSlot, bool bWaitToThr
 	{
 		TargetThrowPoint = GetTargetThrowPoint(CenterPoint);
 		DoorUsageSide    = ISwatDoor(TargetDoor).GetOpenPositions(Thrower, true, ThrowFromPoint, ThrowRotation);
-
+		
+		log("PrepareToThrowGrenade() : GetStackupPointForOrderedOfficer()");
 		// get the thrower's stack up point, if specified to do so, we will throw from there
 		ThrowerStackUpPoint = GetStackupPointForOrderedOfficer(Thrower);
 
@@ -775,7 +777,7 @@ latent function PrepareToThrowGrenade(EquipmentSlot GrenadeSlot, bool bWaitToThr
 
 	CurrentThrowGrenadeGoal.SetThrowSide(ThrowSide);
 	CurrentThrowGrenadeGoal.SetThrowRotation(ThrowRotation);
-	CurrentThrowGrenadeGoal.SetWaitToThrowGrenade( (TargetDoor.IsClosed() && ! TargetDoor.IsOpening() && bWaitToThrowGrenade ) || ( ISwatDoor(TargetDoor).isPartialOpen() ));
+	CurrentThrowGrenadeGoal.SetWaitToThrowGrenade( (TargetDoor.IsClosed() && ! TargetDoor.IsOpening() && bWaitToThrowGrenade ) );
 	CurrentThrowGrenadeGoal.RegisterForGrenadeThrowing(self);
 	CurrentThrowGrenadeGoal.postGoal(self);
 

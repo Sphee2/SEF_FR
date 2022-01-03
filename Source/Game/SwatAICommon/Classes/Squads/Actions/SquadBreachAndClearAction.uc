@@ -212,17 +212,9 @@ latent function UseBreachingShotgun()
 	}
 	else
 	{
-		// pause to wait for the detonator to be equipped
-		pause();
-
-		// prepare the grenade
-		PreTargetDoorBreached();
-
-		// just wait for the door to open
-		while (TargetDoor.IsClosed() /*&& ! ISwatDoor(TargetDoor).IsBroken()*/ && !TargetDoor.IsOpening())
-			yield();
-
+		WaitForGoal(CurrentOpenDoorGoal);
 	}
+
 }
 
 protected function bool CanOfficerBreachWithC2(Pawn Officer)
@@ -401,11 +393,11 @@ function Pawn GetThrowingOfficer(EquipmentSlot ThrownItemSlot)
 		i = 1;
 	}
 
-//	log("get throwing officer - starting i is: " $ i);
+	log("get throwing officer - starting i is: " $ i);
 
 	while(i<OfficersInStackupOrder.Length)
 	{
-//		log("get throwing officer - i is: " $ i);
+		log("get throwing officer - i is: " $ i);
 
 		Officer = OfficersInStackupOrder[i];
 
@@ -464,6 +456,7 @@ function Pawn GetThrowingOfficer(EquipmentSlot ThrownItemSlot)
 		}
 	}
 
+log("get throwing officer None");
 	// didn't find an alive officer with the thrown weapon available
 	return None;
 }
