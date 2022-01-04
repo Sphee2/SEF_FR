@@ -51,11 +51,14 @@ var private bool CacheBuilt;
 
 // v7
 var(ServerSettings) config bool						bIsQMM;
-var(ServerSettings) config CustomScenario			QMMScenario;
+var(ServerSettings) config CustomScenario				QMMScenario;
 var(ServerSettings) config bool						QMMUseCustomBriefing;
 var(ServerSettings) config string					QMMCustomBriefing;
 var(ServerSettings) config string					QMMScenarioQueue[MAX_MAPS];
 var(ServerSettings) config string					QMMPackQueue[MAX_MAPS];
+
+// SEF_FR
+var(ServerSettings) config bool						HidePenaltyMessages;
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
