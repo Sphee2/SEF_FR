@@ -266,8 +266,18 @@ latent function ShootWeaponAt(Actor Target)
 
     CurrentWeapon = FiredWeapon(m_pawn.GetActiveItem());    
 
-	// if the weapon's not empty, use it
-    if (! CurrentWeapon.IsEmpty())
+	if ( FRand() < 0.5 && CurrentWeapon.bAbleToMelee) // 50% chance.
+	{
+		if( Vsize( CurrentWeapon.Location - Target.Location ) < 150  ) //melee range = 150 
+		{
+			CurrentWeapon.Melee();
+			if (m_Pawn.IsA('SwatEnemy') && FRand() < 0.5 ) 
+				return; //50% chance to punch or punch AND fire
+		}
+	}
+	
+    // if the weapon's not empty, use it
+	if (! CurrentWeapon.IsEmpty() )
     {
 		ISwatAI(m_Pawn).SetWeaponTarget(Target);
 	
