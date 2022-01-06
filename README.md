@@ -23,7 +23,11 @@ ADDED:
       J to equip torch 
 	  Toggle Flashlight to highlight evidence
 - Dynamic shell textures on Breaching SG an Benelli M4 depending on shell type.
-- NEW OFFICERS TEXTURES (thank to AceVentura) !
+- NEW OFFICERS TEXTURES (Thanks to AceVentura) !
+- NEW WEAPONS SOUNDS OVERHAUL! ( Thanks to Multi ! )
+- Suspects and officers can punch their enemies at very close range! 
+- Camera shake when player has been hit and close to a C2 explosion.
+- Disable Penalty Messages option for SP (in game settings options) and MP (forced to all players in Advanced server settings )
 - Fleeing suspects are considered threat if running with a gun within 15 mts from a player 
 - new body armors (from vanilla) , Level II armor and Kevlar (no sleeves). 
 - new headgear ( boonie hat , ballistic glasses )
