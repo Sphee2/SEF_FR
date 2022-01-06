@@ -18,6 +18,7 @@ var(SWATGui) EditInline Config GUICheckBoxButton   MyEnableSnipers;
 var(SWATGui) EditInline Config GUICheckBoxButton   MyRoundStartTimerCheck;
 var(SWATGui) EditInline Config GUICheckBoxButton   MyRoundEndTimerCheck;
 var(SWATGui) EditInline Config GUICheckBoxButton   MyEnableKillMessagesCheck;
+var(SWATGui) EditInline Config GUICheckBoxButton   MyDisablePenaltyMessageCheck;
 var(SWATGui) EditInline Config GUISlider		   MyHostageSpawnSlider;
 var(SWATGui) EditInline Config GUISlider		   MySuspectSpawnSlider;
 
@@ -39,6 +40,7 @@ function SetSubComponentsEnabled( bool bSetEnabled )
 	MyRoundStartTimerCheck.SetEnabled( bSetEnabled );
 	MyRoundEndTimerCheck.SetEnabled( bSetEnabled );
 	MyEnableKillMessagesCheck.SetEnabled(bSetEnabled);
+	MyDisablePenaltyMessageCheck.SetEnabled(bSetEnabled);
 
 	MyHostageSpawnSlider.SetEnabled(bSetEnabled);
 	MySuspectSpawnSlider.SetEnabled(bSetEnabled);
@@ -118,6 +120,7 @@ function LoadServerSettings( optional bool ReadOnly )
 	MyRoundStartTimerCheck.SetChecked (Settings.bUseRoundStartTimer);
 	MyRoundEndTimerCheck.SetChecked(Settings.bUseRoundEndTimer);
 	MyEnableKillMessagesCheck.SetChecked(!Settings.bNoKillMessages);
+	MyDisablePenaltyMessageCheck.SetChecked(Settings.HidePenaltyMessages);
 	MyHostageSpawnSlider.SetValue(GC.ExtraFloatOptions[1]);
 	MySuspectSpawnSlider.SetValue(GC.ExtraFloatOptions[0]);
 

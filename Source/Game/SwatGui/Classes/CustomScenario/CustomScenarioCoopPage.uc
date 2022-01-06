@@ -168,7 +168,7 @@ function PlayScenario( string ScenarioName, string PackName )
         CurrentSettings.bUseRoundEndTimer,
         480,
         CurrentSettings.bShowTeammateNames,
-        CurrentSettings.Unused,
+        CurrentSettings.HidePenaltyMessages,
 				CurrentSettings.bAllowReferendums,
         CurrentSettings.bNoRespawn,
         CurrentSettings.bQuickRoundReset,

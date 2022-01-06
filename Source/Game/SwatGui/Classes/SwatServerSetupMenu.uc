@@ -319,7 +319,7 @@ function SaveServerSettings()
                                 AdvancedSetupPanel.MyRoundEndTimerCheck.bChecked,
                                 AdvancedSetupPanel.MyPreGameTimeLimitBox.Value,
                                 AdvancedSetupPanel.MyShowTeammatesButton.bChecked,
-                                false, // Not used
+                                AdvancedSetupPanel.MyDisablePenaltyMessageCheck.bChecked,
 								VotingPanel.MyVotingEnabledBox.bChecked,
                                 QuickSetupPanel.MyNoRespawnButton.bChecked,
                                 QuickSetupPanel.MyQuickResetBox.bChecked,

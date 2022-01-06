@@ -1060,7 +1060,7 @@ log("[dkaplan] >>> NetStartNextRound()" );
 		CurrentSettings.bUseRoundEndTimer,
 		CurrentSettings.MPMissionReadyTime,
 		CurrentSettings.bShowTeammateNames,
-		CurrentSettings.Unused,
+		CurrentSettings.HidePenaltyMessages,
 		CurrentSettings.bAllowReferendums,
 		CurrentSettings.bNoRespawn,
 		CurrentSettings.bQuickRoundReset,

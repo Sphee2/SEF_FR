@@ -69,8 +69,8 @@ replication
 	reliable if ( bNetDirty && (Role == ROLE_Authority) )
 		GameType, Maps, NumMaps, MapIndex, NumRounds,
         MaxPlayers, RoundNumber, bUseRoundStartTimer, PostGameTimeLimit,
-        bUseRoundEndTimer, MPMissionReadyTime, bShowTeammateNames, Unused, bAllowReferendums, bNoRespawn,
-        bQuickRoundReset, FriendlyFireAmount, DisabledEquipment,
+        bUseRoundEndTimer, MPMissionReadyTime, bShowTeammateNames, HidePenaltyMessages, bAllowReferendums, bNoRespawn,
+        bQuickRoundReset, FriendlyFireAmount, DisabledEquipment, Unused ,
         ServerName, Password, bPassworded, bLAN, AdditionalRespawnTime, CampaignCOOP,
 		bNoLeaders, bNoKillMessages, bEnableSnipers,
 		bIsQMM, QMMUseCustomBriefing, QMMCustomBriefing, QMMScenario;
@@ -175,7 +175,7 @@ function SetServerSettingsNoConfigSave(PlayerController PC,
                             bool newbUseRoundEndTimer,
                             int newMPMissionReadyTime,
                             bool newbShowTeammateNames,
-                            bool newUnused,
+                            bool newHidePenaltyMessages,
 							bool newbAllowReferendums,
                             bool newbNoRespawn,
                             bool newbQuickRoundReset,
@@ -196,7 +196,7 @@ function SetServerSettingsNoConfigSave(PlayerController PC,
     bUseRoundEndTimer = newbUseRoundEndTimer;
     MPMissionReadyTime = newMPMissionReadyTime;
     bShowTeammateNames = newbShowTeammateNames;
-    Unused = newUnused;
+    HidePenaltyMessages = newHidePenaltyMessages;
 	bAllowReferendums = newbAllowReferendums;
     bNoRespawn = newbNoRespawn;
     bQuickRoundReset = newbQuickRoundReset;
@@ -207,7 +207,7 @@ function SetServerSettingsNoConfigSave(PlayerController PC,
 	bNoLeaders = newbNoLeaders;
 	bNoKillMessages = newbNoKillMessages;
 	bEnableSnipers = newbEnableSnipers;
-
+   
     RoundNumber=0;
 }
 
@@ -221,7 +221,7 @@ function SetServerSettings( PlayerController PC,
                             bool newbUseRoundEndTimer,
                             int newMPMissionReadyTime,
                             bool newbShowTeammateNames,
-                            bool newUnused,
+                            bool newHidePenaltyMessages,
 							bool newbAllowReferendums,
                             bool newbNoRespawn,
                             bool newbQuickRoundReset,
@@ -233,7 +233,7 @@ function SetServerSettings( PlayerController PC,
 							bool newbNoKillMessages,
 							bool newbEnableSnipers)
 {
-log( self$"::SetServerSettings( "$PC$", newGameType="$GetEnum(EMPMode,newGameType)$", newMapIndex="$newMapIndex$", newNumRounds="$newNumRounds$", newMaxPlayers="$newMaxPlayers$", newUseRoundStartTimer="$newbUseRoundStartTimer$", newPostGameTimeLimit="$newPostGameTimeLimit$", newUseRoundEndTimer="$newbUseRoundEndTimer$", newMPMissionReadyTime="$newMPMissionReadyTime$", newbShowTeammateNames="$newbShowTeammateNames$", newUnused="$newUnused$", newbAllowReferendums="$newbAllowReferendums$", newbNoRespawn="$newbNoRespawn$", newbQuickRoundReset="$newbQuickRoundReset$", newFriendlyFireAmount="$newFriendlyFireAmount$", newDisabledEquipment="$newDisabledEquipment$" )" );
+log( self$"::SetServerSettings( "$PC$", newGameType="$GetEnum(EMPMode,newGameType)$", newMapIndex="$newMapIndex$", newNumRounds="$newNumRounds$", newMaxPlayers="$newMaxPlayers$", newUseRoundStartTimer="$newbUseRoundStartTimer$", newPostGameTimeLimit="$newPostGameTimeLimit$", newUseRoundEndTimer="$newbUseRoundEndTimer$", newMPMissionReadyTime="$newMPMissionReadyTime$", newbShowTeammateNames="$newbShowTeammateNames$", newHidePenaltyMessages="$newHidePenaltyMessages$", newbAllowReferendums="$newbAllowReferendums$", newbNoRespawn="$newbNoRespawn$", newbQuickRoundReset="$newbQuickRoundReset$", newFriendlyFireAmount="$newFriendlyFireAmount$", newDisabledEquipment="$newDisabledEquipment$" )" );
 
 	if(Level.Game.IsA('SwatGameInfo') && PC != None &&
 		!SwatGameInfo(Level.Game).Admin.ActionAllowed(PC, AdminPermissions.Permission_ChangeSettings))
@@ -242,7 +242,7 @@ log( self$"::SetServerSettings( "$PC$", newGameType="$GetEnum(EMPMode,newGameTyp
 	}
 
 	SetServerSettingsNoConfigSave(PC, newGameType, newMapIndex, newNumRounds, newMaxPlayers, newbUseRoundStartTimer,
-		newPostGameTimeLimit, newbUseRoundEndTimer, newMPMissionReadyTime, newbShowTeammateNames, newUnused, newbAllowReferendums,
+		newPostGameTimeLimit, newbUseRoundEndTimer, newMPMissionReadyTime, newbShowTeammateNames, newHidePenaltyMessages, newbAllowReferendums,
 		newbNoRespawn, newbQuickRoundReset, newFriendlyFireAmount, newDisabledEquipment, newCampaignCOOP, newAdditionalRespawnTime,
 		newbNoLeaders, newbNoKillMessages, newbEnableSnipers);
 

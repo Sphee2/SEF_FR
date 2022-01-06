@@ -399,7 +399,8 @@ function PenaltyTriggeredMessage(Pawn Inflictor, string PenaltyMessage)
 	}
 	else
 	{
-		SendGlobalMessage(PenaltyMessage, 'PenaltyIssued');
+		if ( Repo.GuiConfig.ExtraIntOptions[8] == 0 ) //control if messages are enabled
+			SendGlobalMessage(PenaltyMessage, 'PenaltyIssued');
 	}
 }
 
