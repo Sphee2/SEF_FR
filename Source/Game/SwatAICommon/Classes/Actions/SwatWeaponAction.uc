@@ -266,7 +266,7 @@ latent function ShootWeaponAt(Actor Target)
 
     CurrentWeapon = FiredWeapon(m_pawn.GetActiveItem());    
 
-	if ( FRand() < 0.5 && CurrentWeapon.bAbleToMelee) // 50% chance.
+	if ( FRand() < 0.75 && CurrentWeapon.bAbleToMelee) // 50% chance.
 	{
 		if( Vsize( CurrentWeapon.Location - Target.Location ) < 150  ) //melee range = 150 
 		{
