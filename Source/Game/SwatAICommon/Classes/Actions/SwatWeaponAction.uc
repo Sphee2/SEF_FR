@@ -266,15 +266,20 @@ latent function ShootWeaponAt(Actor Target)
 
     CurrentWeapon = FiredWeapon(m_pawn.GetActiveItem());    
 
-	if ( FRand() < 0.75 && CurrentWeapon.bAbleToMelee) // 50% chance.
+
+	
+	if( Vsize( m_Pawn.Location - Target.Location ) < 200  && CurrentWeapon.bAbleToMelee ) //melee range = 150 
 	{
-		if( Vsize( CurrentWeapon.Location - Target.Location ) < 150  ) //melee range = 150 
-		{
-			CurrentWeapon.Melee();
-			if (m_Pawn.IsA('SwatEnemy') && FRand() < 0.5 ) 
-				return; //50% chance to punch or punch AND fire
-		}
+		log ("ShootWeaponAt() Melee Range: " $  Vsize( CurrentWeapon.Location - Target.Location ) $ " ." );
+		CurrentWeapon.Melee();
+		sleep(2.0); //wait for melee to finish
+		
+		if (m_Pawn.IsA('SwatOfficer') ) 
+			return; //officers always just melee instead of shooting , as trained professionals!
+		else if (m_Pawn.IsA('SwatEnemy') && FRand() < 0.5 ) 
+			return; //50% chance to punch or punch AND fire
 	}
+	
 	
     // if the weapon's not empty, use it
 	if (! CurrentWeapon.IsEmpty() )
