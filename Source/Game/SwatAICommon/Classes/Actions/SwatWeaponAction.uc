@@ -260,6 +260,7 @@ latent function SetGunDirection( Actor Target ) // possible bug fixer
 latent function ShootWeaponAt(Actor Target)
 {
     local FiredWeapon CurrentWeapon;
+	local float DistanceFromTarget;
 
 	assertWithDescription((Target != None), "SwatWeaponAction::ShootWeaponAt - Target is None!");
 	assertWithDescription((m_Pawn != None), "SwatWeaponAction::ShootWeaponAt - m_Pawn is None!");
@@ -267,17 +268,27 @@ latent function ShootWeaponAt(Actor Target)
     CurrentWeapon = FiredWeapon(m_pawn.GetActiveItem());    
 
 
-	
-	if( Vsize( m_Pawn.Location - Target.Location ) < 200  && CurrentWeapon.bAbleToMelee ) //melee range = 150 
+	if(CurrentWeapon.bAbleToMelee)
 	{
-		log ("ShootWeaponAt() Melee Range: " $  Vsize( CurrentWeapon.Location - Target.Location ) $ " ." );
-		CurrentWeapon.Melee();
-		sleep(2.0); //wait for melee to finish
+		DistanceFromTarget = Vsize( m_Pawn.Location - Target.Location ) ;
 		
-		if (m_Pawn.IsA('SwatOfficer') ) 
-			return; //officers always just melee instead of shooting , as trained professionals!
-		else if (m_Pawn.IsA('SwatEnemy') && FRand() < 0.5 ) 
-			return; //50% chance to punch or punch AND fire
+		if( DistanceFromTarget < 150  ) //melee range = 150 
+		{		
+			if (m_Pawn.IsA('SwatOfficer') ) 
+			{
+				CurrentWeapon.Melee();
+				sleep(2.0); //wait for melee to finish
+				return; //officers always just melee instead of shooting , as trained professionals!
+			}
+			else if (m_Pawn.IsA('SwatEnemy')  ) 
+			{
+				CurrentWeapon.Melee();
+				sleep(1.0); //wait for melee to finish
+			
+				if (FRand() < 0.5 )
+					return; //50% chance to punch or punch AND fire
+			}
+		}
 	}
 	
 	
