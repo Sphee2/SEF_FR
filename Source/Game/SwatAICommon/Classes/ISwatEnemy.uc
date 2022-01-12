@@ -64,6 +64,7 @@ function UnbecomeAThreat(optional bool UseCooldown, optional float CooldownDurat
 
 function FiredWeapon GetPrimaryWeapon();
 function FiredWeapon GetBackupWeapon();
+function bool GetNoDropWeaponChance();
 
 function PickUpWeaponModel(HandHeldEquipmentModel HHEModel);
 

@@ -30,6 +30,11 @@ var config float            MediumSkillMaxTimeBeforeShooting;
 var config float            HighSkillMinTimeBeforeShooting;
 var config float            HighSkillMaxTimeBeforeShooting;
 
+//chance enemy doesnt drop all weapons
+var config float 			LowSkillNoDropChance;
+var config float			MediumSkillNoDropChance;
+var config float 			HighSkillNoDropChance;
+
 defaultproperties
 {
 	/* OLD SEF VALUES
@@ -46,4 +51,8 @@ defaultproperties
     MediumSkillMaxTimeBeforeShooting = 0.0
     HighSkillMinTimeBeforeShooting = 0.0
     HighSkillMaxTimeBeforeShooting = 0.0
+	
+	LowSkillNoDropChance=0.1
+	MediumSkillNoDropChance=0.3
+	HighSkillNoDropChance=0.5
 }

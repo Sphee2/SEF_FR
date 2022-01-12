@@ -194,7 +194,19 @@ latent final function Comply()
 	// makes sure the weapon is dropped if we are an enemy
 	if (Enemy != None)
 	{
-		Enemy.DropAllWeapons();
+		if ( Enemy.GetNoDropWeaponChance() )
+		{
+			//we want to ambush officers
+			if( Enemy.GetBackupWeapon() != None ) 
+			{
+				Enemy.DropActiveWeapon();
+			}
+			else
+				Enemy.DropAllWeapons(); //no ambush without another gun
+		}
+		else
+			Enemy.DropAllWeapons();
+		
 		Enemy.DropAllEvidence(false);
 		// make sure we are not a threat anymore
 		if (m_Pawn.IsA('SwatEnemy') && ISwatEnemy(m_Pawn).IsAThreat())

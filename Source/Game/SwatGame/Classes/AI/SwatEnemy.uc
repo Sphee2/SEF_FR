@@ -1082,6 +1082,28 @@ function bool ShouldDropWeaponInstantly()
 	return (FRand() < Chance);
 }
 
+//Suspects who are beginning to comply have a chance to drop weapon instantly
+function bool GetNoDropWeaponChance()
+{
+	local float Chance;
+
+	switch(Skill)
+	{
+		//note: new ComplyInstantDropChance vars cause errors, so re-using
+		//FullyBodyHitChance vars as a temporary hack
+		case EnemySkill_High:
+			//Chance = HighSkillComplyInstantDropChance;
+			Chance = class'SwatEnemyConfig'.default.HighSkillNoDropChance;
+		case EnemySkill_Medium:
+			//Chance = MediumSkillComplyInstantDropChance;
+			Chance = class'SwatEnemyConfig'.default.MediumSkillNoDropChance;
+		case EnemySkill_Low:
+			//Chance = LowSkillComplyInstantDropChance;
+			Chance = class'SwatEnemyConfig'.default.LowSkillNoDropChance;
+	}
+	return (FRand() < Chance);
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Threat

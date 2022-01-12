@@ -37,7 +37,9 @@ var private ConverseWithHostagesGoal			CurrentConverseWithHostagesGoal;
 var private PickUpWeaponGoal					CurrentPickUpWeaponGoal;
 var private AttackTargetGoal					CurrentAttackTargetGoal;
 
-var float Unused1;
+var private bool bAlreadyComplied;
+
+var bool Unused1;
 var float Unused2;
 var float Unused3;
 var float Unused4;
@@ -1664,30 +1666,18 @@ function FinishedMovingEngageBehavior()
 latent function DecideToStayCompliant()
 {
 	local HandHeldEquipmentModel FoundWeaponModel;
-	
 
+	log(name @ "DecideToStayCompliant: init check with morale:" @ GetCurrentMorale() );
+	
 	if(m_Pawn.IsA('SwatGuard') || m_Pawn.IsA('SwatUndercover'))
 	{
 		// Don't let guards or Jennings become uncompliant again, this is just dumb
 		return;
 	}
 
-	while (class'Pawn'.static.checkConscious(m_Pawn))
+	while (class'Pawn'.static.checkConscious(m_Pawn) &&
+			(GetCurrentMorale() < class'EnemyCommanderActionConfig'.default.LeaveCompliantStateMoraleThreshold || FoundWeaponModel == None))
 	{
-		if(FoundWeaponModel != None)
-		{
-			// If we found a weapon model, then our morale gain is 2x but our leave compliance threshold is also 2x.
-			// This is so that gunfights are a little more engaging for the player to deal with.
-			if(GetCurrentMorale() >= (class'EnemyCommanderActionConfig'.default.LeaveCompliantStateMoraleThreshold*2))
-			{
-				break;
-			}
-		}
-		else if(GetCurrentMorale() >= class'EnemyCommanderActionConfig'.default.LeaveCompliantStateMoraleThreshold)
-		{
-			break;
-		}
-
 		// Sleep for a random amount of time for this "tick"
 		// This might seem high, but keep in mind that half the values are going to be below this and the effect can stack.
 		Sleep(FRand() * 2.0);
@@ -1695,13 +1685,13 @@ latent function DecideToStayCompliant()
 		// Increase moral when not being guarded (unobserved)
 		if (ISwatAI(m_Pawn).IsUnobservedByOfficers())
 			ChangeMorale( GetUnobservedComplianceMoraleModification(), "Unobserved Compliance" );
-
+		
 		if (GetCurrentMorale() >= class'EnemyCommanderActionConfig'.default.LeaveCompliantStateMoraleThreshold)
 			FoundWeaponModel = ISwatEnemy(m_Pawn).FindNearbyWeaponModel();
 
-
 		if (m_pawn.logTyrion)
 			log(name @ "DecideToStayCompliant: morale now:" @ GetCurrentMorale());
+		
 	}
 
 	if (FoundWeaponModel != None)
@@ -1733,30 +1723,39 @@ latent function DecideToStayCompliant()
 			//ISwatEnemy(m_Pawn).GetCommanderAction().CreateBarricadeGoal(???, false, false);
 		}
 	}
-	else
+}
+
+latent function AmbushCompliant()
+{
+	//we ambush officers!
+	log("DecideToStayCompliant: AmbushCompliant() with morale:");
+		
+	// Sleep for a random amount of time for this "tick"
+	Sleep(frand() * 10.0);
+	
+	// AI stopped being compliant
+	ISwatAI(m_Pawn).SetIsCompliant(false);
+	RemoveComplianceGoal();
+	ISwatAICharacter(m_Pawn).SetCanBeArrested(false);
+
+	// Reset AI (stop animating)
+	m_pawn.ShouldCrouch(false);
+	m_Pawn.ChangeAnimation();				// will swap in anim set
+	ISwatAI(m_Pawn).SetIdleCategory('');	// remove compliance idles
+	
+	//equip
+	ISwatEnemy(m_Pawn).GetBackupWeapon().LatentWaitForIdleAndEquip();
+	
+	// try engaging again
+	if (CurrentEngageOfficerGoal == None)
 	{
-		// AI stopped being compliant
-		ISwatAI(m_Pawn).SetIsCompliant(false);
-		RemoveComplianceGoal();
-		ISwatAICharacter(m_Pawn).SetCanBeArrested(false);
-
-		// Reset AI (stop animating)
-		m_pawn.ShouldCrouch(false);
-		m_Pawn.ChangeAnimation();				// will swap in anim set
-		ISwatAI(m_Pawn).SetIdleCategory('');	// remove compliance idles
-
-		// try engaging again
-		if (CurrentEngageOfficerGoal == None)
-		{
-			bHasFledWithoutUsableWeapon = false;	// don't cower except very rarely
-
-			CurrentEngageOfficerGoal = new class'EngageOfficerGoal'(AI_Resource(m_Pawn.characterAI), 90);
-			assert(CurrentEngageOfficerGoal != None);
-			CurrentEngageOfficerGoal.AddRef();
-
-			CurrentEngageOfficerGoal.postGoal(self);
-			WaitForGoal(CurrentEngageOfficerGoal);
-		}
+		bHasFledWithoutUsableWeapon = false;	// don't cower except very rarely
+		
+		CurrentEngageOfficerGoal = new class'EngageOfficerGoal'(AI_Resource(m_Pawn.characterAI), 90);
+		assert(CurrentEngageOfficerGoal != None);
+		CurrentEngageOfficerGoal.AddRef();
+		CurrentEngageOfficerGoal.postGoal(self);
+		WaitForGoal(CurrentEngageOfficerGoal);		
 	}
 }
 
@@ -1769,7 +1768,13 @@ state Running
 	// wait until something happens
 	if (m_Pawn.IsCompliant())
 	{
-		DecideToStayCompliant();
+		if ( ISwatEnemy(m_Pawn).GetBackupWeapon() != None && !bAlreadyComplied ) //we just ambush once
+			AmbushCompliant();
+		else
+			DecideToStayCompliant();
+		
+		bAlreadyComplied = true;
+		
 		yield();		// prevent runaway loop in rare case
 		goto('Begin');
 	}
