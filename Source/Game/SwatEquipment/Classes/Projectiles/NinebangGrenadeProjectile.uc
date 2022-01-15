@@ -145,7 +145,7 @@ auto simulated state Live
 Begin:
     Sleep(FuseTime);
 
-	for(FlashBang= 0; FlashBang<9; FlashBang+=1)
+	for(FlashBang= 1; FlashBang<=9; FlashBang+=1)
 	{
 		
 		switch(FlashBang) //to manage 9 different sounds effects
@@ -248,6 +248,10 @@ Begin:
 			Rotator(vect(0,0,1)) // scorch should always orient downward to avoid weird clipping with the floor
 		);
 		  break;
+		  
+		 default:
+		 
+		 break;
 		  
 		}
 		
