@@ -14,32 +14,41 @@ https://discord.gg/Vu4r7sv7uF
 #### V0.66 ####
 
 ADDED:
-- Lean/Walk System , ability to lean and walk.... finally an hystoric moment for Swat4 modding!  
-    New and old lean system are working together for a complete... lean experience! 
-    	Q and E - new lean/walk system 
-	   CTRL + Q and CTRL + E - old lean 
-- Partial Open Door System , holding CTRL and Mouse Wheel Up/Down wil swing the door partially, making possible to shoot or throw a grenade.
-- NEW TAC-AID: Maglite Torch! Using the light makes evidence glowing to allow player a faster search of them. Even AI can use this feature when got ordered to secure evidence!
-      J to equip torch 
-	  Toggle Flashlight to highlight evidence
-- Dynamic shell textures on Breaching SG an Benelli M4 depending on shell type.
-- NEW OFFICERS TEXTURES (Thanks to AceVentura) !
-- NEW WEAPONS SOUNDS OVERHAUL! ( Thanks to Multi ! )
-- Suspects and officers can punch their enemies at very close range! 
-- Camera shake when player has been hit and close to a C2 explosion.
-- Disable Penalty Messages option for SP (in game settings options) and MP (forced to all players in Advanced server settings )
-- Fleeing suspects are considered threat if running with a gun within 15 mts from a player 
-- new body armors (from vanilla) , Level II armor and Kevlar (no sleeves). 
-- new headgear ( boonie hat , ballistic glasses )
-- New Minimal HUD (optional) 
-- Restored Weapon Zoom (disabled by default). 
-- New "Shake Camera" added when get shot or near a C2 blast. 
+
+	GAMEPLAY:
+			- Lean/Walk System , ability to lean and walk.... finally an hystoric moment for Swat4 modding!  
+				New and old lean system are working together for a complete... lean experience! 
+				Q and E - new lean/walk system 
+				CTRL + Q and CTRL + E - old lean 
+			- Partial Open Door System , holding CTRL and Mouse Wheel Up/Down wil swing the door partially, making possible to shoot or throw a grenade.
+			
+			- NEW TAC-AID: Maglite Torch! Using the light makes evidence glowing to allow player a faster search of them. Even AI can use this feature when got ordered to secure evidence!
+					J to equip torch 
+					Toggle Flashlight to highlight evidence
+			- Disable Penalty Messages option for SP (in game settings options) and MP (forced to all players in Advanced server settings )
+			- Fleeing suspects are considered threat if running with a gun within 15 mts from a player 
+			- Restored Weapon Zoom (disabled by default). 
+	AI:
+			- Suspects and officers can punch their enemies at very close range! 
+			- Suspects AI morale overhaul , now 15% more intiale morale.They can also "fake" dropping all weapons and decide to attack you with a chance based on skill level.
+	
+	GRAPHICS:
+			- NEW OFFICERS TEXTURES (Thanks to AceVentura) !
+			- new body armors (from vanilla) , Level II armor and Kevlar (no sleeves). 
+			- new headgear ( boonie hat , ballistic glasses )
+			- New Minimal HUD (optional) 
+			- Dynamic shell textures on Breaching SG an Benelli M4 depending on shell type.
+			- New "Shake Camera" added when get shot or near a C2 blast. 
+			- Camera shake when player has been hit and close to a C2 explosion.
+			- New "reduced" Ninebang effects
+	SOUNDS:
+			- NEW WEAPONS SOUNDS OVERHAUL! ( Thanks to Multi ! )
 	 
 FIXED:
-- Stuttering and weight bugs in MP : removed old SEF system in change of a new simplified system with better net performances.
-- Suspects can remove wedges only within 35 mts from players.
-- Trapped doors are signaled by AI only there are traps in the map.
-- MP heavy mesh texture bug
+	- Stuttering and weight bugs in MP : removed old SEF system in change of a new simplified system with better net performances.
+	- Suspects can remove wedges only within 35 mts from players.
+	- Trapped doors are signaled by AI only there are traps in the map.
+	- MP heavy mesh texture bug
 
 #### V0.65 ####
 
