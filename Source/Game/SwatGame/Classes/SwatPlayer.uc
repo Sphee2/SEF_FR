@@ -170,9 +170,9 @@ replication
         ClientOnFlashbangTimerExpired, ClientOnGassedTimerExpired, ClientOnStungTimerExpired,
         ClientOnPepperSprayedTimerExpired, ClientOnTasedTimerExpired,
         ClientDoFlashbangReaction, ClientDoGassedReaction, ClientDoStungReaction, ClientDoHitReaction, 
-        ClientDoPepperSprayedReaction, ClientDoTasedReaction,
+        ClientDoPepperSprayedReaction, ClientDoTasedReaction, ClientDoFlashbangShakeReaction ,
         bIsUsingOptiwand, bHasBeenReportedToTOC, ClientPlayEmptyFired, ArmInjuryFlags, 
-        ClientSetItemAvailableCount ; //,ClientStartLeaning
+        ClientSetItemAvailableCount ; 
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -2735,7 +2735,7 @@ Function ReactToFlashbangGrenade(
 			PlayerFlashbangStunDuration *= DistanceEffect;
     		if (Instigator == None)
     			Instigator = Pawn(Grenade.Owner);
-	  }
+	}
     else
   	{
   		GrenadeLocation = Location; // we were hit by a cheat command without an actual grenade
@@ -2744,6 +2744,17 @@ Function ReactToFlashbangGrenade(
 		DistanceEffect = 1;
 		PlayerFlashbangStunDuration *= DistanceEffect;
   	}
+	
+	//within radius shake the player camera
+	if (Distance <= StunRadius && !HitEvent ) 
+	{
+		//shake it baby! 
+		ApplyHitEffect(1.0,1.0,1.0);
+		
+		 // RPC to client who is AutonomousProxy.
+        if ( Controller != Level.GetLocalPlayerController() )
+			ClientDoFlashbangShakeReaction();
+	}
 
     PlayerController(Controller).PlayerCalcView(ViewTarget, CameraLocation, CameraRotation);
     FOVMatters = Level.NetMode == NM_Standalone || Level.IsPlayingCOOP;
@@ -2824,6 +2835,16 @@ simulated function ClientDoFlashbangReaction()
         ChangeAnimation();
         bIsTriggered_ReactedBang = 0; // Causes UpdateNonLethalEffectEvents to retrigger the event
         UpdateNonLethalEffectEvents();
+    }
+}
+
+simulated function ClientDoFlashbangShakeReaction()
+{
+    if ( Level.NetMode == NM_Client
+         && Controller == Level.GetLocalPlayerController() )
+    {
+        //shake it baby! 
+		ApplyHitEffect(1.0,1.0,1.0);		
     }
 }
 
