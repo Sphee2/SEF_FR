@@ -712,12 +712,12 @@ private function bool CantBeDazed()
 	return HasProtection('IProtectFromSting') || !IsConscious();
 }
 
-private function ApplyDazedEffect(SwatProjectile Grenade, Vector SourceLocation, float AIStingDuration)
+private function ApplyDazedEffect(SwatProjectile Grenade, Vector SourceLocation, float AIStingDuration , optional bool isMelee)
 {
 	LastTimeStung = Level.TimeSeconds;
 	StungDuration = AIStingDuration;
 
-	GetCommanderAction().NotifyStung(Grenade, SourceLocation, StungDuration);
+	GetCommanderAction().NotifyStung(Grenade, SourceLocation, StungDuration , isMelee);
 }
 
 private function DirectHitByGrenade(Pawn Instigator, float Damage, float AIStingDuration, class<DamageType> DamageType)
@@ -811,7 +811,7 @@ function ReactToMeleeAttack(
 
   // Don't apply the dazed effect if we are a threat and we got incapacitated
   if(Health > IncapacitatedHealthAmount || !IsAThreat())
-	 ApplyDazedEffect(None, Location, AIStingDuration);
+	 ApplyDazedEffect(None, Location, AIStingDuration , true);
 }
 
 ///////////////////////////////////////////////////////////////////////////////

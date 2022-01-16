@@ -10,6 +10,7 @@ class StungAction extends StunnedAction;
 // Variables
 
 var(parameters) Actor StingGrenade;
+var(parameters) bool isMelee;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -31,8 +32,24 @@ function TriggerStunnedSpeech()
 }
 
 protected function float GetMoraleModificationAmount()
-{
-	return ISwatAI(m_Pawn).GetCommanderAction().GetStungMoraleModification();
+{	
+	// if the sting grenade is none, then we were hit by the less lethal
+	// otherwise we were hit by the sting grenade
+	if (StingGrenade != None)
+	{
+		return ISwatAI(m_Pawn).GetCommanderAction().GetStungMoraleModification();
+	}
+	else
+	{
+		if ( isMelee ) 
+		{
+			if ( m_Pawn.isA('SwatEnemy') ) //melee nerfed for morale against suspects
+				return	 ISwatAI(m_Pawn).GetCommanderAction().GetStungMoraleModification() / 4.0 ;
+		}
+		
+		//reduced to half for the melee , LL guns can shoot faster
+		return ISwatAI(m_Pawn).GetCommanderAction().GetStungMoraleModification() / 2.0 ;	
+	}
 }
 
 protected function float GetEmpathyModifierForCharacter(ISwatAICharacter target)

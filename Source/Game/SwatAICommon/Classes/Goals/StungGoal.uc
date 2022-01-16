@@ -10,16 +10,19 @@ class StungGoal extends StunnedGoal;
 // Variables
 
 var(parameters) Actor StingGrenade;
+var(parameters) bool isMelee;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Constructor
 
-overloaded function construct(AI_Resource r, Actor inGrenade, vector inStunningDeviceLocation, float inStunnedDuration)
+overloaded function construct(AI_Resource r, Actor inGrenade, vector inStunningDeviceLocation, float inStunnedDuration , optional bool isMeleeParam )
 {
 	super.construct(r, inStunningDeviceLocation, inStunnedDuration);
 
 	StingGrenade = inGrenade;
+	
+	isMelee = isMeleeParam;
 }
 
 ///////////////////////////////////////////////////////////////////////////////

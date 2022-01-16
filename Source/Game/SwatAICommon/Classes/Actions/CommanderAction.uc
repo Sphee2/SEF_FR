@@ -1132,7 +1132,7 @@ function NotifyStunnedByC2Detonation(vector C2ChargeLocation, float StunnedDurat
 }
 
 // if grenade is none, then we got hit by the bean bag
-function NotifyStung(Actor Grenade, vector StungGrenadeLocation, float StunnedDuration)
+function NotifyStung(Actor Grenade, vector StungGrenadeLocation, float StunnedDuration , optional bool isMelee )
 {
 	// create the reaction behavior
 	if (CurrentStungGoal != None)
@@ -1152,7 +1152,7 @@ function NotifyStung(Actor Grenade, vector StungGrenadeLocation, float StunnedDu
 
 	if (CurrentStungGoal == None)
 	{
-		CurrentStungGoal = new class'StungGoal'(characterResource(), Grenade, StungGrenadeLocation, StunnedDuration);
+		CurrentStungGoal = new class'StungGoal'(characterResource(), Grenade, StungGrenadeLocation, StunnedDuration , isMelee);
 		assert(CurrentStungGoal != None);
 		CurrentStungGoal.AddRef();
 
