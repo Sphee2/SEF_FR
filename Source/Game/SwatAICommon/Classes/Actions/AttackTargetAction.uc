@@ -357,13 +357,14 @@ protected latent function AimAndFireAtTarget(FiredWeapon CurrentWeapon)
 
 
 	// Make sure we wait a minimum of MandatedWait before firing, so shooting isn't instant
-	TimeElapsed = Level.TimeSeconds - StartActionTime;
+	/*TimeElapsed = Level.TimeSeconds - StartActionTime;
 	MandatedWait = ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring();
 	if(TimeElapsed < MandatedWait) 
 	{
 		Sleep(MandatedWait - TimeElapsed);
 	}
-
+    */
+	
   	ShootWeaponAt(Target);
   	ShotsFired++;
 }
