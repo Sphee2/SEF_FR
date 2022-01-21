@@ -349,6 +349,9 @@ protected latent function AimAndFireAtTarget(FiredWeapon CurrentWeapon)
 	if(m_Pawn.IsA('SwatEnemy'))
 	{
 		LatentAimAtActor(Target, ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring());
+		
+		 if(Level.NetMode != NM_Standalone) //adjust for ping in MP
+			sleep(0.2);  
 	}
 	else
 	{	// SWAT need perfect aim!
