@@ -2294,7 +2294,7 @@ simulated state Throwing
         //If the player is not affected by a non-lethal (ie. killed), then they should drop
         //  the grenade.
 
-        if  ( Reason != 'BeingCuffed' || Reason != 'ReactingToNonlethal' )
+        if ( Reason != 'BeingCuffed' || Reason != 'ReactingToNonlethal' )
         {
             //drop the grenade
             ActiveItem = GetActiveItem();
@@ -2421,10 +2421,10 @@ simulated state ThrowingFinish
 
 			if (Level.GetEngine().EnableDevTools)
 				mplog( "...attempting to drop weapon." );
-
-            ThrownWeapon.SetThrowSpeed(0);
-            ThrownWeapon.OnUseKeyFrame( true ); // true == force use
-            ThrownWeapon.AIInterrupt();
+			
+			ThrownWeapon.SetThrowSpeed(0);
+			ThrownWeapon.OnUseKeyFrame( true ); // true == force use
+			ThrownWeapon.AIInterrupt();
         }
     }
 
@@ -4119,9 +4119,9 @@ private function ApplyHitEffect(float PlayerStingDuration, float HeavilyArmoredP
     {	
         StungTimer.StartTimer(LastStungDuration, false, true);    //don't loop, reset if already running
 
-        if ( Controller.GetStateName() != 'BeingCuffed' && Controller.GetStateName() != 'BeingUncuffed' )
+       /* if ( Controller.GetStateName() != 'BeingCuffed' && Controller.GetStateName() != 'BeingUncuffed' )
         {
-            Reason = 'ReactingToNonlethal';
+            Reason = 'ReactingToHit';
             NewControllerState = 'PlayerWalking';
             NewPawnState = '';
 
@@ -4136,7 +4136,7 @@ private function ApplyHitEffect(float PlayerStingDuration, float HeavilyArmoredP
             Controller.InterruptState( Reason );
             GotoState( NewPawnState );
             Controller.GotoState( NewControllerState );
-        }
+        }*/
     }
 
     //SetIsStung(true);
