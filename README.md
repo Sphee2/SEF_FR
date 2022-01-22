@@ -18,13 +18,19 @@ ADDED:
 	GAMEPLAY:
 			- Lean/Walk System , ability to lean and walk.... finally an hystoric moment for Swat4 modding!  
 				New and old lean system are working together for a complete... lean experience! 
-				Q and E - new lean/walk system 
-				CTRL + Q and CTRL + E - old lean 
-			- Partial Open Door System , holding CTRL and Mouse Wheel Up/Down wil swing the door partially, making possible to shoot or throw a grenade.
+				
+				NEW LEAN - Lean Left ( Default Q ) and  Lean Right ( Default E ) - new lean/walk system 
+				OLD LEAN - Hold Command (Default CTRL ) + Lean Left ( Default Q ) and Hold Command (Default CTRL ) + Lean Right ( Default E ) 
+				
+			- Partial Open Door System will swing the door partially, making possible to shoot or throw a grenade.
 			
+			          You can bind new keys or holding Hold Command ( default CTRL ) and Low Ready Up/Down ( Default Mouse Wheel Up/Down )           
+					  
 			- NEW TAC-AID: Maglite Torch! Using the light makes evidence glowing to allow player a faster search of them. Even AI can use this feature when got ordered to secure evidence!
-					J to equip torch 
-					Toggle Flashlight to highlight evidence
+						
+						J to equip torch 
+						Toggle Flashlight to highlight evidence
+						
 			- Disable Penalty Messages option for SP (in game settings options) and MP (forced to all players in Advanced server settings )
 			- Fleeing suspects are considered threat if running with a gun within 15 mts from a player 
 			- Restored Weapon Zoom (disabled by default). 
