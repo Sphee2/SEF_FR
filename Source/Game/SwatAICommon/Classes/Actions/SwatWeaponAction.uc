@@ -280,7 +280,7 @@ latent function ShootWeaponAt(Actor Target)
 				sleep(2.0); //wait for melee to finish
 				return; //officers always just melee instead of shooting , as trained professionals!
 			}
-			else if (m_Pawn.IsA('SwatEnemy')  ) 
+			else if (m_Pawn.IsA('SwatEnemy')  && !ISwatAICharacter(m_Pawn).IsFemale() ) //women cant melee cause missing animations
 			{
 				CurrentWeapon.Melee();
 				sleep(1.0); //wait for melee to finish
