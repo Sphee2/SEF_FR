@@ -83,7 +83,7 @@ simulated function PostBeginPlay()
 	Light.LightBrightness = GlowBrightness;
 	Light.LightHue = GlowHue;
 	Light.LightSaturation = GlowSaturation;
-	Light.LightRadius = 12;
+	Light.LightRadius = 8;
 
 	if (Level.NetMode != NM_Standalone && Role == ROLE_Authority && !Level.IsCOOPServer)
 		GlowLifetime *= MPGlowLifetimeMultiplier;
@@ -194,7 +194,7 @@ defaultproperties
 	CollisionHeight=2
 	CollisionRadius=2
 
-	GlowBrightness=128
+	GlowBrightness=255
 	GlowHue=90
 	GlowSaturation=0
 	GlowLifetime=1800
