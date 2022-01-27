@@ -276,9 +276,12 @@ latent function ShootWeaponAt(Actor Target)
 		{		
 			if (m_Pawn.IsA('SwatOfficer') ) 
 			{
-				CurrentWeapon.Melee();
-				sleep(2.0); //wait for melee to finish
-				return; //officers always just melee instead of shooting , as trained professionals!
+				if ( !CurrentWeapon.IsLessLethal() ) //no need to punch when less lethal
+				{
+					CurrentWeapon.Melee();
+					sleep(2.0); //wait for melee to finish
+					return; //officers always just melee instead of shooting , as trained professionals!
+				}
 			}
 			else if (m_Pawn.IsA('SwatEnemy')  && !ISwatAICharacter(m_Pawn).IsFemale() ) //women cant melee cause missing animations
 			{
