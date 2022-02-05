@@ -15,7 +15,7 @@ struct native EnemyAmmo
 var(Ammo) config array<EnemyAmmo>     EnemyUsesAmmo;
 var class<Ammunition>           AmmoClass;
 var Ammunition                  Ammo;
-var bool						bHasAmmoBandolier;
+//var bool						bHasAmmoBandolier;
 
 var(Firing) config vector               ThirdPersonFireOffset         "The offset from our pivot to the muzzle tip";
 var(Firing) config float                MuzzleVelocity                "The velocity that this FiredWeapon imparts to a fired bullet";
@@ -27,6 +27,7 @@ var private float               NextFireTime;                  // the time when 
 var private ActionStatus        ReloadingStatus;
 
 var(Reloading) config float                ReloadAnimationRate;
+var(Reloading) config bool bAbleToQuickReload;
 
 var int							DeathFired;						// used to stop players expelling entire clips on death
 
@@ -1213,7 +1214,7 @@ function SelectAmmoClass()
 //The caller should first ensure that it makes sense to reload this now,
 //  ie. its not busy doing something else
 // Executes on both client and server.
-simulated final function Reload()
+simulated final function Reload(optional bool QuickReload)
 {
     if (Level.GetEngine().EnableDevTools)
         mplog( self$"---FiredWeapon::Reload()." );
@@ -1221,7 +1222,10 @@ simulated final function Reload()
     //make sure this can be used now
     ValidateReload();
     PreReload();
-    GotoState('BeingReloaded');
+	if (QuickReload)
+		GotoState('BeingReloadedQuick');
+	else
+		GotoState('BeingReloaded');
 }
 
 simulated function PreReload()
@@ -1233,7 +1237,7 @@ simulated function PreReload()
 
 
 //This is a latent version of Reload().  See comments there.
-simulated final latent function LatentReload()
+simulated final latent function LatentReload(optional bool QuickReload)
 {
     if (Owner.IsA('SwatAI'))
     {
@@ -1253,7 +1257,12 @@ simulated final latent function LatentReload()
         NotifyClientsToDoAIReload();
 
     PreReload();
-    DoReloading();
+	
+	if (bAbleToQuickReload)
+		DoReloading(QuickReload);
+	else
+		DoReloading();
+	
 }
 
 function NotifyClientsToDoAIReload()
@@ -1330,10 +1339,18 @@ Begin:
     GotoState('');
 }
 
+simulated state BeingReloadedQuick
+{
+Begin:
+    DoReloading(true); //quick reloading
+    GotoState('');
+}
+
+
 //play all reloading-related animations, over time, on the
 //  first and third person models of this FiredWeapon, as well
 //  as the holders of each of these models.
-simulated latent private function DoReloading()
+simulated latent private function DoReloading(optional bool QuickReload)
 {
     if (Level.GetEngine().EnableDevTools)
         mplog( self$"---FiredWeapon::DoReloading()." );
@@ -1343,9 +1360,9 @@ simulated latent private function DoReloading()
     //  and we want them to play simultaneously.
 
     if (FirstPersonModel != None)
-        FiredWeaponModel(FirstPersonModel).PlayReload();
+        FiredWeaponModel(FirstPersonModel).PlayReload(QuickReload);
     if (ThirdPersonModel != None)
-        FiredWeaponModel(ThirdPersonModel).PlayReload();
+        FiredWeaponModel(ThirdPersonModel).PlayReload(QuickReload);
 
     if (FirstPersonModel != None)
         FiredWeaponModel(FirstPersonModel).FinishReload();
@@ -1388,6 +1405,10 @@ simulated final function OnReloadKeyFrame()
     }
 }
 simulated function ReloadedHook();    //for subclasses
+
+//quick reload - static mesh mag drop and remove from inventory
+simulated function OnReloadMagDump(); //override for subclasses... might differ from type of weapon
+
 
 //////////////////////////////////////////////////////////
 //

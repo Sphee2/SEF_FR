@@ -1381,13 +1381,20 @@ exec function CheckLockDedicated()
 
 exec function Reload()
 {
-    InternalReload();
+	
+	if ( (Pawn != None) && ( Pawn.Controller.bHoldCommand == 1 ) ) //quick reload
+	{
+		log("Quick Reload triggered!");
+		InternalReload(true);
+	}
+	else
+		InternalReload();
 }
 
 simulated function InternalMelee(optional bool UseMeleeOnly, optional bool UseCheckLockOnly, optional bool UseGiveItemOnly);
 
 // Overridden for Swat players in SwatGamePlayerController.
-simulated private function InternalReload()
+simulated private function InternalReload(optional bool QuickReload)
 {
     local HandheldEquipment ActiveItem;
     local FiredWeapon Weapon;
@@ -1407,7 +1414,7 @@ simulated private function InternalReload()
 
     if (!Weapon.Ammo.CanReload() ) return;
 
-    Weapon.Reload();
+	Weapon.Reload(QuickReload);
 }
 
 

@@ -2798,7 +2798,7 @@ function ServerGiveItem(SwatPawn Other)
 }
 
 // Overridden from PlayerController::Reload().
-simulated function InternalReload()
+simulated function InternalReload(optional bool QuickReload)
 {
     local FiredWeapon Weapon;
 
@@ -2833,7 +2833,7 @@ simulated function InternalReload()
         if (Level.GetEngine().EnableDevTools)
             mplog( "...calling ServerRequestReload()." );
 
-        SwatPlayer.ServerRequestReload( SwatPlayer.GetActiveItem().GetSlot() );
+        SwatPlayer.ServerRequestReload( SwatPlayer.GetActiveItem().GetSlot() , QuickReload );
     }
 }
 

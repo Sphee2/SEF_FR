@@ -1137,7 +1137,7 @@ function ServerRequestMelee( EquipmentSlot Slot )
 
 // Executes only on the server.
 // Overrides Pawn::ServerRequestReload().
-function ServerRequestReload( EquipmentSlot Slot )
+function ServerRequestReload( EquipmentSlot Slot , optional bool QuickReload )
 {
     local FiredWeapon ActiveItem, ItemToReload;
     local Controller i;
@@ -1190,7 +1190,7 @@ function ServerRequestReload( EquipmentSlot Slot )
         }
 
         // And then do the reload here on the server.
-        ItemToReload.Reload();
+		ItemToReload.Reload(QuickReload);
     }
 }
 

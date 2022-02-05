@@ -261,6 +261,12 @@ simulated function OnReloadKeyFrame()
     Pawn(Owner).OnReloadKeyFrame();
 }
 
+simulated function OnReloadMagDump()
+{
+    log( self$" in Hands::OnReloadMagDump()" );
+    Pawn(Owner).OnReloadMagDump();
+}
+
 //hands idle
 event AnimEnd( int Channel )
 {

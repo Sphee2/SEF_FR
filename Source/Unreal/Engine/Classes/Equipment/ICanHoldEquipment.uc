@@ -19,6 +19,7 @@ simulated function OnUseKeyFrame();
 simulated function OnLightstickKeyFrame();
 simulated function OnMeleeKeyFrame();
 simulated function OnReloadKeyFrame();
+simulated function OnReloadMagDump();
 simulated function OnNVGogglesDownKeyFrame();
 simulated function OnNVGogglesUpKeyFrame();
 

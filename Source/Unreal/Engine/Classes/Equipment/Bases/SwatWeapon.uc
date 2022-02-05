@@ -174,7 +174,6 @@ var config int IronSightLeanYawRight; //lean adjustment for IronSightLocation
 //unused vars for class space
 var int IronSightLeanOriginal;
 
-
 //////////////////////////////////////////
 var config float ZoomedAimErrorModifier;
 var config float ViewInertia;

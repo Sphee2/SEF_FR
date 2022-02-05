@@ -2855,6 +2855,11 @@ simulated function OnReloadKeyFrame()
     FiredWeapon(GetActiveItem()).OnReloadKeyFrame();
 }
 
+simulated function OnReloadMagDump()
+{
+    FiredWeapon(GetActiveItem()).OnReloadMagDump();
+}
+
 simulated function OnNVGogglesDownKeyFrame()
 {
 }
@@ -2922,7 +2927,7 @@ simulated function OnFireModeChanged();
 function ServerRequestMelee( EquipmentSlot ItemSlot );
 
 // This is an RPC from the client to the server.
-function ServerRequestReload( EquipmentSlot ItemSlot );
+function ServerRequestReload( EquipmentSlot ItemSlot , optional bool QuickReload );
 
 
 #if IG_SWAT

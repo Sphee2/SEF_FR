@@ -38,7 +38,7 @@ simulated function SetHandHeldEquipment(HandheldEquipment HHE)
 
 }
 
-simulated function PlayReload()
+simulated function PlayReload(optional bool QuickReload)
 {
 	local float ReloadRate;
 	local Pawn HandsOwner;
@@ -55,11 +55,17 @@ simulated function PlayReload()
 		if(HandsOwner.IsA('IAmAffectedByWeight'))
 		{
 			ReloadRate *= IAmAffectedByWeight(HandsOwner).GetBulkSpeedModifier();
+			
+			if (QuickReload)
+				ReloadRate *= 2.0;
 		}
 	}
 	else if(Owner.IsA('IAmAffectedByWeight'))
 	{	// apply the bulk reload speed modifier
 		ReloadRate *= IAmAffectedByWeight(Owner).GetBulkSpeedModifier();
+		
+		if (QuickReload)
+			ReloadRate *= 2.0;
 	}
 	else
 	{
@@ -111,6 +117,8 @@ simulated latent function FinishReload()
 }
 
 simulated function OnReloadKeyFrame(); //TMC TODO update HUD from OnReloadKeyFrame()
+
+simulated function OnReloadMagDump(); //QuickReload 
 
 simulated protected function name SelectReloadAnimation()
 {
