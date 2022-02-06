@@ -11,6 +11,7 @@ simulated function OnReloadMagDump() //overrided function from FiredWeapon
 	log("ClipBasedWeapon::OnReloadMagDump()");
 	if (IsInState('BeingReloadedQuick'))
 	{
+		
 		//make clip unusable!
 		Ammo.SetClip(Ammo.GetCurrentClip(), 0 );
 		
@@ -19,6 +20,8 @@ simulated function OnReloadMagDump() //overrided function from FiredWeapon
             Owner.GetBoneCoords('GripRHand').Origin,
             ,                   //SpawnRotation: default
             true);              //bNoCollisionFail
+			
+			SpentMag.SetStaticMesh(SpentMagMesh);
 
 		SpentMag.SetInitialVelocity(Vect(0,0,0));
 		
@@ -28,4 +31,5 @@ simulated function OnReloadMagDump() //overrided function from FiredWeapon
 
 defaultproperties
 {
+	SpentMagMesh=StaticMesh'SwatGear_sm.SMG_mp5clip' //to be overriden by weapon's config!
 }
