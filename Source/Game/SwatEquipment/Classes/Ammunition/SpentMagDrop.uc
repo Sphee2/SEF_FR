@@ -87,5 +87,5 @@ defaultproperties
 	CollisionHeight=2
 	CollisionRadius=2
 
-	RemoteRole = ROLE_None
+	RemoteRole = ROLE_SimulatedProxy
 }
