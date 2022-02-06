@@ -1414,7 +1414,10 @@ simulated private function InternalReload(optional bool QuickReload)
 
     if (!Weapon.Ammo.CanReload() ) return;
 
-	Weapon.Reload(QuickReload);
+	if (Weapon.Ammo.NeedsReload())
+		Weapon.Reload(true); //quick reload always when dry
+	else
+		Weapon.Reload(QuickReload);
 }
 
 
