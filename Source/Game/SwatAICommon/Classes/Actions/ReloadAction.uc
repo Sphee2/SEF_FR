@@ -2,7 +2,7 @@
 
 class ReloadAction extends SwatWeaponAction;
 ///////////////////////////////////////////////////////////////////////////////
-
+var(parameters) bool bQuickReload;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -22,7 +22,13 @@ function float selectionHeuristic( AI_Goal goal )
 
 	if (CurrentWeapon != None)
 	{
+		
+		
 		if ((m_Pawn.IsA('SwatOfficer')) && CurrentWeapon.ShouldReload() && CurrentWeapon.CanReload())
+		{
+			return 1.0;
+		}
+		else if ( m_Pawn.IsA('SwatOfficer') && ( (WeaponClip/CurrentCapacity) <= 0.1 ) && CurrentWeapon.CanReload() ) //Tactical reload before stack up or falling in
 		{
 			return 1.0;
 		}
@@ -68,7 +74,7 @@ latent function ReloadWeapon()
 	CurrentWeapon = FiredWeapon(m_Pawn.GetActiveItem());
 
 	// reload the weapon
-    CurrentWeapon.LatentReload();
+    CurrentWeapon.LatentReload(bQuickReload);
 }
 
 state Running

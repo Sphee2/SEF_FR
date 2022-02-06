@@ -65,7 +65,7 @@ function PostReloadGoal()
 {
 	assert(CurrentReloadGoal == None);
 
-	CurrentReloadGoal = new class'ReloadGoal'(weaponResource(), achievingGoal.priority);
+	CurrentReloadGoal = new class'ReloadGoal'(weaponResource(), achievingGoal.priority ,true);
 	assert(CurrentReloadGoal != None);
 	CurrentReloadGoal.AddRef();
 	CurrentReloadGoal.postGoal(self);

@@ -208,7 +208,7 @@ latent function AttackTarget()
   // if our current weapon is empty, and can reload, reload
   if (CurrentWeapon.NeedsReload() && CurrentWeapon.CanReload())
   {
-		CurrentWeapon.LatentReload();
+		CurrentWeapon.LatentReload(true); //Quick reload under stress... if possible
   }
 	else if (CurrentWeapon.IsEmpty())
 	{
@@ -287,7 +287,7 @@ latent function WildGunnerAttackTarget()
     // if our current weapon is empty, and can reload, reload
     if (CurrentWeapon.NeedsReload() && CurrentWeapon.CanReload())
     {
-		CurrentWeapon.LatentReload();
+		CurrentWeapon.LatentReload(true);
     }
 	else if (CurrentWeapon.IsEmpty())
 	{
