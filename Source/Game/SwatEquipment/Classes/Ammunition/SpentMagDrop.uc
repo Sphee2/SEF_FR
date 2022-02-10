@@ -11,7 +11,7 @@ simulated event FellOutOfWorld(eKillZType KillType)
 	local Vector NewLocation;
 	local Vector NewVelocity;
 
-	log("---LightstickProjectile "$self$" fell out of world. Its owner was "$Owner);
+	log("---SpentMagDrop "$self$" fell out of world. Its owner was "$Owner);
 	if(FallCount >= 6)
 	{
 		Super.FellOutOfWorld(KillType);
@@ -20,29 +20,10 @@ simulated event FellOutOfWorld(eKillZType KillType)
 	// Try giving it a nudge upwards in a random direction depending on the current FallCount and set its havok velocity to 0
 	NewLocation = Location;
 
-	if(FallCount == 0)
+	if(FallCount < 6)
 	{
+		SetPhysics(PHYS_None);
 		NewLocation.Z = Location.Z + 2.0;
-	}
-	else if(FallCount == 1)
-	{
-		NewLocation.Z = Location.Z - 2.0;
-	}
-	else if(FallCount == 2)
-	{
-		NewLocation.X = Location.X + 2.0;
-	}
-	else if(FallCount == 3)
-	{
-		NewLocation.X = Location.X - 2.0;
-	}
-	else if(FallCount == 4)
-	{
-		NewLocation.Y = Location.Y + 2.0;
-	}
-	else if(FallCount == 5)
-	{
-		NewLocation.Y = Location.Y - 2.0;
 	}
 
 	SetLocation(NewLocation);
@@ -84,8 +65,16 @@ defaultproperties
 	hkFriction=0.1
 	hkRestitution=0.3
 	hkStabilizedInertia=true
-	CollisionHeight=2
-	CollisionRadius=2
+	CollisionHeight=5.0
+	CollisionRadius=5.0
+	
+	bCollideWorld=true
+	
+	hkKeyframed=false
+	hkForceUpright=HKOC_Free
+	hkForceUprightStrength = 0.3
+	hkForceUprightDamping = 0.9
+	
 
 	RemoteRole = ROLE_SimulatedProxy
 }
