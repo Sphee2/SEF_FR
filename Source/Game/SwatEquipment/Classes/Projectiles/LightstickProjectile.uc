@@ -45,27 +45,27 @@ simulated event FellOutOfWorld(eKillZType KillType)
 
 	if(FallCount == 0)
 	{
-		NewLocation.Z = Location.Z + 2.0;
+		NewLocation.Z = Location.Z + 10.0;
 	}
 	else if(FallCount == 1)
 	{
-		NewLocation.Z = Location.Z - 2.0;
+		NewLocation.Z = Location.Z - 10.0;
 	}
 	else if(FallCount == 2)
 	{
-		NewLocation.X = Location.X + 2.0;
+		NewLocation.X = Location.X + 10.0;
 	}
 	else if(FallCount == 3)
 	{
-		NewLocation.X = Location.X - 2.0;
+		NewLocation.X = Location.X - 10.0;
 	}
 	else if(FallCount == 4)
 	{
-		NewLocation.Y = Location.Y + 2.0;
+		NewLocation.Y = Location.Y + 10.0;
 	}
 	else if(FallCount == 5)
 	{
-		NewLocation.Y = Location.Y - 2.0;
+		NewLocation.Y = Location.Y - 10.0;
 	}
 
 	SetLocation(NewLocation);

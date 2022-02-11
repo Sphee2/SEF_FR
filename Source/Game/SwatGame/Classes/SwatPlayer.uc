@@ -2359,7 +2359,7 @@ simulated state ThrowingFinish
         {
           // Lightsticks can be dropped at the feet. Grenades, not so much.
           ThrowSpeed = class'SwatPlayerConfig'.static.GetThrowSpeedTimeFactor() * ThrowHeldTime;
-          ThrownWeapon.SetThrowSpeed(FClamp(ThrowSpeed, 0.0, class'SwatPlayerConfig'.static.GetThrowSpeedRange().Max));
+          ThrownWeapon.SetThrowSpeed(FClamp(ThrowSpeed, 0.0, 500.0 ));// class'SwatPlayerConfig'.static.GetThrowSpeedRange().Max ));
         }
         else
         {
