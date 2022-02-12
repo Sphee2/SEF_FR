@@ -17,8 +17,8 @@ simulated function OnReloadMagDump() //overrided function from FiredWeapon
 		
 		SpentMag = Owner.Spawn( class'SpentMagDrop', Owner,
             ,                   //tag: default
-            Owner.GetBoneCoords('GripRHand').Origin,
-            ,                   //SpawnRotation: default
+            GetThirdPersonModel().Location,                                                 
+            GetThirdPersonModel().Rotation,           
             true);              //bNoCollisionFail
 			
 			SpentMag.SetStaticMesh(SpentMagMesh);
