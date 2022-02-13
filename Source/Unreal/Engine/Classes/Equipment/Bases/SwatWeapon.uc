@@ -185,6 +185,9 @@ var array<vector> AnimationSplinePoints;
 
 var bool bPenetratesDoors;
 
+//the static mesh of the spent mag 
+var config StaticMesh SpentMagMesh;
+
 // ONLY used on grenade launchers
 //clients interested when a grenade is thrown or detonates
 var array<IInterestedGrenadeThrowing> InterestedGrenadeRegistrants;

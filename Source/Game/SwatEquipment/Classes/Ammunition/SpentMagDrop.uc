@@ -53,6 +53,25 @@ Begin:
 	ApplyHavok();
 }
 
+simulated function PostNetBeginPlay()
+{
+	Super.PostNetBeginPlay();
+
+	ChangeMagMesh();
+}
+
+simulated function ChangeMagMesh()
+{
+	local SwatWeapon SW;
+	
+	//the weapon we are linked with
+	SW = SwatWeapon(Pawn(Owner).GetActiveItem());
+	assert(SW != None);
+	
+	//change the mesh
+	SetStaticMesh(SW.SpentmagMesh);
+}
+
 defaultproperties
 {
     StaticMesh=StaticMesh'SwatGear_sm.SMG_mp5clip'
@@ -76,5 +95,5 @@ defaultproperties
 	hkForceUprightDamping = 0.9
 	
 
-	RemoteRole = ROLE_SimulatedProxy
+	RemoteRole = ROLE_DumbProxy
 }
