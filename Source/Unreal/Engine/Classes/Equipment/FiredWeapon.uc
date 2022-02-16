@@ -28,6 +28,7 @@ var private ActionStatus        ReloadingStatus;
 
 var(Reloading) config float                ReloadAnimationRate;
 var(Reloading) config bool bAbleToQuickReload;
+var bool AIisQuickReloaded; //little hack to know if a weapon has been quick reloaded by AI.
 
 var int							DeathFired;						// used to stop players expelling entire clips on death
 
@@ -1254,18 +1255,26 @@ simulated final latent function LatentReload(optional bool QuickReload)
     // For AI's in COOP, let clients know that they should play the reloading
     // animation.
     if ( Level.IsCOOPServer )
-        NotifyClientsToDoAIReload();
+    {
+		if (bAbleToQuickReload)
+			NotifyClientsToDoAIReload(QuickReload);
+		else
+			NotifyClientsToDoAIReload();
+	}
 
     PreReload();
 	
 	if (bAbleToQuickReload)
+	{	
+		AIisQuickReloaded = QuickReload;
 		DoReloading(QuickReload);
+	}
 	else
 		DoReloading();
 	
 }
 
-function NotifyClientsToDoAIReload()
+function NotifyClientsToDoAIReload(optional bool QuickReload)
 {
     local Controller i;
     local Controller theLocalPlayerController;
@@ -1280,7 +1289,7 @@ function NotifyClientsToDoAIReload()
         current = PlayerController( i );
         if ( current != None && current != theLocalPlayerController )
         {
-            current.ClientDoAIReload( Pawn(Owner) );
+            current.ClientDoAIReload( Pawn(Owner) ,  QuickReload );
         }
     }
 }
@@ -1379,6 +1388,8 @@ simulated latent private function DoReloading(optional bool QuickReload)
 
 	if (GetHands() != None)
 	    GetHands().IdleHoldingEquipment();
+
+	AIisQuickReloaded = false; //finished reloading in any case.
 
     Pawn(Owner).OnReloadingFinished();
 }

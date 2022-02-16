@@ -7,9 +7,11 @@ var SpentMagDrop SpentMag; //static mesh of the spent mag to be dropped
 
 simulated function OnReloadMagDump() //overrided function from FiredWeapon
 {	
-	log("ClipBasedWeapon::OnReloadMagDump()");
-	if (IsInState('BeingReloadedQuick'))
+
+	if (IsInState('BeingReloadedQuick') || ( ( Owner.IsA('SwatEnemy') || Owner.IsA('SwatOfficer') ) && AIisQuickReloaded )   )
 	{
+		
+			log("ClipBasedWeapon::OnReloadMagDump() :: " $ Owner.name $ " .");
 		
 		//make clip unusable!
 		Ammo.SetClip(Ammo.GetCurrentClip(), 0 );
@@ -35,11 +37,15 @@ simulated function OnReloadMagDump() //overrided function from FiredWeapon
 		}
 		else
 		{
+			
+			if ( Level.NetMode != NM_DedicatedServer ) //we dont need that on server
+			{
 			SpentMag = Owner.Spawn( class'SpentMagDrop', Owner,
 			,                   //tag: default
 			Owner.GetBoneCoords('GripRHand').Origin, 
 			Owner.GetBoneRotation('GripRHand'),
 			true);              //bNoCollisionFail
+			}
 		}
 		
 		SpentMag.SetInitialVelocity(Vect(0,0,0));	

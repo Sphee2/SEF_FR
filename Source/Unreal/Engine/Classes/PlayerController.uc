@@ -632,7 +632,7 @@ simulated function ClientBroadcastTrigger(  Actor SourceActor,
 }
 
 // Override in derived class.
-simulated function ClientDoAIReload( Pawn theAIPawn );
+simulated function ClientDoAIReload( Pawn theAIPawn , optional bool QuickReload );
 simulated function ClientAIBeginFiringWeapon( Pawn theAIPawn, int CurrentFireMode );
 simulated function ClientAIEndFiringWeapon( Pawn theAIPawn );
 simulated function ClientWeaponFellOutOfWorld( string WeaponModelUniqueID );

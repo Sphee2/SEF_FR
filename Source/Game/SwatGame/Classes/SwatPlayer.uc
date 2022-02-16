@@ -1183,7 +1183,7 @@ function ServerRequestReload( EquipmentSlot Slot , optional bool QuickReload )
 						if (Level.GetEngine().EnableDevTools)
 							mplog( self$" on server: calling ClientReloadForPawn() on "$current.Pawn );
 
-                        current.ClientReloadForPawn( self, ItemToReload.GetSlot() );
+                        current.ClientReloadForPawn( self, ItemToReload.GetSlot() , QuickReload );
                     }
                 }
             }

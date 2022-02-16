@@ -5957,7 +5957,7 @@ simulated function ClientMeleeForPawn( SwatPlayer theSwatPlayer, EquipmentSlot I
 }
 
 // Executes on the client only
-simulated function ClientReloadForPawn( SwatPlayer theSwatPlayer, EquipmentSlot ItemSlot )
+simulated function ClientReloadForPawn( SwatPlayer theSwatPlayer, EquipmentSlot ItemSlot , optional bool QuickReload )
 {
     local FiredWeapon Item;
     local OfficerLoadOut theLoadOut;
@@ -5984,14 +5984,14 @@ simulated function ClientReloadForPawn( SwatPlayer theSwatPlayer, EquipmentSlot 
         if (Level.GetEngine().EnableDevTools)
             mplog( "...Calling Reload() on: "$Item );
 
-        Item.Reload();
+        Item.Reload(QuickReload);
     }
 }
 
 
 // Executes only on client during COOP. Forces an AI to reload their current
 // weapon, if the weapon is idle.
-simulated function ClientDoAIReload( Pawn theAIPawn )
+simulated function ClientDoAIReload( Pawn theAIPawn , optional bool QuickReload )
 {
     local FiredWeapon Item;
 
@@ -6020,7 +6020,8 @@ simulated function ClientDoAIReload( Pawn theAIPawn )
         if (Level.GetEngine().EnableDevTools)
             mplog( "...Calling Reload() on: "$Item );
 
-        Item.Reload();
+		item.AIisQuickReloaded = QuickReload; //hack for AI
+        Item.Reload(QuickReload);
     }
 }
 
