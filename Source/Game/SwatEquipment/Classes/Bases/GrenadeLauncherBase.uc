@@ -62,6 +62,53 @@ function EquipmentSlot GetFiredGrenadeEquipmentSlot()
 	}
 }
 
+
+simulated function OnReloadMagDump()
+{
+local SpentMagDrop SpentMag;
+
+if ( MagazineSize == 1) //quick hack for HK69... Arwen doesnt need it
+{
+	if ( Level.NetMode == NM_Standalone )
+		{
+			if ( inFirstPersonView() )
+			{	
+				SpentMag = Owner.Spawn( class'SpentMagDrop', Owner,
+				,                   //tag: default
+				GetHands().GetBoneCoords('GripRHand').Origin, //translation,
+				GetHands().GetBoneRotation('GripRHand'), //rotTransl,
+				true);              //bNoCollisionFail
+			}
+			else
+			{
+				SpentMag = Owner.Spawn( class'SpentMagDrop', Owner,
+				,                   //tag: default
+				ThirdPersonModel.Location, //translation,
+				ThirdPersonModel.Rotation, //rotTransl,
+				true);              //bNoCollisionFail
+			}
+		}
+		else
+		{
+			
+			if ( Level.NetMode != NM_DedicatedServer ) //we dont need that on server
+			{
+			SpentMag = Owner.Spawn( class'SpentMagDrop', Owner,
+			,                   //tag: default
+			Owner.GetBoneCoords('GripRHand').Origin, 
+			Owner.GetBoneRotation('GripRHand'),
+			true);              //bNoCollisionFail
+			}
+		}
+		
+		SpentMag.SetInitialVelocity(Vect(0,0,0));	
+}
+	
+}
+
+
+
+
 defaultproperties
 {
   bPenetratesDoors=false
