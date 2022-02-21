@@ -44,6 +44,7 @@ enum EquipmentSlot
 	Slot_Lightstick,        //14
 	Slot_AmmoBandolier,     //15
 	Slot_Maglite,           //16
+    Slot_Bandage,           //17
 	kNumEquipmentSlots,
 };
 

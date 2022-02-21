@@ -923,4 +923,5 @@ defaultproperties
     SlotNames(11)="ZipCuff"
     SlotNames(14)="Lightstick"
 	SlotNames(16)="Maglite"
+    SlotNames(17)="Field Dress"
 }

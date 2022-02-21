@@ -450,6 +450,9 @@ function bool ContextMatches(SwatPlayer Player, Actor Target, PlayerInterfaceCon
 			case 'CuffsOnPlayer':
 				return false; // PvP FIXME
 				break;
+			case 'Bandage':
+				return false; // PvP FIXME
+				break;
 			case 'ToolkitOnArrestedVIP':
 				return false; // PvP FIXME
 				break;

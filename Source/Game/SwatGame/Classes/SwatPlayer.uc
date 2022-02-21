@@ -1317,12 +1317,18 @@ function ServerRequestQualify( Actor DefaultFireFocusActor )
 
         if ( theEquipment.IsA( 'Toolkit' ) && !theNetPlayer.CanBeUnarrestedNow() )
             return;
+
+        if ( theEquipment.IsA( 'FieldDress' ) && !theNetPlayer.CanBeHealed() )
+            return;
     }
 
     theSwatAI = SwatAI( DefaultFireFocusActor );
     if ( theSwatAI != None )
     {
         if ( theEquipment.IsA( 'Cuffs' ) && !theSwatAI.CanBeArrestedNow() )
+            return;
+
+        if ( theEquipment.IsA( 'FieldDress' ) && !theSwatAI.CanBeHealed() )
             return;
     }
 
@@ -4041,6 +4047,16 @@ simulated function bool HasTheItem()
 simulated function bool IsLowerBodyInjured()
 {
     return CurrentLimp > class'SwatPlayerConfig'.static.GetLimpThreshold();
+}
+
+simulated final function HealLimping()
+{
+    CurrentLimp = class'SwatPlayerConfig'.static.GetLimpThreshold() - 0.001;
+}
+
+simulated final function ForceLimping() //debug function
+{
+    CurrentLimp = class'SwatPlayerConfig'.static.GetLimpThreshold() + 1;
 }
 
 ///////////////////////////////////////////////////////////////////////////////

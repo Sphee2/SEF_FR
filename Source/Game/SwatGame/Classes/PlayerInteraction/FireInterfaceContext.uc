@@ -8,6 +8,9 @@ import enum EquipmentSlot from Engine.HandheldEquipment;
 var config bool CaresAboutCanBeArrestedNow;
 var config bool CanBeArrestedNow;
 
+var config bool CaresAboutCanBeHealedNow;
+var config bool CanBeHealedNow;
+
 var config bool CaresAboutCanBeUsedByToolkitNow;
 var config bool CanBeUsedByToolkitNow;
 

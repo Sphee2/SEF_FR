@@ -189,6 +189,16 @@ function bool ContextMatches(SwatPlayer Player, Actor Target, PlayerInterfaceCon
 		}
 	}
 
+    if(FireContext.CaresAboutCanBeHealedNow)
+	{
+		PawnObject = SwatPawn(Target);
+
+        if(PawnObject == None || PawnObject.CanBeHealed() ^^ FireContext.CanBeHealedNow)
+	    {
+		    return false;
+		}
+	}
+
 	if(FireContext.CaresAboutCanBeUsedByToolkitNow)
 	{
 		ToolkitObject = IAmUsedByToolkit(Target);

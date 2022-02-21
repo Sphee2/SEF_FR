@@ -471,6 +471,11 @@ simulated function EAnimationSet GetCrouchingInjuredAnimSet()				{ return kAnima
 
 simulated native event bool IsLowerBodyInjured();
 
+simulated function bool CanBeHealed()
+{
+    return isConscious() && IsLowerBodyInjured();
+}
+
 // don't override, override the accessors above.
 simulated function EAnimationSet GetMovementAnimSet()
 {
@@ -1456,6 +1461,11 @@ simulated protected function TriggerPawnDied(Controller Killer, class<DamageType
 simulated function bool IsIntenseInjury()
 {
 	return ((float(Health) / float(Default.Health)) <= PercentageHealthForIntenseInjury);
+}
+
+simulated function HealIntenseInjury()
+{
+    Health =  100; //just out of the threshold for heal the limp
 }
 
 // overridden from Pawn.uc

@@ -6325,6 +6325,15 @@ exec function TestStung()
         0);             //MoraleModifier
 }
 
+exec function TestLimp()
+{
+	SwatPlayer(Pawn).ForceLimping();
+}
+
+exec function Testbandage()
+{
+	SwatPlayer(Pawn).HealLimping();
+}
 
 exec function Loc()
 {
