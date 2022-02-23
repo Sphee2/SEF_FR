@@ -91,20 +91,6 @@ simulated function UsedHook()
 
     log( self$"---FieldDress::UsedHook(). Other="$Other$", Owner="$Owner );
 
-    //Assert( Pawn(Other) != None );
-
-    /*
-    ICanBeArrested(Other).OnArrested(Pawn(Owner));
-
-    //trigger PawnArrested here...
-    if( Level.NetMode != NM_Client )
-        SwatGameInfo(Level.Game).GameEvents.PawnArrested.Triggered( Pawn(Other), Pawn(Owner) );
-
-    SGPC = SwatGamePlayerController(Pawn(Other).Controller);
-    if( SGPC != None )
-        SGPC.PostArrested();
-    */
-
 
     //heal other human players or your own
     SP=SwatPlayer(Pawn(Other));
@@ -113,7 +99,10 @@ simulated function UsedHook()
     {
         log( self$"---FieldDress::UsedHook(). SP.IsLowerBodyInjured() " $ SP.IsLowerBodyInjured() $ " .");
      if ( SP.IsLowerBodyInjured())
+     {   
         SP.HealLimping();
+        DecrementAvailableCount();
+     }
 
       return;
     }
@@ -125,7 +114,10 @@ simulated function UsedHook()
     if (SAI != None)
     {
         if ( SAI.IsLowerBodyInjured())
+        {
             SAI.HealIntenseInjury();
+            DecrementAvailableCount();
+        }
 
         log("Field dress::PawnHealing!");
     }
@@ -134,11 +126,11 @@ simulated function UsedHook()
 
 //override from HandheldEquipment:
 //Cuffs become unavailable even in Training
-simulated function UpdateAvailability()
+/*simulated function UpdateAvailability()
 {
     if (UnavailableAfterUsed)
         SetAvailable(false);
-}
+}*/
 
 // QualifiedUseEquipment overrides
 
@@ -181,14 +173,15 @@ simulated protected function AssertOtherIsValid()
 
 //See HandheldEquipment::OnForgotten() for an explanation of the notion of "Forgotten".
 //Cuffs become "magically" Available again after they have been Forgotten.
-simulated function OnForgotten()
+/*simulated function OnForgotten()
 {
     SetAvailable(true);
-}
+}*/
 
 defaultproperties
 {
     Slot=SLOT_Bandage
     UnavailableAfterUsed=true
 	bAbleToMelee=true
+    StartCount=1
 }
