@@ -143,6 +143,45 @@ simulated function Vector GetPushAwayDirection(SwatRagdollPawn thePawn)
 
     return Normal(DesiredPushLocation2D - Location); // away from door plane
 }
+
+simulated function RemoveDoorFromFrame()
+{
+	local FallenDoor FD_left;
+	local FallenDoor FD_right;
+	
+	
+				FD_left = self.Spawn( class'FallenDoor', self,
+				,                   //tag: default
+				LeftHingeDoorModel.Location, //translation,
+				LeftHingeDoorModel.Rotation, //rotTransl,
+				true);              //bNoCollisionFail
+	
+				FD_right = self.Spawn( class'FallenDoor', self,
+				,                   //tag: default
+				RightHingeDoorModel.Location, //translation,
+				RightHingeDoorModel.Rotation, //rotTransl,
+				true);              //bNoCollisionFail
+	
+	FD_left.ChangeDoorMesh(LeftHingeDoorModel.StaticMesh);
+	FD_right.ChangeDoorMesh(RightHingeDoorModel.StaticMesh);
+	
+	//remove static mesh 
+	LeftHingeDoorModel.SetStaticMesh(None);
+	RightHingeDoorModel.SetStaticMesh(None);
+	
+	/*
+	if (IsOpenLeft() || IsOpeningLeft())
+		FD.getImpulse(true); //impulse left
+	else
+		FD.getImpulse(false); //impuls right
+	*/
+	
+	//cant interact anymore
+	bPlayerCanUse = false;
+	//bNoDoor =true;
+	
+}
+
 defaultproperties
 {
 	// collision radius of 120 fits around both doors when they are open either way

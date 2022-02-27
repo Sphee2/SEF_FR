@@ -188,6 +188,35 @@ simulated function Vector GetPushAwayDirection(SwatRagdollPawn thePawn)
     return DesiredCorner2D - HingeLocation2D;
 }
 
+simulated function RemoveDoorFromFrame()
+{
+	local FallenDoor FD;
+	
+	
+				FD = self.Spawn( class'FallenDoor', self,
+				,                   //tag: default
+				DoorModel.Location, //translation,
+				DoorModel.Rotation, //rotTransl,
+				true);              //bNoCollisionFail
+	
+	FD.ChangeDoorMesh(DoorModel.StaticMesh);
+	
+	//remove static mesh 
+	DoorModel.SetStaticMesh(None);
+	
+	/*
+	if (IsOpenLeft() || IsOpeningLeft())
+		FD.getImpulse(false); //impulse left
+	else
+		FD.getImpulse(true); //impuls right
+	*/
+	
+	//cant interact anymore
+	bPlayerCanUse = false;
+	//bNoDoor =true;
+	
+}
+
 defaultproperties
 {
     //CollisionRadius must be at least (w^2+(w/2)^2)^(1/2), where w is the width of the door,

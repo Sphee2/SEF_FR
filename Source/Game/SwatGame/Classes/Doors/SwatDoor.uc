@@ -1513,16 +1513,27 @@ simulated state Moving
 		if ( ( (PendingPosition == DoorPosition_PartialOpenLeft ) || (PendingPosition == DoorPosition_PartialOpenRight  ) && CurrentPosition == DoorPosition_Closed ))
 		{
 			log("DOOR " $ frame $ " C " $ CurrentPosition $ " P "  $ PendingPosition $ "  D "$ PendingPosition $ " ");
-			if ( frame >= 0.36 && (seq == 'OpenLeft' || seq == 'OpenRight' ) )  //around frame 15 of opening a door
+			if ( frame >= 0.36  )  //around frame 15 of opening a door
 			{
-				Log("DOOR " $ frame $ " FREEZE!!! ");
-				FreezeAnimAt(15);
-				CurrentPosition=PendingPosition; //train arrived
 				
-				GotoState('');
+				if (seq == 'OpenLeft' || seq == 'OpenRight' )
+				{
+					FreezeAnimAt(15);
+					CurrentPosition=PendingPosition; //train arrived
+					GotoState('');
+				}
 			}
 		}
 		
+		if ( frame >= 0.36  ) 
+		{
+			if (seq == 'BreachedLeft' || seq == 'BreachedRight' )
+			{
+				RemoveDoorFromFrame();
+				CurrentPosition=PendingPosition;
+				GotoState('');
+			}
+		}
 		
         UpdateAttachmentLocations();
     }
@@ -1759,6 +1770,8 @@ simulated state BeingBreached extends Moving
     }
 }
 simulated function PlayBreachedEffects();    //implemented in subclasses
+
+simulated function RemoveDoorFromFrame();
 
 simulated function PlayDoorBreached( DeployedC2ChargeBase TheCharge )
 {
