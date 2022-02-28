@@ -1531,6 +1531,7 @@ simulated state Moving
 			{
 				RemoveDoorFromFrame();
 				CurrentPosition=PendingPosition;
+				SetCollision(false);
 				GotoState('');
 			}
 		}

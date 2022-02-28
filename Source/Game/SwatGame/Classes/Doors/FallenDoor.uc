@@ -83,12 +83,12 @@ defaultproperties
 	hkLinearDamping=0.0
 	hkAngularDamping=0.05
 	hkStabilizedInertia=true
-	CollisionHeight=5.0
-	CollisionRadius=5.0
+	//CollisionHeight=5.0
+	//CollisionRadius=5.0
 	
 	bCollideWorld=true
 	
 	hkKeyframed=false
 
-	RemoteRole = ROLE_DumbProxy
+	RemoteRole = ROLE_SimulatedProxy
 }
