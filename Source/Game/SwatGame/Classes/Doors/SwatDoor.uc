@@ -1157,8 +1157,20 @@ function NotifyClientsOfDoorBlocked( bool OpeningBlocked )
 // Note: In multiplayer function Blasted only happens on the server
 simulated function Blasted(Pawn Instigator)
 {
-    SetPositionForMove( CurrentPosition, MR_Blasted );	//We want the lock to be obliterated, but we dont want the door to swing open
-		
+    
+	if ( frand() < 0.5 ) //door will open on random chance
+	{
+		if ( IsClosed() || IsClosing() )
+		{
+			if (ActorIsToMyLeft(Instigator))
+				SetPositionForMove( DoorPosition_OpenRight, MR_Blasted );
+			else
+				SetPositionForMove( DoorPosition_OpenLeft, MR_Blasted );
+
+			Moved(false, true); //not instantly, but force
+		}	
+	}	
+	
 	Broken();
 	OnUnlocked();
 }
@@ -1710,10 +1722,10 @@ simulated state BeingBlasted extends Moving
     {
 		
 		NotifyRegistrantsDoorOpening();
-        /*if (PendingPosition == DoorPosition_OpenLeft)
+        if (PendingPosition == DoorPosition_OpenLeft)
             PlayAnim('BlastedLeft');
         else
-            PlayAnim('BlastedRight');*/
+            PlayAnim('BlastedRight');
 
 		/*if ( IsBoobyTrapped() )
 		{

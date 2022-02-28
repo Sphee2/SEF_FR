@@ -192,7 +192,13 @@ latent function UseBreachingShotgun()
 	CurrentUseBreachingShotgunGoal.Release();
 	CurrentUseBreachingShotgunGoal = None;
 
+	//we need to wait the door to be open (or it will interfere with the movement of the Squad while trying to enter the room)
+	sleep(1.0);
+
 	// have him open the door
+	
+	if (TargetDoor.IsClosed() && !TargetDoor.IsOpening() )
+	{
 	CurrentOpenDoorGoal = new class'OpenDoorGoal'(AI_Resource(Breacher.MovementAI), TargetDoor);
 	assert(CurrentOpenDoorGoal != None);
 	CurrentOpenDoorGoal.AddRef();
@@ -200,7 +206,7 @@ latent function UseBreachingShotgun()
 	CurrentOpenDoorGoal.SetPreferSides();
 
 	CurrentOpenDoorGoal.postGoal(self);
-
+	
 	// if the thrower is not the same as the breacher, wait for the door to open
 	if(Thrower != Breacher)
 	{
@@ -213,6 +219,8 @@ latent function UseBreachingShotgun()
 	else
 	{
 		WaitForGoal(CurrentOpenDoorGoal);
+	}
+	
 	}
 
 }
