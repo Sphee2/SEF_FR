@@ -1541,9 +1541,13 @@ simulated state Moving
 		{
 			if (seq == 'BreachedLeft' || seq == 'BreachedRight' )
 			{
-				RemoveDoorFromFrame();
+				if (frand() < 0.33 )
+				{
+					//make door fall on chance
+					RemoveDoorFromFrame();
+					SetCollision(false);
+				}
 				CurrentPosition=PendingPosition;
-				SetCollision(false);
 				GotoState('');
 			}
 		}

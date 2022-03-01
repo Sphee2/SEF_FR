@@ -148,26 +148,37 @@ simulated function RemoveDoorFromFrame()
 {
 	local FallenDoor FD_left;
 	local FallenDoor FD_right;
-	
-	
-				FD_left = self.Spawn( class'FallenDoor', self,
+	local bool doorfall;
+
+	if ( frand() < 0.5 )
+	{
+			FD_left = self.Spawn( class'FallenDoor', self,
 				,                   //tag: default
 				LeftHingeDoorModel.Location, //translation,
 				LeftHingeDoorModel.Rotation, //rotTransl,
 				true);              //bNoCollisionFail
 	
+	FD_left.ChangeDoorMesh(LeftHingeDoorModel.StaticMesh);
+	//remove static mesh 
+	LeftHingeDoorModel.SetStaticMesh(None);
+	
+	doorfall=true;
+	}
+	
+	if ( frand() < 0.5 )
+	{
 				FD_right = self.Spawn( class'FallenDoor', self,
 				,                   //tag: default
 				RightHingeDoorModel.Location, //translation,
 				RightHingeDoorModel.Rotation, //rotTransl,
 				true);              //bNoCollisionFail
 	
-	FD_left.ChangeDoorMesh(LeftHingeDoorModel.StaticMesh);
-	FD_right.ChangeDoorMesh(RightHingeDoorModel.StaticMesh);
 	
+	FD_right.ChangeDoorMesh(RightHingeDoorModel.StaticMesh);
 	//remove static mesh 
-	LeftHingeDoorModel.SetStaticMesh(None);
 	RightHingeDoorModel.SetStaticMesh(None);
+	doorfall=true;
+	}
 	
 	/*
 	if (IsOpenLeft() || IsOpeningLeft())
@@ -177,8 +188,8 @@ simulated function RemoveDoorFromFrame()
 	*/
 	
 	//cant interact anymore
-	bPlayerCanUse = false;
-	//bNoDoor =true;
+	if (doorfall)
+		bPlayerCanUse = false;
 	
 }
 
