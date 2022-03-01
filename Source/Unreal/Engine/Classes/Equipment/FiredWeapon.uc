@@ -1223,7 +1223,7 @@ simulated final function Reload(optional bool QuickReload)
     //make sure this can be used now
     ValidateReload();
     PreReload();
-	if (QuickReload)
+	if (QuickReload && bAbleToQuickReload)
 		GotoState('BeingReloadedQuick');
 	else
 		GotoState('BeingReloaded');
