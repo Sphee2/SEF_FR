@@ -602,7 +602,7 @@ simulated function UpdateFireMode()
         WedgeItem = WedgeItem(PlayerOwner().Pawn.GetActiveItem());
     HandheldEquipment = PlayerOwner().Pawn.GetActiveItem();
 
-    if (FiredWeapon == None && SwatGrenade == None && WedgeItem == None && !HandheldEquipment.IsA('C2Charge') && !HandheldEquipment.IsA('Detonator') || HandheldEquipment.IsA('MagliteTorch') )
+    if (FiredWeapon == None && SwatGrenade == None && WedgeItem == None && !HandheldEquipment.IsA('C2Charge') && !HandheldEquipment.IsA('Detonator') && !HandheldEquipment.IsA('FieldDress') && !HandheldEquipment.IsA('FieldDressBag') || HandheldEquipment.IsA('MagliteTorch') )
     {
         //Hide the fire mode indicator && AmmoStatus HERE.
         if( AmmoStatus.bVisible )
@@ -613,7 +613,7 @@ simulated function UpdateFireMode()
 
         //log("[FIRE MODE] ActiveItem is not a FiredWeapon.");
     }
-    else if(SwatGrenade != None || WedgeItem != None || HandheldEquipment.IsA('C2Charge') || HandheldEquipment.IsA('Detonator') )
+    else if(SwatGrenade != None || WedgeItem != None || HandheldEquipment.IsA('C2Charge') || HandheldEquipment.IsA('Detonator') || HandheldEquipment.IsA('FieldDress') || HandheldEquipment.IsA('FieldDressBag') )
     {
         FireMode.Hide();
         AmmoStatus.Show();
