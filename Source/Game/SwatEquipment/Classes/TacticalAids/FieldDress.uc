@@ -3,6 +3,46 @@ class FieldDress extends SwatGame.EquipmentUsedOnOther
 
 var float LastInterruptTime;
 
+simulated function EquippedHook()
+{
+  Super.EquippedHook();
+  UpdateHUD();
+}
+
+function UpdateHUD()
+{
+  local SwatGame.SwatGamePlayerController LPC;
+  local int ReserveWedges;
+
+  LPC = SwatGamePlayerController(Level.GetLocalPlayerController());
+
+  if (Pawn(Owner).Controller != LPC) return; //the player doesn't own this ammo
+
+  ReserveWedges = LPC.SwatPlayer.GetTacticalAidAvailableCount(GetSlot());
+  ReserveWedges--; // We are holding one
+  if(ReserveWedges < 0)
+  {
+    ReserveWedges = 0;
+  }
+
+  LPC.GetHUDPage().AmmoStatus.SetTacticalAidStatus(ReserveWedges, self);
+  LPC.GetHUDPage().UpdateWeight();
+}
+
+// Every time we use a wedge, switch back to the primary weapon
+simulated function EquipmentSlot GetSlotForReequip()
+{
+  local SwatGame.SwatGamePlayerController LPC;
+
+  LPC = SwatGamePlayerController(Level.GetLocalPlayerController());
+
+  if (Pawn(Owner).Controller != LPC) return Slot_PrimaryWeapon; //the player doesn't own this ammo
+
+  if(LPC.bSecondaryWeaponLast)
+    return Slot_SecondaryWeapon;
+  return Slot_PrimaryWeapon;
+}
+
 simulated function bool CanUseOnOtherNow(Actor Other)
 {
     local SwatPawn Pawn;
@@ -66,7 +106,7 @@ simulated function bool AllowedToPassItem()
 
 simulated latent protected function OnUsingBegan()
 {
-    log( self$"---FieldDress::OnUsingBegan(). Other="$Other$", Owner="$Owner );
+    log( self$"---FieldDress::OnUsingBegan(). Other="$Other$", Owner="$Owner);
 
     Super.OnUsingBegan();
 
@@ -88,38 +128,40 @@ simulated function UsedHook()
     local SwatPlayer SP;
     local SwatPawn SAI;
 
-
-    log( self$"---FieldDress::UsedHook(). Other="$Other$", Owner="$Owner );
-
+    log( self$"---FieldDress::UsedHook(). Other="$Other$", Owner="$ Owner $ " GetAvailableCount() " $GetAvailableCount());
 
     //heal other human players or your own
     SP=SwatPlayer(Pawn(Other));
 
-    if (SP != None)
+    if (SP != None && SP.isa('SwatPlayer') )
     {
-        log( self$"---FieldDress::UsedHook(). SP.IsLowerBodyInjured() " $ SP.IsLowerBodyInjured() $ " .");
+        //log( self$"---FieldDress::UsedHook(). SP.IsLowerBodyInjured() " $ SP.IsLowerBodyInjured() $ " .");
      if ( SP.IsLowerBodyInjured())
      {   
         SP.HealLimping();
-        DecrementAvailableCount();
+		if (GetAvailableCount() == 1)
+				SetAvailable(false);
+	
+		UpdateHUD();
      }
 
-      return;
+      
     }
-    
-
-    //heal AI
-    SAI = SwatPawn(Pawn(Other));
-         
-    if (SAI != None)
+    else if (SP != None && !SP.isa('SwatPlayer') ) //heal AI
     {
+		SAI=SwatPawn(Pawn(Other));
+		
         if ( SAI.IsLowerBodyInjured())
         {
             SAI.HealIntenseInjury();
-            DecrementAvailableCount();
+			
+			if (GetAvailableCount() == 1)
+				SetAvailable(false);
+			
+			UpdateHUD();
         }
 
-        log("Field dress::PawnHealing!");
+        log("Field dress::PawnHealing! GetAvailableCount() " $GetAvailableCount());
     }
     
 }
