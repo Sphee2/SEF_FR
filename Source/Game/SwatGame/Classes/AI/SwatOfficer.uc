@@ -297,6 +297,7 @@ protected function ConstructCharacterAI()
 	characterResource.addAbility(new class'SwatAICommon.MirrorDoorAction');
 	characterResource.addAbility(new class'SwatAICommon.MirrorCornerAction');
     characterResource.addAbility(new class'SwatAICommon.ReportAction');
+	characterResource.addAbility(new class'SwatAICommon.HealAction');
     characterResource.addAbility(new class'SwatAICommon.SWATTakeCoverAndAttackAction');
     characterResource.addAbility(new class'SwatAICommon.SWATTakeCoverAndAimAction');
     characterResource.addAbility(new class'SwatAICommon.ShareEquipmentAction');

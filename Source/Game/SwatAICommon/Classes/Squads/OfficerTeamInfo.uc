@@ -64,6 +64,7 @@ protected function InitAbilities()
 	SquadAI.addAbility( new class'SquadDeployPepperSprayAction' );
 	SquadAI.addAbility( new class'SquadMoveToAction' );
 	SquadAI.addAbility( new class'SquadShareEquipmentAction' );
+	SquadAI.addAbility( new class'SquadHealAction' );
 	SquadAI.addAbility( new class'SquadCoverAction' );
 	SquadAI.addAbility( new class'SquadDeployShotgunAction' );
 	SquadAI.addAbility( new class'SquadDeployLessLethalShotgunAction' );
@@ -1781,6 +1782,30 @@ function bool GiveEquipment(Pawn CommandGiver, vector CommandOrigin, EquipmentSl
 		assert(CurrentShareEquipmentGoal != None);
 
 		PostCommandGoal(CurrentShareEquipmentGoal);
+		return true;
+	}
+	return false;
+}
+
+function bool HealInjured(Pawn CommandGiver, vector CommandOrigin, Pawn Injured)
+{
+	local SquadHealGoal CurrentHealGoal;
+
+	if(!DoesAnOfficerHaveUsableEquipment(SLOT_Bandage))
+	{
+		
+		ISwatOfficer(GetFirstOfficer()).GetOfficerSpeechManagerAction().TriggerCouldntCompleteMoveSpeech();
+		
+		return false;
+	}
+
+	if(CanExecuteCommand())
+	{
+		log("HealInjured(). Target:" $ Injured.name );
+		CurrentHealGoal = new class'SquadHealGoal'(AI_Resource(SquadAI), Injured , CommandOrigin);
+		assert(CurrentHealGoal != None);
+
+		PostCommandGoal(CurrentHealGoal);
 		return true;
 	}
 	return false;

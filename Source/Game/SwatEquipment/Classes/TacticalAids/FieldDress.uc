@@ -147,11 +147,12 @@ simulated function UsedHook()
 
       
     }
-    else if (SP != None && !SP.isa('SwatPlayer') ) //heal AI
+    else  //heal AI
     {
 		SAI=SwatPawn(Pawn(Other));
 		
-        if ( SAI.IsLowerBodyInjured())
+		
+        if (SAI != None && SAI.IsLowerBodyInjured())
         {
             SAI.HealIntenseInjury();
 			

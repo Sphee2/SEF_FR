@@ -264,7 +264,11 @@ enum ECommand
 	Command_Request_Lightstick,
 	Command_Request_C2,
 	Command_TrapsAndMirror,
-
+	//
+	// FR
+	//
+	Command_Heal, //heal pawns with field dress
+	
     Command_Static,
 };
 
@@ -560,7 +564,7 @@ simulated protected function UncompliantDefaultCommand(Actor Target, CommandInte
 		ConsiderDefaultCommand(Commands[ECommand.Command_Deploy_Taser], Context.DefaultCommandPriority);
 		return;
 	}
-
+	
 	if(CurrentCommandTeam.DoesAnOfficerHaveUsableEquipment(EquipmentSlot.Slot_PrimaryWeapon, 'BeanbagShotgunBase') ||
 		CurrentCommandTeam.DoesAnOfficerHaveUsableEquipment(EquipmentSlot.Slot_SecondaryWeapon, 'BeanbagShotgunBase'))
 	{
@@ -2549,9 +2553,19 @@ simulated function SendCommandToOfficers()
 		case Command_Request_Lightstick:
 			ShareCommand(Level.GetLocalPlayerController().Pawn, Slot_Lightstick);
 			break;
-
-        //Commands that require a valid Pawn
-
+			
+			
+		//Commands that require a valid Pawn
+			
+		//FR commands 
+		case Command_Heal:
+            if (CheckForValidHeal(PendingCommand, PendingCommandTargetActor))
+                bCommandIssued = PendingCommandTeam.HealInjured(
+                    Level.GetLocalPlayerController().Pawn,
+                    PendingCommandOrigin,
+                    Pawn(PendingCommandTargetActor));
+            break;		
+			
         case Command_Restrain:
             if (CheckForValidRestrainable(PendingCommand, PendingCommandTargetActor))
                 bCommandIssued = PendingCommandTeam.Restrain(
@@ -2728,6 +2742,7 @@ simulated protected function Actor GetPendingCommandTargetActor()
         //
 
         case Command_Restrain:
+		case Command_Heal:
         case Command_Deploy_PepperSpray:
         case Command_Deploy_Taser:
         case Command_Deploy_LessLethalShotgun:
@@ -2838,6 +2853,20 @@ simulated function bool CheckForValidRestrainable(Command Command, Actor Pawn)
 		assertWithDescription(ValidPawn,
 			"[tcohen] CommandInterface::CheckForValidRestrainable() Gave "$GetEnum(ECommand, Command.Command)
 			$" which requires a SwatHostage or SwatEnemy, but Pawn="$Pawn);
+
+    return ValidPawn;
+}
+
+//check that Pawn is a valid pawn as required to give the heal command
+simulated function bool CheckForValidHeal(Command Command, Actor Pawn)
+{
+    local bool ValidPawn;
+
+    ValidPawn = (Pawn != None && !Pawn.IsA('SwatTrainer')); //everyone is healable
+	if (ValidateCommandFocus)
+		assertWithDescription(ValidPawn,
+			"[tcohen] CommandInterface::CheckForValidHeal() Gave "$GetEnum(ECommand, Command.Command)
+			$" which requires a SwatPawn, but Pawn="$Pawn);
 
     return ValidPawn;
 }
