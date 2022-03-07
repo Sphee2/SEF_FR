@@ -606,8 +606,15 @@ simulated function ReceiveLoadOut(OfficerLoadOut inLoadOut)
 				se.CullDistance = 1; // doesn't really matter, but just in case culldistance is checked earlier in pipeline than bHidden
 			}
 		}	
+		
+		if (i == Pocket.Pocket_SimpleBackPouch)
+		{
+			if (LoadOut.HasFieldDressBag() )
+				se.SetStaticMesh(StaticMesh(DynamicLoadObject("SwatGear_sm.SWAThipMedic",class'StaticMesh')));
+		}	
+			
 	}
-
+	
 	// make sure we have the correct animations to go with our loadout
 	ChangeAnimation();
 

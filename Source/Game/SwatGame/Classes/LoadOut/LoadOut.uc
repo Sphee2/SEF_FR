@@ -803,6 +803,19 @@ simulated function bool HasLevelIIArmor()
         return false; // The VIP has no armor in Pocket_BodyArmor.
 }
 
+simulated function bool HasFieldDressBag()
+{
+	if ( PocketEquipment[Pocket.Pocket_EquipSix] != None )
+    {
+		if( PocketEquipment[Pocket.Pocket_EquipSix].IsA('FieldDressBag') )
+	    {
+			return true;
+		}
+	}
+    else
+        return false; 
+}
+
 simulated function bool HasInstructorArmor()
 {
     if ( PocketEquipment[Pocket.Pocket_BodyArmor] != None )
