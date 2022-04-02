@@ -584,6 +584,7 @@ simulated function EAnimationSet GetP90AimPoseSet()                     { if (!b
 simulated function EAnimationSet GetOptiwandAimPoseSet()                { if (!bIsCrouched) return kAnimationSetOptiwand;       else return kAnimationSetOptiwandCrouched; }
 simulated function EAnimationSet GetPaintballAimPoseSet()               { if (!bIsCrouched) return kAnimationSetPaintball;      else return kAnimationSetPaintballCrouched; }
 simulated function EAnimationSet GetCuffedAimPoseSet()                  { return kAnimationSetCuffed; }
+simulated function EAnimationSet GetShieldAimPoseSet()                  { return kAnimationSetShield; }
 
 // Returns the animation set based on the Pawns current equipment
 simulated function EAnimationSet GetEquipmentAimSet()
@@ -606,6 +607,8 @@ simulated function EAnimationSet GetEquipmentAimSet()
           {
             case WeaponAnimAim_Handgun:
               return GetHandgunAimPoseSet();
+			case WeaponAnimAim_Shield:
+              return GetShieldAimPoseSet();
             case WeaponAnimAim_SubmachineGun:
               return GetSubMachineGunAimPoseSet();
             case WeaponAnimAim_MachineGun:
@@ -705,7 +708,7 @@ simulated function EAnimationSet GetUMPLowReadyAimPoseSet()             { if (!b
 simulated function EAnimationSet GetP90LowReadyAimPoseSet()             { if (!bIsCrouched) return kAnimationSetP90LowReady;            else return kAnimationSetP90LowReadyCrouched; }
 simulated function EAnimationSet GetOptiwandLowReadyAimPoseSet()        { if (!bIsCrouched) return kAnimationSetOptiwandLowReady;       else return kAnimationSetOptiwandLowReadyCrouched; }
 simulated function EAnimationSet GetPaintballLowReadyAimPoseSet()       { if (!bIsCrouched) return kAnimationSetPaintballLowReady;      else return kAnimationSetPaintballLowReadyCrouched; }
-
+simulated function EAnimationSet GetShieldLowReadyAimPoseSet()         { return kAnimationSetShieldLowReady; }
 // Returns the animation set based on the Pawns current equipment
 simulated function EAnimationSet GetLowReadySet()
 {
@@ -730,6 +733,8 @@ simulated function EAnimationSet GetLowReadySet()
           {
             case WeaponAnimLowReady_Handgun:
               return GetHandgunLowReadyAimPoseSet();
+			case WeaponAnimLowReady_Shield:
+              return GetShieldLowReadyAimPoseSet();
             case WeaponAnimLowReady_SubmachineGun:
               return GetSubMachineGunLowReadyAimPoseSet();
             case WeaponAnimLowReady_MachineGun:

@@ -60,6 +60,8 @@ private function bool CanUseIdleBasedOnWeapon()
         return m_Pawn.GetActiveItem() == None;
       case IdleWithGrenade:
         return m_Pawn.GetActiveItem() != None && m_Pawn.GetActiveItem().IsA('ThrownWeapon');
+	  case IdleWithShield:
+	    return m_Pawn.GetActiveItem() != None && PawnHasShield() ; //dont idle with shield!
       case IdleWithSAW:
       case IdleWithMachineGun:
       case IdleWithG36:
@@ -75,6 +77,17 @@ private function bool CanUseIdleBasedOnWeapon()
 
 	// no problems with the weapon
 	return true;
+}
+
+private function bool PawnHasShield()
+{
+local int i;
+		for ( i = 0 ; i < 20 ; i ++ )
+		{
+           if ( m_pawn.Attached[i].isA('ShieldEquip') )			
+			   return true;
+		}			
+	return false;
 }
 
 // depending on whether we're aiming or not, use the correct idle

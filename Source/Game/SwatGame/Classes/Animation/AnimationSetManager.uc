@@ -159,6 +159,10 @@ enum EAnimationSet
     kAnimationSetAITased,
 
     kAnimationSetMouthOpen,
+	
+	//shield
+	kAnimationSetShield,
+    kAnimationSetShieldLowReady,
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -318,6 +322,11 @@ overloaded function Construct()
     CreateSet(kAnimationSetAITased,									"AnimationSetAITased");
 
     CreateSet(kAnimationSetMouthOpen,								"AnimationSetMouthOpen");
+	
+	//shield
+	CreateSet(kAnimationSetShield,									"AnimationSetShield");
+    CreateSet(kAnimationSetShieldLowReady,							"AnimationSetShieldLowReady");
+	
 }
 
 ///////////////////////////////////////

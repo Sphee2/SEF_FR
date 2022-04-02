@@ -50,7 +50,8 @@ enum WeaponAimAnimationType
   WeaponAnimAim_P90,
   WeaponAnimAim_Optiwand,
   WeaponAnimAim_Paintball,
-  WeaponAnimAim_Cuffed
+  WeaponAnimAim_Cuffed,
+  WeaponAnimAim_Shield
 };
 
 enum WeaponLowReadyAnimationType
@@ -66,7 +67,8 @@ enum WeaponLowReadyAnimationType
   WeaponAnimLowReady_UMP,
   WeaponAnimLowReady_P90,
   WeaponAnimLowReady_Optiwand,
-  WeaponAnimLowReady_Paintball
+  WeaponAnimLowReady_Paintball,
+  WeaponAnimLowReady_Shield
 };
 
 /*
@@ -82,6 +84,7 @@ enum EIdleWeaponStatus
 	IdleWithSubMachineGun,
 	IdleWithUMP,
   IdleWithHandgun,
+  IdleWithShield,
 	IdleWithShotgun,
 	IdleWithPaintballGun,
 	IdleWithGrenade,
