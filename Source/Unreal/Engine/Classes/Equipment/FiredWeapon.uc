@@ -759,6 +759,12 @@ simulated function bool HandleBallisticImpact(
     {															//We also still wanna draw the decals
 		return HandleDoorImpact(Victim, HitLocation, HitNormal, HitMaterial, ExitLocation, ExitNormal, ExitMaterial);
 	}
+	
+	//Shield
+	if (Victim.IsA('ShieldEquip') )	//Handle this case on its own,cause shield
+    {															//We also still wanna draw the decals 
+		return HandleShieldImpact(Victim, HitLocation, HitNormal, HitMaterial, NormalizedBulletDirection, Momentum, KillEnergy , BulletType ) ;
+	}
 
 	// officers don't hit other officers, or the player (unless we're attacking them)
 	if (Owner.IsA('SwatOfficer') &&
@@ -1007,6 +1013,80 @@ simulated function bool HandleDoorImpact(
 	return true;
 }
 
+simulated function bool HandleShieldImpact(
+	Actor Victim,
+    vector HitLocation,
+    vector HitNormal,
+	Material HitMaterial,
+    vector NormalizedBulletDirection,
+    out float Momentum,
+    out float KillEnergy,
+    out int BulletType
+)
+{
+	local bool PenetratesProtection;
+    local vector MomentumVector;
+    local int Damage;
+    local float MomentumLostToProtection;
+    local float DamageModifierRange;
+    local float DamageModifier, ExternalDamageModifier;
+	local IAmShield Shield;
+	local int ArmorLevel;
+	local int BulletLevel;
+	
+	Shield = IAmShield(Victim);
+	
+    ArmorLevel = Shield.GetProtectionType();
+    BulletLevel = Ammo.GetPenetrationType();
+
+    //the bullet will penetrate the protection unles it loses all of its momentum to the protection
+	PenetratesProtection = (BulletLevel >= ArmorLevel);
+
+    //calculate damage imparted to victim
+    MomentumLostToProtection = FMin(Momentum, Shield.GetMtP());
+    Damage = MomentumLostToProtection * Level.GetRepo().MomentumToDamageConversionFactor;
+    DamageModifier = 1.0;
+    Damage *= DamageModifier;
+
+    //apply any external damage modifiers (maintained by the Repo)
+    ExternalDamageModifier = Level.GetRepo().GetExternalDamageModifier( Owner, Victim );
+    Damage = int( float(Damage) * ExternalDamageModifier );
+
+    //calculate momentum vector imparted to victim
+    MomentumVector = NormalizedBulletDirection * Shield.GetMtP();
+    if (PenetratesProtection)
+        MomentumVector *= Level.getRepo().MomentumImpartedOnPenetrationFraction;
+
+    Ammo.BallisticsLog("  ->  Remaining Momentum is "$Momentum$".");
+    Ammo.BallisticsLog("  ... Bullet hit "$Shield.class.name$" ShieldEquip on Victim "$Victim.name);
+    Ammo.BallisticsLog("  ... Shield.MomentumToPenetrate is "$Shield.GetMtP()$".");
+
+    if (PenetratesProtection)
+        Ammo.BallisticsLog("  ... The Shield was penetrated.  Using PenetratedDamageFactor.");
+    else
+        Ammo.BallisticsLog("  ... Bullet was buried in the Shield  Using BlockedDamageFactor.");
+
+    //Ammo.BallisticsLog("  ... DamageModifier is on the Range (Min="$DamageModifierRange.Min$", Max="$DamageModifierRange.Max$"), selected "$DamageModifier$".");
+    Ammo.BallisticsLog("  ... ExternalDamageModifier = "$ExternalDamageModifier$".");
+
+    Ammo.BallisticsLog("  ... Damage = MomentumLostToProtection * MomentumToDamageConversionFactor * DamageModifier * ExternalDamageModifier = "$MomentumLostToProtection
+        $" * "$Level.GetRepo().MomentumToDamageConversionFactor
+        $" * "$DamageModifier
+        $" * "$ExternalDamageModifier
+        $" = "$Damage);
+
+    DealDamage(Victim, Damage, Pawn(Owner), HitLocation, MomentumVector, GetDamageType());
+
+    //the bullet has lost momentum to its target
+    Momentum -= Shield.GetMtP();
+	
+	Ammo.SetLocation(HitLocation);
+	Ammo.SetRotation(rotator(HitNormal));
+	Ammo.TriggerEffectEvent('BulletHit', None, HitMaterial);
+
+    return PenetratesProtection;
+}
+	
 simulated function bool  ShouldSpawnBloodForVictim( Pawn PawnVictim, int Damage )
 {
 #if DONT_REQUIRE_PENETRATION_FOR_BLOOD_PROJECTORS
