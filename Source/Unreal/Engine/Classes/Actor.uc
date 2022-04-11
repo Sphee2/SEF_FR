@@ -779,7 +779,8 @@ enum ESkeletalRegion
     REGION_Door_WedgeSpot,
     REGION_Door_ToolkitSpot,
     REGION_Door_OptiwandSpot,
-    REGION_Door_BreachingSpot
+    REGION_Door_BreachingSpot,
+	REGION_Shield
 };
 
 #if IG_ACTOR_LABEL // david: Labels

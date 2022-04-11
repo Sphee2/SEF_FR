@@ -674,7 +674,7 @@ simulated function BallisticFire(vector StartTrace, vector EndTrace)
           Ammo.BallisticsLog("Momentum went < 0. Not impacting with anything (LOST BULLET)");
           break;
         }
-
+		
         //handle each ballistic impact until the bullet runs out of momentum and does not penetrate
         if (Ammo.CanRicochet(Victim, HitLocation, HitNormal, Normal(HitLocation - StartTrace), HitMaterial, Momentum, 0))
 		{
@@ -761,8 +761,10 @@ simulated function bool HandleBallisticImpact(
 	}
 	
 	//Shield
-	if (Victim.IsA('ShieldEquip') )	//Handle this case on its own,cause shield
-    {															//We also still wanna draw the decals 
+	if (Victim.IsA('ShieldEquip') || HitRegion == REGION_Head )	//Handle this case on its own,cause shield
+    {					//We also still wanna draw the decals 
+	
+		log("BallisticFire()::ShieldEquip hit");
 		return HandleShieldImpact(Victim, HitLocation, HitNormal, HitMaterial, NormalizedBulletDirection, Momentum, KillEnergy , BulletType ) ;
 	}
 
@@ -1084,6 +1086,7 @@ simulated function bool HandleShieldImpact(
 	Ammo.SetRotation(rotator(HitNormal));
 	Ammo.TriggerEffectEvent('BulletHit', None, HitMaterial);
 
+	Log("Shield being hit. Damage " $ Damage $ " Pentration " $ PenetratesProtection $ " .");
     return PenetratesProtection;
 }
 	

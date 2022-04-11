@@ -2200,7 +2200,17 @@ simulated function bool HasA(name Class) { return false; }
 simulated function GivenEquipmentFromPawn(class<HandheldEquipment> Equipment) {}
 
 ///////////////////////////////////////////////////////////////////////////////
-
+//SHIELD 
+simulated function bool HasShield()
+{
+local int i;
+		for ( i = 0 ; i < self.Attached.length ; i ++ )
+		{
+           if ( self.Attached[i].isA('ShieldEquip') )			
+			   return true;
+		}			
+	return false;
+}
 
 
 //////////////////////////////////////////////////////////////////////////////

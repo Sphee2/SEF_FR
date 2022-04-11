@@ -132,11 +132,21 @@ simulated function int GetShieldState()
 
 defaultproperties
 {
-	StaticMesh=StaticMesh'Shield_static.Shield_static'
+	DrawType=DT_Mesh
+	Mesh=SkeletalMesh'Shield_model.Shield_mesh'
 	AttachmentBone=Shield
 	UnequipSocket=ShieldUnequip
+	 CollisionRadius=+00040.000000
+     CollisionHeight=+00040.000000
 	bCollideActors=true
-	ArmorProtection=Level_3
+	bCollideWorld=false
+	bProjTarget=True
+	bWorldGeometry=False
+	bBlockPlayers=false
+	bBlockActors=false
+	bBlockNonZeroExtentTraces=True
+	bBlockZeroExtentTraces=True
+	ArmorProtection=Level_3X
 	Health=100
 	MomentumToPenetrate=100.0
 }
