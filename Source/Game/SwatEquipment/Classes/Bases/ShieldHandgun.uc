@@ -62,7 +62,7 @@ simulated function CreateModels()
 		
 		ShieldModel_FP.bNeedPostRenderCallback = true;
 		ShieldModel_FP.Show();
-		ShieldModel_FP.OnEquipKeyFrame();
+		ShieldModel_FP.OnUnEquipKeyFrame();
 		}
 		
 		ShieldModel_TP= Spawn ( class'ShieldEquip', Owner , , , , true);

@@ -185,6 +185,13 @@ simulated static final function bool StaticRejectFocus(
         if (CandidateActor == Player.Pawn)
         return true;
     }
+	
+	// Focus interfaces should always ignore collide objects in hands (aka The Shield TM ).
+    if (CandidateActor.IsA('HandheldEquipmentModel'))
+    {
+		if (CandidateActor.Owner.IsA('Hands') )
+			return true;
+    }
 
     return false;
 }

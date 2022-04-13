@@ -1,7 +1,7 @@
 class ShieldEquip extends SimpleEquipment
-		implements  Engine.IAmShield;
-
-
+		implements  Engine.IAmShield, Engine.IHaveSkeletalRegions;
+					
+import enum ESkeletalRegion from Actor;
 
 enum ProtectionLevel
 {
@@ -125,6 +125,15 @@ event PostTakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vect
 
 }
 
+// IHaveSkeletalRegions implementation
+
+// Notification that we were hit
+simulated function OnSkeletalRegionHit(ESkeletalRegion RegionHit, vector HitLocation, vector HitNormal, int Damage, class<DamageType> DamageType, Actor Instigator)
+{
+    log("ShieldEquip::OnSkeletalRegionHit() Region:" $RegionHit );    
+}
+
+
 simulated function int GetShieldState()
 {
 	return Health;
@@ -144,8 +153,10 @@ defaultproperties
 	bWorldGeometry=False
 	bBlockPlayers=false
 	bBlockActors=false
-	bBlockNonZeroExtentTraces=True
-	bBlockZeroExtentTraces=True
+	bBlockNonZeroExtentTraces=false
+	bBlockZeroExtentTraces=true
+	bUseCollisionBoneBoundingBox=true
+	bWorldGeometry=true
 	ArmorProtection=Level_3X
 	Health=100
 	MomentumToPenetrate=100.0

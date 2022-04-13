@@ -103,7 +103,8 @@ enum EComplianceWeaponAnimation
   Compliance_Shotgun,
   Compliance_SubmachineGun,
   Compliance_CSBallLauncher,
-  Compliance_Handgun
+  Compliance_Handgun,
+  Compliance_Shield
 };
 
 var() localized config string ShortName;
@@ -467,8 +468,10 @@ simulated function BallisticFire(vector StartTrace, vector EndTrace)
           break;
         }
 
-		if( Victim.isa('ShieldEquip') )
-			log("BallisticFire()::ShieldEquip hit");
+		if( Victim.isa('HandheldEquipmentModel') && Victim.Owner.isa('Hands') && self.Owner.isa('SwatPlayer') )
+		{
+	    	continue;
+		}
 
         //handle each ballistic impact until the bullet runs out of momentum and does not penetrate
         if (Ammo.CanRicochet(Victim, HitLocation, HitNormal, Normal(HitLocation - StartTrace), HitMaterial, Momentum, 0)) {
@@ -537,11 +540,7 @@ simulated function bool HandleBallisticImpact(
 		return HandleDoorImpact(Victim, HitLocation, HitNormal, HitMaterial, ExitLocation, ExitNormal, ExitMaterial);
 	}
 
-	//Shield
-	if (Victim.IsA('ShieldEquip') || HitRegion == REGION_Head)	//Handle this case on its own,cause shield
-    {															//We also still wanna draw the decals 
-		return HandleShieldImpact(Victim, HitLocation, HitNormal, HitMaterial, NormalizedBulletDirection, Momentum, KillEnergy , BulletType );
-	}
+	
 
 	// officers don't hit other officers, or the player (unless we're attacking them)
 	if (Owner.IsA('SwatOfficer') &&
@@ -575,9 +574,22 @@ simulated function bool HandleBallisticImpact(
         HitMaterial = Victim.GetCurrentMaterial(0); // get skin at first index
         ExitMaterial = HitMaterial;
 
+		//Shield (1st person)
+		if( Victim.isa('HandheldEquipmentModel') )
+		{
+			if( Victim.Owner.isa('Hands') )
+				if  (!self.Owner.isa('SwatPlayer') ) 
+					return HandleShieldImpact(Victim, HitLocation, HitNormal, HitMaterial, NormalizedBulletDirection, Momentum, KillEnergy , BulletType );
+		}
+		else if( Victim.isa('ShieldEquip') ) //Shield (3rd person)
+		{
+				return HandleShieldImpact(Victim, HitLocation, HitNormal, HitMaterial, NormalizedBulletDirection, Momentum, KillEnergy , BulletType );
+		}
+		
+
         //if the Victim has skeletal regions, do some more work
         if (HitRegion != REGION_None && Victim.IsA('IHaveSkeletalRegions'))
-        {
+        {				
             //if the Victim is protected at the impacted region then handle an impact with ProtectiveEquipment
 
             if (Victim.IsA('ICanUseProtectiveEquipment'))
@@ -1370,8 +1382,7 @@ simulated function bool HandleShieldImpact(
 	
 	Ammo.SetLocation(HitLocation);
 	Ammo.SetRotation(rotator(HitNormal));
-	Ammo.TriggerEffectEvent('BulletHit', None, HitMaterial);
-
+	Ammo.TriggerEffectEvent('BulletHit', None, HitMaterial);	
 
 	Log("Shield being hit. Damage " $ Damage $ " Pentration " $ PenetratesProtection $ " .");
     return PenetratesProtection;

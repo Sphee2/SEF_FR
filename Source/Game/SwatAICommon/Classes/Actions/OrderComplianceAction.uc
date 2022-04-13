@@ -41,6 +41,7 @@ var config array<name>	ComplyMGOrderAnims;
 var config array<name>	ComplySGOrderAnims;
 var config array<name>	ComplySMGOrderAnims;
 var config array<name>	ComplyHGOrderAnims;
+var config array<name>	ComplyShieldOrderAnims;
 var config array<name>	ComplyPepperBallOrderAnims;
 
 const kMinOrderComplyTime = 0.5;
@@ -153,7 +154,10 @@ function name GetComplyOrderAnimName()
 
 			case Compliance_CSBallLauncher:
 				return ComplyPepperBallOrderAnims[Rand(ComplyPepperBallOrderAnims.Length)];
-
+			
+			case Compliance_Shield:
+				return ComplyShieldOrderAnims[Rand(ComplyShieldOrderAnims.Length)];
+				
 			case Compliance_Handgun:
 			default:
 				return ComplyHGOrderAnims[Rand(ComplyHGOrderAnims.Length)];
