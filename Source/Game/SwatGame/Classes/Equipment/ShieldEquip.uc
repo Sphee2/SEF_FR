@@ -114,11 +114,14 @@ event PostTakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vect
 	Health = Health - Damage;
 	log("Shield " $ self.name $ " got hit - health " $ Health $ " ");
 
-	if ( Health < 66 )
+	//apply shake effect!
+	SwatPlayer(Owner).ReactToC2Detonation(self, 0.1, 0.1);
+
+	if ( Health < 666 )
 	{
 		//glass 1st damage state
 	}
-	else if ( Health < 33 )
+	else if ( Health < 333 )
 	{
 		//glass 2nd damage state
 	}
@@ -143,21 +146,22 @@ defaultproperties
 {
 	DrawType=DT_Mesh
 	Mesh=SkeletalMesh'Shield_model.Shield_mesh'
+	//DrawType=DT_StaticMesh
+	//StaticMesh=StaticMesh'Shield_static.Shield_static'
 	AttachmentBone=Shield
 	UnequipSocket=ShieldUnequip
-	 CollisionRadius=+00040.000000
-     CollisionHeight=+00040.000000
+	CollisionRadius=+0002.000000
+    CollisionHeight=+0002.000000
 	bCollideActors=true
 	bCollideWorld=false
-	bProjTarget=True
-	bWorldGeometry=False
+	bProjTarget=true
+	bWorldGeometry=false
 	bBlockPlayers=false
 	bBlockActors=false
 	bBlockNonZeroExtentTraces=false
 	bBlockZeroExtentTraces=true
 	bUseCollisionBoneBoundingBox=true
-	bWorldGeometry=true
 	ArmorProtection=Level_3X
-	Health=100
-	MomentumToPenetrate=100.0
+	Health=1000
+	MomentumToPenetrate=1000.0
 }

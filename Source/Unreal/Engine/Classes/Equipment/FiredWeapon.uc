@@ -1047,7 +1047,18 @@ simulated function bool HandleShieldImpact(
 	local int ArmorLevel;
 	local int BulletLevel;
 	
-	Shield = IAmShield(Victim);
+	if (Victim.isa('ShieldEquip'))
+	{	
+		//3rd person
+		Shield = IAmShield(Victim);
+	}
+	else
+	{
+		//1st person - shield model - hands - player pawn - active item... 
+		log("Shield 1st person class " $Pawn(Victim.Owner.Owner).GetShieldEquip().name);
+		Shield = IAmShield(Pawn(Victim.Owner.Owner).GetShieldEquip());	
+	}
+	
 	
     ArmorLevel = Shield.GetProtectionType();
     BulletLevel = Ammo.GetPenetrationType();
@@ -1060,10 +1071,6 @@ simulated function bool HandleShieldImpact(
     Damage = MomentumLostToProtection * Level.GetRepo().MomentumToDamageConversionFactor;
     DamageModifier = 1.0;
     Damage *= DamageModifier;
-
-    //apply any external damage modifiers (maintained by the Repo)
-    ExternalDamageModifier = Level.GetRepo().GetExternalDamageModifier( Owner, Victim );
-    Damage = int( float(Damage) * ExternalDamageModifier );
 
     //calculate momentum vector imparted to victim
     MomentumVector = NormalizedBulletDirection * Shield.GetMtP();
@@ -1088,7 +1095,7 @@ simulated function bool HandleShieldImpact(
         $" * "$ExternalDamageModifier
         $" = "$Damage);
 
-    DealDamage(Victim, Damage, Pawn(Owner), HitLocation, MomentumVector, GetDamageType());
+    DealDamage(Actor(Shield), Damage, Pawn(Owner), HitLocation, MomentumVector, GetDamageType());
 
     //the bullet has lost momentum to its target
     Momentum -= Shield.GetMtP();

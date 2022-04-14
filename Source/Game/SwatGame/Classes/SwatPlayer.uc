@@ -2729,7 +2729,7 @@ Function ReactToFlashbangGrenade(
     if ( Level.NetMode == NM_Client )
         return;
 
-    if ( HasProtection( 'IProtectFromFlashbang' ) )
+    if ( HasProtection( 'IProtectFromFlashbang' ) || HasActiveShield())
         HasVisionProtection = true;
 
     //cheat
@@ -2985,6 +2985,7 @@ private function bool CantBeDazed()
 {
 	return ( Level.NetMode == NM_Client ) ||												// Clients handle their own dazing
 		   ( HasProtection( 'IProtectFromSting' ) ) ||										// Has protection from sting effects
+		   ( HasActiveShield() ) ||																// shield virginity protection
 		   ( Controller != None && Controller.bGodMode ) ||									// Gods can not be dazed!
 		   ( class'Pawn'.static.CheckDead( self ) );										// Dead people are beyond dazing
 }
@@ -3281,7 +3282,7 @@ function ReactToBeingPepperSprayed( Actor PepperSpray,
         return;
 
 	//log(Self$", is testing whether it should be pepper sprayed; hasprotection="$HasProtection( 'IProtectFromPepperSpray' ));
-    if ( HasProtection( 'IProtectFromPepperSpray' ) || GetLoadOut().HasRiotHelmet())
+    if ( HasProtection( 'IProtectFromPepperSpray' ) || GetLoadOut().HasRiotHelmet() || HasActiveShield() )
     {
         //mplog(Self$", is protected by from Pepper and so actual duration will be lower than original duration of "$PlayerDuration);
         if (Level.NetMode == NM_Standalone) // singleplayer

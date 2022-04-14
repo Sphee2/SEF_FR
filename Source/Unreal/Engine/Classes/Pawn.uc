@@ -3009,6 +3009,38 @@ simulated function int GetNumberOfArmsInjured()
 	return 0; // meant to be subclassed
 }
 
+///////////////////////////////////////////////////////////////////////////////
+//SHIELD 
+simulated function Actor GetShieldEquip()
+{
+local int i;
+		for ( i = 0 ; i < self.Attached.length ; i ++ )
+		{
+           if ( self.Attached[i].isA('ShieldEquip') )			
+			   return Attached[i];
+		}			
+}
+
+
+simulated function bool PawnHasShield()
+{
+local int i;
+		for ( i = 0 ; i < self.Attached.length ; i ++ )
+		{
+           if ( self.Attached[i].isA('ShieldEquip') )			
+			   return true;
+		}			
+	return false;
+}
+
+simulated function bool HasActiveShield()
+{
+	return GetActiveItem().isa('ShieldHandgun');
+}
+
+
+///////////////////////////////////////////////////////////////////////////////
+
 defaultproperties
 {
 	bCanBeDamaged=true
