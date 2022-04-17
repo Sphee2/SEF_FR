@@ -1063,12 +1063,16 @@ simulated final private function bool GetMeleeTarget(out Actor Victim, out vecto
 		if ((Victim.bHidden || Victim.DrawType == DT_None) && !(Victim.IsA('LevelInfo')))
 			continue;
 
+		if (Victim.IsA('HandHeldEquipmentModel')) //shield
+		   continue; //skip it.
+
 		// Allow punching through open doors
 		if (Victim.IsA('Door') && Door(Victim).IsOpen())
 			continue;
 
 		// Return true if we hit something that can be effected by punching
 		return Victim.IsA('IReactToDazingWeapon');
+		
 	}
 
 	return false;

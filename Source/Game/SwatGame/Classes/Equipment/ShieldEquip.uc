@@ -114,6 +114,9 @@ event PostTakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vect
 	Health = Health - Damage;
 	log("Shield " $ self.name $ " got hit - health " $ Health $ " ");
 
+	//sound effect
+	TriggerEffectEvent('BulletShield');	
+
 	//apply shake effect!
 	SwatPlayer(Owner).ReactToC2Detonation(self, 0.1, 0.1);
 
@@ -154,6 +157,8 @@ defaultproperties
     CollisionHeight=+0002.000000
 	bCollideActors=true
 	bCollideWorld=false
+	bAcceptsProjectors=true
+	bActorShadows=true
 	bProjTarget=true
 	bWorldGeometry=false
 	bBlockPlayers=false

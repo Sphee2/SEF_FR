@@ -1389,7 +1389,7 @@ simulated function bool HandleShieldImpact(
 	
 	Ammo.SetLocation(HitLocation);
 	Ammo.SetRotation(rotator(HitNormal));
-	Ammo.TriggerEffectEvent('BulletHit', None, HitMaterial);	
+	Ammo.TriggerEffectEvent('BulletHit', Actor(Shield), HitMaterial);	
 
 	Log("Shield being hit. Damage " $ Damage $ " Pentration " $ PenetratesProtection $ " .");
     return PenetratesProtection;

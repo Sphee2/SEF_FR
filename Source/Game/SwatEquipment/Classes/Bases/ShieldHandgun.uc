@@ -153,5 +153,12 @@ simulated function InitFlashlight()
 
 defaultproperties
 {
-	HasShield=false
+	HasShield=true
+	bAbletoQuickReload=false
+	AimAnimation=WeaponAnimAim_Shield
+	LowReadyAnimation=WeaponAnimLowReady_Shield
+	IdleWeaponCategory=IdleWithShield
+
+	ComplianceAnimation=Compliance_Shield
+	ShowCrosshairInIronsights=true
 }

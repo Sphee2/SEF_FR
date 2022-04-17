@@ -2637,6 +2637,11 @@ simulated function InternalMelee(optional bool UseMeleeOnly, optional bool UseCh
 	    CameraLocation
 	    )
 	{
+		log("InternalMelee::Candidate " $Candidate.name);
+		
+		if (Candidate.IsA('HandHeldEquipmentModel')) //shield
+		   continue; //skip it.
+		
 		if(((!UseMeleeOnly && !UseCheckLockOnly) || !SpecialInteractionsDisabled) &&
 			(Candidate.IsA('SwatPlayer') || Candidate.IsA('SwatOfficer')))
 		{

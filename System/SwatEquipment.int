@@ -344,8 +344,8 @@ RateOfFire=390 RPM
 
 [ColtM1911HG_Shield]
 Description=Shield
-FriendlyName=M1911Shield
-ShortName=M1911Shield
+FriendlyName=M1911 + Shield
+ShortName=M1911 + Shield
 Manufacturer=Colt
 Caliber=.45 ACP
 CountryOfOrigin=United States
@@ -359,6 +359,19 @@ RateOfFire=390 RPM
 Description=Designed by gun designer Gaston Glock, this Austrian designed handgun is largely made of high tech polymer plastics.  This construction results in a weapon that is incredibly easy to handle and manipulate.  While less powerful than the Colt 1911, it boasts a standard 17 round magazine.  Its ease of use, accuracy, and ''safe action'' trigger has made it a popular choice for law enforcement agencies.
 FriendlyName=Glock 17
 ShortName=Glock 17
+Manufacturer=Glock
+Caliber=9x19mm Parabellum
+CountryOfOrigin=Austria
+ProductionStart=1982
+FireModes=Semi-Automatic
+MagazineSizeString=17
+TotalAmmoString=10 magazines
+RateOfFire=390 RPM
+
+[Glock9mmHG_Shield]
+Description=Designed by gun designer Gaston Glock, this Austrian designed handgun is largely made of high tech polymer plastics.  This construction results in a weapon that is incredibly easy to handle and manipulate.  While less powerful than the Colt 1911, it boasts a standard 17 round magazine.  Its ease of use, accuracy, and ''safe action'' trigger has made it a popular choice for law enforcement agencies.
+FriendlyName=Glock 17 + Shield
+ShortName=Glock 17 + Shield
 Manufacturer=Glock
 Caliber=9x19mm Parabellum
 CountryOfOrigin=Austria
