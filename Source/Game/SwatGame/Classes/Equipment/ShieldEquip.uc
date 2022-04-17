@@ -22,6 +22,8 @@ var (ArmorPenetration) int ProtectionType "Internal measure to know the BulletCl
 var protected int Health;
 var(ArmorPenetration) float MomentumToPenetrate "A bullet will penetrate this material if-and-only-if it impacts with more than this Momentum.  A bullet's Momentum is its Mass times the MuzzleVelocity of the FiredWeapon from which it was fired, minus any Momentum that the bullet has already lost (due to prior impact(s)).  The bullet will impart 10% of its Momentum to a KActor it hits if it penetrates the KActor, or 100% of its Momentum if it doesn't penetrate the KActor.";
 
+var protected int Damage_level;
+
 function Equip()
 {
 	local Pawn PawnOwner;
@@ -110,7 +112,7 @@ simulated function float GetMtP() {
 
 event PostTakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType)
 {
-	
+
 	Health = Health - Damage;
 	log("Shield " $ self.name $ " got hit - health " $ Health $ " ");
 
@@ -120,15 +122,20 @@ event PostTakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vect
 	//apply shake effect!
 	SwatPlayer(Owner).ReactToC2Detonation(self, 0.1, 0.1);
 
-	if ( Health < 666 )
+	if ( Health < 666 && Health  >= 333 && Damage_level == 0 )
 	{
 		//glass 1st damage state
+		Damage_level=1;
+		IShieldHandgun(Pawn(Owner).GetActiveItem()).SetShieldDamage(damage_level);
 	}
-	else if ( Health < 333 )
+	else if ( Health < 333 && Damage_level == 1 )
 	{
 		//glass 2nd damage state
+		//Skins[2]= Material(DynamicLoadObject( "Shield_tex.Shield_glass_2", class'Material'));
+		//IShieldHandgun(Pawn(Owner).GetActiveItem()).GetShieldModelFP().Skins[2]=Material(DynamicLoadObject( "Shield_tex.Shield_glass_2", class'Material'));
+		Damage_level=2;	
+		IShieldHandgun(Pawn(Owner).GetActiveItem()).SetShieldDamage(damage_level);
 	}
-
 }
 
 // IHaveSkeletalRegions implementation

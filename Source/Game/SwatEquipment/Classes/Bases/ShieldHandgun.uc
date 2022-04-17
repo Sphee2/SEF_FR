@@ -1,5 +1,6 @@
 ///////////////////////////////////////////////////////////////////////////////
-class ShieldHandgun extends Handgun;
+class ShieldHandgun extends Handgun
+implements IShieldHandgun;
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -74,6 +75,27 @@ simulated function CreateModels()
 		
 }
 
+simulated function HandheldEquipmentModel GetShieldModelFP()
+{
+	return ShieldModel_FP;
+}
+
+simulated function SetShieldDamage(int damage)
+{
+
+	if (damage == 1)	
+	{
+		
+		ShieldModel_TP.Skins[0]= Material(DynamicLoadObject( "Shield_tex.Shield_glass_1", class'Material'));
+		ShieldModel_FP.Skins[0]=Material(DynamicLoadObject( "Shield_tex.Shield_glass_1", class'Material'));
+	
+	}
+	else if (damage == 2)
+	{
+		ShieldModel_TP.Skins[0]= Material(DynamicLoadObject( "Shield_tex.Shield_glass_2", class'Material'));
+		ShieldModel_FP.Skins[0]=Material(DynamicLoadObject( "Shield_tex.Shield_glass_2", class'Material'));
+	}
+}
 
 /*
 simulated function OnHolderDesiredFlashlightStateChanged()
