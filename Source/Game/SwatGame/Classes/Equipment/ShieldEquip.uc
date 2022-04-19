@@ -116,24 +116,25 @@ event PostTakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vect
 	Health = Health - Damage;
 	log("Shield " $ self.name $ " got hit - health " $ Health $ " ");
 
-	//sound effect
-	TriggerEffectEvent('BulletShield');	
-
 	//apply shake effect!
 	SwatPlayer(Owner).ReactToC2Detonation(self, 0.1, 0.1);
 
-	if ( Health < 666 && Health  >= 333 && Damage_level == 0 )
+	if ( Health < 888 && Health  >= 555 && Damage_level == 0 )
 	{
 		//glass 1st damage state
 		Damage_level=1;
 		IShieldHandgun(Pawn(Owner).GetActiveItem()).SetShieldDamage(damage_level);
 	}
-	else if ( Health < 333 && Damage_level == 1 )
+	else if ( Health < 555 && Damage_level == 1 )
 	{
 		//glass 2nd damage state
-		//Skins[2]= Material(DynamicLoadObject( "Shield_tex.Shield_glass_2", class'Material'));
-		//IShieldHandgun(Pawn(Owner).GetActiveItem()).GetShieldModelFP().Skins[2]=Material(DynamicLoadObject( "Shield_tex.Shield_glass_2", class'Material'));
 		Damage_level=2;	
+		IShieldHandgun(Pawn(Owner).GetActiveItem()).SetShieldDamage(damage_level);
+	}
+	else if ( Health < 333 && Damage_level == 2 )
+	{
+		//glass 3rd damage state
+		Damage_level=3;	
 		IShieldHandgun(Pawn(Owner).GetActiveItem()).SetShieldDamage(damage_level);
 	}
 }

@@ -382,7 +382,7 @@ latent function RunFromStunningDevice()
 {
     local NavigationPoint RunToPoint;
 
-    if (bShouldRunFromStunningDevice && !ISwatAI(m_Pawn).IsCompliant() && !ISwatAI(m_Pawn).IsArrested())
+    if (bShouldRunFromStunningDevice && !ISwatAI(m_Pawn).IsCompliant() && !ISwatAI(m_Pawn).IsArrested() && !m_pawn.HasActiveShield() )
     {
         RunToPoint = FindRunToPoint();
         if (RunToPoint != None)
@@ -400,7 +400,7 @@ latent function RunFromStunningDevice()
 			CurrentMoveToActorGoal.SetRotateTowardsFirstPoint(true);
             CurrentMoveToActorGoal.SetRotateTowardsPointsDuringMovement(true);
             CurrentMoveToActorGoal.SetMoveToThreshold(8.0);
-            CurrentMoveToActorGoal.SetWalkThreshold(0.0);
+			CurrentMoveToActorGoal.SetWalkThreshold(0.0);
 
             // post the goal and wait for it to complete
             CurrentMoveToActorGoal.postGoal(self);

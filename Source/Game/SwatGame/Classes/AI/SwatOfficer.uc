@@ -1090,7 +1090,7 @@ private function TriggerHarmlessShotSpeech()
 
 private function bool CantBeDazed()
 {
-    return HasProtection('IProtectFromSting') || !IsConscious();
+    return HasProtection('IProtectFromSting') || !IsConscious() || HasActiveShield();
 }
 
 private function ApplyDazedEffect(SwatProjectile Grenade, Vector SourceLocation, float AIStingDuration)
@@ -1102,7 +1102,7 @@ private function DirectHitByGrenade(Pawn Instigator, float Damage, float AISting
 {
     if ( CantBeDazed() )
         return;
-
+	
     if (Damage > 0.0) {
         TakeDamage(Damage, Instigator, Location, vect(0.0, 0.0, 0.0), DamageType);
   }

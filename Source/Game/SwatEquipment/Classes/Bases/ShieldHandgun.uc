@@ -95,14 +95,19 @@ simulated function SetShieldDamage(int damage)
 		ShieldModel_TP.Skins[0]= Material(DynamicLoadObject( "Shield_tex.Shield_glass_2", class'Material'));
 		ShieldModel_FP.Skins[0]=Material(DynamicLoadObject( "Shield_tex.Shield_glass_2", class'Material'));
 	}
+	else if (damage == 3)
+	{
+		ShieldModel_TP.Skins[0]= Material(DynamicLoadObject( "Shield_tex.Shield_glass_3", class'Material'));
+		ShieldModel_FP.Skins[0]=Material(DynamicLoadObject( "Shield_tex.Shield_glass_3", class'Material'));
+	}
 }
 
 /*
 simulated function OnHolderDesiredFlashlightStateChanged()
 {
 	local Material FlashlightMaterial;
-	local bool PawnWantsFlashlightOn;
 	local String FlashlightTextureName;
+	local bool PawnWantsFlashlightOn;
 	
 	Super.OnHolderDesiredFlashlightStateChanged();
 	
@@ -110,7 +115,6 @@ simulated function OnHolderDesiredFlashlightStateChanged()
 	if(HasShield)
 	{	
 	    PawnWantsFlashlightOn = ICanToggleWeaponFlashlight(Owner).GetDesiredFlashlightState();
-		
 		// change texture on 3rd person model
 	    if (! InFirstPersonView() )
 	    {
@@ -127,22 +131,44 @@ simulated function OnHolderDesiredFlashlightStateChanged()
 			{
 				FlashlightMaterial = Material(DynamicLoadObject( FlashlightTextureName, class'Material'));
 				AssertWithDescription(FlashlightMaterial != None, "[ckline]: Couldn't DLO flashlight lens texture "$FlashlightTextureName);
+				
+				
 			}
 			else // turn off the glow texture
 			{
 				// hack.. force the skin to None so that GetCurrentMaterial will pull from
 				// the default materials array instead of the skin
-				ShieldModel_TP.Skins[1] = None;
+				ShieldModel_TP.Skins[2] = None;
 
-				FlashlightMaterial = ShieldModel_TP.GetCurrentMaterial(3);
+				FlashlightMaterial = ShieldModel_TP.GetCurrentMaterial(2);
 			}
 
-			ShieldModel_TP.Skins[1] = FlashlightMaterial;
+			ShieldModel_TP.Skins[2] = FlashlightMaterial;
 	    }
+		
+		if (! InFirstPersonView() )
+	    {
+			if (PawnWantsFlashlightOn)
+			{
+				Owner.DetachFromBone(FlashlightDynamicLight);
+				Owner.AttachToBone(FlashlightDynamicLight,ShieldModel_TP.AttachmentBone);
+			}
+			
+		}
+		else
+		{
+			if (PawnWantsFlashlightOn)
+			{
+			Pawn(Owner).GetHands().DetachFromBone(FlashlightDynamicLight);
+			Pawn(Owner).GetHands().AttachToBone(FlashlightDynamicLight,ShieldModel_FP.AttachmentBone);
+			}
+		}
+		
 		
 	}
 	
 }
+
 
 simulated function InitFlashlight()
 {
@@ -170,8 +196,140 @@ simulated function InitFlashlight()
 	
 }
 */
-	
+/*
+//FiredWeapon function override
+simulated function UpdateFlashlightLighting(optional float dTime)
+{
+#if ENABLE_FLASHLIGHT_PROJECTION_VISIBILITY_TESTING
+    local bool bIsFlashlightProjectionVisible;
+#endif
+    local HandheldEquipmentModel WeaponModel;
+    local Vector  PositionOffset;
+    local Rotator RotationOffset, rayDirection;
+	local Vector  hitLocation, hitNormal;
+	local Vector  traceStart, traceEnd, PointLightPos, delta;
+	local Actor   hitActor;
+	local float   oldDistance, newDistance;
+	//local float    maxDistance, angle;
+	//local int     ind;
 
+    if( Level.NetMode == NM_DedicatedServer )
+        return;
+
+#if ENABLE_FLASHLIGHT_PROJECTION_VISIBILITY_TESTING
+    bIsFlashlightProjectionVisible = IsFlashlightProjectionVisible();
+    // If IsFlashlightProjectionVisible() returned false, determine if we're
+    // past the last successfully visible timeout
+    if (!bIsFlashlightProjectionVisible
+    && (Level.TimeSeconds - FlashlightProjection_LastSuccessfulTestTime) < kFlashlightProjection_FailureTimeout)
+    {
+        bIsFlashlightProjectionVisible = true;
+    }
+
+    if (FlashlightProjection_IsInitializing)
+    {
+        // Snap directly to 0 or 1 if FlashlightProjection_IsInitializing is true.
+        if (bIsFlashlightProjectionVisible)
+            FlashlightProjection_CurrentBrightnessAlpha = 1.0;
+        else
+            FlashlightProjection_CurrentBrightnessAlpha = 0.0;
+    }
+    else
+    {
+        // Lerp the current alpha brightness toward 0 or 1, depending on
+        // bIsFlashlightProjectionVisible.
+        if (bIsFlashlightProjectionVisible)
+            FlashlightProjection_CurrentBrightnessAlpha += dTime / kFlashlightProjection_BrightnessAlphaLerpTime;
+        else
+            FlashlightProjection_CurrentBrightnessAlpha -= dTime / kFlashlightProjection_BrightnessAlphaLerpTime;
+        FlashlightProjection_CurrentBrightnessAlpha = FClamp(FlashlightProjection_CurrentBrightnessAlpha, 0.0, 1.0);
+    }
+#endif
+
+	// The stuff below is only done for the pointlight-to-spotlight modeling
+	if (FlashlightUseFancyLights == 1)
+    {
+#if ENABLE_FLASHLIGHT_PROJECTION_VISIBILITY_TESTING
+        FlashlightDynamicLight.LightBrightness = BaseFlashlightBrightness * FlashlightProjection_CurrentBrightnessAlpha;
+#endif
+		return;
+	}
+
+    // Set up flashlight for first person model if it is weapon is held by the player's pawn.
+    if (InFirstPersonView())
+    {
+        if (FirstPersonModel == None)
+        {
+            assertWithDescription(false, "[henry] Can't update flashlight for "$self$", FirstPersonModel is None");
+        }
+		WeaponModel    = FirstPersonModel;
+		PositionOffset = FlashlightPosition_1stPerson;
+		RotationOffset = FlashlightRotation_1stPerson;
+    }
+    else // todo: handle 3rd person flashlight, including when controller changes
+    {
+        if (ThirdPersonModel == None)
+        {
+		    assertWithDescription(false, "[henry] Can't update flashlight for "$self$", ThirdPersonModel is None");
+        }
+        WeaponModel    = ThirdPersonModel;
+		PositionOffset = FlashlightPosition_3rdPerson;
+		RotationOffset = FlashlightRotation_3rdPerson;
+    }
+
+	traceStart   = FlashlightReferenceActor.Location;
+	rayDirection = FlashlightReferenceActor.Rotation;
+	// the first person uses a much smaller max distance to avoid popping when
+	// the light aims from a distant wall to a nearby object.
+    if (InFirstPersonView())
+		traceEnd = traceStart + Vector(rayDirection) * FlashlightFirstPersonDistance;
+	else
+		traceEnd = traceStart + Vector(rayDirection) * MaxFlashlightDistance;
+
+	hitActor = Trace(hitLocation, hitNormal, traceEnd, traceStart, true, , , , True);
+
+	if (hitActor == None)
+	{
+		hitLocation = traceEnd;
+	}
+
+	if (DebugDrawFlashlightDir)
+	{
+		Level.GetLocalPlayerController().myHUD.AddDebugLine((traceStart + Vect(0.0,0.0,1.0)), (hitLocation +  Vect(0.0,0.0,1.0)),
+															class'Engine.Canvas'.Static.MakeColor(255,120,0), 0.02);
+		Level.GetLocalPlayerController().myHUD.AddDebugLine(traceStart, traceEnd,
+															class'Engine.Canvas'.Static.MakeColor(255,120,200), 0.02);
+	}
+
+	delta = hitLocation - traceStart;
+	oldDistance = VSize(traceStart - FlashlightDynamicLight.Location);
+	newDistance = VSize(delta) * PointLightDistanceFraction;
+	newDistance = oldDistance + (newDistance - oldDistance) * PointLightDistanceFadeRate;
+
+	PointLightPos = traceStart + newDistance * Vector(FlashlightReferenceActor.Rotation);
+	FlashlightDynamicLight.SetLocation(PointLightPos);
+
+    if (InFirstPersonView())
+	{
+		// attenuate the radius if the light is approaching something very close
+		FlashlightDynamicLight.LightRadius = MinFlashlightRadius +
+			(BaseFlashlightRadius - MinFlashlightRadius) * (newDistance/FlashlightFirstPersonDistance);
+	}
+	else
+	{
+		FlashlightDynamicLight.LightRadius = MinFlashlightRadius + newDistance *	PointLightRadiusScale;
+	}
+
+	FlashlightDynamicLight.LightBrightness = BaseFlashlightBrightness +
+		FMin(newDistance/MaxFlashlightDistance, 1.0) * (MinFlashlightBrightness - BaseFlashlightBrightness);
+#if ENABLE_FLASHLIGHT_PROJECTION_VISIBILITY_TESTING
+    FlashlightDynamicLight.LightBrightness *= FlashlightProjection_CurrentBrightnessAlpha;
+#endif
+	FlashlightDynamicLight.bLightChanged = true;
+}
+
+	
+*/
 
 defaultproperties
 {

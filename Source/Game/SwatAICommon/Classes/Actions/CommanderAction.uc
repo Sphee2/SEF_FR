@@ -74,6 +74,7 @@ var config float						MinReactToGunshotDistance;
 
 const kMoveAwayFromLocationGoalPriority = 94;
 const FlashlightOnChanceModifier = 0.2;
+const ShieldOnChanceModifier = 0.3;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -429,6 +430,8 @@ function OnComplianceIssued(Pawn ComplianceIssuer)
 {
 	local bool bWillComply;
 	local float RandomChance; 
+	local ISwatPawn Off;
+	local int totOff;
 	
 	if (m_Pawn.logAI)
 		log("Compliance issued from: "$ComplianceIssuer.Name$" to: "$m_Pawn.name);
@@ -453,7 +456,26 @@ function OnComplianceIssued(Pawn ComplianceIssuer)
 				RandomChance = RandomChance + FlashlightOnChanceModifier;
 				log("Compliance + flashlight modifier");
 			}
-
+			
+			//if the ComplianceIssuer Officer has shield equipped 
+			if ( (ComplianceIssuer.isA('SwatOfficer') || ComplianceIssuer.IsA('SwatPlayer')) && ComplianceIssuer.GetactiveItem().isa('ShieldHandgun') ) 
+			{
+				RandomChance = RandomChance + ShieldOnChanceModifier;
+				log("Compliance + shield modifier");
+			}
+			
+			//if team is full and near pawn drop all the morale! 10mts approx
+			foreach m_pawn.VisibleCollidingActors( class'ISwatPawn', Off, 660.0  )
+			{
+				if (Off.isa('SwatPlayer') || Off.isa('SwatOfficer'))
+					totOff++;
+			}
+			
+			if (totOff > 4)
+			{
+				RandomChance = RandomChance + 0.6; //massive morale drop!
+			}
+			
 			
 			if (RandomChance >= GetCurrentMorale())
 			{

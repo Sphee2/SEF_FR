@@ -6591,7 +6591,8 @@ exec function LeanLeftN(bool bPressed)
 			if (SwatPlayer(Pawn).LWS == Lean_Right)
 				return;
 			
-			bLeanLeft=1;
+			if (!Pawn.GetActiveItem().isa('ShieldHandgun'))
+				bLeanLeft=1;
 			if (SwatPlayer(Pawn).LWS == Lean_Left)
 				SwatPlayer(Pawn).LeanWalk("left");
 			return;
@@ -6630,7 +6631,9 @@ exec function LeanRightN(bool bPressed)
 			if (SwatPlayer(Pawn).LWS == Lean_Left)
 				return;
 			
-			bLeanRight=1;
+			if (!Pawn.GetActiveItem().isa('ShieldHandgun'))
+				bLeanRight=1;
+			
 			if (SwatPlayer(Pawn).LWS == Lean_Right)
 				SwatPlayer(Pawn).LeanWalk("right");
 			return;
