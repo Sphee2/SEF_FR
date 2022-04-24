@@ -809,7 +809,7 @@ Begin:
     // FIXME: need a check here...
   }
 
-    if (!bOnlyAimIfMoving || (VSize(m_Pawn.Velocity) > 0.0))
+    if (!bOnlyAimIfMoving || (VSize(m_Pawn.Velocity) > 0.0) || !m_Pawn.hasActiveShield() )
     {
 		// now aim at the point
         FindAndAimAtPoint();

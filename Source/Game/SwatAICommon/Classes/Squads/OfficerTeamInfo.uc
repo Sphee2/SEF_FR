@@ -147,6 +147,18 @@ function Pawn GetFirstOfficer()
 		return None;
 }
 
+function Pawn GetFirstShieldOfficer()
+{
+	local int i;
+	
+	for(i=0; i<pawns.length; ++i)
+	{
+		if (pawns[i].hasActiveShield())
+			return pawns[i];
+	}
+		return None;
+}
+
 function Pawn GetSecondOfficer()
 {
 	if (pawns.length > 1)
@@ -155,7 +167,7 @@ function Pawn GetSecondOfficer()
 		return None;
 }
 
-function Pawn GetClosestOfficerWithEquipmentTo(EquipmentSlot Slot, vector Point, optional bool bUsePathfindingDistance)
+function Pawn GetClosestOfficerWithEquipmentTo(EquipmentSlot Slot, vector Point, optional bool bUsePathfindingDistance , optional bool rejectShield)
 {
 	local int i;
 	local Pawn IterOfficer, ClosestOfficer;
@@ -163,6 +175,9 @@ function Pawn GetClosestOfficerWithEquipmentTo(EquipmentSlot Slot, vector Point,
 	for(i=0; i<pawns.length; ++i)
 	{
 		IterOfficer = pawns[i];
+
+		if ( IterOfficer.HasActiveShield() &&  rejectShield ) //dont choose the shield bearer officer
+			continue;
 
 		if (ISwatOfficer(IterOfficer).GetItemAtSlot(Slot) != None)
 		{
@@ -254,7 +269,7 @@ function Pawn GetClosestOfficerThatCanHit(Actor Target, optional bool bUsePathfi
 	return Closest;
 }
 
-function Pawn GetClosestOfficerWithEquipment(vector Location, EquipmentSlot Slot, optional Name EquipmentClassName, optional bool bUsePathfindingDistance)
+function Pawn GetClosestOfficerWithEquipment(vector Location, EquipmentSlot Slot, optional Name EquipmentClassName, optional bool bUsePathfindingDistance , optional bool rejectShield)
 {
 	local int i;
 	local Pawn Iter, Closest;
@@ -264,6 +279,9 @@ function Pawn GetClosestOfficerWithEquipment(vector Location, EquipmentSlot Slot
 	for (i=0; i<pawns.length; ++i)
 	{
 		Iter = pawns[i];
+		
+		if ( Iter.HasActiveShield() &&  rejectShield ) //dont choose the shield bearer officer
+			continue;
 
         Equipment = ISwatOfficer(Iter).GetItemAtSlot(Slot);
 		if (Equipment != None)

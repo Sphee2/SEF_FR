@@ -43,11 +43,11 @@ protected function NotifyPawnDied(Pawn pawn);
 //
 // Officer Accessors
 
-function Pawn GetClosestOfficerWithEquipmentTo(EquipmentSlot Slot, vector Point, optional bool bUsePathfindingDistance)
+function Pawn GetClosestOfficerWithEquipmentTo(EquipmentSlot Slot, vector Point, optional bool bUsePathfindingDistance , optional bool rejectShield)
 {
 	assert(squad().IsA('OfficerTeamInfo'));
 
-	return OfficerTeamInfo(squad()).GetClosestOfficerWithEquipmentTo(Slot, Point, bUsePathfindingDistance);
+	return OfficerTeamInfo(squad()).GetClosestOfficerWithEquipmentTo(Slot, Point, bUsePathfindingDistance , rejectShield );
 }
 
 function bool DoesAnOfficerHaveUsableEquipment(EquipmentSlot Slot, optional Name EquipmentClassName)
@@ -71,6 +71,13 @@ function bool DoesAnOfficerHave(Name EquipmentClassName)
 	return OfficerTeamInfo(squad()).DoesAnOfficerHave(EquipmentClassName);
 }
 
+function Pawn GetFirstShieldOfficer()
+{
+	assert(squad().IsA('OfficerTeamInfo'));
+
+	return OfficerTeamInfo(squad()).GetFirstShieldOfficer();
+}
+
 function Pawn GetFirstOfficer()
 {
 	assert(squad().IsA('OfficerTeamInfo'));
@@ -92,11 +99,11 @@ function Pawn GetClosestOfficerTo(Actor Target, optional bool bRequiresLineOfSig
 	return OfficerTeamInfo(squad()).GetClosestOfficerTo(Target, bRequiresLineOfSight, bUsePathfindingDistance);
 }
 
-function Pawn GetClosestOfficerWithEquipment(vector Location, EquipmentSlot Slot, optional Name EquipmentClassName, optional bool bUsePathfindingDistance)
+function Pawn GetClosestOfficerWithEquipment(vector Location, EquipmentSlot Slot, optional Name EquipmentClassName, optional bool bUsePathfindingDistance, optional bool rejectShield)
 {
 	assert(squad().IsA('OfficerTeamInfo'));
 
-	return OfficerTeamInfo(squad()).GetClosestOfficerWithEquipment(Location, Slot, EquipmentClassName, bUsePathfindingDistance);
+	return OfficerTeamInfo(squad()).GetClosestOfficerWithEquipment(Location, Slot, EquipmentClassName, bUsePathfindingDistance, rejectShield);
 }
 
 ///////////////////////////////////////////////////////////////////////////////

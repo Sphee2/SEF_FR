@@ -14,6 +14,8 @@ var(parameters) vector			Destination;
 
 // behaviors we use
 var private array<MoveToGoal>	MoveToGoals;
+var private array<MoveInFormationGoal>	MoveInFormationGoals;
+var private Formation					ClearFormation;
 
 // internal
 var private LevelInfo			Level;
@@ -43,6 +45,28 @@ private function ClearOutMoveToGoals()
 
 		MoveToGoals.Remove(0, 1);
 	}
+	
+	/*
+	while (MoveInFormationGoals.Length > 0)
+	{
+		if (MoveInFormationGoals[0] != None)
+		{
+			MoveInFormationGoals[0].Release();
+			MoveInFormationGoals[0] = None;
+		}
+
+		MoveInFormationGoals.Remove(0, 1);
+	}
+	*/
+	
+	// clear out the formation
+	if (ClearFormation != None)
+	{
+		ClearFormation.Cleanup();
+		ClearFormation.Release();
+		ClearFormation = None;
+	}
+	
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -64,8 +88,8 @@ function goalNotAchievedCB( AI_Goal goal, AI_Action child, ACT_ErrorCodes errorC
 
 latent function MoveOfficersToDestination()
 {
-	local int PawnIterIndex, MoveToIndex;
-	local Pawn PawnIter;
+	local int PawnIterIndex, MoveToIndex , MoveInFormIndex;
+	local Pawn PawnIter , ShieldOfficer;
 	local NavigationPoint ClosestPointToDestination;
 	local name DestinationRoomName;
 	local SwatAIRepository SwatAIRepo;
@@ -82,7 +106,7 @@ latent function MoveOfficersToDestination()
 
 	if (resource.pawn().logTyrion)
 		log(Name $ " - DestinationRoomName is: " $ DestinationRoomName $ " ClosestPointToDestination: " $ ClosestPointToDestination $ " Destination: " $ Destination);
-
+/*
 	for(PawnIterIndex=0; PawnIterIndex<squad().pawns.length; ++PawnIterIndex)
 	{
 		PawnIter = squad().pawns[PawnIterIndex];
@@ -94,6 +118,54 @@ latent function MoveOfficersToDestination()
 		MoveToGoals[MoveToIndex].PostGoal(self);
 
 		++MoveToIndex;
+	}
+*/
+	ShieldOfficer = GetFirstShieldOfficer();
+	if ( ShieldOfficer == None )
+		ShieldOfficer = GetFirstOfficer();
+	
+	ClearFormation = new class'Formation'(ShieldOfficer);
+	ClearFormation.AddRef();
+	ISwatOfficer(ShieldOfficer).SetCurrentFormation(ClearFormation);
+	
+
+	for(PawnIterIndex=0; PawnIterIndex<squad().pawns.length; ++PawnIterIndex)
+	{
+		PawnIter = squad().pawns[PawnIterIndex];
+
+		if ( PawnIter == ShieldOfficer )
+		{
+			log("PawnIter == ShieldOfficer");
+			MoveToGoals[MoveToIndex] = new class'MoveToGoal'(AI_Resource(PawnIter.characterAI), ClosestPointToDestination);
+			assert(MoveToGoals[MoveToIndex] != None);
+			MoveToGoals[MoveToIndex].AddRef();
+			
+			MoveToGoals[MoveToIndex].PostGoal(self);
+
+			++MoveToIndex;
+		}
+		else
+		{
+			
+			ClearFormation.AddMember(PawnIter);
+			
+			ISwatOfficer(PawnIter).SetCurrentFormation(ClearFormation);
+			
+			log("PawnIter != ShieldOfficer  PawnIter" $ PawnIter.name $ " ShieldOfficer " $ ShieldOfficer.name $ " " );
+			MoveInFormationGoals[MoveInFormIndex] = new class'MoveInFormationGoal'(AI_MovementResource(PawnIter.MovementAI));
+			assert(MoveInFormationGoals[MoveInFormIndex] != None);
+			MoveInFormationGoals[MoveInFormIndex].AddRef();
+			
+			// Let the aim around action perform the aiming and rotation for us
+			MoveInFormationGoals[MoveInFormIndex].SetRotateTowardsPointsDuringMovement(true);
+			MoveInFormationGoals[MoveInFormIndex].SetAcceptNearbyPath(true);
+			MoveInFormationGoals[MoveInFormIndex].SetWalkThreshold(192.0);
+			
+			MoveInFormationGoals[MoveInFormIndex].PostGoal(self);
+
+			++MoveInFormIndex;
+		}
+			
 	}
 
 	waitForAllGoalsInList(MoveToGoals);

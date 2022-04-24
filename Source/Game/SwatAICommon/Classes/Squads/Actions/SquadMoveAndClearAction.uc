@@ -548,9 +548,16 @@ function Pawn GetThrowingOfficer(EquipmentSlot ThrownItemSlot)
 //		log("get throwing officer - i is: " $ i);
 
 		Officer = OfficersInStackupOrder[i];
-
+		
 		if (class'Pawn'.static.checkConscious(Officer))
 		{
+			
+			if (Officer.HasActiveshield()) //skip shield guys for now...
+			{	
+				++i;
+				continue;
+			}
+			
 			GrenadeLauncher = ISwatOfficer(Officer).GetLauncherWhichFires(ThrownItemSlot);
 			if (ISwatOfficer(Officer).GetThrownWeapon(ThrownItemSlot) != None)
 			{
@@ -574,7 +581,7 @@ function Pawn GetThrowingOfficer(EquipmentSlot ThrownItemSlot)
 	// now try the first officer
 	Officer = OfficersInStackupOrder[0];
 
-	if (class'Pawn'.static.checkConscious(Officer))
+	if (class'Pawn'.static.checkConscious(Officer) && !Officer.HasActiveshield())
 	{
 		GrenadeLauncher = ISwatOfficer(Officer).GetLauncherWhichFires(ThrownItemSlot);
 
@@ -588,7 +595,7 @@ function Pawn GetThrowingOfficer(EquipmentSlot ThrownItemSlot)
 		}
 	}
 
-	// now try again, without the breacher restriction
+	// now try again, without the breacher
 	i = 0;
 	while(i<OfficersInStackupOrder.Length)
 	{
@@ -1120,12 +1127,18 @@ function StopFollowingLeader()
 
 protected function SetupOfficerRoles()
 {
-	local Pawn FirstOfficer, SecondOfficer;
+	local Pawn FirstOfficer, SecondOfficer ,ShieldOfficer;
+	local array<Pawn> Sort;
+	local int i;
+	
+	//shield in 3rd position
+	ShieldOfficer = GetFirstShieldOfficer();
 
 	FirstOfficer = GetFirstOfficer();
 	SecondOfficer = GetSecondOfficer();
 	ThirdOfficer = GetThirdOfficer();
 	FourthOfficer = GetFourthOfficer();
+	
 
 	if (FirstOfficer.logAI)
 		log("SetupOfficerRoles - FirstOfficer: " $ FirstOfficer $ " SecondOfficer: " $ SecondOfficer $ " ThirdOfficer: " $ ThirdOfficer $ " FourthOfficer: " $ FourthOfficer);
@@ -1176,9 +1189,8 @@ protected function SetupOfficerRoles()
 	assert((FourthOfficer == None) || (ThirdOfficer != FourthOfficer));
 	assert((ThirdOfficer == None) || (SecondOfficer != ThirdOfficer));
 	assert((FourthOfficer == None) || (SecondOfficer != FourthOfficer));
-
-
-	// handle the case where the second officer doesn't exist
+	
+		// handle the case where the second officer doesn't exist
 	if (SecondOfficer != None)
 	{
 		if (CanInteractWithTargetDoor())
@@ -1196,6 +1208,18 @@ protected function SetupOfficerRoles()
 				Follower   = None;
 				DoorOpener = FirstOfficer;
 			}
+			
+			if ( ShieldOfficer != None)
+			{
+				if (DoorOpener == ShieldOfficer)
+				{
+					DoorOpener=Leader;
+					Leader = ShieldOfficer;
+				}
+				else
+					Leader = ShieldOfficer;
+			}
+			
 		}
 		else
 		{
@@ -1213,6 +1237,9 @@ protected function SetupOfficerRoles()
 
 			// just in case the door's status changes from open to closed
 			DoorOpener = FirstOfficer;
+			
+			if ( ShieldOfficer != None)
+				Leader = ShieldOfficer;
 		}
 	}
 	else

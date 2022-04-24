@@ -92,37 +92,65 @@ protected function bool ShouldStackUpIfOfficersInRoomToClear() { return true; }
 protected function Pawn GetFirstOfficerWithC2(optional bool skipBreacher)
 {
 	local int i;
-	local Pawn Officer;
+	local Pawn Officer , ShieldOfficer;
 	local Pawn Found;
 
 	for(i = 0; i < OfficersInStackUpOrder.Length; i++) {
 		Officer = OfficersInStackUpOrder[i];
 
 		if(class'Pawn'.static.checkConscious(Officer) && CanOfficerBreachWithC2(Officer) && (!skipBreacher || Officer != Breacher)) {
+			if(Found.HasActiveShield()) //skip Shield guy if possible
+			{
+				ShieldOfficer=Officer;
+				continue;
+			}
+			
 			Found = Officer;
 			break;
 		}
 	}
 
-	return Found;
+	if (Found != None)
+		return Found;
+	
+	if ( ShieldOfficer != None ) 
+		return ShieldOfficer;
+	else 
+		return None;
+	
 }
 
 protected function Pawn GetFirstOfficerWithBSG(optional bool skipBreacher)
 {
 	local int i;
-	local Pawn Officer;
+	local Pawn Officer, ShieldOfficer;
 	local Pawn Found;
 
 	for(i = 0; i < OfficersInStackUpOrder.Length; i++) {
 		Officer = OfficersInStackUpOrder[i];
 
 		if(class'Pawn'.static.checkConscious(Officer) && CanOfficerBreachWithShotgun(Officer) && (!skipBreacher || Officer != Breacher)) {
+			
+			if(Found.HasActiveShield()) //skip Shield guy if possible
+			{
+				ShieldOfficer=Officer;
+				continue;
+			}
+			
 			Found = Officer;
 			break;
 		}
 	}
 
-	return Found;
+
+	if (Found != None)
+		return Found;
+	
+	if ( ShieldOfficer != None ) 
+		return ShieldOfficer;
+	else 
+		return None;
+	
 }
 
 protected function bool ShouldThrowerBeFirstOfficer()

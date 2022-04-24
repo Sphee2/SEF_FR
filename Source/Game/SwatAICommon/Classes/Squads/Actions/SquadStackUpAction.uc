@@ -487,6 +487,11 @@ event float GetStackupWeightForOfficer(Pawn Officer, StackupPoint Point)
 	{
 		Weight -= 512.0;
 	}
+	
+	if (Officer.HasActiveShield())
+	{
+		Weight -= 512.0;
+	}
 
 //	log("Weight finishes as: " $ Weight);
 

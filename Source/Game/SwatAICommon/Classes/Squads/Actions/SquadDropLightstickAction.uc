@@ -34,7 +34,8 @@ latent function DropLightstick()
 {
 	local Pawn Officer;
 
-	Officer = GetClosestOfficerWithEquipment(TargetPawn.Location, Slot_Lightstick, 'Lightstick', true);
+	Officer = GetClosestOfficerWithEquipment(TargetPawn.Location, Slot_Lightstick, 'Lightstick', true , true);
+	
 	if(Officer == None) {
 	    Officer = GetFirstOfficer();
 	    if(Officer != None && SquadDropLightstickGoal(achievingGoal).GetPlaySpeech()) {
