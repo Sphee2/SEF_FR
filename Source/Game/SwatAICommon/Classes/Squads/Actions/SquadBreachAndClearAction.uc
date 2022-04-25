@@ -439,6 +439,13 @@ function Pawn GetThrowingOfficer(EquipmentSlot ThrownItemSlot)
 
 		if (class'Pawn'.static.checkConscious(Officer))
 		{
+			
+			if (Officer.HasActiveshield()) //skip shield guys for now...
+			{	
+				++i;
+				continue;
+			}
+			
 			if (ISwatOfficer(Officer).GetThrownWeapon(ThrownItemSlot) != None)
 			{
 				if (Officer.logAI)
@@ -454,7 +461,7 @@ function Pawn GetThrowingOfficer(EquipmentSlot ThrownItemSlot)
 	// now try the first officer
 	Officer = OfficersInStackupOrder[0];
 
-	if (class'Pawn'.static.checkConscious(Officer))
+	if (class'Pawn'.static.checkConscious(Officer) && !Officer.HasActiveshield())
 	{
 		if (ISwatOfficer(Officer).GetThrownWeapon(ThrownItemSlot) != None)
 		{

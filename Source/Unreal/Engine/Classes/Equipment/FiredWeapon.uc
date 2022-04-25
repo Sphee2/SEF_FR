@@ -114,7 +114,7 @@ var(Flashlight) private config class<Light> FlashlightCoronaLightClass "Type of 
 var(Flashlight) private config float PointLightDistanceFraction     "Where to place the pointlight along the line to the nearest object (0 = at flashlight, 1=at object intersection)";
 var(Flashlight) private config float PointLightRadiusScale          "How much to scale the pointlight radius with distance from the nearest object";
 var(Flashlight) private config float PointLightDistanceFadeRate     "How fast will the pointlight incorporate new distance values";
-var private Light  FlashlightDynamicLight;                 // The actual light spawned for this weapon's flashlight
+var Light  FlashlightDynamicLight;                 // The actual light spawned for this weapon's flashlight
 var private Actor  FlashlightReferenceActor;             // Reference point for the flashlight's position; this is where the flashlight appears to originate from (where the corona appears, and where traces are done from when using a moving pointlight on low end cards to approximate a spotlight)
 var(Debug) config  bool   DebugDrawFlashlightDir               "If true, draw the trace lines and sprites for the flashlight lights";
 var(Flashlight) config  int    FlashlightUseFancyLights              "for flashlights: -1 = uninitialized, 1 = spotlights, 0 = point lights";
@@ -433,6 +433,12 @@ simulated function bool WillHitIntendedTarget(Actor Target, bool MomentumMatters
             // The bullet lost all of its momentum
             return false;
         }
+		else if (Victim.isa('ShieldEquip'))
+		{
+			if (Owner.IsA('SwatOfficer'))
+				continue;
+		
+		}
         else if(Victim != Target)
         {
             Momentum -= MtP;
@@ -680,6 +686,11 @@ simulated function BallisticFire(vector StartTrace, vector EndTrace)
 	    	continue;
 		}
 		
+		if( Victim.isa('ShieldEquip') && self.Owner.isa('SwatOfficer') ) //to avoid officers shoots their own shield
+		{
+	    	continue;
+		}
+		
         //handle each ballistic impact until the bullet runs out of momentum and does not penetrate
         if (Ammo.CanRicochet(Victim, HitLocation, HitNormal, Normal(HitLocation - StartTrace), HitMaterial, Momentum, 0))
 		{
@@ -806,6 +817,7 @@ simulated function bool HandleBallisticImpact(
 		}
 		else if( Victim.isa('ShieldEquip') ) //Shield (3rd person)
 		{
+			if  (!self.Owner.isa('SwatOfficer') ) //to avoid officers shooting their own shield
 				return HandleShieldImpact(Victim, HitLocation, HitNormal, HitMaterial, NormalizedBulletDirection, Momentum, KillEnergy , BulletType );
 		}
 
@@ -1059,6 +1071,8 @@ simulated function bool HandleShieldImpact(
 		Shield = IAmShield(Pawn(Victim.Owner.Owner).GetShieldEquip());	
 	}
 	
+	if(level.NetMode == NM_DedicatedServer) //mplog
+		log("HandleShieldImpact::DediServer Victim " $Victim.name);
 	
     ArmorLevel = Shield.GetProtectionType();
     BulletLevel = Ammo.GetPenetrationType();
@@ -2218,7 +2232,7 @@ simulated function SetFlashlightCone(float cone)
 	}
 }
 
-simulated private function UpdateFlashlightLighting(optional float dTime)
+simulated function UpdateFlashlightLighting(optional float dTime)
 {
 #if ENABLE_FLASHLIGHT_PROJECTION_VISIBILITY_TESTING
     local bool bIsFlashlightProjectionVisible;

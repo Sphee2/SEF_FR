@@ -2312,6 +2312,10 @@ simulated function name GetRightSideCenterOpenAnimation()
 // just returning the center points animations
 simulated function name GetOpenAnimation(Pawn Other, AIDoorUsageSide DoorUsageSide, optional bool bIsFranticOpen)
 {
+	
+	if (Other.HasActiveShield())
+		return 'InteractShield';
+	
 	if (ActorIsToMyLeft(Other))
 	{
 		if (DoorUsageSide == kUseDoorFront)
@@ -2427,6 +2431,9 @@ simulated function name GetORFrontAwayCloseAnimation()
 // just returning the cneter points animations -- todo: support all points when they are added in.
 simulated function name GetCloseAnimation(Pawn Other, bool bCloseFromBehind)
 {
+	if (Other.HasActiveShield())
+		return 'InteractShield';
+	
 	if (CurrentPosition == DoorPosition_OpenLeft)
 	{
 		if (ActorIsToMyLeft(Other))
@@ -2541,6 +2548,10 @@ simulated function name GetRightSideCenterTryAnimation()
 
 simulated function name GetTryDoorAnimation(Pawn Other, AIDoorUsageSide DoorUsageSide)
 {
+	
+	if (Other.HasActiveShield())
+		return 'InteractShield';
+	
 	if (ActorIsToMyLeft(Other))
 	{
 		if (DoorUsageSide == kUseDoorFront)

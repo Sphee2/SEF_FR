@@ -1209,10 +1209,12 @@ function ReactToFlashbangGrenade(
     local float DistanceEffect;
     local float Magnitude;
 
-    if ( HasProtection( 'IProtectFromFlashbang' ) )
+    if ( HasProtection( 'IProtectFromFlashbang' ) || HasActiveSHield() )
     {
         return;
     }
+
+
 
     if(Instigator.IsA('SwatOfficer'))
     {

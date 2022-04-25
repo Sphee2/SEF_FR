@@ -17,6 +17,7 @@ var(parameters) bool				bTriggerReportResultsSpeech;
 
 // behaviors we use
 var private MoveToDoorGoal			CurrentMoveToDoorGoal;
+var private RotateTowardActorGoal   CurrentRotateTowardActorGoal;
 
 // door usage side
 var private	AIDoorUsageSide			TryDoorUsageSide;
@@ -34,6 +35,12 @@ function cleanup()
 	{
 		CurrentMoveToDoorGoal.Release();
 		CurrentMoveToDoorGoal = None;
+	}
+	
+	if (CurrentRotateTowardActorGoal != None)
+	{
+		CurrentRotateTowardActorGoal.Release();
+		CurrentRotateTowardActorGoal = None;
 	}
 
 	// stop animating
@@ -166,10 +173,12 @@ latent function TryDoor()
 
 	if ( !SwatDoorTarget.isPartialOpen() )
 	{
+		
 		AnimName		   = SwatDoorTarget.GetTryDoorAnimation(m_Pawn, TryDoorUsageSide);
 		AnimSpecialChannel = m_Pawn.AnimPlaySpecial(AnimName);
 
 		m_Pawn.FinishAnim(AnimSpecialChannel);
+		
 	}
 		
 }

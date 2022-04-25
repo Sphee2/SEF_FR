@@ -472,6 +472,11 @@ simulated function BallisticFire(vector StartTrace, vector EndTrace)
 		{
 	    	continue;
 		}
+		
+		if( Victim.isa('ShieldEquip') && self.Owner.isa('SwatOfficer') ) //to avoid officers shoots their own shield
+		{
+	    	continue;
+		}
 
         //handle each ballistic impact until the bullet runs out of momentum and does not penetrate
         if (Ammo.CanRicochet(Victim, HitLocation, HitNormal, Normal(HitLocation - StartTrace), HitMaterial, Momentum, 0)) {
@@ -583,6 +588,7 @@ simulated function bool HandleBallisticImpact(
 		}
 		else if( Victim.isa('ShieldEquip') ) //Shield (3rd person)
 		{
+			if  (!self.Owner.isa('SwatOfficer') ) //to avoid officers shooting their own shield
 				return HandleShieldImpact(Victim, HitLocation, HitNormal, HitMaterial, NormalizedBulletDirection, Momentum, KillEnergy , BulletType );
 		}
 		
