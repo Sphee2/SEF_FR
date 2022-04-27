@@ -213,7 +213,10 @@ function OnTick( float Delta )
 	if (!Feedback.MustBeVisible())
 		Feedback.Hide();
 	else 
+	{
 	   Feedback.Show();
+	   Feedback.UpdateCaption();
+	}
    
 	if ( !DamageIndicator.IsDamaged() ) 
 		DamageIndicator.Hide();
@@ -224,7 +227,6 @@ function OnTick( float Delta )
   }
   else
   {
-	Feedback.Show();
 	DamageIndicator.Show(); 
 	Updateweight();
   }
