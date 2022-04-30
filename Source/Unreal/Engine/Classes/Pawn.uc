@@ -3035,7 +3035,7 @@ local int i;
 
 simulated function bool HasActiveShield()
 {
-	return GetActiveItem().isa('ShieldHandgun');
+	return GetActiveItem().isa('ShieldHandgun') || GetActiveItem().isa('TaserShield') ;
 }
 
 

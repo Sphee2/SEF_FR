@@ -458,7 +458,7 @@ function OnComplianceIssued(Pawn ComplianceIssuer)
 			}
 			
 			//if the ComplianceIssuer Officer has shield equipped 
-			if ( (ComplianceIssuer.isA('SwatOfficer') || ComplianceIssuer.IsA('SwatPlayer')) && ComplianceIssuer.GetactiveItem().isa('ShieldHandgun') ) 
+			if ( (ComplianceIssuer.isA('SwatOfficer') || ComplianceIssuer.IsA('SwatPlayer')) && ComplianceIssuer.HasActiveShield() ) 
 			{
 				RandomChance = RandomChance + ShieldOnChanceModifier;
 				log("Compliance + shield modifier");

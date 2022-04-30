@@ -348,8 +348,8 @@ protected latent function AimAndFireAtTarget(FiredWeapon CurrentWeapon)
 	// suspects don't care if they need to acquire a target perfectly
 	if(m_Pawn.IsA('SwatEnemy'))
 	{
-		LatentAimAtActor(Target, ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring());
-		
+		//LatentAimAtActor(Target, ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring());
+		LatentAimAtActor(Target);
 		 if(Level.NetMode != NM_Standalone) //adjust for ping in MP
 			sleep(0.2);  
 	}
@@ -423,7 +423,8 @@ private function bool ShouldContinueAttackingWithLessLethal()
 	}
 
 	Item = FiredWeapon(m_Pawn.GetActiveItem());
-	if(Item == None || !Item.IsLessLethal() || Item.IsA('Taser')   						|| // Don't tase people, it can kill
+	if(Item == None || !Item.IsLessLethal()  					   						|| 
+		(Item.IsA('Taser') && ISwatAI(target).IsTased()) 								|| // Tase only once...
 		(Item.IsA('CSBallLauncher') && ISwatAI(target).IsGassed()) 						|| // Pepperball is uselss on already gassed people
 		(Item.IsA('BeanbagShotgunBase') && ShotsFired > 2 && ISwatAI(target).IsStung()) || // Only shoot three times with the beanbag shotgun.
 		(Item.IsA('GrenadeLauncherBase')))                            					   // Don't use the grenade launcher. It's stupid.

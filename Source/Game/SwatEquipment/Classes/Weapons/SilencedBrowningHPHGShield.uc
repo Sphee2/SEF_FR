@@ -1,0 +1,1 @@
+class SilencedBrowningHPHGSHield extends BrowningHPHGShield config(SwatEquipment);

@@ -340,6 +340,12 @@ simulated function TraceFireInternal(int cartridge)
                 //SwatDoors (the animations) must be drawn, and their SkeletalRegions must block traces, but shots should ignore them
                 if (LocalVictim.IsA('SwatDoor'))
                     continue;
+				
+				if (LocalVictim.IsA('ShieldEquip') ) 
+                {
+					if(LocalVictim.Owner == self.Owner) //dont taser your own shield
+						continue;
+				}
 
 				// If the nearest hit is too far, then consider it a miss, and make
 				// the taser Wire shoot out to the max distance and then fall.

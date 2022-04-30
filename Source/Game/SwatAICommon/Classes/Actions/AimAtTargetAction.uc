@@ -45,7 +45,7 @@ private function CheckAimingMode()
 	}
 	else
 	{
-		if ( m_Pawn.GetActiveItem().isa('ShieldHandgun') )
+		if ( m_Pawn.HasActiveShield() )
 			 ISwatAI(m_Pawn).SetUpperBodyAnimBehavior(kUBAB_AimWeapon, kUBABCI_AimAtTargetAction);
 		else
 			ISwatAI(m_Pawn).SetUpperBodyAnimBehavior(kUBAB_FullBody, kUBABCI_AimAtTargetAction);

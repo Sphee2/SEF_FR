@@ -40,7 +40,7 @@ simulated function UnequippedHook()
 		ShieldModel_TP.Unequip();
 		ShieldModel_TP.Show();
 		
-		if ( Pawn(Owner).GetHands() != None )
+		if ( Pawn(Owner).GetHands() != None)
 		{
 		ShieldModel_FP.Hide();
 		ShieldModel_FP.OnUnequipKeyFrame();
@@ -50,12 +50,22 @@ simulated function UnequippedHook()
 
 simulated function CreateModels()
 {
+	local int i;
+	
 	Super.CreateModels();
 	
 	//SHIELD
 	if(HasShield)
 	{	
-
+		
+		for(i=0; i<=Pawn(Owner).Attached.length ; i++)
+		{
+			if (Pawn(Owner).Attached[i].isa('Shieldequip'))
+			{
+				Pawn(Owner).Attached[i].Destroy(); //prevent doubling shields - happens in training cabinet mostly
+			}
+		}
+		
 		//humans only
 		if ( Pawn(Owner).GetHands() != None && Level.NetMode != NM_DedicatedServer)
 		{
