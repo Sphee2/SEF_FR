@@ -56,7 +56,7 @@ simulated function PlayReload(optional bool QuickReload)
 		{
 			ReloadRate *= IAmAffectedByWeight(HandsOwner).GetBulkSpeedModifier();
 			
-			if (QuickReload)
+			if (QuickReload && !HandheldEquipment.isa('ShieldHandgun')) //no quick anims on shield
 				ReloadRate *= 2.0;
 		}
 	}
@@ -64,8 +64,9 @@ simulated function PlayReload(optional bool QuickReload)
 	{	// apply the bulk reload speed modifier
 		ReloadRate *= IAmAffectedByWeight(Owner).GetBulkSpeedModifier();
 		
-		if (QuickReload)
-			ReloadRate *= 2.0;
+		
+			if (QuickReload && !HandheldEquipment.isa('ShieldHandgun') )//no quick anims on shield
+				ReloadRate *= 2.0;
 	}
 	else
 	{

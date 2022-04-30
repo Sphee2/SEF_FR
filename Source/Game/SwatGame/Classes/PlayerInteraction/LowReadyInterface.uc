@@ -148,7 +148,7 @@ simulated function bool SpecialCondition_LowReadyPawn(SwatPlayer Player, Actor T
 	{
 	
 	CurrentItem = Player.GetActiveItem();
-	if(CurrentItem.IsA('Optiwand') || !CurrentItem.IsA('FiredWeapon'))
+	if(CurrentItem.IsA('Optiwand') || CurrentItem.IsA('ShieldHandgun') || !CurrentItem.IsA('FiredWeapon'))
 	{	// Only FiredWeapons can trigger this context, but not Optiwands
 		return false;
 	}

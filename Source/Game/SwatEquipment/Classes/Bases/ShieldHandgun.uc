@@ -334,7 +334,7 @@ simulated function UpdateFlashlightLighting(optional float dTime)
 defaultproperties
 {
 	HasShield=true
-	bAbletoQuickReload=false
+	bAbletoQuickReload=true //no fast animation , just mag dump
 	AimAnimation=WeaponAnimAim_Shield
 	LowReadyAnimation=WeaponAnimLowReady_Shield
 	IdleWeaponCategory=IdleWithShield

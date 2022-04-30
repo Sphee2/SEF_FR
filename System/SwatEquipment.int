@@ -103,6 +103,46 @@ MagazineSizeString=20
 TotalAmmoString=10 magazines
 RateOfFire=390 RPM
 
+
+[Beretta92fsShield]
+Description=The Beretta 92 is a series of semi-automatic pistols designed and manufactured by Beretta of Italy. The Beretta 92 was designed in 1975, and production began in 1976. Many variants in several different calibers continue to be used to the present.The United States military replaced the M1911A1 .45 ACP pistol in 1985 with the Beretta 92FS, designated as the M9.
+FriendlyName=Beretta 92FS + Shield
+ShortName=Beretta 92FS + Shield
+Manufacturer=Beretta
+Caliber=9x19mm
+CountryOfOrigin=Italy
+ProductionStart=1975
+FireModes=Semi-Automatic
+MagazineSizeString=15
+TotalAmmoString=10 magazines
+RateOfFire=390 RPM
+
+[P226HGShield]
+Description=The SIG Sauer P226 is the high capacity version of the P220, using double stacked, 20-round magazines instead of the latter's single stacked magazines. Chambered in 9x19mm, the P226 is widely used in police departments throughout the United States and Canada. 
+FriendlyName=P226 + Shield
+ShortName=P226 + Shield
+Manufacturer=SIG Sauer
+Caliber=9x19mm
+CountryOfOrigin=Germany
+ProductionStart=1984
+FireModes=Semi-Automatic
+MagazineSizeString=20
+TotalAmmoString=10 magazines
+RateOfFire=390 RPM
+
+[SilencedP226HGShield]
+Description=The SIG Sauer P226 is the high capacity version of the P220, using double stacked, 20-round magazines instead of the latter's single stacked magazines. Chambered in 9x19mm, the P226 is widely used in police departments throughout the United States and Canada. This model is equipped with a sound and flash suppressor for when stealth is paramount.
+FriendlyName=Suppressed P226 + Shield
+ShortName=Sup. P226 + Shield
+Manufacturer=SIG Sauer
+Caliber=Subsonic 9x19mm
+CountryOfOrigin=Germany
+ProductionStart=1984
+FireModes=Semi-Automatic
+MagazineSizeString=20
+TotalAmmoString=10 magazines
+RateOfFire=390 RPM
+
 [HK33MG]
 Description=While Heckler & Koch's MP5 submachine gun is more popular amongst SWAT, the company at this time developed three other firearms built on the highly successful G3 framework - one of them being the HK33. The HK33A2 bears a rigid synthetic stock and is based on the original G3 design, utilizing the same roller-delayed blowback operating mechanism but on a smaller 5.56x45mm NATO bullet.
 FriendlyName=HK33A2
@@ -405,6 +445,19 @@ MagazineSizeString=15
 Description=The Colt Python is among the most famous of Colt revolvers and was introduced in 1955.  It is chambered for the powerful .357 Magnum ammunition making it one of the most powerful hand guns on the market.  Its power is offset by its slow rate of fire and arduous reload.  In addition, it is not equipped with a tactical flashlight.
 FriendlyName=Python
 ShortName=Python
+Manufacturer=Colt
+Caliber=.357 Magnum
+CountryOfOrigin=United States
+ProductionStart=1955
+FireModes=Double-Action
+MagazineSizeString=6
+TotalAmmoString=10 speedloaders
+RateOfFire=80 RPM
+
+[PythonRevolverHGShield]
+Description=The Colt Python is among the most famous of Colt revolvers and was introduced in 1955.  It is chambered for the powerful .357 Magnum ammunition making it one of the most powerful hand guns on the market.  Its power is offset by its slow rate of fire and arduous reload.  In addition, it is not equipped with a tactical flashlight.
+FriendlyName=Python + Shield
+ShortName=Python + Shield
 Manufacturer=Colt
 Caliber=.357 Magnum
 CountryOfOrigin=United States
