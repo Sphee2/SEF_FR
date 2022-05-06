@@ -11,6 +11,32 @@ https://discord.gg/Vu4r7sv7uF
 
 # FEATURE LIST: #
 
+#### V0.67 ####
+
+ADDED: 
+    GAMEPLAY:
+	        - The Shield: combined pistols (or taser) with a Level3A rated tactical shield. 
+			            
+						Can be equipped by AI officers and they can move in formation with it ( MOVE-TO command for example ).
+						
+						
+			- Medical System: bandages that can heal the limping player or AI Officer.
+			            - single bandage 
+						- Medic Kit with 5 bendages
+						
+						Press K (default key) to equip and Left Mouse buttun to use while near a wounded officer.
+						
+            - Quick Reload: pressing Hold Command (CTRL default) + Relaod permits you to quick change magazine at the cost of losing it.
+			
+			- Breached Door Falling: Doors can now detach from the frame after a C2 explosion (for the maximum cinematic effect)
+                            			
+	AI:     
+            - Hostages can possibly comply by just seeing the officers.
+			
+FIXED:      
+            - Barricade suspects behavior is working as intended
+			- Suspect Threat detection is now activated just before they start to aim to avoid delays (particularly in MP) and bad ROE detection
+
 #### V0.66 ####
 
 ADDED:

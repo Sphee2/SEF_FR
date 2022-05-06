@@ -1608,6 +1608,7 @@ function Pawn GetBetterEnemy()
 function FindBetterEnemy()
 {
 	local Pawn NewEnemy;
+	
 	if (CurrentEnemy != None)
 	{
 		if (! m_Pawn.CanHit(CurrentEnemy))
@@ -1625,6 +1626,7 @@ function FindBetterEnemy()
 			SetCurrentEnemy(None);
 		}
 	}
+	
 }
 
 latent function FinishedEngagingEnemies()
@@ -1743,6 +1745,15 @@ latent function AmbushCompliant()
 	m_Pawn.ChangeAnimation();				// will swap in anim set
 	ISwatAI(m_Pawn).SetIdleCategory('');	// remove compliance idles
 	
+	
+	//a threat before the animation
+	if ((m_Pawn.IsA('SwatEnemy')) && ((!m_Pawn.IsA('SwatUndercover')) || (!m_Pawn.IsA('SwatGuard'))) && !ISwatEnemy(m_Pawn).IsAThreat())
+	{
+		ISwatEnemy(m_Pawn).BecomeAThreat();
+		yield();
+	}	
+		
+	
 	//equip
 	ISwatEnemy(m_Pawn).GetBackupWeapon().LatentWaitForIdleAndEquip();
 	
@@ -1750,7 +1761,7 @@ latent function AmbushCompliant()
 	if (CurrentEngageOfficerGoal == None)
 	{
 		bHasFledWithoutUsableWeapon = false;	// don't cower except very rarely
-		
+				
 		CurrentEngageOfficerGoal = new class'EngageOfficerGoal'(AI_Resource(m_Pawn.characterAI), 90);
 		assert(CurrentEngageOfficerGoal != None);
 		CurrentEngageOfficerGoal.AddRef();

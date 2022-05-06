@@ -63,6 +63,32 @@ MagazineSizeString=13
 TotalAmmoString=10 magazines
 RateOfFire=390 RPM
 
+[BrowningHPHGShield]
+Description=The Browning Hi-Power is one of the most widely used pistols in history, having seen service in World War II, the Korean War, and more than a dozen other conflicts. The Browning Hi-Power started design by John Browning in 1914, but didn't see production until 1935, when it was finished by FN Herstal. The name alludes to its impressive 13-round magazine, which at the time, was double the standard pistol magazine-size. This variant in particular is chambered in 9x19mm Parabellum.
+FriendlyName=Browning Hi-Power + Shield
+ShortName=Browning Hi-Power  + Shield
+Manufacturer=Browning
+Caliber=9x19mm
+CountryOfOrigin=United States
+ProductionStart=1935
+FireModes=Semi-Automatic
+MagazineSizeString=13
+TotalAmmoString=10 magazines
+RateOfFire=390 RPM
+
+[SilencedBrowningHPHGShield]
+Description=The Browning Hi-Power is one of the most widely used pistols in history, having seen service in World War II, the Korean War, and more than a dozen other conflicts. The Browning Hi-Power started design by John Browning in 1914, but didn't see production until 1935, when it was finished by FN Herstal. The name alludes to its impressive 13-round magazine, which at the time, was double the standard pistol magazine-size. This variant in particular is chambered in 9x19mm Parabellum and is equipped with a sound and flash suppressor for when stealth is paramount.
+FriendlyName=Suppressed Browning Hi-Power  + Shield
+ShortName=Sup. Browning Hi-Power + Shield
+Manufacturer=Browning
+Caliber=Subsonic 9x19mm
+CountryOfOrigin=United States
+ProductionStart=
+FireModes=Semi-Automatic
+MagazineSizeString=13
+TotalAmmoString=10 magazines
+RateOfFire=390 RPM
+
 
 [Beretta92fs]
 Description=The Beretta 92 is a series of semi-automatic pistols designed and manufactured by Beretta of Italy. The Beretta 92 was designed in 1975, and production began in 1976. Many variants in several different calibers continue to be used to the present.The United States military replaced the M1911A1 .45 ACP pistol in 1985 with the Beretta 92FS, designated as the M9.
@@ -805,6 +831,17 @@ RateOfFire=600 RPM
 Description=Stun guns work on the principle of Electro-Muscular Disruption (EMD).  This projectile model fires small electrodes into the target and then sends a powerful electric charge down the thin wires.  The EMD effect causes involuntary contraction of the target's muscle tissue regardless of an individual's pain tolerance or mental focus.  The effect is painful and demoralizing to even the most aggressive suspects.||EMD devices have three key drawbacks.  The first is that they have a relatively short range.  The second is that new electrodes must be loaded after each shot. Lastly, EMD poses numerous risks, including possible cardiac arrest in drug users, the elderly, or those with specific medical conditions.
 FriendlyName=X26P Stun Gun
 ShortName=X26P Stun Gun
+Manufacturer=TASER International
+Caliber=TASER Cartridge
+CountryOfOrigin=United States
+ProductionStart=2000
+FireModes=Single Fire
+TotalAmmoString=25 cartridges
+
+[TaserShield]
+Description=Stun guns work on the principle of Electro-Muscular Disruption (EMD).  This projectile model fires small electrodes into the target and then sends a powerful electric charge down the thin wires.  The EMD effect causes involuntary contraction of the target's muscle tissue regardless of an individual's pain tolerance or mental focus.  The effect is painful and demoralizing to even the most aggressive suspects.||EMD devices have three key drawbacks.  The first is that they have a relatively short range.  The second is that new electrodes must be loaded after each shot. Lastly, EMD poses numerous risks, including possible cardiac arrest in drug users, the elderly, or those with specific medical conditions.
+FriendlyName=X26P Stun Gun + Shield
+ShortName=X26P Stun Gun + Shield
 Manufacturer=TASER International
 Caliber=TASER Cartridge
 CountryOfOrigin=United States

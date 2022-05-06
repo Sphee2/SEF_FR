@@ -121,16 +121,19 @@ latent function PickUpWeapon()
 			AnimSpecialChannel = m_Pawn.AnimPlaySpecial('secureWeaponFloor', 0.1);
 		else
 			AnimSpecialChannel = m_Pawn.AnimPlaySpecial('secureWeaponTable', 0.1);
-
+		
+		//a threat before the animation
+		if ((m_Pawn.IsA('SwatEnemy')) && ((!m_Pawn.IsA('SwatUndercover')) || (!m_Pawn.IsA('SwatGuard'))) && !ISwatEnemy(m_Pawn).IsAThreat())
+		{
+			ISwatEnemy(m_Pawn).BecomeAThreat();
+			yield();
+		}	
+		
 		m_Pawn.FinishAnim(AnimSpecialChannel);
 
 		m_Pawn.EnableCollisionAvoidance();
 
 		ISwatEnemy(m_Pawn).PickUpWeaponModel(WeaponModel);
-	if ((m_Pawn.IsA('SwatEnemy')) && ((!m_Pawn.IsA('SwatUndercover')) || (!m_Pawn.IsA('SwatGuard'))) && !ISwatEnemy(m_Pawn).IsAThreat())
-	{
-		ISwatEnemy(m_Pawn).BecomeAThreat();
-	}
 	}
 }
 

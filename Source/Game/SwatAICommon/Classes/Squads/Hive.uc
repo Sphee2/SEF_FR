@@ -507,16 +507,20 @@ function OfficerSawPawn(Pawn OfficerViewer, Pawn Seen)
 	{
 		if (! Blackboard.HasAIBeenEncountered(Seen))
 		{
-			if (Seen.IsA('SwatEnemy'))
+			
+			if (  OfficerViewer.LineOfSightTo(Seen)) //dont trust the default trace!
 			{
-				OfficerSawEnemy(OfficerViewer, Seen);
-			}
-			else
-			{
-				// sanity check
-				assert(Seen.IsA('SwatHostage'));
+				if (Seen.IsA('SwatEnemy'))
+				{
+					OfficerSawEnemy(OfficerViewer, Seen);
+				}
+				else
+				{
+					// sanity check
+					assert(Seen.IsA('SwatHostage'));
 
-				OfficerSawHostage(OfficerViewer, Seen);
+					OfficerSawHostage(OfficerViewer, Seen);
+				}
 			}
 		}
 

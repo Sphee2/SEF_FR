@@ -551,7 +551,7 @@ protected function DisableSensingSystems()
 	DisableSenses(true);
 }
 
-private function PostComplianceGoal()
+function PostComplianceGoal()
 {
 	// if we haven't already complied
 	if (! ISwatAI(m_Pawn).IsCompliant())

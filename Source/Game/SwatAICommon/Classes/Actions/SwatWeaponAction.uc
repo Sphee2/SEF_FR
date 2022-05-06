@@ -191,6 +191,14 @@ final latent function LatentAimAtActor(Actor Target, optional float MaxWaitTime)
 
     if (ISwatAI(m_Pawn).AnimCanAimAtDesiredActor(Target) && HasWeaponEquipped())
     {
+		// added here so server can spread information on suspect intentions before even aiming.
+		if( m_pawn.isa('SwatEnemy') )
+		{
+			UpdateThreatToTarget(Target);
+			yield();
+		}
+		//////////////////////////////
+		
         ISwatAI(m_pawn).AimAtActor(Target);
 
         // wait until we aim at what we want to
@@ -210,7 +218,7 @@ final latent function LatentAimAtActor(Actor Target, optional float MaxWaitTime)
 			UpdateThreatToTarget(Target);
             yield();
         }
-		UpdateThreatToTarget(Target);
+		//UpdateThreatToTarget(Target);
     }
 }
 
@@ -237,6 +245,7 @@ latent function SetGunDirection( Actor Target ) // possible bug fixer
 		if (m_Pawn.IsA('SwatEnemy') && !ISwatEnemy(m_Pawn).IsAThreat())
 		{
 			ISwatEnemy(m_Pawn).BecomeAThreat();
+			yield();
 		}
 		UpdateThreatToTarget(Target);
         cTarget = Target.GetBoneCoords('Bip01_Spine2');

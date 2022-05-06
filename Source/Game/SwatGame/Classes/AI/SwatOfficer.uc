@@ -151,6 +151,7 @@ event PostBeginPlay()
     NotifyStoppedMovingTimer = Spawn(class'Timer');
     assert(NotifyStoppedMovingTimer  != None);
     NotifyStoppedMovingTimer.TimerDelegate = NotifyStoppedMovingTimerCallback;
+	
 }
 
 event Destroyed()
@@ -716,6 +717,11 @@ private function ReceiveLoadOut()
         warn("An AI Officer has no Weapon (no weapon was specified in his LoadOut).");
     }
 
+	////SHIELD///
+	if ( !HasActiveShield() && HasShield()) //use the shield if it's a secondary
+	  LoadOut.GetBackupWeapon().Equip();
+
+
 	// make sure we have the correct animations to go with our loadout
 	ChangeAnimation();
 }
@@ -934,8 +940,16 @@ latent function ReEquipFiredWeapon()
 	{
 		PrimaryWeapon = GetPrimaryWeapon();
 		BackupWeapon  = GetBackupWeapon();
-
-		if ((PrimaryWeapon != None) && ! PrimaryWeapon.IsEmpty() && !PrimaryWeapon.OfficerWontEquipAsPrimary)
+		
+		
+		if ( ( BackupWeapon.isa('ShieldHandgun') || BackupWeapon.isa('TaserShield') ) && (BackupWeapon != None) && ! BackupWeapon.IsEmpty() )
+		{
+			log("Officer InstantReEquip shield!");
+			BackupWeapon.LatentEquip();
+			return;
+		}
+		
+		if ((PrimaryWeapon != None) && ! PrimaryWeapon.IsEmpty() && !PrimaryWeapon.OfficerWontEquipAsPrimary )
 		{
 			PrimaryWeapon.LatentEquip();
 		}
@@ -957,8 +971,19 @@ function InstantReEquipFiredWeapon()
 		PrimaryWeapon = GetPrimaryWeapon();
 		BackupWeapon  = GetBackupWeapon();
 
+		if (  (BackupWeapon.isa('ShieldHandgun') || BackupWeapon.isa('TaserShield') ) && (BackupWeapon != None) && ! BackupWeapon.IsEmpty() )
+		{	
+				log("Officer InstantReEquip shield!");
+				if (GetActiveItem() != BackupWeapon )
+					BackupWeapon.AIInstantEquip();
+				
+				return;
+		}
+
+
 		if ((GetActiveItem() != PrimaryWeapon) || (PrimaryWeapon == None) || PrimaryWeapon.IsEmpty())
 		{
+			
 			if ((PrimaryWeapon != None) && !PrimaryWeapon.IsEmpty() && !PrimaryWeapon.OfficerWontEquipAsPrimary)
 			{
 				PrimaryWeapon.AIInstantEquip();

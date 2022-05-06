@@ -155,6 +155,7 @@ function OnSensorMessage( AI_Sensor sensor, AI_SensorData value, Object userData
 			runAction();
 		}
 	}
+	
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -512,6 +513,7 @@ latent function ShootAtOpeningDoor()
 	if (m_Pawn.IsA('SwatEnemy') && !ISwatEnemy(m_Pawn).IsAThreat())
 	{
 		ISwatEnemy(m_Pawn).BecomeAThreat();
+		yield();
 	}
 
 	EndShootingTime = Level.TimeSeconds + RandRange(MinShootingAtDoorsTime, MaxShootingAtDoorsTime);
@@ -539,6 +541,11 @@ private latent function AimAtOpeningDoor()
 	CurrentAimAtTargetGoal.SetAimOnlyWhenCanHitTarget(true);
 
 	CurrentAimAtTargetGoal.postGoal(self);
+	if (m_Pawn.IsA('SwatEnemy') && !ISwatEnemy(m_Pawn).IsAThreat())
+	{
+		ISwatEnemy(m_Pawn).BecomeAThreat();
+		yield();
+	}	
 
 	while (DoorOpening.IsOpening())
 		yield();
@@ -586,7 +593,7 @@ Begin:
 		CloseAndLockDoorsInRoom();
 	}
 
-GetInPosition:
+//GetInPosition:
     MoveToBarricadePoint();
 
 	useResources(class'AI_Resource'.const.RU_LEGS);
@@ -623,14 +630,10 @@ GetInPosition:
 			AimAtOpeningDoor();
 		}
 
-		// clear the dummy  movement goal so we can move to close and lock doors,
-		// as well as to move to the flee point in the room
-		ClearDummyMovementGoal();
-
-		CloseOpenedDoor();
-
-		goto 'GetInPosition';
+		// aim around again
+		AimAround();
 	}
+		
 }
 
 ///////////////////////////////////////////////////////////////////////////////
