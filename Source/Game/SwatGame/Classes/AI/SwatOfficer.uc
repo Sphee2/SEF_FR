@@ -796,6 +796,11 @@ function ClearFormation()
 	}
 }
 
+function bool IsInFormation()
+{
+	return CurrentFormation != None; 
+}
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Animation

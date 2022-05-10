@@ -272,7 +272,7 @@ Begin:
 		useResources(class'AI_Resource'.const.RU_ARMS);
 
 		// let the officers know that the target exists
-		SwatAIRepository(Level.AIRepo).GetHive().NotifyOfficersOfTarget(InjuredTarget);
+		//SwatAIRepository(Level.AIRepo).GetHive().NotifyOfficersOfTarget(InjuredTarget);
 
 		// equip the FieldDress
 		FieldDress = ISwatOfficer(m_Pawn).GetItemAtSlot(Slot_Bandage);
@@ -282,8 +282,9 @@ Begin:
 		{
 			MoveIntoPosition();
 
-			// no avoiding collision while we're handcuffing!
+			// no avoiding collision while we're healing!
 			m_Pawn.DisableCollisionAvoidance();
+			InjuredTarget.DisableCollisionAvoidance();
 
 			if (IAmUsedOnOther(FieldDress).CanUseOnOtherNow(InjuredTarget))
 			{
@@ -292,10 +293,6 @@ Begin:
 				useResources(class'AI_Resource'.const.RU_LEGS);
 
 				HealTarget();
-
-				//ReportTarget();
-
-				//TriggerTargetRestrainedSpeech();
 
 				// unlock our aim
 				ISwatAI(m_Pawn).UnlockAim();

@@ -432,6 +432,7 @@ function OnComplianceIssued(Pawn ComplianceIssuer)
 	local float RandomChance; 
 	local ISwatPawn Off;
 	local int totOff;
+	local ISwatAICharacter SwatAICharacter;
 	
 	if (m_Pawn.logAI)
 		log("Compliance issued from: "$ComplianceIssuer.Name$" to: "$m_Pawn.name);
@@ -490,6 +491,13 @@ function OnComplianceIssued(Pawn ComplianceIssuer)
 					log(m_Pawn.Name$" will not comply - morale is: " $ GetCurrentMorale() $ " RandomChance is: " $ RandomChance);
 
 				bWillComply = false;
+				
+				//forced arrest after the first issued comply
+				SwatAICharacter = ISwatAICharacter(m_Pawn);
+				if (SwatAICharacter != None)
+				{
+					SwatAICharacter.SetCanBeArrested(true);
+				}
 			}
 
 			// don't listen for compliance until morale changes

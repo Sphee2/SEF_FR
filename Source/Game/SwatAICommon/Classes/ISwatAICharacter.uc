@@ -30,7 +30,8 @@ function float GetShotEmpathy();
 function float GetPepperBallEmpathy();
 function float GetStungEmpathy();
 
-function SetCanBeArrested(bool Status);
+simulated function SetCanBeArrested(bool Status);
+simulated function SetNoForceArrested(bool Status);
 
 function SetDesiredAIEquipment( AIEquipment NewItem );
 

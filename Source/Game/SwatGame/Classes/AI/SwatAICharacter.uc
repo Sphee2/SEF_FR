@@ -39,6 +39,7 @@ var protected float LastTimeStunnedByC2;
 var protected float StunnedByC2Duration;
 
 var private bool bCanBeArrested;
+var private bool bNoForceArrested;
 
 var config string			  RestrainedHandcuffsClassName;
 var private HandheldEquipment RestrainedHandcuffs;
@@ -1074,6 +1075,12 @@ simulated function SetCanBeArrested(bool Status)
     bCanBeArrested = Status;
 }
 
+simulated function SetNoForceArrested(bool Status)
+{
+    bNoForceArrested = Status;
+}
+
+
 //
 // ICanBeArrested interface overrides
 //
@@ -1094,9 +1101,14 @@ function OnArrestBegan(Pawn Arrester)
 function OnArrestInterrupted(Pawn Arrester)
 {
     Super.OnArrestInterrupted(Arrester);
-
+	
 	if (IsConscious())
 		GetCommanderAction().NotifyArrestInterrupted();
+}
+
+simulated function bool HasBeenForcedArrested()
+{
+	return !bNoForceArrested;
 }
 
 simulated function OnArrestedSwatPawn(Pawn Arrester)

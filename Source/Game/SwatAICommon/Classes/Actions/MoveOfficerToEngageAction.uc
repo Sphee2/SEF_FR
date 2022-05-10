@@ -177,10 +177,15 @@ state Running
 	// and if we don't find a point, we just don't move
 	if (TargetSensor.bCanHitTarget)
 	{
-		pause();
+		if (!IswatOfficer(m_pawn).IsInFormation())
+		{
+			pause();
+		}
 	}
-	else
+	else 
 	{
+		if (!IswatOfficer(m_pawn).IsInFormation())
+		{
 		PointToEngageFrom = SwatAIRepository(Level.AIRepo).GetHive().RequestNewEngagingPointForOfficer(m_Pawn, Opponent);
 
 		if (PointToEngageFrom != None)
@@ -189,6 +194,7 @@ state Running
 		}
 		
 		sleep(RandRange(kMinSleepTimeBetweenFindEngagePointTests, kMaxSleepTimeBetweenFindEngagePointTests));
+		}
 	}
 
 	yield();

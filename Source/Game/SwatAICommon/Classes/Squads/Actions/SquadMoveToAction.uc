@@ -135,13 +135,13 @@ latent function MoveOfficersToDestination()
 
 		if ( PawnIter == ShieldOfficer )
 		{
-			log("PawnIter == ShieldOfficer");
+			PawnIter.DisableCollisionAvoidance(); //make possible to stay close to shield guy
+			
 			MoveToGoals[MoveToIndex] = new class'MoveToGoal'(AI_Resource(PawnIter.characterAI), ClosestPointToDestination);
 			assert(MoveToGoals[MoveToIndex] != None);
 			MoveToGoals[MoveToIndex].AddRef();
 			
 			MoveToGoals[MoveToIndex].PostGoal(self);
-
 			++MoveToIndex;
 		}
 		else
@@ -170,6 +170,8 @@ latent function MoveOfficersToDestination()
 
 	waitForAllGoalsInList(MoveToGoals);
 
+	ShieldOfficer.EnableCollisionAvoidance(); //re-enable collision
+	
 	// cleanup!
 	ClearOutMoveToGoals();
 }

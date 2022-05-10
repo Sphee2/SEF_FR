@@ -58,3 +58,4 @@ function SetDoorToBlowC2On(Door TargetDoor);
 function Formation GetCurrentFormation();
 function SetCurrentFormation(Formation Formation);
 function ClearFormation();
+function bool IsInFormation();

@@ -339,7 +339,12 @@ function ApplyAimDirectionSimilarityWeight(out float Weight, EAimFov AimFov, vec
         AimDirectionSimilarity = 1.0 - AimDirectionSimilarity;
         AimDirectionSimilarity = (1.5 * AimDirectionSimilarity) + 0.5;
         Weight *= AimDirectionSimilarity;
+		
+		if ( m_pawn.hasActiveSHield())
+			Weight *= 20;
     }
+	
+	
 }
 
 ///////////////////////////////////////

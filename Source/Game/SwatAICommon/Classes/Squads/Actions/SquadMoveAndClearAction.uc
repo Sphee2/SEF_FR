@@ -1217,7 +1217,9 @@ protected function SetupOfficerRoles()
 					Leader = ShieldOfficer;
 				}
 				else
+				{
 					Leader = ShieldOfficer;
+				}
 			}
 			
 		}
@@ -1239,7 +1241,21 @@ protected function SetupOfficerRoles()
 			DoorOpener = FirstOfficer;
 			
 			if ( ShieldOfficer != None)
+			{
+				
+				if ( Leader != ShieldOfficer )
+					Follower = Leader;
+				else
+				{
+					if (NumClearPointsInClearingRoom >= 2)
+						Follower   = SecondOfficer;
+					else
+						Follower   = None;
+				}
+				
 				Leader = ShieldOfficer;
+				DoorOpener = ShieldOfficer;
+			}
 		}
 	}
 	else
