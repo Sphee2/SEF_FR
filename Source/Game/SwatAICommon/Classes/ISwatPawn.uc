@@ -33,3 +33,5 @@ simulated function bool HasShield();        //has shield
 
 simulated function bool GetFlashlightState();
 simulated function ToggleDesiredFlashlightState();
+
+simulated function bool IsBeingArrestedNow();

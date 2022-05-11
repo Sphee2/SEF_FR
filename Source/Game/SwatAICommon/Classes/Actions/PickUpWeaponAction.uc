@@ -71,6 +71,8 @@ function goalNotAchievedCB( AI_Goal goal, AI_Action child, ACT_ErrorCodes errorC
 latent function MoveIntoPosition()
 {
     assert(WeaponModel != None);
+	assert(!ISwatAI(m_pawn).isarrested() && !ISwatPawn(m_pawn).IsBeingArrestedNow()); //dont even bother
+	
 	CurrentMoveToActorGoal = new class'MoveToActorGoal'(movementResource(), achievingGoal.priority, WeaponModel);
 	assert(CurrentMoveToActorGoal != None);
 	CurrentMoveToActorGoal.AddRef();
@@ -91,6 +93,8 @@ latent function MoveIntoPosition()
 latent function RotateTowardsTarget()
 {
     assert(WeaponModel != None);
+	assert(!ISwatAI(m_pawn).isarrested() && !ISwatPawn(m_pawn).IsBeingArrestedNow()); //dont even bother
+	
 	CurrentRotateTowardRotationGoal = new class'RotateTowardRotationGoal'(movementResource(), achievingGoal.priority, rotator(WeaponModel.Location - m_Pawn.Location));
 	assert(CurrentRotateTowardRotationGoal != None);
 	CurrentRotateTowardRotationGoal.AddRef();
@@ -111,6 +115,7 @@ latent function PickUpWeapon()
 	m_Pawn.DisableCollisionAvoidance();
 
     assert(WeaponModel != None);
+	assert(!ISwatAI(m_pawn).isarrested() && !ISwatPawn(m_pawn).IsBeingArrestedNow()); //dont even bother
 
 	// if the weapon hasn't already been secured
 	if (WeaponModel.CanBeUsedNow())
