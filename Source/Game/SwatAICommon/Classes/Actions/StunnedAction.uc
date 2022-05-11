@@ -79,7 +79,7 @@ function initAction(AI_Resource r, AI_Goal goal)
 			ISwatEnemy(m_Pawn).GetEnemyCommanderAction().SetHasFledWithoutUsableWeapon();
 		}
 	}
-
+	
 	// if we're running on an enemy, let the hive know
 	if (m_Pawn.IsA('SwatEnemy'))
 	{
@@ -663,6 +663,12 @@ Begin:
 		m_Pawn.DisableCollisionAvoidance();
 		PlayReactionAnimation();
 		m_Pawn.EnableCollisionAvoidance();
+		
+		//forced arrest after the first issued comply
+		if (ISwatAICharacter(m_Pawn) != None  && !ISwatAICharacter(m_Pawn).isa('SwatOfficer') )
+		{
+			ISwatAICharacter(m_Pawn).SetCanBeArrested(true);
+		}
 
 		if(FindFleeDestination() && CanGetOutOfRoomSafely() && bComplexFlee && ISwatOfficer(m_Pawn) == None)
 		{
@@ -686,6 +692,12 @@ Begin:
     // This will swap in an effectless animation set, since the effect
     // duration has ended
     m_Pawn.ChangeAnimation();
+	
+			//forced arrest after the first issued comply
+	if (ISwatAICharacter(m_Pawn) != None  && !ISwatAICharacter(m_Pawn).isa('SwatOfficer') )
+	{
+		ISwatAICharacter(m_Pawn).SetCanBeArrested(false);
+	}
 
     succeed();
 

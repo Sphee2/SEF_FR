@@ -492,12 +492,6 @@ function OnComplianceIssued(Pawn ComplianceIssuer)
 
 				bWillComply = false;
 				
-				//forced arrest after the first issued comply
-				SwatAICharacter = ISwatAICharacter(m_Pawn);
-				if (SwatAICharacter != None)
-				{
-					SwatAICharacter.SetCanBeArrested(true);
-				}
 			}
 
 			// don't listen for compliance until morale changes
