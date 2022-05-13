@@ -133,6 +133,7 @@ latent function MoveToAttackEnemy()
 	if ((m_Pawn.IsA('SwatEnemy')) && ((!m_Pawn.IsA('SwatUndercover')) || (!m_Pawn.IsA('SwatGuard'))) && !ISwatEnemy(m_Pawn).IsAThreat() && (m_Pawn.GetActiveItem() != None))
 	{
 		ISwatEnemy(m_Pawn).BecomeAThreat();
+		yield();
 	}
 }
 
@@ -141,6 +142,7 @@ latent function AttackEnemyWithWeapon()
     if ((m_Pawn.IsA('SwatEnemy')) && ((!m_Pawn.IsA('SwatUndercover')) || (!m_Pawn.IsA('SwatGuard'))) && !ISwatEnemy(m_Pawn).IsAThreat() && (m_Pawn.GetActiveItem() != None))
 	{
 		ISwatEnemy(m_Pawn).BecomeAThreat();
+		yield();
 	}
 	
 	CurrentAttackTargetGoal = new class'AttackTargetGoal'(weaponResource(), GetOfficerTarget());
