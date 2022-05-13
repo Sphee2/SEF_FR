@@ -527,6 +527,19 @@ simulated function bool SpecialCondition_Uncompliant(Actor Target)
 	return true;
 }
 
+simulated function bool SpecialCondition_Shield(SwatPlayer Player, Actor Target) 
+{ 
+	local SwatPawn ShieldGuy;
+	
+	foreach Player.VisibleCollidingActors(class'SwatPawn',ShieldGuy,150.0)
+	{
+		if (ShieldGuy.HasActiveShield())
+			return true;
+	}
+	
+	return false; 
+}
+
 simulated protected function UncompliantDefaultCommand(Actor Target, CommandInterfaceContext Context)
 {
 	local SwatPawn TargetPawn;
@@ -3125,7 +3138,7 @@ function bool DoorRelatedContextMatches(SwatPlayer Player, SwatDoor Door, Player
 			return false;
 		}
 	}
-
+	
 	return Super.DoorRelatedContextMatches(Player, Door, Context, Distance, Transparent, HitTransparent, CandidateDoorPart, CandidateSkeletalRegion);
 }
 

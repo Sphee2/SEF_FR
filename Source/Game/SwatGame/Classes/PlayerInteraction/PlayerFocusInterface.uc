@@ -221,6 +221,7 @@ simulated function bool SpecialCondition_Zulu() { return false; }
 simulated function bool SpecialCondition_Uncompliant(Actor Target) { return false; }
 simulated function bool SpecialCondition_CanBeArrested(Actor Target) { return false; }
 simulated function bool SpecialCondition_LowReadyPawn(SwatPlayer Player, Actor Target) { return false; }
+simulated function bool SpecialCondition_Shield(SwatPlayer Player, Actor Target) { return false; }
 
 
 // This function also got rewritten from native code
@@ -290,7 +291,7 @@ function bool DoorRelatedContextMatches(SwatPlayer Player, SwatDoor Door, Player
 			return false;
 		}
 	}
-
+	
 	if(Context.CaresAboutLocked)
 	{
 		// If we care about whether the door is locked, Context.IsLocked should match Door.IsLocked
@@ -346,7 +347,7 @@ function bool DoorRelatedContextMatches(SwatPlayer Player, SwatDoor Door, Player
 	{
 		return false;
 	}
-
+	
 	// This context is acceptable
 	return true;
 }
@@ -441,6 +442,12 @@ function bool ContextMatches(SwatPlayer Player, Actor Target, PlayerInterfaceCon
 				break;
 			case 'LowReadyPawn':
 				if(!SpecialCondition_LowReadyPawn(Player, Target))
+				{
+					return false;
+				}
+				break;
+			case 'GenericObjectShield':
+				if(!SpecialCondition_Shield(Player, Target))
 				{
 					return false;
 				}
