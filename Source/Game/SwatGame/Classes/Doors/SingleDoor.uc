@@ -191,7 +191,7 @@ simulated function Vector GetPushAwayDirection(SwatRagdollPawn thePawn)
 simulated function RemoveDoorFromFrame()
 {
 	local FallenDoor FD;
-	
+	local int i;
 	
 				FD = self.Spawn( class'FallenDoor', self,
 				,                   //tag: default
@@ -203,6 +203,13 @@ simulated function RemoveDoorFromFrame()
 	
 	//remove static mesh 
 	DoorModel.SetStaticMesh(None);
+	
+	//hide attachments... we dont need em
+	for ( i = 0 ; i < self.Attached.length ; i ++ )
+	{
+		if (Attached[i].isa('DoorAttachment'))
+		  Attached[i].Hide();
+	}
 	
 	/*
 	if (IsOpenLeft() || IsOpeningLeft())

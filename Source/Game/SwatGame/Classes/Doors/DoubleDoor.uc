@@ -149,6 +149,7 @@ simulated function RemoveDoorFromFrame()
 	local FallenDoor FD_left;
 	local FallenDoor FD_right;
 	local bool doorfall;
+	local int i;
 
 	if ( frand() < 0.5 )
 	{
@@ -178,7 +179,17 @@ simulated function RemoveDoorFromFrame()
 	//remove static mesh 
 	RightHingeDoorModel.SetStaticMesh(None);
 	doorfall=true;
+	
+	//hide attachments... we dont need em
+	for ( i = 0 ; i < self.Attached.length ; i ++ )
+	{
+		if (Attached[i].isa('DoorAttachment'))
+		  Attached[i].Hide();
 	}
+	
+	}
+	
+	
 	
 	/*
 	if (IsOpenLeft() || IsOpeningLeft())
