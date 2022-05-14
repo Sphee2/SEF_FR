@@ -14,7 +14,8 @@ simulated function OnReloadMagDump() //overrided function from FiredWeapon
 			log("ClipBasedWeapon::OnReloadMagDump() :: " $ Owner.name $ " .");
 		
 		//make clip unusable!
-		Ammo.SetClip(Ammo.GetCurrentClip(), 0 );
+		if ( !self.isa('ShieldHandgun')  &&  !self.isa('TaserShield') )
+			Ammo.SetClip(Ammo.GetCurrentClip(), 0 );
 		
 		if ( Level.NetMode == NM_Standalone )
 		{
