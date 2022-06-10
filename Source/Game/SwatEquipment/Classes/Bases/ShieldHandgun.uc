@@ -57,7 +57,6 @@ simulated function CreateModels()
 	//SHIELD
 	if(HasShield)
 	{	
-		
 		for(i=0; i<=Pawn(Owner).Attached.length ; i++)
 		{
 			if (Pawn(Owner).Attached[i].isa('Shieldequip'))
@@ -67,8 +66,9 @@ simulated function CreateModels()
 		}
 		
 		//humans only
-		if ( Pawn(Owner).GetHands() != None && Level.NetMode != NM_DedicatedServer)
+		if (ShouldHaveFirstPersonModel && GetHands() != None )
 		{
+		
 		ShieldModel_FP= Spawn ( ShieldModel, Pawn(Owner).GetHands() , , , , true);
 		
 		ShieldModel_FP.bNeedPostRenderCallback = true;
@@ -76,11 +76,12 @@ simulated function CreateModels()
 		ShieldModel_FP.OnUnEquipKeyFrame();
 		}
 		
-		ShieldModel_TP= Spawn ( class'ShieldEquip', Owner , , , , true);
-		
-		ShieldModel_TP.Unequip();
-		ShieldModel_TP.Show();
-		ShieldModel_TP.SetCollision(true, false, false);
+		if (ShouldHaveThirdPersonModel)
+		{
+				ShieldModel_TP= Spawn ( class'ShieldEquip', Owner , , , , true);
+				ShieldModel_TP.Unequip();
+				ShieldModel_TP.Show();
+		}
 	}
 		
 }

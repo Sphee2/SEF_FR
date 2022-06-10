@@ -4107,7 +4107,7 @@ simulated function OnSkeletalRegionHit(ESkeletalRegion RegionHit, vector HitLoca
 
 
 // This function assumes LastStingWeapon has be correctly set before being called
-private function ApplyHitEffect(float PlayerStingDuration, float HeavilyArmoredPlayerStingDuration, float NonArmoredPlayerStingDuration)
+function ApplyHitEffect(float PlayerStingDuration, float HeavilyArmoredPlayerStingDuration, float NonArmoredPlayerStingDuration)
 {
 	local float StingDuration;
 	local name Reason;

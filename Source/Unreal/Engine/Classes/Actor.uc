@@ -775,12 +775,12 @@ enum ESkeletalRegion
     REGION_RightArm,
     REGION_LeftLeg,
     REGION_RightLeg,
+	REGION_Shield,
     REGION_Body_Max,
     REGION_Door_WedgeSpot,
     REGION_Door_ToolkitSpot,
     REGION_Door_OptiwandSpot,
-    REGION_Door_BreachingSpot,
-	REGION_Shield
+    REGION_Door_BreachingSpot
 };
 
 #if IG_ACTOR_LABEL // david: Labels

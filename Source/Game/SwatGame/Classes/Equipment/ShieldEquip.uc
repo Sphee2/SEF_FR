@@ -1,8 +1,8 @@
 class ShieldEquip extends SimpleEquipment
-		implements  Engine.IAmShield, Engine.IHaveSkeletalRegions;
+		implements  Engine.IAmShield ,Engine.IHaveSkeletalRegions;
+		
+import enum ESkeletalRegion from Actor;		
 					
-import enum ESkeletalRegion from Actor;
-
 enum ProtectionLevel
 {
   Level_0,            // Doesn't stop anything (AKA gas mask, night vision, no armor)
@@ -24,47 +24,37 @@ var(ArmorPenetration) float MomentumToPenetrate "A bullet will penetrate this ma
 
 var protected int Damage_level;
 
-function Equip()
+
+replication
 {
-	local Pawn PawnOwner;
-    
-	if ( Owner.isa('Hands') )//first person
-	{
-		log("Shield Hands equip");
-	   Owner.AttachToBone(self, AttachmentBone);	
-	   return;
-	}
+
+/*
+	 // replicated functions sent to server by owning client
+    reliable if( Role < ROLE_Authority ) //server-functions
+		ServerShieldTakeDamage;
+*/
+
+	// replicated functions sent to client by server
+    reliable if( Role == ROLE_Authority ) //client-functions
+		ClientShieldTakeDamage;
 	
-	PawnOwner = Pawn(Owner);
-	if ( PawnOwner != None ) //third person
-	{
-		log("Shield TP equip");
-		Pawn(Owner).AttachToBone(self, AttachmentBone);
-	}
-		
 }
 
-function UnEquip()
+
+simulated function Equip()
+{	
+	//log("Shield TP equip");
+	Pawn(Owner).AttachToBone(self, AttachmentBone);
+	
+}
+
+simulated function UnEquip()
 {
-	local Pawn PawnOwner;
-	
-	
-	
-	if ( Owner.isa('Hands') )//first person
-	{
-	  log("Shield Hands Unequip");
-      Owner.DetachFromBone(self);
-	  return;
-	}
-	
-	PawnOwner = Pawn(Owner);
-	if ( PawnOwner != None ) //third person
-	{	
-		log("Shield TP Unequip");
-		Pawn(Owner).DetachFromBone(self);
-		Pawn(Owner).AttachToBone(self, UnequipSocket);
-	}
-	
+			
+	//log("Shield TP Unequip");
+	Pawn(Owner).DetachFromBone(self);
+	Pawn(Owner).AttachToBone(self, UnequipSocket);
+
 }
 
 simulated function int GetProtectionType() 
@@ -110,15 +100,68 @@ simulated function float GetMtP() {
   return MomentumToPenetrate;
 }
 
-event PostTakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType)
+
+
+simulated function ClientShieldTakeDamage( int DamageS )
 {
+			
+		Health = Health - DamageS;
+		if ( Health < 888 && Health  >= 555 && Damage_level == 0 )
+		{
+			//glass 1st damage state
+			Damage_level=1;
+			IShieldHandgun(Pawn(Owner).GetActiveItem()).SetShieldDamage(damage_level);
+		}
+		else if ( Health < 555 && Damage_level == 1 )
+		{
+			//glass 2nd damage state
+			Damage_level=2;	
+			IShieldHandgun(Pawn(Owner).GetActiveItem()).SetShieldDamage(damage_level);
+		}
+		else if ( Health < 333 && Damage_level == 2 )
+		{
+			//glass 3rd damage state
+			Damage_level=3;	
+			IShieldHandgun(Pawn(Owner).GetActiveItem()).SetShieldDamage(damage_level);
+		}
+		
+			
+		SwatPlayer(Owner).ApplyHitEffect(1.0, 1.0, 1.0);
+		
+		log("ClientShieldTakeDamage " $ self.name $ " Owner " $ Owner.name $ " got hit - health " $ Health $ " Damage level" $ damage_level);
+	
+	
+}
 
+/*
+function ServerShieldTakeDamage( int DamageS, ShieldEquip SE)
+{
+	local ShieldEquip SD;
+	
+	if ( Level.NetMode == NM_DedicatedServer || Level.NetMode == NM_ListenServer)
+	{
+	
+	ForEach DynamicActors(class'ShieldEquip',SD)
+	{
+		if ( SE == SD )
+		{	
+			log("ServerShieldTakeDamage call Shield " $ SD.name $ " Damage " $ DamageS $ " .");
+	
+			SD.ClientShieldTakeDamage(DamageS);
+			return;
+		}
+	}
+	
+	}
+}
+*/
+
+
+simulated function ShieldTakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vector Momentum, class<DamageType> DamageType)
+{
+		
 	Health = Health - Damage;
-	log("Shield " $ self.name $ " got hit - health " $ Health $ " ");
-
-	//apply shake effect!
-	SwatPlayer(Owner).ReactToC2Detonation(self, 0.1, 0.1);
-
+	
 	if ( Health < 888 && Health  >= 555 && Damage_level == 0 )
 	{
 		//glass 1st damage state
@@ -137,16 +180,19 @@ event PostTakeDamage( int Damage, Pawn EventInstigator, vector HitLocation, vect
 		Damage_level=3;	
 		IShieldHandgun(Pawn(Owner).GetActiveItem()).SetShieldDamage(damage_level);
 	}
-}
+	
+	log("ShieldTakeDamage " $ self.name $ " Owner " $ Owner.name $ " got hit - health " $ Health $ " Damage level" $ damage_level);
 
-// IHaveSkeletalRegions implementation
+		SwatPlayer(Owner).ApplyHitEffect(1.0, 1.0, 1.0);
+	
+	
+}
 
 // Notification that we were hit
 simulated function OnSkeletalRegionHit(ESkeletalRegion RegionHit, vector HitLocation, vector HitNormal, int Damage, class<DamageType> DamageType, Actor Instigator)
 {
     log("ShieldEquip::OnSkeletalRegionHit() Region:" $RegionHit );    
 }
-
 
 simulated function int GetShieldState()
 {
@@ -155,25 +201,22 @@ simulated function int GetShieldState()
 
 defaultproperties
 {
+ 
+	//this class defaults
 	DrawType=DT_Mesh
-	Mesh=SkeletalMesh'Shield_model.Shield_mesh'
+	Mesh=SkeletalMesh'Shield_model.Shield_mesh_2'
 	//DrawType=DT_StaticMesh
 	//StaticMesh=StaticMesh'Shield_static.Shield_static'
+	bActorShadows=true
+	
 	AttachmentBone=Shield
 	UnequipSocket=ShieldUnequip
-	CollisionRadius=+0002.000000
-    CollisionHeight=+0002.000000
+	
+	bUseCollisionBoneBoundingBox = true
 	bCollideActors=true
-	bCollideWorld=false
-	bAcceptsProjectors=true
-	bActorShadows=true
+	bCollideWorld=true
 	bProjTarget=true
-	bWorldGeometry=false
-	bBlockPlayers=false
-	bBlockActors=false
-	bBlockNonZeroExtentTraces=false
-	bBlockZeroExtentTraces=true
-	bUseCollisionBoneBoundingBox=true
+	
 	ArmorProtection=Level_3X
 	Health=1000
 	MomentumToPenetrate=1000.0
