@@ -1151,6 +1151,11 @@ simulated function FinishedThreatTimer()
 	SwatAIRepository(Level.AIRepo).GetHive().NotifyEnemyUnbecameThreat(self);
 }
 
+function bool ThreatTimerIsOver()
+{
+	return !ThreatTimer.IsRunning();
+}
+
 
 function bool IAmThreat()
 {

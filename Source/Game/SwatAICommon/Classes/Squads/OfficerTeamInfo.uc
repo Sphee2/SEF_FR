@@ -122,6 +122,11 @@ function bool IsMovingAndClearing()
 	return ((CurrentSquadCommandGoal != None) && CurrentSquadCommandGoal.IsA('SquadMoveAndClearGoal') && !CurrentSquadCommandGoal.hasCompleted());
 }
 
+function bool IsMovingInFormation()
+{
+	return ((CurrentSquadCommandGoal != None) && CurrentSquadCommandGoal.IsA('SquadMoveToGoal') && !CurrentSquadCommandGoal.hasCompleted());
+}
+
 // is this squad (or in the case of the element, any of the subsquads) currently waiting for a "zulu" command?
 event bool IsHoldingCommand()
 {

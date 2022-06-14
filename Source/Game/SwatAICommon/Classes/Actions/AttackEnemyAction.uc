@@ -107,6 +107,11 @@ function bool IsMovingToAttack()
 
 private function MoveToAttackEnemy()
 {
+	local SwatAIRepository SwatAIRepo;
+	SwatAIRepo = SwatAIRepository(Level.AIRepo);
+	
+	assert(!SwatAIRepo.GetElementSquad().IsMovingInFormation()); //dont spread if in formation!
+	
 	// only move to attack the enemy if we should
 	if (m_Pawn.logAI)
 		log(m_Pawn.Name $ " will move to attack the enemy");

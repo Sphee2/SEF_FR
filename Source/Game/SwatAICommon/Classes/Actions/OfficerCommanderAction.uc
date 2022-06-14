@@ -366,7 +366,7 @@ private function bool ShouldEngageTarget(Pawn Target)
 		return true;
 	}
 	else if (Target.IsA('SwatEnemy') && (CurrentAttackEnemyGoal == None) &&
-		(ISwatEnemy(Target).IsAThreat() || ShouldAttackRunner(Target)))
+		( (ISwatEnemy(Target).IsAThreat() && !ISwatEnemy(Target).ThreatTimerIsOver()) || ShouldAttackRunner(Target)))
 	{
 		// if the target is a threatening swat enemy, and we're not attacking them, we must act!
 		return true;
