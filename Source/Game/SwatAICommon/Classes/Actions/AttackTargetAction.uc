@@ -342,16 +342,22 @@ protected latent function AimAndFireAtTarget(FiredWeapon CurrentWeapon)
 	// allows us to change our fire mode
 	SetFireMode(CurrentWeapon);
 
-	if (WaitTimeBeforeFiring > 0)
-		Sleep(WaitTimeBeforeFiring);
+	/*if (WaitTimeBeforeFiring > 0)
+		Sleep(WaitTimeBeforeFiring);*/
 	
 	// suspects don't care if they need to acquire a target perfectly
 	if(m_Pawn.IsA('SwatEnemy'))
 	{
-		//LatentAimAtActor(Target, ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring());
-		LatentAimAtActor(Target);
 		 if(Level.NetMode != NM_Standalone) //adjust for ping in MP
-			sleep(0.2);  
+		 {
+			 LatentAimAtActor(Target, ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring());
+			 sleep(0.2);  
+		 }
+		 else
+		 {
+			LatentAimAtActor(Target,ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring());
+			sleep(ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring());
+		 }
 	}
 	else
 	{	// SWAT need perfect aim!
@@ -359,6 +365,7 @@ protected latent function AimAndFireAtTarget(FiredWeapon CurrentWeapon)
 	}
 
 
+/*
 	// Make sure we wait a minimum of MandatedWait before firing, so shooting isn't instant
 	TimeElapsed = Level.TimeSeconds - StartActionTime;
 	MandatedWait = ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring();
@@ -366,7 +373,7 @@ protected latent function AimAndFireAtTarget(FiredWeapon CurrentWeapon)
 	{
 		Sleep(MandatedWait - TimeElapsed);
 	}
-    
+*/  
 	
   	ShootWeaponAt(Target);
   	ShotsFired++;

@@ -202,8 +202,7 @@ final latent function LatentAimAtActor(Actor Target, optional float MaxWaitTime)
         ISwatAI(m_pawn).AimAtActor(Target);
 
         // wait until we aim at what we want to
-        while ((!ISwatAI(m_pawn).AnimIsAimedAtDesired() && HasWeaponEquipped()) || 
-			    ISwatAI(m_Pawn).AnimAreAimingChannelsMuted())
+        while ((!ISwatAI(m_pawn).AnimIsAimedAtDesired() && HasWeaponEquipped()) )//||   ISwatAI(m_Pawn).AnimAreAimingChannelsMuted())
         {
 //			log("aiming at actor update - AnimIsAimedAtDesired: " $ ISwatAI(m_pawn).AnimIsAimedAtDesired() $ " HasWeaponEquipped: " $ HasWeaponEquipped() $ " AnimAreAimingChannelsMuted: " $ ISwatAI(m_Pawn).AnimAreAimingChannelsMuted());
 			// See if we have waited past the threshold

@@ -296,7 +296,7 @@ simulated function EAnimationSet GetStandingWalkAnimSet()
 	
 	weight = InitialWeight + MPweight();
 	
-	log("Weight : " $ weight $ " ");
+	//log("Weight : " $ weight $ " ");
 	
 	if (weight > 0.0 && weight < 16.0 )
 		return kAnimationSetStealthStandingNoArmor;
@@ -331,7 +331,7 @@ simulated function EAnimationSet GetStandingRunAnimSet()
 	
 	weight = InitialWeight + MPweight();
 		
-	log("Weight : " $ weight $ " ");
+	//log("Weight : " $ weight $ " ");
 	
 	if (weight > 0.0 && weight < 16.0 )
 		return kAnimationSetDynamicStandingNoArmor;
@@ -368,7 +368,7 @@ simulated function EAnimationSet GetCrouchingAnimSet()
 	
 	weight = InitialWeight + MPweight();
 	
-	log("Weight : " $ weight $ " ");
+	//log("Weight : " $ weight $ " ");
 	
 	if (weight > 0.0 && weight < 16.0 )
 		return kAnimationSetCrouchingNoArmor;
