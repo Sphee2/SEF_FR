@@ -212,7 +212,7 @@ defaultproperties
 	AttachmentBone=Shield
 	UnequipSocket=ShieldUnequip
 	
-	bUseCollisionBoneBoundingBox = true
+	bUseCollisionBoneBoundingBox = false
 	bCollideActors=true
 	bCollideWorld=true
 	bProjTarget=true

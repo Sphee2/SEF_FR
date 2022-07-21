@@ -533,7 +533,7 @@ simulated function bool SpecialCondition_Shield(SwatPlayer Player, Actor Target)
 	
 	foreach Player.VisibleCollidingActors(class'SwatPawn',ShieldGuy,150.0)
 	{
-		if (ShieldGuy.HasActiveShield())
+		if (ShieldGuy.HasActiveShield() && ShieldGuy != Player )
 			return true;
 	}
 	
