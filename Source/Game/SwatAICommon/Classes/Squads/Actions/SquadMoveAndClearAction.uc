@@ -264,7 +264,7 @@ function OnSensorMessage( AI_Sensor sensor, AI_SensorData value, Object userData
 
 //				log("leader is in the room and will be paused at time " $ resource.pawn().Level.TimeSeconds);
 
-				PauseLeadingOfficer();
+				//PauseLeadingOfficer();
 
 				// if we don't have a follower, just go
 				// otherwise start the follower's move and clear behavior
