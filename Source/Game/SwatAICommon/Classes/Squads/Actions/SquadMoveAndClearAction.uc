@@ -1215,6 +1215,11 @@ protected function SetupOfficerRoles()
 				{
 					DoorOpener=Leader;
 					Leader = ShieldOfficer;
+					
+					if ( Follower == ShieldOfficer )
+					{
+						Follower = SecondOfficer;
+					}
 				}
 				else
 				{

@@ -128,6 +128,23 @@ latent function MoveOfficersToDestination()
 	ClearFormation.AddRef();
 	ISwatOfficer(ShieldOfficer).SetCurrentFormation(ClearFormation);
 	
+	
+	
+	if ( ShieldOfficer != None )
+	{
+		ShieldOfficer.DisableCollisionAvoidance(); //make possible to stay close to shield guy
+			
+		MoveToGoals[MoveToIndex] = new class'MoveToGoal'(AI_Resource(ShieldOfficer.characterAI), ClosestPointToDestination);
+		assert(MoveToGoals[MoveToIndex] != None);
+		MoveToGoals[MoveToIndex].AddRef();
+			
+		MoveToGoals[MoveToIndex].PostGoal(self);
+		++MoveToIndex;
+		
+		while ( ShieldOfficer != GetClosestOfficerTo(ClosestPointToDestination, false, false) )
+			sleep(1.0); //give shield officer time to move upfront
+	}
+	
 
 	for(PawnIterIndex=0; PawnIterIndex<squad().pawns.length; ++PawnIterIndex)
 	{
@@ -135,6 +152,7 @@ latent function MoveOfficersToDestination()
 
 		if ( PawnIter == ShieldOfficer )
 		{
+			/*
 			PawnIter.DisableCollisionAvoidance(); //make possible to stay close to shield guy
 			
 			MoveToGoals[MoveToIndex] = new class'MoveToGoal'(AI_Resource(PawnIter.characterAI), ClosestPointToDestination);
@@ -143,6 +161,7 @@ latent function MoveOfficersToDestination()
 			
 			MoveToGoals[MoveToIndex].PostGoal(self);
 			++MoveToIndex;
+			*/
 		}
 		else
 		{
