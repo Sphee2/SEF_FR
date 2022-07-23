@@ -1778,7 +1778,7 @@ simulated latent private function Fire()
     {   // Reduce accuracy loss from firing by 50% while we are zoomed.
         Modifier = 0.5;
     }
-
+	
     if (EffectsSource.LastRenderTime < Level.TimeSeconds - 1.0f)
         //the EffectsSource wasn't rendered recently, so we'll fall-back to playing the effects on this FiredWeapon's Owner (Pawn)
         OtherForEffectEvents = PawnOwner;
@@ -2001,7 +2001,14 @@ simulated native function float GetBaseAimError();
 //add an instantaneous penalty to this FiredWeapon's current AimError
 simulated function AddAimError(AimPenaltyType Penalty, optional float Modifier)
 {
-    Modifier = 1.0 - Modifier;
+	//Shield
+	if ( self.isa('ShieldHandgun') ) 
+	  Modifier = 2.0; //accuracy loss doubled on Shield weapons
+	else
+	  Modifier = 1.0 - Modifier;
+
+	
+	
 
      switch (Penalty)
      {
