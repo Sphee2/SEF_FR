@@ -180,6 +180,9 @@ latent function MoveOfficersToDestination()
 			MoveInFormationGoals[MoveInFormIndex].SetAcceptNearbyPath(true);
 			MoveInFormationGoals[MoveInFormIndex].SetWalkThreshold(192.0);
 			
+			if ( ShieldOfficer != None )
+				MoveInFormationGoals[MoveInFormIndex].SetMoveToThresholds(75.0,75.0,75.0);
+			
 			MoveInFormationGoals[MoveInFormIndex].PostGoal(self);
 
 			++MoveInFormIndex;
