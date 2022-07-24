@@ -16,10 +16,21 @@ var HandheldEquipmentModel ShieldModel_FP;
 
 simulated function EquippedHook()
 {
+	local int i;
 	Super.EquippedHook();
 	
 	if(HasShield)
 	{		
+
+		//should prevent any crazy MP de-sync
+		for(i=0; i<=Pawn(Owner).Attached.length ; i++)
+		{
+			if (Pawn(Owner).Attached[i].isa('Shieldequip') &&  Pawn(Owner).Attached[i] != ShieldModel_TP )
+			{
+				Pawn(Owner).Attached[i].Destroy(); //prevent doubling shields 
+			}
+		}
+
 		ShieldModel_TP.Equip();
 		ShieldModel_TP.Show();
 		
