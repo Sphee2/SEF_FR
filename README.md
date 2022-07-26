@@ -26,16 +26,19 @@ ADDED:
 						
 						Press K (default key) to equip and Left Mouse buttun to use while near a wounded officer.
 						
-            - Quick Reload: pressing Hold Command (CTRL default) + Relaod permits you to quick change magazine at the cost of losing it.
+            - Quick Reload: pressing Hold Command (CTRL default) + Reload permits you to quick change magazine at the cost of losing it.
 			
 			- Breached Door Falling: Doors can now detach from the frame after a C2 explosion (for the maximum cinematic effect)
-                            			
+            - Forced Arrest: you can arrest anyone who is stunned/gassed/etc at the price of a little penalty (-2)
+            - Blasted Doors with shotgun have now chance to be opened immediatly after the shot			
 	AI:     
             - Hostages can possibly comply by just seeing the officers.
 			
 FIXED:      
             - Barricade suspects behavior is working as intended
 			- Suspect Threat detection is now activated just before they start to aim to avoid delays (particularly in MP) and bad ROE detection
+			- Reduced Suspects and Officers punch chance to avoid fist fight "exploitation" 
+			- Fixed bad istances where suspects are still holding a gun after been arrested
 
 #### V0.66 ####
 
