@@ -1725,17 +1725,24 @@ simulated state BeingBlasted extends Moving
     simulated function StartMoving()
     {
 		
+		if (!IsWedged())
+		{
 		NotifyRegistrantsDoorOpening();
         if (PendingPosition == DoorPosition_OpenLeft)
             PlayAnim('BlastedLeft');
         else
             PlayAnim('BlastedRight');
-
+		}
+		else
+		 GotoState('');
+		
 		/*if ( IsBoobyTrapped() )
 		{
 			assert(BoobyTrap != None);
 			BoobyTrap.OnTriggeredByDoor();
 		}*/
+			
+		  
     }
 
     simulated function PlayBlastedEffects();    //implemented in subclasses

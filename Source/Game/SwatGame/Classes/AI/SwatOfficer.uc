@@ -718,7 +718,8 @@ private function ReceiveLoadOut()
     }
 
 	////SHIELD///
-	if ( !HasActiveShield() && HasShield()) //use the shield if it's a secondary
+	//equip shield first	
+	if ( LoadOut.GetBackupWeapon().isa('ShieldHandgun') || LoadOut.GetBackupWeapon().isa('TaserShield') )
 	  LoadOut.GetBackupWeapon().Equip();
 
 

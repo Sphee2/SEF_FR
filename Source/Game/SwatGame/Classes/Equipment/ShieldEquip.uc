@@ -217,7 +217,7 @@ defaultproperties
 	bCollideWorld=true
 	bProjTarget=true
 	
-	ArmorProtection=Level_3X
+	ArmorProtection=Level_3
 	Health=1000
-	MomentumToPenetrate=1000.0
+	MomentumToPenetrate=400.0
 }

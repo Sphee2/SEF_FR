@@ -15,7 +15,12 @@ simulated function OnReloadMagDump() //overrided function from FiredWeapon
 		
 		//make clip unusable!
 		if ( !self.isa('ShieldHandgun')  &&  !self.isa('TaserShield') )
-			Ammo.SetClip(Ammo.GetCurrentClip(), 0 );
+		{
+			if ( Ammo.RoundsRemainingBeforeReload() > 0 && !ClipBasedAmmo(Ammo).SpeedLoader )
+				Ammo.SetClip(Ammo.GetCurrentClip(), 1 );
+			else
+				Ammo.SetClip(Ammo.GetCurrentClip(), 0 );
+		}
 		
 		if ( Level.NetMode == NM_Standalone )
 		{

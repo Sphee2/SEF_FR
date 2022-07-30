@@ -576,7 +576,7 @@ simulated function bool HandleBallisticImpact(
     Ammo.SetLocation(HitLocation);
     Ammo.SetRotation(rotator(HitNormal));
 	
-	if ( HitRegion == REGION_Shield && Level.NetMode == NM_Standalone) //Singleplayer Shield collision
+	if ( Victim.isa('ShieldEquip') && Level.NetMode == NM_Standalone) //Singleplayer Shield collision
 	{
 		if  ( self.Owner != Victim.Owner  ) //to avoid officers shooting their own shield
 		{
@@ -1368,7 +1368,8 @@ simulated function bool HandleShieldImpact(
     BulletLevel = Ammo.GetPenetrationType();
 
     //the bullet will penetrate the protection unles it loses all of its momentum to the protection
-	PenetratesProtection = (BulletLevel >= ArmorLevel);
+	log("BulletLevel: " $ BulletLevel $ " ArmorLevel " $ ArmorLevel $ " Momentum " $  Momentum $ " penetrates " $ ( (BulletLevel >= ArmorLevel) && Momentum > Shield.GetMtP() ));
+	PenetratesProtection = (BulletLevel >= ArmorLevel) && Momentum > Shield.GetMtP();
 	
     //calculate damage imparted to victim
     MomentumLostToProtection = FMin(Momentum, Shield.GetMtP());
@@ -1722,7 +1723,8 @@ simulated function bool HandleShieldImpactMP(
     BulletLevel = Ammo.GetPenetrationType();
 
     //the bullet will penetrate the protection unles it loses all of its momentum to the protection
-	PenetratesProtection = (BulletLevel >= ArmorLevel);
+	log("BulletLevel: " $ BulletLevel $ "  Momentum " $  Momentum $ " penetrates " $ ( (BulletLevel >= ArmorLevel) && Momentum > Shield.GetMtP() ));
+	PenetratesProtection = (BulletLevel >= ArmorLevel) && Momentum > Shield.GetMtP();
 
     //calculate damage imparted to victim
     MomentumLostToProtection = FMin(Momentum, Shield.GetMtP());

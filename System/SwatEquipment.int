@@ -112,7 +112,7 @@ Caliber=9x19mm
 CountryOfOrigin=Germany
 ProductionStart=1984
 FireModes=Semi-Automatic
-MagazineSizeString=20
+MagazineSizeString=15
 TotalAmmoString=10 magazines
 RateOfFire=390 RPM
 
@@ -125,7 +125,7 @@ Caliber=Subsonic 9x19mm
 CountryOfOrigin=Germany
 ProductionStart=1984
 FireModes=Semi-Automatic
-MagazineSizeString=20
+MagazineSizeString=15
 TotalAmmoString=10 magazines
 RateOfFire=390 RPM
 
@@ -152,7 +152,7 @@ Caliber=9x19mm
 CountryOfOrigin=Germany
 ProductionStart=1984
 FireModes=Semi-Automatic
-MagazineSizeString=20
+MagazineSizeString=15
 TotalAmmoString=10 magazines
 RateOfFire=390 RPM
 
@@ -165,7 +165,7 @@ Caliber=Subsonic 9x19mm
 CountryOfOrigin=Germany
 ProductionStart=1984
 FireModes=Semi-Automatic
-MagazineSizeString=20
+MagazineSizeString=15
 TotalAmmoString=10 magazines
 RateOfFire=390 RPM
 
@@ -409,7 +409,7 @@ TotalAmmoString=10 magazines
 RateOfFire=390 RPM
 
 [ColtM1911HG_Shield]
-Description=Shield
+Description=The Colt M1911 Handgun has been a mainstay in law enforcement for decades.  This weapon, chambered in .45 ACP, packs a powerful punch and is the most common backup weapon for SWAT officers.  This semi-automatic weapon has an 8 round magazine and can fire both full metal jacket and jacketed hollow point ammunition.
 FriendlyName=M1911 + Shield
 ShortName=M1911 + Shield
 Manufacturer=Colt

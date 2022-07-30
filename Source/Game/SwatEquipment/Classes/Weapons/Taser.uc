@@ -342,10 +342,18 @@ simulated function TraceFireInternal(int cartridge)
                     continue;
 				
 				if (LocalVictim.IsA('ShieldEquip') ) 
-                {
-					if(LocalVictim.Owner == self.Owner) //dont taser your own shield
+                {	
+					if(LocalVictim.Owner == self.Owner  ) //dont taser your own shield
 						continue;
 				}
+				
+				//shield first person model mostly....
+				if ( LocalVictim.Owner.isa('Hands') )
+				{
+					continue;
+				}
+				
+				
 
 				// If the nearest hit is too far, then consider it a miss, and make
 				// the taser Wire shoot out to the max distance and then fall.
