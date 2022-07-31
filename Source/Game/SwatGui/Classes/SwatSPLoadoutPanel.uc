@@ -230,6 +230,10 @@ function CopyLoadOutWeaponry( DynamicLoadOutSpec to, DynamicLoadOutSpec from )
 
     for( i = 0; i < Pocket.EnumCount; i++ )
     {
+	   
+	  if ( i  == Pocket.Pocket_CustomSkin )
+		  continue; // dont copy to avoid bugs!
+		
       log("SwatSPLoadoutPanel: Copying "$from.LoadOutSpec[i]$" to "$to.LoadOutSpec[i]);
       to.LoadOutSpec[i] = from.LoadOutSpec[i];
     }
