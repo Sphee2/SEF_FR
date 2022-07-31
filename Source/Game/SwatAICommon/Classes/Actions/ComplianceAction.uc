@@ -189,7 +189,7 @@ latent final function Comply()
     if (SwatAICharacter != None)
     {
         SwatAICharacter.SetCanBeArrested(true);
-		SwatAICharacter.SetNoForceArrested(true);
+		//SwatAICharacter.SetNoForceArrested(true);
     }
 
 	// makes sure the weapon is dropped if we are an enemy

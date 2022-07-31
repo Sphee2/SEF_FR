@@ -664,11 +664,13 @@ Begin:
 		PlayReactionAnimation();
 		m_Pawn.EnableCollisionAvoidance();
 		
+		/* REMOVED
 		//forced arrest after the first issued comply
 		if (ISwatAICharacter(m_Pawn) != None  && !ISwatAICharacter(m_Pawn).isa('SwatOfficer') )
 		{
 			ISwatAICharacter(m_Pawn).SetCanBeArrested(true);
 		}
+		*/
 
 		if(FindFleeDestination() && CanGetOutOfRoomSafely() && bComplexFlee && ISwatOfficer(m_Pawn) == None)
 		{
@@ -693,11 +695,13 @@ Begin:
     // duration has ended
     m_Pawn.ChangeAnimation();
 	
-			//forced arrest after the first issued comply
+	/* REMOVED
+	//forced arrest after the first issued comply
 	if (ISwatAICharacter(m_Pawn) != None  && !ISwatAICharacter(m_Pawn).isa('SwatOfficer') )
 	{
 		ISwatAICharacter(m_Pawn).SetCanBeArrested(false);
 	}
+	*/
 
     succeed();
 
