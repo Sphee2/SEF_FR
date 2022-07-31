@@ -130,6 +130,9 @@ simulated function UsedHook()
 
     log( self$"---FieldDress::UsedHook(). Other="$Other$", Owner="$ Owner $ " GetAvailableCount() " $GetAvailableCount());
 
+	if ( VSize2D(self.Owner.Location - Other.Location) > 150 )
+		return; //dont apply the bandage ... he ran away... 
+
     //heal other human players or your own
     SP=SwatPlayer(Pawn(Other));
 
