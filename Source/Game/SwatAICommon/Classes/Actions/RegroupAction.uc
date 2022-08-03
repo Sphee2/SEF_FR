@@ -461,6 +461,8 @@ Begin:
 
 	// let the commander know to clean up after this particular behavior
 	ISwatEnemy(m_Pawn).GetEnemyCommanderAction().FinishedMovingEngageBehavior();
+	ISwatEnemy(m_Pawn).GetEnemyCommanderAction().InterruptCurrentEngagement();
+	ISwatEnemy(m_Pawn).GetEnemyCommanderAction().FinishedEngagingEnemies();
 
     succeed();
 }

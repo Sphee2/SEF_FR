@@ -13,6 +13,7 @@ import enum EnemySkill from ISwatEnemy;
 
 var private FlushPoint					FlushDestination;
 var private RotateTowardRotationGoal	CurrentRotateTowardRotationGoal;
+var private BarricadeGoal 				CurrentBarricadeGoal;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -54,6 +55,12 @@ function cleanup()
     {
         CurrentRotateTowardRotationGoal.Release();
         CurrentRotateTowardRotationGoal = None;
+    }
+	
+	if (CurrentBarricadeGoal != None)
+    {
+        CurrentBarricadeGoal.Release();
+        CurrentBarricadeGoal = None;
     }
 
 	ResetFullBodyAnimations();
@@ -222,6 +229,7 @@ latent function Flush()
 
 		// play animation
 		PlayFlushAnimation();
+		log ("Flush action finished");
 	}
 }
 
@@ -243,10 +251,12 @@ Begin:
 	
 	if ( CurrentAttackTargetGoal == None) //dont flee if we are attaccking
 		Flush();
-    
+	
 	// let the commander know to clean up after this particular behavior
 	ISwatEnemy(m_Pawn).GetEnemyCommanderAction().FinishedMovingEngageBehavior();
-
+	ISwatEnemy(m_Pawn).GetEnemyCommanderAction().InterruptCurrentEngagement();
+	ISwatEnemy(m_Pawn).GetEnemyCommanderAction().FinishedEngagingEnemies();
+	
     succeed();
 }
 
