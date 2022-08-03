@@ -1733,7 +1733,7 @@ latent function AmbushCompliant()
 	log("DecideToStayCompliant: AmbushCompliant() with morale:");
 		
 	// Sleep for a random amount of time for this "tick"
-	Sleep(frand() * 10.0);
+	Sleep(frand() * 20.0);
 	
 	// AI stopped being compliant
 	ISwatAI(m_Pawn).SetIsCompliant(false);
@@ -1757,8 +1757,8 @@ latent function AmbushCompliant()
 	//equip
 	ISwatEnemy(m_Pawn).GetBackupWeapon().LatentWaitForIdleAndEquip();
 	
-	// try engaging again
-	if (CurrentEngageOfficerGoal == None)
+	// try engaging again if not during arrest process...
+	if (CurrentEngageOfficerGoal == None )
 	{
 		bHasFledWithoutUsableWeapon = false;	// don't cower except very rarely
 				
@@ -1779,7 +1779,7 @@ state Running
 	// wait until something happens
 	if (m_Pawn.IsCompliant())
 	{
-		if ( ISwatEnemy(m_Pawn).GetBackupWeapon() != None && !bAlreadyComplied ) //we just ambush once
+		if ( ISwatEnemy(m_Pawn).GetBackupWeapon() != None && !bAlreadyComplied && !ISwatPawn(m_pawn).IsBeingArrestedNow() && !m_pawn.IsArrested() ) //we just ambush once
 			AmbushCompliant();
 		else
 			DecideToStayCompliant();
