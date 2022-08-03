@@ -188,6 +188,13 @@ state Running
 
 		// handle the case where we have already been restrained, 
 		Restrain();
+		
+		// make sure we don't have the weapon if we are an enemy
+		if (m_Pawn.IsA('SwatEnemy'))
+		{
+			ISwatEnemy(m_Pawn).DropAllWeapons();
+			ISwatEnemy(m_Pawn).DropAllEvidence(false);
+		}
 
 		useResources(class'AI_Resource'.const.RU_LEGS);
 	}
