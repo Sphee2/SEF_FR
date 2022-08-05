@@ -264,7 +264,7 @@ replication
     reliable if (Role == Role_Authority)
         bIsLocked, bIsBroken, ReasonForMove, LockedKnowledge,
         DeployedWedge, DeployedC2ChargeLeft, DeployedC2ChargeRight,
-				Broken, Blasted ,DoorCheckLockTrapped;
+				Broken ,DoorCheckLockTrapped;
 }
 ///////////////////////////
 
@@ -1155,7 +1155,7 @@ function NotifyClientsOfDoorBlocked( bool OpeningBlocked )
 
 
 // Note: In multiplayer function Blasted only happens on the server
-simulated function Blasted(Pawn Instigator)
+function Blasted(Pawn Instigator)
 {
     
 	if ( frand() < 0.5 ) //door will open on random chance
