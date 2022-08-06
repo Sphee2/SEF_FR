@@ -488,7 +488,8 @@ simulated function Tick(float DeltaTime)
 
 simulated function bool AllowedToPassItem()
 {
-    return Level.NetMode == NM_Standalone;
+ //   return Level.NetMode == NM_Standalone;
+ return false;
 }
 
 defaultproperties
