@@ -183,7 +183,7 @@ simulated function RemoveDoorFromFrame()
 	//hide attachments... we dont need em
 	for ( i = 0 ; i < self.Attached.length ; i ++ )
 	{
-		if (Attached[i].isa('DoorAttachment'))
+		if (Attached[i].isa('BoobyTrap'))
 		  Attached[i].Hide();
 	}
 	
