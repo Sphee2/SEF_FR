@@ -665,6 +665,11 @@ simulated function bool HandleBallisticImpact(
     //consider adding internal damage
     if (!PenetratesVictim)
         Damage += Ammo.InternalDamage;
+	else
+	{
+		if (Victim.isa('SwatPawn') || Victim.isa('SwatPlayer') )
+			 Damage +=  ( Ammo.InternalDamage /2 );
+	}
 
     //apply any external damage modifiers (maintained by the Repo)
     ExternalDamageModifier = Level.GetRepo().GetExternalDamageModifier( Owner, Victim );
@@ -1368,8 +1373,8 @@ simulated function bool HandleShieldImpact(
     BulletLevel = Ammo.GetPenetrationType();
 
     //the bullet will penetrate the protection unles it loses all of its momentum to the protection
-	log("BulletLevel: " $ BulletLevel $ " ArmorLevel " $ ArmorLevel $ " Momentum " $  Momentum $ " penetrates " $ ( (BulletLevel >= ArmorLevel) && Momentum > Shield.GetMtP() ));
-	PenetratesProtection = (BulletLevel >= ArmorLevel) && Momentum > Shield.GetMtP();
+	//log("BulletLevel: " $ BulletLevel $ " ArmorLevel " $ ArmorLevel $ " Momentum " $  Momentum $ " penetrates " $ ( (BulletLevel >= ArmorLevel) && Momentum > Shield.GetMtP() ));
+	PenetratesProtection = (BulletLevel >= ArmorLevel) || Momentum > Shield.GetMtP() ;
 	
     //calculate damage imparted to victim
     MomentumLostToProtection = FMin(Momentum, Shield.GetMtP());
@@ -1723,8 +1728,8 @@ simulated function bool HandleShieldImpactMP(
     BulletLevel = Ammo.GetPenetrationType();
 
     //the bullet will penetrate the protection unles it loses all of its momentum to the protection
-	log("BulletLevel: " $ BulletLevel $ "  Momentum " $  Momentum $ " penetrates " $ ( (BulletLevel >= ArmorLevel) && Momentum > Shield.GetMtP() ));
-	PenetratesProtection = (BulletLevel >= ArmorLevel) && Momentum > Shield.GetMtP();
+	//log("BulletLevel: " $ BulletLevel $ "  Momentum " $  Momentum $ " penetrates " $ ( (BulletLevel >= ArmorLevel) && Momentum > Shield.GetMtP() ));
+	PenetratesProtection = (BulletLevel >= ArmorLevel) || Momentum > Shield.GetMtP() ;
 
     //calculate damage imparted to victim
     MomentumLostToProtection = FMin(Momentum, Shield.GetMtP());
