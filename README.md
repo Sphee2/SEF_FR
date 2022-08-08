@@ -11,6 +11,21 @@ https://discord.gg/Vu4r7sv7uF
 
 # FEATURE LIST: #
 
+#### V0.67 HOTFIX 1 ####			
+FIXED:      
+            - SP Shield penetrations 
+			- MP shield penetration 
+			- Shield as Primary Weapon for SWAT AI 
+			- Taser probes collision on player shield 
+			- Blasted doors with wedges bad behavior 
+			- 5th slot bug 
+			- double shield equip , shield now are only secondary equip. 
+			- round in chamber when quick reload 
+			- Removed Forced Arrest
+			- Blasted doors desync in MP
+			- Suspect weapon dropping after arrest
+			- Removed Optiwand sharing to fix equip bug
+			
 #### V0.67 ####
 
 ADDED: 
