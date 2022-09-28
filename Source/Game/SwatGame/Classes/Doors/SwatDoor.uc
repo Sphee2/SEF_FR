@@ -10,6 +10,7 @@ class SwatDoor extends Engine.Door
 
 import enum AIDoorUsageSide from SwatAICommon.ISwatAI;
 import enum AIDoorCloseSide from SwatAICommon.ISwatAI;
+import enum EMaterialVisualType from Material;
 
 var() bool bIsMissionExit "If true, when the player tries to open this door during a single-player mission he will be given the option to end the mission";
 var() private bool bIsLocked;
@@ -1162,7 +1163,7 @@ function Blasted(Pawn Instigator)
      chance = frand();
 	//if ( frand() < 0.5 ) //door will open on random chance
 		
-	switch (self.GetCurrentMaterial(0).MaterialVisualType )
+	switch (GetDoorModel().GetCurrentMaterial(0).MaterialVisualType )
     { 
 		case MVT_ThinMetal:
 	    case MVT_ThickMetal:
@@ -1533,6 +1534,7 @@ simulated state Moving
     {
 		local float frame,rate;
 		local name seq;
+		local float chance;
 		
         super.Tick( dTime );
 		
@@ -1557,11 +1559,30 @@ simulated state Moving
 		{
 			if (seq == 'BreachedLeft' || seq == 'BreachedRight' )
 			{
-				if (frand() < 0.33 )
+				chance = frand();
+				
+				//log("Breached Door fall Chance: " $ chance $ " door material " $ GetEnum( EMaterialVisualType ,GetDoorModel().GetCurrentMaterial(0).MaterialVisualType ) );
+				
+				switch ( GetDoorModel().GetCurrentMaterial(0).MaterialVisualType )
 				{
-					//make door fall on chance
-					RemoveDoorFromFrame();
-					SetCollision(false);
+                   case MVT_ThinMetal:
+				   case MVT_ThickMetal:	
+			 
+				  if ( chance < 0.7 )
+					break;
+				
+				  case MVT_Default:
+				   if ( chance < 0.5 )
+					 break;
+		
+				  case MVT_wood:	
+				  if ( chance < 0.1 )
+					break;
+		     
+				  default: 				    
+            	  //make door fall on chance
+			      RemoveDoorFromFrame();
+				  SetCollision(false);
 				}
 				CurrentPosition=PendingPosition;
 				GotoState('');
@@ -1919,6 +1940,11 @@ simulated function array<Actor> GetDoorModels()
 	local array<Actor> Empty;
 	return Empty;
 }
+
+simulated function DoorModel GetDoorModel()
+{
+	return None;
+}	
 
 private simulated function bool IsLeftSideFrontOpenPointUsable()
 {

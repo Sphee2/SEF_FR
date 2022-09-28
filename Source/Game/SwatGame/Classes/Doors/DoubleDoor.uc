@@ -204,6 +204,11 @@ simulated function RemoveDoorFromFrame()
 	
 }
 
+simulated function DoorModel GetDoorModel()
+{
+	return LeftHingeDoorModel;
+}
+
 defaultproperties
 {
 	// collision radius of 120 fits around both doors when they are open either way

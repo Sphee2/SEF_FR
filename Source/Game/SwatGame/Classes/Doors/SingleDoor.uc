@@ -224,6 +224,11 @@ simulated function RemoveDoorFromFrame()
 	
 }
 
+simulated function DoorModel GetDoorModel()
+{
+	return DoorModel;
+}
+
 defaultproperties
 {
     //CollisionRadius must be at least (w^2+(w/2)^2)^(1/2), where w is the width of the door,
