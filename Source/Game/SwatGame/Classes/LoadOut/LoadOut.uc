@@ -852,6 +852,19 @@ simulated function bool HasBallisticHelmet()
 		return false; // The VIP has no head armor
 }
 
+simulated function bool HasNVGHelmet()
+{
+	if ( PocketEquipment[Pocket.Pocket_HeadArmor] != None )
+	{	
+		if( PocketEquipment[Pocket.Pocket_HeadArmor].IsA('NVGoggles') )
+		{	
+			return true;
+		}
+	}
+		return false; // The VIP has no head armor
+}
+
+
 simulated function int AdditionalAvailableCountForItem(EquipmentSlot Slot)
 {
     return 0;

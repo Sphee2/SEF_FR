@@ -2729,7 +2729,7 @@ Function ReactToFlashbangGrenade(
     if ( Level.NetMode == NM_Client )
         return;
 
-    if ( HasProtection( 'IProtectFromFlashbang' ) || HasActiveShield())
+    if ( (HasProtection( 'IProtectFromFlashbang' ) && !GetLoadOut().HasNVGHelmet()) || HasActiveShield())
         HasVisionProtection = true;
 
     //cheat
@@ -2779,6 +2779,13 @@ Function ReactToFlashbangGrenade(
 					 GrenadeLocation,
 					 Controller.FOVAngle * DEGREES_TO_RADIANS));
 log("TMC FOVMatters="$FOVMatters$", CanSee="$CanSee);
+
+   if ( Grenade.isa('NinebangGrenadeProjectile') )
+   {
+	   //making ninebanger more usable for players
+	   StunRadius = StunRadius / 2;
+   }
+
     if  (class'SwatPlayerConfig'.static.GetTestingCameraEffects() ||  (Distance <= StunRadius && CanSee))
     {
         if (Level.NetMode != NM_Client)
