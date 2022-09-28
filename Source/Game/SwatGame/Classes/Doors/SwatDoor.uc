@@ -1157,9 +1157,25 @@ function NotifyClientsOfDoorBlocked( bool OpeningBlocked )
 // Note: In multiplayer function Blasted only happens on the server
 function Blasted(Pawn Instigator)
 {
-    
-	if ( frand() < 0.5 ) //door will open on random chance
-	{
+  local float chance; 
+  
+     chance = frand();
+	//if ( frand() < 0.5 ) //door will open on random chance
+		
+	switch (self.GetCurrentMaterial(0).MaterialVisualType )
+    { 
+		case MVT_ThinMetal:
+	    case MVT_ThickMetal:
+	    case MVT_Default:	
+			
+		if ( chance < 0.5 )
+		    break;
+		
+		case MVT_wood:	
+		if ( chance < 0.1 )
+		   break;
+		     
+		default:
 		if ( IsClosed() || IsClosing() )
 		{
 			if (ActorIsToMyLeft(Instigator))
