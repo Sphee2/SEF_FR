@@ -905,7 +905,13 @@ simulated function vector CalcDrawOffset()
 	{
 		DrawOffset.Z += EyeHeight;
         if( bWeaponBob && GetActiveItem() != None)
-			DrawOffset += WeaponBob(0); //TMC 11-11-2003 += WeaponBob(GetActiveItem().GetFirstPersonModel().BobDamping);
+		{
+			//DrawOffset += WeaponBob(0); //TMC 11-11-2003 += WeaponBob(GetActiveItem().GetFirstPersonModel().BobDamping);
+			if ( Controller.bRun == 1 )
+				DrawOffset+= WeaponBob(0.80);
+		    else
+				DrawOffset+= WeaponBob(0.96);
+		}
 	}
 	return DrawOffset;
 }
@@ -916,6 +922,7 @@ function vector WeaponBob(float BobDamping)
 
 	WBob = BobDamping * WalkBob;
 	WBob.Z = (0.45 + 0.55 * BobDamping) * WalkBob.Z;
+	WBob.Y = (0.45 + 0.55 * BobDamping) * WalkBob.Y;
 	return WBob;
 }
 
