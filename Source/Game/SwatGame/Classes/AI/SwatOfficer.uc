@@ -1240,7 +1240,7 @@ function ReactToFlashbangGrenade(
     local float DistanceEffect;
     local float Magnitude;
 
-    if ( HasProtection( 'IProtectFromFlashbang' ) || HasActiveSHield() )
+    if (  (HasProtection( 'IProtectFromFlashbang' ) && !LoadOut.HasNVGHelmet())  || HasActiveSHield() )
     {
         return;
     }
@@ -1259,6 +1259,13 @@ function ReactToFlashbangGrenade(
             GrenadeLocation = Grenade.Location;
             Direction       = Location - Grenade.Location;
             Distance        = VSize(Direction);
+			
+			 if ( Grenade.isa('NinebangGrenadeProjectile') )
+			{
+				//making ninebanger more usable for players
+				StunRadius = StunRadius / 2;
+			}
+			
             DistanceEffect = ((StunRadius + (StunRadius/4)) - Distance)/(StunRadius);
             AIStunDuration *= DistanceEffect;
             if (Instigator == None)
