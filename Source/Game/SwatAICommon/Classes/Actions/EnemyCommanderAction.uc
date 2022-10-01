@@ -1021,8 +1021,16 @@ function PostComplianceCheck(Pawn ComplianceIssuer, bool bWillComply)
 	if (! bWillComply)
 	{
 		ISwatEnemy(m_Pawn).GetEnemySpeechManagerAction().TriggerUncompliantSpeech();
-
 		EncounterEnemy(ComplianceIssuer);
+	}
+	else
+	{
+		if (CurrentAttackTargetGoal != None)
+		{
+			CurrentAttackTargetGoal.unPostGoal(self);
+			CurrentAttackTargetGoal.Release();
+			CurrentAttackTargetGoal = None;
+		}
 	}
 }
 
@@ -1317,6 +1325,13 @@ latent function ReactInitiallyToEnemy()
 
 latent function EngageCurrentEnemy()
 {
+	
+	if ( m_pawn.IsArrested() || IswatPawn(m_pawn).IsBeingArrestedNow() || !class'Pawn'.static.checkConscious(m_Pawn) )
+	{
+		//abort
+		return;
+	}
+	
 	// If we had an engagement goal, drop it
 	if(CurrentEngageOfficerGoal != None)
 	{
@@ -1735,6 +1750,12 @@ latent function AmbushCompliant()
 	// Sleep for a random amount of time for this "tick"
 	Sleep(frand() * 20.0);
 	
+	if ( m_pawn.IsArrested() || IswatPawn(m_pawn).IsBeingArrestedNow() || !class'Pawn'.static.checkConscious(m_Pawn) )
+	{
+		//abort
+		return;
+	}
+	
 	// AI stopped being compliant
 	ISwatAI(m_Pawn).SetIsCompliant(false);
 	RemoveComplianceGoal();
@@ -1769,6 +1790,18 @@ latent function AmbushCompliant()
 		WaitForGoal(CurrentEngageOfficerGoal);		
 	}
 }
+
+/*
+private function CheckPawn()
+{
+	if ( m_pawn.IsArrested() || IswatPawn(m_pawn).IsBeingArrestedNow() || !class'Pawn'.static.checkConscious(m_Pawn) )
+	{
+		Level.GetLocalPlayerController().ConsoleMessage( " BUG! " $ m_pawn.name $ " - Restrained bug prevented! ");
+		log(m_pawn.name $ " - Restrained bug prevented! ");
+		instantFail(ACT_INSUFFICIENT_RESOURCES_AVAILABLE);
+	}	
+}
+*/
 
 state Running
 {

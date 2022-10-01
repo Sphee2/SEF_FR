@@ -116,6 +116,8 @@ latent function ReadyWeapon()
 {
 	local FiredWeapon CurrentWeapon, PendingWeapon;
 
+	checkPawn(); //attacker better not be arrested
+
     CurrentWeapon = FiredWeapon(m_Pawn.GetActiveItem());
 	
 	if ((m_Pawn.IsA('SwatEnemy')) && ((!m_Pawn.IsA('SwatUndercover')) || (!m_Pawn.IsA('SwatGuard'))) && !ISwatEnemy(m_Pawn).IsAThreat() && (m_Pawn.GetActiveItem() != None))
@@ -192,6 +194,8 @@ latent function AttackTarget()
 		instantFail(ACT_INSUFFICIENT_RESOURCES_AVAILABLE); // Possibly fixes a bug (?)
 	}
 
+	checkPawn(); //attacker better not be arrested
+
 	StartActionTime = Level.TimeSeconds;
 
 	ReadyWeapon();
@@ -231,6 +235,15 @@ latent function AttackTarget()
   {
 		if (m_Pawn.logTyrion)
 			log(m_Pawn.Name $ " is waiting to be able to hit target " $ TargetPawn);
+		
+		if (Level.TimeSeconds >= TimeToStopTryingToAttack) //we cant hold forever....
+		{
+			if (m_Pawn.logTyrion)
+				log(self.Name $ " ran out of time to attack.  failing!");
+
+			instantFail(ACT_TIME_LIMIT_EXCEEDED);
+		}
+		
 
     yield();
   }
@@ -270,6 +283,8 @@ latent function AttackTarget()
 latent function WildGunnerAttackTarget()
 {
     local FiredWeapon CurrentWeapon;	
+	
+	checkPawn(); //attacker better not be arrested
 	
 	StartActionTime = Level.TimeSeconds;
 	
@@ -339,6 +354,9 @@ protected latent function AimAndFireAtTarget(FiredWeapon CurrentWeapon)
 {
 	local float TimeElapsed;
 	local float MandatedWait;
+	
+	checkPawn(); //attacker better not be arrested
+	
 	// allows us to change our fire mode
 	SetFireMode(CurrentWeapon);
 
@@ -383,6 +401,9 @@ protected latent function ShootInAimDirection(FiredWeapon CurrentWeapon)
 {
 	local float TimeElapsed;
 	local float MandatedWait;
+	
+	checkPawn(); //attacker better not be arrested
+	
 	// allows us to change our fire mode
 	SetFireMode(CurrentWeapon);
 
@@ -457,6 +478,16 @@ private function LogForOfficer(string logText)
 	}
 }
 
+private function CheckPawn()
+{
+	if ( m_pawn.IsArrested() || IswatPawn(m_pawn).IsBeingArrestedNow() || !class'Pawn'.static.checkConscious(m_Pawn) )
+	{
+		Level.GetLocalPlayerController().ConsoleMessage( " BUG! " $ m_pawn.name $ " - Restrained bug prevented! ");
+		log(m_pawn.name $ " - Restrained bug prevented! ");
+		instantFail(ACT_INSUFFICIENT_RESOURCES_AVAILABLE);
+	}	
+}
+
 state Running
 {
  Begin:
@@ -491,6 +522,9 @@ state Running
 		   		ShouldContinueAttackingWithLessLethal())									// we should continue using that less lethal item
 		   	))
 	{
+		
+		checkPawn(); //attacker better not be arrested
+		
 		if ( targetSensor.queryObjectValue() == None )
 		{
 			if (m_Pawn.logTyrion)

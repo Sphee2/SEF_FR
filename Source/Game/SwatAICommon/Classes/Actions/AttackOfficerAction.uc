@@ -118,7 +118,7 @@ function float GetSkillSpecificSuccessAfterFiringChance()
 // State Code
 
 latent function MoveToAttackEnemy()
-{
+{	
     CurrentMoveToAttackOfficerGoal = new class'MoveToAttackOfficerGoal'(movementResource(), achievingGoal.Priority, GetOfficerTarget());
     assert(CurrentMoveToAttackOfficerGoal != None);
 	CurrentMoveToAttackOfficerGoal.AddRef();
@@ -179,15 +179,29 @@ private latent function FinishUpMoveToAttackBehavior()
 	}
 }
 
+function CheckOfficer()
+{
+	if ( m_pawn.IsArrested() || IswatPawn(m_pawn).IsBeingArrestedNow() )
+	{
+		Level.GetLocalPlayerController().ConsoleMessage( " BUG! " $ m_pawn.name $ " - Restrained bug prevented! ");
+		//log(m_pawn.name $ " - Restrained bug prevented! ");
+		instantFail(ACT_NO_WEAPONS_AVAILABLE);
+	}	
+}
+
 
 state Running
 {
  Begin:
-	waitForResourcesAvailable(achievingGoal.priority, achievingGoal.priority);
-
+	waitForResourcesAvailable(achievingGoal.priority, achievingGoal.priority);	
+	
+	CheckOfficer(); //check cause this are latent funcitons
 	MoveToAttackEnemy();
+	
+	CheckOfficer(); //check cause this are latent funcitons
     AttackEnemyWithWeapon();
 
+	CheckOfficer(); //check cause this are latent funcitons
 	FinishUpMoveToAttackBehavior();
 
 	succeed();
