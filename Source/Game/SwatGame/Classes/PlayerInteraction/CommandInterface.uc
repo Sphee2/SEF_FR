@@ -1058,8 +1058,8 @@ simulated function SetCommandStatus(Command Command, optional bool TeamChanged)
       Status = Pad_Normal;
     } else if(Level.NetMode == NM_Standalone && CommandUsesWedge(Command) && !CurrentCommandTeam.DoesAnOfficerHaveUsableEquipment(Slot_Wedge)) {
 		Status = Pad_GreyedOut;
-	//} else if(Level.NetMode == NM_Standalone && CommandUsesOptiwand(Command) && !CurrentCommandTeam.DoesAnOfficerHaveUsableEquipment(Slot_Optiwand)) {
-	//	Status = Pad_GreyedOut;
+	} else if(Level.NetMode == NM_Standalone && CommandUsesOptiwand(Command) && !CurrentCommandTeam.DoesAnOfficerHaveUsableEquipment(Slot_Optiwand)) {
+		Status = Pad_GreyedOut;
 	//} else if(Level.NetMode == NM_Standalone && Command.Command == Command_Request_Optiwand
 	//	&& SwatGamePlayerController(Level.GetLocalPlayerController()).SwatPlayer.GetEquipmentAtSlot(Slot_Optiwand) != None) {
 	//	Status = Pad_GreyedOut; // optiwand not allowed when the player has an optiwand
@@ -1094,8 +1094,8 @@ simulated function SetCommandStatus(Command Command, optional bool TeamChanged)
       Status = Pad_Normal;
     } else if (CommandIsCleanSweep(Command)) {
       Status = Pad_Normal;
-    //} else if (CommandUsesOptiwand(Command)) {
-	//	Status = Pad_Normal;
+    } else if (CommandUsesOptiwand(Command)) {
+		Status = Pad_Normal;
 	}
     else if  (
             Command.IsCancel
