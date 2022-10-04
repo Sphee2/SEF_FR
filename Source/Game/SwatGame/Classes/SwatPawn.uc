@@ -473,8 +473,11 @@ simulated native event bool IsLowerBodyInjured();
 
 simulated function bool CanBeHealed()
 {
-    return isConscious() &&  ( Health  < 100 ) ;// IsLowerBodyInjured() ;
+    return isConscious() &&  ( Health  < 100 ) && 
+	( self.isa('SwatPlayer') || self.isa('SwatOfficer') );
+			 // IsLowerBodyInjured() ;
 }
+
 
 // don't override, override the accessors above.
 simulated function EAnimationSet GetMovementAnimSet()
