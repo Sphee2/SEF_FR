@@ -223,6 +223,10 @@ latent function MoveToBarricadePoint()
 		CurrentMoveToActorGoal.Release();
         CurrentMoveToActorGoal = None;
     }
+	else 
+	{
+		instantFail(ACT_INSUFFICIENT_RESOURCES_AVAILABLE);
+	}
 }
 
 private function bool ShouldCrouchAtFleePoint()
