@@ -139,7 +139,7 @@ simulated function UsedHook()
     if (SP != None && SP.isa('SwatPlayer') )
     {
         //log( self$"---FieldDress::UsedHook(). SP.IsLowerBodyInjured() " $ SP.IsLowerBodyInjured() $ " .");
-     if ( SP.IsLowerBodyInjured())
+     if ( SP.IsInjured() )//IsLowerBodyInjured())
      {   
         SP.HealLimping();
 		if (GetAvailableCount() == 1)

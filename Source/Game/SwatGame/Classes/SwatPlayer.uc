@@ -4064,9 +4064,17 @@ simulated function bool IsLowerBodyInjured()
     return CurrentLimp > class'SwatPlayerConfig'.static.GetLimpThreshold();
 }
 
+simulated function bool IsInjured()
+{
+    return Health < 100;
+}
+
 simulated final function HealLimping()
 {
-    CurrentLimp = class'SwatPlayerConfig'.static.GetLimpThreshold() - 0.001;
+    //CurrentLimp = class'SwatPlayerConfig'.static.GetLimpThreshold() - 0.001;
+	Health = 100;
+	ArmInjuryFlags = 0; 
+	SwatGamePlayerController(Controller).GetHUDPage().DamageIndicator.ClearDamage();
 }
 
 simulated final function ForceLimping() //debug function
