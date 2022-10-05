@@ -220,7 +220,12 @@ latent function AttackTarget()
 	}
 
     ISwatAI(m_pawn).UnLockAim();
-	AimAtActor(Target);
+	
+	if (!bHavePerfectAim)
+		AimAtActor(Target);
+	else
+		AimAtPoint(Pawn(Target).GetHeadLocation());
+	
     // @HACK: See comments in ISwatAI::LockAim for more info.
     ISwatAI(m_pawn).LockAim();
 
