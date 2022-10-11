@@ -46,9 +46,13 @@ function bool ShouldStopMovingToOpponent(Pawn MovingPawn)
 		// if the current weapon is being reloaded, don't move
 		if (CurrentWeapon.IsBeingReloaded())
 			return true;
-
+		
+		if (CurrentWeapon.isa('Pepperspray') )
+			if ( Vsize ( opponent.location - m_pawn.location ) >  (CurrentWeapon.Range * 0.66 ) )
+				 return false;
+		
 		// if there's nothing between the weapon and our enemy (the destination), we can stop
-        if ((Opponent != None) && m_Pawn.CanHit(Opponent))
+        if ((Opponent != None) && m_Pawn.CanHitTarget(Opponent))
         {
 			// we can hit the opponent, just stop
 			return true;
@@ -78,7 +82,7 @@ Begin:
 	else
 	{
 		// wait until we need to move
-		while (ShouldStopMoving())
+		while (ShouldStopMovingToOpponent(Pawn(GetDestinationActor())))
 		{
 			yield();
 		}

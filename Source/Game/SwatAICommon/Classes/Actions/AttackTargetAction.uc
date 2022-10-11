@@ -221,10 +221,13 @@ latent function AttackTarget()
 
     ISwatAI(m_pawn).UnLockAim();
 	
+	/*
 	if (!bHavePerfectAim)
 		AimAtActor(Target);
 	else
 		AimAtPoint(Pawn(Target).GetHeadLocation());
+	*/
+	LatentAimAtActor(Target);
 	
     // @HACK: See comments in ISwatAI::LockAim for more info.
     ISwatAI(m_pawn).LockAim();
@@ -236,7 +239,7 @@ latent function AttackTarget()
 	}
 
   // wait until we can hit the target (make sure the target is still conscious too!)
-  while(!bSuppressiveFire && !m_Pawn.CanHit(Target) && ((TargetPawn == None) || class'Pawn'.static.checkConscious(TargetPawn)))
+  while(!bSuppressiveFire && !m_Pawn.CanHitTarget(Target) && ((TargetPawn == None) || class'Pawn'.static.checkConscious(TargetPawn)))
   {
 		if (m_Pawn.logTyrion)
 			log(m_Pawn.Name $ " is waiting to be able to hit target " $ TargetPawn);
@@ -249,7 +252,6 @@ latent function AttackTarget()
 			instantFail(ACT_TIME_LIMIT_EXCEEDED);
 		}
 		
-
     yield();
   }
 
@@ -357,8 +359,8 @@ latent function WildGunnerAttackTarget()
 
 protected latent function AimAndFireAtTarget(FiredWeapon CurrentWeapon)
 {
-	local float TimeElapsed;
-	local float MandatedWait;
+//	local float TimeElapsed;
+//	local float MandatedWait;
 	
 	checkPawn(); //attacker better not be arrested
 	
@@ -373,18 +375,18 @@ protected latent function AimAndFireAtTarget(FiredWeapon CurrentWeapon)
 	{
 		 if(Level.NetMode != NM_Standalone) //adjust for ping in MP
 		 {
-			 LatentAimAtActor(Target, ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring());
-			 sleep(0.2);  
+			 LatentAimAtActor(Target, ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring() + 0.2); //0.2 to adjust avarage ping
 		 }
 		 else
 		 {
 			LatentAimAtActor(Target,ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring());
-			sleep(ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring());
+			//sleep(ISwatAI(m_Pawn).GetTimeToWaitBeforeFiring());
 		 }
 	}
 	else
 	{	// SWAT need perfect aim!
-		LatentAimAtActor(Target);
+		//SWAT reaction is random between 0.4/0.8
+		LatentAimAtActor(Target, Fclamp(frand()+0.4, 0.4 ,0.8) );
 	}
 
 

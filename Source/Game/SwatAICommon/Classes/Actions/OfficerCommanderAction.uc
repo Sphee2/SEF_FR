@@ -182,7 +182,7 @@ function OnPawnEncounteredVisionNotification()
 {
 	local Pawn Enemy;
 
-	assert( m_pawn.canhit(VisionSensor.LastPawnSeen) );
+	assert( m_pawn.CanHitTarget(VisionSensor.LastPawnSeen) );
 		
 	if (VisionSensor.LastPawnSeen != None)
 	{
@@ -368,8 +368,12 @@ private function bool ShouldEngageTarget(Pawn Target)
 		return true;
 	}
 	else if (Target.IsA('SwatEnemy') && (CurrentAttackEnemyGoal == None) &&
-		( (ISwatEnemy(Target).IsAThreat() && !ISwatEnemy(Target).ThreatTimerIsOver()) || ShouldAttackRunner(Target)))
+		( ( (ISwatEnemy(Target).IsAThreat() )&& !ISwatEnemy(Target).ThreatTimerIsOver()) || ShouldAttackRunner(Target)))
 	{
+		//attack if the suspect is a danger and we dont have less lethal
+		if (!ISwatAI(Target).HasUsableWeapon() && !FiredWeapon(m_Pawn.GetActiveItem()).islessLethal())
+			return false;
+		
 		// if the target is a threatening swat enemy, and we're not attacking them, we must act!
 		return true;
 	}

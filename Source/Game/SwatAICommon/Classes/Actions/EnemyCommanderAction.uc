@@ -659,6 +659,8 @@ protected function DisableSensingSystems()
 function OnPawnEncounteredVisionNotification()
 {
 	local Pawn Enemy;
+	
+	assert( m_pawn.CanHitTarget(VisionSensor.LastPawnSeen) );
 
 	if (VisionSensor.LastPawnSeen != None)
 	{
@@ -1162,7 +1164,8 @@ private function bool ShouldEncounterNewEnemy(Pawn NewEnemy)
 		DistanceToNewEnemy     = VSize(NewEnemy.Location - m_Pawn.Location);
 
 		if (((DistanceToNewEnemy < DistanceToCurrentEnemy) && (DistanceToNewEnemy < class'EnemyCommanderActionConfig'.default.DeltaDistanceToSwitchEnemies)) ||
-			(! m_Pawn.CanHit(CurrentEnemy) && m_Pawn.CanHit(NewEnemy)))
+			//(! m_Pawn.CanHit(CurrentEnemy) && m_Pawn.CanHit(NewEnemy)))
+			(! m_Pawn.LineOfSightTo(CurrentEnemy) && m_Pawn.LineOfSightTo(NewEnemy)))
 		{
 			return true;
 		}
@@ -1626,7 +1629,8 @@ function FindBetterEnemy()
 	
 	if (CurrentEnemy != None)
 	{
-		if (! m_Pawn.CanHit(CurrentEnemy))
+		//if (! m_Pawn.CanHitTarget(CurrentEnemy))
+	    if (! m_Pawn.LineOfSightTo(CurrentEnemy))
 		{
 			NewEnemy = VisionSensor.GetVisibleConsciousPawnClosestTo(m_Pawn.Location);
 
@@ -1812,6 +1816,22 @@ state Running
 	// wait until something happens
 	if (m_Pawn.IsCompliant())
 	{
+		
+		if (CurrentAttackTargetGoal != None)
+		{
+			CurrentAttackTargetGoal.unPostGoal(self);
+			CurrentAttackTargetGoal.Release();
+			CurrentAttackTargetGoal = None;
+		}
+		
+		if (CurrentEngageOfficerGoal != None)
+		{
+			CurrentEngageOfficerGoal.unPostGoal(self);
+
+			CurrentEngageOfficerGoal.Release();
+			CurrentEngageOfficerGoal = None;
+		}
+		
 		if ( ISwatEnemy(m_Pawn).GetBackupWeapon() != None && !bAlreadyComplied && !ISwatPawn(m_pawn).IsBeingArrestedNow() && !m_pawn.IsArrested() ) //we just ambush once
 			AmbushCompliant();
 		else
@@ -1915,7 +1935,7 @@ function SetSpecificDebugInfo()
 
 	if (CurrentEnemy != None)
 	{
-		m_Pawn.AddDebugMessage("Can Hit Him:        "@m_Pawn.CanHit(CurrentEnemy));
+		m_Pawn.AddDebugMessage("Can Hit Him:        "@m_Pawn.CanHitTarget(CurrentEnemy));
 	}
 }
 

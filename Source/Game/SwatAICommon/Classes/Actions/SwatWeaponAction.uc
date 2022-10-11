@@ -184,8 +184,10 @@ final function UpdateThreatToTarget(Actor Target)
 final latent function LatentAimAtActor(Actor Target, optional float MaxWaitTime)
 {
     // only aim at if if we can
-	local float CurrentTime;
+	//local float CurrentTime;
 	local float StartTime;
+	local float fdot;
+	local vector TargetDirection , ViewDirectionNoZ;
 
 	StartTime = Level.TimeSeconds;
 
@@ -199,21 +201,49 @@ final latent function LatentAimAtActor(Actor Target, optional float MaxWaitTime)
 		}
 		//////////////////////////////
 		
-        ISwatAI(m_pawn).AimAtActor(Target);
-
+        //ISwatAI(m_pawn).AimAtActor(Target);
+		if ( ( target.isa('SwatPawn') || target.isa('SwatPlayer') ) && !FiredWeapon(m_pawn.GetActiveItem()).isa('Pepperspray') )
+		{
+			
+			ISwatAI(m_pawn).AimAtpoint(Target.GetBoneCoords('Bip01_Spine2').Origin);
+			
+			//add time to avoid quickscope shooting
+			TargetDirection = Normal( m_pawn.location - target.location);
+			ViewDirectionNoZ = vector(m_pawn.Rotation);
+			fDot =  ViewDirectionNoZ Dot TargetDirection;
+			//log (m_pawn.name $ " attacking " $ target.name $ " fdot is: " $ fdot );
+			
+			if ( fdot > 0.5 )
+			{
+				//log ( m_pawn.name $ " quick scope added time on target 0.8" );
+				MaxWaitTime = MaxWaitTime + 0.8;
+			}
+			else if ( fdot > 0.0 && fdot < 0.5 )
+			{
+				//log ( m_pawn.name $ " quick scope added time on target 0.4" );
+				MaxWaitTime = MaxWaitTime + 0.4;
+			}
+			 
+		}
+	    else
+			ISwatAI(m_pawn).AimAtActor(Target);
+		
+		
+		
+		
         // wait until we aim at what we want to
-        while ((!ISwatAI(m_pawn).AnimIsAimedAtDesired() && HasWeaponEquipped()) )//||   ISwatAI(m_Pawn).AnimAreAimingChannelsMuted())
+        while ( ((!ISwatAI(m_pawn).AnimIsAimedAtDesired() && HasWeaponEquipped()) || ISwatAI(m_Pawn).AnimAreAimingChannelsMuted()) && Level.TimeSeconds - StartTime < MaxWaitTime )
         {
 //			log("aiming at actor update - AnimIsAimedAtDesired: " $ ISwatAI(m_pawn).AnimIsAimedAtDesired() $ " HasWeaponEquipped: " $ HasWeaponEquipped() $ " AnimAreAimingChannelsMuted: " $ ISwatAI(m_Pawn).AnimAreAimingChannelsMuted());
 			// See if we have waited past the threshold
-			if(MaxWaitTime > 0.0)
+			/*if(MaxWaitTime > 0.0)
 			{
 				currentTime = Level.TimeSeconds;
-				if(CurrentTime - StartTime > MaxWaitTime && !ISwatAI(m_Pawn).AnimAreAimingChannelsMuted())
+				if(Level.TimeSeconds - StartTime > MaxWaitTime ) //&& !ISwatAI(m_Pawn).AnimAreAimingChannelsMuted())
 				{
 					break;	// die
 				}
-			}
+			}*/
 			UpdateThreatToTarget(Target);
             yield();
         }
@@ -247,8 +277,14 @@ latent function SetGunDirection( Actor Target ) // possible bug fixer
 			yield();
 		}
 		UpdateThreatToTarget(Target);
-        cTarget = Target.GetBoneCoords('Bip01_Spine2');
-        vTarget = cTarget.Origin;
+		
+		if ( !AimHead )	
+			cTarget = Target.GetBoneCoords('Bip01_Spine2');
+		else
+			cTarget = Target.GetBoneCoords('Bip01_Head');
+		
+		vTarget = cTarget.Origin;
+		
 
         // Find the pitch between the gun and the target
         vDirection = vTarget - m_pawn.Location;
@@ -307,13 +343,11 @@ latent function ShootWeaponAt(Actor Target)
 			}
 		}
 	}
-	
-	
+		
     // if the weapon's not empty, use it
-	if (! CurrentWeapon.IsEmpty() )
+	if (CurrentWeapon!= None && !CurrentWeapon.IsEmpty())
     {
 		ISwatAI(m_Pawn).SetWeaponTarget(Target);
-	
 	    CurrentWeapon.LatentUse();
 
 //		log("finished shooting at time " $ m_Pawn.Level.TimeSeconds);

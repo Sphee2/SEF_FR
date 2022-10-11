@@ -1119,8 +1119,10 @@ simulated event GetPerfectFireStart(out vector outLocation, out rotator outDirec
     }
     else if (Instigator.IsA('SwatAI'))
     {
-      outLocation = Instigator.GetAimLocation(self);
+      //outLocation = Instigator.GetAimLocation(self);
 		    //outLocation  = Instigator.GetAimOrigin();
+		  WeaponCoords = Pawn(Owner).GetBoneCoords('GripRHand', true);
+		  outLocation = WeaponCoords.Origin;	
 		  outDirection = Instigator.GetAimRotation();
     }
     else
