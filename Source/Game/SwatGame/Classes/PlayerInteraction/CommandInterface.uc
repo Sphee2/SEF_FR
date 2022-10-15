@@ -268,6 +268,7 @@ enum ECommand
 	// FR
 	//
 	Command_Heal, //heal pawns with field dress
+	Command_Heal_Me, //heal local player
 	
     Command_Static,
 };
@@ -2572,6 +2573,7 @@ simulated function SendCommandToOfficers()
 			
 		//FR commands 
 		case Command_Heal:
+		case Command_Heal_Me:
             if (CheckForValidHeal(PendingCommand, PendingCommandTargetActor))
                 bCommandIssued = PendingCommandTeam.HealInjured(
                     Level.GetLocalPlayerController().Pawn,
@@ -2755,7 +2757,6 @@ simulated protected function Actor GetPendingCommandTargetActor()
         //
 
         case Command_Restrain:
-		case Command_Heal:
         case Command_Deploy_PepperSpray:
         case Command_Deploy_Taser:
         case Command_Deploy_LessLethalShotgun:
@@ -2810,6 +2811,15 @@ simulated protected function Actor GetPendingCommandTargetActor()
 
         case Command_MirrorCorner:
             return GetPendingFocusOfClass('MirrorPoint');
+			
+		//FR
+         case Command_Heal:
+		 case Command_Heal_Me:
+             TemporaryActor = GetPendingFocusOfClass('Pawn');		 
+		     if (TemporaryActor == None)
+				return Level.GetLocalPlayerController().Pawn; //return player
+		     else
+			 	return TemporaryActor; //return target
 
         default:
             return None;
@@ -3102,6 +3112,11 @@ function bool ContextMatches(SwatPlayer Player, Actor Target, PlayerInterfaceCon
 		{
 			return false;
 		}
+	}
+
+	if(CommandContext.CanBeHealedNow)
+	{
+		return ( ( Target.isa('SwatOfficer') || Target.isa('SwatPlayer') ) && Pawn(Target).Health  < 100 );
 	}
 
 	if(CommandContext.CaresAboutCanBeReportedNow)

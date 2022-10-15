@@ -14,6 +14,8 @@ var config int DefaultCommandPriority;
 var config bool CaresAboutCanBeArrestedNow;
 var config bool CanBeArrestedNow;
 
+var config bool CanBeHealedNow;
+
 var config bool CaresAboutCanBeUsedNow;
 var config bool CanBeUsedNow;
 

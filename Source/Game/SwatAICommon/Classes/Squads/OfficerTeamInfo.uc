@@ -180,7 +180,19 @@ function Pawn GetClosestOfficerWithEquipmentTo(EquipmentSlot Slot, vector Point,
 	for(i=0; i<pawns.length; ++i)
 	{
 		IterOfficer = pawns[i];
-
+		
+		//skip unresponsive officers...
+		if ( ISwatPawn(IterOfficer).isGassed() ||
+			ISwatPawn(IterOfficer).isTased() ||
+			ISwatPawn(IterOfficer).isFlashbanged() ||
+			ISwatPawn(IterOfficer).isStung() || 
+			ISwatPawn(IterOfficer).IsPepperSprayed()  || 
+			ISwatPawn(IterOfficer).IsStunnedByC2() ) 
+			{
+				continue;
+			}
+		
+		
 		if ( IterOfficer.HasActiveShield() &&  rejectShield ) //dont choose the shield bearer officer
 			continue;
 
