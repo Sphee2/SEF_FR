@@ -126,6 +126,7 @@ Begin:
 	
     EquipPepperSpray();
     AttackWithPepperSpray();
+	sleep(1.5);
     UnequipPepperSpray();
 
     succeed();
