@@ -33,6 +33,7 @@ var private Door				DoorOpening;
 
 // sensors we use
 var private DoorOpeningSensor	DoorOpeningSensor;
+var private VisionSensor		VisionSensor;
 
 // config variables
 var config float				ShootAtDoorsChance;
@@ -111,6 +112,12 @@ function cleanup()
 		DoorOpeningSensor.deactivateSensor(self);
 		DoorOpeningSensor = None;
 	}
+	
+	if (VisionSensor != None)
+	{
+		VisionSensor.deactivateSensor(self);
+		VisionSensor = None;
+	}
 
 	// if we were crouched, get up.
 	if (m_Pawn.bIsCrouched)
@@ -154,6 +161,11 @@ function OnSensorMessage( AI_Sensor sensor, AI_SensorData value, Object userData
 			DoorOpening = Door(value.objectData);
 			runAction();
 		}
+	}
+	else if (Sensor == VisionSensor && isIdle() ) 
+	{
+		//barricade is failed
+		instantFail(ACT_INSUFFICIENT_RESOURCES_AVAILABLE);
 	}
 	
 }
@@ -488,6 +500,19 @@ function CreateDoorOpeningSensor()
 			DoorOpeningSensor.AddDoor(ClosableDoorsInRoom[i]);
 		}
 	}
+	else 
+	{
+		//no doors no party
+		instantFail(ACT_INSUFFICIENT_RESOURCES_AVAILABLE);
+	}
+	
+}
+
+// if you override, call down the chain
+protected function ActivateVisionSensor()
+{
+	VisionSensor = VisionSensor(class'AI_Sensor'.static.activateSensor( self, class'VisionSensor', resource, 0, 1000000 ));
+	assert(VisionSensor != None);
 }
 
 function RemoveAimAroundGoal()
@@ -531,7 +556,7 @@ latent function ShootAtOpeningDoor()
 	AttackDoorGoal.Release();
 	AttackDoorGoal = None;
 
-	ISwatEnemy(m_Pawn).UnbecomeAThreat();
+	//ISwatEnemy(m_Pawn).UnbecomeAThreat(); 
 }
 
 private latent function AimAtOpeningDoor()
@@ -616,6 +641,9 @@ Begin:
 	{
 		m_Pawn.ShouldCrouch(true);
 	}
+
+
+	ActivateVisionSensor(); //if sensor is triggered just fail
 
 	// wait for a door to start opening, if that ever happens
 	pause();
