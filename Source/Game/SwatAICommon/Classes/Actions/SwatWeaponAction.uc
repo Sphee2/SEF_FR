@@ -216,11 +216,16 @@ final latent function LatentAimAtActor(Actor Target, optional float MaxWaitTime)
 			if ( fdot > 0.5 )
 			{
 				//log ( m_pawn.name $ " quick scope added time on target 0.8" );
-				MaxWaitTime = MaxWaitTime + 0.8;
+				MaxWaitTime = MaxWaitTime + 1.0;
 			}
-			else if ( fdot > 0.0 && fdot < 0.5 )
+			else if ( fdot > 0.0 && fdot < 0.5 &&  m_pawn.isa('SwatEnemy') )
 			{
 				//log ( m_pawn.name $ " quick scope added time on target 0.4" );
+				MaxWaitTime = MaxWaitTime + 0.6;
+			}
+			else if ( fdot > -0.5 && fdot <= 0.0 &&  m_pawn.isa('SwatEnemy') )
+			{
+				//log ( m_pawn.name $ " quick scope added time on target 0.2" );
 				MaxWaitTime = MaxWaitTime + 0.4;
 			}
 			 
@@ -256,7 +261,8 @@ final function AimAtActor(Actor Target)
 	if (Target != None) // possible bug fixing
 	{
 		if (ISwatAI(m_Pawn).AnimCanAimAtDesiredActor(Target))
-        	{
+        {
+			
 			ISwatAI(m_pawn).AimAtActor(Target);
 		}
 	}
@@ -278,13 +284,13 @@ latent function SetGunDirection( Actor Target ) // possible bug fixer
 		}
 		UpdateThreatToTarget(Target);
 		
-		if ( !AimHead )	
+		
+		//if ( !AimHead )	
 			cTarget = Target.GetBoneCoords('Bip01_Spine2');
-		else
-			cTarget = Target.GetBoneCoords('Bip01_Head');
+		//else
+		//	cTarget = Target.GetBoneCoords('Bip01_Head');
 		
 		vTarget = cTarget.Origin;
-		
 
         // Find the pitch between the gun and the target
         vDirection = vTarget - m_pawn.Location;
