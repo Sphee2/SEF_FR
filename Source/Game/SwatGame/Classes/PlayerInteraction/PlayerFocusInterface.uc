@@ -348,6 +348,11 @@ function bool DoorRelatedContextMatches(SwatPlayer Player, SwatDoor Door, Player
 		return false;
 	}
 	
+	if (Context.ShieldConditions)
+	{
+		return SpecialCondition_Shield(Player, Door);
+	}
+	
 	// This context is acceptable
 	return true;
 }

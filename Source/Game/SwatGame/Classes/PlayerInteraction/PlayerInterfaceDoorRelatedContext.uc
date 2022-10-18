@@ -43,6 +43,8 @@ var config bool AddFocus;
 var config bool BlockTrace;
 var config bool BlockTraceIfOpaque;
 
+var config bool ShieldConditions;
+
 //if true, and this context matches, then no contexts will be considered
 //  after this one for the current trace intersection (further trace
 //  intersections will again look for context match(es)).
