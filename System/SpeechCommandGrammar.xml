@@ -113,6 +113,18 @@ NOTES:
 			<PHRASE VALSTR="Command_Restrain">Make ?him ?her secure</PHRASE>
 
 			<PHRASE VALSTR="Command_MirrorRoom">Mirror ?into ?the room ...</PHRASE>
+			<PHRASE VALSTR="Command_TrapsAndMirror">Mirror ?behind ?under ?the door ...</PHRASE>
+			<PHRASE VALSTR="Command_MirrorUnderDoor">Check ?the ?door ?it for contacts.</PHRASE>
+			<PHRASE VALSTR="Command_MirrorUnderDoor">Check ?the ?door ?it for suspects.</PHRASE>
+			<PHRASE VALSTR="Command_MirrorUnderDoor">Look under ?the door ...</PHRASE>
+			<PHRASE VALSTR="Command_TrapsAndMirror">?Take ?a peek under ?the door ...</PHRASE>
+			<PHRASE VALSTR="Command_CheckForTraps">Check ?the ?door ?it for traps.</PHRASE>
+			<PHRASE VALSTR="Command_CheckForTraps">Look ?out for traps ?on ?the ?door</PHRASE>
+			<PHRASE VALSTR="Command_CheckForTraps">Search ?the ?door ?it for traps.</PHRASE>
+			<PHRASE VALSTR="Command_TrapsAndMirror">Mirror ?for all</PHRASE>
+			<PHRASE VALSTR="Command_TrapsAndMirror">Mirror ?for everything</PHRASE>
+			<PHRASE VALSTR="Command_TrapsAndMirror">Look for ?both contacts and traps ...</PHRASE>
+			<PHRASE VALSTR="Command_TrapsAndMirror">Look for ?both suspects and traps ...</PHRASE>
 			<PHRASE VALSTR="Command_MirrorCorner">Mirror ?around ?the corner ...</PHRASE>
 			<PHRASE VALSTR="Command_MirrorCorner">Look ?around ?the corner ...</PHRASE>
 			<PHRASE VALSTR="Command_MirrorCorner">?Take ?a peek ?around ?the corner ...</PHRASE>
