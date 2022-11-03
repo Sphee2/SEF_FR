@@ -128,6 +128,16 @@ NOTES:
 			<PHRASE VALSTR="Command_MirrorCorner">Mirror ?around ?the corner ...</PHRASE>
 			<PHRASE VALSTR="Command_MirrorCorner">Look ?around ?the corner ...</PHRASE>
 			<PHRASE VALSTR="Command_MirrorCorner">?Take ?a peek ?around ?the corner ...</PHRASE>
+			
+			<PHRASE VALSTR="Command_Heal_Me">Heal me ...</PHRASE>
+			<PHRASE VALSTR="Command_Heal_Me">Bandage on? me ...</PHRASE>
+			<PHRASE VALSTR="Command_Heal">Bandage on? him? her? officer?...</PHRASE>
+			<PHRASE VALSTR="Command_Heal">Heal him? her? officer?...</PHRASE>
+			
+			<PHRASE VALSTR="Command_CheckCorner">Check ?around ?the corner ...</PHRASE>
+			<PHRASE VALSTR="Command_CheckCorner">Look ?around ?the corner ...</PHRASE>
+			<PHRASE VALSTR="Command_CheckCorner">Cover ?the corner ...</PHRASE>
+			<PHRASE VALSTR="Command_CheckCorner">Take ?the corner ...</PHRASE>
 
 			<PHRASE VALSTR="Command_Deploy_Wedge">Deploy ... +wedge</PHRASE>
 			<PHRASE VALSTR="Command_Deploy_Wedge">Use ... +wedge</PHRASE>
