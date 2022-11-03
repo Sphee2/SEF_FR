@@ -34,6 +34,7 @@ event PostBeginPlay()
 // add all of our abilities to the Squad Resource -- subclasses should call down the chain
 protected function InitAbilities()
 {
+	SquadAI.addAbility( new class'SquadCheckCornerAction' );
 	SquadAI.addAbility( new class'SquadMirrorCornerAction' );
 	SquadAI.addAbility( new class'SquadMirrorDoorAction' );
 	SquadAI.addAbility( new class'SquadCloseDoorAction' );
@@ -124,8 +125,12 @@ function bool IsMovingAndClearing()
 
 function bool IsMovingInFormation()
 {
-	return ((CurrentSquadCommandGoal != None) && CurrentSquadCommandGoal.IsA('SquadMoveToGoal') && !CurrentSquadCommandGoal.hasCompleted());
+	return ((CurrentSquadCommandGoal != None) && 
+	( CurrentSquadCommandGoal.IsA('SquadMoveToGoal') ||  CurrentSquadCommandGoal.IsA('SquadCheckCornerGoal') )
+	&& !CurrentSquadCommandGoal.hasCompleted());
 }
+
+
 
 // is this squad (or in the case of the element, any of the subsquads) currently waiting for a "zulu" command?
 event bool IsHoldingCommand()
@@ -1955,6 +1960,35 @@ function bool MirrorCorner(Pawn CommandGiver, vector CommandOrigin, Actor Mirror
 
 	return false;
 }
+
+function bool CheckCorner(Pawn CommandGiver, vector CommandOrigin, Actor MirrorPoint)
+{
+	local SquadCheckCornerGoal CurrentSquadCheckCornerGoal;
+
+	assert(MirrorPoint != None);
+	assertWithDescription(MirrorPoint.IsA('IMirrorPoint'), "OfficerTeamInfo::CheckCorner - Actor passed in is not a IMirrorPoint");
+
+	if (CanExecuteCommand())
+	{
+		// if we're not a sub element, or if the other team is already interacting with the mirror point
+		if (!IsSubElement() || !IsOtherSubElementInteractingWith(MirrorPoint))
+		{
+			CurrentSquadCheckCornerGoal = new class'SquadCheckCornerGoal'(AI_Resource(SquadAI), CommandGiver, CommandOrigin, MirrorPoint);				
+			assert(CurrentSquadCheckCornerGoal != None);
+
+			PostCommandGoal(CurrentSquadCheckCornerGoal);
+			return true;	// command issued
+		}
+		else
+		{
+			TriggerOtherTeamDoingBehaviorSpeech();
+		}
+	}
+
+	return false;
+}
+
+
 
 function bool DeployTaser(Pawn CommandGiver, vector CommandOrigin, Pawn TargetPawn)
 {

@@ -928,6 +928,27 @@ function bool IsMovingTo(Pawn Officer)
 	}
 }
 
+function bool IsMovingInFormation(Pawn Officer)
+{
+	if(SwatAIRepo.GetElementSquad().IsMovingInFormation())
+	{
+		return true;
+	}
+	else if(SwatAIRepo.GetRedSquad().IsOfficerOnTeam(Officer) &&
+		SwatAIRepo.GetRedSquad().IsExecutingCommandGoal() &&
+		SwatAIRepo.GetRedSquad().IsMovingInFormation())
+	{
+		return true;
+	}
+	else if(SwatAIRepo.GetBlueSquad().IsOfficerOnTeam(Officer) &&
+		SwatAIRepo.GetBlueSquad().IsExecutingCommandGoal() &&
+		SwatAIRepo.GetBlueSquad().IsMovingInFormation())
+	{
+		return true;
+	}
+	return false;
+}
+
 function SquadMoveToGoal GetMoveToGoalForOfficer(Pawn Officer)
 {
 	if(SwatAIRepo.GetElementSquad().IsExecutingCommandGoal() && SwatAIRepo.GetElementSquad().IsMovingTo())

@@ -269,6 +269,7 @@ enum ECommand
 	//
 	Command_Heal, //heal pawns with field dress
 	Command_Heal_Me, //heal local player
+	Command_CheckCorner, //check corner
 	
     Command_Static,
 };
@@ -1064,6 +1065,8 @@ simulated function SetCommandStatus(Command Command, optional bool TeamChanged)
 	//} else if(Level.NetMode == NM_Standalone && Command.Command == Command_Request_Optiwand
 	//	&& SwatGamePlayerController(Level.GetLocalPlayerController()).SwatPlayer.GetEquipmentAtSlot(Slot_Optiwand) != None) {
 	//	Status = Pad_GreyedOut; // optiwand not allowed when the player has an optiwand
+	} else if(Level.NetMode == NM_Standalone && Command.Command == Command_CheckCorner){
+		Status = Pad_Normal;
 	} else if(Level.NetMode == NM_Standalone && CommandUsesPepperSpray(Command) && !CurrentCommandTeam.DoesAnOfficerHaveUsableEquipment(Slot_PepperSpray)) {
 		Status = Pad_GreyedOut;
 	} else if (Level.NetMode == NM_Standalone && CommandUsesGas(Command) && !CurrentCommandTeam.DoesAnOfficerHaveUsableEquipment(Slot_CSGasGrenade)) {
@@ -2198,6 +2201,14 @@ simulated function SendCommandToOfficers()
                     PendingCommandOrigin,
                         PendingCommandTargetActor);
             break;
+			
+	    case Command_CheckCorner:
+		   if (PendingCommandTargetActor != None)
+                bCommandIssued = PendingCommandTeam.CheckCorner(
+                    Level.GetLocalPlayerController().Pawn,
+                    PendingCommandOrigin,
+                        PendingCommandTargetActor);
+            break;
 
         //Commands that require a valid Door
 
@@ -2810,6 +2821,7 @@ simulated protected function Actor GetPendingCommandTargetActor()
             return GetPendingFocusOfClass('IEvidence');
 
         case Command_MirrorCorner:
+		case Command_CheckCorner:
             return GetPendingFocusOfClass('MirrorPoint');
 			
 		//FR

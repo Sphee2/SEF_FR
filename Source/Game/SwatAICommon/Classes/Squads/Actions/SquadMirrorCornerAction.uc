@@ -17,7 +17,7 @@ var private MirrorCornerGoal			CurrentMirrorCornerGoal;
 // copied from our goal
 var(parameters) Actor					TargetMirrorPoint;
 
-const kMinDistanceToMirrorPoint = 250.0;
+const kMinDistanceToMirrorPoint = 120.0;
 
 ///////////////////////////////////////////////////////////////////////////////
 //

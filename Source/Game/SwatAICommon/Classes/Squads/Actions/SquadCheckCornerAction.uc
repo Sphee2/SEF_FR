@@ -1,26 +1,32 @@
 ///////////////////////////////////////////////////////////////////////////////
-// SquadMoveToAction.uc - SquadMoveToAction class
-// this action is used to organize the Officer's MoveTo behavior
+// SquadMirrorCornerAction.uc - SquadMirrorCornerAction class
+// this action is used to organize the Officer's mirroring of corners
 
-class SquadMoveToAction extends OfficerSquadAction;
+class SquadCheckCornerAction extends OfficerSquadAction;
 ///////////////////////////////////////////////////////////////////////////////
+
+import enum EquipmentSlot from Engine.HandheldEquipment;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Variables
 
-// copied from our goal
-var(parameters) vector			Destination;
-
 // behaviors we use
-var private array<MoveToGoal>	MoveToGoals;
+
+var private array<MoveToLocationGoal>	MoveToGoals;
 var private array<MoveInFormationGoal>	MoveInFormationGoals;
 var private Formation					ClearFormation;
+var private array<CheckCornerGoal>	CurrentCheckCornerGoal;
+
+// copied from our goal
+var(parameters) Actor					TargetMirrorPoint;
+var(parameters) vector                  CommandOrigin;
+var(parameters) Pawn				    CommandGiver;
 
 // internal
 var private LevelInfo			Level;
 
-const kMinDistanceToReplyToOrder = 100.0;
+const kMinDistanceToMirrorPoint = 100.0;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -29,9 +35,8 @@ const kMinDistanceToReplyToOrder = 100.0;
 function cleanup()
 {
 	super.cleanup();
-
+	
 	ClearOutMoveToGoals();
-	ClearFormationGoals();
 }
 
 private function ClearOutMoveToGoals()
@@ -47,12 +52,7 @@ private function ClearOutMoveToGoals()
 		MoveToGoals.Remove(0, 1);
 	}
 	
-	
-	
-}
-private function ClearFormationGoals()
-{
-/*
+	/*
 	while (MoveInFormationGoals.Length > 0)
 	{
 		if (MoveInFormationGoals[0] != None)
@@ -64,7 +64,29 @@ private function ClearFormationGoals()
 		MoveInFormationGoals.Remove(0, 1);
 	}
 	*/
+	while (CurrentCheckCornerGoal.Length > 0)
+	{
+		if (CurrentCheckCornerGoal[0] != None)
+		{
+			CurrentCheckCornerGoal[0].Release();
+			CurrentCheckCornerGoal[0] = None;
+		}
+
+		CurrentCheckCornerGoal.Remove(0, 1);
+	}
+	
+	
+	/*
+	// clear out the formation
+	if (ClearFormation != None)
+	{
+		ClearFormation.Cleanup();
+		ClearFormation.Release();
+		ClearFormation = None;
+	}
+	*/
 }
+
 ///////////////////////////////////////////////////////////////////////////////
 //
 // Tyrion callbacks
@@ -73,26 +95,26 @@ function goalNotAchievedCB( AI_Goal goal, AI_Action child, ACT_ErrorCodes errorC
 {
 	super.goalNotAchievedCB(goal, child, errorCode);
 
-	// if any of our move to goals fail, we succeed so we don't get reposted!
-	if (goal.IsA('MoveToGoal'))
+	// if any of our goals fail, we succeed so we don't get reposted!
+	if (goal.IsA('CheckCornerGoal'))
 	{
 		instantSucceed();
 	}
 }
-
 ///////////////////////////////////////////////////////////////////////////////
+//
+// State Code
 
 latent function MoveOfficersToDestination()
 {
 	local int PawnIterIndex, MoveToIndex , MoveInFormIndex;
 	local Pawn PawnIter , ShieldOfficer;
-	local NavigationPoint ClosestPointToDestination;
-	local name DestinationRoomName;
 	local SwatAIRepository SwatAIRepo;
 
 	SwatAIRepo = SwatAIRepository(Level.AIRepo);
-	
-	DestinationRoomName       = SwatAIRepo.GetClosestRoomNameToPoint(Destination, CommandGiver);
+
+	/*	
+	DestinationRoomName       = SwatAIRepo.GetClosestRoomNameToPoint(TargetMirrorPoint, CommandGiver);
 	yield();
 
 	// find the closest navigation point, but don't use any doors
@@ -102,42 +124,35 @@ latent function MoveOfficersToDestination()
 
 	if (resource.pawn().logTyrion)
 		log(Name $ " - DestinationRoomName is: " $ DestinationRoomName $ " ClosestPointToDestination: " $ ClosestPointToDestination $ " Destination: " $ Destination);
-/*
-	for(PawnIterIndex=0; PawnIterIndex<squad().pawns.length; ++PawnIterIndex)
-	{
-		PawnIter = squad().pawns[PawnIterIndex];
-
-		MoveToGoals[MoveToIndex] = new class'MoveToGoal'(AI_Resource(PawnIter.characterAI), ClosestPointToDestination);
-		assert(MoveToGoals[MoveToIndex] != None);
-		MoveToGoals[MoveToIndex].AddRef();
-			
-		MoveToGoals[MoveToIndex].PostGoal(self);
-
-		++MoveToIndex;
-	}
-*/
+	*/
+	
 	ShieldOfficer = GetFirstShieldOfficer();
 	if ( ShieldOfficer == None )
-			ShieldOfficer = GetClosestOfficerTo(ClosestPointToDestination);
+		ShieldOfficer = GetClosestOfficerTo(TargetMirrorPoint, false, false);
 	
 	ClearFormation = new class'Formation'(ShieldOfficer);
 	ClearFormation.AddRef();
 	ISwatOfficer(ShieldOfficer).SetCurrentFormation(ClearFormation);
 	
-	
+	log( "SquadCheckCornerGoal Move");
 	
 	if ( ShieldOfficer != None )
 	{
 		ShieldOfficer.DisableCollisionAvoidance(); //make possible to stay close to shield guy
 			
-		MoveToGoals[MoveToIndex] = new class'MoveToGoal'(AI_Resource(ShieldOfficer.characterAI), ClosestPointToDestination);
+		MoveToGoals[MoveToIndex] = new class'MoveToLocationGoal'(AI_Resource(ShieldOfficer.MovementAI),achievingGoal.priority,   ( IMirrorPoint(TargetMirrorPoint).GetMirroringFromPoint() + IMirrorPoint(TargetMirrorPoint).GetMirroringToPoint()) /2);
 		assert(MoveToGoals[MoveToIndex] != None);
 		MoveToGoals[MoveToIndex].AddRef();
-			
+		
+		MoveToGoals[MoveToIndex].SetRotateTowardsPointsDuringMovement(true);
+		MoveToGoals[MoveToIndex].SetShouldWalkEntireMove(false);
+		MoveToGoals[MoveToIndex].SetWalkThreshold(450.0);
+
+		
 		MoveToGoals[MoveToIndex].PostGoal(self);
 		++MoveToIndex;
 		
-		while ( ShieldOfficer != GetClosestOfficerTo(ClosestPointToDestination, false, false) )
+		while ( ShieldOfficer != GetClosestOfficerTo(TargetMirrorPoint, false, false) )
 			sleep(1.0); //give shield officer time to move upfront
 	}
 	
@@ -148,16 +163,7 @@ latent function MoveOfficersToDestination()
 
 		if ( PawnIter == ShieldOfficer )
 		{
-			/*
-			PawnIter.DisableCollisionAvoidance(); //make possible to stay close to shield guy
-			
-			MoveToGoals[MoveToIndex] = new class'MoveToGoal'(AI_Resource(PawnIter.characterAI), ClosestPointToDestination);
-			assert(MoveToGoals[MoveToIndex] != None);
-			MoveToGoals[MoveToIndex].AddRef();
-			
-			MoveToGoals[MoveToIndex].PostGoal(self);
-			++MoveToIndex;
-			*/
+			//do nothing
 		}
 		else
 		{
@@ -185,49 +191,91 @@ latent function MoveOfficersToDestination()
 			
 	}
 
+	while ( Vsize(ShieldOfficer.Location - TargetMirrorPoint.location ) > kMinDistanceToMirrorPoint )
+		 yield();
+	
+	
 	waitForAllGoalsInList(MoveToGoals);
 
 	ShieldOfficer.EnableCollisionAvoidance(); //re-enable collision
 	
 	// cleanup!
-	ClearOutMoveToGoals();
-	ClearFormationGoals();
+	//ClearOutMoveToGoals();
+	
 }
 
-function TriggerRepliedMoveToSpeech()
+latent function CheckAroundCorner()
 {
-	local Pawn FirstOfficer;
-
-	FirstOfficer = GetFirstOfficer();
-	if (VSize2D(Destination - FirstOfficer.Location) > kMinDistanceToReplyToOrder)
+	local int PawnIterIndex;
+	local Pawn Officer,PawnIter;
+	
+	Officer = GetClosestOfficerTo(TargetMirrorPoint, false, false);
+	assert(Officer != None);
+	
+	for(PawnIterIndex=0; PawnIterIndex<squad().pawns.length; ++PawnIterIndex)
 	{
-		ISwatOfficer(FirstOfficer).GetOfficerSpeechManagerAction().TriggerRepliedMoveToSpeech();
+		PawnIter = squad().pawns[PawnIterIndex];
+
+		if ( PawnIter == Officer )
+		{
+			CurrentCheckCornerGoal[PawnIterIndex] = new class'CheckCornerGoal'(AI_Resource(PawnIter.CharacterAI),TargetMirrorPoint,CommandOrigin);
+			assert(CurrentCheckCornerGoal[PawnIterIndex] != None);
+			CurrentCheckCornerGoal[PawnIterIndex].AddRef();
+			CurrentCheckCornerGoal[PawnIterIndex].PostGoal(self);
+		}
+	}
+	
+	waitForAllGoalsInList(CurrentCheckCornerGoal);
+
+		// cleanup!
+	ClearOutMoveToGoals();
+}
+
+protected function TriggerCoverReplySpeech()
+{
+	local Pawn ClosestOfficerToCommandGiver;
+
+	ClosestOfficerToCommandGiver = GetClosestOfficerTo(CommandGiver, false, false);
+
+	if (ClosestOfficerToCommandGiver != None)
+	{
+		// trigger a generic reply
+		ISwatOfficer(ClosestOfficerToCommandGiver).GetOfficerSpeechManagerAction().TriggerGenericOrderReplySpeech();
 	}
 }
 
-function TriggerCompletedMoveToSpeech()
+// Tell the officer to say "Roger" etc
+function TriggerSpeech()
 {
-	ISwatOfficer(GetFirstOfficer()).GetOfficerSpeechManagerAction().TriggerCompletedMoveToSpeech();
+	local Pawn ClosestOfficerToCommandGiver;
+
+	ClosestOfficerToCommandGiver = GetClosestOfficerTo(CommandGiver, false, false);
+
+	if (ClosestOfficerToCommandGiver != None)
+	{
+		// trigger a generic reply
+		ISwatOfficer(ClosestOfficerToCommandGiver).GetOfficerSpeechManagerAction().TriggerGenericOrderReplySpeech();
+	}
 }
+
 
 state Running
 {
 Begin:
-	Level = resource.pawn().Level;
-	assert(Level != None);
-		
-	TriggerRepliedMoveToSpeech();
+	
+	TriggerSpeech();
+	MoveOfficersToDestination();
 
 	WaitForZulu();
 
-	MoveOfficersToDestination();
-
-	TriggerCompletedMoveToSpeech();
+	TriggerCoverReplySpeech();
+	CheckAroundCorner();
+	
     succeed();
 }
 
 ///////////////////////////////////////////////////////////////////////////////
 defaultproperties
 {
-	satisfiesGoal = class'SquadMoveToGoal'
+	satisfiesGoal = class'SquadCheckCornerGoal'
 }

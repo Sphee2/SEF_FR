@@ -12,6 +12,7 @@ class MoveToAction extends SwatCharacterAction;
 // behaviors we use
 var private MoveToActorGoal		CurrentMoveToActorGoal;
 var private AimAroundGoal		CurrentAimAroundGoal;
+var private RotateTowardActorGoal	CurrentRotateTowardActorGoal;
 
 // copied from our goal
 var(parameters) Actor			Destination;
@@ -41,6 +42,12 @@ function cleanup()
 	{
 		CurrentAimAroundGoal.Release();
 		CurrentAimAroundGoal = None;
+	}
+	
+	if (CurrentRotateTowardActorGoal != None)
+	{
+		CurrentRotateTowardActorGoal.Release();
+		CurrentRotateTowardActorGoal = None;
 	}
 }
 
@@ -96,6 +103,18 @@ latent function MoveToDestination()
 	CurrentMoveToActorGoal = None;
 }
 
+latent function RotateToFaceDestination(Actor Dest)
+{
+
+	CurrentRotateTowardActorGoal = new class'RotateTowardActorGoal'(movementResource(), achievingGoal.priority, Dest);
+	assert(CurrentRotateTowardActorGoal != None);
+	CurrentRotateTowardActorGoal.AddRef();
+
+	CurrentRotateTowardActorGoal.postGoal(self);
+	
+	WaitForGoal(CurrentRotateTowardActorGoal);
+}
+
 state Running
 {
 Begin:
@@ -103,6 +122,9 @@ Begin:
 
 	AimAround();
 	MoveToDestination();
+	
+	if (IswatOfficer(m_pawn).IsInFormation())
+		RotateToFaceDestination(Destination);
 
 	succeed();
 }
