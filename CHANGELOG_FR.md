@@ -14,6 +14,83 @@ https://discord.gg/Vu4r7sv7uF
 FEATURE LIST: 
 ==============
 
+
+#### V0.67 Beta 2 ####
+ADDED: 
+    GAMEPLAY:
+			 - Medical System: 
+			            - healing gives 100% health
+						- added "HEAL ME" AI command
+						- new HEAL voice command lines ( i.e. "Gold , heal me" will result in AI heal you ) 
+						
+             - "CHECK CORNER" command 
+			            - AI can move to corners and check whats behind that
+						- command trigger on mirror points
+						
+             - WeaponBob activated 
+			            - player's camera is moving during walk to give a more dynamic feeling
+						
+			 - restored Optiwand "under-door" capability 
+			 - revised player speed 
+			 - Fallen door chance after a blast or a breach is depending on door material
+		
+    AI: 
+	         - revised AI reaction iteration and timings 
+						- AI reaction times are dependent on suspect rotation to its target 
+						
+			 - AI aim and shoot behavior being reworked to be more consistent and dangerous
+				
+FIXED: 
+             - fixed many deadlocks in suspect AI actions that were making them idle for no reason 
+			 - improved AI pepperspray and taser shooting (not perfect but more consistent )
+	
+
+
+#### V0.67 HOTFIX 1 ####			
+FIXED:      
+            - SP Shield penetrations 
+			- MP shield penetration 
+			- Shield as Primary Weapon for SWAT AI 
+			- Taser probes collision on player shield 
+			- Blasted doors with wedges bad behavior 
+			- 5th slot bug 
+			- double shield equip , shield now are only secondary equip. 
+			- round in chamber when quick reload 
+			- Removed Forced Arrest
+			- Blasted doors desync in MP
+			- Suspect weapon dropping after arrest
+			- Removed Optiwand sharing to fix equip bug
+			
+#### V0.67 Beta 1 ####
+
+ADDED: 
+    GAMEPLAY:
+	        - The Shield: combined pistols (or taser) with a Level3A rated tactical shield. 
+			            
+						Can be equipped by AI officers and they can move in formation with it ( MOVE-TO command for example ).
+						
+						
+			- Medical System: bandages that can heal the limping player or AI Officer.
+			            - single bandage 
+						- Medic Kit with 5 bendages
+						
+						Press K (default key) to equip and Left Mouse buttun to use while near a wounded officer.
+						
+            - Quick Reload: pressing Hold Command (CTRL default) + Reload permits you to quick change magazine at the cost of losing it.
+			
+			- Breached Door Falling: Doors can now detach from the frame after a C2 explosion (for the maximum cinematic effect)
+            - Forced Arrest: you can arrest anyone who is stunned/gassed/etc at the price of a little penalty (-2)
+            - Blasted Doors with shotgun have now chance to be opened immediatly after the shot			
+	AI:     
+            - Hostages can possibly comply by just seeing the officers.
+			
+FIXED:      
+            - Barricade suspects behavior is working as intended
+			- Suspect Threat detection is now activated just before they start to aim to avoid delays (particularly in MP) and bad ROE detection
+			- Reduced Suspects and Officers punch chance to avoid fist fight "exploitation" 
+			- Fixed bad istances where suspects are still holding a gun after been arrested
+
+
 #### V0.66 ####
 
 ADDED:

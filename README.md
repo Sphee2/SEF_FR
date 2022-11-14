@@ -11,6 +11,37 @@ https://discord.gg/Vu4r7sv7uF
 
 # FEATURE LIST: #
 
+#### V0.67 Beta 2 ####
+ADDED: 
+    GAMEPLAY:
+			 - Medical System: 
+			            - healing gives 100% health
+						- added "HEAL ME" AI command
+						- new HEAL voice command lines ( i.e. "Gold , heal me" will result in AI heal you ) 
+						
+             - "CHECK CORNER" command 
+			            - AI can move to corners and check whats behind that
+						- command trigger on mirror points
+						
+             - WeaponBob activated 
+			            - player's camera is moving during walk to give a more dynamic feeling
+						
+			 - restored Optiwand "under-door" capability 
+			 - revised player speed 
+			 - Fallen door chance after a blast or a breach is depending on door material
+		
+    AI: 
+	         - revised AI reaction iteration and timings 
+						- AI reaction times are dependent on suspect rotation to its target 
+						
+			 - AI aim and shoot behavior being reworked to be more consistent and dangerous
+				
+FIXED: 
+             - fixed many deadlocks in suspect AI actions that were making them idle for no reason 
+			 - improved AI pepperspray and taser shooting (not perfect but more consistent )
+	
+
+
 #### V0.67 HOTFIX 1 ####			
 FIXED:      
             - SP Shield penetrations 
@@ -26,7 +57,7 @@ FIXED:
 			- Suspect weapon dropping after arrest
 			- Removed Optiwand sharing to fix equip bug
 			
-#### V0.67 ####
+#### V0.67 Beta 1 ####
 
 ADDED: 
     GAMEPLAY:
