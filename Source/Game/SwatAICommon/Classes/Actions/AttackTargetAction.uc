@@ -221,12 +221,6 @@ latent function AttackTarget()
 
     ISwatAI(m_pawn).UnLockAim();
 	
-	/*
-	if (!bHavePerfectAim)
-		AimAtActor(Target);
-	else
-		AimAtPoint(Pawn(Target).GetHeadLocation());
-	*/
 	LatentAimAtActor(Target);
 	
     // @HACK: See comments in ISwatAI::LockAim for more info.
@@ -239,12 +233,13 @@ latent function AttackTarget()
 	}
 
   // wait until we can hit the target (make sure the target is still conscious too!)
-  while(!bSuppressiveFire && !m_Pawn.CanHitTarget(Target) && ((TargetPawn == None) || class'Pawn'.static.checkConscious(TargetPawn)))
-  {
+  while(!bSuppressiveFire && !m_Pawn.CanHitTarget(Target) && !m_Pawn.CanShootTarget(Target) &&((TargetPawn == None) || class'Pawn'.static.checkConscious(TargetPawn)))
+  {		
 		if (m_Pawn.logTyrion)
 			log(m_Pawn.Name $ " is waiting to be able to hit target " $ TargetPawn);
 		
-		if (Level.TimeSeconds >= TimeToStopTryingToAttack) //we cant hold forever....
+		if (Level.TimeSeconds >= TimeToStopTryingToAttack || //we cant hold forever.... 
+		    FiredWeapon(m_Pawn.GetActiveItem()) == None )  //...imagine shoot without a gun...
 		{
 			if (m_Pawn.logTyrion)
 				log(self.Name $ " ran out of time to attack.  failing!");
@@ -264,7 +259,8 @@ latent function AttackTarget()
 		if (bHavePerfectAim)
 			CurrentWeapon.SetPerfectAimNextShot();
 
-		AimAndFireAtTarget(CurrentWeapon);
+			AimAndFireAtTarget(CurrentWeapon);
+
 
 		if (ShouldSucceed())
 		{

@@ -1935,19 +1935,35 @@ simulated function Rotator GetAimRotation()
 
 	ActiveItem = GetActiveItem();
 
-	if (FireWhereAiming())
+	if (FireWhereAiming() )
 	{
 		return AnimGetAimRotation();
 	}
-    else if (CurrentWeaponTarget != None)
-    {
-        TargetLocation = CurrentWeaponTarget.GetFireLocation(ActiveItem);
+	
+    if (CurrentWeaponTarget != None )
+	{
+		if (FiredWeapon(ActiveItem).bAimAtHead && !FiredWeapon(ActiveItem).isa('Taser'))
+		{
+			if (CurrentWeaponTarget.isa('SwatPawn'))
+				TargetLocation = Pawn(CurrentWeaponTarget).GetHeadLocation();
+			else
+				TargetLocation = CurrentWeaponTarget.GetFireLocation(ActiveItem);
+		}
+		else if (FiredWeapon(ActiveItem).isa('Taser') )
+		{
+			if (CurrentWeaponTarget.isa('SwatPawn'))
+				TargetLocation = Pawn(CurrentWeaponTarget).GetChestLocation();
+			else
+				TargetLocation = CurrentWeaponTarget.GetFireLocation(ActiveItem);
+		}
+		else
+				TargetLocation = CurrentWeaponTarget.GetFireLocation(ActiveItem);
     }
-    else
-    {
-        TargetLocation = CurrentWeaponTargetLocation;
-    }
-
+	else
+	{
+			TargetLocation = CurrentWeaponTargetLocation;
+	}
+	
 	// if it's a cs ball launcher, we need to take gravity into account
 	if ((ActiveItem != None) && ActiveItem.IsA('CSBallLauncher'))
 	{
@@ -1955,7 +1971,9 @@ simulated function Rotator GetAimRotation()
 	}
 	else
 	{
-		return rotator(TargetLocation - GetAimOrigin());
+		//return rotator(TargetLocation - GetAimOrigin());
+		
+		return rotator(TargetLocation - GetBoneCoords('GripRHand', true).Origin );
 	}
 }
 
@@ -2001,6 +2019,13 @@ simulated native function vector GetAimOrigin();
 //{
 //	return Location + EyePosition();
 //}
+
+simulated function vector GetAimOrigin_Melee() 
+{
+	return Location + EyePosition();
+}
+
+
 
 simulated function vector EyePosition()
 {
@@ -2069,9 +2094,32 @@ event bool CanHitTarget(Actor Target)
 	if (FiredWeapon(GetActiveItem()) != None )
 		return CanHit(Target);
 	else
+		return false;	
+}
+
+event bool CanShootTarget(Actor Target)
+{
+local float DotP;
+local vector aimOrt , targetOrt;
+	
+	if (FiredWeapon(GetActiveItem()) != None )
+	{
+		aimOrt = vector(GetAimOrientation());
+		aimOrt.Z =0 ;
+		targetOrt = Normal(Target.Location - self.Location);
+		targetOrt.Z =0 ;
+	    DotP = aimOrt Dot targetOrt;	
+		
+		if ( DotP > 0.707 ) //target in front
+			return true;
+		
+		return false;
+	}
+	else
 		return false;
 	
 }
+
 
 simulated function SEFDebugSensor()
 {
