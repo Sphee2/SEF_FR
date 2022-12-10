@@ -1087,6 +1087,7 @@ simulated event GetPerfectFireStart(out vector outLocation, out rotator outDirec
     local Actor Junk;   //we don't care about this, it's just a required param to PlayerCalcView
 	local Coords WeaponCoords;
 	local bool InstigatorIsConscious;
+	Local vector  HitLocation, HitNormal;
 
     if (Instigator.IsA('SwatPlayer'))
     {
@@ -1096,8 +1097,23 @@ simulated event GetPerfectFireStart(out vector outLocation, out rotator outDirec
         {
 			if (Pawn(Owner).Controller != None)  // is weapon held by the local player?
 			{
-				// trace from the first-person viewpoint center
-				PlayerController(Pawn(Owner).Controller).PlayerCalcView(Junk, outLocation, outDirection);
+				if ( PlayerController(Pawn(Owner).Controller).bBehindView ) //third person				
+				{
+					// trace from the first-person viewpoint center
+					PlayerController(Pawn(Owner).Controller).PlayerCalcView(Junk, outLocation, outDirection);
+					
+					Trace( HitLocation, HitNormal,  outLocation + vector(outdirection) * Range ,outLocation) ;
+						
+					// from the 3rd person eye position.
+					WeaponCoords = Pawn(Owner).GetBoneCoords('GripRHand', true);
+					outLocation = WeaponCoords.Origin;
+					outDirection = Rotator(Normal( HitLocation - outLocation));
+				}
+				else
+				{	
+					// trace from the first-person viewpoint center
+					PlayerController(Pawn(Owner).Controller).PlayerCalcView(Junk, outLocation, outDirection);
+				}
 			}
 			else // it's a remote player's pawn in MP
 			{

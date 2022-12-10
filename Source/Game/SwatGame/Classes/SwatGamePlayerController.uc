@@ -17,6 +17,7 @@ import enum FireMode from Engine.FiredWeapon;
 import enum DoorPosition from Engine.Door;
 import enum eVoiceType from SwatGame.SwatGUIConfig;
 
+
 var int FlashbangRetinaImageTextureWidth;
 var int FlashbangRetinaImageTextureHeight;
 var private FlashbangCameraEffect   FlashbangCameraEffect;
@@ -289,6 +290,8 @@ var bool WantedZoom;
 var MovingMode unused2;
 var MovingMode unused3;
 var MovingMode unused4;*/
+
+var bool bViewSide;
 
 replication
 {
@@ -760,7 +763,9 @@ simulated function UpdateFocus()
         return;
     }
 
-    if (bBehindView) return;    //help debugging... retain previous focus when going into 3rd person
+	//REMOVE THIS FOR 3RD PERSON CAMERA ACTION!
+    if (bBehindView) return;    //help debugging... retain previous focus when going into 3rd person 
+	
 
     CalcViewForFocus(Candidate, CameraLocation, CameraRotation );
     LastFocusUpdateOrigin = CameraLocation;
@@ -6339,6 +6344,80 @@ exec function Testbandage()
 {
 	SwatPlayer(Pawn).HealLimping();
 }
+
+
+//---------------------------------------------------------------------------------------------------------
+//third person camera - DISABLED CAUSE CAMERA EFFECTS ANLY WORKS IN 1ST PERSON CAMERA
+//---------------------------------------------------------------------------------------------------------
+function CalcBehindView_TEST(out vector CameraLocation, out rotator CameraRotation, float Dist)
+{
+	local vector View,HitLocation,HitNormal,LWSVectOffset;
+	local vector Offset;
+    local float ViewDist,RealDist;
+	local int LeanOffset;
+	
+	Offset.X = 50;
+
+	CameraRotation = Rotation;
+	if ( bBlockCloseCamera )
+		CameraLocation.Z += 12;
+
+	//View = vect(1,0,0) >> CameraRotation;
+	View =  vect(1,0,0) >> CameraRotation;
+	
+    // add view radius offset to camera location and move viewpoint up from origin (amb)
+    RealDist = Dist;
+
+    if( Trace( HitLocation, HitNormal, CameraLocation - Dist * vector(CameraRotation), CameraLocation,false,vect(10,10,10) ) != None )
+		ViewDist = FMin( (CameraLocation - HitLocation) Dot View, Dist );
+	else
+		ViewDist = Dist;
+
+    if ( !bBlockCloseCamera || !bValidBehindCamera || (ViewDist > 10 + FMax(ViewTarget.CollisionRadius, ViewTarget.CollisionHeight)) )
+	{
+		//Log("Update Cam ");
+		bValidBehindCamera = true;
+		OldCameraLoc = CameraLocation - ViewDist * View;
+
+		if ( bLeanRight == 0 && bLeanLeft == 0 )
+		{
+			/*
+			if ( SwatPlayer.LWS == Lean_Right || SwatPlayer.LWS == Lean_Unright || !bViewSide)
+				LeanOffset = 25;
+			else if ( SwatPlayer.LWS == Lean_Left || SwatPlayer.LWS == Lean_UnLeft || bViewSide)
+				LeanOffset = - 7;
+			else 
+			{*/
+				if (!bViewSide)
+					LeanOffset = 25;
+				else
+					LeanOffset = - 7;
+			//}
+				
+			LWSVectOffset.Y = ( ( SwatPlayer.LWSrollrate / 2500.0  ) * 20 ) + LeanOffset;	
+			OldCameraLoc=   OldCameraLoc + ( ( Pawn.EyePosition() +  LWSVectOffset  ) >> CameraRotation  ); 
+		}
+		else
+			OldCameraLoc=   OldCameraLoc +  ( Pawn.CalcDrawOffset()  >> SwatPlayer.ViewRotationOffset() ) ; 
+			
+		//OldCameraRot = CameraRotation;
+		OldCameraRot=CameraRotation;
+	}
+	else
+	{
+		//Log("Dont Update Cam "$bBlockCloseCamera@bValidBehindCamera@ViewDist);
+		SetRotation(OldCameraRot);
+	}
+    CameraLocation = OldCameraLoc;
+    CameraRotation = OldCameraRot;
+}
+
+exec function ChangeViewSide()
+{
+	bViewSide = !bViewSide;
+}
+//--------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------
 
 exec function Loc()
 {
