@@ -155,8 +155,7 @@ function InitComponent(GUIComponent MyOwner)
         {
 			EquipmentClass = class<Object>(DynamicLoadObject( GC.AvailableEquipmentPockets[i].EquipmentClassName[j], class'Class'));
 
-            if( GC.AvailableEquipmentPockets[i].bSelectable[j] == 0 ||
-                !CheckValidity( EquipmentClass, GC.AvailableEquipmentPockets[i].Validity[j] ) )
+            if( GC.AvailableEquipmentPockets[i].bSelectable[j] == 0 )	//|| !CheckValidity( EquipmentClass, GC.AvailableEquipmentPockets[i].Validity[j] ) )
                 Continue;
 
 			EquipmentList[i].Add( string(EquipmentClass.Name), EquipmentClass );
