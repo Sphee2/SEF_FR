@@ -151,6 +151,14 @@ function bool ContextMatches(SwatPlayer Player, Actor Target, PlayerInterfaceCon
 		}
 	}
 
+	if(UseContext.CaresAboutRestrainedOnFloor)
+	{
+		if(SwatPawn == None || SwatAI(Target).HasBeenReportedToTOC() ^^ UseContext.IsReported)
+		{
+			return false;
+		}
+	}
+
 	if(UseContext.CaresAboutRestrained)
 	{
 		if(SwatPawn == None || SwatPawn.IsArrested() ^^ UseContext.IsRestrained)

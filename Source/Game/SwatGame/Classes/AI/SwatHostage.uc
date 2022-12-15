@@ -68,6 +68,7 @@ protected function ConstructCharacterAI()
 	characterResource.addAbility(new class'SwatAICommon.HostageReactionToOfficersAction');
 	characterResource.addAbility(new class'SwatAICommon.CowerAction');
 	characterResource.addAbility(new class'SwatAICommon.RestrainedAction');
+	characterResource.addAbility(new class'SwatAICommon.RestrainedFloorAction');
 
 	// call down the chain
 	Super.ConstructCharacterAI();

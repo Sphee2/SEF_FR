@@ -199,6 +199,7 @@ function float GetTimeToWaitBeforeFiring();
 // Animation
 
 function SwapInRestrainedAnimSet();
+function SwapInRestrainedFloorAnimSet();
 function SwapInCompliantAnimSet();
 
 // Flashbang animations

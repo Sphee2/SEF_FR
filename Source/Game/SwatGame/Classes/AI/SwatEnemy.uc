@@ -317,6 +317,7 @@ protected function ConstructCharacterAI()
     characterResource.addAbility(new class'SwatAICommon.BarricadeAction');
     characterResource.addAbility(new class'SwatAICommon.InvestigateAction');
 	characterResource.addAbility(new class'SwatAICommon.RestrainedAction');
+	characterResource.addAbility(new class'SwatAICommon.RestrainedFloorAction');
 	characterResource.addAbility(new class'SwatAICommon.TakeCoverAction');
 	characterResource.addAbility(new class'SwatAICommon.EnemyComplianceAction');
 	characterResource.addAbility(new class'SwatAICommon.EnemyCowerAction');

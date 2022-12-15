@@ -1,14 +1,8 @@
 ///////////////////////////////////////////////////////////////////////////////
-// RestrainedGoal.uc - RestrainedGoal class
-// The goal that causes the AI to be restrained
+// RestrainedFloorGoal.uc - CowerGoal class
 
-class RestrainedGoal extends SwatCharacterGoal;
+class RestrainedFloorGoal extends SwatCharacterGoal;
 ///////////////////////////////////////////////////////////////////////////////
-
-///////////////////////////////////////////////////////////////////////////////
-//
-// Variables
-
 // copied to our action
 var(parameters)	Pawn	Restrainer;	// pawn that we will be working with
 
@@ -25,13 +19,9 @@ overloaded function construct( AI_Resource r, Pawn inRestrainer)
 }
 
 ///////////////////////////////////////////////////////////////////////////////
-
-// Restrained needs to be permanent because if it is interrupted (like by being shot),
-// the restrained behavior needs to restart
-
 defaultproperties
 {
-	priority   = 98
-	goalName   = "Restrained"
-	//bPermanent = true
+    priority   = 98
+    goalName   = "RestrainedFloorGoal"
+	bPermanent = true
 }

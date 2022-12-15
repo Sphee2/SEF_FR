@@ -22,6 +22,7 @@ var(parameters) name					StartIncapacitateIdleCategoryOverride;
 // Goals
 
 var protected RestrainedGoal			CurrentRestrainedGoal;
+
 var private FlashbangedGoal				CurrentFlashbangedGoal;
 var private GassedGoal					CurrentGassedGoal;
 var private PepperSprayedGoal			CurrentPepperSprayedGoal;
@@ -156,7 +157,7 @@ function cleanup()
 		CurrentRestrainedGoal.Release();
 		CurrentRestrainedGoal = None;
 	}
-
+	
 	if (CurrentFlashbangedGoal != None)
 	{
 		CurrentFlashbangedGoal.Release();
@@ -656,6 +657,27 @@ function NotifyBeginArrest(Pawn inRestrainer)
 	CurrentRestrainedGoal.postGoal(self);
 }
 
+function NotifyArrestFloor(Pawn inRestrainer)
+{
+local RestrainedFloorGoal	    CurrentRestrainedFloorGoal;	
+	
+	if (CurrentRestrainedGoal != None)
+	{
+		CurrentRestrainedGoal.unPostGoal(self);
+		CurrentRestrainedGoal.Release();
+		CurrentRestrainedGoal = None;
+	}
+
+	CurrentRestrainedFloorGoal = new class'RestrainedFloorGoal'(characterResource(), inRestrainer);
+	assert(CurrentRestrainedFloorGoal != None);
+	CurrentRestrainedFloorGoal.AddRef();
+
+	CurrentRestrainedFloorGoal.postGoal(self);
+		
+}
+
+
+
 function NotifyArrestInterrupted()
 {
 	if ((CurrentRestrainedGoal != None) && (CurrentRestrainedGoal.achievingAction != None))
@@ -976,9 +998,13 @@ protected function PlayFlinch()
 	// don't flinch if we're already animating on the special channel or if we're moving
 	if (! m_Pawn.IsAnimating(m_Pawn.AnimGetSpecialChannel()) && (VSize(m_Pawn.Velocity) == 0.0) && !ISwatAI(m_Pawn).IsTurning())
 	{
-		FlinchAnimationName = ISwatAI(m_Pawn).GetFlinchAnimation();
+		
+		if ( !ISwatAI(m_Pawn).IsArrestedOnFloor())
+		{
+			FlinchAnimationName = ISwatAI(m_Pawn).GetFlinchAnimation();
 
-		m_Pawn.AnimPlaySpecial(FlinchAnimationName, 0.1);
+			m_Pawn.AnimPlaySpecial(FlinchAnimationName, 0.1);
+		}
 
 		// scream if we're supposed to
 		if (ShouldScream())
@@ -1227,7 +1253,7 @@ function ChangeMorale(float inChangeAmount, string inReasonForChange, optional b
     local MoraleHistoryEntry NewMoraleHistoryEntry;
 
 	// don't change morale if we are already compliant or restrained
-	if ((CurrentComplianceGoal == None || inReasonForChange == "Unobserved Compliance") && (CurrentRestrainedGoal == None))
+	if ((CurrentComplianceGoal == None || inReasonForChange == "Unobserved Compliance") && (CurrentRestrainedGoal == None ))
 	{
 		// changes that are 0 don't affect us
 		if (inChangeAmount != 0.0)

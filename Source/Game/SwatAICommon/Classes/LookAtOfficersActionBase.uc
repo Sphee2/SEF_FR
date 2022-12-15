@@ -49,7 +49,7 @@ protected latent function LookAtNearbyOfficers()
     m_Pawn.ChangeAnimation();
 
     // While the pawn is still conscious, have him look at any nearby officers
-	while (class'Pawn'.static.checkConscious(m_Pawn))
+	while (class'Pawn'.static.checkConscious(m_Pawn) && !SWATAI.isArrestedOnFloor())
 	{
         CacheNearbyOfficerToLookAt();
 
@@ -64,11 +64,23 @@ protected latent function LookAtNearbyOfficers()
             SwatAI.UnsetUpperBodyAnimBehavior(UpperBodyAnimBehaviorClientId);
             SwatAI.DisableAim();
         }
-
-        // Quick sleep so we're not hogging too much cpu
+		
+		 // Quick sleep so we're not hogging too much cpu
         Sleep(RandRange(0.2, 0.4));
     }
+	
 }
+
+protected latent function StopLookingAtOfficers()
+{
+	local ISwatAI SwatAI;
+    SwatAI = ISwatAI(m_Pawn);
+	
+	//log("Not looking at officer");
+    SwatAI.UnsetUpperBodyAnimBehavior(UpperBodyAnimBehaviorClientId);
+    SwatAI.DisableAim();
+}
+	
 
 ///////////////////////////////////////
 

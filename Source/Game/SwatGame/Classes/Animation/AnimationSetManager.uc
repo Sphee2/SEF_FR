@@ -163,6 +163,10 @@ enum EAnimationSet
 	//shield
 	kAnimationSetShield,
     kAnimationSetShieldLowReady,
+	
+	//cuffed floor
+	kAnimationSetCuffedFloor,
+	kAnimationSetRestrainedFloor
 };
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -326,6 +330,10 @@ overloaded function Construct()
 	//shield
 	CreateSet(kAnimationSetShield,									"AnimationSetShield");
     CreateSet(kAnimationSetShieldLowReady,							"AnimationSetShieldLowReady");
+	
+	//cuffed floor
+	CreateSet(kAnimationSetCuffedFloor,									"AnimationSetCuffedFloor");
+	CreateSet(kAnimationSetRestrainedFloor,									"AnimationSetRestrainedFloor");
 	
 }
 

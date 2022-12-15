@@ -23,6 +23,9 @@ var(parameters)	Pawn					Restrainer;	// pawn that we will be working with
 var config float						MinSleepTimeBeforeLookingAtOfficers;
 var config float						MaxSleepTimeBeforeLookingAtOfficers;
 
+var private float StartTime;
+var private float WaitTime;
+
 const kPostRestrainedGoalPriority      = 93;
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -169,6 +172,7 @@ function RestrainInterrupted()
 
 state Running
 {
+
     function BeginState()
     {
         Super.BeginState();
@@ -202,7 +206,7 @@ state Running
 	// let the hive know
 	SwatAIRepository(m_Pawn.Level.AIRepo).GetHive().NotifyAIBecameRestrained(m_Pawn);
 	ISwatAI(m_Pawn).GetCommanderAction().NotifyRestrained();
-	
+		
 	// set our idle category
 	ISwatAI(m_Pawn).SetIdleCategory('Restrained');
 
@@ -216,7 +220,7 @@ state Running
 		achievingGoal.changePriority(kPostRestrainedGoalPriority);
 		ClearDummyGoals();
 	}
-
+	
 	while (! resource.requiredResourcesAvailable(achievingGoal.priority, achievingGoal.priority))
 		yield();
 
@@ -229,9 +233,16 @@ state Running
 	ISwatAI(m_Pawn).UnlockAim();
 
 	// sleep before we start looking at officers
-	sleep(RandRange(MinSleepTimeBeforeLookingAtOfficers, MaxSleepTimeBeforeLookingAtOfficers));
-    LookAtNearbyOfficers();
-
+	StartTime = Level.TimeSeconds;
+	WaitTime = RandRange(MinSleepTimeBeforeLookingAtOfficers, MaxSleepTimeBeforeLookingAtOfficers);
+	while ( ( Level.TimeSeconds - StartTime ) < WaitTime  && !ISwatAI(m_Pawn).IsArrestedOnFloor() )
+		yield();
+	
+	if (!ISwatAI(m_Pawn).IsArrestedOnFloor())
+		LookAtNearbyOfficers();
+	else
+		StopLookingAtOfficers();
+		
     succeed();
 }
 

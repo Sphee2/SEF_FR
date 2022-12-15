@@ -9,6 +9,9 @@ var config bool CanBeUsedNow;
 var config bool CaresAboutRestrained;
 var config bool IsRestrained;
 
+var config bool IsReported;
+var config bool CaresAboutRestrainedOnFloor;
+
 var config bool CaresAboutIncapacitated;
 var config bool IsIncapacitated;
 

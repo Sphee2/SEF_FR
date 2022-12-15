@@ -689,11 +689,15 @@ Begin:
 	NotifyFinishedAffectedAnimation();
 
 	PlayRecoveryAnimation();
-    m_Pawn.EnableCollisionAvoidance();
+	if ( !ISwatAI(m_Pawn).IsArrestedOnFloor() )
+	{
+		m_Pawn.EnableCollisionAvoidance();
+	
 
-    // This will swap in an effectless animation set, since the effect
-    // duration has ended
-    m_Pawn.ChangeAnimation();
+		// This will swap in an effectless animation set, since the effect
+		// duration has ended
+		m_Pawn.ChangeAnimation();
+	}
 	
 	/* REMOVED
 	//forced arrest after the first issued comply

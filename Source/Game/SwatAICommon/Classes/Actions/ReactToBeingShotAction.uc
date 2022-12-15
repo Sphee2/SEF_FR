@@ -92,6 +92,8 @@ var(parameters) ESkeletalRegion RegionHit;
 
 private function name GetHitRightAnimation()
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	if (ISwatAI(m_Pawn).IsCompliant())
 		return CompliantHitRight[Rand(CompliantHitRight.Length)];
 	else if (ISwatAI(m_Pawn).IsArrested())
@@ -104,6 +106,8 @@ private function name GetHitRightAnimation()
 
 private function name GetHitLeftAnimation()
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	if (ISwatAI(m_Pawn).IsCompliant())
 		return CompliantHitLeft[Rand(CompliantHitLeft.Length)];
 	else if (ISwatAI(m_Pawn).IsArrested())
@@ -116,6 +120,8 @@ private function name GetHitLeftAnimation()
 
 private function name GetHitInBackAnimation()
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	if (ISwatAI(m_Pawn).IsCompliant())
 		return CompliantHitBack[Rand(CompliantHitBack.Length)];
 	else if (ISwatAI(m_Pawn).IsArrested())
@@ -128,6 +134,8 @@ private function name GetHitInBackAnimation()
 
 private function name GetHitInFrontAnimation()
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	if (ISwatAI(m_Pawn).IsCompliant())
 		return CompliantHitFront[Rand(CompliantHitFront.Length)];
 	else if (ISwatAI(m_Pawn).IsArrested())
@@ -183,6 +191,8 @@ private function TorsoHitRegion GetTorsoHitRegion(vector vHitLocation)
 private function name GetHitTorsoAnimation()
 {
 	local TorsoHitRegion TorsoHitRegion;
+	
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
 
 	TorsoHitRegion = GetTorsoHitRegion(HitLocation);
 
@@ -208,6 +218,8 @@ private function name GetHitTorsoAnimation()
 
 private function name GetHitHeadAnimation()
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	if (ISwatAI(m_Pawn).IsCompliant())
 		return CompliantHitFront[Rand(CompliantHitFront.Length)];
 	else if (ISwatAI(m_Pawn).IsArrested())
@@ -220,6 +232,8 @@ private function name GetHitHeadAnimation()
 
 private function name GetHitLeftArmAnimation()
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	if (ISwatAI(m_Pawn).IsCompliant())
 		return CompliantHitLeft[Rand(CompliantHitLeft.Length)];
 	else if (ISwatAI(m_Pawn).IsArrested())
@@ -232,6 +246,8 @@ private function name GetHitLeftArmAnimation()
 
 private function name GetHitRightArmAnimation()
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	if (ISwatAI(m_Pawn).IsCompliant())
 		return CompliantHitRight[Rand(CompliantHitRight.Length)];
 	else if (ISwatAI(m_Pawn).IsArrested())
@@ -244,6 +260,8 @@ private function name GetHitRightArmAnimation()
 
 private function name GetHitLeftLegAnimation()
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	if (ISwatAI(m_Pawn).IsCompliant())
 		return CompliantHitLeft[Rand(CompliantHitLeft.Length)];
 	else if (ISwatAI(m_Pawn).IsArrested())
@@ -256,6 +274,8 @@ private function name GetHitLeftLegAnimation()
 
 private function name GetHitRightLegAnimation()
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	if (ISwatAI(m_Pawn).IsCompliant())
 		return CompliantHitRight[Rand(CompliantHitRight.Length)];
 	else if (ISwatAI(m_Pawn).IsArrested())
@@ -268,6 +288,8 @@ private function name GetHitRightLegAnimation()
 
 private function name GetHitAnimationUsingBodyTargeting()
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	switch (RegionHit)
 	{
 		case REGION_Head:
@@ -297,6 +319,8 @@ private function name GetHitAnimationUsingBodyTargeting()
 
 private function name GetHitAnimation()
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	if (RegionHit == REGION_None)
 	{
 		// old method using a hit location (also used for the torso)
@@ -332,6 +356,8 @@ private function name GetNormalQuickHitAnimation(TorsoHitRegion inTorsoHitRegion
 
 private function name GetRestrainedQuickHitAnimation(TorsoHitRegion inTorsoHitRegion)
 {
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
+	
 	switch(inTorsoHitRegion)
 	{
 		case TorsoHitRegion_Front:
@@ -355,6 +381,8 @@ private function name GetRestrainedQuickHitAnimation(TorsoHitRegion inTorsoHitRe
 private function name GetQuickHitAnimation(vector vQuickHitLocation)
 {
 	local TorsoHitRegion TorsoHitRegion;
+
+	assert ( !ISwatAI(m_Pawn).IsArrestedOnFloor() );
 
 	TorsoHitRegion = GetTorsoHitRegion(vQuickHitLocation);
 

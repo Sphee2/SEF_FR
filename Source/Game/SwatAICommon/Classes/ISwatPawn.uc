@@ -36,3 +36,4 @@ simulated function bool GetFlashlightState();
 simulated function ToggleDesiredFlashlightState();
 
 simulated function bool IsBeingArrestedNow();
+simulated function bool IsArrestedOnFloor();

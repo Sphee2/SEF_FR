@@ -215,6 +215,7 @@ var private config float			MaxComplianceIssueDistance;
 // Being Arrested
 var private bool					bArrested;					// if we are arrested
 var private bool					BeingArrested;				// if we are being arrested
+var private bool					bArrestedOnFloor;					// if we are arrested and on floor
 var private Pawn					ArrestedBy;					// who arrested us
 var protected config float 			QualifyTimeForArrest;
 
@@ -280,7 +281,7 @@ replication
 
 	// replicated functions sent to server by owning client			
     reliable if ( Role == ROLE_Authority )
-        AnimFlags, FlashlightShouldBeOn, NightvisionShouldBeOn, bShouldBeAtLowReady, ReasonForShouldBeAtLowReady, bArrested, BeingArrested, bIsLowReady ;
+        AnimFlags, FlashlightShouldBeOn, NightvisionShouldBeOn, bShouldBeAtLowReady, ReasonForShouldBeAtLowReady, bArrested , bArrestedOnFloor, BeingArrested, bIsLowReady ;
 
     reliable if ( Role == ROLE_Authority && RemoteRole != ROLE_AutonomousProxy )
         bIsFlashbanged, bIsGassed, bIsPepperSprayed, bIsStung, bIsStunnedByC2, bIsTased, bIsWearingNightvision  ;
@@ -448,7 +449,7 @@ private native function AnimSwapInSet_Native(AnimationSet set);
 
 simulated function bool ShouldUseCuffedAnims()
 {
-    return IsArrested() || IsBeingArrestedNow();
+    return ( IsArrested() || IsBeingArrestedNow() );
 }
 
 ///////////////////////////////////////
@@ -456,7 +457,8 @@ simulated function bool ShouldUseCuffedAnims()
 // Movement animation set swapping
 
 simulated function EAnimationSet GetCompliantAnimSet()						{ return kAnimationSetCompliant; }
-simulated function EAnimationSet GetRestrainedAnimSet()						{ return kAnimationSetRestrained; }
+
+simulated function EAnimationSet GetRestrainedAnimSet()						{ if (IsArrestedOnFloor())	return kAnimationSetRestrainedFloor; else	return kAnimationSetRestrained; }
 simulated function EAnimationSet GetStandingWalkAnimSet()					{ return kAnimationSetStealthStanding; }
 simulated function EAnimationSet GetStandingWalkUpStairsAnimSet()			{ return kAnimationSetStealthStandingUpStairs; }
 simulated function EAnimationSet GetStandingWalkDownStairsAnimSet()			{ return kAnimationSetStealthStandingDownStairs; }
@@ -586,7 +588,7 @@ simulated function EAnimationSet GetUMPAimPoseSet()                     { if (!b
 simulated function EAnimationSet GetP90AimPoseSet()                     { if (!bIsCrouched) return kAnimationSetP90;            else return kAnimationSetP90Crouched; }
 simulated function EAnimationSet GetOptiwandAimPoseSet()                { if (!bIsCrouched) return kAnimationSetOptiwand;       else return kAnimationSetOptiwandCrouched; }
 simulated function EAnimationSet GetPaintballAimPoseSet()               { if (!bIsCrouched) return kAnimationSetPaintball;      else return kAnimationSetPaintballCrouched; }
-simulated function EAnimationSet GetCuffedAimPoseSet()                  { return kAnimationSetCuffed; }
+simulated function EAnimationSet GetCuffedAimPoseSet()                  { if (isArrestedOnFloor ()) return kAnimationSetCuffedFloor; else  return kAnimationSetCuffed; }
 simulated function EAnimationSet GetShieldAimPoseSet()                  { return kAnimationSetShield; }
 
 // Returns the animation set based on the Pawns current equipment
@@ -2038,6 +2040,16 @@ simulated native function bool IsArrested();
 {
 	return bArrested;
 }*/
+
+simulated function bool IsArrestedOnFloor()
+{
+	return bArrestedOnFloor;
+}
+
+simulated function SetArrestedOnFloor(bool set)
+{
+	 bArrestedOnFloor = set;
+}
 
 // returns who arrested us
 simulated function Pawn GetArrester()

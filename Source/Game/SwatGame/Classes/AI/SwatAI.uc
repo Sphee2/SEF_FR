@@ -993,16 +993,25 @@ function SwapInRestrainedAnimSet()
 	AnimSwapInSet(kAnimationSetRestrained);
 }
 
+function SwapInRestrainedFloorAnimSet()
+{
+	AnimSwapInSet(kAnimationSetCuffedFloor);
+}
+
 // Flashbang Animations
 function name GetFBReactionAnimation()
 {
 	local int RandomIndex;
 
 	// return a reaction based on whether we're standing, restrained, or compliant
-	if (IsArrested())
+	if (IsArrested()  && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(FBRestrainedReactionAnimations.Length);
 		return FBRestrainedReactionAnimations[RandomIndex];
+	}
+	else if (IsArrested()  && IsArrestedOnFloor())
+	{
+		return 'CuffedFloorFidget';
 	}
 	else if (IsCompliant())
 	{
@@ -1043,10 +1052,14 @@ function name GetFBAffectedAnimation()
 	// TODO: if our arms are up, we play a different animation
 
 	// return a reaction based on whether we're standing, restrained, or compliant
-	if (IsArrested())
+	if (IsArrested()  && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(FBRestrainedAffectedAnimations.Length);
 		return FBRestrainedAffectedAnimations[RandomIndex];
+	}
+	else if (IsArrested()  && IsArrestedOnFloor())
+	{
+		return 'CuffedFloorFidget';
 	}
 	else if (IsCompliant())
 	{
@@ -1087,10 +1100,14 @@ function name GetFBRecoveryAnimation()
 	// TODO: if our arms are up, we play a different animation
 
 	// return a reaction based on whether we're standing, restrained, or compliant
-	if (IsArrested())
+	if (IsArrested() && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(FBRestrainedRecoveryAnimations.Length);
 		return FBRestrainedRecoveryAnimations[RandomIndex];
+	}
+	else if (IsArrested()  && IsArrestedOnFloor())
+	{
+		return 'CuffedFloorFidget';
 	}
 	else if (IsCompliant())
 	{
@@ -1131,10 +1148,14 @@ function name GetGasReactionAnimation()
 	local int RandomIndex;
 
 	// return a reaction based on whether we're restrained, compliant, crouching, or standing
-	if (IsArrested())
+	if (IsArrested() && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(GasRestrainedReactionAnimations.Length);
 		return GasRestrainedReactionAnimations[RandomIndex];
+	}
+	else if (IsArrested()  && IsArrestedOnFloor())
+	{
+		return 'CuffedFloorFidget';
 	}
 	else if (IsCompliant())
 	{
@@ -1175,10 +1196,14 @@ function name GetGasAffectedAnimation()
 	// TODO: if our arms are up, we play a different animation
 
 	// return a reaction based on whether we're standing, restrained, or compliant
-	if (IsArrested())
+	if (IsArrested() && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(GasRestrainedAffectedAnimations.Length);
 		return GasRestrainedAffectedAnimations[RandomIndex];
+	}
+	else if (IsArrested()  && IsArrestedOnFloor())
+	{
+		return 'CuffedFloorFidget';
 	}
 	else if (IsCompliant())
 	{
@@ -1219,10 +1244,14 @@ function name GetGasRecoveryAnimation()
 	// TODO: if our arms are up, we play a different animation
 
 	// return a reaction based on whether we're standing, restrained, or compliant
-	if (IsArrested())
+	if (IsArrested() && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(GasRestrainedRecoveryAnimations.Length);
 		return GasRestrainedRecoveryAnimations[RandomIndex];
+	}
+	else if (IsArrested()  && IsArrestedOnFloor())
+	{
+		return 'CuffedFloorFidget';
 	}
 	else if (IsCompliant())
 	{
@@ -1263,10 +1292,14 @@ function name GetStungReactionAnimation()
 	local int RandomIndex;
 
 	// return a reaction based on whether we're restrained, compliant, crouching, or standing
-	if (IsArrested())
+	if (IsArrested() && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(StungRestrainedReactionAnimations.Length);
 		return StungRestrainedReactionAnimations[RandomIndex];
+	}
+	else if (IsArrested()  && IsArrestedOnFloor())
+	{
+		return 'CuffedFloorFidget';
 	}
 	else if (IsCompliant())
 	{
@@ -1307,7 +1340,7 @@ function name GetStungAffectedAnimation()
 	// TODO: if our arms are up, we play a different animation
 
 	// return a reaction based on whether we're standing, restrained, or compliant
-	if (IsArrested())
+	if (IsArrested() && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(StungRestrainedAffectedAnimations.Length);
 		return StungRestrainedAffectedAnimations[RandomIndex];
@@ -1351,10 +1384,14 @@ function name GetStungRecoveryAnimation()
 	// TODO: if our arms are up, we play a different animation
 
 	// return a reaction based on whether we're standing, restrained, or compliant
-	if (IsArrested())
+	if (IsArrested() && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(StungRestrainedRecoveryAnimations.Length);
 		return StungRestrainedRecoveryAnimations[RandomIndex];
+	}
+	else if (IsArrested()  && IsArrestedOnFloor())
+	{
+		return 'CuffedFloorFidget';
 	}
 	else if (IsCompliant())
 	{
@@ -1395,10 +1432,14 @@ function name GetTasedReactionAnimation()
 	local int RandomIndex;
 
 	// return a reaction based on whether we're restrained, compliant, crouching, or standing
-	if (IsArrested())
+	if (IsArrested() && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(TasedRestrainedReactionAnimations.Length);
 		return TasedRestrainedReactionAnimations[RandomIndex];
+	}
+	else if (IsArrested()  && IsArrestedOnFloor())
+	{
+		return 'CuffedFloorFidget';
 	}
 	else if (IsCompliant())
 	{
@@ -1423,10 +1464,14 @@ function name GetTasedAffectedAnimation()
 	// TODO: if our arms are up, we play a different animation
 
 	// return a reaction based on whether we're standing, restrained, or compliant
-	if (IsArrested())
+	if (IsArrested() && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(TasedRestrainedAffectedAnimations.Length);
 		return TasedRestrainedAffectedAnimations[RandomIndex];
+	}
+	else if (IsArrested()  && IsArrestedOnFloor())
+	{
+		return 'CuffedFloorFidget';
 	}
 	else if (IsCompliant())
 	{
@@ -1451,10 +1496,14 @@ function name GetTasedRecoveryAnimation()
 	// TODO: if our arms are up, we play a different animation
 
 	// return a reaction based on whether we're standing, restrained, or compliant
-	if (IsArrested())
+	if (IsArrested() && !IsArrestedOnFloor())
 	{
 		RandomIndex = Rand(TasedRestrainedRecoveryAnimations.Length);
 		return TasedRestrainedRecoveryAnimations[RandomIndex];
+	}
+	else if (IsArrested()  && IsArrestedOnFloor())
+	{
+		return 'CuffedFloorFidget';
 	}
 	else if (IsCompliant())
 	{
@@ -2510,7 +2559,7 @@ function name GetFlinchAnimation()
 	{
 		return CompliantFlinchAnimations[Rand(CompliantFlinchAnimations.Length)];
 	}
-	else if (IsArrested())
+	else if (IsArrested() && !IsArrestedOnFloor())
 	{
 		return RestrainedFlinchAnimations[Rand(RestrainedFlinchAnimations.Length)];
 	}
@@ -3242,15 +3291,29 @@ simulated function OnEffectStopped(Actor inStoppedEffect, bool Completed)
 
 simulated function bool CanBeUsedNow()
 {
+	//arrested on floor
+	if (IsArrested() && bHasBeenReportedToTOC && !IsArrestedOnFloor() )
+			return true;
+	
 //log( self$"::CanBeUsedNow() ... bHasBeenReportedToTOC = "$bHasBeenReportedToTOC$", class.static.checkConscious(self) = "$class.static.checkConscious(self)$", IsArrested() = "$IsArrested() );
     return !bHasBeenReportedToTOC && (!class.static.checkConscious(self) || IsArrested());
 }
 
 simulated function OnUsed(Pawn Other)
 {
-    assert(!bHasBeenReportedToTOC);
-
-    SwatGameInfo(Level.Game).GameEvents.ReportableReportedToTOC.Triggered(self, Other);
+   // assert(!bHasBeenReportedToTOC);
+	
+	if (!bHasBeenReportedToTOC )
+		SwatGameInfo(Level.Game).GameEvents.ReportableReportedToTOC.Triggered(self, Other);
+	else if (IsArrested() && bHasBeenReportedToTOC && !IsArrestedOnFloor() )
+	{
+		if (Vsize(self.Location - Other.Location ) < 150 ) 
+		{
+			SetArrestedOnFloor( true);
+			GetCommanderAction().NotifyArrestFloor(Other);
+		}
+	}
+		
 }
 
 simulated function PostUsed()
