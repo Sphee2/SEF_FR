@@ -18,6 +18,7 @@ class SwatPlayer extends SwatRagdollPawn
     native;
 
 import enum EquipmentSlot from Engine.HandheldEquipment;
+import enum Pocket from Engine.HandheldEquipment;
 import enum ESkeletalRegion from Engine.Actor;
 
 var protected OfficerLoadOut LoadOut;
@@ -625,6 +626,33 @@ simulated function SetPlayerSkins( OfficerLoadOut inLoadOut )
 {
     //mplog( self$"---SwatPlayer::SetPlayerSkins()." );
 local float MPFace;
+local class<SwatCustomSkin> SCS;
+
+if ( Level.NetMode == NM_StandAlone && inloadout.CustomSkinSpec != "None" )
+{
+	
+	SCS = class<SwatCustomSkin>(DynamicLoadObject(inloadout.CustomSkinSpec,class'Class')); 
+	
+	if (SCS != None)
+	{
+			if (inLoadout.HasHeavyArmor())
+				Skins[0] = SCS.default.HeavyPantsMaterial; //pants
+			else
+				Skins[0] = SCS.default.PantsMaterial; //pants
+			
+			Skins[1] = SCS.default.FaceMaterial;       //face
+			Skins[2] = inLoadOut.GetNameMaterial();       //name 
+			
+			
+			
+			if (inLoadout.HasHeavyArmor())
+				Skins[3] = SCS.default.HeavyVestMaterial;       //vest 
+			else if (inLoadout.HasNoArmor())
+				Skins[3] = SCS.default.NoArmorVestMaterial;       //vest 
+			else
+				Skins[3] = SCS.default.VestMaterial;       //vest 
+	}
+}
 
 	if ( inLoadOut.HasLevelIIArmor() )
 	{
@@ -692,10 +720,14 @@ local float MPFace;
 	}
 	else
 	{
-		Skins[0] = inLoadOut.GetPantsMaterial();
-		Skins[1] = inLoadOut.GetFaceMaterial();
-		Skins[2] = inLoadOut.GetNameMaterial();
-		Skins[3] = inLoadOut.GetVestMaterial();
+		if ( Level.NetMode != NM_StandAlone || ( Level.NetMode == NM_StandAlone && ( inloadout.CustomSkinSpec == "None" || inloadout.CustomSkinSpec == "SwatGame.DefaultCustomSkin" ) ) )
+		{   
+			Skins[0] = inLoadOut.GetPantsMaterial();
+			Skins[1] = inLoadOut.GetFaceMaterial();
+			Skins[2] = inLoadOut.GetNameMaterial();
+			Skins[3] = inLoadOut.GetVestMaterial();
+		}
+		
 	}
 	
 	//different hands mesh

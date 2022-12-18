@@ -11,6 +11,21 @@ https://discord.gg/Vu4r7sv7uF
 
 # FEATURE LIST: #
 
+#### V0.67 Beta 3 ####
+ADDED: 
+    GAMEPLAY:
+			 - Restrained On Floor: 
+			            - after reporting you can put anyone to floor by simply interacting again with the restrained.
+	GUI:
+	         - Added selectable Custom Skins for Single Player mode.
+	AI:	
+			 - fixed istances of AI shooting from impossible rotations
+			 - minimum time to shoot is now respected
+			 
+    FIXED: 
+             - Weapon image not loading on Loadout GUI on some campaign conditions
+
+
 #### V0.67 Beta 2 ####
 ADDED: 
     GAMEPLAY:

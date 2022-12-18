@@ -72,6 +72,10 @@ function InitComponent(GUIComponent MyOwner)
 	local int i;
 
 	Super.InitComponent(MyOwner);
+	
+	//custom skin hack... 
+	PocketTabs[4].TabButton.Caption = "SKIN";
+	PocketTabs[4].TabButton.Hint = "Choose custom skin.";
 
 	//custom loadout controls
 	if( MyCustomLoadoutCombo != None )
@@ -274,6 +278,9 @@ function CopyThisPage(DynamicLoadOutSpec to)
       to.LoadoutSpec[Pocket.Pocket_HeadArmor] = MyCurrentLoadOut.LoadoutSpec[Pocket.Pocket_HeadArmor];
       to.LoadoutSpec[Pocket.Pocket_BodyArmor] = MyCurrentLoadOut.LoadoutSpec[Pocket.Pocket_BodyArmor];
       break;
+	case 4:
+	    to.LoadoutSpec[Pocket.Pocket_CustomSkin] = MyCurrentLoadOut.LoadoutSpec[Pocket.Pocket_CustomSkin];
+	  break;
   }
 }
 
@@ -309,6 +316,14 @@ function SaveCurrentLoadout()
 function ChangeLoadOut( Pocket thePocket )
 {
     Super.ChangeLoadOut( thePocket );
+	
+	 switch (thePocket)
+    {
+		 case Pocket_CustomSkin:
+			  MyCurrentLoadOut.LoadOutSpec[thePocket] = class<actor>(EquipmentList[thePocket].GetObject()) ;
+			  break;
+	}
+	
     SaveCurrentLoadout();
 }
 
@@ -1027,4 +1042,5 @@ defaultproperties
     MultiApplyStr[5] = "Red Two (Girard)"
     MultiApplyStr[6] = "Blue One (Fields)"
     MultiApplyStr[7] = "Blue Two (Jackson)"
+		
 }

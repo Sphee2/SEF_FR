@@ -98,6 +98,9 @@ simulated protected function MutateLoadOutSpec(DynamicLoadOutSpec DynamicSpec, b
             MaterialSpec[i] = DynamicSpec.MaterialSpec[i];
     }
 
+	if ( Level.NetMode == NM_Standalone && DynamicSpec.LoadOutSpec[Pocket.Pocket_CustomSkin] != None)
+		DynamicSpec.CustomSkinSpec = String(DynamicSpec.LoadOutSpec[Pocket.Pocket_CustomSkin]);
+
 	CustomSkinSpec = DynamicSpec.CustomSkinSpec;
 }
 
@@ -143,6 +146,7 @@ simulated function bool ValidateLoadOutSpec(bool IsSuspect, DynamicLoadoutSpec D
     {
 		    if( i == Pocket.Pocket_CustomSkin )
 		    {
+				log ("ValidateLoadOutSpec " $ IsSuspect $ " pocket class " $ LoadOutSpec[i] );
 			     ValidatePocketCustomSkin(IsSuspect);
 			     continue;
 		    }

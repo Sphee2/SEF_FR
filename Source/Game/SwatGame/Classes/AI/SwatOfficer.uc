@@ -659,9 +659,40 @@ private function InitLoadOut( String LoadOutName )
 // c. we don't have multiple inheritance
 private function ReceiveLoadOut()
 {
+local class<SwatCustomSkin> SCS;
+	
 	assert(LoadOut != None);
 
     log( "------LoadOut.Owner="$LoadOut.Owner );
+	
+	if ( Level.NetMode == NM_StandAlone && loadout.CustomSkinSpec != "None" )
+	{
+	
+		SCS = class<SwatCustomSkin>(DynamicLoadObject(loadout.CustomSkinSpec,class'Class')); 
+		
+	
+		if(SCS != None)
+		{
+			if (Loadout.HasHeavyArmor())
+				Skins[0] = SCS.default.HeavyPantsMaterial; //pants
+			else
+				Skins[0] = SCS.default.PantsMaterial; //pants
+			
+			Skins[1] = SCS.default.FaceMaterial;       //face
+			Skins[2] = LoadOut.GetNameMaterial();       //name 
+			
+			
+			
+			if (Loadout.HasHeavyArmor())
+				Skins[3] = SCS.default.HeavyVestMaterial;       //vest 
+			else if (Loadout.HasNoArmor())
+				Skins[3] = SCS.default.NoArmorVestMaterial;       //vest 
+			else
+				Skins[3] = SCS.default.VestMaterial;       //vest 
+		}
+	}
+	
+	
 
 	if ( LoadOut.HasLevelIIArmor() )
 	{
@@ -691,10 +722,13 @@ private function ReceiveLoadOut()
 	}
 	else
 	{
+		if ( Level.NetMode != NM_StandAlone || ( Level.NetMode == NM_StandAlone && ( loadout.CustomSkinSpec == "None" || loadout.CustomSkinSpec == "SwatGame.DefaultCustomSkin" ) ) ) 
+		{  
 		Skins[0] = LoadOut.GetPantsMaterial();
 		Skins[1] = LoadOut.GetFaceMaterial();
 		Skins[2] = LoadOut.GetNameMaterial();
 		Skins[3] = LoadOut.GetVestMaterial();
+		}
 	}
 
 
