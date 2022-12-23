@@ -571,7 +571,7 @@ latent function PlayAffectedAnimation()
 	AnimSpecialChannel = m_Pawn.AnimLoopSpecial(GetAffectedAnimation(), 0.1);
 
 	// wait until we're supposed to be done
-	while (Level.TimeSeconds < EndTime)
+	while (Level.TimeSeconds < EndTime && !ISwatAI(m_Pawn).IsArrestedOnFloor())
 	{
 		yield();
 	}
