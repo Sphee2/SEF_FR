@@ -196,34 +196,48 @@ function PopulateCampaignUnlocks()
 
     theCampaign = SwatGUIController(Controller).GetCampaign();
 
-    if(theCampaign.CampaignPath != 0)
-    {
-        return;
-    }
+    
+	if(theCampaign.CampaignPath == 0)
+	{
+		for(i = 0; i < theCampaign.GetAvailableIndex() + 1; i++)
+		{
+			Item = class<ICanBeSelectedInTheGUI>(class'SwatGame.SwatVanillaCareerPath'.default.UnlockedEquipment[i]);
+			if(Item == None)
+			{
+				continue;
+			}
+			MyUnlockedEquipmentBox.List.Add(Item.static.GetFriendlyName());
+		}
 
-    for(i = 0; i < theCampaign.GetAvailableIndex() + 1; i++)
-    {
-        Item = class<ICanBeSelectedInTheGUI>(class'SwatGame.SwatVanillaCareerPath'.default.UnlockedEquipment[i]);
-        if(Item == None)
+		for(i = class'SwatGame.SwatVanillaCareerPath'.default.Missions.Length;
+			i < class'SwatGame.SwatVanillaCareerPath'.default.Missions.Length + theCampaign.GetAvailableIndex() + 1;
+			i++)
+		{
+			Item = class<ICanBeSelectedInTheGUI>(class'SwatGame.SwatVanillaCareerPath'.default.UnlockedEquipment[i]);
+			if(Item == None)
+			{
+				continue;
+			}
+			MyUnlockedEquipmentBox.List.Add(Item.static.GetFriendlyName());
+		}
+		MyUnlockedEquipmentBox.List.Sort();
+	}
+	else if(theCampaign.CampaignPath == 3)
+	{
+		// unlock only specific equipment
+		for(i = 0; i < class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment.Length; ++i)
         {
-            continue;
+            Item = class<ICanBeSelectedInTheGUI>(class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment[i]);
+			if(Item == None)
+			{
+				continue;
+			}
+			MyUnlockedEquipmentBox.List.Add(Item.static.GetFriendlyName());
         }
-        MyUnlockedEquipmentBox.List.Add(Item.static.GetFriendlyName());
-    }
-
-    for(i = class'SwatGame.SwatVanillaCareerPath'.default.Missions.Length;
-	 	i < class'SwatGame.SwatVanillaCareerPath'.default.Missions.Length + theCampaign.GetAvailableIndex() + 1;
-		i++)
-    {
-        Item = class<ICanBeSelectedInTheGUI>(class'SwatGame.SwatVanillaCareerPath'.default.UnlockedEquipment[i]);
-        if(Item == None)
-        {
-          continue;
-        }
-        MyUnlockedEquipmentBox.List.Add(Item.static.GetFriendlyName());
-    }
-
-    MyUnlockedEquipmentBox.List.Sort();
+		MyUnlockedEquipmentBox.List.Sort();
+	}
+	
+	return;
 }
 
 defaultproperties

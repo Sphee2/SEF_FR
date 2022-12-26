@@ -13,7 +13,7 @@ var config private int availableIndex;  //the index of the highest mission that 
 var config public bool HACK_HasPlayedCreditsOnCampaignCompletion;
 
 // SEF additions
-var config int CampaignPath;  // Which campaign path we're on (0 = SWAT 4 + TSS, 1 = Extra Missions, 2 = All Missions)
+var config int CampaignPath;  // Which campaign path we're on (0 = SWAT 4 + TSS, 1 = Extra Missions, 2 = All Missions , 3 = FR type)
 var config bool PlayerPermadeath; // Whether the campaign has player permadeath enabled
 var config bool PlayerDied; // Player permadeath only - true if the campaign is KIA
 var config bool OfficerPermadeath; // Whether the campaign has officer permadeath enabled

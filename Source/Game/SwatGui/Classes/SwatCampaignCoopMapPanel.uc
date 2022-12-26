@@ -204,6 +204,17 @@ private function BuildCampaignMissionList()
 	      	}
 	    }
 	}
+	else if(CampaignPath == 3)
+	{
+	    for(i = 0; i < class'SwatGame.SwatFRCareerPath'.default.Missions.Length; i++)
+	    {
+	      	if( i <= CampaignAvailableIndex )
+			{
+	        	MyMapsList.List.Add(string(class'SwatGame.SwatFRCareerPath'.default.Missions[i]),,
+					class'SwatGame.SwatFRCareerPath'.default.MissionFriendlyNames[i],i,,false);
+	      	}
+	    }
+	}
 }
 
 private function InitialSelections()

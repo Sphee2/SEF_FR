@@ -353,6 +353,23 @@ function bool CheckValidity( class EquipmentClass, eNetworkValidity type )
 	    {
 	    	return true;
 	    }
+		else if(CampaignPath == 3)
+	    {
+			log("CheckCampaignValid SwatFRCareerPath "$ Left(string(EquipmentClass),4));
+			//forget about skins
+			if( Left(string(EquipmentClass),4) != "Swat")
+			 return true;
+			
+	    	// unlock only specific equipment
+			for(i = 0; i < class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment.Length; ++i)
+			{
+				if(class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment[i] == EquipmentClass)
+				{
+					return true;
+				}
+			}
+	    }
+		
 
 	    return (type == NETVALID_SPOnly) || (Super.CheckValidity( EquipmentClass, type ));
 	}
@@ -428,6 +445,24 @@ function bool CheckCampaignValid( class EquipmentClass )
             }
         }
     }
+	else if(CampaignPath == 3) { // We only do this for the regular FR missions mode
+    		
+		//forget about skins
+		if( Left(string(EquipmentClass),4) != "Swat")
+		 return true;
+			
+        // unlock only specific equipment
+		for(i = 0; i < class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment.Length; ++i)
+        {
+            if(class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment[i] == EquipmentClass)
+            {
+                log("CheckCampaignValid failed on "$EquipmentClass);
+                return true;
+            }
+        }
+		return false;
+    }
+	
 
 	return true;
 }

@@ -500,6 +500,18 @@ private function PopulateCampaignMissionList()
 			}
 		}
   	}
+	else if(theCampaign.CampaignPath == 3)
+    {
+		for(index = 0; index < class'SwatGame.SwatFRCareerPath'.default.Missions.Length; index++)
+  		{
+  			if( index <= theCampaign.GetAvailableIndex() )
+            {
+				MyMissionSelectionBox.List.Add(string(class'SwatGame.SwatFRCareerPath'.default.Missions[index]),,
+					class'SwatGame.SwatFRCareerPath'.default.MissionFriendlyNames[index],
+					index,, true);
+            }
+  	     }
+  	}
 
 
     if(theCampaign.CampaignPath == 2)

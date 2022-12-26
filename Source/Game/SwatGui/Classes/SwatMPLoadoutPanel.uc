@@ -163,6 +163,18 @@ function bool CheckCampaignValid( class EquipmentClass )
 	      if(class'SwatGame.SwatVanillaCareerPath'.default.UnlockedEquipment[i] == EquipmentClass)
 	        return false;
 	}
+	else if (Settings.IsCampaignCOOP() && CampaignPath == 3 && !Settings.bIsQMM) //FR campaign mode
+	{
+		// unlock only specific equipment
+		for(i = 0; i < class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment.Length; ++i)
+        {
+            if(class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment[i] == EquipmentClass)
+            {
+                log("CheckCampaignValid failed on "$EquipmentClass);
+                return false;
+            }
+        }
+	}
 	return true;
 }
 
