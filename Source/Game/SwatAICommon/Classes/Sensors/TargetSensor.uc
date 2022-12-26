@@ -40,7 +40,7 @@ function setParameters( Actor inTarget )
 		Target     = inTarget;
 		TargetPawn = Pawn(Target);
 
-		if (TargetSensorAction(sensorAction).pawn().CanHit(target))
+		if (TargetSensorAction(sensorAction).pawn().CanSee(target))
 			NotifyCanHitTarget();
 		else
 			NotifyCannotHitTarget();

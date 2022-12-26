@@ -506,8 +506,29 @@ private latent function AttackTarget(Pawn Target)
 private function bool ShouldAttackRunner(Pawn target)
 {
 	return (target.IsA('SwatFlusher') || target.IsA('SwatEscaper')) &&
-	  (ISwatOfficer(m_Pawn).GetPrimaryWeapon().IsLessLethal() || (ISwatOfficer(m_Pawn).GetBackupWeapon() != None && ISwatOfficer(m_Pawn).GetBackupWeapon().IsLessLethal()));
+	  (ISwatOfficer(m_Pawn).GetPrimaryWeapon().IsLessLethal() || (ISwatOfficer(m_Pawn).GetBackupWeapon() != None && ISwatOfficer(m_Pawn).GetBackupWeapon().IsLessLethal()) 
+	  || RunnerIsThreat(target));
 }
+
+private function bool RunnerIsThreat(Pawn target)
+{
+	local Pawn SO;
+		
+	if (ISwatAI(target).hasUsableweapon())
+	{
+		ForEach level.AllActors(class'Pawn', SO )
+		{
+			if ( SO.isa('SwatPlayer') || SO.isa('SwatOfficer') )
+				if ( Vsize(target.Location - SO.Location) < 500 )
+					return true;
+		}
+	}
+	
+	return false;
+	
+}
+
+
 
 private function bool ShouldAttackUsingLessLethal(Pawn target)
 {
