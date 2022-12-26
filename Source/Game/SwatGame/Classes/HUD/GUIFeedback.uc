@@ -63,6 +63,9 @@ function bool MustBeVisible()
 	if( Left(UseLabel.Caption,9) == "Use: Exit")
 		return true;
 	
+	if( Left(UseLabel.Caption,8) == "Use: Put")
+		return true;
+	
 	return false;
 }
 

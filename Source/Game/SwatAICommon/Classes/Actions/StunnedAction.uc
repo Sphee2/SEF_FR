@@ -591,7 +591,9 @@ function name GetRecoveryAnimation()
 latent function PlayRecoveryAnimation()
 {
 	local int AnimSpecialChannel;
-
+	
+	assert(!ISwatAI(m_Pawn).IsArrestedOnFloor());
+	
 	bPlayedAnimation = true;
 	bRecovering      = true;
 
