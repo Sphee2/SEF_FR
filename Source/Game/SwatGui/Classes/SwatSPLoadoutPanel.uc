@@ -355,7 +355,6 @@ function bool CheckValidity( class EquipmentClass, eNetworkValidity type )
 	    }
 		else if(CampaignPath == 3)
 	    {
-			log("CheckCampaignValid SwatFRCareerPath "$ Left(string(EquipmentClass),4));
 			//forget about skins
 			if( Left(string(EquipmentClass),4) != "Swat")
 			 return true;

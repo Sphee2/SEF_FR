@@ -123,7 +123,30 @@ protected function MagazineCountChange(GUIComponent Sender) {
 function bool CheckValidity( class EquipmentClass, eNetworkValidity type )
 {
 	local int i;
+	local int CampaignPath;
+	local ServerSettings Settings;
 
+	Settings = ServerSettings(PlayerOwner().Level.CurrentServerSettings);
+	
+	CampaignPath = Settings.CampaignCOOP & 65535;
+	
+	
+	if (Settings.IsCampaignCOOP() && CampaignPath == 3 && !Settings.bIsQMM) //FR campaign mode
+	{
+		//forget about skins
+		if( Left(string(EquipmentClass),4) != "Swat")
+		 return true;
+			
+	    // unlock only specific equipment
+		for(i = 0; i < class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment.Length; ++i)
+		{
+			if(class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment[i] == EquipmentClass)
+			{
+				return true;
+			}
+		}
+	}
+		
 	// Check for server disabled equipment
 	for(i = 0; i < ServerDisabledEquipment.Length; i++)
 	{
@@ -132,7 +155,7 @@ function bool CheckValidity( class EquipmentClass, eNetworkValidity type )
 			return false;
 		}
 	}
-
+	
     return (type == NETVALID_MPOnly) || (Super.CheckValidity( EquipmentClass, type ));
 }
 
@@ -165,15 +188,20 @@ function bool CheckCampaignValid( class EquipmentClass )
 	}
 	else if (Settings.IsCampaignCOOP() && CampaignPath == 3 && !Settings.bIsQMM) //FR campaign mode
 	{
-		// unlock only specific equipment
+		//forget about skins
+		if( Left(string(EquipmentClass),4) != "Swat")
+		 return true;
+			
+        // unlock only specific equipment
 		for(i = 0; i < class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment.Length; ++i)
         {
             if(class'SwatGame.SwatFRCareerPath'.default.UnlockedEquipment[i] == EquipmentClass)
             {
                 log("CheckCampaignValid failed on "$EquipmentClass);
-                return false;
+                return true;
             }
         }
+		return false;
 	}
 	return true;
 }
