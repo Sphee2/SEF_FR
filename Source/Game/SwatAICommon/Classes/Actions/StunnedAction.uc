@@ -201,7 +201,7 @@ function cleanup()
 		ISwatAI(m_Pawn).AnimStopSpecial();
 
 	// Make sure we go back to the idle!
-	if(ISwatAI(m_Pawn).IsArrested())
+	if(ISwatAI(m_Pawn).IsArrested() && !ISwatAI(m_Pawn).IsArrestedOnFloor())
 	{
 		ISwatAI(m_Pawn).SetIdleCategory('Restrained');
 		ISwatAI(m_Pawn).SwapInRestrainedAnimSet();
@@ -576,7 +576,8 @@ latent function PlayAffectedAnimation()
 		yield();
 	}
 
-	m_Pawn.FinishAnim(AnimSpecialChannel);
+	if ( !ISwatAI(m_Pawn).IsArrestedOnFloor() )
+		m_Pawn.FinishAnim(AnimSpecialChannel);
 
 	bPlayedAnimation = false;
 }
