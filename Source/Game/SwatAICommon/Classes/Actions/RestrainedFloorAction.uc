@@ -23,9 +23,10 @@ latent function PlayFloorAnimation()
 	
 	IdleChannel = m_Pawn.AnimPlaySpecial('CuffedFloor', 0.2);    
 	
+	ISwatAI(m_Pawn).GetSpeechManagerAction().TriggerRestrainedSpeech();
 	m_Pawn.FinishAnim(IdleChannel);
 	
-	ISwatAI(m_Pawn).SetIdleCategory('RestrainedFloorFidget');
+	ISwatAI(m_Pawn).SetIdleCategory('RestrainedFloor');
 	
 	// swap in the restrained anim set
 	ISwatAI(m_Pawn).SwapInRestrainedFloorAnimSet();
