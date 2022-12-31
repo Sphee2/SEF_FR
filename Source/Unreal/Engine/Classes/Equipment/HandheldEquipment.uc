@@ -1209,6 +1209,11 @@ simulated final function bool HasMeleeTarget()
 	return GetMeleeTarget(Victim, HitLocation, HitNormal, HitMaterial);
 }
 
+simulated final function bool HasMeleeAnimation()
+{
+	return ThirdPersonModel.HolderMeleeAnimation != '';
+}
+
 simulated final function bool IsAvailable()
 {
     return AvailableCount > 0 && Available;
