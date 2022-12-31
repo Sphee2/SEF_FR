@@ -87,6 +87,11 @@ event Show()
 	{
 		TabControl.MyTabs[0].TabHeader.DisableComponent();
 	}
+	else if(GC.CurrentMission.CustomScenario == None && SwatGUIControllerBase(Controller).GetCampaign().CampaignPath == 3)
+	{
+		//FR campaign mode .... no unlocks here
+		TabControl.MyTabs[0].TabHeader.DisableComponent();
+	}
 	else
 	{
 		TabControl.MyTabs[0].TabHeader.EnableComponent();

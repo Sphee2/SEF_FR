@@ -70,6 +70,7 @@ function InternalOnActivate()
 	{
 		MyTabControl.MyTabs[2].TabHeader.EnableComponent();
 	}
+	
 }
 
 function OpenPopup( string ClassName, string ObjName )
