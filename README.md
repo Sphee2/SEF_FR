@@ -13,15 +13,22 @@ https://discord.gg/Vu4r7sv7uF
 
 #### V0.67 Beta 3 ####
 ADDED: 
+	WEAPONS: 
+	         - M16A2 with Surefire M500 weaponlight
     GAMEPLAY:
 			 - Restrained On Floor: 
 			            - after reporting you can put anyone to floor by simply interacting again with the restrained.
+             - First Responders Campaign mode : 
+			            - no unlocks 
+						- only FR weapons
+						- no optiwand   :P
+			 - Damage values reworked for penetrating ammos. 
+                        - more base damage so FMJ/AP are more efficient against armored targets
 	GUI:
 	         - Added selectable Custom Skins for Single Player mode.
 	AI:	
 			 - fixed istances of AI shooting from impossible rotations
 			 - minimum time to shoot is now respected
-			 
     FIXED: 
              - Weapon image not loading on Loadout GUI on some campaign conditions
 

@@ -261,6 +261,20 @@ MagazineSizeString=30
 TotalAmmoString=10 magazines
 RateOfFire=700 RPM
 
+[M16A2MG]
+Description=The development of the M16A2 rifle was originally requested by the United States Marine Corps in 1979 as a result of combat experience in Vietnam with the M16A1. It was officially adopted by the Department of Defense as the "Rifle, 5.56 mm, M16A2" in 1983.
+FriendlyName=M16A2
+ShortName=M16A2
+Manufacturer=Colt
+Caliber=5.56x45mm NATO
+CountryOfOrigin=United States
+ProductionStart=1983
+FireModes=Semi-Automatic, Burst
+MagazineSizeString=30
+TotalAmmoString=10 magazines
+RateOfFire=700 RPM
+
+
 [SilencedM16A1MG]
 Description=Originally designed in 1964 based on the Armalite AR-15 blueprints, the M16 rifle was first deployed in the jungles of Vietnam. The M16A1 was an incremental improvement, redesigning the muzzle to avoid catching on foliage and reducing the high failure rate of its predecessor's receiver. This particular variant is equipped with a suppressor.
 FriendlyName=Suppressed M16A1
