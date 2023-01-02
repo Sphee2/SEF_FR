@@ -9,8 +9,27 @@ class RestrainedFloorAction extends LookAtOfficersActionBase;
 // Variables
 var(parameters)	Pawn	Restrainer;	// pawn that we will be working with
 
+
+
+// behaviors we use
+var private RotateTowardRotationGoal	CurrentRotateTowardRotationGoal;
+var private bool FoundRotation;
+
 // config variables
 const kPostRestrainedGoalPriority      = 94;
+
+function cleanup()
+{
+	super.cleanup();
+	
+	if (CurrentRotateTowardRotationGoal != None)
+	{
+		CurrentRotateTowardRotationGoal.unPostGoal(self);
+		CurrentRotateTowardRotationGoal.Release();
+		CurrentRotateTowardRotationGoal = None;
+	}
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -43,6 +62,64 @@ latent function PlayFloorAnimation()
 	}
 }
 
+// rotate to the rotation that is the opposite of the restrainer's rotation
+function RotateToRestrainablePosition()
+{
+	local Rotator DesiredRestrainRotation;
+	local vector StartVect,EndVect;
+	local rotator GoodRot;
+	local int YawRot;
+	 
+	while ( YawRot < 65536 && !FoundRotation) 
+	{
+		GoodRot = m_Pawn.Rotation;
+		GoodRot.Yaw = GoodRot.Yaw + YawRot;
+		
+		StartVect= m_Pawn.Location;
+		EndVect= StartVect + vector(GoodRot)*80;
+		
+	    if ( m_pawn.FastTrace(EndVect,StartVect) )
+		{
+			Level.GetLocalPlayerController().myHUD.AddDebugLine(StartVect, EndVect, class'Engine.Canvas'.Static.MakeColor(255,0,0));
+			
+			//second trace at floor level
+			StartVect.Z=StartVect.Z-50;
+			EndVect.Z=EndVect.Z-50;
+			if ( m_pawn.FastTrace(EndVect,StartVect) )
+			{
+				//Level.GetLocalPlayerController().myHUD.AddDebugLine(StartVect, EndVect, class'Engine.Canvas'.Static.MakeColor(255,0,0));
+				
+				//third trace for stairs
+				EndVect.Z=EndVect.Z-40;
+				if ( !m_pawn.FastTrace(EndVect,StartVect) ) //if I catch something it's good
+				{
+					//Level.GetLocalPlayerController().myHUD.AddDebugLine(StartVect, EndVect, class'Engine.Canvas'.Static.MakeColor(255,0,0));
+					FoundRotation = true;
+				}
+			}
+		}
+		
+		YawRot = YawRot + 3276;
+	}
+	FoundRotation = true; //make sure to end anyway!
+	
+	DesiredRestrainRotation = GoodRot; 
+	//DesiredRestrainRotation.Yaw += GoodRot.Yaw; 
+	
+	
+		
+	CurrentRotateTowardRotationGoal = new class'RotateTowardRotationGoal'(movementResource(), achievingGoal.Priority, DesiredRestrainRotation);
+	assert(CurrentRotateTowardRotationGoal != None);
+	CurrentRotateTowardRotationGoal.AddRef();
+
+	CurrentRotateTowardRotationGoal.postGoal(self);
+
+	// make sure the rotation is set and lock it
+	ISwatAI(m_Pawn).AimToRotation(DesiredRestrainRotation);
+	ISwatAI(m_Pawn).LockAim();
+	
+}
+
 
 state Running
 {
@@ -50,8 +127,7 @@ state Running
 	 
 	// don't move while being restrained
 	m_Pawn.DisableCollisionAvoidance();
-	
-	
+		
 	if (achievingGoal.priority != kPostRestrainedGoalPriority)
 	{
 		// set the priority lower now so that any higher priority goal 
@@ -64,8 +140,18 @@ state Running
 		yield();
 
 	useResources(class'AI_Resource'.const.RU_ARMS | class'AI_Resource'.const.RU_LEGS);
+	
+	if (!FoundRotation)
+		RotateToRestrainablePosition();
 
 	PlayFloorAnimation();
+	
+	if (CurrentRotateTowardRotationGoal != None)
+	{
+		CurrentRotateTowardRotationGoal.unPostGoal(self);
+		CurrentRotateTowardRotationGoal.Release();
+		CurrentRotateTowardRotationGoal = None;
+	}
 	
 	succeed();
 	
