@@ -80,7 +80,7 @@ function RotateToRestrainablePosition()
 		
 	    if ( m_pawn.FastTrace(EndVect,StartVect) )
 		{
-			Level.GetLocalPlayerController().myHUD.AddDebugLine(StartVect, EndVect, class'Engine.Canvas'.Static.MakeColor(255,0,0));
+			//Level.GetLocalPlayerController().myHUD.AddDebugLine(StartVect, EndVect, class'Engine.Canvas'.Static.MakeColor(255,0,0));
 			
 			//second trace at floor level
 			StartVect.Z=StartVect.Z-50;
