@@ -24,6 +24,7 @@ ADDED:
 						- no optiwand   :P
 			 - Damage values reworked for penetrating ammos. 
                         - more base damage so FMJ/AP are more efficient against armored targets
+			 - Shields can now "low ready"
 	GUI:
 	         - Added selectable Custom Skins for Single Player mode.
 	AI:	
@@ -31,7 +32,8 @@ ADDED:
 			 - minimum time to shoot is now respected
     FIXED: 
              - Weapon image not loading on Loadout GUI on some campaign conditions
-
+			 - improved animation manager  
+             
 
 #### V0.67 Beta 2 ####
 ADDED: 

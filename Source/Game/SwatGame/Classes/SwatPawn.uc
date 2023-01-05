@@ -888,17 +888,21 @@ simulated event ChangeAnimation()
 
     if (bPhysicsAnimUpdate)
     {
-        SetThirdPersonMovementAnims();
-
+        
+		SetThirdPersonMovementAnims();
         // @NOTE: Special case, only swap in equipement-specific and additional
         // animations iff the pawn isnt affected by a non-lethal.
         if (!IsNonlethaled())
         {
-            SetThirdPersonEquipmentAnims();
-            SetThirdPersonLowReadyAnims();
+            if ( IsLowReady() )
+				SetThirdPersonLowReadyAnims();
+			else
+				SetThirdPersonEquipmentAnims();
+			
             SetAdditionalAnimSets();
         }
-
+		
+		
         SetThirdPersonNonlethalReactionAnims();
         SetThirdPersonMouthMovementAnims();
 

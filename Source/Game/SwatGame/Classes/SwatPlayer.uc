@@ -522,6 +522,7 @@ simulated function EAnimationSet GetUMPLowReadyAimPoseSet()             { if (Re
 simulated function EAnimationSet GetP90LowReadyAimPoseSet()             { if (ReasonForLowReady == 'Obstruction') return kAnimationSetP90ExtremeLowReady;            else return Super.GetP90LowReadyAimPoseSet(); }
 simulated function EAnimationSet GetOptiwandLowReadyAimPoseSet()        { if (ReasonForLowReady == 'Obstruction' && !IsUsingOptiwand()) return kAnimationSetOptiwandExtremeLowReady;       else return Super.GetOptiwandLowReadyAimPoseSet(); }
 simulated function EAnimationSet GetPaintballLowReadyAimPoseSet()       { if (ReasonForLowReady == 'Obstruction') return kAnimationSetPaintballExtremeLowReady;      else return Super.GetPaintballLowReadyAimPoseSet(); }
+simulated function EAnimationSet GetShieldLowReadyAimPoseSet()         { return kAnimationSetShieldLowReady; }
 
 simulated protected function bool CanPawnUseLowReady()
 {
@@ -535,7 +536,7 @@ simulated protected function bool CanPawnUseLowReady()
     return false;
 
   Equipment = Self.GetActiveItem();
-  if( Equipment.IsA('ShieldHandgun') || Equipment.IsA('TaserShield') ||  Equipment.IsA('Optiwand') || ((Equipment.GetSlot() != Slot_PrimaryWeapon) && (Equipment.GetSlot() != Slot_SecondaryWeapon) ) )
+  if( Equipment.IsA('Optiwand') || ((Equipment.GetSlot() != Slot_PrimaryWeapon) && (Equipment.GetSlot() != Slot_SecondaryWeapon) ) ) 
     return false;
   else if(SGPC.WantsZoom && !Equipment.ShouldLowReadyInIronsights())
     return false;
@@ -1858,7 +1859,7 @@ simulated function float GetFireTweenTime()
         return 0.0;
 }
 
-simulated function AdjustPlayerMovementSpeed(float dTime) {
+function AdjustPlayerMovementSpeed() {
   local float OriginalFwd, OriginalBck, OriginalSde;
   local float ModdedFwd, ModdedBck, ModdedSde;
   local float WeightMovMod;
@@ -1867,6 +1868,8 @@ simulated function AdjustPlayerMovementSpeed(float dTime) {
   local AnimationSetManager AnimationSetManager;
   local AnimationSet setObject;  
 
+  assert(Level.NetMode == NM_StandAlone ); //Sp only
+	
   if(class'Pawn'.static.CheckDead( self )) // we are dead... no need to continue to suffer..............
 	  return;
 
@@ -2198,10 +2201,12 @@ simulated state ThrowingPrep
     {
         Global.Tick(dTime);
 		
+		/*	
 		if(Level.NetMode == NM_StandAlone) //speed modifier for SP only (cause it creates more bugs than features)
 			if (PlayerController(Controller).bRun != 1 && !isLowReady()) 
-				AdjustPlayerMovementSpeed(dtime);
-        
+				AdjustPlayerMovementSpeed();
+        */
+		
 		OnTick();
 
         if (!DoneThrowing)
@@ -2285,9 +2290,11 @@ simulated state Throwing
         Global.Tick(dTime);
         OnTick();
 		
+		/*
 		if(Level.NetMode == NM_StandAlone) //speed modifier for SP only (cause it creates more bugs than features)
 			if (PlayerController(Controller).bRun != 1 && !isLowReady()) 
-				AdjustPlayerMovementSpeed(dtime);
+				AdjustPlayerMovementSpeed();	
+		*/
 
         if (!DoneThrowing)
         {
@@ -2496,15 +2503,26 @@ Begin:
 ////////////////////////////////////////////////////////////////////////////////
 
 simulated function Tick(float dTime) {
-    leanr(dTime);
+	
+	leanr(dTime); //lean anim function
 
+/*
 	if(Level.NetMode == NM_StandAlone) //speed modifier for SP only (cause it creates more bugs than features)
 			if (PlayerController(Controller).bRun != 1 && !isLowReady()) 
-				AdjustPlayerMovementSpeed(dtime);
+				AdjustPlayerMovementSpeed();
+*/
 	
     OnTick();
 }
 
+simulated event ChangeAnimation()
+{
+    Super.ChangeAnimation();
+	
+		if(Level.NetMode == NM_StandAlone) //speed modifier for SP only (cause it creates more bugs than features)
+			if (PlayerController(Controller).bRun != 1 && !isLowReady()) 
+				AdjustPlayerMovementSpeed();
+}
 
 //ICanThrowWeapons implementation
 function GetThrownProjectileParams(out vector outLocation, out rotator outRotation)
@@ -4757,7 +4775,7 @@ exec simulated function LeanWalk(string position)
 		Gethands().LeanState = 0;
 	}
 	
-	log("Lean " $ self.name $ " : " $ position $ "." );
+	//log("Lean " $ self.name $ " : " $ position $ "." );
 	
 	//ClientMessage("[c=FFFFFF]Lean " $ self.name $ " : " $ position $ "." , 'SpeechManagerNotification');
 	
@@ -4769,7 +4787,7 @@ function ServerStartLeaning(LeanWalkState RemoteLWS)
 	if ( Level.NetMode == NM_DedicatedServer || Level.NetMode == NM_ListenServer )
 	{
 		LWS = RemoteLWS;
-		log("Lean " $ self.name $ " : " $ LWS $ "." );
+		//log("Lean " $ self.name $ " : " $ LWS $ "." );
 	}
 }
 

@@ -416,7 +416,7 @@ simulated function float InitWeight()
 	
 }
 
-simulated function AdjustPlayerMovementSpeed(float dTime)
+function AdjustPlayerMovementSpeed()
 {
 	//do nothing here for fuck sake! we are not in SP!
 }

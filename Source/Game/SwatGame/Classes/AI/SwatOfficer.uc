@@ -1550,7 +1550,8 @@ simulated function OnLightstickKeyFrame()
 
 ///////////////////////////////////////////////////////////////////////////////
 
-simulated function AdjustOfficerMovementSpeed() {
+/*
+function AdjustOfficerMovementSpeed() {
   local float OriginalFwd, OriginalBck, OriginalSde;
   local float ModdedFwd, ModdedBck, ModdedSde;
   local float TotalWeight;
@@ -1581,8 +1582,9 @@ simulated function AdjustOfficerMovementSpeed() {
 }
 
 simulated function Tick(float dTime) {
-  AdjustOfficerMovementSpeed();
-}
+	if (!isLowReady())
+		AdjustOfficerMovementSpeed();
+}*/
 
 simulated function GivenEquipmentFromPawn(class<HandheldEquipment> Equipment)
 {
