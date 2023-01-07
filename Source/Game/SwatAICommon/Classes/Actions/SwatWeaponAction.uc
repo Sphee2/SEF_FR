@@ -194,10 +194,13 @@ final latent function LatentAimAtActor(Actor Target, optional float MaxWaitTime)
     if (ISwatAI(m_Pawn).AnimCanAimAtDesiredActor(Target) && HasWeaponEquipped())
     {
 		// added here so server can spread information on suspect intentions before even aiming.
-		if( m_pawn.isa('SwatEnemy') )
+		if ( Level.NetMode != NM_Standalone )
 		{
-			UpdateThreatToTarget(Target);
-			yield();
+			if( m_pawn.isa('SwatEnemy') )
+			{
+				UpdateThreatToTarget(Target);
+				yield();
+			}
 		}
 		//////////////////////////////
 		
@@ -211,7 +214,7 @@ final latent function LatentAimAtActor(Actor Target, optional float MaxWaitTime)
 			fDot =  ViewDirectionNoZ Dot TargetDirection;
 			//log (m_pawn.name $ " attacking " $ target.name $ " fdot is: " $ fdot );
 			
-			if ( fdot > 0.707 )
+			if ( fdot > 0.707 &&  m_pawn.isa('SwatEnemy') )
 			{
 				//log ( m_pawn.name $ " quick scope added time on target 0.8" );
 				MaxWaitTime = MaxWaitTime + 1.2;

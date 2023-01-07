@@ -382,7 +382,7 @@ protected latent function AimAndFireAtTarget(FiredWeapon CurrentWeapon)
 	else
 	{	// SWAT need perfect aim!
 		//SWAT reaction is random between 0.4/0.8
-		LatentAimAtActor(Target, Fclamp(frand()+0.4, 0.4 ,0.8) );
+		LatentAimAtActor(Target, frand()/2 + 0.2 );
 	}
 
 
