@@ -33,7 +33,6 @@ var private Door				DoorOpening;
 
 // sensors we use
 var private DoorOpeningSensor	DoorOpeningSensor;
-var private VisionSensor		VisionSensor;
 
 // config variables
 var config float				ShootAtDoorsChance;
@@ -53,6 +52,9 @@ var config float				AimAtClosestDoorTime;
 
 var config float				MinTimeBeforeClosingDoor;
 var config float				MaxTimeBeforeClosingDoor;
+
+var private float TimePulse;
+var private bool OutForThreat;
 
 ///////////////////////////////////////////////////////////////////////////////
 //
@@ -112,12 +114,6 @@ function cleanup()
 		DoorOpeningSensor.deactivateSensor(self);
 		DoorOpeningSensor = None;
 	}
-	
-	if (VisionSensor != None)
-	{
-		VisionSensor.deactivateSensor(self);
-		VisionSensor = None;
-	}
 
 	// if we were crouched, get up.
 	if (m_Pawn.bIsCrouched)
@@ -144,6 +140,7 @@ function goalNotAchievedCB( AI_Goal goal, AI_Action child, ACT_ErrorCodes errorC
 //
 // Sensor notifications
 
+/*
 function OnSensorMessage( AI_Sensor sensor, AI_SensorData value, Object userData )
 {
 	super.OnSensorMessage(sensor, value, userData);
@@ -162,6 +159,7 @@ function OnSensorMessage( AI_Sensor sensor, AI_SensorData value, Object userData
 			runAction();
 		}
 	}
+	
 	else if (Sensor == VisionSensor && isIdle() ) 
 	{
 		//barricade is failed
@@ -169,7 +167,7 @@ function OnSensorMessage( AI_Sensor sensor, AI_SensorData value, Object userData
 	}
 	
 }
-
+*/
 ///////////////////////////////////////////////////////////////////////////////
 //
 // State Code
@@ -508,13 +506,6 @@ function CreateDoorOpeningSensor()
 	
 }
 
-// if you override, call down the chain
-protected function ActivateVisionSensor()
-{
-	VisionSensor = VisionSensor(class'AI_Sensor'.static.activateSensor( self, class'VisionSensor', resource, 0, 1000000 ));
-	assert(VisionSensor != None);
-}
-
 function RemoveAimAroundGoal()
 {
 	if (CurrentAimAroundGoal != None)
@@ -570,11 +561,6 @@ private latent function AimAtOpeningDoor()
 	CurrentAimAtTargetGoal.SetAimOnlyWhenCanHitTarget(true);
 
 	CurrentAimAtTargetGoal.postGoal(self);
-	if (m_Pawn.IsA('SwatEnemy') && !ISwatEnemy(m_Pawn).IsAThreat())
-	{
-		ISwatEnemy(m_Pawn).BecomeAThreat();
-		yield();
-	}	
 
 	while (DoorOpening.IsOpening())
 		yield();
@@ -589,6 +575,21 @@ private latent function CloseOpenedDoor()
 	CloseDoor(DoorOpening);
 	LockDoor(DoorOpening);
 }
+
+private function bool ThreatIsNear()
+{
+	local Pawn SO;
+		
+		ForEach level.AllActors(class'Pawn', SO )
+		{
+			if ( SO.isa('SwatPlayer') || SO.isa('SwatOfficer') )
+				if (m_Pawn.LineOfSightTo(SO))
+					return true;
+		}
+	
+	return false;	
+}
+
 
 state Running
 {
@@ -642,18 +643,43 @@ Begin:
 		m_Pawn.ShouldCrouch(true);
 	}
 
+	TimePulse = Level.TimeSeconds;
 
-	ActivateVisionSensor(); //if sensor is triggered just fail
-
+	while( !OutForThreat )
+	{
+		/*if (  ( TimePulse - Level.TimeSeconds ) > 1 )
+		{
+			TimePulse = Level.TimeSeconds;*/
+			if (ThreatIsNear() )
+				OutForThreat = true;
+		/*}
+		else*/
+			yield();
+		
+		
+	}
+	
+	
+	succeed();
+	/*
 	// wait for a door to start opening, if that ever happens
 	pause();
 
+
 	if (m_Pawn.CanHitTarget(DoorOpening))
 	{
+			if (m_Pawn.IsA('SwatEnemy') && !ISwatEnemy(m_Pawn).IsAThreat())
+			{
+			ISwatEnemy(m_Pawn).BecomeAThreat();
+			yield();
+			}	
+		
 		RemoveAimAroundGoal();
 
 		if ((FRand() < ShootAtDoorsChance) && !m_Pawn.IsA('SwatUndercover'))
 		{
+
+			
 			ShootAtOpeningDoor();
 		}
 		else
@@ -665,7 +691,7 @@ Begin:
 		// aim around again
 		AimAround();
 	}
-		
+    */
 }
 
 ///////////////////////////////////////////////////////////////////////////////

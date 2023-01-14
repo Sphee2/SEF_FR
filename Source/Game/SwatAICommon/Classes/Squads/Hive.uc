@@ -508,7 +508,8 @@ function OfficerSawPawn(Pawn OfficerViewer, Pawn Seen)
 		if (! Blackboard.HasAIBeenEncountered(Seen))
 		{
 			
-			if ( OfficerViewer.FastTrace( Seen.Location ,OfficerViewer.Location) ) 
+			if (Seen.LineOfSightTo(OfficerViewer) ) //OfficerViewer.FastTrace( Seen.Location ,OfficerViewer.Location) ) 
+				
 			{
 				if (Seen.IsA('SwatEnemy'))
 				{

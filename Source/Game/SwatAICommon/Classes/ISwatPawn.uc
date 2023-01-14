@@ -29,6 +29,7 @@ simulated function bool IsPepperSprayed();  // is under effect of pepperspray
 simulated function bool IsStung();          // is under effect of a sting grenade
 simulated function bool IsTased();          // is under effect of a taser
 simulated function bool IsStunnedByC2();    // is under effect of a stunned C2
+simulated function bool IsNonlethaled();    // is under one effect  
 simulated function bool HasShield();        //has shield
 ///////////////////////////////////////////////////////////////////////////////
 

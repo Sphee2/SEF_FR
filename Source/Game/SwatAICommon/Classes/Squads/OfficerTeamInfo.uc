@@ -340,6 +340,23 @@ function Pawn GetClosestOfficerWithEquipment(vector Location, EquipmentSlot Slot
 //
 // Officer Command Queries
 
+function bool AllSquadInFormation(Pawn Leader)
+{
+	local int i;
+	local Pawn Iter;
+	
+	for (i=0; i<pawns.length; ++i)
+	{
+		Iter = pawns[i];
+		
+   		if ( Iter.GetPathfindingDistanceToPoint(Leader.Location)  > 400 )
+			return false;
+		
+	}
+
+	return true;
+}
+
 function bool HasActiveMembers()
 {
 	return GetSquadAI().hasActiveMembers();

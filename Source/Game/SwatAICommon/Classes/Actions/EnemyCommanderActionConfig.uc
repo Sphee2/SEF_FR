@@ -79,4 +79,10 @@ var config float								HighSkillReactToThrownGrenadeChance;
 var config float								MinLostPawnDeltaTime;
 var config float								MaxLostPawnDeltaTime;
 
+//FR AI
+var config float								LowSkillInvestigateSoundChance;
+var config float                                MediumSkillInvestigateSoundChance;
+var config float                                HighSkillInvestigateSoundChance;
 
+var config float						MinAimAtNoiseWhileMovingTime;
+var config float						MaxAimAtNoiseWhileMovingTime;

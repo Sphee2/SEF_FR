@@ -186,11 +186,16 @@ latent function MoveOfficersToDestination()
 	}
 
 	waitForAllGoalsInList(MoveToGoals);
-
+	
 	ShieldOfficer.EnableCollisionAvoidance(); //re-enable collision
 	
 	// cleanup!
 	ClearOutMoveToGoals();
+	
+	//wait for the whole team to be in formation
+	while( !AllSquadInFormation(ShieldOfficer) )
+		yield();
+	
 	ClearFormationGoals();
 }
 

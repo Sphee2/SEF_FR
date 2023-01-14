@@ -319,7 +319,7 @@ latent function ShootWeaponAt(Actor Target)
 			{
 				if ( !CurrentWeapon.IsLessLethal() ) //no need to punch when less lethal
 				{
-					if (FRand() < 0.5 ) //50% chance of meleeing
+					if (FRand() < 0.1 ) //chance of meleeing
 					{
 						CurrentWeapon.Melee();
 						sleep(2.0); //wait for melee to finish
@@ -329,16 +329,12 @@ latent function ShootWeaponAt(Actor Target)
 			}
 			else if (m_Pawn.IsA('SwatEnemy')  && !ISwatAICharacter(m_Pawn).IsFemale() ) //women cant melee cause missing animations
 			{
-				if (FRand() < 0.5 ) //50% chance of meleeing
+				if (FRand() < 0.1 ) //chance of meleeing
 				{
 					CurrentWeapon.Melee();
 					sleep(2.0); //wait for melee to finish
 					
-					/*
-					if (FRand() < 0.2 )
-					*/
-						return; //80% chance to punch or punch AND fire
-					
+						return; 					
 				}
 			}
 		}

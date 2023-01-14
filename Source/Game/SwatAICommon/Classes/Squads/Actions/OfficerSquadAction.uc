@@ -99,6 +99,13 @@ function Pawn GetClosestOfficerTo(Actor Target, optional bool bRequiresLineOfSig
 	return OfficerTeamInfo(squad()).GetClosestOfficerTo(Target, bRequiresLineOfSight, bUsePathfindingDistance);
 }
 
+function bool AllSquadInFormation(Pawn Leader)
+{
+	assert(squad().IsA('OfficerTeamInfo'));
+
+	return OfficerTeamInfo(squad()).AllSquadInFormation(Leader);
+}
+
 function Pawn GetClosestOfficerWithEquipment(vector Location, EquipmentSlot Slot, optional Name EquipmentClassName, optional bool bUsePathfindingDistance, optional bool rejectShield)
 {
 	assert(squad().IsA('OfficerTeamInfo'));
